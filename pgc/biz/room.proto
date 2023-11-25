@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package pgc.biz;
+
+//
+message RoomProto {
+    //
+    repeated string room_id = 1;
+}
+
+
+option go_package = "https://github.com/stmtc233/bili-grpc-api-go/pgc/biz";

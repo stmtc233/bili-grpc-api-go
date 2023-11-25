@@ -1,0 +1,4 @@
+// TODO
+
+
+option go_package = "https://github.com/stmtc233/bili-grpc-api-go/bilibili/pangu/gallery/v1/openplatform/apiserver/v1alpha1";
