@@ -8,10 +8,10 @@ package v1
 
 import (
 	context "context"
+	common "github.com/stmtc233/bili-grpc-api-go/bilibili/dynamic/common"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	common "https://github.com/stmtc233/bili-grpc-api-go/bilibili/dynamic/common"
 )
 
 // This is a compile-time assertion to ensure that this generated file

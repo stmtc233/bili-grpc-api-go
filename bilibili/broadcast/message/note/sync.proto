@@ -12,4 +12,4 @@ message Sync {
 
 
 
-option go_package = "https://github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/message/note";
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/message/note";

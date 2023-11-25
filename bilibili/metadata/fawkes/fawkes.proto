@@ -22,4 +22,4 @@ message FawkesReq {
 
 
 
-option go_package = "https://github.com/stmtc233/bili-grpc-api-go/bilibili/metadata/fawkes";
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/metadata/fawkes";

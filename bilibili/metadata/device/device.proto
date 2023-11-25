@@ -42,4 +42,4 @@ message Device {
 
 
 
-option go_package = "https://github.com/stmtc233/bili-grpc-api-go/bilibili/metadata/device";
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/metadata/device";

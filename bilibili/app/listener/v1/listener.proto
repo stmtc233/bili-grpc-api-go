@@ -1330,4 +1330,4 @@ message TripleLikeResp {
 
 
 
-option go_package = "https://github.com/stmtc233/bili-grpc-api-go/bilibili/app/listener/v1";
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/listener/v1";

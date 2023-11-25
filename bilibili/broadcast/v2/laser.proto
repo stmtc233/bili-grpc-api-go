@@ -22,4 +22,4 @@ message LaserEventResp {
 
 
 
-option go_package = "https://github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/v2";
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/v2";

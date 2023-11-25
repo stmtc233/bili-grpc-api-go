@@ -2754,4 +2754,4 @@ enum WeightType {
 
 
 
-option go_package = "https://github.com/stmtc233/bili-grpc-api-go/bilibili/dynamic/gw";
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/dynamic/gw";

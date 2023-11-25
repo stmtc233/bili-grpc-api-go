@@ -9,4 +9,4 @@ message RoomProto {
 }
 
 
-option go_package = "https://github.com/stmtc233/bili-grpc-api-go/pgc/biz";
+option go_package = "github.com/stmtc233/bili-grpc-api-go/pgc/biz";

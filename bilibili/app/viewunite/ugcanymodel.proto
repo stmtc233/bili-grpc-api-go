@@ -135,4 +135,4 @@ message ViewUgcAny {
 
 
 
-option go_package = "https://github.com/stmtc233/bili-grpc-api-go/bilibili/app/viewunite";
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/viewunite";

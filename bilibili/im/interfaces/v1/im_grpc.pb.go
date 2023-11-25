@@ -8,10 +8,10 @@ package v1
 
 import (
 	context "context"
+	_type "github.com/stmtc233/bili-grpc-api-go/bilibili/im/type"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	_type "https://github.com/stmtc233/bili-grpc-api-go/bilibili/im/type"
 )
 
 // This is a compile-time assertion to ensure that this generated file

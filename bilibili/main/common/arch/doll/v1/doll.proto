@@ -62,4 +62,4 @@ message SayResponse {
 
 
 
-option go_package = "https://github.com/stmtc233/bili-grpc-api-go/bilibili/main/common/arch/doll/v1";
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/main/common/arch/doll/v1";

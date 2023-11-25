@@ -66,4 +66,4 @@ message WFItemDefault {
 }
 
 
-option go_package = "https://github.com/stmtc233/bili-grpc-api-go/bilibili/app/dynamic/v2";
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/dynamic/v2";

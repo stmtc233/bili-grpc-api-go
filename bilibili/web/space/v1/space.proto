@@ -283,4 +283,4 @@ message WhitelistValidTimeReply {
 
 
 
-option go_package = "https://github.com/stmtc233/bili-grpc-api-go/bilibili/web/space/v1";
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/web/space/v1";

@@ -1358,4 +1358,4 @@ message WordNode {
 
 
 
-option go_package = "https://github.com/stmtc233/bili-grpc-api-go/bilibili/dynamic/common";
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/dynamic/common";

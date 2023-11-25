@@ -117,4 +117,4 @@ message UploadAppListReply {
 
 
 
-option go_package = "https://github.com/stmtc233/bili-grpc-api-go/bilibili/gaia/gw";
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/gaia/gw";

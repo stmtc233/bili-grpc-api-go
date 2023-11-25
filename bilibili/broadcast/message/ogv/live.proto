@@ -45,4 +45,4 @@ message CMDBody {
 
 
 
-option go_package = "https://github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/message/ogv";
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/message/ogv";

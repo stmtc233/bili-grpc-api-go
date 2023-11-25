@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 设置 Go package 的基础路径
-go_package_base="https://github.com/stmtc233/bili-grpc-api-go"
+go_package_base="github.com/stmtc233/bili-grpc-api-go"
 
 # 遍历子目录下的所有 .proto 文件
 find . -type f -name "*.proto" | while read file; do

@@ -92,4 +92,4 @@ message ContractConfigReq {
 
 
 
-option go_package = "https://github.com/stmtc233/bili-grpc-api-go/bilibili/polymer/contract/v1";
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/polymer/contract/v1";

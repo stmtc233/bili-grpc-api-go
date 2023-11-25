@@ -30,4 +30,4 @@ message Notify {
 }
 
 
-option go_package = "https://github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/message/editor";
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/message/editor";

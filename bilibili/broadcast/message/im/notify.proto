@@ -100,4 +100,4 @@ message ReqServerNotify {
 
 
 
-option go_package = "https://github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/message/im";
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/message/im";

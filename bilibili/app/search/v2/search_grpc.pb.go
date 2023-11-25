@@ -8,10 +8,10 @@ package v2
 
 import (
 	context "context"
+	main "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/message/main"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	main "https://github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/message/main"
 )
 
 // This is a compile-time assertion to ensure that this generated file

@@ -108,4 +108,4 @@ message SizeSpec {
 }
 
 
-option go_package = "https://github.com/stmtc233/bili-grpc-api-go/bilibili/dagw/component/avatar/common";
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/dagw/component/avatar/common";

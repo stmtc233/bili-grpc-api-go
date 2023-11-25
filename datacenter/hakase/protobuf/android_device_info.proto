@@ -269,4 +269,4 @@ message SensorInfo {
 
 
 
-option go_package = "https://github.com/stmtc233/bili-grpc-api-go/datacenter/hakase/protobuf";
+option go_package = "github.com/stmtc233/bili-grpc-api-go/datacenter/hakase/protobuf";

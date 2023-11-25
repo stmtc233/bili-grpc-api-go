@@ -23,4 +23,4 @@ message Metadata {
 
 
 
-option go_package = "https://github.com/stmtc233/bili-grpc-api-go/bilibili/metadata";
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/metadata";

@@ -581,4 +581,4 @@ message VideoSmallCardItem {
 
 
 
-option go_package = "https://github.com/stmtc233/bili-grpc-api-go/bilibili/app/topic/v1";
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/topic/v1";
