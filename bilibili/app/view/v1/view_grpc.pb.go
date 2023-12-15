@@ -39,6 +39,7 @@ const (
 	View_SeasonActivityRecord_FullMethodName   = "/bilibili.app.view.v1.View/SeasonActivityRecord"
 	View_SeasonWidgetExpose_FullMethodName     = "/bilibili.app.view.v1.View/SeasonWidgetExpose"
 	View_GetArcsPlayer_FullMethodName          = "/bilibili.app.view.v1.View/GetArcsPlayer"
+	View_GetUser_FullMethodName                = "/bilibili.app.view.v1.View/GetUser"
 )
 
 // ViewClient is the client API for View service.
@@ -75,6 +76,7 @@ type ViewClient interface {
 	SeasonActivityRecord(ctx context.Context, in *SeasonActivityRecordReq, opts ...grpc.CallOption) (*SeasonActivityRecordReply, error)
 	SeasonWidgetExpose(ctx context.Context, in *SeasonWidgetExposeReq, opts ...grpc.CallOption) (*SeasonWidgetExposeReply, error)
 	GetArcsPlayer(ctx context.Context, in *GetArcsPlayerReq, opts ...grpc.CallOption) (*GetArcsPlayerReply, error)
+	GetUser(ctx context.Context, in *GetUserReq, opts ...grpc.CallOption) (*GetUserReply, error)
 }
 
 type viewClient struct {
@@ -265,6 +267,15 @@ func (c *viewClient) GetArcsPlayer(ctx context.Context, in *GetArcsPlayerReq, op
 	return out, nil
 }
 
+func (c *viewClient) GetUser(ctx context.Context, in *GetUserReq, opts ...grpc.CallOption) (*GetUserReply, error) {
+	out := new(GetUserReply)
+	err := c.cc.Invoke(ctx, View_GetUser_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ViewServer is the server API for View service.
 // All implementations must embed UnimplementedViewServer
 // for forward compatibility
@@ -299,6 +310,7 @@ type ViewServer interface {
 	SeasonActivityRecord(context.Context, *SeasonActivityRecordReq) (*SeasonActivityRecordReply, error)
 	SeasonWidgetExpose(context.Context, *SeasonWidgetExposeReq) (*SeasonWidgetExposeReply, error)
 	GetArcsPlayer(context.Context, *GetArcsPlayerReq) (*GetArcsPlayerReply, error)
+	GetUser(context.Context, *GetUserReq) (*GetUserReply, error)
 	mustEmbedUnimplementedViewServer()
 }
 
@@ -365,6 +377,9 @@ func (UnimplementedViewServer) SeasonWidgetExpose(context.Context, *SeasonWidget
 }
 func (UnimplementedViewServer) GetArcsPlayer(context.Context, *GetArcsPlayerReq) (*GetArcsPlayerReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetArcsPlayer not implemented")
+}
+func (UnimplementedViewServer) GetUser(context.Context, *GetUserReq) (*GetUserReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUser not implemented")
 }
 func (UnimplementedViewServer) mustEmbedUnimplementedViewServer() {}
 
@@ -739,6 +754,24 @@ func _View_GetArcsPlayer_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
+func _View_GetUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUserReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ViewServer).GetUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: View_GetUser_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ViewServer).GetUser(ctx, req.(*GetUserReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // View_ServiceDesc is the grpc.ServiceDesc for View service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -825,6 +858,10 @@ var View_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetArcsPlayer",
 			Handler:    _View_GetArcsPlayer_Handler,
+		},
+		{
+			MethodName: "GetUser",
+			Handler:    _View_GetUser_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

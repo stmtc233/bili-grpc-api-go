@@ -20,11 +20,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Search_CancelChatTask_FullMethodName = "/bilibili.app.search.v2.Search/CancelChatTask"
-	Search_GetChatAuth_FullMethodName    = "/bilibili.app.search.v2.Search/GetChatAuth"
-	Search_GetChatResult_FullMethodName  = "/bilibili.app.search.v2.Search/GetChatResult"
-	Search_SearchEgg_FullMethodName      = "/bilibili.app.search.v2.Search/SearchEgg"
-	Search_SubmitChatTask_FullMethodName = "/bilibili.app.search.v2.Search/SubmitChatTask"
+	Search_CancelChatTask_FullMethodName     = "/bilibili.app.search.v2.Search/CancelChatTask"
+	Search_GetChatAuth_FullMethodName        = "/bilibili.app.search.v2.Search/GetChatAuth"
+	Search_GetChatResult_FullMethodName      = "/bilibili.app.search.v2.Search/GetChatResult"
+	Search_QueryRecAfterClick_FullMethodName = "/bilibili.app.search.v2.Search/QueryRecAfterClick"
+	Search_SearchEgg_FullMethodName          = "/bilibili.app.search.v2.Search/SearchEgg"
+	Search_SubmitChatTask_FullMethodName     = "/bilibili.app.search.v2.Search/SubmitChatTask"
 )
 
 // SearchClient is the client API for Search service.
@@ -34,6 +35,7 @@ type SearchClient interface {
 	CancelChatTask(ctx context.Context, in *CancelChatTaskReq, opts ...grpc.CallOption) (*CancelChatTaskReply, error)
 	GetChatAuth(ctx context.Context, in *GetChatAuthReq, opts ...grpc.CallOption) (*GetChatAuthReply, error)
 	GetChatResult(ctx context.Context, in *GetChatResultReq, opts ...grpc.CallOption) (*main.ChatResult, error)
+	QueryRecAfterClick(ctx context.Context, in *QueryRecAfterClickReq, opts ...grpc.CallOption) (*QueryRecAfterClickReply, error)
 	SearchEgg(ctx context.Context, in *SearchEggReq, opts ...grpc.CallOption) (*SearchEggReply, error)
 	SubmitChatTask(ctx context.Context, in *SubmitChatTaskReq, opts ...grpc.CallOption) (*SubmitChatTaskReply, error)
 }
@@ -73,6 +75,15 @@ func (c *searchClient) GetChatResult(ctx context.Context, in *GetChatResultReq, 
 	return out, nil
 }
 
+func (c *searchClient) QueryRecAfterClick(ctx context.Context, in *QueryRecAfterClickReq, opts ...grpc.CallOption) (*QueryRecAfterClickReply, error) {
+	out := new(QueryRecAfterClickReply)
+	err := c.cc.Invoke(ctx, Search_QueryRecAfterClick_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *searchClient) SearchEgg(ctx context.Context, in *SearchEggReq, opts ...grpc.CallOption) (*SearchEggReply, error) {
 	out := new(SearchEggReply)
 	err := c.cc.Invoke(ctx, Search_SearchEgg_FullMethodName, in, out, opts...)
@@ -98,6 +109,7 @@ type SearchServer interface {
 	CancelChatTask(context.Context, *CancelChatTaskReq) (*CancelChatTaskReply, error)
 	GetChatAuth(context.Context, *GetChatAuthReq) (*GetChatAuthReply, error)
 	GetChatResult(context.Context, *GetChatResultReq) (*main.ChatResult, error)
+	QueryRecAfterClick(context.Context, *QueryRecAfterClickReq) (*QueryRecAfterClickReply, error)
 	SearchEgg(context.Context, *SearchEggReq) (*SearchEggReply, error)
 	SubmitChatTask(context.Context, *SubmitChatTaskReq) (*SubmitChatTaskReply, error)
 	mustEmbedUnimplementedSearchServer()
@@ -115,6 +127,9 @@ func (UnimplementedSearchServer) GetChatAuth(context.Context, *GetChatAuthReq) (
 }
 func (UnimplementedSearchServer) GetChatResult(context.Context, *GetChatResultReq) (*main.ChatResult, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetChatResult not implemented")
+}
+func (UnimplementedSearchServer) QueryRecAfterClick(context.Context, *QueryRecAfterClickReq) (*QueryRecAfterClickReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method QueryRecAfterClick not implemented")
 }
 func (UnimplementedSearchServer) SearchEgg(context.Context, *SearchEggReq) (*SearchEggReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SearchEgg not implemented")
@@ -189,6 +204,24 @@ func _Search_GetChatResult_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Search_QueryRecAfterClick_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryRecAfterClickReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SearchServer).QueryRecAfterClick(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Search_QueryRecAfterClick_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SearchServer).QueryRecAfterClick(ctx, req.(*QueryRecAfterClickReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Search_SearchEgg_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SearchEggReq)
 	if err := dec(in); err != nil {
@@ -243,6 +276,10 @@ var Search_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetChatResult",
 			Handler:    _Search_GetChatResult_Handler,
+		},
+		{
+			MethodName: "QueryRecAfterClick",
+			Handler:    _Search_QueryRecAfterClick_Handler,
 		},
 		{
 			MethodName: "SearchEgg",
