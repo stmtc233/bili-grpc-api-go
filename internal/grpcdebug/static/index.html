@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>bili-grpc-api-go Debug UI</title>
+    <link rel="stylesheet" href="/app.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <p class="eyebrow">bili-grpc-api-go</p>
+          <h1>gRPC Debug Console</h1>
+          <p class="muted">搜索接口、填参数、直接看 protobuf 解析后的返回值。</p>
+        </div>
+
+        <label class="field">
+          <span>搜索 service / method</span>
+          <input id="searchInput" type="search" placeholder="例如 View / Search / space" />
+        </label>
+
+        <div id="catalog" class="catalog"></div>
+      </aside>
+
+      <main class="main">
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">连接配置</p>
+              <h2>Target</h2>
+            </div>
+          </div>
+
+          <div class="grid cols-4">
+            <label class="field span-2">
+              <span>gRPC 地址</span>
+              <input id="targetInput" type="text" placeholder="grpc.example.com:443" />
+            </label>
+
+            <label class="field">
+              <span>超时 (ms)</span>
+              <input id="timeoutInput" type="number" min="1" value="10000" />
+            </label>
+
+            <label class="field">
+              <span>Authority</span>
+              <input id="authorityInput" type="text" placeholder="可选" />
+            </label>
+          </div>
+
+          <div class="grid cols-4">
+            <label class="field">
+              <span>Server Name</span>
+              <input id="serverNameInput" type="text" placeholder="TLS SNI，可选" />
+            </label>
+
+            <label class="toggle">
+              <input id="useTlsInput" type="checkbox" checked />
+              <span>启用 TLS</span>
+            </label>
+
+            <label class="toggle">
+              <input id="skipVerifyInput" type="checkbox" />
+              <span>跳过证书校验</span>
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Metadata (JSON)</span>
+            <textarea id="metadataInput" rows="4" spellcheck="false">{}</textarea>
+          </label>
+        </section>
+
+        <section id="methodPanel" class="panel empty-state">
+          <div>
+            <p class="eyebrow">方法详情</p>
+            <h2>选择左侧接口后开始调试</h2>
+            <p class="muted">页面会自动生成表单，也可以切到 JSON 模式直接手写请求体。</p>
+          </div>
+        </section>
+
+        <section id="requestPanel" class="panel hidden"></section>
+
+        <section class="actions">
+          <button id="invokeButton" class="primary" disabled>调用接口</button>
+          <span id="invokeHint" class="muted">先从左侧选一个方法。</span>
+        </section>
+
+        <section id="resultPanel" class="panel hidden"></section>
+      </main>
+    </div>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>

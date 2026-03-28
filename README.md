@@ -9,6 +9,52 @@
 go get -u github.com/stmtc233/bili-grpc-api-go
 ```
 
+## 可视化 gRPC 调试工具
+
+仓库内置了一个本地 Web 调试页，可以用来快速选择接口、填写参数并查看 protobuf 解析后的返回值。
+
+### 启动
+
+```bash
+go run ./cmd/grpc-debugger
+```
+
+默认会监听在 `http://127.0.0.1:8090`。
+
+也可以自定义监听地址：
+
+```bash
+go run ./cmd/grpc-debugger -listen :9000
+```
+
+### 功能
+
+- 左侧搜索并选择仓库里已注册的 gRPC service / method
+- 自动读取 protobuf 描述并生成请求表单
+- 支持切换到 JSON 模式，直接手写复杂请求体
+- 支持填写目标地址、TLS、authority、server name、metadata、超时
+- 返回值会以格式化 JSON 展示，同时显示规范化后的请求体
+- 流式接口会被标记出来，但当前版本只支持一元 RPC 调试
+
+### 使用步骤
+
+1. 启动 `grpc-debugger`
+2. 打开浏览器访问本地页面
+3. 在左侧选中要调试的接口
+4. 填写目标 gRPC 地址和必要的 metadata
+5. 通过表单模式或 JSON 模式填写请求参数
+6. 点击“调用接口”查看返回结果
+
+### Metadata 示例
+
+```json
+{
+  "authorization": "identify_v1 your-token",
+  "x-bili-device-bin": "xxxxx",
+  "x-bili-metadata-bin": "yyyyy"
+}
+```
+
 ## GitHub Actions
 
 仓库现在可以把“同步 proto”和“生成发布”拆开处理：
