@@ -29,5 +29,4 @@ message Notify {
     string  op_content = 8;
 }
 
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/message/editor";

@@ -370,6 +370,4 @@ message VideoSubtitle {
     repeated SubtitleItem subtitles = 3;
 }
 
-
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/tv/interfaces/dm/v1";

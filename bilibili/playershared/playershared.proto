@@ -973,6 +973,4 @@ message VolumeInfo {
     double target_tp = 7;
 }
 
-
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/playershared";

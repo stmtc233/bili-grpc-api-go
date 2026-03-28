@@ -10,5 +10,4 @@ message InternalDeviceConfig {
     bilibili.app.distribution.v1.Int64Value fts = 1;
 }
 
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/distribution/setting";

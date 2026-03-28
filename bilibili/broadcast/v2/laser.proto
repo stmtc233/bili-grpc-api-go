@@ -20,6 +20,4 @@ message LaserEventResp {
     string params = 3;
 }
 
-
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/v2";

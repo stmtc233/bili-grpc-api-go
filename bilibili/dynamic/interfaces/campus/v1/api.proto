@@ -27,6 +27,4 @@ enum ActionType {
     ACTION_CLOSE_YELLOW_BAR = 1;
 }
 
-
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/dynamic/interfaces/campus/v1";

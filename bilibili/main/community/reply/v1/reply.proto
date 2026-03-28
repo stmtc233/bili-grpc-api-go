@@ -1240,6 +1240,4 @@ message Vote {
     int64 count = 3;
 }
 
-
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/main/community/reply/v1";

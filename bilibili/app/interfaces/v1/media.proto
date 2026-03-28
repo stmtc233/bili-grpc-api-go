@@ -341,5 +341,4 @@ message UserCard {
     int64 mid = 4;
 }
 
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/interfaces/v1";

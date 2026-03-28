@@ -127,6 +127,4 @@ message VersionReq {
     int64 version = 2;
 }
 
-
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/resource/v1";

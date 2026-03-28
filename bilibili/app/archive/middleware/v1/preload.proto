@@ -17,5 +17,4 @@ message PlayerArgs {
     int64 voice_balance = 5;
 }
 
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/archive/middleware/v1";

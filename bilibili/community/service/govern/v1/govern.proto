@@ -36,5 +36,4 @@ message QoeScoreResult {
     float score = 1;
 }
 
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/community/service/govern/v1";

@@ -130,6 +130,4 @@ message SplashReq {
     string network = 5;
 }
 
-
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/splash/v1";

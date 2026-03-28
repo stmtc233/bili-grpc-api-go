@@ -51,5 +51,4 @@ message GetStudioListResp {
     repeated StudioMaster master_list = 2;
 }
 
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/live/app/room/v1";

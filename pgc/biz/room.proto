@@ -8,5 +8,4 @@ message RoomProto {
     repeated string room_id = 1;
 }
 
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/pgc/biz";

@@ -24,5 +24,4 @@ message OtherSettingsConfig {
     bilibili.app.distribution.v1.BoolValue enable_guide_screenshot_share = 8;
 }
 
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/distribution/setting";

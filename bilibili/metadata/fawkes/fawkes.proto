@@ -22,6 +22,4 @@ message FawkesReq {
     string session_id = 3;
 }
 
-
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/metadata/fawkes";

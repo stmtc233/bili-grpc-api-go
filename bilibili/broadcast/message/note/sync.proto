@@ -10,6 +10,4 @@ message Sync {
     string hash = 2;
 }
 
-
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/message/note";
