@@ -44,7 +44,7 @@ jobs:
           path: upstream
 
       - name: Sync proto files
-        run: bash scripts/sync_upstream_proto.sh upstream/grpc_api .
+        run: bash scripts/sync_upstream_proto.sh upstream/proto .
 
       - name: Normalize go_package
         run: bash scripts/ensure_go_package.sh
