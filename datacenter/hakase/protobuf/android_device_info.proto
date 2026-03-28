@@ -267,6 +267,4 @@ message SensorInfo {
     int32 min_delay = 8;
 }
 
-
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/datacenter/hakase/protobuf";

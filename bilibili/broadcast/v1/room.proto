@@ -77,6 +77,4 @@ message RoomResp {
     }
 }
 
-
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/v1";

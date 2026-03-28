@@ -119,5 +119,4 @@ message Relation {
     int32 is_followed = 3;
 }
 
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/show/rank/v1";

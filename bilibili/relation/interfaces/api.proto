@@ -5,7 +5,6 @@ package bilibili.relation.interface.v1;
 service RelationInterface {
     // 评论区 At 用户列表 (无需登录鉴权)
     rpc AtSearch (AtSearchReq) returns (AtSearchReply);
-    rpc ModifyRelation(FollowingReq) returns (ModifyRelationReply);
 }
 
 message AtSearchReq {
@@ -36,32 +35,5 @@ message AtItem {
   int32 fans = 4;
   int32 official_verify_type = 5;
 }
-
-
-message FollowingReq {
-  int64 fid = 1;
-  Act act = 2;
-  int32 source = 3;
-  string spmid = 4;
-  string extend_content = 5;
-  string from_spmid = 6;
-  string from_scmid = 7;
-  string action_id = 8;
-}
-
-message ModifyRelationReply {}
-
-enum Act {
-  ACT_NA = 0;
-  ACT_ADD_FOLLOWING = 1;
-  ACT_DEL_FOLLOWING = 2;
-  ACT_ADD_WHISPER = 3;
-  ACT_DEL_WHISPER = 4;
-  ACT_ADD_BLACK = 5;
-  ACT_DEL_BLACK = 6;
-  ACT_DEL_FOLLOWER = 7;
-}
-
-
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/relation/interfaces";

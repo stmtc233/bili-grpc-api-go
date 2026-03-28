@@ -191,5 +191,4 @@ message Task {
     bool cache = 3;
 }
 
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/api/probe/v1";

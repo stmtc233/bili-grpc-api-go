@@ -34,6 +34,4 @@ enum TFType {
     T_PKG      = 6; // 电信包
 }
 
-
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/metadata/network";

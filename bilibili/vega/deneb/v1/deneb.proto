@@ -37,6 +37,4 @@ message MessagePullsReq {
 }
 
 
-
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/vega/deneb/v1";

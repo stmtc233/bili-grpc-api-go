@@ -72,7 +72,7 @@ message Episode {
     // 
     EpisodeType type = 1;
     // 
-    oneof {
+    oneof data {
         // 
         VideoEpisode video_episode = 2;
         // 
@@ -428,7 +428,5 @@ message WaterMark {
     // 
     int64 watermark_interval = 2;
 }
-
-
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/viewunite";

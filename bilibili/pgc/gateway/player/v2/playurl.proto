@@ -1126,6 +1126,4 @@ message WatchProgress {
     int64 last_play_aid = 7;
 }
 
-
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/pgc/gateway/player/v2";

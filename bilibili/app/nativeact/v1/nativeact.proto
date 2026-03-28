@@ -1800,6 +1800,4 @@ message VoteResp {
     int64 can_vote_num = 3;
 }
 
-
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/nativeact/v1";

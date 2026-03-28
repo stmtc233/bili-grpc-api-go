@@ -896,6 +896,4 @@ message ViewReq {
     string from_scene = 14;
 }
 
-
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/viewunite/v1";

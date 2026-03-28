@@ -106,6 +106,4 @@ message OrderConfig {
     string value = 2;
 }
 
-
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/space/v1";

@@ -52,5 +52,4 @@ message WidgetReq {
     uint32 page_no = 2;
 }
 
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/show/mixture/v1";

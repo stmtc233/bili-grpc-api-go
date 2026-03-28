@@ -889,18 +889,17 @@ message GetUserReq {
     repeated int64 mids = 1;
     //
     int64 aid = 2;
-    //
+    // 
     int64 up_mid = 3;
     //
-    bool onlyFans = 4;
-
+    bool only_fans = 4;
 }
 
 //
 message GetUserReply {
-    //
-    repeated User likeList = 1;
-    //
+    // 
+    repeated User like_list = 1;
+    // 
     string title = 2;
 }
 
@@ -2146,15 +2145,23 @@ message TIcon {
 
 //
 message User {
-  // Field numbers and types based on the Java class
-  int64 mid = 1;
-  string name = 2;
-  string face = 3;
-  bool isFollow = 4;
-  int64 isAttention = 5;
-  int64 isInterrelation = 6;
-  int64 follower = 7;
-  string interactDesc = 8;
+    //
+    int64 mid = 1;
+    //
+    string name = 2;
+    //
+    string face = 3;
+    //
+    bool isFollow = 4;
+    //
+    int64 isAttention = 5;
+    //
+    int64 isInterrelation = 6;
+    //
+    int64 follower = 7;
+    //
+    string interactDesc = 8;
+    //
 }
 
 // UGC视频合集信息
@@ -2689,7 +2696,5 @@ message VipLabel {
     //
     string label_theme = 3;
 }
-
-
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/view/v1";

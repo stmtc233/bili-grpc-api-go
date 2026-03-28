@@ -26,6 +26,4 @@ message ModResourceResp {
     int64 list_version = 6;
 }
 
-
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/v1";

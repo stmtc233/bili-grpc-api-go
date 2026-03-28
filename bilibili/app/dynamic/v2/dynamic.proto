@@ -5809,6 +5809,4 @@ message WordNode {
     WordNodeStyle style = 4;
 }
 
-
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/dynamic/v2";

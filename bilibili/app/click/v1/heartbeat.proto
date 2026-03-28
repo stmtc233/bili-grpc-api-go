@@ -121,5 +121,4 @@ message VideoMeta {
     uint64 cid = 2;
 }
 
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/click/v1";

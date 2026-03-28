@@ -59,6 +59,4 @@ message MedalInfo {
     int64 is_light = 8;
 }
 
-
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/live/general/interfaces/v1";

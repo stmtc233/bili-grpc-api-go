@@ -92,6 +92,4 @@ message VegaFrame {
     google.protobuf.Any sub_biz = 4;
 }
 
-
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/pgc/gateway/vega/v1";

@@ -32,5 +32,4 @@ message PremiereStatusReply {
     int32 after_premiere_type = 6;
 }
 
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/pgc/service/premiere/v1";

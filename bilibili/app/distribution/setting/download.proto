@@ -10,5 +10,4 @@ message DownloadSettingsConfig {
     bilibili.app.distribution.v1.BoolValue enable_download_auto_start = 1;
 }
 
-
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/distribution/setting";
