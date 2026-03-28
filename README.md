@@ -20,12 +20,14 @@ go get -u github.com/stmtc233/bili-grpc-api-go
 2. `Generate Go Package And Release`
    基于当前仓库里的 `.proto` 重新生成 `.pb.go` / `_grpc.pb.go`，然后自动创建新 tag 并发布 GitHub Release。
    这个 workflow 会在 `main` 分支的 `.proto` 发生变更后自动运行，也支持手动指定 tag。
+   如果你要基于同步分支或自定义分支发布，可以在手动触发时填写 `source_ref`。
 
 ### 建议流程
 
 1. 先运行或等待 `Sync Upstream Proto` 创建同步 PR。
 2. 在 PR 里按需保留你的自定义改动。
 3. 合并到 `main` 后，`Generate Go Package And Release` 会自动生成并发布。
+4. 如果还没合并，也可以手动运行 `Generate Go Package And Release`，并把 `source_ref` 指到同步分支或你的自定义分支。
 
 ### 注意
 
