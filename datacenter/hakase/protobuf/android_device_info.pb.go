@@ -20,252 +20,271 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// Android device information
 type AndroidDeviceInfo struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// ?
+	// SDK version
 	Sdkver string `protobuf:"bytes,1,opt,name=sdkver,proto3" json:"sdkver,omitempty"`
-	// 产品id
-	// 粉 白 蓝 直播姬 HD 海外 OTT 漫画 TV野版 小视频 网易漫画 网易漫画 网易漫画HD 国际版 东南亚版
-	// 1  2  3    4    5   6    7   8     9     10      11       12       13       14       30
+	// app product id, allocated by data platform
+	//
+	// - 粉: 1
+	// - 白: 2
+	// - 蓝: 3
+	// - 直播姬: 4
+	// - HD: 5
+	// - 海外: 6
+	// - OTT: 7
+	// - 漫画: 8
+	// - TV野版: 9
+	// - 小视频: 10
+	// - 网易漫画: 11
+	// - 网易漫画 lite: 12
+	// - 网易漫画 HD: 13
+	// - 国际版: 14
+	// - SEA: 30
 	AppId string `protobuf:"bytes,2,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
-	// 版本号, 如 "7.39.0"
+	// app version, like `"7.39.0"`
 	AppVersion string `protobuf:"bytes,3,opt,name=app_version,json=appVersion,proto3" json:"app_version,omitempty"`
-	// 版本号, 如 "7390300"
+	// app version code, like `"7390300"`
 	AppVersionCode string `protobuf:"bytes,4,opt,name=app_version_code,json=appVersionCode,proto3" json:"app_version_code,omitempty"`
-	// 用户 mid
+	// user mid
 	Mid string `protobuf:"bytes,5,opt,name=mid,proto3" json:"mid,omitempty"`
-	// 渠道号, 如 "master"
+	// channel id, like `"master"`
 	Chid string `protobuf:"bytes,6,opt,name=chid,proto3" json:"chid,omitempty"`
-	// APP 首次安装启动时间戳
+	// Timestamp (in milliseconds) when the user launches the app at the first
+	// time after installation.
 	Fts int64 `protobuf:"varint,7,opt,name=fts,proto3" json:"fts,omitempty"`
-	// 此处实际为 fp, 但不知为何命名为 buvid_local
+	// Device local fingerprint (actually not BUVID)
 	BuvidLocal string `protobuf:"bytes,8,opt,name=buvid_local,json=buvidLocal,proto3" json:"buvid_local,omitempty"`
-	// 留空为 0
+	// If it's the first time user launches the app after installation.
 	First int32 `protobuf:"varint,9,opt,name=first,proto3" json:"first,omitempty"`
-	// 进程名, 如 "tv.danmaku.bili"
+	// app process name, like `"tv.danmaku.bili"`
 	Proc string `protobuf:"bytes,10,opt,name=proc,proto3" json:"proc,omitempty"`
-	// 网络信息, 为一数组直接 toString() 的结果
-	// 如 """["dummy0,fe80::18d8:6ff:fe46:c2ba%dummy0,", "wlan0,fe80::a0f4:6dff:fea8:2d37%wlan0,192.168.1.5,", "lo,::1,127.0.0.1,", "rmnet_ims00,fe80::5a02:3ff:fe04:512%rmnet_ims00,2409:815a:7c38:cee1:1773:d0b9:d163:b023,"]"""
+	// Local network device list, format: "{interface},{ipv6},{ipv4},"
 	Net string `protobuf:"bytes,11,opt,name=net,proto3" json:"net,omitempty"`
-	// 手机无线电固件版本号(`Build.getRadioVersion()`). 如 `21C20B686S000C000,21C20B686S000C000`.
+	// Radio firmware version (`Build.getRadioVersion()`), like `"21C20B686S000C000,21C20B686S000C000"`.
 	Band string `protobuf:"bytes,12,opt,name=band,proto3" json:"band,omitempty"`
-	// OS 版本号, 如 "12"
+	// OS version, like `"12"`
 	Osver string `protobuf:"bytes,13,opt,name=osver,proto3" json:"osver,omitempty"`
-	// 当前毫秒时间戳
+	// System timestamp (in milliseconds)
 	T int64 `protobuf:"varint,14,opt,name=t,proto3" json:"t,omitempty"`
-	// CPU 逻辑核心计数
+	// CPU logical core count
 	CpuCount int32 `protobuf:"varint,15,opt,name=cpu_count,json=cpuCount,proto3" json:"cpu_count,omitempty"`
-	// 手机 Model, 如 "NOH-AN01"
+	// Phone model, like `"NOH-AN01"`
 	Model string `protobuf:"bytes,16,opt,name=model,proto3" json:"model,omitempty"`
-	// 手机品牌, 如 "HUAWEI"
+	// Phone brand, like `"HUAWEI"`
 	Brand string `protobuf:"bytes,17,opt,name=brand,proto3" json:"brand,omitempty"`
-	// 屏幕信息, 如 "1288,2646,560", 即 "{width},{height},{pixel}"
+	// Screen info, like `"1288,2646,560"`, i.e. "{width},{height},{pixel}"
 	Screen string `protobuf:"bytes,18,opt,name=screen,proto3" json:"screen,omitempty"`
-	// CPU 型号, 留空或根据实际情况确定
+	// CPU model, left blank or determine according to actual situation
 	CpuModel string `protobuf:"bytes,19,opt,name=cpu_model,json=cpuModel,proto3" json:"cpu_model,omitempty"`
-	// 蓝牙 MAC, 留空或根据实际情况确定
+	// Bluetooth MAC, left blank or determine according to actual situation
 	Btmac string `protobuf:"bytes,20,opt,name=btmac,proto3" json:"btmac,omitempty"`
-	// Linux 内核 bootid
+	// Linux kernel bootid
 	Boot int64 `protobuf:"varint,21,opt,name=boot,proto3" json:"boot,omitempty"`
-	// 模拟器(?), 如 "000"
+	// emulator detect, like `"000"` (in this example, there're 3 items have been checked. Code `1` indicates a emulator, `0“
+	// indicates a real device)
 	Emu string `protobuf:"bytes,22,opt,name=emu,proto3" json:"emu,omitempty"`
-	// 移动网络 MCC MNC, 如中国移动为 46007
+	// Cellular network MCC MNC, like China Mobile: 46007
 	Oid string `protobuf:"bytes,23,opt,name=oid,proto3" json:"oid,omitempty"`
-	// 当前网络类型, 如 "WIFI", 见 bilibili.metadata.network.NetworkType
+	// Current Network type, can be `WIFI` / `CELLULAR` / `OFFLINE` / `OTHERNET`
+	// / `ETHERNET`
 	Network string `protobuf:"bytes,24,opt,name=network,proto3" json:"network,omitempty"`
-	// 运行内存(Byte)
+	// Total memory (in bytes)
 	Mem int64 `protobuf:"varint,25,opt,name=mem,proto3" json:"mem,omitempty"`
-	// 传感器信息, 为一数组直接 toString() 的结果
-	// 如 """["accelerometer-icm20690,invensense", "akm-akm09918,akm", "orientation,huawei", "als-tcs3718,ams", "proximity-tcs3718,ams", "gyroscope-icm20690,invensense", "gravity,huawei", "linear Acceleration,huawei", "rotation Vector,huawei", "airpress-bmp280,bosch", "HALL sensor,huawei", "uncalibrated Magnetic Field,Asahi Kasei Microdevices", "game Rotation Vector,huawei", "uncalibrated Gyroscope,STMicroelectronics", "significant Motion,huawei", "step Detector,huawei", "step counter,huawei", "geomagnetic Rotation Vector,huawei", "phonecall sensor,huawei", "RPC sensor,huawei", "agt,huawei", "color sensor,huawei", "uncalibrated Accelerometer,huawei", "drop sensor,huawei"]"""
+	// Sensors, format: ["{name},{vendor}", "{name},{vendor}", ...]
 	Sensor string `protobuf:"bytes,26,opt,name=sensor,proto3" json:"sensor,omitempty"`
-	// CPU 频率, 如 2045000
+	// CPU frequency, like `2045000`
 	CpuFreq int64 `protobuf:"varint,27,opt,name=cpu_freq,json=cpuFreq,proto3" json:"cpu_freq,omitempty"`
-	// CPU 架构, 如 "ARM"
+	// CPU vendor, like "ARM"
 	CpuVendor string `protobuf:"bytes,28,opt,name=cpu_vendor,json=cpuVendor,proto3" json:"cpu_vendor,omitempty"`
-	// ?
+	// SIM card status, "true" means SIM card is present, "false" means no SIM card
 	Sim string `protobuf:"bytes,29,opt,name=sim,proto3" json:"sim,omitempty"`
-	// 光照传感器数值
+	// Screen brightness, like `110`
 	Brightness int32 `protobuf:"varint,30,opt,name=brightness,proto3" json:"brightness,omitempty"`
-	// Android Build.prop 信息, key 包括 net.hostname, ro.boot.hardware, etc.
-	// 具体 key-value 需要技术手段自行确定
+	// Android Build.prop,i ncluding `net.hostname`, `ro.boot.hardware`, etc.
+	//
+	// The actual key-value pairs need to be determined through technical means.
 	Props map[string]string `protobuf:"bytes,31,rep,name=props,proto3" json:"props,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	// 系统信息, key 包括 product, cpu_model_name, display, cpu_abi_list, etc.
-	// 具体 key-value 需要技术手段自行确定
+	// Android Build.sys, including `product`, `cpu_model_name`, `display`, `cpu_abi_list`, etc.
+	//
+	// The actual key-value pairs need to be determined through technical means.
 	Sys map[string]string `protobuf:"bytes,32,rep,name=sys,proto3" json:"sys,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	// Wifi MAC, 一般无法获取, 留空
+	// WIFI MAC, just leave blank
 	Wifimac string `protobuf:"bytes,33,opt,name=wifimac,proto3" json:"wifimac,omitempty"`
 	// Android ID
 	Adid string `protobuf:"bytes,34,opt,name=adid,proto3" json:"adid,omitempty"`
-	// OS 名称, 如 "android"
+	// OS name, like "android"
 	Os string `protobuf:"bytes,35,opt,name=os,proto3" json:"os,omitempty"`
-	// IMEI, 一般无法获取, 留空
+	// IMEI, just leave blank
 	Imei string `protobuf:"bytes,36,opt,name=imei,proto3" json:"imei,omitempty"`
-	// ?, 留空
+	// Cellular network base station information, just leave blank
 	Cell string `protobuf:"bytes,37,opt,name=cell,proto3" json:"cell,omitempty"`
-	// IMSI, 一般无法获取, 留空
+	// IMSI, just leave blank
 	Imsi string `protobuf:"bytes,38,opt,name=imsi,proto3" json:"imsi,omitempty"`
-	// ICCID, 一般无法获取, 留空
+	// ICCID, just leave blank
 	Iccid string `protobuf:"bytes,39,opt,name=iccid,proto3" json:"iccid,omitempty"`
-	// 摄像头数量, 留空
+	// Camera count, just leave blank
 	Camcnt int32 `protobuf:"varint,40,opt,name=camcnt,proto3" json:"camcnt,omitempty"`
-	// 摄像头像素, 留空
+	// Camera pixel, just leave blank
 	Campx string `protobuf:"bytes,41,opt,name=campx,proto3" json:"campx,omitempty"`
-	// 手机内置存储空间(Byte)
+	// Internal storage (in bytes)
 	TotalSpace int64 `protobuf:"varint,42,opt,name=total_space,json=totalSpace,proto3" json:"total_space,omitempty"`
-	// ?, 例如 "false"
+	// Whether the Xposed framework activ, just set to "false"
 	Axposed string `protobuf:"bytes,43,opt,name=axposed,proto3" json:"axposed,omitempty"`
-	// ?, 留空
+	// Whether the Xposed or Substrate framework is active in the process, the
+	// value can be `Xposed` or `substrate`, just leave blank
 	Maps string `protobuf:"bytes,44,opt,name=maps,proto3" json:"maps,omitempty"`
-	// 如: "/data/user/0/tv.danmaku.bili/files"
+	// `files` dir, like "/data/user/0/tv.danmaku.bili/files"
 	Files string `protobuf:"bytes,45,opt,name=files,proto3" json:"files,omitempty"`
-	// 是否为虚拟化(?), 如 "0"
+	// Multi-instance detection, just set to `"0"`
 	Virtual string `protobuf:"bytes,46,opt,name=virtual,proto3" json:"virtual,omitempty"`
-	// 虚拟进程, 如 "[]"
+	// Multi-instance process list, just set to `"[]"`
 	Virtualproc string `protobuf:"bytes,47,opt,name=virtualproc,proto3" json:"virtualproc,omitempty"`
-	// ?, 留空
+	// Google AD ID, just leave blank
 	Gadid string `protobuf:"bytes,48,opt,name=gadid,proto3" json:"gadid,omitempty"`
-	// ?, 留空
+	// Google AD whether tracing is allowed, just leave blank
 	Glimit string `protobuf:"bytes,49,opt,name=glimit,proto3" json:"glimit,omitempty"`
-	// 设备安装的 APP 列表, 如 "[]"
+	// List of the 20 most recently installed apps on the device, like `"[]"`
 	Apps string `protobuf:"bytes,50,opt,name=apps,proto3" json:"apps,omitempty"`
-	// 客户端 GUID
+	// GUID
 	Guid string `protobuf:"bytes,51,opt,name=guid,proto3" json:"guid,omitempty"`
-	// ?, 区分于用户 UID
+	// Android multi users, the user id, just set to `"0"`
 	Uid string `protobuf:"bytes,52,opt,name=uid,proto3" json:"uid,omitempty"`
-	// ?, 留空
+	// Whether the device is rooted, just set to `0`
 	Root int32 `protobuf:"varint,53,opt,name=root,proto3" json:"root,omitempty"`
-	// 摄像头放大倍数(?), 留空
+	// ? Camera zoom level, just leave blank
 	Camzoom string `protobuf:"bytes,54,opt,name=camzoom,proto3" json:"camzoom,omitempty"`
-	// 摄像头闪光灯(?), 留空
+	// ? Camera flash light count, just leave blank
 	Camlight string `protobuf:"bytes,55,opt,name=camlight,proto3" json:"camlight,omitempty"`
-	// OAID 匿名设备标识符, 参见 T/TAF 095-2021 安卓系统补充设备标识技术规范, 默认 "00000000-0000-0000-0000-000000000000"
+	// OAID 匿名设备标识符, see *T/TAF 095-2021 安卓系统补充设备标识技术规范*, 默认 "00000000-0000-0000-0000-000000000000"
 	Oaid string `protobuf:"bytes,56,opt,name=oaid,proto3" json:"oaid,omitempty"`
-	// UDID 设备唯一标识符, 参见 T/TAF 095-2021 安卓系统补充设备标识技术规范, 可留空
+	// UDID 设备唯一标识符, see *T/TAF 095-2021 安卓系统补充设备标识技术规范*, just leave blank
 	Udid string `protobuf:"bytes,57,opt,name=udid,proto3" json:"udid,omitempty"`
-	// VAID 开发者匿名设备标识符, 参见 T/TAF 095-2021 安卓系统补充设备标识技术规范, 可留空
+	// VAID 开发者匿名设备标识符, see *T/TAF 095-2021 安卓系统补充设备标识技术规范*, just leave blank
 	Vaid string `protobuf:"bytes,58,opt,name=vaid,proto3" json:"vaid,omitempty"`
-	// AAID, 应用匿名设备标识符, 参见 T/TAF 095-2021 安卓系统补充设备标识技术规范, 可留空
+	// AAID, 应用匿名设备标识符, see *T/TAF 095-2021 安卓系统补充设备标识技术规范*, just leave blank
 	Aaid string `protobuf:"bytes,59,opt,name=aaid,proto3" json:"aaid,omitempty"`
-	// ?, 设置为 "[]"
+	// ?, just set to `"[]"`
 	Androidapp20 string `protobuf:"bytes,60,opt,name=androidapp20,proto3" json:"androidapp20,omitempty"`
-	// ?, 留空
+	// ?, just set to `0`
 	Androidappcnt int32 `protobuf:"varint,61,opt,name=androidappcnt,proto3" json:"androidappcnt,omitempty"`
-	// ?, 设置为 "[]"
+	// ?, just set to `"[]"`
 	Androidsysapp20 string `protobuf:"bytes,62,opt,name=androidsysapp20,proto3" json:"androidsysapp20,omitempty"`
-	// 当前剩余电量, 如 100
+	// Current remaining battery level, like `100`
 	Battery int32 `protobuf:"varint,63,opt,name=battery,proto3" json:"battery,omitempty"`
-	// Android 监听电量状态, 如 "BATTERY_STATUS_DISCHARGING"
+	// Android battery state, like "BATTERY_STATUS_DISCHARGING"
 	BatteryState string `protobuf:"bytes,64,opt,name=battery_state,json=batteryState,proto3" json:"battery_state,omitempty"`
-	// Wifi BSSID, 一般无法获取, 留空
+	// Wifi BSSID, just leave blank
 	Bssid string `protobuf:"bytes,65,opt,name=bssid,proto3" json:"bssid,omitempty"`
-	// ?, 如 "NOH-AN01 4.0.0.102(DEVC00E100R7P5)"
+	// ?, like "NOH-AN01 4.0.0.102(DEVC00E100R7P5)"
 	BuildId string `protobuf:"bytes,67,opt,name=build_id,json=buildId,proto3" json:"build_id,omitempty"`
-	// ISO 国家代码, 如 "CN"
+	// ISO country code, like "CN"
 	CountryIso string `protobuf:"bytes,68,opt,name=country_iso,json=countryIso,proto3" json:"country_iso,omitempty"`
-	// 可用运行内存(Byte)
+	// Free memory (in bytes)
 	FreeMemory int64 `protobuf:"varint,70,opt,name=free_memory,json=freeMemory,proto3" json:"free_memory,omitempty"`
-	// 可用内置存储空间(Byte)
+	// Free internal storage (in bytes)
 	Fstorage string `protobuf:"bytes,71,opt,name=fstorage,proto3" json:"fstorage,omitempty"`
 	// Linux kernel version
 	KernelVersion string `protobuf:"bytes,74,opt,name=kernel_version,json=kernelVersion,proto3" json:"kernel_version,omitempty"`
-	// 语言, 如 "zh"
+	// Lang, like "zh"
 	Languages string `protobuf:"bytes,75,opt,name=languages,proto3" json:"languages,omitempty"`
-	// Wifi 网卡 MAC(?), 留空
+	// ?, just leave blank
 	Mac string `protobuf:"bytes,76,opt,name=mac,proto3" json:"mac,omitempty"`
-	// 当前连接 Wifi 的 SSID, 留空
+	// The currently connected WiFi SSID, just leave blank
 	Ssid string `protobuf:"bytes,79,opt,name=ssid,proto3" json:"ssid,omitempty"`
-	// ?, 留空
+	// System volume, just set to `0`
 	Systemvolume int32 `protobuf:"varint,80,opt,name=systemvolume,proto3" json:"systemvolume,omitempty"`
-	// Wifi 网卡 MAC 列表(?), 留空
+	// WIFI MACs list (?), just leave blank
 	Wifimaclist string `protobuf:"bytes,81,opt,name=wifimaclist,proto3" json:"wifimaclist,omitempty"`
-	// 运行内存(Byte)
+	// Total memory (in bytes)
 	Memory int64 `protobuf:"varint,82,opt,name=memory,proto3" json:"memory,omitempty"`
-	// 当前剩余电量, 如 "100"
+	// Current remaining battery level, like `"100"`
 	StrBattery string `protobuf:"bytes,83,opt,name=str_battery,json=strBattery,proto3" json:"str_battery,omitempty"`
-	// 设备是否 Root(?), 留空
+	// Whether the device is rooted, just set to `false`
 	IsRoot bool `protobuf:"varint,84,opt,name=is_root,json=isRoot,proto3" json:"is_root,omitempty"`
-	// 光照传感器数值字符串
+	// Screen brightness, like `"110"`
 	StrBrightness string `protobuf:"bytes,85,opt,name=str_brightness,json=strBrightness,proto3" json:"str_brightness,omitempty"`
-	// 产品id, 见 2
+	// See `app_id`
 	StrAppId string `protobuf:"bytes,86,opt,name=str_app_id,json=strAppId,proto3" json:"str_app_id,omitempty"`
-	// 当前 IP(?), 留空
+	// Current IP (?), just leave blank
 	Ip string `protobuf:"bytes,87,opt,name=ip,proto3" json:"ip,omitempty"`
-	// 留空即可
+	// ?, just leave blank
 	UserAgent string `protobuf:"bytes,88,opt,name=user_agent,json=userAgent,proto3" json:"user_agent,omitempty"`
-	// ?, 如: "1.25"
+	// ?, like: "1.25"
 	LightIntensity string `protobuf:"bytes,89,opt,name=light_intensity,json=lightIntensity,proto3" json:"light_intensity,omitempty"`
-	// 设备 xyz 方向角度
+	// Device xyz direction angle
 	DeviceAngle []float32 `protobuf:"fixed32,90,rep,packed,name=device_angle,json=deviceAngle,proto3" json:"device_angle,omitempty"`
-	// GPS 传感器数量(或者是否有 GPS 传感器?), 如 "1"
+	// Number of GPS sensors (or whether there're any GPS sensors?), just set to `"1"`
 	GpsSensor int64 `protobuf:"varint,91,opt,name=gps_sensor,json=gpsSensor,proto3" json:"gps_sensor,omitempty"`
-	// 速度传感器数量(或者是否有速度传感器?), 如 "1"
+	// Number of speed sensors (or whether there're any speed sensors?), just set to `"1"`
 	SpeedSensor int64 `protobuf:"varint,92,opt,name=speed_sensor,json=speedSensor,proto3" json:"speed_sensor,omitempty"`
-	// 线性加速度传感器数量(或者是否有线性加速度传感器?), 如 "1"
+	// Number of linear acceleration sensors (or whether there're any linear acceleration sensors?), just set to `"1"`
 	LinearSpeedSensor int64 `protobuf:"varint,93,opt,name=linear_speed_sensor,json=linearSpeedSensor,proto3" json:"linear_speed_sensor,omitempty"`
-	// 陀螺仪传感器数量(或者是否有陀螺仪传感器?), 如 "1"
+	// Number of gyroscope sensors (or whether there're any gyroscope sensors?), just set to `"1"`
 	GyroscopeSensor int64 `protobuf:"varint,94,opt,name=gyroscope_sensor,json=gyroscopeSensor,proto3" json:"gyroscope_sensor,omitempty"`
-	// 生物识别传感器数量(或者是否有生物识别传感器?), 如 "1"
+	// Number of biometric sensors (or whether there're any biometric sensors?), just set to `"1"`
 	Biometric int64 `protobuf:"varint,95,opt,name=biometric,proto3" json:"biometric,omitempty"`
-	// 生物识别传感器类型(?), 如 "touchid"
+	// Biometric sensor types (?), like "touchid"
 	Biometrics []string `protobuf:"bytes,96,rep,name=biometrics,proto3" json:"biometrics,omitempty"`
-	// 上次 Crash Dump 时的毫秒时间戳
+	// Timestamp (in milliseconds) of the last crash dump
 	LastDumpTs int64 `protobuf:"varint,97,opt,name=last_dump_ts,json=lastDumpTs,proto3" json:"last_dump_ts,omitempty"`
-	// 留空即可
+	// ?, just leave blank
 	Location string `protobuf:"bytes,98,opt,name=location,proto3" json:"location,omitempty"`
-	// 留空即可
+	// ?, just leave blank
 	Country string `protobuf:"bytes,99,opt,name=country,proto3" json:"country,omitempty"`
-	// 留空即可
+	// ?, just leave blank
 	City string `protobuf:"bytes,100,opt,name=city,proto3" json:"city,omitempty"`
-	// ?, 默认为 0
+	// ?, just set to `0`
 	DataActivityState int32 `protobuf:"varint,101,opt,name=data_activity_state,json=dataActivityState,proto3" json:"data_activity_state,omitempty"`
-	// ?, 默认为 0
+	// ?, just set to `0`
 	DataConnectState int32 `protobuf:"varint,102,opt,name=data_connect_state,json=dataConnectState,proto3" json:"data_connect_state,omitempty"`
-	// ?, 默认为 0
+	// ?, just set to `0`
 	DataNetworkType int32 `protobuf:"varint,103,opt,name=data_network_type,json=dataNetworkType,proto3" json:"data_network_type,omitempty"`
-	// ?, 默认为 0
+	// ?, just set to `0`
 	VoiceNetworkType int32 `protobuf:"varint,104,opt,name=voice_network_type,json=voiceNetworkType,proto3" json:"voice_network_type,omitempty"`
-	// ?, 默认为 0
+	// ?, just set to `0`
 	VoiceServiceState int32 `protobuf:"varint,105,opt,name=voice_service_state,json=voiceServiceState,proto3" json:"voice_service_state,omitempty"`
-	// USB 是否连接, 启用为 "1", 否则为 "0"
+	// Whether USB is connected, just set to `0`
 	UsbConnected int32 `protobuf:"varint,106,opt,name=usb_connected,json=usbConnected,proto3" json:"usb_connected,omitempty"`
-	// ADB 是否启用, 启用为 "1", 否则为 "0"
+	// Whether ADB is enabled, just set to `0`
 	AdbEnabled int32 `protobuf:"varint,107,opt,name=adb_enabled,json=adbEnabled,proto3" json:"adb_enabled,omitempty"`
-	// 系统 UI 软件版本(?), 如 "14.0.0"
+	// System UI version (?), like "14.0.0"
 	UiVersion string `protobuf:"bytes,108,opt,name=ui_version,json=uiVersion,proto3" json:"ui_version,omitempty"`
-	// 辅助服务
+	// Accessibility service, just leave blank
 	AccessibilityService []string `protobuf:"bytes,109,rep,name=accessibility_service,json=accessibilityService,proto3" json:"accessibility_service,omitempty"`
-	// 传感器信息(需要和前面的 sensor 对应)
+	// Sensors info (should be the same with `sensor`)
 	SensorsInfo []*SensorInfo `protobuf:"bytes,110,rep,name=sensors_info,json=sensorsInfo,proto3" json:"sensors_info,omitempty"`
 	// DrmId
 	Drmid string `protobuf:"bytes,111,opt,name=drmid,proto3" json:"drmid,omitempty"`
-	// 是否存在电池
+	// Whether battery present, just set to `true`
 	BatteryPresent bool `protobuf:"varint,112,opt,name=battery_present,json=batteryPresent,proto3" json:"battery_present,omitempty"`
-	// 电池技术, 如 "Li-poly"
+	// Battery technology, like "Li-poly"
 	BatteryTechnology string `protobuf:"bytes,113,opt,name=battery_technology,json=batteryTechnology,proto3" json:"battery_technology,omitempty"`
-	// 电池温度(m℃)
+	// Battery temperature (milli degree celsius)
 	BatteryTemperature int32 `protobuf:"varint,114,opt,name=battery_temperature,json=batteryTemperature,proto3" json:"battery_temperature,omitempty"`
-	// 电池电压(mV)
+	// Battery voltage (mV)
 	BatteryVoltage int32 `protobuf:"varint,115,opt,name=battery_voltage,json=batteryVoltage,proto3" json:"battery_voltage,omitempty"`
-	// 电池是否被拔开(?), 可以为 0
+	// Whether is the battery disconnected, just set to `0`
 	BatteryPlugged int32 `protobuf:"varint,116,opt,name=battery_plugged,json=batteryPlugged,proto3" json:"battery_plugged,omitempty"`
-	// 电池健康, 如 2
+	// Battery health, like `2`
 	BatteryHealth int32 `protobuf:"varint,117,opt,name=battery_health,json=batteryHealth,proto3" json:"battery_health,omitempty"`
-	// 留空即可
+	// ?, just leave blank
 	CpuAbiList []string `protobuf:"bytes,118,rep,name=cpu_abi_list,json=cpuAbiList,proto3" json:"cpu_abi_list,omitempty"`
-	// 留空即可
+	// ?, just leave blank
 	CpuAbiLibc string `protobuf:"bytes,119,opt,name=cpu_abi_libc,json=cpuAbiLibc,proto3" json:"cpu_abi_libc,omitempty"`
-	// 留空即可
+	// ?, just leave blank
 	CpuAbiLibc64 string `protobuf:"bytes,120,opt,name=cpu_abi_libc64,json=cpuAbiLibc64,proto3" json:"cpu_abi_libc64,omitempty"`
-	// 留空即可
+	// ?, just leave blank
 	CpuProcessor string `protobuf:"bytes,121,opt,name=cpu_processor,json=cpuProcessor,proto3" json:"cpu_processor,omitempty"`
-	// 留空即可
+	// ?, just leave blank
 	CpuModelName string `protobuf:"bytes,122,opt,name=cpu_model_name,json=cpuModelName,proto3" json:"cpu_model_name,omitempty"`
-	// 留空即可
+	// ?, just leave blank
 	CpuHardware string `protobuf:"bytes,123,opt,name=cpu_hardware,json=cpuHardware,proto3" json:"cpu_hardware,omitempty"`
-	// 留空即可
+	// ?, just leave blank
 	CpuFeatures string `protobuf:"bytes,124,opt,name=cpu_features,json=cpuFeatures,proto3" json:"cpu_features,omitempty"`
 }
 
@@ -1127,21 +1146,20 @@ func (x *AndroidDeviceInfo) GetCpuFeatures() string {
 	return ""
 }
 
-// 传感器信息
+// Sensor Info
 type SensorInfo struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// 传感器名称, 如 "rotation Vector"
+	// Sensor name, like "rotation Vector"
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	// 制造商
 	Vendor string `protobuf:"bytes,2,opt,name=vendor,proto3" json:"vendor,omitempty"`
 	Version int32 `protobuf:"varint,3,opt,name=version,proto3" json:"version,omitempty"`
 	Type int32 `protobuf:"varint,4,opt,name=type,proto3" json:"type,omitempty"`
 	MaxRange float32 `protobuf:"fixed32,5,opt,name=max_range,json=maxRange,proto3" json:"max_range,omitempty"`
 	Resolution float32 `protobuf:"fixed32,6,opt,name=resolution,proto3" json:"resolution,omitempty"`
-	// 耗电量(mA)
+	// Power (mA)
 	Power float32 `protobuf:"fixed32,7,opt,name=power,proto3" json:"power,omitempty"`
 	MinDelay int32 `protobuf:"varint,8,opt,name=min_delay,json=minDelay,proto3" json:"min_delay,omitempty"`
 }
