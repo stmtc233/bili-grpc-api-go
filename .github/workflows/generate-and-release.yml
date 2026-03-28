@@ -1,0 +1,100 @@
+name: Generate Go Package And Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: Optional release tag, for example v1.0.5
+        required: false
+        default: ''
+        type: string
+      release_name:
+        description: Optional GitHub Release title
+        required: false
+        default: ''
+        type: string
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.proto'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: generate-go-package-and-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      REQUESTED_TAG: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.tag_name || '' }}
+      REQUESTED_RELEASE_NAME: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.release_name || '' }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+
+      - name: Set up protoc
+        uses: arduino/setup-protoc@v3
+        with:
+          version: '25.1'
+
+      - name: Install protoc plugins
+        run: |
+          go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.31.0
+          go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.3.0
+
+      - name: Determine release tag
+        id: tag
+        run: |
+          tag_name="$(bash scripts/next_tag.sh "${REQUESTED_TAG}")"
+          if git rev-parse "${tag_name}" >/dev/null 2>&1; then
+            echo "tag already exists: ${tag_name}" >&2
+            exit 1
+          fi
+          echo "name=${tag_name}" >> "${GITHUB_OUTPUT}"
+
+      - name: Normalize go_package
+        run: bash scripts/ensure_go_package.sh
+
+      - name: Generate Go package files
+        run: bash scripts/generate_go.sh
+
+      - name: Detect generated changes
+        id: changes
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            echo "changed=true" >> "${GITHUB_OUTPUT}"
+          else
+            echo "changed=false" >> "${GITHUB_OUTPUT}"
+          fi
+
+      - name: Commit generated files
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: regenerate protobuf stubs for ${{ steps.tag.outputs.name }} [skip ci]"
+          git push origin HEAD:${GITHUB_REF_NAME}
+
+      - name: Create and push tag
+        run: |
+          git tag "${{ steps.tag.outputs.name }}"
+          git push origin "${{ steps.tag.outputs.name }}"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag.outputs.name }}
+          name: ${{ env.REQUESTED_RELEASE_NAME || steps.tag.outputs.name }}
+          generate_release_notes: true

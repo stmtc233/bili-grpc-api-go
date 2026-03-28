@@ -1,2 +1,4 @@
-*.sh linguist-language=go
+*.sh text eol=lf linguist-language=go
+*.yml text eol=lf
+*.yaml text eol=lf
 *.go linguist-language=go

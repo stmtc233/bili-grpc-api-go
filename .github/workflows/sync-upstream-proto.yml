@@ -1,0 +1,84 @@
+name: Sync Upstream Proto
+
+on:
+  workflow_dispatch:
+    inputs:
+      upstream_ref:
+        description: Upstream branch, tag, or commit
+        required: false
+        default: ''
+        type: string
+  schedule:
+    - cron: '0 3 * * 1'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: sync-upstream-proto
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Checkout upstream repository (selected ref)
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.upstream_ref != ''
+        uses: actions/checkout@v4
+        with:
+          repository: mikufans-project/bilibili-API-collect
+          ref: ${{ github.event.inputs.upstream_ref }}
+          path: upstream
+
+      - name: Checkout upstream repository (default branch)
+        if: github.event_name != 'workflow_dispatch' || github.event.inputs.upstream_ref == ''
+        uses: actions/checkout@v4
+        with:
+          repository: mikufans-project/bilibili-API-collect
+          path: upstream
+
+      - name: Sync proto files
+        run: bash scripts/sync_upstream_proto.sh upstream/grpc_api .
+
+      - name: Normalize go_package
+        run: bash scripts/ensure_go_package.sh
+
+      - name: Capture upstream revision
+        id: upstream
+        run: |
+          echo "sha=$(git -C upstream rev-parse --short HEAD)" >> "${GITHUB_OUTPUT}"
+          echo "full_sha=$(git -C upstream rev-parse HEAD)" >> "${GITHUB_OUTPUT}"
+
+      - name: Remove upstream checkout
+        run: rm -rf upstream
+
+      - name: Detect changes
+        id: changes
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            echo "changed=true" >> "${GITHUB_OUTPUT}"
+          else
+            echo "changed=false" >> "${GITHUB_OUTPUT}"
+          fi
+
+      - name: Create pull request
+        if: steps.changes.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore: sync proto from upstream (${{ steps.upstream.outputs.sha }})"
+          branch: chore/sync-upstream-proto
+          delete-branch: true
+          title: "chore: sync proto from upstream (${{ steps.upstream.outputs.sha }})"
+          body: |
+            Synced proto files from `mikufans-project/bilibili-API-collect`.
+
+            - Upstream ref: `${{ github.event_name == 'workflow_dispatch' && github.event.inputs.upstream_ref || 'default branch' }}`
+            - Upstream commit: `${{ steps.upstream.outputs.full_sha }}`
+
+            Merge this PR and then the release workflow can generate `.pb.go` files and publish a new tag.
