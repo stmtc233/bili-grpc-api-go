@@ -1,0 +1,276 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.live.app.room.v1;
+
+enum Gender {
+  Gender_Woman = 0;
+  Gender_Man = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum InteractConnectType {
+  InteractConnectTypeAll = 0;
+  InteractConnectTypeOnlyVoice = 1;
+  InteractConnectTypeOnlyVideo = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum InteractJoinType {
+  InteractJoinTypeInvalid = 0;
+  InteractJoinTypeInvitation = 1;
+  InteractJoinTypeApply = 2;
+  InteractJoinTypeChannelLink = 3;
+  InteractJoinTypePullUp = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum InteractModeType {
+  InteractModeB2B = 0;
+  InteractModeB2C = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum InteractPositionMode {
+  InteractPositionModeDefault = 0;
+  InteractPositionModeChronological = 1;
+  InteractPositionModeCustom = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum LayoutCellOpen {
+  LayoutCellOpenInvalid = 0;
+  LayoutCellOpenVisible = 1;
+  LayoutCellOpenInvisible = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum MuteLocalMode {
+  mute_mode_none = 0;
+  mute_mode_packet = 1;
+  mute_mode_capture = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum PlayMode {
+  play_mode_default = 0;
+  play_mode_explicit = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum PubStatus {
+  pub_status_none = 0;
+  pub_status_audio = 1;
+  pub_status_video = 2;
+  pub_status_all = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum RoomStatus {
+  RoomStatusNotStart = 0;
+  RoomStatusStarted = 1;
+  RoomStatusEnded = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum SessionStatus {
+  SessionStatusNotStart = 0;
+  SessionStatusStarted = 1;
+  SessionStatusEnded = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum SubMode {
+  sub_mode_none = 0;
+  sub_mode_audio = 1;
+  sub_mode_video = 2;
+  sub_mode_all = 3;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/live/app/room/v1/GetStudioListReq.java
+message GetStudioListReq {
+  int64 roomId = 1;
+}
+
+// Source: com/bapis/bilibili/live/app/room/v1/GetStudioListResp.java
+message GetStudioListResp {
+  string status = 1;
+  repeated int64 masterList = 2;
+}
+
+// Source: com/bapis/bilibili/live/app/room/v1/InteractConnect.java
+message InteractConnect {
+  InteractConnectType interactConnectType = 1;
+  PubStatus defaultPubStatus = 2;
+  SubMode defaultSubMode = 3;
+  PlayMode audioPlayMode = 4;
+  PlayMode videoPlayMode = 5;
+  int64 connectTimeout = 6;
+}
+
+// Source: com/bapis/bilibili/live/app/room/v1/InteractLayoutData.java
+message InteractLayoutData {
+  int32 width = 1;
+  int32 height = 2;
+  LayoutCell defaultCell = 3;
+  repeated LayoutCell cells = 4;
+  RtcResolution rtcResolution = 5;
+  int32 bestAreaShowPos = 6;
+  RtcResolution rtcResolutionSimulcast = 7;
+}
+
+// Source: com/bapis/bilibili/live/app/room/v1/InteractMode.java
+message InteractMode {
+  InteractModeType interactModeType = 1;
+  repeated IntList joinTypes = 2;
+  int64 inviteTimeout = 3;
+  int64 applyTimeout = 4;
+  InteractPositionMode positionMode = 5;
+}
+
+// Source: com/bapis/bilibili/live/app/room/v1/InteractSceneConfig.java
+message InteractSceneConfig {
+  string interactSceneId = 1;
+  InteractTemplate interactTemplate = 2;
+  InteractMode interactMode = 3;
+  InteractConnect interactConnect = 4;
+  int64 interactMaxUsers = 5;
+}
+
+// Source: com/bapis/bilibili/live/app/room/v1/InteractTemplate.java
+message InteractTemplate {
+  string templateId = 1;
+  string isVariableLayout = 2;
+  repeated int64 layoutList = 3;
+  int32 showInteractUi = 4;
+  int32 layoutId = 5;
+  int32 layoutData = 6;
+}
+
+// Source: com/bapis/bilibili/live/app/room/v1/LayoutCell.java
+message LayoutCell {
+  double x = 1;
+  double y = 2;
+  double width = 3;
+  double height = 4;
+  int32 zIndex = 5;
+  int64 position = 6;
+  LayoutCellOpen defaultOpen = 7;
+  int32 mobileFontSize = 8;
+  int32 mobileAvatarSize = 9;
+  int32 pcWebFontSize = 10;
+  int32 pcWebAvatarSize = 11;
+  int32 canZoom = 12;
+  uint32 videoIndex = 13;
+  string positionText = 14;
+}
+
+// Source: com/bapis/bilibili/live/app/room/v1/Members.java
+message Members {
+  int64 uid = 1;
+  string uname = 2;
+  string face = 3;
+  int64 position = 4;
+  UserStreamControl streamControl = 5;
+  int64 joinTime = 6;
+  string linkId = 7;
+  Gender gender = 8;
+  int64 roomId = 9;
+}
+
+// Source: com/bapis/bilibili/live/app/room/v1/MultiConnInfo.java
+message MultiConnInfo {
+  repeated int64 scores = 1;
+  int64 roomOwner = 2;
+  string showScore = 3;
+}
+
+// Source: com/bapis/bilibili/live/app/room/v1/MultiConnInfoReq.java
+message MultiConnInfoReq {
+  int64 roomId = 1;
+  int64 anchorUid = 2;
+  string bizSessionId = 3;
+}
+
+// Source: com/bapis/bilibili/live/app/room/v1/MultiConnInfoResp.java
+message MultiConnInfoResp {
+  repeated int64 data = 1;
+  int64 invokingTime = 2;
+  string version = 3;
+  string layout = 4;
+  int64 roomStatus = 5;
+  string bizSessionId = 6;
+}
+
+// Source: com/bapis/bilibili/live/app/room/v1/Operator.java
+message Operator {
+  int64 anchorUid = 1;
+  int64 roomId = 2;
+  string liveKey = 3;
+  int64 uid = 4;
+  string platform = 5;
+  string buvid = 6;
+  int64 build = 7;
+  string ip = 8;
+  string mobiApp = 9;
+}
+
+// Source: com/bapis/bilibili/live/app/room/v1/RtcResolution.java
+message RtcResolution {
+  int32 verticalWidth = 1;
+  int32 verticalHeight = 2;
+  int32 horizontalWidth = 3;
+  int32 horizontalHeight = 4;
+  int64 codeRateInit = 5;
+  int64 codeRateMin = 6;
+  int64 codeRateMax = 7;
+  double scaleDownRatio = 8;
+  int64 smallBitrateWeight = 9;
+  int64 bigBitrateWeight = 10;
+  int64 smallMaxFps = 11;
+  int64 bigMaxFps = 12;
+  bool smallBitrateActive = 13;
+}
+
+// Source: com/bapis/bilibili/live/app/room/v1/UniversalInfoReq.java
+message UniversalInfoReq {
+  string bizSessionId = 1;
+  int64 anchorUid = 2;
+  int64 roomId = 3;
+}
+
+// Source: com/bapis/bilibili/live/app/room/v1/UniversalInfoResp.java
+message UniversalInfoResp {
+  string bizSessionId = 1;
+  string interactChannelId = 2;
+  InteractMode interactMode = 3;
+  InteractTemplate interactTemplate = 4;
+  InteractConnectType interactConnectType = 5;
+  int64 interactMaxUsers = 6;
+  repeated Members members = 7;
+  int64 version = 8;
+  SessionStatus sessionStatus = 9;
+  MultiConnInfo multiConnInfo = 10;
+  string businessLabel = 11;
+  int64 invokingTime = 12;
+  int64 membersVersion = 13;
+  RoomStatus roomStatus = 14;
+  int64 systemTimeUnix = 15;
+  int64 roomOwner = 16;
+  string sessionStartAt = 17;
+  int64 sessionStartAtTs = 18;
+  string roomStartAt = 19;
+  int64 roomStartAtTs = 20;
+  string traceId = 21;
+}
+
+// Source: com/bapis/bilibili/live/app/room/v1/UserStreamControl.java
+message UserStreamControl {
+  int64 audioControl = 1;
+  UserStreamControlItem videoControl = 2;
+  int32 pubSubControl = 3;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/live/app/room/v1";

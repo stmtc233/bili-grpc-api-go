@@ -1,0 +1,200 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.mine.v1;
+
+enum ArcState {
+  STATE_UNKNOWN = 0;
+  OPEN = 1;
+  ORANGE = 2;
+  WAIT = 3;
+  RECICLE = 4;
+  LOCK = 5;
+  FIXED = 6;
+  USER_DELAY = 7;
+  FAST_PUB = 8;
+  XCODE_FAIL = 9;
+  UNRECOGNIZED = -1;
+}
+
+enum CardType {
+  CARD_UNKNOWN = 0;
+  PUBGUIDE = 1;
+  UGC = 2;
+  OPUS = 3;
+  MORE = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum DisplayPos {
+  UNKNOWN_DISPLAYTYPE = 0;
+  VIP_BUTTON_STATIC = 1;
+  VIP_BUTTON_DYNAMIC = 2;
+  VIP_BUTTON_BIRTHDAY = 3;
+  VIP_BACKGROUND = 4;
+  FANS_EFFECT = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum OpusState {
+  OPUS_UNKNOWN = 0;
+  OPUS_OPEN = 1;
+  OPUS_NO_FORWARD = 2;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/mine/v1/Arc.java
+message Arc {
+  string date = 1;
+  Stat stat = 2;
+  string cover = 3;
+  int64 duration = 4;
+  int64 aid = 5;
+  int64 cid = 6;
+  ArcState state = 7;
+}
+
+// Source: com/bapis/bilibili/app/mine/v1/Button.java
+message Button {
+  string lightIcon = 1;
+  string darkIcon = 2;
+  string url = 3;
+  string text = 4;
+}
+
+// Source: com/bapis/bilibili/app/mine/v1/CardMore.java
+message CardMore {
+  Button button = 1;
+}
+
+// Source: com/bapis/bilibili/app/mine/v1/CardOpus.java
+message CardOpus {
+  Paragraph wordParagraph = 1;
+  string cover = 2;
+  string url = 3;
+  SubTitleWithStat statTitle = 4;
+  Stat stat = 5;
+  string date = 6;
+  int64 dynId = 7;
+  bool hasShare = 8;
+  OpusState state = 9;
+}
+
+// Source: com/bapis/bilibili/app/mine/v1/CardPubGuide.java
+message CardPubGuide {
+  Title title = 1;
+  Button button = 2;
+  repeated PubGuideMaterial material = 3;
+  Button moreButton = 4;
+}
+
+// Source: com/bapis/bilibili/app/mine/v1/CardUGC.java
+message CardUGC {
+  string title = 1;
+  Color titleColor = 2;
+  oneof oneof_0 {
+    SubTitleWithButton buttonTitle = 3;
+    SubTitleWithStat statTitle = 4;
+  }
+  Arc arc = 5;
+  string url = 6;
+  bool hasShare = 7;
+  string archiveVideoAuditJson = 8;
+  enum SubtitleCase {
+    BUTTON_TITLE = 3;
+    STAT_TITLE = 4;
+    SUBTITLE_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/mine/v1/Color.java
+message Color {
+  string lightColor = 1;
+  string darkColor = 2;
+}
+
+// Source: com/bapis/bilibili/app/mine/v1/DeviceFeatureReq.java
+message DeviceFeatureReq {
+}
+
+// Source: com/bapis/bilibili/app/mine/v1/DeviceFeatureResp.java
+message DeviceFeatureResp {
+  string actionData = 1;
+}
+
+// Source: com/bapis/bilibili/app/mine/v1/DisplayReportReq.java
+message DisplayReportReq {
+  repeated int64 content = 1;
+}
+
+// Source: com/bapis/bilibili/app/mine/v1/PubCard.java
+message PubCard {
+  oneof oneof_0 {
+    CardPubGuide pubGuide = 1;
+    CardUGC ugc = 2;
+    CardOpus opus = 3;
+    CardMore more = 4;
+  }
+  CardType type = 5;
+  enum CardCase {
+    PUB_GUIDE = 1;
+    UGC = 2;
+    OPUS = 3;
+    MORE = 4;
+    CARD_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/mine/v1/PubGuideMaterial.java
+message PubGuideMaterial {
+  int64 id = 1;
+  Title title = 2;
+  string cover = 3;
+  string url = 4;
+}
+
+// Source: com/bapis/bilibili/app/mine/v1/PubModuleReq.java
+message PubModuleReq {
+  int64 userOriginalState = 1;
+  repeated int64 dynIds = 2;
+  int64 cardNum = 3;
+}
+
+// Source: com/bapis/bilibili/app/mine/v1/PubModuleResp.java
+message PubModuleResp {
+  repeated PubCard pubCard = 1;
+}
+
+// Source: com/bapis/bilibili/app/mine/v1/Stat.java
+message Stat {
+  string playIcon = 1;
+  string play = 2;
+  string likeIcon = 3;
+  string like = 4;
+}
+
+// Source: com/bapis/bilibili/app/mine/v1/SubTitleWithButton.java
+message SubTitleWithButton {
+  string icon = 1;
+  string url = 2;
+  Color backgroundColor = 3;
+  string text = 4;
+  Color textColor = 5;
+}
+
+// Source: com/bapis/bilibili/app/mine/v1/SubTitleWithStat.java
+message SubTitleWithStat {
+  repeated string icon = 1;
+  string text = 2;
+}
+
+// Source: com/bapis/bilibili/app/mine/v1/Title.java
+message Title {
+  string main = 1;
+  string sub = 2;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/mine/v1";

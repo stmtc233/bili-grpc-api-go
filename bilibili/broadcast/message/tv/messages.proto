@@ -1,0 +1,197 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.broadcast.message.tv;
+
+enum LiveSource {
+  LiveSourceMLive = 0;
+  LiveSourceBizTrigger = 1;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/AccountNotify.java
+message AccountNotify {
+  string biz = 1;
+  string data = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/CommonPushNotify.java
+message CommonPushNotify {
+  string cmd = 1;
+  string data = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/DanmakuElem.java
+message DanmakuElem {
+  int64 id = 1;
+  int32 progress = 2;
+  int32 mode = 3;
+  int32 fontsize = 4;
+  uint32 color = 5;
+  string midHash = 6;
+  string content = 7;
+  int64 ctime = 8;
+  int32 weight = 9;
+  string action = 10;
+  int32 pool = 11;
+  string idStr = 12;
+  int32 attr = 13;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/DmActivityReply.java
+message DmActivityReply {
+  string roomId = 1;
+  repeated string activityList = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/DmLiveElem.java
+message DmLiveElem {
+  int64 roomId = 1;
+  int64 roomUid = 2;
+  int64 uid = 3;
+  string uname = 4;
+  int32 userLevel = 5;
+  uint32 color = 6;
+  string content = 7;
+  int64 time = 8;
+  string msgId = 9;
+  int32 msgType = 10;
+  int32 areaId = 11;
+  int32 parentAreaId = 12;
+  int32 dmType = 13;
+  string idStr = 14;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/DmLiveReply.java
+message DmLiveReply {
+  repeated DmLiveElem elems = 1;
+  int32 state = 2;
+  int32 source = 3;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/DmLiveSwitchReload.java
+message DmLiveSwitchReload {
+  bool reload = 1;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/DmSegLiveReply.java
+message DmSegLiveReply {
+  repeated DanmakuElem elems = 1;
+  int32 state = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/EsportsNotify.java
+message EsportsNotify {
+  int64 cid = 1;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/FeedClientSmartNotify.java
+message FeedClientSmartNotify {
+  int64 mid = 1;
+  string cards = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/LiveBottomConfNotify.java
+message LiveBottomConfNotify {
+  int64 roomId = 1;
+  string bottomMsg = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/LiveCommonNotify.java
+message LiveCommonNotify {
+  string cmd = 1;
+  string data = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/LiveSkipNotify.java
+message LiveSkipNotify {
+  int64 liveId = 1;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/LiveStatusNotify.java
+message LiveStatusNotify {
+  int64 status = 1;
+  string msg = 2;
+  int64 cid = 3;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/LiveViewerMsgNotify.java
+message LiveViewerMsgNotify {
+  int64 roomId = 1;
+  string viewerMsg = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/MainRedDotReply.java
+message MainRedDotReply {
+  int64 mid = 1;
+  int64 reddot = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/ModResource.java
+message ModResource {
+  string mobiPool = 1;
+  string mobiModule = 2;
+  int64 mobiModuleVersion = 3;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/NotifyPop.java
+message NotifyPop {
+  int64 id = 1;
+  int32 style = 2;
+  string img = 3;
+  int32 textType = 4;
+  string textTop = 5;
+  string textBottom = 6;
+  int32 expire = 7;
+  repeated NotifyPopBtn notifyBtnList = 8;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/NotifyPopBtn.java
+message NotifyPopBtn {
+  string text = 1;
+  string url = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/NotifyPopReply.java
+message NotifyPopReply {
+  int64 mid = 1;
+  NotifyPop notify = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/OgvPayOrderReply.java
+message OgvPayOrderReply {
+  int64 mid = 1;
+  int64 seasonId = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/ProjLiveEventNotify.java
+message ProjLiveEventNotify {
+  int64 roomId = 1;
+  int64 eventType = 2;
+  string eventMsg = 3;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/ProjReply.java
+message ProjReply {
+  int64 cmdType = 1;
+  int64 mid = 2;
+  int64 aid = 3;
+  int64 cid = 4;
+  int64 videoType = 5;
+  int64 epId = 6;
+  int64 seasonId = 7;
+  int64 seekTs = 8;
+  string extra = 9;
+  int64 roomId = 10;
+  string deviceInfo = 11;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/PublicityNotify.java
+message PublicityNotify {
+  int64 publicityId = 1;
+  int64 roomId = 2;
+  int64 status = 3;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/message/tv";

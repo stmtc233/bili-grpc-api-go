@@ -1,0 +1,14 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.rpc;
+
+// Source: com/bapis/bilibili/rpc/Status.java
+message Status {
+  int32 code = 1;
+  string message_ = 2;
+  repeated Any details = 3;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/rpc";

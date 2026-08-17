@@ -1,0 +1,64 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.translation.v1;
+
+enum TranslationBusiness {
+  TRANS_BIZ_UNSPECIFIED = 0;
+  TRANS_BIZ_ARC = 1;
+  TRANS_BIZ_REPLY = 2;
+  TRANS_BIZ_OPUS = 3;
+  TRANS_BIZ_LIVE = 4;
+  TRANS_BIZ_CHEESE = 5;
+  TRANS_BIZ_TAG = 6;
+  TRANS_BIZ_DANMU = 7;
+  TRANS_BIZ_UGC_SEASON = 8;
+  TRANS_BIZ_OGV_SEASON = 9;
+  TRANS_BIZ_OGV_EPISODE = 10;
+  TRANS_BIZ_OGV_MEDIA = 11;
+  TRANS_BIZ_OGV_SECTION = 12;
+  TRANS_BIZ_CHARGING = 13;
+  TRANS_BIZ_IM = 14;
+  TRANS_BIZ_OGV_SERIES = 15;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/translation/v1/TranslatedField.java
+message TranslatedField {
+  string field = 1;
+  string originalText = 2;
+  string translatedText = 3;
+  bool isTranslated = 4;
+  string translatedLang = 5;
+  string translatedRegion = 6;
+  string translatedScript = 7;
+}
+
+// Source: com/bapis/bilibili/app/translation/v1/TranslationBatchReply.java
+message TranslationBatchReply {
+  repeated TranslationSimpleReply results = 1;
+}
+
+// Source: com/bapis/bilibili/app/translation/v1/TranslationBatchReq.java
+message TranslationBatchReq {
+  string spmid = 1;
+  repeated TranslationSimpleReq items = 2;
+}
+
+// Source: com/bapis/bilibili/app/translation/v1/TranslationSimpleReply.java
+message TranslationSimpleReply {
+  repeated TranslatedField results = 1;
+}
+
+// Source: com/bapis/bilibili/app/translation/v1/TranslationSimpleReq.java
+message TranslationSimpleReq {
+  TranslationBusiness bizType = 1;
+  string businessId = 2;
+  string spmid = 3;
+  repeated string fields = 4;
+  repeated string text = 5;
+  map<string, string> ext = 6;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/translation/v1";

@@ -1,0 +1,175 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.pgc.gateway.player.v1;
+
+// Source: com/bapis/bilibili/pgc/gateway/player/v1/BusinessInfo.java
+message BusinessInfo {
+  bool isPreview = 1;
+  bool bp = 2;
+  string marlinToken = 3;
+}
+
+// Source: com/bapis/bilibili/pgc/gateway/player/v1/Event.java
+message Event {
+  Shake shake = 1;
+}
+
+// Source: com/bapis/bilibili/pgc/gateway/player/v1/LivePlayInfo.java
+message LivePlayInfo {
+  int32 currentQn = 1;
+  repeated QualityDescription qualityDescription = 2;
+  repeated ResponseDataUrl durl = 3;
+}
+
+// Source: com/bapis/bilibili/pgc/gateway/player/v1/LivePlayViewReply.java
+message LivePlayViewReply {
+  RoomInfo roomInfo = 1;
+  LivePlayInfo playInfo = 2;
+}
+
+// Source: com/bapis/bilibili/pgc/gateway/player/v1/LivePlayViewReq.java
+message LivePlayViewReq {
+  int64 epId = 1;
+  uint32 quality = 2;
+  uint32 ptype = 3;
+  bool https = 4;
+  uint32 playType = 5;
+  int32 deviceType = 6;
+}
+
+// Source: com/bapis/bilibili/pgc/gateway/player/v1/PlayAbilityConf.java
+message PlayAbilityConf {
+  bool backgroundPlayDisable = 1;
+  bool flipDisable = 2;
+  bool castDisable = 3;
+  bool feedbackDisable = 4;
+  bool subtitleDisable = 5;
+  bool playbackRateDisable = 6;
+  bool timeUpDisable = 7;
+  bool playbackModeDisable = 8;
+  bool scaleModeDisable = 9;
+  bool likeDisable = 10;
+  bool dislikeDisable = 11;
+  bool coinDisable = 12;
+  bool elecDisable = 13;
+  bool shareDisable = 14;
+  bool screenShotDisable = 15;
+  bool lockScreenDisable = 16;
+  bool recommendDisable = 17;
+  bool playbackSpeedDisable = 18;
+  bool definitionDisable = 19;
+  bool selectionsDisable = 20;
+  bool nextDisable = 21;
+  bool editDmDisable = 22;
+  bool smallWindowDisable = 23;
+  bool shakeDisable = 24;
+  bool outerDmDisable = 25;
+  bool innerDmDisable = 26;
+  bool freyaEnterDisable = 27;
+  bool dolbyDisable = 28;
+  bool freyaFullDisable = 29;
+  bool skipOpedSwitchDisable = 30;
+}
+
+// Source: com/bapis/bilibili/pgc/gateway/player/v1/PlayViewReply.java
+message PlayViewReply {
+  VideoInfo videoInfo = 1;
+  PlayAbilityConf playConf = 2;
+  BusinessInfo business = 3;
+  Event event = 4;
+}
+
+// Source: com/bapis/bilibili/pgc/gateway/player/v1/PlayViewReq.java
+message PlayViewReq {
+  int64 epId = 1;
+  int64 cid = 2;
+  int64 qn = 3;
+  int32 fnver = 4;
+  int32 fnval = 5;
+  uint32 download = 6;
+  int32 forceHost = 7;
+  bool fourk = 8;
+  string spmid = 9;
+  string fromSpmid = 10;
+  int32 teenagersMode = 11;
+  CodeType preferCodecType = 12;
+  bool isPreview = 13;
+  int64 roomId = 14;
+}
+
+// Source: com/bapis/bilibili/pgc/gateway/player/v1/ProjectReply.java
+message ProjectReply {
+  PlayURLReply project = 1;
+}
+
+// Source: com/bapis/bilibili/pgc/gateway/player/v1/ProjectReq.java
+message ProjectReq {
+  int64 epId = 1;
+  int64 cid = 2;
+  int64 qn = 3;
+  int32 fnver = 4;
+  int32 fnval = 5;
+  uint32 download = 6;
+  int32 forceHost = 7;
+  bool fourk = 8;
+  string spmid = 9;
+  string fromSpmid = 10;
+  int32 protocol = 11;
+  int32 deviceType = 12;
+  bool useNewProjectCode = 13;
+  int64 aid = 14;
+  string sku = 15;
+  string remoteIp = 16;
+  string remotePort = 17;
+  string dyeid = 18;
+}
+
+// Source: com/bapis/bilibili/pgc/gateway/player/v1/QualityDescription.java
+message QualityDescription {
+  int32 qn = 1;
+  string desc = 2;
+}
+
+// Source: com/bapis/bilibili/pgc/gateway/player/v1/ResponseDataUrl.java
+message ResponseDataUrl {
+  string url = 1;
+  uint32 streamType = 2;
+  uint32 ptag = 3;
+}
+
+// Source: com/bapis/bilibili/pgc/gateway/player/v1/RoomInfo.java
+message RoomInfo {
+  int64 roomId = 1;
+  int64 uid = 2;
+  RoomStatusInfo status = 3;
+  RoomShowInfo show = 4;
+}
+
+// Source: com/bapis/bilibili/pgc/gateway/player/v1/RoomShowInfo.java
+message RoomShowInfo {
+  int64 shortId = 1;
+  int64 popularityCount = 8;
+  int64 liveStartTime = 10;
+}
+
+// Source: com/bapis/bilibili/pgc/gateway/player/v1/RoomStatusInfo.java
+message RoomStatusInfo {
+  int64 liveStatus = 1;
+  int64 liveScreenType = 2;
+  int64 liveMark = 3;
+  int64 lockStatus = 4;
+  int64 lockTime = 5;
+  int64 hiddenStatus = 6;
+  int64 hiddenTime = 7;
+  int64 liveType = 8;
+  int64 roomShield = 9;
+}
+
+// Source: com/bapis/bilibili/pgc/gateway/player/v1/Shake.java
+message Shake {
+  string file = 1;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/pgc/gateway/player/v1";

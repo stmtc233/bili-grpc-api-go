@@ -1,0 +1,26 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.broadcast.message.mall;
+
+enum MsgType {
+  USER_CALL = 0;
+  DEL_ROOM = 1;
+  OPPOSITE_LEAVE = 2;
+  PUSH_ITEMS = 3;
+  MERCHANT_ADD = 4;
+  USER_ADD = 5;
+  MERCHANT_REJET = 6;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/mall/NotifyReq.java
+message NotifyReq {
+  uint64 roomId = 1;
+  int32 msgType = 2;
+  string content = 3;
+  string jumpUrl = 4;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/message/mall";

@@ -1,0 +1,687 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.playurl.v1;
+
+enum Business {
+  UNKNOWN = 0;
+  STORY = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum ButtonAction {
+  BUTTON_UNKNOWN = 0;
+  CHARGINGPLUS = 1;
+  VIP = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum CanWatchQnReason {
+  CAN_WATCH_QN_REASON_DEFAULT = 0;
+  CAN_WATCH_QN_REASON_VIP_QN_TRY_WATCH = 1;
+  CAN_WATCH_QN_REASON_CTCC_HOME_NETWORK = 2;
+  CAN_WATCH_QN_REASON_BIG_VIP = 3;
+  CAN_WATCH_QN_REASON_TV_BIG_VIP = 4;
+  CAN_WATCH_QN_REASON_OGV_TVOD_PAY = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum CodeType {
+  NOCODE = 0;
+  CODE264 = 1;
+  CODE265 = 2;
+  CODEAV1 = 3;
+  CODE266 = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum ConfType {
+  NoType = 0;
+  FLIPCONF = 1;
+  CASTCONF = 2;
+  FEEDBACK = 3;
+  SUBTITLE = 4;
+  PLAYBACKRATE = 5;
+  TIMEUP = 6;
+  PLAYBACKMODE = 7;
+  SCALEMODE = 8;
+  BACKGROUNDPLAY = 9;
+  LIKE = 10;
+  DISLIKE = 11;
+  COIN = 12;
+  ELEC = 13;
+  SHARE = 14;
+  SCREENSHOT = 15;
+  LOCKSCREEN = 16;
+  RECOMMEND = 17;
+  PLAYBACKSPEED = 18;
+  DEFINITION = 19;
+  SELECTIONS = 20;
+  NEXT = 21;
+  EDITDM = 22;
+  SMALLWINDOW = 23;
+  SHAKE = 24;
+  OUTERDM = 25;
+  INNERDM = 26;
+  PANORAMA = 27;
+  DOLBY = 28;
+  COLORFILTER = 29;
+  LOSSLESS = 30;
+  UNRECOGNIZED = -1;
+}
+
+enum Group {
+  UnknownGroup = 0;
+  A = 1;
+  B = 2;
+  C = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum GuideStyle {
+  STYLE_UNKNOWN = 0;
+  CHARGING_TEXT = 1;
+  VERTICAL_TEXT = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum LimitWatchQnReason {
+  LIMIT_WATCH_QN_REASON_DEFAULT = 0;
+  LIMIT_WATCH_QN_REASON_QN_VIP_PLAY = 1;
+  LIMIT_WATCH_QN_REASON_CTCC_HOME_NETWORK_DEVICE_LIMIT = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum PlayErr {
+  NoErr = 0;
+  WithMultiDeviceLoginErr = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum PlayLimitCode {
+  PLCUnkown = 0;
+  PLCUgcNotPayed = 1;
+  PLCChargingPlusNotPass = 2;
+  PLCChargingPlusUpgrade = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum ToastType {
+  TOAST_TYPE_UNKNOWN = 0;
+  CHARGING_TOAST = 1;
+  CTCC_TOAST = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum VideoType {
+  Unknown = 0;
+  FLV = 1;
+  DASH = 2;
+  MP4 = 3;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/AB.java
+message AB {
+  Glance glance = 1;
+  Group group_ = 2;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/ArcConf.java
+message ArcConf {
+  bool isSupport = 1;
+  bool disabled = 2;
+  ExtraContent extraContent = 3;
+  repeated int64 unsupportScene = 4;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/BadgeInfo.java
+message BadgeInfo {
+  string text = 1;
+  string textColor = 2;
+  GradientColor bgGradientColor = 3;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/BottomDisplay.java
+message BottomDisplay {
+  TextInfo title = 1;
+  string icon = 2;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/ButtonInfo.java
+message ButtonInfo {
+  string text = 1;
+  string textColor = 2;
+  string textColorNight = 3;
+  string bgColor = 4;
+  string bgColorNight = 5;
+  string link = 6;
+  ButtonAction actionType = 7;
+  Report report = 8;
+  string frameColor = 9;
+  string icon = 10;
+  GradientColor bgGradientColor = 11;
+  BadgeInfo badge = 12;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/ButtonStyle.java
+message ButtonStyle {
+  string text = 1;
+  string textColor = 2;
+  string bgColor = 3;
+  string jumpLink = 4;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/Chronos.java
+message Chronos {
+  string md5 = 1;
+  string file = 2;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/CloudConf.java
+message CloudConf {
+  bool show = 1;
+  ConfType confType = 2;
+  FieldValue fieldValue = 3;
+  ConfValue confValue = 4;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/ComprehensiveToast.java
+message ComprehensiveToast {
+  ToastType type = 1;
+  ButtonInfo button = 2;
+  string icon = 3;
+  TextInfo toastText = 4;
+  Report report = 5;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/ConfValue.java
+message ConfValue {
+  oneof oneof_0 {
+    bool switchVal = 1;
+    int64 selectedVal = 2;
+  }
+  enum ValueCase {
+    SWITCH_VAL = 1;
+    SELECTED_VAL = 2;
+    VALUE_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/DashItem.java
+message DashItem {
+  uint32 id = 1;
+  string baseUrl = 2;
+  repeated string backupUrl = 3;
+  uint32 bandwidth = 4;
+  uint32 codecid = 5;
+  string md5 = 6;
+  uint64 size = 7;
+  string frameRate = 8;
+  string widevinePssh = 9;
+  string bilidrmUri = 10;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/DashVideo.java
+message DashVideo {
+  string baseUrl = 1;
+  repeated string backupUrl = 2;
+  uint32 bandwidth = 3;
+  uint32 codecid = 4;
+  string md5 = 5;
+  uint64 size = 6;
+  uint32 audioId = 7;
+  bool noRexcode = 8;
+  string frameRate = 9;
+  uint32 width = 10;
+  uint32 height = 11;
+  string widevinePssh = 12;
+  string bilidrmUri = 13;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/Dialog.java
+message Dialog {
+  GuideStyle styleType = 1;
+  Report report = 2;
+  TextInfo title = 3;
+  TextInfo subtitle = 4;
+  repeated ButtonInfo button = 5;
+  repeated BottomDisplay bottomDisplay = 6;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/DolbyItem.java
+message DolbyItem {
+  Type type = 1;
+  repeated DashItem audio = 2;
+  enum Type {
+    NONE = 0;
+    COMMON = 1;
+    ATMOS = 2;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/Event.java
+message Event {
+  Shake shake = 1;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/ExtraContent.java
+message ExtraContent {
+  string disabledReason = 1;
+  int64 disabledCode = 2;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/FieldValue.java
+message FieldValue {
+  oneof oneof_0 {
+    bool switch = 1;
+  }
+  enum ValueCase {
+    SWITCH = 1;
+    VALUE_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/FormatDescription.java
+message FormatDescription {
+  uint32 quality = 1;
+  string format = 2;
+  string description = 3;
+  string newDescription = 4;
+  string displayDesc = 5;
+  string superscript = 6;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/Glance.java
+message Glance {
+  bool canWatch = 1;
+  int64 times = 2;
+  int64 duration = 3;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/GradientColor.java
+message GradientColor {
+  string startColor = 1;
+  string endColor = 2;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/LossLessItem.java
+message LossLessItem {
+  bool isLosslessAudio = 1;
+  DashItem audio = 2;
+  bool needVip = 3;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/MultiDashVideo.java
+message MultiDashVideo {
+  repeated DashVideo dashVideos = 1;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/PlayAbilityConf.java
+message PlayAbilityConf {
+  CloudConf backgroundPlayConf = 1;
+  CloudConf flipConf = 2;
+  CloudConf castConf = 3;
+  CloudConf feedbackConf = 4;
+  CloudConf subtitleConf = 5;
+  CloudConf playbackRateConf = 6;
+  CloudConf timeUpConf = 7;
+  CloudConf playbackModeConf = 8;
+  CloudConf scaleModeConf = 9;
+  CloudConf likeConf = 10;
+  CloudConf dislikeConf = 11;
+  CloudConf coinConf = 12;
+  CloudConf elecConf = 13;
+  CloudConf shareConf = 14;
+  CloudConf screenShotConf = 15;
+  CloudConf lockScreenConf = 16;
+  CloudConf recommendConf = 17;
+  CloudConf playbackSpeedConf = 18;
+  CloudConf definitionConf = 19;
+  CloudConf selectionsConf = 20;
+  CloudConf nextConf = 21;
+  CloudConf editDmConf = 22;
+  CloudConf smallWindowConf = 23;
+  CloudConf shakeConf = 24;
+  CloudConf outerDmConf = 25;
+  CloudConf innerDmConf = 26;
+  CloudConf panoramaConf = 27;
+  CloudConf dolbyConf = 28;
+  CloudConf colorFilterConf = 29;
+  CloudConf lossLessConf = 30;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/PlayArc.java
+message PlayArc {
+  bool isPreview = 1;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/PlayArcConf.java
+message PlayArcConf {
+  ArcConf backgroundPlayConf = 1;
+  ArcConf flipConf = 2;
+  ArcConf castConf = 3;
+  ArcConf feedbackConf = 4;
+  ArcConf subtitleConf = 5;
+  ArcConf playbackRateConf = 6;
+  ArcConf timeUpConf = 7;
+  ArcConf playbackModeConf = 8;
+  ArcConf scaleModeConf = 9;
+  ArcConf likeConf = 10;
+  ArcConf dislikeConf = 11;
+  ArcConf coinConf = 12;
+  ArcConf elecConf = 13;
+  ArcConf shareConf = 14;
+  ArcConf screenShotConf = 15;
+  ArcConf lockScreenConf = 16;
+  ArcConf recommendConf = 17;
+  ArcConf playbackSpeedConf = 18;
+  ArcConf definitionConf = 19;
+  ArcConf selectionsConf = 20;
+  ArcConf nextConf = 21;
+  ArcConf editDmConf = 22;
+  ArcConf smallWindowConf = 23;
+  ArcConf shakeConf = 24;
+  ArcConf outerDmConf = 25;
+  ArcConf innerDmConf = 26;
+  ArcConf panoramaConf = 27;
+  ArcConf dolbyConf = 28;
+  ArcConf screenRecordingConf = 29;
+  ArcConf colorFilterConf = 30;
+  ArcConf lossLessConf = 31;
+  ArcConf systemRecordConf = 32;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/PlayConfEditReply.java
+message PlayConfEditReply {
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/PlayConfEditReq.java
+message PlayConfEditReq {
+  repeated PlayConfState playConf = 1;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/PlayConfReply.java
+message PlayConfReply {
+  PlayAbilityConf playConf = 1;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/PlayConfReq.java
+message PlayConfReq {
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/PlayConfState.java
+message PlayConfState {
+  ConfType confType = 1;
+  bool show = 2;
+  FieldValue fieldValue = 3;
+  ConfValue confValue = 4;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/PlayLimit.java
+message PlayLimit {
+  PlayLimitCode code = 1;
+  string message_ = 2;
+  string subMessage = 3;
+  ButtonStyle button = 4;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/PlayURLReply.java
+message PlayURLReply {
+  uint32 quality = 1;
+  string format = 2;
+  uint64 timelength = 3;
+  uint32 videoCodecid = 4;
+  uint32 fnver = 5;
+  uint32 fnval = 6;
+  bool videoProject = 7;
+  repeated ResponseUrl durl = 8;
+  ResponseDash dash = 9;
+  int32 noRexcode = 10;
+  UpgradeLimit upgradeLimit = 11;
+  repeated FormatDescription supportFormats = 12;
+  VideoType type = 13;
+  VipRisk vipRisk = 14;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/PlayURLReq.java
+message PlayURLReq {
+  int64 aid = 1;
+  int64 cid = 2;
+  int64 qn = 3;
+  int32 fnver = 4;
+  int32 fnval = 5;
+  uint32 download = 6;
+  int32 forceHost = 7;
+  bool fourk = 8;
+  string spmid = 9;
+  string fromSpmid = 10;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/PlayViewReply.java
+message PlayViewReply {
+  VideoInfo videoInfo = 1;
+  PlayAbilityConf playConf = 2;
+  UpgradeLimit upgradeLimit = 3;
+  Chronos chronos = 4;
+  PlayArcConf playArc = 5;
+  Event event = 6;
+  AB ab = 7;
+  PlayLimit playLimit = 8;
+  ViewInfo viewInfo = 9;
+  PlayArc arc = 10;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/PlayViewReq.java
+message PlayViewReq {
+  int64 aid = 1;
+  int64 cid = 2;
+  int64 qn = 3;
+  int32 fnver = 4;
+  int32 fnval = 5;
+  uint32 download = 6;
+  int32 forceHost = 7;
+  bool fourk = 8;
+  string spmid = 9;
+  string fromSpmid = 10;
+  int32 teenagersMode = 11;
+  CodeType preferCodecType = 12;
+  Business business = 13;
+  int64 voiceBalance = 14;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/ProjectReply.java
+message ProjectReply {
+  PlayURLReply project = 1;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/ProjectReq.java
+message ProjectReq {
+  int64 aid = 1;
+  int64 cid = 2;
+  int64 qn = 3;
+  int32 fnver = 4;
+  int32 fnval = 5;
+  uint32 download = 6;
+  int32 forceHost = 7;
+  bool fourk = 8;
+  string spmid = 9;
+  string fromSpmid = 10;
+  int32 protocol = 11;
+  int32 deviceType = 12;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/PromptBar.java
+message PromptBar {
+  TextInfo title = 1;
+  bytes subtitle = 2;
+  string subTitleIcon = 3;
+  string bgImage = 4;
+  repeated ButtonInfo button = 5;
+  Report report = 6;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/Report.java
+message Report {
+  string showEventId = 1;
+  string clickEventId = 2;
+  string extends = 3;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/ResponseDash.java
+message ResponseDash {
+  repeated DashItem video = 1;
+  repeated DashItem audio = 2;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/ResponseUrl.java
+message ResponseUrl {
+  uint32 order = 1;
+  uint64 length = 2;
+  uint64 size = 3;
+  string url = 4;
+  repeated string backupUrl = 5;
+  string md5 = 6;
+  uint32 quality = 7;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/Scheme.java
+message Scheme {
+  ActionType actionType = 1;
+  string toast = 2;
+  enum ActionType {
+    UNKNOWN = 0;
+    SHOW_TOAST = 1;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/SegmentVideo.java
+message SegmentVideo {
+  repeated ResponseUrl segment = 1;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/Shake.java
+message Shake {
+  string file = 1;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/Stream.java
+message Stream {
+  StreamInfo streamInfo = 1;
+  oneof oneof_0 {
+    DashVideo dashVideo = 2;
+    SegmentVideo segmentVideo = 3;
+    MultiDashVideo multiDashVideo = 4;
+  }
+  enum ContentCase {
+    DASH_VIDEO = 2;
+    SEGMENT_VIDEO = 3;
+    MULTI_DASH_VIDEO = 4;
+    CONTENT_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/StreamInfo.java
+message StreamInfo {
+  uint32 quality = 1;
+  string format = 2;
+  string description = 3;
+  PlayErr errCode = 4;
+  StreamLimit limit = 5;
+  bool needVip = 6;
+  bool needLogin = 7;
+  bool intact = 8;
+  bool noRexcode = 9;
+  int64 attribute = 10;
+  string newDescription = 11;
+  string displayDesc = 12;
+  string superscript = 13;
+  bool vipFree = 14;
+  string subtitle = 15;
+  Scheme scheme = 16;
+  bool supportDrm = 17;
+  bool hasPreview = 18;
+  uint64 extendAttribute = 19;
+  CanWatchQnReason canWatchQnReason = 20;
+  LimitWatchQnReason limitWatchReason = 21;
+  map<string, string> reportParams = 22;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/StreamLimit.java
+message StreamLimit {
+  string title = 1;
+  string uri = 2;
+  string msg = 3;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/TextInfo.java
+message TextInfo {
+  string text = 1;
+  string textColor = 2;
+  string textColorNight = 3;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/UpgradeButton.java
+message UpgradeButton {
+  string title = 1;
+  string link = 2;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/UpgradeLimit.java
+message UpgradeLimit {
+  int32 code = 1;
+  string message_ = 2;
+  string image = 3;
+  UpgradeButton button = 4;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/VideoInfo.java
+message VideoInfo {
+  uint32 quality = 1;
+  string format = 2;
+  uint64 timelength = 3;
+  uint32 videoCodecid = 4;
+  repeated Stream streamList = 5;
+  repeated DashItem dashAudio = 6;
+  DolbyItem dolby = 7;
+  VolumeInfo volume = 8;
+  LossLessItem lossLessItem = 9;
+  uint64 mainTimelength = 10;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/ViewInfo.java
+message ViewInfo {
+  map<string, Dialog> dialogMap = 1;
+  PromptBar promptBar = 2;
+  repeated ComprehensiveToast toasts = 3;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/VipRisk.java
+message VipRisk {
+  bool allow = 1;
+  int64 type = 2;
+  int64 reason = 3;
+  int64 deviceStatus = 4;
+}
+
+// Source: com/bapis/bilibili/app/playurl/v1/VolumeInfo.java
+message VolumeInfo {
+  double measuredI = 1;
+  double measuredLra = 2;
+  double measuredTp = 3;
+  double measuredThreshold = 4;
+  double targetOffset = 5;
+  double targetI = 6;
+  double targetTp = 7;
+  map<string, string> multiSceneArgs = 8;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/playurl/v1";

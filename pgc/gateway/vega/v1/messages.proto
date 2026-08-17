@@ -1,0 +1,61 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.pgc.gateway.vega.v1;
+
+// Source: com/bapis/pgc/gateway/vega/v1/AuthReq.java
+message AuthReq {
+}
+
+// Source: com/bapis/pgc/gateway/vega/v1/AuthResp.java
+message AuthResp {
+}
+
+// Source: com/bapis/pgc/gateway/vega/v1/FrameOption.java
+message FrameOption {
+  int64 vegaId = 1;
+  string reqId = 2;
+  int64 sequence = 3;
+  bool isAck = 4;
+  Status status = 5;
+  string ackOrigin = 6;
+  int64 mid = 7;
+}
+
+// Source: com/bapis/pgc/gateway/vega/v1/HeartbeatReq.java
+message HeartbeatReq {
+}
+
+// Source: com/bapis/pgc/gateway/vega/v1/HeartbeatResp.java
+message HeartbeatResp {
+}
+
+// Source: com/bapis/pgc/gateway/vega/v1/MessageAckReq.java
+message MessageAckReq {
+  string vegaId = 1;
+  string reqId = 2;
+  string origin = 3;
+  string targetPath = 4;
+}
+
+// Source: com/bapis/pgc/gateway/vega/v1/SubscribeReq.java
+message SubscribeReq {
+  repeated TargetPath targetPaths = 1;
+}
+
+// Source: com/bapis/pgc/gateway/vega/v1/TargetPath.java
+message TargetPath {
+  string key = 1;
+  Any subs = 2;
+}
+
+// Source: com/bapis/pgc/gateway/vega/v1/VegaFrame.java
+message VegaFrame {
+  FrameOption options = 1;
+  string routePath = 2;
+  Any body = 3;
+  bytes subbiz = 4;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/pgc/gateway/vega/v1";

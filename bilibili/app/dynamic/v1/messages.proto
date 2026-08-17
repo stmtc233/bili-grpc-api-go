@@ -1,0 +1,1053 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.dynamic.v1;
+
+enum BgType {
+  bg_type_default = 0;
+  bg_type_face = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum BubbleModuleType {
+  BUBBLE_MODULE_NONE = 0;
+  BUBBLE_MODULE_USER = 1;
+  BUBBLE_MODULE_TEXT = 2;
+  BUBBLE_MODULE_COLORED_TIP = 3;
+  BUBBLE_MODULE_PIC = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum CornerType {
+  corner_type_none = 0;
+  corner_type_text = 1;
+  corner_type_animation = 2;
+  corner_type_static = 3;
+  corner_type_red_dot = 4;
+  corner_type_number = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum FoldType {
+  FoldTypeZero = 0;
+  FoldTypePublish = 1;
+  FoldTypeFrequent = 2;
+  FoldTypeUnite = 3;
+  FoldTypeLimit = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum MediaType {
+  MediaTypeNone = 0;
+  MediaTypeUGC = 1;
+  MediaTypePGC = 2;
+  MediaTypeLive = 3;
+  MediaTypeVCS = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum RelationStatus {
+  relation_status_none = 0;
+  relation_status_nofollow = 1;
+  relation_status_follow = 2;
+  relation_status_followed = 3;
+  relation_status_mutual_concern = 4;
+  relation_status_special = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum StyleType {
+  STYLE_TYPE_NONE = 0;
+  STYLE_TYPE_LIVE = 1;
+  STYLE_TYPE_DYN_UP = 2;
+  STYLE_TYPE_OGV_UP = 3;
+  STYLE_TYPE_COLLECTION_UP = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum SVideoType {
+  TypeNone = 0;
+  TypeDynamic = 1;
+  TypePopularIndex = 2;
+  TypePopularHotword = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum VideoSubType {
+  VideoSubTypeNone = 0;
+  VideoSubTypeBangumi = 1;
+  VideoSubTypeMovie = 2;
+  VideoSubTypeDocumentary = 3;
+  VideoSubTypeDomestic = 4;
+  VideoSubTypeTeleplay = 5;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/AddressComponent.java
+message AddressComponent {
+  string nation = 1;
+  string province = 2;
+  string city = 3;
+  string district = 4;
+  string street = 5;
+  string streetNumber = 6;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/AdInfo.java
+message AdInfo {
+  string nationCode = 1;
+  string adcode = 2;
+  string cityCode = 3;
+  string name = 4;
+  Gps gps = 5;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/BubbleInfo.java
+message BubbleInfo {
+  repeated BubbleModule modules = 1;
+  string trackId = 2;
+  string bubbleRecallExtraWhenShow = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/BubbleModule.java
+message BubbleModule {
+  BubbleModuleType moduleType = 1;
+  oneof oneof_0 {
+    BubbleModuleUser user = 2;
+    BubbleModuleText text = 3;
+    BubbleModuleColoredTip coloredTip = 4;
+    BubbleModulePic pic = 5;
+  }
+  enum ModuleCase {
+    USER = 2;
+    TEXT = 3;
+    COLORED_TIP = 4;
+    PIC = 5;
+    MODULE_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/BubbleModuleColoredTip.java
+message BubbleModuleColoredTip {
+  string prefixIcon = 1;
+  bool isSvgaPrefixIcon = 2;
+  string text = 3;
+  Color textColor = 4;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/BubbleModulePic.java
+message BubbleModulePic {
+  string picDay = 1;
+  string picNight = 2;
+  int64 picWidth = 3;
+  int64 picHeight = 4;
+  bool roundedCorner = 5;
+  int64 roundedCornerRadius = 6;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/BubbleModuleText.java
+message BubbleModuleText {
+  string content = 1;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/BubbleModuleUser.java
+message BubbleModuleUser {
+  repeated UserInfo users = 1;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/CardCurrBatch.java
+message CardCurrBatch {
+  string title = 1;
+  string cover = 2;
+  string uri = 3;
+  string text1 = 4;
+  string text2 = 5;
+  VideoBadge badge = 6;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/CardCurrSeason.java
+message CardCurrSeason {
+  string title = 1;
+  string cover = 2;
+  string uri = 3;
+  string text1 = 4;
+  string desc = 5;
+  VideoBadge badge = 6;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/CardPGC.java
+message CardPGC {
+  string title = 1;
+  string cover = 2;
+  string uri = 3;
+  string coverLeftText1 = 4;
+  string coverLeftText2 = 5;
+  string coverLeftText3 = 6;
+  int64 cid = 7;
+  int64 seasonId = 8;
+  int64 epid = 9;
+  int64 aid = 10;
+  MediaType mediaType = 11;
+  VideoSubType subType = 12;
+  int32 isPreview = 13;
+  Dimension dimension = 14;
+  repeated VideoBadge badge = 15;
+  int32 canPlay = 16;
+  PGCSeason season = 17;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/CardUGC.java
+message CardUGC {
+  string title = 1;
+  string cover = 2;
+  string uri = 3;
+  string coverLeftText1 = 4;
+  string coverLeftText2 = 5;
+  string coverLeftText3 = 6;
+  int64 avid = 7;
+  int64 cid = 8;
+  MediaType mediaType = 9;
+  Dimension dimension = 10;
+  repeated VideoBadge badge = 11;
+  int32 canPlay = 12;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/Color.java
+message Color {
+  string colorDay = 1;
+  string colorNight = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/CornerInfo.java
+message CornerInfo {
+  CornerType cornerType = 1;
+  string cornerText = 2;
+  Color cornerTextColor = 3;
+  Color cornerTextBgColor = 4;
+  string cornerIcon = 5;
+  int64 cornerNumber = 6;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DecoCardFan.java
+message DecoCardFan {
+  int32 isFan = 1;
+  int32 number = 2;
+  string color = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DecorateCard.java
+message DecorateCard {
+  int64 id = 1;
+  string cardUrl = 2;
+  string jumpUrl = 3;
+  DecoCardFan fan = 4;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/Description.java
+message Description {
+  string text = 1;
+  string type = 2;
+  string uri = 3;
+  string emojiType = 4;
+  string goodsType = 5;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/Dimension.java
+message Dimension {
+  int64 height = 1;
+  int64 width = 2;
+  int64 rotate = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynamicItem.java
+message DynamicItem {
+  string cardType = 1;
+  string itemType = 2;
+  repeated Module modules = 3;
+  string dynIdStr = 4;
+  string origDynIdStr = 5;
+  int32 rType = 6;
+  int32 hasFold = 7;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynDetailsReply.java
+message DynDetailsReply {
+  repeated DynamicItem list = 1;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynDetailsReq.java
+message DynDetailsReq {
+  int32 teenagersMode = 1;
+  string dynamicIds = 2;
+  int32 qn = 3;
+  int32 fnver = 4;
+  int32 fnval = 5;
+  int32 forceHost = 6;
+  int32 fourk = 7;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynMixUpListSearchReply.java
+message DynMixUpListSearchReply {
+  repeated MixUpListItem items = 1;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynMixUpListSearchReq.java
+message DynMixUpListSearchReq {
+  string name = 1;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynMixUpListViewMoreReply.java
+message DynMixUpListViewMoreReply {
+  repeated MixUpListItem items = 1;
+  string searchDefaultText = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynOurCityItem.java
+message DynOurCityItem {
+  string cardType = 1;
+  int64 dynId = 2;
+  string uri = 3;
+  repeated DynOurCityModule modules = 4;
+  int64 rid = 5;
+  string debugInfo = 6;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynOurCityModule.java
+message DynOurCityModule {
+  string moduleType = 1;
+  oneof oneof_0 {
+    DynOurCityModuleCover moduleCover = 2;
+    DynOurCityModuleDesc moduleDesc = 3;
+    DynOurCityModuleAuthor moduleAuthor = 4;
+    DynOurCityModuleExtend moduleExtend = 5;
+  }
+  enum ModuleItemCase {
+    MODULE_COVER = 2;
+    MODULE_DESC = 3;
+    MODULE_AUTHOR = 4;
+    MODULE_EXTEND = 5;
+    MODULEITEM_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynOurCityModuleAuthor.java
+message DynOurCityModuleAuthor {
+  int64 mid = 1;
+  string name = 2;
+  string face = 3;
+  string uri = 4;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynOurCityModuleCover.java
+message DynOurCityModuleCover {
+  repeated string covers = 1;
+  int32 style = 2;
+  int32 coverLeftIcon1 = 3;
+  string coverLeftText1 = 4;
+  int32 coverLeftIcon2 = 5;
+  string coverLeftText2 = 6;
+  string coverLeftText3 = 7;
+  repeated VideoBadge badge = 8;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynOurCityModuleDesc.java
+message DynOurCityModuleDesc {
+  string desc = 1;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynOurCityModuleExtend.java
+message DynOurCityModuleExtend {
+  string type = 1;
+  oneof oneof_0 {
+    DynOurCityModuleExtendLBS extendLbs = 2;
+  }
+  enum ExtendCase {
+    EXTEND_LBS = 2;
+    EXTEND_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynOurCityModuleExtendLBS.java
+message DynOurCityModuleExtendLBS {
+  string title = 1;
+  string uri = 2;
+  string icon = 3;
+  int32 poiType = 4;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynOurCityReply.java
+message DynOurCityReply {
+  string offset = 1;
+  int32 hasMore = 2;
+  int32 style = 3;
+  string topLabel = 4;
+  repeated DynOurCityItem list = 5;
+  string topButtonLabel = 6;
+  int32 cityId = 7;
+  string cityName = 8;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynOurCityReq.java
+message DynOurCityReq {
+  int64 cityId = 1;
+  double lat = 2;
+  double lng = 3;
+  string offset = 4;
+  int32 pageSize = 5;
+  int32 teenagersMode = 6;
+  int32 qn = 7;
+  int32 fnver = 8;
+  int32 fnval = 9;
+  int32 forceHost = 10;
+  int32 fourk = 11;
+  int32 lbsState = 12;
+  uint32 refreshCity = 13;
+  ExpConf expConf = 14;
+  PlayerArgs playerArgs = 15;
+  int64 cityCode = 16;
+  int64 buildTime = 17;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynOurCitySwitchReq.java
+message DynOurCitySwitchReq {
+  int32 switch = 1;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynRedItem.java
+message DynRedItem {
+  uint64 count = 1;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynRedReply.java
+message DynRedReply {
+  string redType = 1;
+  DynRedItem dynRedItem = 2;
+  string defaultTab = 3;
+  DynRedStyle redStyle = 4;
+  string tabRecallExtra = 5;
+  BubbleInfo bubbleInfo = 6;
+  string statusText = 7;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynRedReq.java
+message DynRedReq {
+  repeated TabOffset tabOffset = 1;
+  bool isNewInstall = 2;
+  bool isCodeStart = 3;
+  repeated int64 newFollowUpMids = 4;
+  DynRedReqScene reqScene = 5;
+  enum DynRedReqScene {
+    RED_REQ_NONE = 0;
+    RED_REQ_RETURN_TO_TAB_1 = 1;
+    RED_REQ_PERIODICALLY_AWAKE = 2;
+    RED_REQ_SWITCH_ACCOUNT = 3;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynRedStyle.java
+message DynRedStyle {
+  BgType bgType = 1;
+  CornerType cornerType = 2;
+  int32 displayTime = 3;
+  string cornerMark = 4;
+  DynRedStyleUp up = 5;
+  StyleType type = 6;
+  CornerInfo cornerInfo = 7;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynRedStyleUp.java
+message DynRedStyleUp {
+  int64 uid = 1;
+  string face = 2;
+  StyleType faceType = 3;
+  Color borderColor = 4;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynTab.java
+message DynTab {
+  string title = 1;
+  string uri = 2;
+  string bubble = 3;
+  int32 redPoint = 4;
+  int64 cityId = 5;
+  int32 isPopup = 6;
+  Popup popup = 7;
+  bool defaulttab = 8;
+  string subTitle = 9;
+  string anchor = 10;
+  string internalTest = 11;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynTabReply.java
+message DynTabReply {
+  repeated DynTab dynTab = 1;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynTabReq.java
+message DynTabReq {
+  int32 teenagersMode = 1;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynUpdOffsetReq.java
+message DynUpdOffsetReq {
+  int64 hostUid = 1;
+  string readOffset = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynVideoPersonalReply.java
+message DynVideoPersonalReply {
+  repeated DynamicItem list = 1;
+  string offset = 2;
+  int32 hasMore = 3;
+  string readOffset = 4;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynVideoPersonalReq.java
+message DynVideoPersonalReq {
+  int32 teenagersMode = 1;
+  int64 hostUid = 2;
+  string offset = 3;
+  int32 page = 4;
+  int32 isPreload = 5;
+  int32 qn = 6;
+  int32 fnver = 7;
+  int32 fnval = 8;
+  int32 forceHost = 9;
+  int32 fourk = 10;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynVideoReq.java
+message DynVideoReq {
+  int32 teenagersMode = 1;
+  string updateBaseline = 2;
+  string offset = 3;
+  int32 page = 4;
+  int32 refreshType = 5;
+  int32 qn = 6;
+  int32 fnver = 7;
+  int32 fnval = 8;
+  int32 forceHost = 9;
+  int32 fourk = 10;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/DynVideoReqReply.java
+message DynVideoReqReply {
+  repeated DynamicItem list = 1;
+  int32 updateNum = 2;
+  string historyOffset = 3;
+  string updateBaseline = 4;
+  int32 hasMore = 5;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/Exp.java
+message Exp {
+  string expName = 1;
+  string expGroup = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/ExpConf.java
+message ExpConf {
+  int32 expEnable = 1;
+  repeated Exp exps = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/Extend.java
+message Extend {
+  string type = 1;
+  oneof oneof_0 {
+    ExtInfoTopic extInfoTopic = 2;
+    ExtInfoLBS extInfoLbs = 3;
+    ExtInfoHot extInfoHot = 4;
+    ExtInfoGame extInfoGame = 5;
+  }
+  enum ExtendCase {
+    EXT_INFO_TOPIC = 2;
+    EXT_INFO_LBS = 3;
+    EXT_INFO_HOT = 4;
+    EXT_INFO_GAME = 5;
+    EXTEND_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/ExtInfoGame.java
+message ExtInfoGame {
+  string title = 1;
+  string uri = 2;
+  string icon = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/ExtInfoHot.java
+message ExtInfoHot {
+  string title = 1;
+  string uri = 2;
+  string icon = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/ExtInfoLBS.java
+message ExtInfoLBS {
+  string title = 1;
+  string uri = 2;
+  string icon = 3;
+  int32 poiType = 4;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/ExtInfoTopic.java
+message ExtInfoTopic {
+  string title = 1;
+  string uri = 2;
+  string icon = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/FollowListItem.java
+message FollowListItem {
+  int32 seasonId = 1;
+  string title = 2;
+  string cover = 3;
+  string url = 4;
+  NewEP newEp = 5;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/GeoCoderReply.java
+message GeoCoderReply {
+  string address = 1;
+  AddressComponent addressComponent = 2;
+  AdInfo adInfo = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/GeoCoderReq.java
+message GeoCoderReq {
+  double lat = 1;
+  double lng = 2;
+  string from = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/Gps.java
+message Gps {
+  double lat = 1;
+  double lng = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/LikeAnimation.java
+message LikeAnimation {
+  string begin = 1;
+  string proc = 2;
+  string end = 3;
+  int64 likeIconId = 4;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/LikeInfo.java
+message LikeInfo {
+  LikeAnimation animation = 1;
+  int32 isLike = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/LikeUser.java
+message LikeUser {
+  int64 uid = 1;
+  string uname = 2;
+  string uri = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/LiveInfo.java
+message LiveInfo {
+  int32 isLiving = 1;
+  string uri = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/MixUpListItem.java
+message MixUpListItem {
+  int64 uid = 1;
+  int32 specialAttention = 2;
+  int32 reddotState = 3;
+  MixUpListLiveItem liveInfo = 4;
+  string name = 5;
+  string face = 6;
+  OfficialVerify official = 7;
+  VipInfo vip = 8;
+  Relation relation = 9;
+  int32 premiereState = 10;
+  string uri = 11;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/MixUpListLiveItem.java
+message MixUpListLiveItem {
+  bool status = 1;
+  int64 roomId = 2;
+  string uri = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/Module.java
+message Module {
+  string moduleType = 1;
+  oneof oneof_0 {
+    ModuleFold moduleFold = 2;
+    ModuleAuthor moduleAuthor = 3;
+    ModuleDynamic moduleDynamic = 4;
+    ModuleState moduleState = 5;
+    ModuleForward moduleForward = 6;
+    ModuleExtend moduleExtend = 7;
+    ModuleDispute moduleDispute = 8;
+    ModuleDesc moduleDesc = 9;
+    bytes moduleLikeuser = 10;
+    bytes moduleUplist = 11;
+    bytes moduleFollowlist = 12;
+  }
+  enum ModuleItemCase {
+    MODULE_FOLD = 2;
+    MODULE_AUTHOR = 3;
+    MODULE_DYNAMIC = 4;
+    MODULE_STATE = 5;
+    MODULE_FORWARD = 6;
+    MODULE_EXTEND = 7;
+    MODULE_DISPUTE = 8;
+    MODULE_DESC = 9;
+    MODULE_LIKEUSER = 10;
+    MODULE_UPLIST = 11;
+    MODULE_FOLLOWLIST = 12;
+    MODULEITEM_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/ModuleAuthor.java
+message ModuleAuthor {
+  int64 id = 1;
+  string ptimeLabelText = 2;
+  UserInfo author = 3;
+  DecorateCard decorateCard = 4;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/ModuleDesc.java
+message ModuleDesc {
+  repeated Description desc = 1;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/ModuleDispute.java
+message ModuleDispute {
+  string title = 1;
+  string desc = 2;
+  string uri = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/ModuleDynamic.java
+message ModuleDynamic {
+  string cardType = 1;
+  oneof oneof_0 {
+    CardUGC cardUgc = 2;
+    CardPGC cardPgc = 3;
+    CardCurrSeason cardCurrSeason = 4;
+    CardCurrBatch cardCurrBatch = 5;
+  }
+  enum CardCase {
+    CARD_UGC = 2;
+    CARD_PGC = 3;
+    CARD_CURR_SEASON = 4;
+    CARD_CURR_BATCH = 5;
+    CARD_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/ModuleDynUpList.java
+message ModuleDynUpList {
+  string moduleTitle = 1;
+  string showAll = 2;
+  repeated UpListItem list = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/ModuleExtend.java
+message ModuleExtend {
+  repeated Extend extend_ = 1;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/ModuleFold.java
+message ModuleFold {
+  int32 foldType = 1;
+  string text = 2;
+  string foldIds = 3;
+  repeated UserInfo foldUsers = 4;
+  FoldType foldTypeV2 = 5;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/ModuleFollowList.java
+message ModuleFollowList {
+  string viewAllLink = 1;
+  repeated FollowListItem list = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/ModuleForward.java
+message ModuleForward {
+  string cardType = 1;
+  repeated Module modules = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/ModuleLikeUser.java
+message ModuleLikeUser {
+  repeated LikeUser likeUsers = 1;
+  string displayText = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/ModuleState.java
+message ModuleState {
+  int32 repost = 1;
+  int32 like = 2;
+  int32 reply = 3;
+  LikeInfo likeInfo = 4;
+  bool noComment = 5;
+  bool noForward = 6;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/Nameplate.java
+message Nameplate {
+  int64 nid = 1;
+  string name = 2;
+  string image = 3;
+  string imageSmall = 4;
+  string level = 5;
+  string condition = 6;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/NewEP.java
+message NewEP {
+  int32 id = 1;
+  string indexShow = 2;
+  string cover = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/NoReply.java
+message NoReply {
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/NoReq.java
+message NoReq {
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/OfficialVerify.java
+message OfficialVerify {
+  int32 type = 1;
+  string desc = 2;
+  int32 isAtten = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/OurCityClickReportReply.java
+message OurCityClickReportReply {
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/OurCityClickReportReq.java
+message OurCityClickReportReq {
+  string dynamicId = 1;
+  int64 cityId = 2;
+  double lat = 3;
+  double lng = 4;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/PGCSeason.java
+message PGCSeason {
+  int32 isFinish = 1;
+  string title = 2;
+  int32 type = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/PlayerPreloadParams.java
+message PlayerPreloadParams {
+  int32 qn = 1;
+  int32 fnver = 2;
+  int32 fnval = 3;
+  int32 forceHost = 4;
+  int32 fourk = 5;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/Popup.java
+message Popup {
+  string title = 1;
+  string desc = 2;
+  string uri = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/Relation.java
+message Relation {
+  RelationStatus status = 1;
+  int32 isFollow = 2;
+  int32 isFollowed = 3;
+  string title = 4;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/ShareInfo.java
+message ShareInfo {
+  int64 aid = 1;
+  string bvid = 2;
+  string title = 3;
+  string subtitle = 4;
+  string cover = 5;
+  int64 mid = 6;
+  string name = 7;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/SVideoItem.java
+message SVideoItem {
+  string cardType = 1;
+  repeated SVideoModule modules = 2;
+  string dynIdStr = 3;
+  int64 index = 4;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/SVideoModule.java
+message SVideoModule {
+  string moduleType = 1;
+  oneof oneof_0 {
+    SVideoModuleAuthor moduleAuthor = 2;
+    SVideoModulePlayer modulePlayer = 3;
+    SVideoModuleDesc moduleDesc = 4;
+    SVideoModuleStat moduleStat = 5;
+  }
+  enum ModuleItemCase {
+    MODULE_AUTHOR = 2;
+    MODULE_PLAYER = 3;
+    MODULE_DESC = 4;
+    MODULE_STAT = 5;
+    MODULEITEM_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/SVideoModuleAuthor.java
+message SVideoModuleAuthor {
+  int64 mid = 1;
+  string name = 2;
+  string face = 3;
+  string pubDesc = 4;
+  int32 isAttention = 5;
+  string uri = 6;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/SVideoModuleDesc.java
+message SVideoModuleDesc {
+  string text = 1;
+  string uri = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/SVideoModulePlayer.java
+message SVideoModulePlayer {
+  string title = 1;
+  string cover = 2;
+  string uri = 3;
+  int64 aid = 4;
+  int64 cid = 5;
+  int64 duration = 6;
+  Dimension dimension = 7;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/SVideoModuleStat.java
+message SVideoModuleStat {
+  repeated SVideoStatInfo statInfo = 1;
+  ShareInfo shareInfo = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/SVideoReply.java
+message SVideoReply {
+  repeated SVideoItem list = 1;
+  string offset = 2;
+  int32 hasMore = 3;
+  SVideoTop top = 4;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/SVideoReq.java
+message SVideoReq {
+  int64 oid = 1;
+  SVideoType type = 2;
+  string offset = 3;
+  int32 qn = 4;
+  int32 fnver = 5;
+  int32 fnval = 6;
+  int32 forceHost = 7;
+  int32 fourk = 8;
+  string spmid = 9;
+  string fromSpmid = 10;
+  PlayerPreloadParams playerPreload = 11;
+  int64 focusAid = 12;
+  PlayerArgs playerArgs = 13;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/SVideoStatInfo.java
+message SVideoStatInfo {
+  int32 icon = 1;
+  int64 num = 2;
+  int32 selected = 3;
+  string uri = 4;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/SVideoTop.java
+message SVideoTop {
+  string title = 1;
+  string desc = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/TabOffset.java
+message TabOffset {
+  int32 tab = 1;
+  string offset = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/UpListItem.java
+message UpListItem {
+  int32 hasUpdate = 1;
+  string face = 2;
+  string name = 3;
+  int64 uid = 4;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/UserInfo.java
+message UserInfo {
+  int64 mid = 1;
+  string name = 2;
+  string face = 3;
+  OfficialVerify official = 4;
+  VipInfo vip = 5;
+  LiveInfo live = 6;
+  string uri = 7;
+  UserPendant pendant = 8;
+  Nameplate nameplate = 9;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/UserPendant.java
+message UserPendant {
+  int64 pid = 1;
+  string name = 2;
+  string image = 3;
+  int64 expire = 4;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/VideoBadge.java
+message VideoBadge {
+  string text = 1;
+  string textColor = 2;
+  string textColorNight = 3;
+  string bgColor = 4;
+  string bgColorNight = 5;
+  string borderColor = 6;
+  string borderColorNight = 7;
+  int32 bgStyle = 8;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/VipInfo.java
+message VipInfo {
+  int32 type = 1;
+  int32 status = 2;
+  int64 dueDate = 3;
+  VipLabel label = 4;
+  int32 themeType = 5;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v1/VipLabel.java
+message VipLabel {
+  string path = 1;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/dynamic/v1";

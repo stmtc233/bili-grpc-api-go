@@ -1,0 +1,770 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.topic.v1;
+
+enum FeedCardType {
+  FEED_CARD_TYPE_UNKNOWN = 0;
+  FEED_CARD_TYPE_USER_RATING = 1;
+  FEED_CARD_TYPE_LEAD_COLLECTION = 2;
+  FEED_CARD_TYPE_ITEM = 3;
+  FEED_CARD_TYPE_TASK = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum FeedCardUserRatingOptionType {
+  FEED_CARD_USER_RATING_OPTION_TYPE_UNKNOWN = 0;
+  FEED_CARD_USER_RATING_OPTION_TYPE_VERY_DISSATISFIED = 1;
+  FEED_CARD_USER_RATING_OPTION_TYPE_DISSATISFIED = 2;
+  FEED_CARD_USER_RATING_OPTION_TYPE_AVERAGE = 3;
+  FEED_CARD_USER_RATING_OPTION_TYPE_SATISFIED = 4;
+  FEED_CARD_USER_RATING_OPTION_TYPE_VERY_SATISFIED = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum ReserveButtonMode {
+  RESERVE_BUTTON_MODE_NONE = 0;
+  RESERVE_BUTTON_MODE_RESERVE = 1;
+  RESERVE_BUTTON_MODE_UP_CANCEL = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum ReserveButtonStatus {
+  RESERVE_BUTTON_STATUS_NONE = 0;
+  RESERVE_BUTTON_STATUS_UNCHECK = 1;
+  RESERVE_BUTTON_STATUS_CHECK = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum ResSetTopOptType {
+  ResSetTopNone = 0;
+  ResSetTop = 1;
+  ResSetTopCancel = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum TopicCardType {
+  ILLEGAL_TYPE = 0;
+  DYNAMIC = 1;
+  FOLD = 2;
+  VIDEO_SMALL_CARD = 3;
+  FEED_CARD = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum TopicCategory {
+  Default = 0;
+  Questions = 1;
+  IPTopic = 2;
+  Commerce = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum TopicDetailsExtMode {
+  MODE_ILLEGAL_TYPE = 0;
+  STORY = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum TopicTopCardType {
+  Unknown_Type = 0;
+  Capsules_Type = 1;
+  Traffic_Card_Type = 2;
+  Game_Card_Type = 3;
+  Time_Line_Type = 4;
+  Large_Cover_Inline_Type = 5;
+  Reservation_Card_Type = 6;
+  Esport_Card_Type = 7;
+  IPTopic_Card_Type = 8;
+  Head_Click_Area_Card_Type = 9;
+  Item_Card_Type = 10;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/ButtonMeta.java
+message ButtonMeta {
+  string text = 1;
+  string icon = 2;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/ClickPath.java
+message ClickPath {
+  int32 type = 1;
+  string path = 2;
+  string underlying = 3;
+  string wxProName = 4;
+  string wxProId = 5;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/DetailsTopInfo.java
+message DetailsTopInfo {
+  TopicInfo topicInfo = 1;
+  User user = 2;
+  string statsDesc = 3;
+  bool hasCreateJurisdiction = 4;
+  OperationContent operationContent = 5;
+  string headImgUrl = 6;
+  string headImgBackcolor = 7;
+  int32 wordColor = 8;
+  int32 missionPageShowType = 9;
+  string missionUrl = 10;
+  string missionText = 11;
+  TopicSet topicSet = 12;
+  string symbol = 13;
+  string icon = 14;
+  string headBgImgUrl = 15;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/EsportInfo.java
+message EsportInfo {
+  int64 id = 1;
+  repeated MatchInfo items = 2;
+  int64 startTime = 3;
+  int64 endTime = 4;
+  PlayerRatingInMatch playerRating = 5;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/FeedCard.java
+message FeedCard {
+  FeedCardType type = 1;
+  oneof oneof_0 {
+    FeedCardUserRating userRating = 2;
+    FeedCardLeadCollection leadCollection = 3;
+    ItemCard itemCard = 4;
+    FeedCardTask taskCard = 5;
+  }
+  enum DetailCase {
+    USER_RATING = 2;
+    LEAD_COLLECTION = 3;
+    ITEM_CARD = 4;
+    TASK_CARD = 5;
+    DETAIL_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/FeedCardLeadCollection.java
+message FeedCardLeadCollection {
+  string title = 1;
+  string buttonText = 2;
+  string icon = 3;
+  string pressedButtonText = 4;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/FeedCardTask.java
+message FeedCardTask {
+  string title = 1;
+  string subTitle = 2;
+  string cover = 3;
+  string buttonText = 4;
+  string jumpUrl = 5;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/FeedCardUserRating.java
+message FeedCardUserRating {
+  string title = 1;
+  repeated string options = 2;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/FoldCardItem.java
+message FoldCardItem {
+  int32 isShowFold = 1;
+  int64 foldCount = 2;
+  string cardShowDesc = 3;
+  string foldDesc = 4;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/FunctionalCard.java
+message FunctionalCard {
+  repeated TopicCapsule capsules = 1;
+  TrafficCard trafficCard = 2;
+  GameCard gameCard = 3;
+  int64 startTime = 4;
+  int64 endTime = 5;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/GameCard.java
+message GameCard {
+  int64 gameId = 1;
+  string gameIcon = 2;
+  string gameName = 3;
+  string score = 4;
+  string gameTags = 5;
+  string notice = 6;
+  string gameLink = 7;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/HeadClickAreaCard.java
+message HeadClickAreaCard {
+  repeated HeadClickAreaRow clickRows = 1;
+  int64 startTime = 2;
+  int64 endTime = 3;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/HeadClickAreaRow.java
+message HeadClickAreaRow {
+  repeated HeadClickRect rects = 1;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/HeadClickRect.java
+message HeadClickRect {
+  int32 w = 1;
+  int32 h = 2;
+  string pic = 3;
+  ClickPath path = 4;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/InlineProgressBar.java
+message InlineProgressBar {
+  string iconDrag = 1;
+  string iconDragHash = 2;
+  string iconStop = 3;
+  string iconStopHash = 4;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/IPTopicCard.java
+message IPTopicCard {
+  repeated IPTopicInfo items = 1;
+  int64 startTime = 2;
+  int64 endTime = 3;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/IPTopicInfo.java
+message IPTopicInfo {
+  string name = 1;
+  string statsDesc = 2;
+  string jumpUrl = 3;
+  string icon = 4;
+  int64 id = 5;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/ItemCard.java
+message ItemCard {
+  int64 itemId = 1;
+  string bizData = 2;
+  int64 startTime = 3;
+  int64 endTime = 4;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/LargeCoverInline.java
+message LargeCoverInline {
+  Base base = 1;
+  string coverLeftText1 = 2;
+  int32 coverLeftIcon1 = 3;
+  string coverLeftText2 = 4;
+  int32 coverLeftIcon2 = 5;
+  RightTopLiveBadge rightTopLiveBadge = 6;
+  string extraUri = 7;
+  InlineProgressBar inlineProgressBar = 8;
+  TopicThreePoint topicThreePoint = 9;
+  string coverLeftDesc = 10;
+  bool hideDanmuSwitch = 11;
+  bool disableDanmu = 12;
+  int32 canPlay = 13;
+  string durationText = 14;
+  RelationData relationData = 15;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/LiveBadgeResource.java
+message LiveBadgeResource {
+  string text = 1;
+  string animationUrl = 2;
+  string animationUrlHash = 3;
+  string backgroundColorLight = 4;
+  string backgroundColorNight = 5;
+  int64 alphaLight = 6;
+  int64 alphaNight = 7;
+  string fontColor = 8;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/MatchCardDisplay.java
+message MatchCardDisplay {
+  string text = 1;
+  string textColor = 2;
+  string textColorNight = 3;
+  string uri = 4;
+  string liveLink = 5;
+  Texts texts = 6;
+  int32 state = 7;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/MatchInfo.java
+message MatchInfo {
+  int64 id = 1;
+  int32 status = 2;
+  string matchStage = 3;
+  MatchTeamInfo home = 4;
+  MatchTeamInfo away = 5;
+  MatchCardDisplay matchLabel = 6;
+  MatchCardDisplay matchTime = 7;
+  MatchCardDisplay matchButton = 8;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/MatchTeamInfo.java
+message MatchTeamInfo {
+  int64 id = 1;
+  string title = 2;
+  string cover = 3;
+  int64 score = 4;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/NoCardResultReply.java
+message NoCardResultReply {
+  string defaultGuideText = 1;
+  ShowButton showButton = 2;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/OperationCard.java
+message OperationCard {
+  oneof oneof_0 {
+    LargeCoverInline largeCoverInline = 1;
+  }
+  enum CardCase {
+    LARGE_COVER_INLINE = 1;
+    CARD_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/OperationContent.java
+message OperationContent {
+  OperationCard operationCard = 1;
+  int64 startTime = 2;
+  int64 endTime = 3;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/PlayerRatingInMatch.java
+message PlayerRatingInMatch {
+  string playerFace = 1;
+  string playerName = 2;
+  string hotRemark = 3;
+  string rating = 4;
+  string jumpUri = 5;
+  int64 playerId = 6;
+  int64 matchId = 7;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/PubLayer.java
+message PubLayer {
+  int32 showType = 1;
+  string jumpLink = 2;
+  ButtonMeta buttonMeta = 3;
+  bool closePubLayerEntry = 4;
+  string userAvatar = 5;
+  bool isHalfScreen = 6;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/RelationData.java
+message RelationData {
+  bool isFav = 1;
+  bool isCoin = 2;
+  bool isFollow = 3;
+  bool isLike = 4;
+  int64 likeCount = 5;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/ReportUserCloseFeedCardReq.java
+message ReportUserCloseFeedCardReq {
+  int64 topicId = 1;
+  FeedCardType feedCardType = 2;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/ReportUserRatingFeedCardChoiceReq.java
+message ReportUserRatingFeedCardChoiceReq {
+  int64 topicId = 1;
+  FeedCardUserRatingOptionType optionType = 2;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/ReserveCalendarInfo.java
+message ReserveCalendarInfo {
+  string title = 1;
+  int64 startts = 2;
+  int64 endts = 3;
+  string description = 4;
+  string businessid = 5;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/ReserveRelationInfo.java
+message ReserveRelationInfo {
+  int64 sid = 1;
+  string title = 2;
+  int64 total = 3;
+  int64 stime = 4;
+  int64 etime = 5;
+  int64 isFollow = 6;
+  int32 state = 7;
+  string oid = 8;
+  int32 type = 9;
+  int64 upmid = 10;
+  int64 reserveRecordCtime = 11;
+  int64 livePlanStartTime = 12;
+  string timeDescText = 13;
+  string numberDescText = 14;
+  int64 startTime = 15;
+  int64 endTime = 16;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/RightTopLiveBadge.java
+message RightTopLiveBadge {
+  int64 liveStatus = 1;
+  LiveBadgeResource inLive = 2;
+  string liveStatsDesc = 3;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/SetTopTopicResReply.java
+message SetTopTopicResReply {
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/SetTopTopicResReq.java
+message SetTopTopicResReq {
+  int64 topicId = 1;
+  int64 dynamicId = 2;
+  ResSetTopOptType optType = 3;
+  TopicCardType type = 4;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/ShowButton.java
+message ShowButton {
+  string showText = 1;
+  string jumpUrl = 2;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/SortContent.java
+message SortContent {
+  int64 sortBy = 1;
+  string sortName = 2;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/Texts.java
+message Texts {
+  string bookingText = 1;
+  string unbookingText = 2;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/ThreePointItem.java
+message ThreePointItem {
+  string title = 1;
+  string jumpUrl = 2;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TimeLineEvents.java
+message TimeLineEvents {
+  int64 eventId = 1;
+  string title = 2;
+  string timeDesc = 3;
+  string jumpLink = 4;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TimeLineResource.java
+message TimeLineResource {
+  int64 timeLineId = 1;
+  string timeLineTitle = 2;
+  repeated TimeLineEvents timeLineEvents = 3;
+  bool hasMore = 4;
+  int64 startTime = 5;
+  int64 endTime = 6;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TopicActivities.java
+message TopicActivities {
+  repeated TopicActivity activity = 1;
+  string actListTitle = 2;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TopicActivity.java
+message TopicActivity {
+  int64 activityId = 1;
+  string activityName = 2;
+  string jumpUrl = 3;
+  string iconUrl = 4;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TopicCapsule.java
+message TopicCapsule {
+  string name = 1;
+  string jumpUrl = 2;
+  string iconUrl = 3;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TopicCapsuleInfo.java
+message TopicCapsuleInfo {
+  repeated TopicCapsule capsules = 1;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TopicCardItem.java
+message TopicCardItem {
+  TopicCardType type = 1;
+  DynamicItem dynamicItem = 2;
+  FoldCardItem fordCardItem = 3;
+  VideoSmallCardItem videoSmallCardItem = 4;
+  FeedCard feedCard = 5;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TopicCardList.java
+message TopicCardList {
+  repeated TopicCardItem topicCardItems = 1;
+  string offset = 2;
+  bool hasMore = 3;
+  TopicSortByConf topicSortByConf = 4;
+  NoCardResultReply noCardResultReply = 5;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TopicDetailsAllReply.java
+message TopicDetailsAllReply {
+  DetailsTopInfo detailsTopInfo = 1;
+  TopicActivities topicActivities = 2;
+  TopicCardList topicCardList = 3;
+  FunctionalCard functionalCard = 4;
+  PubLayer pubLayer = 5;
+  TimeLineResource timeLineResource = 6;
+  TopicServerConfig topicServerConfig = 7;
+  TopicOnline topicOnline = 8;
+  repeated TopicTopCard topicTopCards = 9;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TopicDetailsAllReq.java
+message TopicDetailsAllReq {
+  int64 topicId = 1;
+  int64 sortBy = 2;
+  string offset = 3;
+  int32 pageSize = 4;
+  int32 localTime = 5;
+  PlayerArgs playerArgs = 6;
+  int32 needRefresh = 7;
+  string source = 8;
+  TopicDetailsExtMode topicDetailsExtMode = 9;
+  string fromSpmid = 10;
+  map<string, string> extra = 11;
+  bool isTopDynamic = 12;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TopicDetailsFoldReply.java
+message TopicDetailsFoldReply {
+  TopicCardList topicCardList = 1;
+  int64 foldCount = 2;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TopicDetailsFoldReq.java
+message TopicDetailsFoldReq {
+  int64 topicId = 1;
+  string offset = 2;
+  int32 pageSize = 3;
+  int32 localTime = 4;
+  PlayerArgs playerArgs = 5;
+  int64 fromSortBy = 6;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TopicInfo.java
+message TopicInfo {
+  int64 id = 1;
+  string name = 2;
+  int64 uid = 3;
+  int64 view = 4;
+  int64 discuss = 5;
+  int64 fav = 6;
+  int64 dynamics = 7;
+  int32 state = 8;
+  string jumpUrl = 9;
+  string backcolor = 10;
+  bool isFav = 11;
+  string description = 12;
+  int32 createSource = 13;
+  string sharePic = 14;
+  int64 share = 15;
+  int64 like = 16;
+  string shareUrl = 17;
+  bool isLike = 18;
+  int32 type = 19;
+  string statsDesc = 20;
+  string fixedTopicIcon = 21;
+  int64 categories = 22;
+  map<int32, bool> categoryMap = 23;
+  repeated string topicCategories = 24;
+  bool isBusiness = 25;
+  bool showInteractData = 26;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TopicMergedResourceReply.java
+message TopicMergedResourceReply {
+  TopicCardList topicCardList = 1;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TopicMergedResourceReq.java
+message TopicMergedResourceReq {
+  int64 topicId = 1;
+  int32 type = 2;
+  int64 rid = 3;
+  int32 mergeType = 4;
+  string offset = 5;
+  int32 localTime = 6;
+  PlayerArgs playerArgs = 7;
+  int64 fromSortBy = 8;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TopicOnline.java
+message TopicOnline {
+  int64 onlineNum = 1;
+  string onlineText = 2;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TopicReserveButtonClickReply.java
+message TopicReserveButtonClickReply {
+  ReserveButtonStatus finalBtnStatus = 1;
+  ReserveButtonMode btnMode = 2;
+  int64 reserveUpdate = 3;
+  string descUpdate = 4;
+  bool hasActivity = 5;
+  string activityUrl = 6;
+  string toast = 7;
+  ReserveCalendarInfo reserveCalendarInfo = 8;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TopicReserveButtonClickReq.java
+message TopicReserveButtonClickReq {
+  int64 uid = 1;
+  int64 reserveId = 2;
+  int64 reserveTotal = 3;
+  ReserveButtonStatus curBtnStatus = 4;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TopicServerConfig.java
+message TopicServerConfig {
+  int64 pubEventsIncreaseThreshold = 1;
+  int64 pubEventsHiddenTimeoutThreshold = 2;
+  int64 vertOnlineRefreshTime = 3;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TopicSet.java
+message TopicSet {
+  int64 setId = 1;
+  string setName = 2;
+  string jumpUrl = 3;
+  string desc = 4;
+  string setTypeText = 5;
+  string setTypeColor = 6;
+  int32 setType = 7;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TopicSetDetailsReply.java
+message TopicSetDetailsReply {
+  TopicSetHeadInfo topicSetHeadInfo = 1;
+  repeated TopicInfo topicInfo = 2;
+  bool hasMore = 3;
+  string offset = 4;
+  TopicSetSortCfg sortCfg = 5;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TopicSetDetailsReq.java
+message TopicSetDetailsReq {
+  int64 setId = 1;
+  int64 sortBy = 2;
+  string offset = 3;
+  int32 pageSize = 4;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TopicSetHeadInfo.java
+message TopicSetHeadInfo {
+  TopicSet topicSet = 1;
+  string topicCntText = 2;
+  string headImgUrl = 3;
+  string missionUrl = 4;
+  string missionText = 5;
+  string iconUrl = 6;
+  bool isFav = 7;
+  bool isFirstTime = 8;
+  string recordText = 9;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TopicSetSortCfg.java
+message TopicSetSortCfg {
+  int64 defaultSortBy = 1;
+  repeated SortContent allSortBy = 2;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TopicSortByConf.java
+message TopicSortByConf {
+  int64 defaultSortBy = 1;
+  repeated SortContent allSortBy = 2;
+  int64 showSortBy = 3;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TopicThreePoint.java
+message TopicThreePoint {
+  repeated ThreePointItem dynThreePointItems = 1;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TopicTopCard.java
+message TopicTopCard {
+  TopicTopCardType type = 1;
+  oneof oneof_0 {
+    TopicCapsuleInfo capsules = 2;
+    TrafficCard trafficCard = 3;
+    GameCard gameCard = 4;
+    TimeLineResource timeLineResource = 5;
+    LargeCoverInline largeCoverInline = 6;
+    ReserveRelationInfo reservationCard = 7;
+    EsportInfo esportCard = 8;
+    IPTopicCard ipTopicCard = 11;
+    HeadClickAreaCard headClickAreaCard = 12;
+    ItemCard itemCard = 13;
+  }
+  int64 startTime = 9;
+  int64 endTime = 10;
+  enum CardItemCase {
+    CAPSULES = 2;
+    TRAFFIC_CARD = 3;
+    GAME_CARD = 4;
+    TIME_LINE_RESOURCE = 5;
+    LARGE_COVER_INLINE = 6;
+    RESERVATION_CARD = 7;
+    ESPORT_CARD = 8;
+    IP_TOPIC_CARD = 11;
+    HEAD_CLICK_AREA_CARD = 12;
+    ITEM_CARD = 13;
+    CARDITEM_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/TrafficCard.java
+message TrafficCard {
+  string name = 1;
+  string jumpUrl = 2;
+  string iconUrl = 3;
+  string basePic = 4;
+  string benefitPoint = 5;
+  string cardDesc = 6;
+  string jumpTitle = 7;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/User.java
+message User {
+  int64 uid = 1;
+  string face = 2;
+  string name = 3;
+  string nameDesc = 4;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/VideoCardBase.java
+message VideoCardBase {
+  string cover = 1;
+  string title = 2;
+  string upName = 3;
+  int64 play = 4;
+  string jumpLink = 5;
+  int64 aid = 6;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/VideoSmallCardItem.java
+message VideoSmallCardItem {
+  VideoCardBase videoCardBase = 1;
+  string coverLeftBadgeText = 2;
+  int64 cardStatIcon1 = 3;
+  string cardStatText1 = 4;
+  int64 cardStatIcon2 = 5;
+  string cardStatText2 = 6;
+  string serverInfo = 7;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/topic/v1";

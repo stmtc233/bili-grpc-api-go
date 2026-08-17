@@ -1,0 +1,47 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.distribution.setting.experimental;
+
+// Source: com/bapis/bilibili/app/distribution/setting/experimental/DynamicSelect.java
+message DynamicSelect {
+  BoolValue fold = 1;
+}
+
+// Source: com/bapis/bilibili/app/distribution/setting/experimental/Exp.java
+message Exp {
+  Int64Value id = 1;
+  Int32Value bucket = 2;
+}
+
+// Source: com/bapis/bilibili/app/distribution/setting/experimental/ExperimentalConfig.java
+message ExperimentalConfig {
+  StringValue flag = 1;
+  repeated Exp exps = 2;
+}
+
+// Source: com/bapis/bilibili/app/distribution/setting/experimental/MultipleTusConfig.java
+message MultipleTusConfig {
+  bytes topleft = 1;
+  bytes dynamicselect = 2;
+}
+
+// Source: com/bapis/bilibili/app/distribution/setting/experimental/TopLeft.java
+message TopLeft {
+  StringValue url = 1;
+  bytes storyforegroundimage = 2;
+  bytes storybackgroundimage = 3;
+  bytes listenforegroundimage = 4;
+  bytes listenbackgroundimage = 5;
+  bytes iosstoryforegroundimage = 6;
+  bytes iosstorybackgroundimage = 7;
+  bytes ioslistenforegroundimage = 8;
+  bytes ioslistenbackgroundimage = 9;
+  StringValue goto = 10;
+  bytes urlv2 = 11;
+  bytes gotov2 = 12;
+  StringValue badge = 13;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/distribution/setting/experimental";

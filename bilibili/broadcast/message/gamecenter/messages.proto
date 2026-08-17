@@ -1,0 +1,24 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.broadcast.message.gamecenter;
+
+enum PushEvent {
+  PushEventUnknown = 0;
+  PushEventDownload = 1;
+  PushEventBookDownload = 2;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/gamecenter/PushEventMessage.java
+message PushEventMessage {
+  PushEvent eventType = 1;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/gamecenter/PushEventReply.java
+message PushEventReply {
+  PushEvent eventType = 1;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/message/gamecenter";

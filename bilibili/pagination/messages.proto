@@ -1,0 +1,33 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.pagination;
+
+// Source: com/bapis/bilibili/pagination/FeedPagination.java
+message FeedPagination {
+  int32 pageSize = 1;
+  string offset = 2;
+  bool isRefresh = 3;
+}
+
+// Source: com/bapis/bilibili/pagination/FeedPaginationReply.java
+message FeedPaginationReply {
+  string nextOffset = 1;
+  string prevOffset = 2;
+  string lastReadOffset = 3;
+}
+
+// Source: com/bapis/bilibili/pagination/Pagination.java
+message Pagination {
+  int32 pageSize = 1;
+  string next = 2;
+}
+
+// Source: com/bapis/bilibili/pagination/PaginationReply.java
+message PaginationReply {
+  string next = 1;
+  string prev = 2;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/pagination";

@@ -1,0 +1,115 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.account.interfaces.v1;
+
+enum ProfileField {
+  PROFILE_FIELD_UNSPECIFIED = 0;
+  PROFILE_FIELD_MID = 1;
+  PROFILE_FIELD_UNAME = 2;
+  PROFILE_FIELD_SIGN = 3;
+  PROFILE_FIELD_BIRTHDAY = 4;
+  PROFILE_FIELD_SEX = 5;
+  PROFILE_FIELD_HANDLE = 6;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/account/interfaces/v1/AccountProfile.java
+message AccountProfile {
+  int64 mid = 1;
+  string uname = 2;
+  string sign = 3;
+  string birthday = 4;
+  string sex = 5;
+  string handle = 6;
+}
+
+// Source: com/bapis/bilibili/account/interfaces/v1/AccountProfileReply.java
+message AccountProfileReply {
+  int64 code = 1;
+  string msg = 2;
+  AccountProfile profile = 3;
+  repeated UserFieldSetting fieldSetting = 4;
+}
+
+// Source: com/bapis/bilibili/account/interfaces/v1/AccountProfileReq.java
+message AccountProfileReq {
+}
+
+// Source: com/bapis/bilibili/account/interfaces/v1/MidByNameReply.java
+message MidByNameReply {
+  map<string, int64> nameMap = 1;
+}
+
+// Source: com/bapis/bilibili/account/interfaces/v1/MidByNameReq.java
+message MidByNameReq {
+  repeated string names = 1;
+}
+
+// Source: com/bapis/bilibili/account/interfaces/v1/UnameMessageReply.java
+message UnameMessageReply {
+  bool allow = 1;
+  bool realnameOrTel = 2;
+  string unameMessage = 3;
+  string confirmMessage = 4;
+  string conditionMessage = 5;
+  string bindTel = 6;
+}
+
+// Source: com/bapis/bilibili/account/interfaces/v1/UnameMessageReq.java
+message UnameMessageReq {
+}
+
+// Source: com/bapis/bilibili/account/interfaces/v1/UpdateHandleReply.java
+message UpdateHandleReply {
+  int64 code = 1;
+  string msg = 2;
+  string handle = 3;
+  repeated string optionHandleList = 4;
+}
+
+// Source: com/bapis/bilibili/account/interfaces/v1/UpdateHandleReq.java
+message UpdateHandleReq {
+  string handle = 1;
+}
+
+// Source: com/bapis/bilibili/account/interfaces/v1/UpdateNameReply.java
+message UpdateNameReply {
+  int64 code = 1;
+  string msg = 2;
+  repeated string nameList = 3;
+  string name = 4;
+}
+
+// Source: com/bapis/bilibili/account/interfaces/v1/UpdateNameReq.java
+message UpdateNameReq {
+  string uname = 1;
+  string source = 2;
+}
+
+// Source: com/bapis/bilibili/account/interfaces/v1/UserFieldSetting.java
+message UserFieldSetting {
+  ProfileField fieldType = 1;
+  oneof oneof_0 {
+    UserHandleFieldSetting handleSetting = 2;
+  }
+  enum SettingCase {
+    HANDLE_SETTING = 2;
+    SETTING_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/account/interfaces/v1/UserHandleFieldSetting.java
+message UserHandleFieldSetting {
+  bool visible = 1;
+  bool editable = 2;
+  string ruleMessage = 3;
+  string confirmMessage = 4;
+  string submittedMessage = 5;
+  string bindTelUrl = 6;
+  int64 maxLength = 7;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/account/interfaces/v1";

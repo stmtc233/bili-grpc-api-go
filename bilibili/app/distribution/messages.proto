@@ -1,0 +1,137 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.distribution;
+
+// Source: com/bapis/bilibili/app/distribution/BoolValue.java
+message BoolValue {
+  bool value = 1;
+  int64 lastModified = 2;
+  bool defaultValue = 3;
+  string exp = 4;
+}
+
+// Source: com/bapis/bilibili/app/distribution/BytesValue.java
+message BytesValue {
+  bytes value = 1;
+  int64 lastModified = 2;
+  bytes defaultValue = 3;
+  string exp = 4;
+}
+
+// Source: com/bapis/bilibili/app/distribution/defaultValue.java
+message defaultValue {
+  oneof oneof_0 {
+    double doubleValue = 1;
+    float floatValue = 2;
+    int64 int64Value = 3;
+    uint64 uint64Value = 4;
+    int32 int32Value = 5;
+    uint32 uint32Value = 6;
+    bool boolValue = 7;
+    string stringValue = 8;
+    bytes bytesValue = 9;
+  }
+  enum ValueCase {
+    DOUBLE_VALUE = 1;
+    FLOAT_VALUE = 2;
+    INT64_VALUE = 3;
+    UINT64_VALUE = 4;
+    INT32_VALUE = 5;
+    UINT32_VALUE = 6;
+    BOOL_VALUE = 7;
+    STRING_VALUE = 8;
+    BYTES_VALUE = 9;
+    VALUE_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/distribution/DoubleValue.java
+message DoubleValue {
+  double value = 1;
+  int64 lastModified = 2;
+  double defaultValue = 3;
+  string exp = 4;
+}
+
+// Source: com/bapis/bilibili/app/distribution/FloatValue.java
+message FloatValue {
+  float value = 1;
+  int64 lastModified = 2;
+  float defaultValue = 3;
+  string exp = 4;
+}
+
+// Source: com/bapis/bilibili/app/distribution/GetUserPreferenceReply.java
+message GetUserPreferenceReply {
+  repeated Any value = 1;
+}
+
+// Source: com/bapis/bilibili/app/distribution/GetUserPreferenceReq.java
+message GetUserPreferenceReq {
+  repeated string typeUrl = 1;
+  map<string, string> extraContext = 2;
+}
+
+// Source: com/bapis/bilibili/app/distribution/Int32Value.java
+message Int32Value {
+  int32 value = 1;
+  int64 lastModified = 2;
+  int32 defaultValue = 3;
+  string exp = 4;
+}
+
+// Source: com/bapis/bilibili/app/distribution/Int64Value.java
+message Int64Value {
+  int64 value = 1;
+  int64 lastModified = 2;
+  int64 defaultValue = 3;
+  string exp = 4;
+}
+
+// Source: com/bapis/bilibili/app/distribution/SetUserPreferenceReply.java
+message SetUserPreferenceReply {
+}
+
+// Source: com/bapis/bilibili/app/distribution/SetUserPreferenceReq.java
+message SetUserPreferenceReq {
+  repeated Any preference = 1;
+  map<string, string> extraContext = 2;
+}
+
+// Source: com/bapis/bilibili/app/distribution/StringValue.java
+message StringValue {
+  string value = 1;
+  int64 lastModified = 2;
+  string defaultValue = 3;
+  string exp = 4;
+}
+
+// Source: com/bapis/bilibili/app/distribution/UInt32Value.java
+message UInt32Value {
+  uint32 value = 1;
+  int64 lastModified = 2;
+  uint32 defaultValue = 3;
+  string exp = 4;
+}
+
+// Source: com/bapis/bilibili/app/distribution/UInt64Value.java
+message UInt64Value {
+  uint64 value = 1;
+  int64 lastModified = 2;
+  uint64 defaultValue = 3;
+  string exp = 4;
+}
+
+// Source: com/bapis/bilibili/app/distribution/UserPreferenceReply.java
+message UserPreferenceReply {
+  repeated Any preference = 1;
+}
+
+// Source: com/bapis/bilibili/app/distribution/UserPreferenceReq.java
+message UserPreferenceReq {
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/distribution";

@@ -1,0 +1,130 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.subtitle;
+
+enum FontSizeType {
+  FontSizeDefault = 0;
+  FontSizeOGV = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum ProductionType {
+  PRODUCTION_TYPE_DEFAULT = 0;
+  PRODUCTION_TYPE_UPLOAD = 1;
+  PRODUCTION_TYPE_AI = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum PurposeType {
+  PurposeCover = 0;
+  PurposeOGV = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum SubtitleAiStatus {
+  None = 0;
+  Exposure = 1;
+  Assist = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum SubtitleAiType {
+  Normal = 0;
+  Translate = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum SubtitleFormat {
+  JSON = 0;
+  ASS = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum SubtitleRole {
+  Default = 0;
+  Main = 1;
+  Secondary = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum SubtitleType {
+  CC = 0;
+  AI = 1;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/subtitle/SubtitleHeight.java
+message SubtitleHeight {
+  double value = 1;
+}
+
+// Source: com/bapis/bilibili/subtitle/SubtitleItem.java
+message SubtitleItem {
+  int64 id = 1;
+  string idStr = 2;
+  string lan = 3;
+  string lanDoc = 4;
+  string subtitleUrl = 5;
+  UserInfo author = 6;
+  SubtitleType type = 7;
+  string lanDocBrief = 8;
+  SubtitleAiType aiType = 9;
+  SubtitleAiStatus aiStatus = 10;
+  SubtitleRole role = 11;
+  SubtitleHeight subtitleHeight = 12;
+  SubtitleFormat format = 13;
+}
+
+// Source: com/bapis/bilibili/subtitle/SubtitlePosition.java
+message SubtitlePosition {
+  double xMin = 1;
+  double yMin = 2;
+  double xMax = 3;
+  double yMax = 4;
+  PurposeType purpose = 5;
+}
+
+// Source: com/bapis/bilibili/subtitle/SubtitleViewReply.java
+message SubtitleViewReply {
+  VideoSubtitle subtitle = 1;
+}
+
+// Source: com/bapis/bilibili/subtitle/SubtitleViewReq.java
+message SubtitleViewReq {
+  int64 pid = 1;
+  int64 oid = 2;
+  int32 type = 3;
+  string spmid = 4;
+  int32 isHardBoot = 5;
+  string contextExt = 6;
+  string curLanguage = 7;
+  ProductionType curProductionType = 8;
+  string preferredLanguage = 9;
+  string preferred2Language = 10;
+  string arcVideoLanguage = 11;
+  string arcHardcodedLanguage = 12;
+  int32 playlistSwitch = 13;
+}
+
+// Source: com/bapis/bilibili/subtitle/UserInfo.java
+message UserInfo {
+  int64 mid = 1;
+  string name = 2;
+  string sex = 3;
+  string face = 4;
+  string sign = 5;
+  int32 rank = 6;
+}
+
+// Source: com/bapis/bilibili/subtitle/VideoSubtitle.java
+message VideoSubtitle {
+  string lan = 1;
+  string lanDoc = 2;
+  repeated SubtitleItem subtitles = 3;
+  bytes subtitleposition = 4;
+  FontSizeType fontSizeType = 5;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/subtitle";

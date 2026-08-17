@@ -1,0 +1,31 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.wall.v1;
+
+// Source: com/bapis/bilibili/app/wall/v1/RuleInfo.java
+message RuleInfo {
+  bool tf = 1;
+  string m = 2;
+  string a = 3;
+  string p = 4;
+  repeated string aBackup = 5;
+}
+
+// Source: com/bapis/bilibili/app/wall/v1/RuleRequest.java
+message RuleRequest {
+}
+
+// Source: com/bapis/bilibili/app/wall/v1/RulesInfo.java
+message RulesInfo {
+  repeated bytes rulesinfo = 1;
+}
+
+// Source: com/bapis/bilibili/app/wall/v1/RulesReply.java
+message RulesReply {
+  bytes rulesinfo = 1;
+  string hashvalue = 2;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/wall/v1";

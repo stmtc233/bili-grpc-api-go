@@ -1,0 +1,17 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.broadcast.live.multi_conn;
+
+// Source: com/bapis/bilibili/broadcast/live/multi_conn/ScoreEvent.java
+message ScoreEvent {
+  repeated int64 data = 1;
+  int64 invokingTime = 2;
+  string version = 3;
+  string layout = 4;
+  int64 roomStatus = 5;
+  string bizSessionId = 6;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/live/multi_conn";

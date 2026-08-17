@@ -1,0 +1,309 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.im.customer.interfaces;
+
+// Source: com/bapis/bilibili/im/customer/interfaces/AiInfo.java
+message AiInfo {
+  string name = 1;
+  string picUrl = 2;
+  repeated string tags = 3;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/Announcement.java
+message Announcement {
+  bool enable = 1;
+  string content = 2;
+  bool jumpEnable = 3;
+  string jumpUrl = 4;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/ClickReportReq.java
+message ClickReportReq {
+  string id = 1;
+  uint64 shopId = 2;
+  uint64 shopFatherId = 3;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/ClickReportRsp.java
+message ClickReportRsp {
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/CloseConversationReq.java
+message CloseConversationReq {
+  uint64 shopId = 1;
+  uint64 shopFatherId = 2;
+  uint64 customSessionId = 3;
+  CloseConversationSource source = 4;
+  uint32 msgSource = 5;
+  uint32 situation = 6;
+  enum CloseConversationSource {
+    CLOSE_CONVERSATION_SOURCE_DEFAULT = 0;
+    CLOSE_CONVERSATION_SOURCE_INPUT_BOX = 1;
+    CLOSE_CONVERSATION_SOURCE_BACK = 2;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/CloseConversationRsp.java
+message CloseConversationRsp {
+  string evaluationUrl = 1;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/Empty.java
+message Empty {
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/FinishParagraphsRenderReq.java
+message FinishParagraphsRenderReq {
+  uint64 msgKey = 1;
+  uint64 status = 2;
+  FinishParagraphsRenderStopPos stopPos = 3;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/FinishParagraphsRenderRsp.java
+message FinishParagraphsRenderRsp {
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/FinishParagraphsRenderStopPos.java
+message FinishParagraphsRenderStopPos {
+  uint64 para = 1;
+  uint64 node = 2;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/GetNewSessionsReq.java
+message GetNewSessionsReq {
+  uint64 beginTs = 1;
+  uint32 size = 2;
+  uint64 recvUid = 3;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/GetSessDetailReq.java
+message GetSessDetailReq {
+  repeated Shop shop = 1;
+  uint64 groupId = 2;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/GetSessDetailRsp.java
+message GetSessDetailRsp {
+  repeated SessionInfo sessionList = 1;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/GetSessionsReq.java
+message GetSessionsReq {
+  uint64 beginTs = 1;
+  uint64 endTs = 2;
+  uint32 size = 3;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/GetUserSettingsReq.java
+message GetUserSettingsReq {
+  uint64 shopFatherId = 1;
+  uint64 shopId = 2;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/GetUserSettingsRsp.java
+message GetUserSettingsRsp {
+  bool enableInitiativeMsg = 1;
+  bool doNotDisturb = 2;
+  string reportUrl = 3;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/OutCustomerQueueReq.java
+message OutCustomerQueueReq {
+  uint64 shopFatherId = 1;
+  uint64 shopId = 2;
+  uint64 msgKey = 3;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/PopResultUpdateReq.java
+message PopResultUpdateReq {
+  ComplianceAlertType popField = 1;
+  bool isAllow = 2;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/PopResultUpdateRsp.java
+message PopResultUpdateRsp {
+  string msg = 1;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/PreEvaluateReq.java
+message PreEvaluateReq {
+  EvaluateType type = 1;
+  uint64 shopFatherId = 2;
+  uint64 shopId = 3;
+  uint64 msgKey = 4;
+  uint64 customSessionId = 5;
+  uint64 machineSessionId = 6;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/PreEvaluateRsp.java
+message PreEvaluateRsp {
+  EvaluationShowInfo rsp = 1;
+  EvaluationShowInfoV2 rspV2 = 2;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/RemoveSessionReq.java
+message RemoveSessionReq {
+  int64 talkerId = 1;
+  int64 shopId = 2;
+  int64 shopFatherId = 3;
+  int32 sessionType = 4;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/SendHeartBeatReq.java
+message SendHeartBeatReq {
+  int64 shopId = 1;
+  int64 shopFatherId = 2;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/SendMsgExt.java
+message SendMsgExt {
+  uint64 sourceUp = 1;
+  string sourceBvid = 2;
+  string cmFromTrackId = 3;
+  string fromSpmid = 4;
+  string clientToken = 5;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/SendMsgReq.java
+message SendMsgReq {
+  Msg msg = 1;
+  int64 skillGroupId = 2;
+  SendMsgExt ext = 3;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/SendMsgRsp.java
+message SendMsgRsp {
+  uint64 msgKey = 1;
+  string msgContent = 2;
+  repeated EmotionInfo eInfos = 3;
+  AiInfo aiInfo = 4;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/SessionMsgReq.java
+message SessionMsgReq {
+  uint64 shopFatherId = 1;
+  uint64 shopId = 2;
+  uint64 beginSeqno = 3;
+  uint64 endSeqno = 4;
+  int32 size = 5;
+  int32 order = 6;
+  string devId = 7;
+  uint32 situation = 8;
+  uint32 gid = 9;
+  SessionMsgReqExt ext = 10;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/SessionMsgReqExt.java
+message SessionMsgReqExt {
+  uint64 sourceUp = 1;
+  string sourceBvid = 2;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/SessionMsgRsp.java
+message SessionMsgRsp {
+  repeated Msg messages = 1;
+  int32 hasMore = 2;
+  uint64 minSeqno = 3;
+  uint64 maxSeqno = 4;
+  repeated EmotionInfo eInfos = 5;
+  uint32 fetchInterval = 6;
+  HotUpdateSessionInfo hotUpdateSessionInfo = 7;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/SessionsRsp.java
+message SessionsRsp {
+  repeated SessionInfo sessionList = 1;
+  uint32 hasMore = 2;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/SetTopReq.java
+message SetTopReq {
+  int64 talkerId = 1;
+  int64 shopId = 2;
+  int64 shopFatherId = 3;
+  int32 sessionType = 4;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/SetUserSettingsReq.java
+message SetUserSettingsReq {
+  uint64 shopFatherId = 1;
+  uint64 shopId = 2;
+  bool enableInitiativeMsg = 3;
+  bool doNotDisturb = 4;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/SetUserSettingsRsp.java
+message SetUserSettingsRsp {
+  string msg = 1;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/Shop.java
+message Shop {
+  uint64 shopFatherId = 1;
+  uint64 shopId = 2;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/ShopCfgReq.java
+message ShopCfgReq {
+  uint64 shopId = 1;
+  int64 shopFatherId = 2;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/ShopCfgRsp.java
+message ShopCfgRsp {
+  Announcement announcement = 1;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/ShopInfoReq.java
+message ShopInfoReq {
+  uint64 shopId = 1;
+  int64 shopFatherId = 2;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/ShopInfoRsp.java
+message ShopInfoRsp {
+  string name = 1;
+  string face = 2;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/UpdateAckReq.java
+message UpdateAckReq {
+  uint64 shopFatherId = 1;
+  uint64 shopId = 2;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/WindowOptionsReq.java
+message WindowOptionsReq {
+  uint64 shopFatherId = 2;
+  uint64 shopId = 3;
+  uint32 situation = 4;
+  uint32 msgSource = 5;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/WindowOptionsRsp.java
+message WindowOptionsRsp {
+  WindowOptionGoods goods = 1;
+  WindowOptionOrder order = 2;
+  WindowOptionEvaluation evaluation = 3;
+  WindowOptionMessage message_ = 4;
+  WindowOptionHistory history = 5;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/WindowOptionsV2Req.java
+message WindowOptionsV2Req {
+  uint64 shopFatherId = 2;
+  uint64 shopId = 3;
+  uint64 situation = 4;
+  uint64 msgSource = 5;
+}
+
+// Source: com/bapis/bilibili/im/customer/interfaces/WindowOptionsV2Rsp.java
+message WindowOptionsV2Rsp {
+  repeated WindowOption windowOptions = 1;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/im/customer/interfaces";

@@ -1,0 +1,464 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.im.interfaces.v1;
+
+enum MSG_LIKE_ACTION {
+  ACTION_UNSPECIFIED = 0;
+  ACTION_LIKE = 1;
+  ACTION_CANCEL_LIKE = 2;
+  ACTION_DISLIKE = 3;
+  ACTION_CANCEL_DISLIKE = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum MSG_LIKE_STATE {
+  STATE_UNSPECIFIED = 0;
+  STATE_LIKE = 1;
+  STATE_DISLIKE = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum UpdateUnreadScope {
+  All = 0;
+  Dustbin = 1;
+  Unfollowed = 2;
+  Stranger = 3;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/DummyReq.java
+message DummyReq {
+  uint32 idl = 1;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/DummyRsp.java
+message DummyRsp {
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/EmotionInfo.java
+message EmotionInfo {
+  string text = 1;
+  string url = 2;
+  int32 size = 3;
+  string gifUrl = 4;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/GetUserCosmoStateReq.java
+message GetUserCosmoStateReq {
+  string business = 1;
+  int64 cardSendMid = 2;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/GetUserCosmoStateRsp.java
+message GetUserCosmoStateRsp {
+  string business = 1;
+  int64 cardSendMid = 2;
+  int32 cosmoState = 3;
+  int32 opType = 4;
+  string text = 5;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/HasLikeState.java
+message HasLikeState {
+  MSG_LIKE_STATE state = 1;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/MsgDetail.java
+message MsgDetail {
+  uint64 msgKey = 1;
+  uint64 seqno = 2;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/MsgFeedUnreadRsp.java
+message MsgFeedUnreadRsp {
+  map<string, int64> unread = 1;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/NewTotalUnread.java
+message NewTotalUnread {
+  int32 unreadCount = 1;
+  int32 unreadType = 2;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqAckAssisMsg.java
+message ReqAckAssisMsg {
+  uint64 ackSeqno = 1;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqAckSessions.java
+message ReqAckSessions {
+  uint64 beginTs = 1;
+  uint32 endTs = 2;
+  uint32 size = 3;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqBatRmSess.java
+message ReqBatRmSess {
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqCloseClearUnreadUI.java
+message ReqCloseClearUnreadUI {
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqGetDiscussListInImPage.java
+message ReqGetDiscussListInImPage {
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqGetMsg.java
+message ReqGetMsg {
+  uint64 talkerId = 1;
+  uint32 sessionType = 2;
+  repeated MsgDetail msgDetail = 3;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqGetSessions.java
+message ReqGetSessions {
+  uint64 beginTs = 1;
+  uint64 endTs = 2;
+  uint32 size = 3;
+  uint32 sessionType = 4;
+  uint32 unfollowFold = 5;
+  uint32 groupFold = 6;
+  uint32 sortRule = 7;
+  uint32 teenagerMode = 8;
+  uint32 lessonsMode = 9;
+  repeated IntList sids = 10;
+  int64 aiUid = 11;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqGetSpecificSessions.java
+message ReqGetSpecificSessions {
+  repeated SimpleSession talkerSessions = 1;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqGroupAssisMsg.java
+message ReqGroupAssisMsg {
+  uint64 clientSeqno = 1;
+  uint32 size = 2;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqLikeMsg.java
+message ReqLikeMsg {
+  uint64 msgKey = 1;
+  MSG_LIKE_ACTION action = 2;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqLiveInfo.java
+message ReqLiveInfo {
+  int64 uid = 1;
+  int64 talkerId = 2;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqMsgHasLike.java
+message ReqMsgHasLike {
+  repeated uint64 msgKeys = 1;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqNewSessions.java
+message ReqNewSessions {
+  uint64 beginTs = 1;
+  uint32 size = 2;
+  uint32 teenagerMode = 3;
+  uint32 lessonsMode = 4;
+  repeated IntList sids = 5;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqRelationSync.java
+message ReqRelationSync {
+  uint64 clientRelationOplogSeqno = 1;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqRemoveSession.java
+message ReqRemoveSession {
+  uint64 talkerId = 1;
+  uint32 sessionType = 2;
+  uint64 shopId = 3;
+  uint64 shopFatherId = 4;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqSendMsg.java
+message ReqSendMsg {
+  Msg msg = 1;
+  string cookie = 2;
+  string cookie2 = 3;
+  int32 errorCode = 4;
+  string devId = 5;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqSessionDetail.java
+message ReqSessionDetail {
+  uint64 talkerId = 1;
+  uint32 sessionType = 2;
+  uint64 uid = 3;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqSessionDetails.java
+message ReqSessionDetails {
+  repeated ReqSessionDetail sessIds = 1;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqSessionMsg.java
+message ReqSessionMsg {
+  uint64 talkerId = 1;
+  int32 sessionType = 2;
+  uint64 endSeqno = 3;
+  uint64 beginSeqno = 4;
+  int32 size = 5;
+  int32 order = 6;
+  string devId = 7;
+  string canalToken = 8;
+  int64 aiUid = 9;
+  bool needAiMsg = 10;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqSetTop.java
+message ReqSetTop {
+  uint64 talkerId = 1;
+  uint32 sessionType = 2;
+  uint32 opType = 3;
+  uint64 shopId = 4;
+  uint64 shopFatherId = 5;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqShareList.java
+message ReqShareList {
+  int32 size = 1;
+  uint32 source = 2;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqShowClearUnreadUI.java
+message ReqShowClearUnreadUI {
+  uint32 unreadType = 1;
+  uint32 showUnfollowList = 2;
+  uint32 showDustbin = 4;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqSingleUnread.java
+message ReqSingleUnread {
+  uint32 unreadType = 1;
+  uint32 showUnfollowList = 2;
+  uint64 uid = 3;
+  uint32 showDustbin = 4;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqSpecificSingleUnread.java
+message ReqSpecificSingleUnread {
+  repeated SimpleSession talkerSessions = 1;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqSyncAck.java
+message ReqSyncAck {
+  uint64 clientSeqno = 1;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqTotalUnread.java
+message ReqTotalUnread {
+  uint32 unreadType = 1;
+  uint32 showUnfollowList = 2;
+  uint64 uid = 3;
+  uint32 showDustbin = 4;
+  int32 singleunreadOn = 5;
+  int32 msgfeedOn = 6;
+  int32 sysupOn = 7;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqUpdateAck.java
+message ReqUpdateAck {
+  uint64 talkerId = 1;
+  uint32 sessionType = 2;
+  uint64 ackSeqno = 3;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqUpdateIntercept.java
+message ReqUpdateIntercept {
+  uint64 uid = 1;
+  uint64 talkerId = 2;
+  uint32 status = 3;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ReqUpdateTotalUnread.java
+message ReqUpdateTotalUnread {
+  UpdateUnreadScope scope = 1;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/RspCloseClearUnreadUI.java
+message RspCloseClearUnreadUI {
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/RspGetDiscussListInImPage.java
+message RspGetDiscussListInImPage {
+  repeated SingleDiscussInImPage discussList = 1;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/RspGetMsg.java
+message RspGetMsg {
+  repeated Msg msg = 1;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/RspLiveInfo.java
+message RspLiveInfo {
+  int64 liveStatus = 1;
+  string jumpUrl = 2;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/RspMsgHasLike.java
+message RspMsgHasLike {
+  map<int64, HasLikeState> states = 1;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/RspMyGroupUnread.java
+message RspMyGroupUnread {
+  uint32 unreadCount = 1;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/RspRelationSync.java
+message RspRelationSync {
+  int32 full = 1;
+  repeated RelationLog relationLogs = 2;
+  repeated FriendRelation friendList = 3;
+  uint64 serverRelationOplogSeqno = 4;
+  repeated GroupRelation groupList = 5;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/RspSendMsg.java
+message RspSendMsg {
+  uint64 msgKey = 1;
+  repeated EmotionInfo eInfos = 2;
+  string msgContent = 3;
+  KeyHitInfos keyHitInfos = 4;
+  RichTextMsgContent richTextMsgContent = 5;
+  uint64 seqno = 6;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/RspSessionDetails.java
+message RspSessionDetails {
+  repeated SessionInfo sessInfos = 1;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/RspSessionMsg.java
+message RspSessionMsg {
+  repeated Msg messages = 1;
+  int32 hasMore = 2;
+  uint64 minSeqno = 3;
+  uint64 maxSeqno = 4;
+  repeated EmotionInfo eInfos = 5;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/RspSessions.java
+message RspSessions {
+  repeated SessionInfo sessionList = 1;
+  uint32 hasMore = 2;
+  bool antiDisturbCleaning = 3;
+  int32 isAddressListEmpty = 4;
+  map<int32, int64> systemMsg = 5;
+  bool showLevel = 6;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/RspShareList.java
+message RspShareList {
+  repeated ShareSessionInfo sessionList = 1;
+  int32 isaddresslistempty = 2;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/RspShowClearUnreadUI.java
+message RspShowClearUnreadUI {
+  bool display = 1;
+  string text = 2;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/RspSingleUnread.java
+message RspSingleUnread {
+  uint64 unfollowUnread = 1;
+  uint64 followUnread = 2;
+  uint32 unfollowPushMsg = 3;
+  uint32 dustbinPushMsg = 4;
+  uint64 dustbinUnread = 5;
+  uint64 bizMsgUnfollowUnread = 6;
+  uint64 bizMsgFollowUnread = 7;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/RspSpecificSingleUnread.java
+message RspSpecificSingleUnread {
+  map<int64, int64> talkerUnreadCnt = 1;
+  uint64 allUnreadCnt = 2;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/RspSyncAck.java
+message RspSyncAck {
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/RspTotalUnread.java
+message RspTotalUnread {
+  SessionSingleUnreadRsp sessionSingleUnread = 1;
+  MsgFeedUnreadRsp msgFeedUnread = 2;
+  SysMsgInterfaceLastMsgRsp sysMsgInterfaceLastMsg = 3;
+  int32 totalUnread = 4;
+  uint64 customUnread = 5;
+  NewTotalUnread newTotalUnread = 6;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/RspUpdateTotalUnread.java
+message RspUpdateTotalUnread {
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/SessionSingleUnreadRsp.java
+message SessionSingleUnreadRsp {
+  uint64 unfollowUnread = 1;
+  uint64 followUnread = 2;
+  uint32 unfollowPushMsg = 3;
+  uint32 dustbinPushMsg = 4;
+  uint64 dustbinUnread = 5;
+  uint64 bizMsgUnfollowUnread = 6;
+  uint64 bizMsgFollowUnread = 7;
+  uint64 huahuoUnread = 8;
+  uint64 customUnread = 9;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/ShareSessionInfo.java
+message ShareSessionInfo {
+  uint64 talkerId = 1;
+  string talkerUname = 2;
+  string talkerIcon = 3;
+  int32 officialType = 4;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/SimpleSession.java
+message SimpleSession {
+  uint64 talkerId = 1;
+  uint32 sessionType = 2;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/SingleDiscussInImPage.java
+message SingleDiscussInImPage {
+  uint64 discussId = 1;
+  uint64 mid = 2;
+  string face = 3;
+  string name = 4;
+  uint32 unreadCount = 5;
+  uint32 type = 6;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/SysMsgInterfaceLastMsgRsp.java
+message SysMsgInterfaceLastMsgRsp {
+  int32 unread = 1;
+  string title = 2;
+  string time = 3;
+  uint64 id = 4;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/UpdateUserCosmoStateReq.java
+message UpdateUserCosmoStateReq {
+  string business = 1;
+  int64 cardSendMid = 2;
+  int32 cosmoState = 3;
+  int32 opType = 4;
+}
+
+// Source: com/bapis/bilibili/im/interfaces/v1/UpdateUserCosmoStateRsp.java
+message UpdateUserCosmoStateRsp {
+  string text = 1;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/im/interfaces/v1";

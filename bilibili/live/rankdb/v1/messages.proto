@@ -1,0 +1,14 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.live.rankdb.v1;
+
+// Source: com/bapis/bilibili/live/rankdb/v1/GoldRankBroadcast.java
+message GoldRankBroadcast {
+  int64 rankType = 1;
+  repeated string list = 2;
+  repeated string onlineList = 3;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/live/rankdb/v1";

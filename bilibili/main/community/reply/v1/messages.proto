@@ -1,0 +1,1319 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.main.community.reply.v1;
+
+enum DetailListScene {
+  REPLY = 0;
+  MSG_FEED = 1;
+  NOTIFY = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum EditorIconState {
+  EditorIconState_DEFAULT = 0;
+  EditorIconState_ENABLE = 1;
+  EditorIconState_DISABLE = 2;
+  EditorIconState_HIDE = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum Mode {
+  DEFAULT = 0;
+  UNSPECIFIED = 1;
+  MAIN_LIST_TIME = 2;
+  MAIN_LIST_HOT = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum ReplyNotificationSwitch {
+  ReplyNotificationSwitch_UNSPECIFIED = 0;
+  ReplyNotificationSwitch_OFF = 1;
+  ReplyNotificationSwitch_ON = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum SearchItemType {
+  DEFAULT_ITEM_TYPE = 0;
+  GOODS = 1;
+  VIDEO = 2;
+  ARTICLE = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum SearchItemVideoSubType {
+  UGC = 0;
+  PGC = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum TranslationSwitch {
+  TRANSLATION_SWITCH_UNSPECIFIED = 0;
+  TRANSLATION_SWITCH_UNSUPPORTED = 1;
+  TRANSLATION_SWITCH_SHOW_TRANSLATION = 2;
+  TRANSLATION_SWITCH_SHOW_ORIGIN = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum UserCallbackAction {
+  Dismiss = 0;
+  UNRECOGNIZED = -1;
+}
+
+enum UserCallbackScene {
+  Insert = 0;
+  RecommendSuperbReply = 1;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/Activity.java
+message Activity {
+  int64 activityId = 1;
+  int64 activityState = 2;
+  string activityPlaceholder = 3;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/AddReplyReq.java
+message AddReplyReq {
+  int64 oid = 1;
+  int64 type = 2;
+  string message_ = 3;
+  int64 root = 4;
+  int64 parent = 5;
+  map<string, int64> atNameToMid = 6;
+  repeated Picture pictures = 7;
+  bool isEasterEgg = 8;
+  string code = 9;
+  int64 vote = 10;
+  int64 note = 11;
+  bool syncToDynamic = 12;
+  bool hasVoteOption = 13;
+  int64 chargedFee = 14;
+  bool isCharged = 15;
+  int64 gradeId = 16;
+  int32 gradeScore = 17;
+  int32 plat = 18;
+  string scene = 19;
+  string spmid = 20;
+  string fromSpmid = 21;
+  string trackId = 22;
+  string containerUuid = 23;
+  string scmActionId = 24;
+  bool isFly = 25;
+  string flyOrderId = 26;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/AddReplyResp.java
+message AddReplyResp {
+  string successAction = 1;
+  string successToast = 2;
+  int32 successAnimation = 3;
+  int32 changeNicknamePrompt = 4;
+  int32 reply = 5;
+  int32 easterEgg = 6;
+  enum SuccessAction {
+    Display = 0;
+    None = 1;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/AnswerQuestionReq.java
+message AnswerQuestionReq {
+  int64 qid = 1;
+  string optionKey = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/AnswerQuestionResp.java
+message AnswerQuestionResp {
+  string passed = 1;
+  string memberPassed = 2;
+  string memberPassedPopup = 3;
+  int32 bottomText = 4;
+  int32 stat = 5;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ArticleSearchItem.java
+message ArticleSearchItem {
+  string title = 1;
+  string upNickname = 2;
+  repeated string covers = 3;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/AtGroup.java
+message AtGroup {
+  Type groupType = 1;
+  string groupName = 2;
+  repeated AtItem items = 3;
+  enum Type {
+    AT_GROUP_TYPE_DEFAULT = 0;
+    AT_GROUP_TYPE_RECENT = 1;
+    AT_GROUP_TYPE_FOLLOW = 2;
+    AT_GROUP_TYPE_FANS = 3;
+    AT_GROUP_TYPE_OTHERS = 4;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/AtItem.java
+message AtItem {
+  int64 mid = 1;
+  string name = 2;
+  string face = 3;
+  int32 fans = 4;
+  int32 officialVerifyType = 5;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ATRow.java
+message ATRow {
+  string avatar = 1;
+  string text = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/AtSearchReply.java
+message AtSearchReply {
+  repeated AtGroup groups = 1;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/AtSearchReq.java
+message AtSearchReq {
+  int64 mid = 1;
+  string keyword = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/CM.java
+message CM {
+  Any sourceContent = 1;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/Content.java
+message Content {
+  string message_ = 1;
+  map<string, Member> members = 2;
+  map<string, Emote> emotes = 3;
+  map<string, Topic> topics = 4;
+  map<string, Url> urls = 5;
+  Vote vote = 6;
+  map<string, int64> atNameToMid = 7;
+  RichText richText = 8;
+  repeated Picture pictures = 9;
+  double pictureScale = 10;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/CursorReply.java
+message CursorReply {
+  int64 next = 1;
+  int64 prev = 2;
+  bool isBegin = 3;
+  bool isEnd = 4;
+  Mode mode = 5;
+  string modeText = 6;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/CursorReq.java
+message CursorReq {
+  int64 next = 1;
+  int64 prev = 2;
+  Mode mode = 4;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/DetailListReply.java
+message DetailListReply {
+  string cursor = 1;
+  string subjectControl = 2;
+  string root = 3;
+  int64 activity = 4;
+  LikeInfo likes = 5;
+  int32 mode = 6;
+  int32 modeText = 7;
+  int32 paginationReply = 8;
+  int32 sessionId = 9;
+  int32 subjectTitle = 10;
+  repeated int32 mixedCards = 11;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/DetailListReq.java
+message DetailListReq {
+  int64 oid = 1;
+  int64 type = 2;
+  int64 root = 3;
+  int64 rpid = 4;
+  CursorReq cursor = 5;
+  DetailListScene scene = 6;
+  Mode mode = 7;
+  FeedPagination pagination = 8;
+  string extra = 9;
+  string adExtra = 10;
+  bool needSubjectTitle = 11;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/DialogListReply.java
+message DialogListReply {
+  CursorReply cursor = 1;
+  SubjectControl subjectControl = 2;
+  repeated ReplyInfo replies = 3;
+  Activity activity = 4;
+  FeedPaginationReply paginationReply = 5;
+  string sessionId = 6;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/DialogListReq.java
+message DialogListReq {
+  int64 oid = 1;
+  int64 type = 2;
+  int64 root = 3;
+  int64 dialog = 4;
+  CursorReq cursor = 5;
+  FeedPagination pagination = 6;
+  string extra = 7;
+  string adExtra = 8;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/DoVoteReq.java
+message DoVoteReq {
+  int64 oid = 1;
+  int64 type = 2;
+  int64 voteId = 3;
+  int64 option_ = 4;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/DoVoteResp.java
+message DoVoteResp {
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/Effects.java
+message Effects {
+  string preloading = 1;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/Emote.java
+message Emote {
+  int64 size = 1;
+  string url = 2;
+  string jumpUrl = 3;
+  string jumpTitle = 4;
+  int64 id = 5;
+  int64 packageId = 6;
+  string gifUrl = 7;
+  string text = 8;
+  string webpUrl = 9;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/EmptyPage.java
+message EmptyPage {
+  string imageUrl = 1;
+  repeated Text texts = 2;
+  int32 leftButton = 3;
+  int32 rightButton = 4;
+  enum Action {
+    UNAVAILABLE = 0;
+    SHOW_KEYBOARD = 1;
+    SEND_REPLY_WITH_BOLD_TEXT = 2;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ESportsGradeCard.java
+message ESportsGradeCard {
+  string title = 1;
+  string description = 2;
+  string image = 3;
+  string link = 4;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/FoldCard.java
+message FoldCard {
+  string bottomText = 1;
+  FeedPagination foldPagination = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/FoldListReq.java
+message FoldListReq {
+  int64 oid = 1;
+  int64 type = 2;
+  string extra = 3;
+  FeedPagination pagination = 4;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/FoldListResp.java
+message FoldListResp {
+  repeated ReplyInfo replies = 1;
+  FeedPaginationReply paginationReply = 2;
+  string title = 3;
+  SubjectControl subjectControl = 4;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/Form.java
+message Form {
+  int32 type = 1;
+  repeated QoeOption options = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/GoodsSearchItem.java
+message GoodsSearchItem {
+  int64 id = 1;
+  string name = 2;
+  string price = 3;
+  string income = 4;
+  string img = 5;
+  string label = 6;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/LikeInfo.java
+message LikeInfo {
+  repeated Item items = 1;
+  int32 title = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/Lottery.java
+message Lottery {
+  int64 lotteryId = 1;
+  int64 lotteryStatus = 2;
+  int64 lotteryMid = 3;
+  int64 lotteryTime = 4;
+  int64 oid = 5;
+  int64 type = 6;
+  int64 ctime = 7;
+  Content content = 8;
+  Member member = 9;
+  ReplyControl replyControl = 10;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/MainListReply.java
+message MainListReply {
+  CursorReply cursor = 1;
+  repeated ReplyInfo replies = 2;
+  SubjectControl subjectControl = 3;
+  ReplyInfo upTop = 4;
+  ReplyInfo adminTop = 5;
+  ReplyInfo voteTop = 6;
+  Notice notice = 7;
+  Lottery lottery = 8;
+  Activity activity = 9;
+  UpSelection upSelection = 10;
+  CM cm = 11;
+  Effects effects = 12;
+  Operation operation = 13;
+  repeated ReplyInfo topReplies = 14;
+  QoeInfo qoe = 15;
+  map<string, int32> callbacks = 16;
+  OperationV2 operationV2 = 17;
+  Mode mode = 18;
+  string modeText = 19;
+  FeedPaginationReply paginationReply = 20;
+  string sessionId = 21;
+  string reportParams = 22;
+  VoteCard voteCard = 23;
+  ESportsGradeCard esportsGradeCard = 24;
+  string contextFeature = 25;
+  string paginationEndText = 26;
+  repeated MixedCard mixedCards = 27;
+  repeated SubjectTopCards subjectTopCards = 28;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/MainListReq.java
+message MainListReq {
+  int64 oid = 1;
+  int64 type = 2;
+  CursorReq cursor = 3;
+  string extra = 4;
+  string adExtra = 5;
+  int64 rpid = 6;
+  int64 seekRpid = 7;
+  string filterTagName = 8;
+  Mode mode = 9;
+  FeedPagination pagination = 10;
+  repeated int64 clientRecallRpids = 11;
+  WordSearchParam wordSearchParam = 12;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/Member.java
+message Member {
+  long mid = 1;
+  string name = 2;
+  int32 sex = 3;
+  int32 face = 4;
+  int32 level = 5;
+  int32 officialVerifyType = 6;
+  int32 vipType = 7;
+  int32 vipStatus = 8;
+  int32 vipThemeType = 9;
+  int32 vipLabelPath = 10;
+  int32 garbPendantImage = 11;
+  int32 garbCardImage = 12;
+  int32 garbCardImageWithFocus = 13;
+  int32 garbCardJumpUrl = 14;
+  int32 garbCardNumber = 15;
+  int32 garbCardFanColor = 16;
+  int32 garbCardIsFan = 17;
+  int32 fansMedalName = 18;
+  int32 fansMedalLevel = 19;
+  int32 fansMedalColor = 20;
+  int32 vipNicknameColor = 21;
+  int32 vipAvatarSubscript = 22;
+  int32 vipLabelText = 23;
+  int32 vipLabelTheme = 24;
+  int32 fansMedalColorEnd = 25;
+  int32 fansMedalColorBorder = 26;
+  int32 fansMedalColorName = 27;
+  int32 fansMedalColorLevel = 28;
+  int32 fansGuardLevel = 29;
+  int32 faceNft = 30;
+  int32 faceNftNew = 31;
+  int32 isSeniorMember = 32;
+  int32 nftInteraction = 33;
+  int32 fansGuardIcon = 34;
+  int32 fansHonorIcon = 35;
+  enum RegionType {
+    DEFAULT = 0;
+    MAINLAND = 1;
+    GAT = 2;
+    UNRECOGNIZED = -1;
+  }
+
+  enum ShowStatus {
+    SHOWDEFAULT = 0;
+    ZOOMINMAINLAND = 1;
+    RAW = 2;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/MemberV2.java
+message MemberV2 {
+  int64 basic = 1;
+  string official = 2;
+  string vip = 3;
+  string garb = 4;
+  int64 medal = 5;
+  Nft nft = 6;
+  Senior senior = 7;
+  string contractor = 8;
+  int32 userSailing = 9;
+  enum RegionType {
+    DEFAULT = 0;
+    MAINLAND = 1;
+    GAT = 2;
+    UNRECOGNIZED = -1;
+  }
+
+  enum ShowStatus {
+    SHOWDEFAULT = 0;
+    ZOOMINMAINLAND = 1;
+    RAW = 2;
+    UNRECOGNIZED = -1;
+  }
+
+  enum Status {
+    Normal = 0;
+    Pending = 1;
+    Senior = 2;
+    WillExpire = 3;
+    Expired = 4;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/MixedCard.java
+message MixedCard {
+  Type type = 1;
+  string oid = 2;
+  int64 displayRank = 3;
+  oneof oneof_0 {
+    QuestionCard question = 4;
+    FoldCard fold = 5;
+  }
+  enum ItemCase {
+    QUESTION = 4;
+    FOLD = 5;
+    ITEM_NOT_SET = 0;
+  }
+
+  enum Type {
+    UNKNOWN = 0;
+    QUESTION = 1;
+    FOLD = 2;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/Notice.java
+message Notice {
+  int64 id = 1;
+  string content = 2;
+  string link = 3;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/OgvGradeCard.java
+message OgvGradeCard {
+  string title = 1;
+  string subTitle = 2;
+  string buttonText = 3;
+  string gotoUrl = 4;
+  string reportParam = 5;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/Operation.java
+message Operation {
+  Type type = 1;
+  int64 id = 2;
+  OperationTitle title = 3;
+  OperationTitle subtitle = 4;
+  string link = 5;
+  string reportExtra = 6;
+  string icon = 7;
+  enum Type {
+    UNKNOWN = 0;
+    NOTE = 1;
+    TOPIC = 2;
+    NOTICE = 3;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/OperationTitle.java
+message OperationTitle {
+  string content = 1;
+  bool isHighlight = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/OperationV2.java
+message OperationV2 {
+  Type type = 1;
+  string prefixText = 2;
+  int32 icon = 3;
+  int32 title = 4;
+  int32 link = 5;
+  int32 reportExtra = 6;
+  enum Position {
+    PREFIX = 0;
+    SUFFIX = 1;
+    UNRECOGNIZED = -1;
+  }
+
+  enum Type {
+    UNKNOWN = 0;
+    NOTE = 1;
+    TOPIC = 2;
+    SEARCH = 4;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ParentReplyMember.java
+message ParentReplyMember {
+  int64 mid = 1;
+  string name = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/PGCVideoSearchItem.java
+message PGCVideoSearchItem {
+  string title = 1;
+  string category = 2;
+  string cover = 3;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/Picture.java
+message Picture {
+  string imgSrc = 1;
+  double imgWidth = 2;
+  double imgHeight = 3;
+  double imgSize = 4;
+  string topRightIcon = 5;
+  bool playGifThumbnail = 6;
+  PictureBadge pictureBadge = 7;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/PictureBadge.java
+message PictureBadge {
+  string text = 1;
+  string icon = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/PictureListReq.java
+message PictureListReq {
+  int64 oid = 1;
+  int64 type = 2;
+  string extra = 3;
+  int64 afterRpid = 4;
+  Mode mode = 5;
+  FeedPagination pagination = 6;
+  string sessionId = 7;
+  string mainListSessionId = 8;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/PictureListResp.java
+message PictureListResp {
+  repeated ReplyInfo replies = 1;
+  FeedPaginationReply paginationReply = 2;
+  string sessionId = 3;
+  string reportParams = 4;
+  string contextFeature = 5;
+  string paginationEndText = 6;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/PreviewListReply.java
+message PreviewListReply {
+  CursorReply cursor = 1;
+  repeated ReplyInfo replies = 2;
+  SubjectControl subjectControl = 3;
+  ReplyInfo upTop = 4;
+  ReplyInfo adminTop = 5;
+  ReplyInfo voteTop = 6;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/PreviewListReq.java
+message PreviewListReq {
+  int64 oid = 1;
+  int64 type = 2;
+  CursorReq cursor = 3;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/QoeInfo.java
+message QoeInfo {
+  int64 id = 1;
+  int32 type = 2;
+  int32 style = 3;
+  string title = 4;
+  string feedbackTitle = 5;
+  repeated QoeScoreItem scoreItems = 6;
+  int64 displayRank = 7;
+  Form form = 8;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/QoeOption.java
+message QoeOption {
+  string title = 1;
+  float score = 2;
+  string imgUrl = 3;
+  repeated string desc = 4;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/QoeOptionDesc.java
+message QoeOptionDesc {
+  repeated string desc = 1;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/QoeScoreItem.java
+message QoeScoreItem {
+  string title = 1;
+  string url = 2;
+  float score = 3;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/QuestionCard.java
+message QuestionCard {
+  string question = 1;
+  string stat = 2;
+  int32 bottomText = 3;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/QuestionCardStat.java
+message QuestionCardStat {
+  int64 rightCnt = 1;
+  int64 rightMidCnt = 2;
+  int64 submitMidCnt = 3;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/QuizCard.java
+message QuizCard {
+  int32 quizId = 1;
+  string title = 2;
+  int32 count = 3;
+  string allCoin = 4;
+  int32 quizText = 5;
+  repeated int32 options = 6;
+  int32 myOption = 7;
+  int32 upOption = 8;
+  int32 url = 9;
+  int32 state = 10;
+  int32 winOption = 11;
+  int32 editUrl = 12;
+  int32 quizIcon = 13;
+  int32 initialPoolCoin = 14;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/QuizOption.java
+message QuizOption {
+  string desc = 1;
+  int32 coinPer = 2;
+  string color = 3;
+  bool isMyOption = 4;
+  bool isAnswer = 5;
+  string bgColor = 6;
+  int32 idx = 7;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/QuizShareReply.java
+message QuizShareReply {
+  string bgImg = 1;
+  string headAvatar = 2;
+  string headText = 3;
+  string headTitle = 4;
+  string headSubtitle = 5;
+  string headSubtitleCoin = 6;
+  string bodyTitle = 7;
+  ATRow bodyUpRow = 8;
+  repeated QuizOption options = 9;
+  ATRow bodyDownRow = 10;
+  string tailCover = 11;
+  string tailTitle = 12;
+  string tailQrCode = 13;
+  string tailImg = 14;
+  string headSubtitlePer = 15;
+  int64 quizId = 16;
+  int32 quizStatus = 17;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/QuizShareReq.java
+message QuizShareReq {
+  int32 type = 1;
+  int64 oid = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ReplyCardLabel.java
+message ReplyCardLabel {
+  string textContent = 1;
+  string textColorDay = 2;
+  string textColorNight = 3;
+  string labelColorDay = 4;
+  string labelColorNight = 5;
+  string image = 6;
+  Type type = 7;
+  string background = 8;
+  double backgroundWidth = 9;
+  double backgroundHeight = 10;
+  string jumpUrl = 11;
+  int64 effect = 12;
+  int64 effectStartTime = 13;
+  enum Type {
+    UNDERLINE = 0;
+    BACKGROUND = 1;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ReplyControl.java
+message ReplyControl {
+  string action = 1;
+  string upLike = 2;
+  int32 upReply = 3;
+  int32 showFollowBtn = 4;
+  int32 isAssist = 5;
+  int32 labelText = 6;
+  int32 following = 7;
+  int32 followed = 8;
+  int32 blocked = 9;
+  int32 hasFoldedReply = 10;
+  int32 isFoldedReply = 11;
+  int32 isUpTop = 12;
+  int32 isAdminTop = 13;
+  int32 isVoteTop = 14;
+  int32 maxLine = 15;
+  int32 invisible = 16;
+  int32 isContractor = 17;
+  int32 isNote = 18;
+  repeated int32 cardLabels = 19;
+  int32 subReplyEntryText = 20;
+  int32 subReplyTitleText = 21;
+  int32 contractDesc = 22;
+  int32 timeDesc = 23;
+  int32 bizScene = 24;
+  int32 location = 25;
+  int32 foldPictures = 26;
+  int32 isNoteV2 = 27;
+  int32 hideNoteIcon = 28;
+  int32 cmRecommendComponent = 29;
+  int32 voteOption = 30;
+  int32 chargedDesc = 31;
+  int32 gradeRecord = 32;
+  int32 presetReplyText = 33;
+  int32 easterEggLabel = 34;
+  int32 contextFeature = 35;
+  int32 insertEffect = 36;
+  int32 translationSwitch = 37;
+  int32 supportShare = 38;
+  int32 flyInfo = 39;
+  enum LabelKind {
+    DEFAULT = 0;
+    RED = 1;
+    BLUE = 2;
+    PLAIN = 3;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ReplyExtra.java
+message ReplyExtra {
+  int64 seasonId = 1;
+  int64 seasonType = 2;
+  int64 epId = 3;
+  bool isStory = 4;
+  string spmid = 5;
+  string fromSpmid = 6;
+  bool disableUnderline = 7;
+  bool disableWeSearch = 8;
+  bool disableFilterTag = 9;
+  bool isActivityMode = 10;
+  string trackId = 11;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ReplyInAppPushPayload.java
+message ReplyInAppPushPayload {
+  string reply = 1;
+  Reply parentReply = 2;
+  Subject subject = 3;
+  repeated SubjectMaterial subjectMaterial = 4;
+  enum ItemCase {
+    ARC = 1;
+    ITEM_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ReplyInfo.java
+message ReplyInfo {
+  repeated ReplyInfo replies = 1;
+  int64 id = 2;
+  int64 oid = 3;
+  int64 type = 4;
+  int64 mid = 5;
+  int64 root = 6;
+  int64 parent = 7;
+  int64 dialog = 8;
+  int64 like = 9;
+  int64 ctime = 10;
+  int64 count = 11;
+  Content content = 12;
+  Member member = 13;
+  ReplyControl replyControl = 14;
+  MemberV2 memberV2 = 15;
+  string trackInfo = 16;
+  Content translatedContent = 17;
+  ParentReplyMember parentReplyMember = 18;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ReplyInfoReply.java
+message ReplyInfoReply {
+  ReplyInfo reply = 1;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ReplyInfoReq.java
+message ReplyInfoReq {
+  int64 rpid = 1;
+  ReplyInfoScene scene = 2;
+  BizScene bizScene = 3;
+  enum BizScene {
+    DEFAULT = 0;
+    INSERT_NEW = 1;
+    UNRECOGNIZED = -1;
+  }
+
+  enum ReplyInfoScene {
+    Insert = 0;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ReplyTrackInfo.java
+message ReplyTrackInfo {
+  string trackId = 1;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/RichText.java
+message RichText {
+  oneof oneof_0 {
+    RichTextNote note = 1;
+    OpusItem opus = 2;
+  }
+  enum ItemCase {
+    NOTE = 1;
+    OPUS = 2;
+    ITEM_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/RichTextNote.java
+message RichTextNote {
+  string summary = 1;
+  repeated string images = 2;
+  string clickUrl = 3;
+  string lastMtimeText = 4;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/SearchItem.java
+message SearchItem {
+  string url = 1;
+  oneof oneof_0 {
+    GoodsSearchItem goods = 2;
+    VideoSearchItem video = 3;
+    ArticleSearchItem article = 4;
+  }
+  enum ItemCase {
+    GOODS = 2;
+    VIDEO = 3;
+    ARTICLE = 4;
+    ITEM_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/SearchItemCursorReply.java
+message SearchItemCursorReply {
+  bool hasNext = 1;
+  int64 next = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/SearchItemCursorReq.java
+message SearchItemCursorReq {
+  int64 next = 1;
+  SearchItemType itemType = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/SearchItemPreHookReply.java
+message SearchItemPreHookReply {
+  string placeholderText = 1;
+  string backgroundText = 2;
+  repeated IntList orderedType = 3;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/SearchItemPreHookReq.java
+message SearchItemPreHookReq {
+  int64 oid = 1;
+  int64 type = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/SearchItemReply.java
+message SearchItemReply {
+  SearchItemCursorReply cursor = 1;
+  repeated SearchItem items = 2;
+  SearchItemReplyExtraInfo extra = 3;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/SearchItemReplyExtraInfo.java
+message SearchItemReplyExtraInfo {
+  string eventId = 1;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/SearchItemReq.java
+message SearchItemReq {
+  SearchItemCursorReq cursor = 1;
+  int64 oid = 2;
+  int64 type = 3;
+  string keyword = 4;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ShareRepliesInfoReq.java
+message ShareRepliesInfoReq {
+  repeated int64 rpids = 1;
+  int64 oid = 2;
+  int64 type = 3;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ShareRepliesInfoResp.java
+message ShareRepliesInfoResp {
+  repeated bool infos = 1;
+  int32 fromTitle = 2;
+  int32 fromUp = 3;
+  int32 fromPic = 4;
+  int32 url = 5;
+  int32 sloganPic = 6;
+  int32 sloganText = 7;
+  int32 topic = 8;
+  int32 extra = 9;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ShareReplyInfo.java
+message ShareReplyInfo {
+  Member member = 1;
+  Content content = 2;
+  string title = 3;
+  string subTitle = 4;
+  string achievementText = 5;
+  string labelUrl = 6;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ShareReplyMaterialReq.java
+message ShareReplyMaterialReq {
+  int64 oid = 1;
+  int64 type = 2;
+  int64 rpid = 3;
+  bool needTranslate = 4;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ShareReplyMaterialResp.java
+message ShareReplyMaterialResp {
+  string subjectMaterial = 1;
+  string qrcodeUrl = 2;
+  string savePicText = 3;
+  string openAppText = 4;
+  int64 shareTimeText = 5;
+  int64 biliLogoIcon = 6;
+  int32 extra = 7;
+  int32 fromSubjectTypeText = 8;
+  int32 openAppTextSubtitle = 9;
+  int32 bgColor = 10;
+  int32 contentBgColor = 11;
+  int32 contentAnchorImage = 12;
+  int32 bgTopOverlayImage = 13;
+  int32 reply = 14;
+  int32 parentReply = 15;
+  int32 subjectControl = 16;
+  enum ItemCase {
+    ARCHIVE_MATERIAL = 1;
+    DYNAMIC_MATERIAL = 2;
+    ARTICLE_MATERIAL = 3;
+    ITEM_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ShareReplyTopic.java
+message ShareReplyTopic {
+  Topic topic = 1;
+  string originText = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/SubjectControl.java
+message SubjectControl {
+  int64 upMid = 1;
+  string isAssist = 2;
+  string readOnly = 3;
+  int32 hasVoteAccess = 4;
+  int32 hasLotteryAccess = 5;
+  int32 hasFoldedReply = 6;
+  int32 bgText = 7;
+  int32 upBlocked = 8;
+  int32 hasActivityAccess = 9;
+  int32 showTitle = 10;
+  int32 showUpAction = 11;
+  int32 switcherType = 12;
+  int32 inputDisable = 13;
+  int32 rootText = 14;
+  int32 childText = 15;
+  int32 count = 16;
+  int32 title = 17;
+  int32 giveupText = 18;
+  int32 hasNoteAccess = 19;
+  int32 disableJumpEmote = 20;
+  int32 emptyBackgroundTextPlain = 21;
+  int32 emptyBackgroundTextHighlight = 22;
+  int32 emptyBackgroundUri = 23;
+  repeated int32 supportFilterTags = 24;
+  int32 screenshotIconState = 25;
+  int32 uploadPictureIconState = 26;
+  int32 emptyPage = 27;
+  int32 cmTopReplyProtection = 28;
+  int32 enableCharged = 29;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/SubjectTopCards.java
+message SubjectTopCards {
+  Type type = 1;
+  string oid = 2;
+  oneof oneof_0 {
+    OgvGradeCard ogvGrade = 3;
+    UpProtectionCard upProtection = 4;
+    CM cm = 5;
+    UpSelection upSelection = 6;
+    OperationV2 operation = 7;
+    VoteCard vote = 8;
+    ESportsGradeCard esportsGrade = 9;
+    QuizCard quiz = 10;
+  }
+  enum ItemCase {
+    OGV_GRADE = 3;
+    UP_PROTECTION = 4;
+    CM = 5;
+    UP_SELECTION = 6;
+    OPERATION = 7;
+    VOTE = 8;
+    ESPORTS_GRADE = 9;
+    QUIZ = 10;
+    ITEM_NOT_SET = 0;
+  }
+
+  enum Type {
+    UNKNOWN = 0;
+    OGV_GRADE = 1;
+    UP_PROTECTION = 2;
+    CM = 3;
+    UP_SELECTION = 4;
+    OPERATION = 5;
+    VOTE = 6;
+    ESPORTS_GRADE = 7;
+    QUIZ = 8;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/SuggestEmotesReq.java
+message SuggestEmotesReq {
+  int64 oid = 1;
+  int64 type = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/SuggestEmotesResp.java
+message SuggestEmotesResp {
+  repeated Emote emotes = 1;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/TextStyle.java
+message TextStyle {
+  int32 fontSize = 1;
+  FontStyle fontStyle = 2;
+  string textDayColor = 3;
+  string textNightColor = 4;
+  enum FontStyle {
+    NORMAL = 0;
+    BOLD = 1;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/Topic.java
+message Topic {
+  string link = 1;
+  int64 id = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/TranslateReplyReq.java
+message TranslateReplyReq {
+  int64 type = 1;
+  int64 oid = 2;
+  repeated int64 rpids = 3;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/TranslateReplyResp.java
+message TranslateReplyResp {
+  map<int64, ReplyInfo> translatedReplies = 1;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/UGCVideoSearchItem.java
+message UGCVideoSearchItem {
+  string title = 1;
+  string upNickname = 2;
+  int64 duration = 3;
+  string cover = 4;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/UpdateSingleReplyNotificationConfigReq.java
+message UpdateSingleReplyNotificationConfigReq {
+  int64 rpid = 1;
+  int64 type = 2;
+  int64 oid = 3;
+  ReplyNotificationSwitch pushSwitch = 4;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/UpdateSingleReplyNotificationConfigResp.java
+message UpdateSingleReplyNotificationConfigResp {
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/UpProtectionCard.java
+message UpProtectionCard {
+  string text = 1;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/UpSelection.java
+message UpSelection {
+  int64 pendingCount = 1;
+  int64 ignoreCount = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/Url.java
+message Url {
+  int64 title = 1;
+  string state = 2;
+  int32 prefixIcon = 3;
+  bool appUrlSchema = 4;
+  int64 appName = 5;
+  string appPackageName = 6;
+  string clickReport = 7;
+  int64 isHalfScreen = 8;
+  int32 exposureReport = 9;
+  int32 extra = 10;
+  int32 underline = 11;
+  int32 matchOnce = 12;
+  int32 pcUrl = 13;
+  int32 iconPosition = 14;
+  enum GoodsShowType {
+    Popup = 0;
+    FullScreen = 1;
+    HalfScreen = 2;
+    UNRECOGNIZED = -1;
+  }
+
+  enum IconPosition {
+    Prefix = 0;
+    Suffix = 1;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/UserCallbackReply.java
+message UserCallbackReply {
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/UserCallbackReq.java
+message UserCallbackReq {
+  int64 mid = 1;
+  UserCallbackScene scene = 2;
+  UserCallbackAction action = 3;
+  int64 oid = 4;
+  int64 type = 5;
+  repeated int64 rpids = 6;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/VideoSearchItem.java
+message VideoSearchItem {
+  SearchItemVideoSubType type = 1;
+  oneof oneof_0 {
+    UGCVideoSearchItem ugc = 2;
+    PGCVideoSearchItem pgc = 3;
+  }
+  enum VideoItemCase {
+    UGC = 2;
+    PGC = 3;
+    VIDEOITEM_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/Vote.java
+message Vote {
+  int64 id = 1;
+  string title = 2;
+  int64 count = 3;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/VoteCard.java
+message VoteCard {
+  int64 voteId = 1;
+  string title = 2;
+  int64 count = 3;
+  repeated int32 options = 4;
+  int32 myVoteOption = 5;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/WordSearchParam.java
+message WordSearchParam {
+  int64 shownCount = 1;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/main/community/reply/v1";

@@ -1,0 +1,21 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.metadata.fawkes;
+
+// Source: com/bapis/bilibili/metadata/fawkes/FawkesReply.java
+message FawkesReply {
+  string config = 1;
+  string ff = 2;
+  string dd = 3;
+}
+
+// Source: com/bapis/bilibili/metadata/fawkes/FawkesReq.java
+message FawkesReq {
+  string appkey = 1;
+  string env = 2;
+  string sessionId = 3;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/metadata/fawkes";

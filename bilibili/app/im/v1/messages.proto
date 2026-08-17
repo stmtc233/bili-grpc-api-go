@@ -1,0 +1,1721 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.im.v1;
+
+enum AiIdType {
+  AI_ID_TYPE_UNKNOWN = 0;
+  AI_ID_TYPE_MAIN = 1;
+  AI_ID_TYPE_CUSTOMER = 2;
+  AI_ID_TYPE_BOTH = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum AirDropFrom {
+  ADF_UNKNOWN = 0;
+  ADF_INSIDE_APP = 1;
+  ADF_OUTSIDE_APP = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum AlertToastType {
+  ALERT_TOAST_TYPE_UNSPECIFIED = 0;
+  ALERT_TOAST_TYPE_BANNED = 1;
+  ALERT_TOAST_TYPE_REPORT = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum AssistantType {
+  ASSISTANT_TYPE_UNKNOWN = 0;
+  ASSISTANT_TYPE_LIVE = 1;
+  ASSISTANT_TYPE_UP = 2;
+  ASSISTANT_TYPE_PAY = 3;
+  ASSISTANT_TYPE_REPORT = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum BubbleStyle {
+  BUBBLE_STYLE_ROUND_CORNER = 0;
+  BUBBLE_STYLE_SHARP_CORNER = 1;
+  BUBBLE_STYLE_BACKGROUND_CLEAR = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum ContactTabType {
+  TAB_UNKNOWN = 0;
+  TAB_GROUP = 1;
+  TAB_FOLLOW = 2;
+  TAB_FANS = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum EntityMsgType {
+  ENTITY_MSG_TYPE_UNSPECIFIED = 0;
+  ENTITY_MSG_TYPE_TEXT = 1;
+  ENTITY_MSG_TYPE_PICTURE = 2;
+  ENTITY_MSG_TYPE_RECALL = 3;
+  ENTITY_MSG_TYPE_SHARE = 4;
+  ENTITY_MSG_TYPE_APPLET = 5;
+  ENTITY_MSG_TYPE_NOTIFICATION = 6;
+  ENTITY_MSG_TYPE_WORKS_PUSH = 7;
+  ENTITY_MSG_TYPE_BANNER = 8;
+  ENTITY_MSG_TYPE_RECOMMEND = 9;
+  ENTITY_MSG_TYPE_TIPS = 10;
+  ENTITY_MSG_TYPE_SEARCH_GPT = 11;
+  ENTITY_MSG_TYPE_AI_INTRODUCE = 12;
+  ENTITY_MSG_TYPE_CUSTOM_STICKER = 13;
+  UNRECOGNIZED = -1;
+}
+
+enum FetchDirection {
+  FETCH_DIRECTION_EARLIER = 0;
+  FETCH_DIRECTION_LATER = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum GhostMsgType {
+  GHOST_MSG_TYPE_UNSPECIFIED = 0;
+  GHOST_MSG_TYPE_DELETE_MSG = 1;
+  GHOST_MSG_TYPE_RECALL_MSG = 2;
+  GHOST_MSG_TYPE_UPDATE_MSG = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum IMSettingType {
+  SETTING_TYPE_NEED_ALL = 0;
+  SETTING_TYPE_REPLY_ME = 1;
+  SETTING_TYPE_NEW_FANS = 2;
+  SETTING_TYPE_RECEIVE_LIKE = 3;
+  SETTING_TYPE_MSG_REMIND = 4;
+  SETTING_TYPE_MSG_INTERCEPTION = 5;
+  SETTING_TYPE_FANS_GROUP_MSG = 6;
+  SETTING_TYPE_FANS_GROUP_MSG_RECEIVE = 7;
+  SETTING_TYPE_FANS_GROUP_MSG_FOLD = 8;
+  SETTING_TYPE_FANS_GROUP_MSG_JOIN_GUIDE = 9;
+  SETTING_TYPE_UNFOLLOWED_MSG = 10;
+  SETTING_TYPE_UNFOLLOWED_MSG_FOLD = 11;
+  SETTING_TYPE_BLACK_LIST = 12;
+  SETTING_TYPE_ANTI_HARASSMENT = 13;
+  SETTING_TYPE_ANTI_HARASSMENT_SWITCH = 14;
+  SETTING_TYPE_ANTI_HARASSMENT_OPEN_TIP_TEXT = 15;
+  SETTING_TYPE_CLOSE_FANS_GROUP = 16;
+  SETTING_TYPE_OLD_REPLY_ME = 17;
+  SETTING_TYPE_OLD_AT_ME = 18;
+  SETTING_TYPE_OLD_RECEIVE_LIKE = 19;
+  SETTING_TYPE_ANTI_HARASSMENT_INTERACT_LIMITS = 20;
+  SETTING_TYPE_ANTI_HARASSMENT_DURATION = 21;
+  SETTING_TYPE_ANTI_HARASSMENT_COMMENT_LIMITS = 22;
+  SETTING_TYPE_ANTI_HARASSMENT_DANMU_LIMITS = 23;
+  SETTING_TYPE_UNFOLLOWED_MSG_RECEIVE = 24;
+  SETTING_TYPE_ANTI_HARASSMENT_IM_LIMITS = 25;
+  SETTING_TYPE_KEYWORD_BLOCKING = 26;
+  SETTING_TYPE_RECEIVE_PUSH = 27;
+  SETTING_TYPE_PIN_SESSION = 28;
+  SETTING_TYPE_MUTE_SESSION = 29;
+  SETTING_TYPE_BLOCK_USER = 30;
+  SETTING_TYPE_REPORT_USER = 31;
+  SETTING_TYPE_USER_INFO = 32;
+  SETTING_TYPE_CHAT_BG = 33;
+  UNRECOGNIZED = -1;
+}
+
+enum LabelType {
+  LABEL_TYPE_DEFAULT = 0;
+  LABEL_TYPE_HUA_HUO = 1;
+  LABEL_TYPE_ORIGINAL_FANS = 2;
+  LABEL_TYPE_SPECIAL_ATTENTION = 3;
+  LABEL_TYPE_CONTRACT_UP = 4;
+  LABEL_TYPE_OLD_FANS = 5;
+  LABEL_TYPE_SPECIAL_ATTENTION_2 = 6;
+  LABEL_TYPE_FANS_MEDAL = 7;
+  LABEL_TYPE_GUARD_MEDAL = 8;
+  UNRECOGNIZED = -1;
+}
+
+enum MsgSummaryPrefixType {
+  MSG_SUMMARY_PREFIX_TYPE_NONE = 0;
+  MSG_SUMMARY_PREFIX_TYPE_NOTIFICATION = 1;
+  MSG_SUMMARY_PREFIX_TYPE_GROUP_BLOCKED = 2;
+  MSG_SUMMARY_PREFIX_TYPE_MENTIONED = 3;
+  MSG_SUMMARY_PREFIX_TYPE_UNREAD = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum QuickLinkItemType {
+  QUICK_LINK_ITEM_TYPE_UNKNOWN = 0;
+  QUICK_LINK_ITEM_TYPE_OLD_LIKE = 1;
+  QUICK_LINK_ITEM_TYPE_OLD_REPLY = 2;
+  QUICK_LINK_ITEM_TYPE_AT = 3;
+  QUICK_LINK_ITEM_TYPE_SYSTEM = 4;
+  QUICK_LINK_ITEM_TYPE_HUA_HUO = 5;
+  QUICK_LINK_ITEM_TYPE_FOLLOW = 6;
+  QUICK_LINK_ITEM_TYPE_REPLY = 100;
+  QUICK_LINK_ITEM_TYPE_LIKE = 101;
+  UNRECOGNIZED = -1;
+}
+
+enum QuickLinkMsgType {
+  LikeMsg = 0;
+  ReplyMsg = 1;
+  AtMsg = 2;
+  DanmuMsg = 3;
+  CoinMsg = 4;
+  FavoriteMsg = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum SessionFilterType {
+  FILTER_DEFAULT = 0;
+  FILTER_FOLLOW = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum SessionPageType {
+  SESSION_PAGE_TYPE_UNKNOWN = 0;
+  SESSION_PAGE_TYPE_HOME = 1;
+  SESSION_PAGE_TYPE_UNFOLLOWED = 2;
+  SESSION_PAGE_TYPE_STRANGER = 3;
+  SESSION_PAGE_TYPE_DUSTBIN = 4;
+  SESSION_PAGE_TYPE_GROUP = 5;
+  SESSION_PAGE_TYPE_HUA_HUO = 6;
+  SESSION_PAGE_TYPE_AI = 7;
+  SESSION_PAGE_TYPE_CUSTOMER = 8;
+  UNRECOGNIZED = -1;
+}
+
+enum SessionType {
+  SESSION_TYPE_UNKNOWN = 0;
+  SESSION_TYPE_PRIVATE = 1;
+  SESSION_TYPE_GROUP = 2;
+  SESSION_TYPE_GROUP_FOLD = 3;
+  SESSION_TYPE_UNFOLLOWED = 4;
+  SESSION_TYPE_STRANGER = 5;
+  SESSION_TYPE_DUSTBIN = 6;
+  SESSION_TYPE_CUSTOMER_FOLD = 7;
+  SESSION_TYPE_SYSTEM = 8;
+  SESSION_TYPE_AI_FOLD = 9;
+  SESSION_TYPE_CUSTOMER_ACCOUNT = 10;
+  SESSION_TYPE_ASSISTANT_ID = 11;
+  SESSION_TYPE_AI_ID = 12;
+  SESSION_TYPE_TMP_ANNUAL_REPORT = 99;
+  UNRECOGNIZED = -1;
+}
+
+enum ShortcutType {
+  SHORTCUT_TYPE_UNSPECIFIED = 0;
+  SHORTCUT_TYPE_PUSH_ENABLE = 1;
+  SHORTCUT_TYPE_PUSH_DISABLE = 2;
+  SHORTCUT_TYPE_BLOCK = 3;
+  SHORTCUT_TYPE_FOLLOW = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum ThreeDotItemType {
+  THREE_DOT_ITEM_TYPE_UNKNOWN = 0;
+  THREE_DOT_ITEM_TYPE_READ_ALL = 1;
+  THREE_DOT_ITEM_TYPE_MSG_SETTING = 2;
+  THREE_DOT_ITEM_TYPE_AUTO_REPLY = 3;
+  THREE_DOT_ITEM_TYPE_UP_HELPER = 4;
+  THREE_DOT_ITEM_TYPE_LIVE_HELPER = 5;
+  THREE_DOT_ITEM_TYPE_FANS_GROUP_HELPER = 6;
+  THREE_DOT_ITEM_TYPE_CONTRIBUTION_PUSH = 7;
+  THREE_DOT_ITEM_TYPE_CONTACTS = 8;
+  THREE_DOT_ITEM_TYPE_CLEAR_LIST = 9;
+  THREE_DOT_ITEM_TYPE_ANTI_HARASSMENT = 10;
+  THREE_DOT_ITEM_TYPE_REPORT_HELPER = 11;
+  UNRECOGNIZED = -1;
+}
+
+enum TipsType {
+  TIPS_TYPE_UNSPECIFIED = 0;
+  TIPS_TYPE_BANNED = 1;
+  TIPS_TYPE_BLOCKED = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum TranslateSwitch {
+  TRANSLATE_UNKNOWN = 0;
+  TRANSLATE_TRANSLATED = 1;
+  TRANSLATE_ORIGINAL = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum UnreadStyle {
+  UNREAD_STYLE_NONE = 0;
+  UNREAD_STYLE_DOT = 1;
+  UNREAD_STYLE_NUMBER = 2;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/AckSessionReply.java
+message AckSessionReply {
+}
+
+// Source: com/bapis/bilibili/app/im/v1/AckSessionReq.java
+message AckSessionReq {
+  SessionId sessionId = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/AIBizInfo.java
+message AIBizInfo {
+}
+
+// Source: com/bapis/bilibili/app/im/v1/AiId.java
+message AiId {
+  AiIdType type = 1;
+  int64 uid = 2;
+  int64 talkerUid = 3;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/AiIntroduceModule.java
+message AiIntroduceModule {
+  AvatarItem avatar = 1;
+  string displayName = 2;
+  string aiMark = 3;
+  string limitText = 4;
+  string title = 5;
+  string desc = 6;
+  string buttonText = 7;
+  string buttonUrl = 8;
+  string upUrl = 9;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/AirDropShareUserInfo.java
+message AirDropShareUserInfo {
+  int64 mid = 1;
+  string face = 2;
+  string url = 3;
+  string name = 4;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/AirDropToImReply.java
+message AirDropToImReply {
+  repeated AirDropShareUserInfo userInfos = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/AirDropToImReq.java
+message AirDropToImReq {
+  AirDropFrom adf = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/AssistantId.java
+message AssistantId {
+  int64 talkerUid = 1;
+  AssistantType type = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/AutoReplyModule.java
+message AutoReplyModule {
+  string text = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/AutoReplyToast.java
+message AutoReplyToast {
+  string title = 1;
+  string url = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/BannerImageModule.java
+message BannerImageModule {
+  string imageUrl = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/BehaviorAlertToast.java
+message BehaviorAlertToast {
+  string title = 1;
+  string content = 2;
+  string typeStr = 3;
+  AlertToastType type = 4;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/BetaTag.java
+message BetaTag {
+}
+
+// Source: com/bapis/bilibili/app/im/v1/BizInfo.java
+message BizInfo {
+  oneof oneof_0 {
+    AIBizInfo aiBizInfo = 1;
+  }
+  enum InfoCase {
+    AI_BIZ_INFO = 1;
+    INFO_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/im/v1/BizTypeModule.java
+message BizTypeModule {
+  string leftIcon = 1;
+  string leftText = 2;
+  string rightText = 3;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/BorderedLabel.java
+message BorderedLabel {
+  string icon = 1;
+  string text = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/CancelInterceptInDustbinReply.java
+message CancelInterceptInDustbinReply {
+}
+
+// Source: com/bapis/bilibili/app/im/v1/CancelInterceptInDustbinReq.java
+message CancelInterceptInDustbinReq {
+  SessionId sessionId = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ChatBubbleFrame.java
+message ChatBubbleFrame {
+  TalkerInfo senderInfo = 1;
+  bool isOwner = 2;
+  repeated MsgMenuItem menuItems = 3;
+  repeated MsgModule msgModules = 4;
+  BubbleStyle bubbleStyle = 5;
+  ChatBubbleWidget widget = 6;
+  string url = 7;
+  repeated MsgModule transMsgModules = 8;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ChatBubbleWidget.java
+message ChatBubbleWidget {
+  oneof oneof_0 {
+    HintTextWidget hintTextWidget = 1;
+    VoiceToTextWidget voiceToTextWidget = 2;
+  }
+  enum ContentCase {
+    HINT_TEXT_WIDGET = 1;
+    VOICE_TO_TEXT_WIDGET = 2;
+    CONTENT_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ChatHintMessages.java
+message ChatHintMessages {
+  PushInfoMessage pushInfoMessage = 1;
+  PushSettingChangedMessage pushSettingChangedMessage = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ChatInfoReply.java
+message ChatInfoReply {
+  string sessionName = 1;
+  SessionTag sessionTag = 2;
+  NavButton navButton = 3;
+  InputBox inputBox = 4;
+  repeated UserTalkerInfo talkerInfos = 5;
+  string backgroundImg = 6;
+  BizInfo bizInfo = 7;
+  ChatStickyModule stickyModule = 8;
+  map<string, string> traceParams = 9;
+  BehaviorAlertToast behaviorAlertToast = 10;
+  ChatHintMessages chatHintMessages = 11;
+  string sessionHandle = 12;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ChatInfoReq.java
+message ChatInfoReq {
+  SessionId id = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ChatStickyModule.java
+message ChatStickyModule {
+  oneof oneof_0 {
+    StickyTipsModule tipsModule = 1;
+    StickyShortcutsModule shortcutsModule = 2;
+  }
+  enum ModuleCase {
+    TIPS_MODULE = 1;
+    SHORTCUTS_MODULE = 2;
+    MODULE_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ClearAlertReply.java
+message ClearAlertReply {
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ClearAlertReq.java
+message ClearAlertReq {
+  AlertToastType type = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ClearUnreadReply.java
+message ClearUnreadReply {
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ClearUnreadReq.java
+message ClearUnreadReq {
+  SessionPageType pageType = 1;
+  SessionId sessionId = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/Contact.java
+message Contact {
+  int64 id = 1;
+  string name = 2;
+  AvatarItem avatar = 3;
+  string vipInfo = 4;
+  string url = 5;
+  NameRender nameRender = 6;
+  bool isSpecialFollow = 7;
+  string face = 8;
+  int32 officialType = 9;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ContactsReply.java
+message ContactsReply {
+  repeated Contact contacts = 1;
+  repeated ContactTab tab = 2;
+  ContactTabType currentTab = 3;
+  PaginationParams paginationParams = 4;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ContactsReq.java
+message ContactsReq {
+  ContactTabType tab = 1;
+  PaginationParams paginationParams = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ContactsSearchReply.java
+message ContactsSearchReply {
+  repeated Contact contacts = 1;
+  PaginationParams paginationParams = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ContactsSearchReq.java
+message ContactsSearchReq {
+  string keyword = 1;
+  ContactTabType tab = 2;
+  PaginationParams paginationParams = 3;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ContactTab.java
+message ContactTab {
+  ContactTabType tab = 1;
+  string name = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/CustomerId.java
+message CustomerId {
+  int64 shopId = 1;
+  int64 shopType = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/DeleteMessageReply.java
+message DeleteMessageReply {
+  repeated MsgId failIds = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/DeleteMessageReq.java
+message DeleteMessageReq {
+  SessionId sessionId = 1;
+  repeated MsgId msgIds = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/DeleteSessionListReply.java
+message DeleteSessionListReply {
+}
+
+// Source: com/bapis/bilibili/app/im/v1/DeleteSessionListReq.java
+message DeleteSessionListReq {
+  SessionPageType pageType = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/DeleteSessionReply.java
+message DeleteSessionReply {
+}
+
+// Source: com/bapis/bilibili/app/im/v1/DeleteSessionReq.java
+message DeleteSessionReq {
+  SessionId sessionId = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/EntityMsg.java
+message EntityMsg {
+  MsgId msgId = 1;
+  EntityMsgType msgType = 2;
+  MsgFrame msgFrame = 3;
+  int64 timestamp = 4;
+  bool isHidden = 5;
+  map<string, string> traceParams = 6;
+  string sendToken = 7;
+  bool isRealtimeMsg = 8;
+  bool isTemporary = 9;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/FetchMessageReply.java
+message FetchMessageReply {
+  bool hasMore = 1;
+  repeated Msg messages = 2;
+  int64 maxSeqNo = 3;
+  int64 minSeqNo = 4;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/FetchMessageReq.java
+message FetchMessageReq {
+  SessionId id = 1;
+  int64 beginSequenceNumber = 2;
+  FetchDirection direction = 3;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/FilledLabel.java
+message FilledLabel {
+  string text = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/FilterConfig.java
+message FilterConfig {
+  repeated SessionsFilter filters = 1;
+  SessionFilterType currentFilter = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/FoldId.java
+message FoldId {
+  SessionType type = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/GetChatSettingsReply.java
+message GetChatSettingsReply {
+  string pageTitle = 1;
+  map<int32, Setting> settings = 2;
+  SettingUserInfo userInfo = 3;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/GetChatSettingsReq.java
+message GetChatSettingsReq {
+  SessionId sessionId = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/GetImSettingsReply.java
+message GetImSettingsReply {
+  string pageTitle = 1;
+  map<int32, Setting> settings = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/GetImSettingsReq.java
+message GetImSettingsReq {
+  IMSettingType type = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/GetQuickLinkUnreadReply.java
+message GetQuickLinkUnreadReply {
+  repeated QuickLinkUnreadItem items = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/GetQuickLinkUnreadReq.java
+message GetQuickLinkUnreadReq {
+}
+
+// Source: com/bapis/bilibili/app/im/v1/GetTotalUnreadReply.java
+message GetTotalUnreadReply {
+  Unread total = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/GetTotalUnreadReq.java
+message GetTotalUnreadReq {
+}
+
+// Source: com/bapis/bilibili/app/im/v1/GhostMsg.java
+message GhostMsg {
+  MsgId msgId = 1;
+  GhostMsgType msgType = 2;
+  MsgId associatedMsgId = 3;
+  int64 timestamp = 4;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/GroupId.java
+message GroupId {
+  int64 groupId = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/HintTextModule.java
+message HintTextModule {
+  Paragraph paragraph = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/HintTextWidget.java
+message HintTextWidget {
+  Paragraph paragraph = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ImageLabel.java
+message ImageLabel {
+  string url = 1;
+  int32 width = 2;
+  int32 height = 3;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/InputBox.java
+message InputBox {
+  string hint = 1;
+  bool enablePic = 2;
+  bool enableVideo = 3;
+  bool enableSticker = 4;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/InvalidResourceModule.java
+message InvalidResourceModule {
+  string hint = 1;
+  bool hideIcon = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/KeywordBlockingAddReply.java
+message KeywordBlockingAddReply {
+  string toast = 1;
+  KeywordBlockingItem item = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/KeywordBlockingAddReq.java
+message KeywordBlockingAddReq {
+  string keyword = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/KeywordBlockingDeleteReply.java
+message KeywordBlockingDeleteReply {
+  string toast = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/KeywordBlockingDeleteReq.java
+message KeywordBlockingDeleteReq {
+  string keyword = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/KeywordBlockingItem.java
+message KeywordBlockingItem {
+  string keyword = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/KeywordBlockingListReply.java
+message KeywordBlockingListReply {
+  repeated KeywordBlockingItem items = 1;
+  int32 listLimit = 2;
+  int32 charLimit = 3;
+  string listLimitText = 4;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/KeywordBlockingListReq.java
+message KeywordBlockingListReq {
+}
+
+// Source: com/bapis/bilibili/app/im/v1/LiveTag.java
+message LiveTag {
+  string url = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/Medal.java
+message Medal {
+  int64 uid = 1;
+  int32 medalId = 2;
+  int32 level = 3;
+  string medalName = 4;
+  int32 score = 5;
+  int32 intimacy = 6;
+  int32 masterStatus = 7;
+  int32 isReceive = 8;
+  string medalColorStart = 9;
+  string medalColorEnd = 10;
+  string medalColorBorder = 11;
+  string medalColorName = 12;
+  string medalColorLevel = 13;
+  int64 guardLevel = 14;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/MessageDetailReply.java
+message MessageDetailReply {
+  repeated Msg msgs = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/MessageDetailReq.java
+message MessageDetailReq {
+  repeated MsgId msgIds = 1;
+  SessionId sessionId = 3;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/MessageTranslateReply.java
+message MessageTranslateReply {
+  Msg message_ = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/MessageTranslateReq.java
+message MessageTranslateReq {
+  MsgId msgId = 1;
+  SessionId sessionId = 2;
+  TranslateSwitch switch = 3;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/Msg.java
+message Msg {
+  oneof oneof_0 {
+    EntityMsg entityMsg = 1;
+    GhostMsg ghostMsg = 2;
+  }
+  enum ContentCase {
+    ENTITY_MSG = 1;
+    GHOST_MSG = 2;
+    CONTENT_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/im/v1/MsgBuildDepInfoReply.java
+message MsgBuildDepInfoReply {
+  string depInfo = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/MsgBuildDepInfoReq.java
+message MsgBuildDepInfoReq {
+  int64 mode = 1;
+  long mid = 2;
+  int32 vmid = 3;
+  int32 fetchMessage = 4;
+  int32 msgBuild = 5;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/MsgFrame.java
+message MsgFrame {
+  oneof oneof_0 {
+    ChatBubbleFrame chatBubbleFrame = 1;
+    RoundCornerFrame roundCornerFrame = 2;
+    SystemHintFrame systemHintFrame = 3;
+    PushEmptyFrame pushEmptyFrame = 4;
+    NilFrame nilFrame = 5;
+  }
+  enum FrameCase {
+    CHAT_BUBBLE_FRAME = 1;
+    ROUND_CORNER_FRAME = 2;
+    SYSTEM_HINT_FRAME = 3;
+    PUSH_EMPTY_FRAME = 4;
+    NIL_FRAME = 5;
+    FRAME_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/im/v1/MsgId.java
+message MsgId {
+  int64 msgKey = 1;
+  int64 sequenceNumber = 2;
+  int64 subSequenceNumber = 3;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/MsgMenuCancelTranslate.java
+message MsgMenuCancelTranslate {
+}
+
+// Source: com/bapis/bilibili/app/im/v1/MsgMenuContent.java
+message MsgMenuContent {
+  oneof oneof_0 {
+    MsgMenuCopy copy = 1;
+    MsgMenuDelete delete = 2;
+    MsgMenuRecall recall = 3;
+    MsgMenuReport report = 4;
+    MsgMenuSaveSticker saveSticker = 5;
+    MsgMenuTranslate translate = 6;
+    MsgMenuCancelTranslate cancelTranslation = 7;
+  }
+  enum ItemCase {
+    COPY = 1;
+    DELETE = 2;
+    RECALL = 3;
+    REPORT = 4;
+    SAVE_STICKER = 5;
+    TRANSLATE = 6;
+    CANCEL_TRANSLATION = 7;
+    ITEM_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/im/v1/MsgMenuCopy.java
+message MsgMenuCopy {
+  string content = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/MsgMenuDelete.java
+message MsgMenuDelete {
+}
+
+// Source: com/bapis/bilibili/app/im/v1/MsgMenuItem.java
+message MsgMenuItem {
+  string name = 1;
+  MsgMenuContent content = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/MsgMenuRecall.java
+message MsgMenuRecall {
+}
+
+// Source: com/bapis/bilibili/app/im/v1/MsgMenuReport.java
+message MsgMenuReport {
+  string url = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/MsgMenuSaveSticker.java
+message MsgMenuSaveSticker {
+  PictureModule picture = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/MsgMenuTranslate.java
+message MsgMenuTranslate {
+}
+
+// Source: com/bapis/bilibili/app/im/v1/MsgModule.java
+message MsgModule {
+  oneof oneof_0 {
+    TextModule textModule = 1;
+    PictureModule pictureModule = 2;
+    NotifyAuthorModule authorModule = 3;
+    NotifyTitleModule notifyTitleModule = 4;
+    NotifyDetailModule notifyDetailModule = 5;
+    NotifyInteractiveModule notifyInteractiveModule = 6;
+    NotifyGameModule notifyGameModule = 7;
+    ShareVideoModule shareVideoModule = 8;
+    ShareArticleModule shareArticleModule = 9;
+    ShareDynamicModule shareDynamicModule = 10;
+    ShareDynamicForwardModule shareDynamicForwardModule = 11;
+    ShareAppletModule shareAppletModule = 12;
+    ShareCommonModule shareCommonModule = 13;
+    PushVideoModule pushVideoModule = 14;
+    PushArticleModule pushArticleModule = 15;
+    PushAdditionalMsgModule pushAdditionalMsgModule = 16;
+    PushPastWorksModule pushPastWorksModule = 17;
+    BizTypeModule shareTypeModule = 18;
+    AutoReplyModule autoReplyModule = 19;
+    BannerImageModule bannerImageModule = 20;
+    HintTextModule hintTextModule = 21;
+    AiIntroduceModule aiIntroduceModule = 22;
+    InvalidResourceModule invalidResourceModule = 23;
+    QOEModule qoeModule = 24;
+  }
+  enum ModuleCase {
+    TEXT_MODULE = 1;
+    PICTURE_MODULE = 2;
+    AUTHOR_MODULE = 3;
+    NOTIFY_TITLE_MODULE = 4;
+    NOTIFY_DETAIL_MODULE = 5;
+    NOTIFY_INTERACTIVE_MODULE = 6;
+    NOTIFY_GAME_MODULE = 7;
+    SHARE_VIDEO_MODULE = 8;
+    SHARE_ARTICLE_MODULE = 9;
+    SHARE_DYNAMIC_MODULE = 10;
+    SHARE_DYNAMIC_FORWARD_MODULE = 11;
+    SHARE_APPLET_MODULE = 12;
+    SHARE_COMMON_MODULE = 13;
+    PUSH_VIDEO_MODULE = 14;
+    PUSH_ARTICLE_MODULE = 15;
+    PUSH_ADDITIONAL_MSG_MODULE = 16;
+    PUSH_PAST_WORKS_MODULE = 17;
+    SHARE_TYPE_MODULE = 18;
+    AUTO_REPLY_MODULE = 19;
+    BANNER_IMAGE_MODULE = 20;
+    HINT_TEXT_MODULE = 21;
+    AI_INTRODUCE_MODULE = 22;
+    INVALID_RESOURCE_MODULE = 23;
+    QOE_MODULE = 24;
+    MODULE_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/im/v1/MsgSummary.java
+message MsgSummary {
+  string rawMsg = 1;
+  MsgSummaryPrefixType prefixType = 2;
+  string prefixText = 3;
+  bool isGroupOwner = 4;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/NavButton.java
+message NavButton {
+  string icon = 1;
+  string url = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/NilFrame.java
+message NilFrame {
+}
+
+// Source: com/bapis/bilibili/app/im/v1/NotifyAuthorModule.java
+message NotifyAuthorModule {
+  string avatar = 1;
+  string name = 2;
+  string url = 3;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/NotifyCosmoThreeDotItem.java
+message NotifyCosmoThreeDotItem {
+  string business = 1;
+  string title = 2;
+  int32 state = 3;
+  int32 opType = 4;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/NotifyDetailAddition.java
+message NotifyDetailAddition {
+  PictureModule coverImg = 1;
+  oneof oneof_0 {
+    string liveContent = 2;
+    string liveEndContent = 3;
+  }
+  enum BadgeCase {
+    LIVE_CONTENT = 2;
+    LIVE_END_CONTENT = 3;
+    BADGE_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/im/v1/NotifyDetailItem.java
+message NotifyDetailItem {
+  string title = 1;
+  string content = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/NotifyDetailModule.java
+message NotifyDetailModule {
+  repeated NotifyDetailItem detailItems = 1;
+  NotifyDetailAddition addition = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/NotifyGameModule.java
+message NotifyGameModule {
+  string gameCover = 1;
+  string gameIcon = 2;
+  string gameName = 3;
+  string score = 4;
+  string gameTypes = 5;
+  string gameTag = 6;
+  string gameDescContent = 7;
+  int64 gameId = 8;
+  int64 gameGiftId = 9;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/NotifyInteractiveModule.java
+message NotifyInteractiveModule {
+  string text = 1;
+  string url = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/NotifyTitleModule.java
+message NotifyTitleModule {
+  string title = 1;
+  string content = 2;
+  NotifyCosmoThreeDotItem threeDotItem = 3;
+  NotifyDetailAddition addition = 4;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/Offset.java
+message Offset {
+  int64 normalOffset = 1;
+  int64 topOffset = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/OGVVideoId.java
+message OGVVideoId {
+  int64 epid = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/OperationContent.java
+message OperationContent {
+  bool show = 1;
+  string text = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/PaginationParams.java
+message PaginationParams {
+  map<int32, Offset> offsets = 1;
+  bool hasMore = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/PastWorksItem.java
+message PastWorksItem {
+  int64 avid = 1;
+  string cover = 2;
+  string title = 3;
+  string timeStr = 4;
+  int32 icon1 = 5;
+  string text1 = 6;
+  int32 icon2 = 7;
+  string text2 = 8;
+  string url = 9;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/PictureModule.java
+message PictureModule {
+  string url = 1;
+  int32 width = 2;
+  int32 height = 3;
+  int32 size = 4;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/PinSessionReply.java
+message PinSessionReply {
+  int64 sequenceNumber = 1;
+  int64 code = 2;
+  string message_ = 3;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/PinSessionReq.java
+message PinSessionReq {
+  SessionId sessionId = 1;
+  int64 topTimeMicros = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/PrivateId.java
+message PrivateId {
+  int64 talkerUid = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/PushAdditionalMsgModule.java
+message PushAdditionalMsgModule {
+  string avatar = 1;
+  Paragraph content = 2;
+  string refIcon = 3;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/PushArticleModule.java
+message PushArticleModule {
+  int64 articleId = 1;
+  repeated PictureModule coverImg = 2;
+  Paragraph title = 3;
+  Paragraph summary = 4;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/PushEmptyFrame.java
+message PushEmptyFrame {
+  repeated MsgModule msgModules = 1;
+  repeated MsgMenuItem menuItems = 2;
+  string url = 3;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/PushPastWorksModule.java
+message PushPastWorksModule {
+  string title = 1;
+  repeated PastWorksItem items = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/PushVideoModule.java
+message PushVideoModule {
+  VideoId videoId = 1;
+  string coverImg = 2;
+  string title = 3;
+  string duration = 4;
+  string badge = 5;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/QOEModule.java
+message QOEModule {
+  int64 id = 1;
+  string title = 2;
+  string url = 3;
+  int32 userScore = 4;
+  int32 maxScore = 5;
+  bool clickable = 6;
+  string businessData = 7;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/QuickLinkBubble.java
+message QuickLinkBubble {
+  int64 mid = 1;
+  string avatar = 2;
+  string nickName = 3;
+  string content = 4;
+  QuickLinkItemType quickLinkItem = 5;
+  QuickLinkMsgType msgType = 6;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/QuickLinkConfig.java
+message QuickLinkConfig {
+  repeated QuickLinkItem items = 1;
+  QuickLinkBubble bubble = 2;
+  bool isLegacyStyle = 3;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/QuickLinkItem.java
+message QuickLinkItem {
+  string title = 1;
+  string icon = 2;
+  string iconDark = 3;
+  string url = 4;
+  Unread unread = 5;
+  QuickLinkItemType itemType = 6;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/QuickLinkUnreadItem.java
+message QuickLinkUnreadItem {
+  QuickLinkItemType itemType = 1;
+  Unread unread = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/RecallMessageReply.java
+message RecallMessageReply {
+  Msg newMessage = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/RecallMessageReq.java
+message RecallMessageReq {
+  MsgId msgId = 1;
+  SessionId sessionId = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/redirect2OtherPage.java
+message redirect2OtherPage {
+  string url = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/redirect2Popup.java
+message redirect2Popup {
+  string title = 1;
+  string subtitle = 2;
+  string url = 3;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/redirect2SettingPage.java
+message redirect2SettingPage {
+  map<int32, Setting> subSettings = 1;
+  string pageTitle = 2;
+  string url = 3;
+  IMSettingType parentSettingType = 4;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/redirectWindowSelect.java
+message redirectWindowSelect {
+  string title = 1;
+  repeated SelectItem item = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/RestrictedMode.java
+message RestrictedMode {
+  bool teenagers = 1;
+  bool lessons = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/RoundCornerFrame.java
+message RoundCornerFrame {
+  repeated MsgMenuItem menuItems = 1;
+  repeated MsgModule msgModules = 2;
+  string url = 3;
+  repeated MsgModule transMsgModules = 4;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SelectItem.java
+message SelectItem {
+  int32 itemType = 1;
+  string text = 2;
+  bool selected = 3;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SendMessageReply.java
+message SendMessageReply {
+  EntityMsg msg = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SendMessageReq.java
+message SendMessageReq {
+  SessionId id = 1;
+  EntityMsg entityMsg = 2;
+  string canalToken = 3;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/Session.java
+message Session {
+  SessionId id = 1;
+  SessionInfo sessionInfo = 2;
+  Unread unread = 3;
+  MsgSummary msgSummary = 4;
+  int64 timestamp = 5;
+  bool isPinned = 6;
+  int64 sequenceNumber = 7;
+  bool isMuted = 8;
+  string chatUrl = 9;
+  SessionOperation operation = 10;
+  map<string, string> traceParams = 11;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SessionId.java
+message SessionId {
+  oneof oneof_0 {
+    PrivateId privateId = 1;
+    GroupId groupId = 2;
+    FoldId foldId = 3;
+    SystemId systemId = 4;
+    CustomerId customerId = 5;
+    AiId aiId = 6;
+    AssistantId assistantId = 7;
+  }
+  enum IdCase {
+    PRIVATE_ID = 1;
+    GROUP_ID = 2;
+    FOLD_ID = 3;
+    SYSTEM_ID = 4;
+    CUSTOMER_ID = 5;
+    AI_ID = 6;
+    ASSISTANT_ID = 7;
+    ID_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SessionInfo.java
+message SessionInfo {
+  string sessionName = 1;
+  NameRender nameRender = 2;
+  AvatarItem avatar = 3;
+  string vipInfo = 4;
+  UserLabel userLabel = 5;
+  bool isLive = 6;
+  string sessionHandle = 7;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SessionListExtraInfo.java
+message SessionListExtraInfo {
+  AutoReplyToast autoReplyToast = 1;
+  bool showAntiHarassmentPopup = 2;
+  string customerHintTitle = 3;
+  BehaviorAlertToast behaviorAlertToast = 4;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SessionListUpdateReply.java
+message SessionListUpdateReply {
+  repeated Session sessions = 1;
+  UpdateSessionParams updateSessionParams = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SessionListUpdateReq.java
+message SessionListUpdateReq {
+  RestrictedMode restrictedMode = 1;
+  UpdateSessionParams updateParams = 2;
+  SessionPageType pageType = 3;
+  SessionFilterType filterType = 4;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SessionMainReply.java
+message SessionMainReply {
+  PaginationParams paginationParams = 1;
+  UpdateSessionParams updateSessionParams = 2;
+  QuickLinkConfig quickLinkConfig = 3;
+  FilterConfig filterConfig = 4;
+  repeated Session sessions = 5;
+  repeated ThreeDotItem threeDotItems = 6;
+  repeated ThreeDotItem outsideItem = 7;
+  SessionListExtraInfo extraInfo = 8;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SessionMainReq.java
+message SessionMainReq {
+  RestrictedMode restrictedMode = 1;
+  PaginationParams paginationParams = 2;
+  SessionFilterType filterType = 3;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SessionOperation.java
+message SessionOperation {
+  OperationContent pin = 1;
+  OperationContent unpin = 2;
+  OperationContent delete = 3;
+  OperationContent clearUnread = 4;
+  OperationContent unblock = 5;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SessionSecondaryReply.java
+message SessionSecondaryReply {
+  PaginationParams paginationParams = 1;
+  UpdateSessionParams updateSessionParams = 2;
+  repeated Session sessions = 3;
+  repeated ThreeDotItem threeDotItems = 4;
+  repeated ThreeDotItem outsideItem = 5;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SessionSecondaryReq.java
+message SessionSecondaryReq {
+  RestrictedMode restrictedMode = 1;
+  PaginationParams paginationParams = 2;
+  SessionPageType pageType = 3;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SessionsFilter.java
+message SessionsFilter {
+  SessionFilterType stype = 1;
+  string title = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SessionTag.java
+message SessionTag {
+  oneof oneof_0 {
+    LiveTag liveTag = 1;
+    BetaTag betaTage = 2;
+  }
+  enum TagCase {
+    LIVE_TAG = 1;
+    BETA_TAGE = 2;
+    TAG_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SessionUpdateReply.java
+message SessionUpdateReply {
+  Session session = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SessionUpdateReq.java
+message SessionUpdateReq {
+  SessionId sessionId = 1;
+  SessionPageType pageType = 2;
+  SessionFilterType filterType = 3;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SetChatSettingsReply.java
+message SetChatSettingsReply {
+  string toast = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SetChatSettingsReq.java
+message SetChatSettingsReq {
+  SessionId sessionId = 1;
+  map<int32, Setting> settings = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SetImSettingsReply.java
+message SetImSettingsReply {
+  string toast = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SetImSettingsReq.java
+message SetImSettingsReq {
+  map<int32, Setting> settings = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/Setting.java
+message Setting {
+  oneof oneof_0 {
+    SettingSwitch switch = 1;
+    SettingSelect select = 2;
+    SettingRedirect redirect = 3;
+    SettingText text = 4;
+  }
+  enum ContentCase {
+    SWITCH = 1;
+    SELECT = 2;
+    REDIRECT = 3;
+    TEXT = 4;
+    CONTENT_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SettingRedirect.java
+message SettingRedirect {
+  oneof oneof_0 {
+    redirect2SettingPage settingPage = 1;
+    redirect2OtherPage otherPage = 2;
+    redirect2Popup popup = 6;
+    redirectWindowSelect windowSelect = 7;
+  }
+  string title = 3;
+  string subtitle = 4;
+  string selectedSummary = 5;
+  enum ContentCase {
+    SETTING_PAGE = 1;
+    OTHER_PAGE = 2;
+    POPUP = 6;
+    WINDOW_SELECT = 7;
+    CONTENT_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SettingSelect.java
+message SettingSelect {
+  repeated SelectItem item = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SettingSwitch.java
+message SettingSwitch {
+  bool switchOn = 1;
+  string title = 2;
+  string subtitle = 3;
+  SwitchConfirmDialog onDialog = 4;
+  SwitchConfirmDialog offDialog = 5;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SettingText.java
+message SettingText {
+  string text = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SettingUserInfo.java
+message SettingUserInfo {
+  AvatarItem avatar = 1;
+  string name = 2;
+  string vipInfo = 3;
+  NameRender nameRender = 4;
+  string gender = 5;
+  int32 level = 6;
+  string firstText = 7;
+  string secondText = 8;
+  string url = 9;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ShareAppletModule.java
+message ShareAppletModule {
+  string appletId = 1;
+  string avatarImg = 2;
+  string name = 3;
+  string title = 4;
+  string coverImg = 5;
+  string url = 6;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ShareArticleModule.java
+message ShareArticleModule {
+  int64 articleId = 1;
+  Paragraph title = 2;
+  repeated PictureModule images = 3;
+  Paragraph summary = 4;
+  string stats = 5;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ShareCommonModule.java
+message ShareCommonModule {
+  string coverImg = 1;
+  string title = 2;
+  string subtitle = 3;
+  int64 id = 4;
+  ShareCommonModuleType type = 5;
+  enum ShareCommonModuleType {
+    DEFAULT = 0;
+    LIVE = 1;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ShareDynamicAttachModule.java
+message ShareDynamicAttachModule {
+  AttachType attachType = 1;
+  string coverImg = 2;
+  string title = 3;
+  string url = 4;
+  enum AttachType {
+    VIDEO = 0;
+    LIVE = 1;
+    MANGA_EP = 2;
+    MUSIC = 3;
+    COMMON_SHARE = 4;
+    MINI_PROGRAM = 5;
+    COURSE_SEASON = 6;
+    COURSE = 7;
+    UGC_SEASON = 8;
+    MEDIA_LIST = 9;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ShareDynamicForwardModule.java
+message ShareDynamicForwardModule {
+  Paragraph paragraph = 1;
+  int64 id = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ShareDynamicModule.java
+message ShareDynamicModule {
+  Paragraph paragraph = 1;
+  string image = 2;
+  bool isForward = 3;
+  string url = 4;
+  int64 id = 5;
+  ShareDynamicAttachModule attach = 6;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ShareListReply.java
+message ShareListReply {
+  repeated ShareTarget targets = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ShareListReq.java
+message ShareListReq {
+  int32 pageSize = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ShareTarget.java
+message ShareTarget {
+  AvatarItem avatar = 1;
+  string name = 2;
+  SessionId sessionId = 3;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ShareVideoModule.java
+message ShareVideoModule {
+  VideoId videoId = 1;
+  string coverImg = 2;
+  string title = 3;
+  string coverText1 = 4;
+  string coverText2 = 5;
+  string coverText3 = 6;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ShortcutItem.java
+message ShortcutItem {
+  string icon = 1;
+  string title = 2;
+  string subtitle = 3;
+  ShortcutType type = 4;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/StickyShortcutsModule.java
+message StickyShortcutsModule {
+  repeated ShortcutItem items = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/StickyTipsModule.java
+message StickyTipsModule {
+  string text = 1;
+  TipsType type = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SwitchConfirmDialog.java
+message SwitchConfirmDialog {
+  string title = 1;
+  string subtitle = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SystemHintFrame.java
+message SystemHintFrame {
+  repeated MsgModule msgModules = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/SystemId.java
+message SystemId {
+  SessionType type = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/TalkerInfo.java
+message TalkerInfo {
+  oneof oneof_0 {
+    UserTalkerInfo userTalkerInfo = 1;
+    UserPlaceholder userPlaceholder = 2;
+  }
+  enum InfoCase {
+    USER_TALKER_INFO = 1;
+    USER_PLACEHOLDER = 2;
+    INFO_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/im/v1/TextModule.java
+message TextModule {
+  Paragraph paragraph = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ThreeDotItem.java
+message ThreeDotItem {
+  string title = 1;
+  string icon = 2;
+  string url = 3;
+  ThreeDotItemType type = 4;
+  bool hasRedDot = 5;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/UGCVideoId.java
+message UGCVideoId {
+  int64 avid = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/UnPinSessionReply.java
+message UnPinSessionReply {
+  int64 sequenceNumber = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/UnPinSessionReq.java
+message UnPinSessionReq {
+  SessionId sessionId = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/Unread.java
+message Unread {
+  UnreadStyle style = 1;
+  int64 number = 2;
+  string numberShow = 3;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/UpdateNotifyCosmoStateReply.java
+message UpdateNotifyCosmoStateReply {
+  string text = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/UpdateNotifyCosmoStateReq.java
+message UpdateNotifyCosmoStateReq {
+  SessionId id = 1;
+  NotifyCosmoThreeDotItem item = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/UpdateSessionParams.java
+message UpdateSessionParams {
+  map<int32, Offset> maxSessionTs = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/UserLabel.java
+message UserLabel {
+  LabelType type = 1;
+  UserLabelStyle style = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/UserLabelStyle.java
+message UserLabelStyle {
+  oneof oneof_0 {
+    BorderedLabel borderedLabel = 2;
+    FilledLabel filledLabel = 3;
+    ImageLabel imageLabel = 4;
+    Medal medalLabel = 5;
+  }
+  enum StyleCase {
+    BORDERED_LABEL = 2;
+    FILLED_LABEL = 3;
+    IMAGE_LABEL = 4;
+    MEDAL_LABEL = 5;
+    STYLE_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/im/v1/UserPlaceholder.java
+message UserPlaceholder {
+  int64 mid = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/UserTalkerInfo.java
+message UserTalkerInfo {
+  int64 mid = 1;
+  AvatarItem avatar = 2;
+  string avatarUrl = 3;
+  string name = 4;
+  string handle = 5;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/VideoId.java
+message VideoId {
+  oneof oneof_0 {
+    UGCVideoId ugcVideoId = 1;
+    OGVVideoId ogvVideoId = 2;
+  }
+  enum IdCase {
+    UGC_VIDEO_ID = 1;
+    OGV_VIDEO_ID = 2;
+    ID_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/im/v1/VoiceToTextWidget.java
+message VoiceToTextWidget {
+  string text = 1;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/im/v1";

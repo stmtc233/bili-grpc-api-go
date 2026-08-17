@@ -1,0 +1,88 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.click.v1;
+
+enum PlayState {
+  STATE_UNKNOWN = 0;
+  PREPARING = 1;
+  PREPARED = 2;
+  PLAYING = 3;
+  PAUSED = 4;
+  STOPPED = 5;
+  FAILED = 6;
+  UNRECOGNIZED = -1;
+}
+
+enum Stage {
+  STAGE_UNKNOWN = 0;
+  START = 1;
+  END = 2;
+  SAMPLE = 3;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/click/v1/AccountInfo.java
+message AccountInfo {
+  int64 mid = 1;
+}
+
+// Source: com/bapis/bilibili/app/click/v1/AppInfo.java
+message AppInfo {
+  string topPageClass = 1;
+  int64 ftime = 2;
+  string did = 3;
+}
+
+// Source: com/bapis/bilibili/app/click/v1/Extra.java
+message Extra {
+  string session = 1;
+  string refer = 2;
+}
+
+// Source: com/bapis/bilibili/app/click/v1/HeartBeatReply.java
+message HeartBeatReply {
+}
+
+// Source: com/bapis/bilibili/app/click/v1/HeartBeatReq.java
+message HeartBeatReq {
+  string sessionV2 = 1;
+  Stage stage = 2;
+  int64 streamTimeout = 3;
+  int64 batchFrequency = 4;
+  float frequency = 5;
+  VideoMeta videoMeta = 6;
+  AppInfo appInfo = 7;
+  AccountInfo accountInfo = 8;
+  PreProcessResult preProcessResult = 9;
+  repeated PlayerStatus playerStatus = 10;
+  VideoInfo videoInfo = 11;
+  Extra extra = 12;
+}
+
+// Source: com/bapis/bilibili/app/click/v1/PlayerStatus.java
+message PlayerStatus {
+  float playbackRate = 1;
+  int64 progress = 2;
+  PlayState state = 3;
+  bool isBuffering = 4;
+}
+
+// Source: com/bapis/bilibili/app/click/v1/PreProcessResult.java
+message PreProcessResult {
+  int64 vt = 1;
+}
+
+// Source: com/bapis/bilibili/app/click/v1/VideoInfo.java
+message VideoInfo {
+  int64 cidDuration = 1;
+}
+
+// Source: com/bapis/bilibili/app/click/v1/VideoMeta.java
+message VideoMeta {
+  int64 aid = 1;
+  int64 cid = 2;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/click/v1";

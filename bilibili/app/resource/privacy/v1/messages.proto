@@ -1,0 +1,47 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.resource.privacy.v1;
+
+enum PrivacyConfigState {
+  close = 0;
+  open = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum PrivacyConfigType {
+  none = 0;
+  dynamic_city = 1;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/resource/privacy/v1/NoArgRequest.java
+message NoArgRequest {
+}
+
+// Source: com/bapis/bilibili/app/resource/privacy/v1/NoReply.java
+message NoReply {
+}
+
+// Source: com/bapis/bilibili/app/resource/privacy/v1/PrivacyConfigItem.java
+message PrivacyConfigItem {
+  PrivacyConfigType privacyConfigType = 1;
+  string title = 2;
+  PrivacyConfigState state = 3;
+  string subTitle = 4;
+  string subTitleUri = 5;
+}
+
+// Source: com/bapis/bilibili/app/resource/privacy/v1/PrivacyConfigReply.java
+message PrivacyConfigReply {
+  repeated PrivacyConfigItem privacyConfigItem = 1;
+}
+
+// Source: com/bapis/bilibili/app/resource/privacy/v1/SetPrivacyConfigRequest.java
+message SetPrivacyConfigRequest {
+  PrivacyConfigType privacyConfigType = 1;
+  PrivacyConfigState state = 2;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/resource/privacy/v1";

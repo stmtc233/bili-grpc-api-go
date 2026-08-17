@@ -1,0 +1,12 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.distribution.setting.internaldevice;
+
+// Source: com/bapis/bilibili/app/distribution/setting/internaldevice/InternalDeviceConfig.java
+message InternalDeviceConfig {
+  Int64Value fts = 1;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/distribution/setting/internaldevice";

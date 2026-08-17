@@ -1,0 +1,17 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.distribution.setting.dynamic;
+
+// Source: com/bapis/bilibili/app/distribution/setting/dynamic/DynamicAutoPlay.java
+message DynamicAutoPlay {
+  Int64Value value = 1;
+}
+
+// Source: com/bapis/bilibili/app/distribution/setting/dynamic/DynamicDeviceConfig.java
+message DynamicDeviceConfig {
+  DynamicAutoPlay autoPlay = 1;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/distribution/setting/dynamic";

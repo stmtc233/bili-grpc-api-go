@@ -1,0 +1,958 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.dynamic.interfaces.feed.v1;
+
+enum ConfigABEntry {
+  CONFIG_AB_ENTRY_NONE = 0;
+  CONFIG_AB_ENTRY_PUB_PAGE_TITLE = 1;
+  CONFIG_AB_ENTRY_SELECT_PIC_PANEL = 2;
+  CONFIG_AB_BIG_PLUS_PUB_ARTICLE = 3;
+  CONFIG_AB_LIVE_PHOTO = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum DynamicButtonClickBizType {
+  DYNAMIC_BUTTON_CLICK_BIZ_TYPE_NONE = 0;
+  DYNAMIC_BUTTON_CLICK_BIZ_TYPE_LIVE = 1;
+  DYNAMIC_BUTTON_CLICK_BIZ_TYPE_DYN_UP = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum MaxPicCountType {
+  MAX_PIC_COUNT_NINE = 0;
+  MAX_PIC_COUNT_EIGHTEEN = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum OpusInitVerifyType {
+  OPUS_INIT_VERIFY_NONE = 0;
+  OPUS_INIT_VERIFY_BANNED = 1;
+  OPUS_INIT_VERIFY_LEVEL_UNSUFFICIENT = 2;
+  OPUS_INIT_VERIFY_UNREAL_NAME = 3;
+  OPUS_INIT_VERIFY_UNBIND_PHONE = 4;
+  OPUS_INIT_VERIFY_POST_COUNT_EXCEEDED = 5;
+  OPUS_INIT_VERIFY_EDIT_COUNT_EXCEEDED = 6;
+  OPUS_INIT_VERIFY_EDITOR_VERSION_UNQUALIFIED = 7;
+  UNRECOGNIZED = -1;
+}
+
+enum POI_TYPE {
+  TENCENT = 0;
+  CITY = 1;
+  NATION = 2;
+  BILI = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum ReserveButtonMode {
+  RESERVE_BUTTON_MODE_NONE = 0;
+  RESERVE_BUTTON_MODE_RESERVE = 1;
+  RESERVE_BUTTON_MODE_UP_CANCEL = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum ReserveButtonStatus {
+  RESERVE_BUTTON_STATUS_NONE = 0;
+  RESERVE_BUTTON_STATUS_UNCHECK = 1;
+  RESERVE_BUTTON_STATUS_CHECK = 2;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ActiveReportMessage.java
+message ActiveReportMessage {
+  ReportAction action = 1;
+  string metricData = 2;
+  enum ReportAction {
+    REPORT_ACTION_NONE = 0;
+    REPORT_ACTION_EXPOSURE = 1;
+    REPORT_ACTION_CLICK = 2;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/AddArticleCollectionReq.java
+message AddArticleCollectionReq {
+  string name = 1;
+  string summary = 2;
+  string imageUrl = 3;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/AddArticleCollectionRsp.java
+message AddArticleCollectionRsp {
+  int64 id = 1;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/AddDynamicReportReq.java
+message AddDynamicReportReq {
+  int64 accusedUid = 1;
+  string dynamicId = 2;
+  int64 reasonType = 3;
+  string reasonDesc = 4;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/AddDynamicReportRsp.java
+message AddDynamicReportRsp {
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/AddOpusArticleDraftReq.java
+message AddOpusArticleDraftReq {
+  OpusArticleDraftArg arg = 1;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/AddOpusArticleDraftRsp.java
+message AddOpusArticleDraftRsp {
+  int64 articleId = 1;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/AddressComponent.java
+message AddressComponent {
+  string country = 1;
+  string province = 2;
+  string city = 3;
+  string district = 4;
+  string town = 5;
+  string street = 6;
+  string streetNum = 7;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/AdInfoDetail.java
+message AdInfoDetail {
+  string nation = 1;
+  string province = 2;
+  string city = 3;
+  string district = 4;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ArticleCollectionAddableReq.java
+message ArticleCollectionAddableReq {
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ArticleCollectionAddableRsp.java
+message ArticleCollectionAddableRsp {
+  repeated CollectionArticleItem articles = 1;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ArticleCollectionDetailReq.java
+message ArticleCollectionDetailReq {
+  int64 id = 1;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ArticleCollectionDetailRsp.java
+message ArticleCollectionDetailRsp {
+  OpusCollectionItem collection = 1;
+  repeated CollectionArticleItem articles = 2;
+  int64 total = 3;
+  int64 limit = 4;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ArticleCollectionListReq.java
+message ArticleCollectionListReq {
+  bool version = 1;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ArticleCollectionListRsp.java
+message ArticleCollectionListRsp {
+  repeated OpusCollectionItem collections = 1;
+  int64 maxCollectionCount = 2;
+  int64 total = 3;
+  bool novel = 4;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ArticleCollectionOperationReq.java
+message ArticleCollectionOperationReq {
+  int64 id = 1;
+  string aids = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ArticleCollectionOperationRsp.java
+message ArticleCollectionOperationRsp {
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ArticleHomePageCategoriesReq.java
+message ArticleHomePageCategoriesReq {
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ArticleHomePageCategoriesRsp.java
+message ArticleHomePageCategoriesRsp {
+  repeated Category categories = 1;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ArticleInCollectionSortReq.java
+message ArticleInCollectionSortReq {
+  int64 id = 1;
+  string aids = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ArticleInCollectionSortRsp.java
+message ArticleInCollectionSortRsp {
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/AttachCardButtonReq.java
+message AttachCardButtonReq {
+  int32 curBtnStatus = 1;
+  int64 dynamicId = 2;
+  AttachCardType attachCardType = 3;
+  string spmId = 4;
+  int64 reserveTotal = 5;
+  string dynamicIdStr = 6;
+  string cardType = 7;
+  string cardBizId = 8;
+  OpusBizType opusBizType = 9;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/AttachCardButtonRsp.java
+message AttachCardButtonRsp {
+  int32 finalBtnStatus = 1;
+  string toast = 2;
+  string descUpdate = 3;
+  int64 reserveUpdate = 4;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/Category.java
+message Category {
+  int64 id = 1;
+  int64 parentId = 2;
+  string name = 3;
+  int64 position = 4;
+  repeated Category children = 5;
+  string bannerUrl = 6;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CollectionArticleItem.java
+message CollectionArticleItem {
+  int64 id = 1;
+  string title = 2;
+  int64 state = 3;
+  int64 publishTime = 4;
+  int64 position = 5;
+  int64 words = 6;
+  repeated string imageUrls = 7;
+  Category category = 8;
+  repeated Category categories = 9;
+  string summary = 10;
+  int64 type = 11;
+  int64 dynId = 12;
+  string dynIdStr = 13;
+  int64 attributes = 14;
+  int64 authorUid = 15;
+  int64 onlyFans = 16;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ConfigAB.java
+message ConfigAB {
+  ConfigABEntry entry = 1;
+  int64 value = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ConfigReq.java
+message ConfigReq {
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ConfigRsp.java
+message ConfigRsp {
+  repeated ConfigAB abEntries = 1;
+  MaxPicCountType maxPicCountType = 2;
+  string articleLoadingAddress = 3;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreateCheckTribeeResp.java
+message CreateCheckTribeeResp {
+  TribeePublishConfig setting = 1;
+  repeated TribeeCategory categories = 2;
+  UpPermission permissions = 3;
+  TribeePublishText publishText = 4;
+  repeated TribeeVisaInfo visaTribees = 5;
+  string tribeeIcon = 6;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreateCheckTribeeWebResp.java
+message CreateCheckTribeeWebResp {
+  TribeePublishConfig setting = 1;
+  repeated TribeeCategory categories = 2;
+  PermissionsWeb permissions = 3;
+  TribeePublishText publishText = 4;
+  repeated TribeeVisaInfo visaTribees = 5;
+  string tribeeIcon = 6;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreateDynReq.java
+message CreateDynReq {
+  UserCreateMeta meta = 1;
+  CreateContent content = 2;
+  CreateScene scene = 3;
+  repeated CreatePic pics = 4;
+  DynIdentity repostSrc = 5;
+  CreateDynVideo video = 6;
+  int64 sketchType = 7;
+  Sketch sketch = 8;
+  Program program = 9;
+  CreateTag dynTag = 10;
+  CreateAttachCard attachCard = 11;
+  CreateOption option_ = 12;
+  CreateTopic topic = 13;
+  string uploadId = 14;
+  CreateExtraInfo extraInfo = 15;
+  CreateBaseDraft draft = 16;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreateInitCheckReq.java
+message CreateInitCheckReq {
+  CreateInitCheckScene scene = 1;
+  MetaDataCtrl meta = 2;
+  RepostInitCheck repost = 3;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreateOpusInitCheckReq.java
+message CreateOpusInitCheckReq {
+  int64 articleId = 1;
+  string editorVersion = 2;
+  int64 draftId = 3;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreateOpusInitCheckRsp.java
+message CreateOpusInitCheckRsp {
+  OpusPublishTopTips topTips = 1;
+  UpPermission permission = 2;
+  OpusInitConfig config = 3;
+  OpusInitVerify verify = 4;
+  OpusCollection opusCollection = 5;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreateOpusReq.java
+message CreateOpusReq {
+  UserCreateMeta meta = 1;
+  Opus opus = 2;
+  CreateScene scene = 3;
+  CreateOption option_ = 4;
+  CreateTopic topic = 5;
+  CreateBaseDraft draft = 6;
+  string uploadId = 7;
+  DynIdentity repostSrc = 8;
+  TribeeArg tribeeArg = 9;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreatePageCommercialInfo.java
+message CreatePageCommercialInfo {
+  string labelText = 1;
+  string desc = 2;
+  bool valid = 3;
+  int64 commercialEntityType = 4;
+  int64 commercialEntityId = 5;
+  bool editable = 6;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreatePageInfosReq.java
+message CreatePageInfosReq {
+  int64 topicId = 1;
+  int64 commercialEntityType = 2;
+  int64 commercialEntityId = 3;
+  CreateScene scene = 4;
+  repeated GoodsContent goods = 5;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreatePageInfosRsp.java
+message CreatePageInfosRsp {
+  CreatePageTopicInfo topic = 1;
+  CreatePageCommercialInfo commercial = 2;
+  repeated GoodsItem goods = 3;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreatePageTopicInfo.java
+message CreatePageTopicInfo {
+  int64 topicId = 1;
+  string topicName = 2;
+  string hint = 3;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreatePermissionButtonClickReq.java
+message CreatePermissionButtonClickReq {
+  UpPermissionType type = 1;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreatePermissionButtonClickRsp.java
+message CreatePermissionButtonClickRsp {
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreatePlusButtonClickReq.java
+message CreatePlusButtonClickReq {
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreatePlusButtonClickRsp.java
+message CreatePlusButtonClickRsp {
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DelArticleCollectionReq.java
+message DelArticleCollectionReq {
+  int64 id = 1;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DelArticleCollectionRsp.java
+message DelArticleCollectionRsp {
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DelArticleDraftReq.java
+message DelArticleDraftReq {
+  int64 articleId = 1;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DelArticleDraftRsp.java
+message DelArticleDraftRsp {
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DynamicButtonClickReq.java
+message DynamicButtonClickReq {
+  repeated IntList bizType = 1;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DynamicButtonClickRsp.java
+message DynamicButtonClickRsp {
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DynamicRepostReq.java
+message DynamicRepostReq {
+  int64 uid = 1;
+  CreateContent content = 2;
+  DynIdentity repostSrc = 3;
+  CreateOption option_ = 4;
+  CreateTopic topic = 5;
+  string uploadId = 6;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DynamicThumbReq.java
+message DynamicThumbReq {
+  int64 uid = 1;
+  int64 dynId = 2;
+  int64 type = 3;
+  int64 rid = 4;
+  int64 specType = 5;
+  int64 up = 6;
+  string from = 7;
+  string dynIdStr = 8;
+  string spmid = 9;
+  string fromSpmid = 10;
+  string actionId = 11;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DynamicThumbRsp.java
+message DynamicThumbRsp {
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DynMetricsActiveReportReq.java
+message DynMetricsActiveReportReq {
+  repeated ActiveReportMessage reportMetrics = 1;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DynMetricsActiveReportRsp.java
+message DynMetricsActiveReportRsp {
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DynPrivatePubSettingReq.java
+message DynPrivatePubSettingReq {
+  string objectId = 1;
+  string action = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DynPrivatePubSettingRsp.java
+message DynPrivatePubSettingRsp {
+  string toast = 1;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/EditArticleCollectionReq.java
+message EditArticleCollectionReq {
+  int64 id = 1;
+  string name = 2;
+  string summary = 3;
+  string imageUrl = 4;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/EditArticleCollectionRsp.java
+message EditArticleCollectionRsp {
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/EditDynReq.java
+message EditDynReq {
+  int64 dynId = 1;
+  CreateScene scene = 2;
+  UserCreateMeta meta = 3;
+  CreateContent content = 4;
+  repeated CreatePic pics = 5;
+  DynIdentity repostSrc = 6;
+  CreateTag dynTag = 7;
+  CreateAttachCard attachCard = 8;
+  CreateOption option_ = 9;
+  CreateTopic topic = 10;
+  string uploadId = 11;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/EditDynRsp.java
+message EditDynRsp {
+  int64 state = 1;
+  string totast = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/EditOpusReq.java
+message EditOpusReq {
+  int64 dynId = 1;
+  UserCreateMeta meta = 2;
+  Opus opus = 3;
+  CreateScene scene = 4;
+  CreateOption option_ = 5;
+  CreateTopic topic = 6;
+  CreateBaseDraft draft = 7;
+  string uploadId = 8;
+  TribeeArg tribeeArg = 9;
+  int64 cvid = 10;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/EditOpusRsp.java
+message EditOpusRsp {
+  int64 dynId = 1;
+  int64 dynType = 2;
+  int64 dynRid = 3;
+  int64 artEditorJumpFeed = 4;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/GetEditDynInfoReq.java
+message GetEditDynInfoReq {
+  int64 dynId = 1;
+  CreateInitCheckScene scene = 2;
+  MetaDataCtrl meta = 3;
+  RepostInitCheck repost = 4;
+  string editorVersion = 5;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/GetEditDynInfoRsp.java
+message GetEditDynInfoRsp {
+  repeated CreatePic pics = 1;
+  int64 origDynId = 2;
+  int64 preDynId = 3;
+  repeated CreatePageTopicInfo topicInfos = 4;
+  CreateAttachCard attachCard = 5;
+  PublishSetting setting = 6;
+  UpPermission permission = 7;
+  ShareChannel shareInfo = 8;
+  PublishYellowBar yellowBar = 9;
+  PlusRedDot plusRedDot = 10;
+  int64 onlyFans = 11;
+  string editAlertMsg = 12;
+  int64 remainEditTimes = 13;
+  CreatePageCommercialInfo commercial = 14;
+  TribeePublishConfig tribeeSetting = 15;
+  Opus opus = 16;
+  int64 dynType = 17;
+  int32 picMode = 18;
+  repeated TribeeCategory tribeeCategories = 19;
+  repeated TribeeVisaInfo visaTribees = 20;
+  string tribeeIcon = 21;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/GetEditDynInfoWebReq.java
+message GetEditDynInfoWebReq {
+  string dynId = 1;
+  CreateInitCheckScene scene = 2;
+  MetaDataCtrl meta = 3;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/GetEditDynInfoWebRsp.java
+message GetEditDynInfoWebRsp {
+  PublishWebSettings settings = 1;
+  PermissionsWeb permissions = 2;
+  CreateAttachCard attachCard = 3;
+  CreatePageCommercialInfo commercial = 4;
+  int64 onlyFans = 5;
+  string editAlertMsg = 6;
+  int64 remainEditTimes = 7;
+  string origDynIdStr = 8;
+  string preDynIdStr = 9;
+  TribeePublishConfig tribeeSetting = 10;
+  Opus opus = 11;
+  repeated TribeeCategory tribeeCategories = 12;
+  repeated CreatePageTopicInfo topicInfos = 13;
+  repeated TribeeVisaInfo visaTribees = 14;
+  string tribeeIcon = 15;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/GoodsAttachCardPreviewReq.java
+message GoodsAttachCardPreviewReq {
+  repeated int64 itemIds = 1;
+  int64 dynId = 2;
+  int64 mid = 3;
+  MetaDataCtrl meta = 4;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/GoodsAttachCardPreviewRsp.java
+message GoodsAttachCardPreviewRsp {
+  map<int64, GoodsItem> goods = 1;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/GoodsItem.java
+message GoodsItem {
+  int64 itemsId = 1;
+  string name = 2;
+  string brief = 3;
+  string img = 4;
+  float price = 5;
+  string priceStr = 6;
+  string iconName = 7;
+  string iconUrl = 8;
+  string jumpLink = 9;
+  string jumpLinkDesc = 10;
+  int64 actId = 11;
+  int64 actMid = 12;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/HomeBubbleReportReq.java
+message HomeBubbleReportReq {
+  string trackId = 1;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/HomeBubbleReportRsp.java
+message HomeBubbleReportRsp {
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/HotSearchReq.java
+message HotSearchReq {
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/HotSearchRsp.java
+message HotSearchRsp {
+  repeated string items = 1;
+  int32 version = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ICreateGoodsReplySyncReq.java
+message ICreateGoodsReplySyncReq {
+  int64 uid = 1;
+  int64 goodsId = 2;
+  CreateContent content = 3;
+  CreateScene scene = 4;
+  repeated CreatePic pics = 5;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ICreateResp.java
+message ICreateResp {
+  int64 dynId = 1;
+  int64 dynType = 2;
+  int64 dynRid = 3;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/InitCheckTribeeReq.java
+message InitCheckTribeeReq {
+  CreateInitCheckReq check = 1;
+  int64 tribeeId = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/LbsLocation.java
+message LbsLocation {
+  double lat = 1;
+  double lng = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/NearbyPoiDetail.java
+message NearbyPoiDetail {
+  LbsLocation location = 1;
+  POI_TYPE type = 2;
+  string poi = 3;
+  string address = 4;
+  string title = 5;
+  string showTitle = 6;
+  double distance = 7;
+  string showDistance = 8;
+  AdInfoDetail adInfo = 9;
+  repeated PoiId ancestors = 10;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/NearbyPoiListItem.java
+message NearbyPoiListItem {
+  NearbyPoiDetail poiInfo = 1;
+  int32 userCount = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/NearbyPoiListReq.java
+message NearbyPoiListReq {
+  double lat = 1;
+  double lng = 2;
+  int32 page = 3;
+  int32 pageSize = 4;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/NearbyPoiListRsp.java
+message NearbyPoiListRsp {
+  bool hasMore = 1;
+  repeated NearbyPoiListItem pois = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/OpusArticleDraftListReq.java
+message OpusArticleDraftListReq {
+  Page page = 1;
+  string editorVersion = 2;
+  string keyword = 3;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/OpusArticleDraftListRsp.java
+message OpusArticleDraftListRsp {
+  repeated DraftMeta drafts = 1;
+  Page page = 2;
+  string draftUrl = 3;
+  repeated string keywords = 4;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/OpusArticleDraftViewReq.java
+message OpusArticleDraftViewReq {
+  int64 articleId = 1;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/OpusArticleDraftViewRsp.java
+message OpusArticleDraftViewRsp {
+  DraftMeta draft = 1;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/OpusCollection.java
+message OpusCollection {
+  repeated OpusCollectionItem collections = 1;
+  int64 maxCollectionCount = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/OpusCollectionItem.java
+message OpusCollectionItem {
+  int64 id = 1;
+  int64 mid = 2;
+  string name = 3;
+  string summary = 4;
+  string imageUrl = 5;
+  int64 opusCount = 6;
+  bool maxOpusCountReached = 7;
+  int64 words = 8;
+  int64 read = 9;
+  int64 state = 10;
+  string reason = 11;
+  int64 updateTime = 12;
+  int64 ctime = 13;
+  int64 publishTime = 14;
+  string applyTime = 15;
+  string checkTime = 16;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/OpusInitConfig.java
+message OpusInitConfig {
+  int64 minTitleLen = 1;
+  int64 maxTitleLen = 2;
+  int64 maxArticleLen = 3;
+  int64 maxImageCount = 4;
+  int64 maxCardCount = 5;
+  int64 maxHashtagLen = 6;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/OpusInitVerify.java
+message OpusInitVerify {
+  OpusInitVerifyItem banned = 1;
+  OpusInitVerifyItem levelUnsufficient = 2;
+  OpusInitVerifyItem unrealName = 3;
+  OpusInitVerifyItem unbindPhone = 4;
+  OpusInitVerifyItem postCountExceeded = 5;
+  OpusInitVerifyItem editCountExceeded = 6;
+  OpusInitVerifyItem editorVersionUnqualified = 7;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/OpusInitVerifyItem.java
+message OpusInitVerifyItem {
+  OpusInitVerifyType verifyType = 1;
+  int64 result = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/OpusPublishTopTips.java
+message OpusPublishTopTips {
+  bool showAllowed = 1;
+  string text = 2;
+  string closeText = 3;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/PoiDetail.java
+message PoiDetail {
+  LbsLocation location = 1;
+  POI_TYPE type = 2;
+  string poi = 3;
+  string address = 4;
+  string title = 5;
+  string showTitle = 6;
+  double distance = 7;
+  string showDistance = 8;
+  AdInfoDetail adInfo = 9;
+  PoiId ancestors = 10;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/PoiId.java
+message PoiId {
+  string poi = 1;
+  uint32 type = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/PoiListItem.java
+message PoiListItem {
+  PoiDetail poiInfo = 1;
+  int32 userCount = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/RecommendPoiReq.java
+message RecommendPoiReq {
+  double lat = 1;
+  double lng = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/RecommendPoiRsp.java
+message RecommendPoiRsp {
+  NearbyPoiDetail poi = 1;
+  NearbyPoiDetail parentPoi = 2;
+  AddressComponent address = 3;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ReprintOpusToTribeeReq.java
+message ReprintOpusToTribeeReq {
+  UserCreateMeta meta = 1;
+  int64 opusId = 2;
+  int64 tribeeId = 3;
+  int64 categoryId = 4;
+  bool needRepost = 5;
+  bool needMarkSource = 6;
+  string repostText = 7;
+  string title = 8;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ReserveButtonClickReq.java
+message ReserveButtonClickReq {
+  int64 uid = 1;
+  int64 reserveId = 2;
+  int64 reserveTotal = 3;
+  ReserveButtonStatus curBtnStatus = 4;
+  string spmid = 5;
+  int64 dynId = 6;
+  int64 dynType = 7;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ReserveButtonClickResp.java
+message ReserveButtonClickResp {
+  ReserveButtonStatus finalBtnStatus = 1;
+  ReserveButtonMode btnMode = 2;
+  int64 reserveUpdate = 3;
+  string descUpdate = 4;
+  bool hasActivity = 5;
+  string activityUrl = 6;
+  string toast = 7;
+  ReserveCalendarInfo reserveCalendarInfo = 8;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ReserveCalendarInfo.java
+message ReserveCalendarInfo {
+  string title = 1;
+  int64 startts = 2;
+  int64 endts = 3;
+  string description = 4;
+  string bussinessid = 5;
+  string url = 6;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/RmDynReq.java
+message RmDynReq {
+  int64 dynId = 1;
+  string dynIdStr = 2;
+  int64 dynType = 3;
+  string ridStr = 4;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/RmDynRsp.java
+message RmDynRsp {
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/RmSpaceTopReq.java
+message RmSpaceTopReq {
+  int64 dynId = 1;
+  int32 teenagersMode = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/RmSpaceTopRsp.java
+message RmSpaceTopRsp {
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/SearchPoiListReq.java
+message SearchPoiListReq {
+  double lat = 1;
+  double lng = 2;
+  int32 page = 3;
+  int32 pageSize = 4;
+  string keyword = 5;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/SearchPoiListRsp.java
+message SearchPoiListRsp {
+  bool hasMore = 1;
+  repeated PoiListItem pois = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/SetSpaceTopReq.java
+message SetSpaceTopReq {
+  int64 dynId = 1;
+  int32 teenagersMode = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/SetSpaceTopRsp.java
+message SetSpaceTopRsp {
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/SubmitCheckReq.java
+message SubmitCheckReq {
+  CreateContent content = 1;
+  repeated CreatePic pics = 2;
+  CreateAttachCard attachCard = 3;
+  CreateScene scene = 4;
+  CreateOption createOption = 5;
+  Opus opus = 6;
+  string dynIdStr = 7;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/SubmitCheckRsp.java
+message SubmitCheckRsp {
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/SuggestReq.java
+message SuggestReq {
+  string s = 1;
+  int32 type = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/SuggestRsp.java
+message SuggestRsp {
+  repeated string list = 1;
+  string trackId = 2;
+  string version = 3;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/TribeePublishConfig.java
+message TribeePublishConfig {
+  int64 titleMaxLength = 1;
+  int64 titleMinLength = 2;
+  int64 contentMaxLength = 3;
+  int64 contentMinLength = 4;
+  int64 picMaxNum = 5;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/TribeePublishText.java
+message TribeePublishText {
+  string title = 1;
+  string placeholder = 2;
+  string topTips = 3;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/TribeeVisaInfo.java
+message TribeeVisaInfo {
+  int64 sourceTribeeId = 1;
+  int64 targetTribeeId = 2;
+  string name = 3;
+  string faceUrl = 4;
+  string summary = 5;
+  string bannerUrl = 6;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/dynamic/interfaces/feed/v1";

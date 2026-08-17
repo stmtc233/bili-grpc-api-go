@@ -1,0 +1,14 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.broadcast.v2;
+
+// Source: com/bapis/bilibili/broadcast/v2/LaserEventResp.java
+message LaserEventResp {
+  int64 taskid = 1;
+  string action = 2;
+  string params = 3;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/v2";

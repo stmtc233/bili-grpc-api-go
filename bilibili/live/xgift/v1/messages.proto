@@ -1,0 +1,63 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.live.xgift.v1;
+
+// Source: com/bapis/bilibili/live/xgift/v1/EasterEggBenefit.java
+message EasterEggBenefit {
+  string materialUrl = 1;
+  string materialMd5 = 2;
+  int64 effectNum = 3;
+  int64 effectNumAudience = 4;
+  string unlockText = 5;
+  string webMaterialUrl = 6;
+  string webMaterialMd5 = 7;
+}
+
+// Source: com/bapis/bilibili/live/xgift/v1/FansLightAnimation.java
+message FansLightAnimation {
+  string medalName = 1;
+}
+
+// Source: com/bapis/bilibili/live/xgift/v1/GiftBenefits.java
+message GiftBenefits {
+  EasterEggBenefit easterEgg = 1;
+  FansLightAnimation fansLightAnimation = 2;
+}
+
+// Source: com/bapis/bilibili/live/xgift/v1/GiftMaterialSnapShot.java
+message GiftMaterialSnapShot {
+  string imgBasic = 1;
+  string webp = 2;
+  int64 effectId = 3;
+  int64 hasImagedGift = 4;
+}
+
+// Source: com/bapis/bilibili/live/xgift/v1/GroupMedalBrief.java
+message GroupMedalBrief {
+  int64 medalId = 1;
+  string name = 2;
+  int64 isLighted = 3;
+}
+
+// Source: com/bapis/bilibili/live/xgift/v1/SendGiftBroadcast.java
+message SendGiftBroadcast {
+  int32 uid = 1;
+  int64 uname = 2;
+  int32 face = 3;
+  int32 nameColor = 4;
+  int32 guardLevel = 5;
+  int32 svgaBlock = 6;
+  int32 sendMaster = 7;
+  int32 medalInfo = 8;
+  int32 blindGift = 9;
+  repeated int32 giftList = 10;
+  int32 switch = 11;
+  int32 test = 12;
+  int32 wealthInfo = 13;
+  int32 groupMedal = 14;
+  int32 senderUinfo = 15;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/live/xgift/v1";

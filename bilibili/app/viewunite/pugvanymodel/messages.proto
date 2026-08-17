@@ -1,0 +1,407 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.viewunite.pugvanymodel;
+
+enum EpisodeStatus {
+  EPISODE_STATUS_UNSPECIFIED = 0;
+  EPISODE_STATUS_TRY_WATCH_WHOLE = 1;
+  EPISODE_STATUS_NOT_TRY_WATCH = 2;
+  EPISODE_STATUS_TRY_WATCH_5_MINUTES = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum EpisodeType {
+  EPISODE_TYPE_UNSPECIFIED = 0;
+  EPISODE_TYPE_VIDEO = 1;
+  EPISODE_TYPE_LIVE = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum LiveStatus {
+  LIVE_STATUS_UNSPECIFIED = 0;
+  LIVE_STATUS_PREPARE = 1;
+  LIVE_STATUS_LIVE = 2;
+  LIVE_STATUS_PLAYBACK_GENERATING = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum OperationAreaButtonType {
+  OPERATION_AREA_BUTTON_TYPE_UNSPECIFIED = 0;
+  OPERATION_AREA_BUTTON_TYPE_FAVORITE = 1;
+  OPERATION_AREA_BUTTON_TYPE_CONSULT = 2;
+  OPERATION_AREA_BUTTON_TYPE_SHARE = 3;
+  OPERATION_AREA_BUTTON_TYPE_PURCHASE = 4;
+  OPERATION_AREA_BUTTON_TYPE_VIP = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum SeasonCouponStatus {
+  SEASON_COUPON_STATUS_UNSPECIFIED = 0;
+  SEASON_COUPON_STATUS_RECEIVED = 1;
+  SEASON_COUPON_STATUS_NOT_RECEIVED = 2;
+  SEASON_COUPON_STATUS_INVALID = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum SeasonCouponType {
+  SEASON_COUPON_TYPE_UNSPECIFIED = 0;
+  SEASON_COUPON_TYPE_DISCOUNT = 1;
+  SEASON_COUPON_TYPE_DECREASE = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum SeasonSectionType {
+  SEASON_SECTION_TYPE_UNSPECIFIED = 0;
+  SEASON_SECTION_TYPE_DEFAULT = 1;
+  SEASON_SECTION_TYPE_CUSTOM = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum SeasonStatus {
+  SEASON_STATUS_UNSPECIFIED = 0;
+  SEASON_STATUS_OFFLINE = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum SeasonType {
+  SEASON_TYPE_UNSPECIFIED = 0;
+  SEASON_TYPE_INSTALLMENT = 1;
+  SEASON_TYPE_FREE = 2;
+  SEASON_TYPE_SUBSCRIPTION = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum VideoPlayWay {
+  VIDEO_PLAY_WAY_UNSPECIFIED = 0;
+  VIDEO_PLAY_WAY_VOD = 1;
+  VIDEO_PLAY_WAY_LIVE_PLAYBACK = 2;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/AbTest.java
+message AbTest {
+  map<string, int32> exp = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/CatalogueInfo.java
+message CatalogueInfo {
+  repeated SeasonCatalogue catalogues = 1;
+  CatalogueLiveInfo catalogueLiveInfo = 2;
+  string catalogueUpdateText = 3;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/CatalogueLiveInfo.java
+message CatalogueLiveInfo {
+  int64 episodeId = 1;
+  string title = 2;
+  string subtitle = 3;
+  string buttonText = 4;
+  LiveStatus status = 5;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/ConsultBubble.java
+message ConsultBubble {
+  string homeToast = 1;
+  string slideToast = 2;
+  string wxIcon = 3;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/CourseCoach.java
+message CourseCoach {
+  string detailUrl = 1;
+  string directoryUrl = 2;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/Courseware.java
+message Courseware {
+  int64 fileId = 1;
+  string fileName = 2;
+  string fileType = 3;
+  int64 fileSize = 4;
+  string desc = 5;
+  string fileUrl = 6;
+  string icon = 7;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/CoursewareInfo.java
+message CoursewareInfo {
+  repeated Courseware coursewares = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/CredentialInfo.java
+message CredentialInfo {
+  bool tabShow = 1;
+  bool tabBadgeShow = 2;
+  string tabUrl = 3;
+  string credentialUrl = 4;
+  int64 requireEp = 5;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/DanmakuControl.java
+message DanmakuControl {
+  bool disabled = 1;
+  ExtraContent extraContent = 2;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/Episode.java
+message Episode {
+  EpisodeType type = 1;
+  oneof oneof_0 {
+    VideoEpisode videoEpisode = 2;
+    LiveEpisode liveEpisode = 3;
+  }
+  map<string, string> reportParams = 4;
+  enum DataCase {
+    VIDEO_EPISODE = 2;
+    LIVE_EPISODE = 3;
+    DATA_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/EpisodeDimension.java
+message EpisodeDimension {
+  int64 width = 1;
+  int64 height = 2;
+  int64 rotate = 3;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/EpisodeHistory.java
+message EpisodeHistory {
+  bool lastPlay = 1;
+  string lastPlayText = 2;
+  int64 maxProgress = 3;
+  string fullWatchedText = 4;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/EpisodeLabel.java
+message EpisodeLabel {
+  string typeLabel = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/EpisodeSelectionLabel.java
+message EpisodeSelectionLabel {
+  string typeLabel = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/ExtraContent.java
+message ExtraContent {
+  string disabledReason = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/FragmentVideoMessage.java
+message FragmentVideoMessage {
+  bool hasFragmentVideo = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/GiftInfo.java
+message GiftInfo {
+  string url = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/LiveEpisode.java
+message LiveEpisode {
+  int64 episodeId = 1;
+  LiveStatus status = 2;
+  bool jump = 3;
+  int64 liveTeacherMid = 4;
+  bool showSubscriptionPrebookButton = 5;
+  bool beSubscriptionPrebook = 6;
+  int64 index = 7;
+  string title = 8;
+  string playWaySubtitle = 9;
+  string subtitle = 10;
+  bool showLockIcon = 11;
+  EpisodeLabel episodeLabel = 12;
+  EpisodeSelectionLabel selectionLabel = 13;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/LiveInfo.java
+message LiveInfo {
+  int64 episodeId = 1;
+  LiveStatus status = 2;
+  bool jump = 3;
+  int64 liveTeacherMid = 4;
+  bool showSubscriptionPrebookButton = 5;
+  bool beSubscriptionPrebook = 6;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/NetdiskCourseware.java
+message NetdiskCourseware {
+  int64 coursewareId = 1;
+  string name = 2;
+  string remark = 3;
+  string desc = 4;
+  string url = 5;
+  string icon = 6;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/NetdiskCoursewareInfo.java
+message NetdiskCoursewareInfo {
+  repeated NetdiskCourseware coursewares = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/OperationArea.java
+message OperationArea {
+  repeated OperationAreaButton buttons = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/OperationAreaButton.java
+message OperationAreaButton {
+  OperationAreaButtonType type = 1;
+  string text = 2;
+  bool disabled = 3;
+  string link = 4;
+  ConsultBubble consultBubble = 5;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/PostPurchaseInfo.java
+message PostPurchaseInfo {
+  string popUpPic = 1;
+  int64 popUpInterval = 2;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/PugvOrderPhoneInfo.java
+message PugvOrderPhoneInfo {
+  bool needOrderPhone = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/SeasonAIInfo.java
+message SeasonAIInfo {
+  bool isAi = 1;
+  string guideTitle = 2;
+  string guideContent = 3;
+  string diagram = 4;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/SeasonCatalogue.java
+message SeasonCatalogue {
+  string title = 1;
+  int64 index = 2;
+  int64 startEpIndex = 3;
+  int64 endEpIndex = 4;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/SeasonCoupon.java
+message SeasonCoupon {
+  string token = 1;
+  string title = 2;
+  string startTime = 3;
+  string expireTime = 4;
+  double amount = 5;
+  string showAmount = 6;
+  SeasonCouponStatus status = 7;
+  SeasonCouponType couponType = 8;
+  string shortTitle = 9;
+  string expireMinute = 10;
+  string useScope = 11;
+  string discountAmount = 12;
+  int64 receiveExpireTime = 13;
+  int64 useExpireTime = 14;
+  string sceneMark = 15;
+  string sceneBackgroundImg = 16;
+  string sceneBenefitImg = 17;
+  bool sceneCountdown = 18;
+  bool isFrequenter = 19;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/SeasonCustom.java
+message SeasonCustom {
+  WaterMark waterMark = 1;
+  DanmakuControl danmakuControl = 2;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/SeasonOverview.java
+message SeasonOverview {
+  int64 seasonId = 1;
+  bool supportCash = 2;
+  SeasonStatus status = 3;
+  SeasonType type = 4;
+  string cover = 5;
+  string title = 6;
+  map<string, string> reportParams = 7;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/SeasonPayment.java
+message SeasonPayment {
+  string priceUnit = 1;
+  string discountPrice = 2;
+  string discountPriceDesc = 3;
+  string originalPrice = 4;
+  string originalPriceDesc = 5;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/SeasonSection.java
+message SeasonSection {
+  int64 sectionId = 1;
+  string title = 2;
+  SeasonSectionType type = 3;
+  repeated Courseware coursewares = 4;
+  repeated Episode episodes = 5;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/SeasonStat.java
+message SeasonStat {
+  int64 fav = 1;
+  int64 share = 2;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/SectionInfo.java
+message SectionInfo {
+  repeated SeasonSection sections = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/VideoEpisode.java
+message VideoEpisode {
+  repeated Courseware coursewares = 1;
+  int64 index = 2;
+  EpisodeStatus status = 3;
+  int64 aid = 4;
+  int64 cid = 5;
+  string title = 6;
+  string playWaySubtitle = 7;
+  string subtitle = 8;
+  int64 duration = 9;
+  bool canSwitch = 10;
+  bool canPlay = 11;
+  bool showLockIcon = 12;
+  EpisodeLabel episodeLabel = 13;
+  EpisodeSelectionLabel selectionLabel = 14;
+  EpisodeHistory history = 15;
+  VideoPlayWay playWay = 16;
+  int64 episodeId = 17;
+  string shareLink = 18;
+  EpisodeDimension dimension = 19;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/ViewPugvAny.java
+message ViewPugvAny {
+  SeasonOverview seasonOverview = 1;
+  SeasonPayment seasonPayment = 2;
+  SeasonCoupon seasonCoupon = 3;
+  CatalogueInfo catalogueInfo = 4;
+  SeasonCustom seasonCustom = 5;
+  CoursewareInfo coursewareInfo = 6;
+  CourseCoach courseCoach = 7;
+  SectionInfo sectionInfo = 8;
+  AbTest abTest = 9;
+  OperationArea operationArea = 10;
+  SeasonStat seasonStat = 11;
+  PostPurchaseInfo postPurchaseInfo = 12;
+  GiftInfo giftInfo = 13;
+  NetdiskCoursewareInfo netdiskCoursewareInfo = 14;
+  CredentialInfo credentialInfo = 15;
+  FragmentVideoMessage fragmentVideoMessage = 16;
+  SeasonAIInfo aiInfo = 17;
+  PugvOrderPhoneInfo orderPhoneInfo = 18;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/pugvanymodel/WaterMark.java
+message WaterMark {
+  bool showWatermark = 1;
+  int64 watermarkInterval = 2;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/viewunite/pugvanymodel";

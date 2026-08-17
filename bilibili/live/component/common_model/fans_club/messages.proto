@@ -1,0 +1,14 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.live.component.common_model.fans_club;
+
+// Source: com/bapis/bilibili/live/component/common_model/fans_club/GroupMedalBrief.java
+message GroupMedalBrief {
+  int64 medalId = 1;
+  string name = 2;
+  int64 isLighted = 3;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/live/component/common_model/fans_club";

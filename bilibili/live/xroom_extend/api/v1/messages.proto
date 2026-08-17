@@ -1,0 +1,28 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.live.xroom_extend.api.v1;
+
+enum ReportStatus {
+  REPORT_EXCEPTION = 0;
+  REPORT_SUCCESS = 1;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/live/xroom_extend/api/v1/SendReportInfoReq.java
+message SendReportInfoReq {
+  int64 roomId = 1;
+  string reportTag = 2;
+  string reportReason = 3;
+  string picUrl = 4;
+  string playStream = 5;
+}
+
+// Source: com/bapis/bilibili/live/xroom_extend/api/v1/SendReportInfoResp.java
+message SendReportInfoResp {
+  ReportStatus reportStatus = 1;
+  string toast = 2;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/live/xroom_extend/api/v1";

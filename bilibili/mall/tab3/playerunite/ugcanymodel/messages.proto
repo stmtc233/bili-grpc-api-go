@@ -1,0 +1,37 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.mall.tab3.playerunite.ugcanymodel;
+
+enum PlayLimitCode {
+  PLC_UNKNOWN = 0;
+  PLC_UGCNOTPAYED = 1;
+  PLC_ChargingPlusNotPass = 2;
+  PLC_ChargingPlusUpgrade = 3;
+  PLC_ChargingPlusReject = 4;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/mall/tab3/playerunite/ugcanymodel/ButtonStyle.java
+message ButtonStyle {
+  string text = 1;
+  string textColor = 2;
+  string bgColor = 3;
+  string jumpLink = 4;
+}
+
+// Source: com/bapis/bilibili/mall/tab3/playerunite/ugcanymodel/PlayLimit.java
+message PlayLimit {
+  PlayLimitCode code = 1;
+  string message_ = 2;
+  string subMessage = 3;
+  ButtonStyle button = 4;
+}
+
+// Source: com/bapis/bilibili/mall/tab3/playerunite/ugcanymodel/UGCAnyModel.java
+message UGCAnyModel {
+  PlayLimit playLimit = 1;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/mall/tab3/playerunite/ugcanymodel";

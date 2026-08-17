@@ -1,0 +1,27 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.broadcast.message.push;
+
+// Source: com/bapis/bilibili/broadcast/message/push/UpStreamMessage.java
+message UpStreamMessage {
+  string taskid = 1;
+  Type type = 2;
+  string extra = 3;
+  int64 timestamp = 4;
+  int64 job = 5;
+  string msgSource = 6;
+  int64 bid = 7;
+  enum Type {
+    TYPE_UNKNOWN = 0;
+    TYPE_ACK = 1;
+    TYPE_FILTER = 2;
+    TYPE_SHOW = 3;
+    TYPE_CLICK = 4;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/message/push";
