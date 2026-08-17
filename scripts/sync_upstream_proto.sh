@@ -35,9 +35,16 @@ sort -u "${tmp_manifest}" -o "${tmp_manifest}"
 if [[ -s "${old_manifest}" ]]; then
   while IFS= read -r previous_path; do
     if ! grep -Fxq "${previous_path}" "${tmp_manifest}"; then
+      if [[ -z "${previous_path}" || "${previous_path}" == /* || "${previous_path}" == *".."* ]]; then
+        echo "invalid path in previous manifest: ${previous_path}" >&2
+        exit 1
+      fi
+
       destination_file="${repo_root}/${previous_path}"
 
-      rm -f "${destination_file}"
+      # A newer upstream layout can turn an old .proto path into a directory.
+      # The manifest scopes this removal to paths managed by this sync script.
+      rm -rf -- "${destination_file}"
 
       cleanup_dir="$(dirname "${destination_file}")"
       while [[ "${cleanup_dir}" != "${repo_root}" && "${cleanup_dir}" != "." ]]; do
