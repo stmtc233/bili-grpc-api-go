@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       upstream_ref:
-        description: Upstream branch, tag, or commit
+        description: BAPIS proto branch, tag, or commit
         required: false
         default: ''
         type: string
@@ -32,7 +32,7 @@ jobs:
         if: github.event_name == 'workflow_dispatch' && github.event.inputs.upstream_ref != ''
         uses: actions/checkout@v4
         with:
-          repository: mikufans-project/bilibili-API-collect
+          repository: stmtc233/bapis-proto
           ref: ${{ github.event.inputs.upstream_ref }}
           path: upstream
 
@@ -40,11 +40,11 @@ jobs:
         if: github.event_name != 'workflow_dispatch' || github.event.inputs.upstream_ref == ''
         uses: actions/checkout@v4
         with:
-          repository: mikufans-project/bilibili-API-collect
+          repository: stmtc233/bapis-proto
           path: upstream
 
       - name: Sync proto files
-        run: bash scripts/sync_upstream_proto.sh upstream/proto .
+        run: bash scripts/sync_upstream_proto.sh upstream/extracted_proto/com/bapis .
 
       - name: Normalize go_package
         run: bash scripts/ensure_go_package.sh
@@ -76,7 +76,7 @@ jobs:
           delete-branch: true
           title: "chore: sync proto from upstream (${{ steps.upstream.outputs.sha }})"
           body: |
-            Synced proto files from `mikufans-project/bilibili-API-collect`.
+            Synced proto files from `stmtc233/bapis-proto`.
 
             - Upstream ref: `${{ github.event_name == 'workflow_dispatch' && github.event.inputs.upstream_ref || 'default branch' }}`
             - Upstream commit: `${{ steps.upstream.outputs.full_sha }}`
