@@ -1,0 +1,29 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.polymer.chronos.v1;
+
+// Source: com/bapis/bilibili/polymer/chronos/v1/ObtainChronosPackageReq.java
+message ObtainChronosPackageReq {
+  string serviceKey = 1;
+  string engineVersion = 2;
+  string bizId = 3;
+}
+
+// Source: com/bapis/bilibili/polymer/chronos/v1/ObtainChronosPackageRsp.java
+message ObtainChronosPackageRsp {
+  string md5 = 1;
+  string url = 2;
+  string sign = 3;
+}
+
+// Source: com/bapis/bilibili/polymer/chronos/v1/ObtainChronosPackageV2Req.java
+message ObtainChronosPackageV2Req {
+  string serviceKey = 1;
+  string engineVersion = 2;
+  string bizId = 3;
+  string businessAppKey = 4;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/polymer/chronos/v1";

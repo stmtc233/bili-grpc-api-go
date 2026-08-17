@@ -1,0 +1,124 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.dagw.component.avatar.v1;
+
+// Source: com/bapis/bilibili/dagw/component/avatar/v1/AvatarItem.java
+message AvatarItem {
+  SizeSpec containerSize = 1;
+  repeated LayerGroup layers = 2;
+  LayerGroup fallbackLayers = 3;
+  int64 mid = 4;
+}
+
+// Source: com/bapis/bilibili/dagw/component/avatar/v1/BasicLayerResource.java
+message BasicLayerResource {
+  ResType resType = 1;
+  oneof oneof_0 {
+    ResImage resImage = 2;
+    ResAnimation resAnimation = 3;
+    ResNativeDraw resNativeDraw = 4;
+  }
+  enum PayloadCase {
+    RES_IMAGE = 2;
+    RES_ANIMATION = 3;
+    RES_NATIVE_DRAW = 4;
+    PAYLOAD_NOT_SET = 0;
+  }
+
+  enum ResType {
+    RES_TYPE_INVALID = 0;
+    RES_TYPE_PLUGIN = 1;
+    RES_TYPE_EMPTY = 2;
+    RES_TYPE_IMAGE = 3;
+    RES_TYPE_ANIMATION = 4;
+    RES_TYPE_NATIVE_DRAW = 5;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/dagw/component/avatar/v1/GeneralConfig.java
+message GeneralConfig {
+  map<string, string> webCssStyle = 1;
+}
+
+// Source: com/bapis/bilibili/dagw/component/avatar/v1/Layer.java
+message Layer {
+  string layerId = 1;
+  bool visible = 2;
+  LayerGeneralSpec generalSpec = 3;
+  LayerConfig layerConfig = 4;
+  BasicLayerResource resource = 5;
+}
+
+// Source: com/bapis/bilibili/dagw/component/avatar/v1/LayerConfig.java
+message LayerConfig {
+  map<string, LayerTagConfig> tags = 1;
+  bool isCritical = 2;
+  bool allowOverPaint = 3;
+  MaskProperty layerMask = 4;
+}
+
+// Source: com/bapis/bilibili/dagw/component/avatar/v1/LayerGroup.java
+message LayerGroup {
+  string groupId = 1;
+  repeated Layer layers = 2;
+  MaskProperty groupMask = 3;
+  bool isCriticalGroup = 4;
+}
+
+// Source: com/bapis/bilibili/dagw/component/avatar/v1/LayerTagConfig.java
+message LayerTagConfig {
+  TagConfigType configType = 1;
+  oneof oneof_0 {
+    GeneralConfig generalConfig = 2;
+    GyroConfig gyroConfig = 3;
+    CommentDoubleClickConfig commentDoubleClickConfig = 4;
+    LiveAnimeConfig liveAnimeConfig = 5;
+    WebLiveAnimeConfig webLiveAnimeConfig = 6;
+    FollowIconConfig followIconConfig = 7;
+    FollowActionConfig followActionConfig = 8;
+  }
+  enum ConfigCase {
+    GENERAL_CONFIG = 2;
+    GYRO_CONFIG = 3;
+    COMMENT_DOUBLE_CLICK_CONFIG = 4;
+    LIVE_ANIME_CONFIG = 5;
+    WEB_LIVE_ANIME_CONFIG = 6;
+    FOLLOW_ICON_CONFIG = 7;
+    FOLLOW_ACTION_CONFIG = 8;
+    CONFIG_NOT_SET = 0;
+  }
+
+  enum TagConfigType {
+    TAG_CFG_INVALID = 0;
+    TAG_CFG_GENERAL = 1;
+    TAG_CFG_GYRO = 2;
+    TAG_CFG_COMMENT_DOUBLE_CLICK = 3;
+    TAG_CFG_IN_LIVE = 4;
+    TAG_CFG_WEB_IN_LIVE = 5;
+    TAG_CFG_FOLLOW_ICON = 6;
+    TAG_CFG_FOLLOW_ACTION = 7;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/dagw/component/avatar/v1/ResAnimation.java
+message ResAnimation {
+  ResourceSource webpSrc = 1;
+}
+
+// Source: com/bapis/bilibili/dagw/component/avatar/v1/ResImage.java
+message ResImage {
+  ResourceSource imageSrc = 1;
+}
+
+// Source: com/bapis/bilibili/dagw/component/avatar/v1/ResNativeDraw.java
+message ResNativeDraw {
+  ResourceSource drawSrc = 1;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/dagw/component/avatar/v1";

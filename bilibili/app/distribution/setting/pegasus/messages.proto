@@ -1,0 +1,44 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.distribution.setting.pegasus;
+
+// Source: com/bapis/bilibili/app/distribution/setting/pegasus/FeedModeValue.java
+message FeedModeValue {
+  Int64Value value = 1;
+}
+
+// Source: com/bapis/bilibili/app/distribution/setting/pegasus/PegasusAutoPlay.java
+message PegasusAutoPlay {
+  Int64Value single = 1;
+  Int64Value double_ = 2;
+  BoolValue singleAffectedByServerSide = 3;
+  BoolValue doubleAffectedByServerSide = 4;
+}
+
+// Source: com/bapis/bilibili/app/distribution/setting/pegasus/PegasusColumnValue.java
+message PegasusColumnValue {
+  Int64Value value = 1;
+  BoolValue affectedByServerSide = 2;
+}
+
+// Source: com/bapis/bilibili/app/distribution/setting/pegasus/PegasusDeviceConfig.java
+message PegasusDeviceConfig {
+  PegasusColumnValue column = 1;
+  FeedModeValue mode = 2;
+  PegasusAutoPlay autoPlay = 3;
+}
+
+// Source: com/bapis/bilibili/app/distribution/setting/pegasus/PegasusDeviceWithoutFplocalConfig.java
+message PegasusDeviceWithoutFplocalConfig {
+  Int64Value autoRefreshState = 1;
+}
+
+// Source: com/bapis/bilibili/app/distribution/setting/pegasus/PegasusMidConfig.java
+message PegasusMidConfig {
+  Int64Value column = 1;
+  Int64Value playMode = 2;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/distribution/setting/pegasus";

@@ -1,0 +1,19 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.distribution.setting.privacy;
+
+// Source: com/bapis/bilibili/app/distribution/setting/privacy/MidPrivacySettingsConfig.java
+message MidPrivacySettingsConfig {
+  bytes recommendtoknown = 1;
+  repeated bytes blockedwords = 2;
+}
+
+// Source: com/bapis/bilibili/app/distribution/setting/privacy/PrivacySettingsConfig.java
+message PrivacySettingsConfig {
+  bytes adrecommandstore = 1;
+  bytes sensoraccess = 2;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/distribution/setting/privacy";

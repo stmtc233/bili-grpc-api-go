@@ -1,0 +1,18 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.distribution.setting.search;
+
+// Source: com/bapis/bilibili/app/distribution/setting/search/SearchAutoPlay.java
+message SearchAutoPlay {
+  Int64Value value = 1;
+  BoolValue affectedByServerSide = 2;
+}
+
+// Source: com/bapis/bilibili/app/distribution/setting/search/SearchDeviceConfig.java
+message SearchDeviceConfig {
+  SearchAutoPlay autoPlay = 1;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/distribution/setting/search";

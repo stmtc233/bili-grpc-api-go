@@ -1,0 +1,238 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.show.mixture.v1;
+
+enum GuideStyleVersion {
+  GUIDE_STYLE_DEFAULT = 0;
+  GUIDE_STYLE_FUNC_NEW = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum GuideType {
+  GUIDE_TYPE_DEFAULT = 0;
+  GUIDE_TYPE_FUNC = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum RegionCardType {
+  REGION_CARD_TYPE_DEFAULT = 0;
+  REGION_CARD_TYPE_AV = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum RegionLimitCode {
+  REGION_LIMIT_CODE_DEFAULT = 0;
+  REGION_LIMIT_CODE_NO_LOGIN = 1;
+  REGION_LIMIT_CODE_MAX = 2;
+  REGION_LIMIT_CODE_ERROR = 3;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/ChannelRedirectReply.java
+message ChannelRedirectReply {
+  int64 code = 1;
+  string url = 2;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/ChannelRedirectReq.java
+message ChannelRedirectReq {
+  int64 id = 1;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/ClarityReply.java
+message ClarityReply {
+  bool isPlayStory = 1;
+  bool isSetPlayQn = 2;
+  int64 lastPlayQnValue = 3;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/ClarityReq.java
+message ClarityReq {
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/EmptyReply.java
+message EmptyReply {
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/GuideCard.java
+message GuideCard {
+  string image = 1;
+  string subtitle = 2;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/GuideItem.java
+message GuideItem {
+  repeated GuideCard card = 1;
+  string title = 2;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/GuideTip.java
+message GuideTip {
+  string image = 1;
+  string subtitle = 2;
+  string title = 3;
+  repeated UpItem upItems = 4;
+  int64 style = 5;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/RcmdReason.java
+message RcmdReason {
+  string content = 1;
+  int32 cornerMark = 2;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/RegionAv.java
+message RegionAv {
+  string cover = 1;
+  string coverViewText = 2;
+  string coverDmText = 3;
+  string coverRightText1 = 4;
+  string jumpUrl = 5;
+  string upName = 6;
+  int64 aid = 7;
+  string title = 8;
+  string cover43 = 9;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/RegionBanner.java
+message RegionBanner {
+  string title = 1;
+  string subTitle = 2;
+  string url = 3;
+  int64 index = 4;
+  string cover = 5;
+  int64 id = 6;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/RegionCard.java
+message RegionCard {
+  RegionCardType type = 1;
+  oneof oneof_0 {
+    RegionAv av = 2;
+  }
+  ThreePoint threePoint = 3;
+  enum ItemCase {
+    AV = 2;
+    ITEM_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/RegionContent.java
+message RegionContent {
+  string title = 1;
+  repeated RegionIcon icons = 2;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/RegionIcon.java
+message RegionIcon {
+  string img = 1;
+  string title = 2;
+  string url = 3;
+  int64 uniqueId = 4;
+  int64 rid = 5;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/RegionIndexReply.java
+message RegionIndexReply {
+  repeated RegionBanner banner = 1;
+  bool hasNext = 2;
+  repeated RegionCard cards = 3;
+  string title = 4;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/RegionIndexReq.java
+message RegionIndexReq {
+  int64 rid = 1;
+  int32 displayId = 2;
+  bool needBanner = 3;
+  PlayerArgs playerArgs = 4;
+  string uuid = 5;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/RegionLimit.java
+message RegionLimit {
+  RegionLimitCode code = 1;
+  string message_ = 2;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/RegionListReply.java
+message RegionListReply {
+  RegionContent shortcut = 1;
+  repeated RegionContent contents = 2;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/RegionListReq.java
+message RegionListReq {
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/RegionShortcutReply.java
+message RegionShortcutReply {
+  RegionLimit limit = 1;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/RegionShortcutReq.java
+message RegionShortcutReq {
+  repeated int64 uniqueId = 1;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/ThreePoint.java
+message ThreePoint {
+  bool watchLater = 1;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/UpItem.java
+message UpItem {
+  string icon = 1;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/WidgetGuideReply.java
+message WidgetGuideReply {
+  int32 code = 1;
+  GuideItem guideItem = 2;
+  GuideTip tip = 3;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/WidgetGuideReq.java
+message WidgetGuideReq {
+  string fromSpmid = 1;
+  GuideType guideType = 2;
+  int64 upMid = 3;
+  GuideStyleVersion guideStyleVersion = 4;
+  bool skipUpdate = 5;
+  int64 aid = 6;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/WidgetGuideUpdateReq.java
+message WidgetGuideUpdateReq {
+  string fromSpmid = 1;
+  GuideType guideType = 2;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/WidgetItem.java
+message WidgetItem {
+  string cover = 1;
+  string view = 2;
+  RcmdReason rcmdReason = 3;
+  string title = 4;
+  string name = 5;
+  string uri = 6;
+  string goto = 7;
+  int64 id = 8;
+  int32 viewIcon = 9;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/WidgetReply.java
+message WidgetReply {
+  repeated WidgetItem item = 1;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/WidgetReq.java
+message WidgetReq {
+  string fromSpmid = 1;
+  int32 pageNo = 2;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/show/mixture/v1";

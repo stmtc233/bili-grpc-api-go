@@ -1,0 +1,41 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.dynamic.common;
+
+enum TranslateState {
+  STATE_ORIGINAL = 0;
+  STATE_TRANSLATED = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum TranslateSwitch {
+  TRANS_UNKNOWN = 0;
+  TRANS_SEE_ORIGINAL = 1;
+  TRANS_TRANSLATE = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum TribeeRefresh {
+  REFRESH_NEW = 0;
+  REFRESH_HISTORY = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum WHRatio {
+  W_H_RATIO_1_1 = 0;
+  W_H_RATIO_16_9 = 1;
+  W_H_RATIO_3_4 = 2;
+  W_H_RATIO_CUSTOM = 3;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/common/ItemWHRatio.java
+message ItemWHRatio {
+  WHRatio ratio = 1;
+  int32 width = 2;
+  int32 height = 3;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/dynamic/common";

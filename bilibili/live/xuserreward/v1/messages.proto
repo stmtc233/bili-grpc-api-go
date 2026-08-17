@@ -1,0 +1,36 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.live.xuserreward.v1;
+
+// Source: com/bapis/bilibili/live/xuserreward/v1/InteractWord.java
+message InteractWord {
+  int64 uid = 1;
+  int32 uname = 2;
+  int32 unameColor = 3;
+  int32 identities = 4;
+  int32 msgType = 5;
+  int32 roomid = 6;
+  int32 timestamp = 7;
+  int32 score = 8;
+  int32 fansMedal = 9;
+  int32 isSpread = 10;
+  int32 spreadInfo = 11;
+  int32 contribution = 12;
+  int32 spreadDesc = 13;
+  int32 tailIcon = 14;
+  int32 triggerTime = 15;
+  int32 privilegeType = 16;
+  int32 coreUserType = 17;
+  int32 tailText = 18;
+  int32 contributionV2 = 19;
+  int32 groupMedal = 20;
+  int32 isMystery = 21;
+  int32 uinfo = 22;
+  int32 relationTail = 23;
+  int32 controlInfo = 24;
+  int32 from = 25;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/live/xuserreward/v1";

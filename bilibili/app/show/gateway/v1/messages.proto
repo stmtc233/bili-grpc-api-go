@@ -1,0 +1,18 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.show.gateway.v1;
+
+// Source: com/bapis/bilibili/app/show/gateway/v1/GetActProgressReply.java
+message GetActProgressReply {
+  NativePageEvent event = 1;
+}
+
+// Source: com/bapis/bilibili/app/show/gateway/v1/GetActProgressReq.java
+message GetActProgressReq {
+  int64 pageid = 1;
+  int64 mid = 2;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/show/gateway/v1";

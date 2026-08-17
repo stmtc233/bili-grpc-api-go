@@ -1,0 +1,814 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.card.v1;
+
+enum TranslateStatus {
+  TRANSLATE_STATUS_DEFAULT = 0;
+  TRANSLATE_STATUS_SEE_ORIGINAL = 1;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/AdInfo.java
+message AdInfo {
+  int64 creativeId = 1;
+  int32 creativeType = 2;
+  int32 cardType = 3;
+  CreativeContent creativeContent = 4;
+  string adCb = 5;
+  int64 resource = 6;
+  int32 source = 7;
+  string requestId = 8;
+  bool isAd = 9;
+  int64 cmMark = 10;
+  int32 index = 11;
+  bool isAdLoc = 12;
+  int32 cardIndex = 13;
+  string clientIp = 14;
+  bytes extra = 15;
+  int32 creativeStyle = 16;
+  int64 natureAd = 17;
+  int32 contentFastAccess = 18;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/Args.java
+message Args {
+  int32 type = 1;
+  int64 upId = 2;
+  string upName = 3;
+  int32 rid = 4;
+  string rname = 5;
+  int64 tid = 6;
+  string tname = 7;
+  string trackId = 8;
+  string state = 9;
+  int32 convergeType = 10;
+  int64 aid = 11;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/Avatar.java
+message Avatar {
+  string cover = 1;
+  string text = 2;
+  string uri = 3;
+  int32 type = 4;
+  string event = 5;
+  string eventV2 = 6;
+  int32 defalutCover = 7;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/Base.java
+message Base {
+  string cardType = 1;
+  string cardGoto = 2;
+  string goto = 3;
+  string param = 4;
+  string cover = 5;
+  string title = 6;
+  string uri = 7;
+  ThreePoint threePoint = 8;
+  Args args = 9;
+  PlayerArgs playerArgs = 10;
+  int64 idx = 11;
+  AdInfo adInfo = 12;
+  Mask mask = 13;
+  string fromType = 14;
+  repeated ThreePointV2 threePointV2 = 15;
+  repeated ThreePointV3 threePointV3 = 16;
+  Button descButton = 17;
+  ThreePointV4 threePointV4 = 18;
+  UpArgs upArgs = 19;
+  string trackId = 20;
+  string translatedTitle = 21;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/Bubble.java
+message Bubble {
+  string bubbleContent = 1;
+  int32 version = 2;
+  int64 stime = 3;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/Button.java
+message Button {
+  string text = 1;
+  string param = 2;
+  string uri = 3;
+  string event = 4;
+  int32 selected = 5;
+  int32 type = 6;
+  string eventV2 = 7;
+  Relation relation = 8;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/Card.java
+message Card {
+  oneof oneof_0 {
+    SmallCoverV5 smallCoverV5 = 1;
+    LargeCoverV1 largeCoverV1 = 2;
+    ThreeItemAllV2 threeItemAllV2 = 3;
+    ThreeItemV1 threeItemV1 = 4;
+    HotTopic hotTopic = 5;
+    DynamicHot threeItemHV5 = 6;
+    MiddleCoverV3 middleCoverV3 = 7;
+    LargeCoverV4 largeCoverV4 = 8;
+    PopularTopEntrance popularTopEntrance = 9;
+    RcmdOneItem rcmdOneItem = 10;
+    SmallCoverV5Ad smallCoverV5Ad = 11;
+    TopicList topicList = 12;
+  }
+  enum ItemCase {
+    SMALL_COVER_V5 = 1;
+    LARGE_COVER_V1 = 2;
+    THREE_ITEM_ALL_V2 = 3;
+    THREE_ITEM_V1 = 4;
+    HOT_TOPIC = 5;
+    THREE_ITEM_H_V5 = 6;
+    MIDDLE_COVER_V3 = 7;
+    LARGE_COVER_V4 = 8;
+    POPULAR_TOP_ENTRANCE = 9;
+    RCMD_ONE_ITEM = 10;
+    SMALL_COVER_V5_AD = 11;
+    TOPIC_LIST = 12;
+    ITEM_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/card/v1/CreativeContent.java
+message CreativeContent {
+  string title = 1;
+  string description = 2;
+  int64 videoId = 3;
+  string username = 4;
+  string imageUrl = 5;
+  string imageMd5 = 6;
+  string logUrl = 7;
+  string logMd5 = 8;
+  string url = 9;
+  string clickUrl = 10;
+  string showUrl = 11;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/DislikeReason.java
+message DislikeReason {
+  int64 id = 1;
+  string name = 2;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/DoubleCards.java
+message DoubleCards {
+  oneof oneof_0 {
+    SmallCoverV2 smallCoverV2 = 1;
+    OnePicV2 onePicV2 = 2;
+    ThreePicV2 threePicV2 = 3;
+  }
+  enum CardCase {
+    SMALL_COVER_V2 = 1;
+    ONE_PIC_V2 = 2;
+    THREE_PIC_V2 = 3;
+    CARD_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/card/v1/DynamicHot.java
+message DynamicHot {
+  Base base = 1;
+  string topLeftTitle = 2;
+  string desc1 = 3;
+  string desc2 = 4;
+  string moreUri = 5;
+  string moreText = 6;
+  repeated string covers = 7;
+  string coverRightText = 8;
+  ReasonStyle topRcmdReasonStyle = 9;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/EntranceItem.java
+message EntranceItem {
+  string goto = 1;
+  string icon = 2;
+  string title = 3;
+  string moduleId = 4;
+  string uri = 5;
+  int64 entranceId = 6;
+  Bubble bubble = 7;
+  int32 entranceType = 8;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/FunctionalButton.java
+message FunctionalButton {
+  int32 type = 1;
+  repeated FunctionalButtonMeta buttonMetas = 2;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/FunctionalButtonMeta.java
+message FunctionalButtonMeta {
+  string icon = 1;
+  string text = 2;
+  string buttonStatus = 3;
+  string toast = 4;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/HotTopic.java
+message HotTopic {
+  Base base = 1;
+  string desc = 2;
+  repeated HotTopicItem items = 3;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/HotTopicItem.java
+message HotTopicItem {
+  string cover = 1;
+  string uri = 2;
+  string param = 3;
+  string name = 4;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/HotwordEntrance.java
+message HotwordEntrance {
+  int64 hotwordId = 1;
+  string hotText = 2;
+  string h5Url = 3;
+  string icon = 4;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/InlineProgressBar.java
+message InlineProgressBar {
+  string iconDrag = 1;
+  string iconDragHash = 2;
+  string iconStop = 3;
+  string iconStopHash = 4;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/LargeCoverV1.java
+message LargeCoverV1 {
+  Base base = 1;
+  string coverGif = 2;
+  Avatar avatar = 3;
+  string coverLeftText1 = 4;
+  string coverLeftText2 = 5;
+  string coverLeftText3 = 6;
+  string coverBadge = 7;
+  string topRcmdReason = 8;
+  string bottomRcmdReason = 9;
+  string desc = 10;
+  int32 officialIcon = 11;
+  int32 canPlay = 12;
+  ReasonStyle topRcmdReasonStyle = 13;
+  ReasonStyle bottomRcmdReasonStyle = 14;
+  ReasonStyle rcmdReasonStyleV2 = 15;
+  ReasonStyle leftCoverBadgeStyle = 16;
+  ReasonStyle rightCoverBadgeStyle = 17;
+  string coverBadge2 = 18;
+  LikeButton likeButton = 19;
+  int32 titleSingleLine = 20;
+  string coverRightText = 21;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/LargeCoverV2.java
+message LargeCoverV2 {
+  Base base = 1;
+  Avatar avatar = 2;
+  string badge = 3;
+  Button coverRightButton = 4;
+  string coverLeftText1 = 5;
+  int32 coverLeftIcon1 = 6;
+  string coverLeftText2 = 7;
+  int32 coverLeftIcon2 = 8;
+  string rcmdReason = 9;
+  int32 officialIcon = 10;
+  int32 canPlay = 11;
+  ReasonStyle rcmdReasonStyle = 12;
+  int32 showTop = 13;
+  int32 showBottom = 14;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/LargeCoverV3.java
+message LargeCoverV3 {
+  Base base = 1;
+  string coverGif = 2;
+  Avatar avatar = 3;
+  ReasonStyle topRcmdReasonStyle = 4;
+  ReasonStyle bottomRcmdReasonStyle = 5;
+  string coverLeftText1 = 6;
+  int32 coverLeftIcon1 = 7;
+  string coverLeftText2 = 8;
+  int32 coverLeftIcon2 = 9;
+  string coverRightText = 10;
+  string desc = 11;
+  int32 officialIcon = 12;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/LargeCoverV4.java
+message LargeCoverV4 {
+  Base base = 1;
+  string coverLeftText1 = 2;
+  string coverLeftText2 = 3;
+  string coverLeftText3 = 4;
+  string coverBadge = 5;
+  int32 canPlay = 6;
+  Up up = 7;
+  string shortLink = 8;
+  string shareSubtitle = 9;
+  string playNumber = 10;
+  string bvid = 11;
+  string subParam = 12;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/LikeButton.java
+message LikeButton {
+  int64 aid = 1;
+  int32 count = 2;
+  bool showCount = 3;
+  string event = 4;
+  int32 selected = 5;
+  string eventV2 = 6;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/Mask.java
+message Mask {
+  Avatar avatar = 1;
+  Button button = 2;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/MiddleCoverV2.java
+message MiddleCoverV2 {
+  Base base = 1;
+  int32 ratio = 2;
+  string desc = 3;
+  string badge = 4;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/MiddleCoverV3.java
+message MiddleCoverV3 {
+  Base base = 1;
+  string desc1 = 2;
+  string desc2 = 3;
+  ReasonStyle coverBadgeStyle = 4;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/MultiItem.java
+message MultiItem {
+  Base base = 1;
+  string moreUri = 2;
+  string moreText = 3;
+  repeated DoubleCards items = 4;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/OnePicV2.java
+message OnePicV2 {
+  Base base = 1;
+  int32 coverLeftIcon1 = 2;
+  string coverLeftText2 = 3;
+  string coverRightText = 4;
+  int32 coverRightIcon = 5;
+  string coverRightBackgroundColor = 6;
+  string badge = 7;
+  string rcmdReason = 8;
+  Avatar avatar = 9;
+  ReasonStyle rcmdReasonStyle = 10;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/OnePicV3.java
+message OnePicV3 {
+  Base base = 1;
+  string coverLeftText1 = 2;
+  int32 coverLeftIcon1 = 3;
+  string coverRightText = 4;
+  int32 coverRightIcon = 5;
+  string coverRightBackgroundColor = 6;
+  string badge = 7;
+  ReasonStyle rcmdReasonStyle = 8;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/PanelMeta.java
+message PanelMeta {
+  int32 panelType = 1;
+  string shareOrigin = 2;
+  string shareId = 3;
+  repeated FunctionalButton functionalButtons = 4;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/PlayerArgs.java
+message PlayerArgs {
+  int32 isLive = 1;
+  int64 aid = 2;
+  int64 cid = 3;
+  int32 subType = 4;
+  int64 roomId = 5;
+  int64 epId = 7;
+  int32 isPreview = 8;
+  string type = 9;
+  int64 duration = 10;
+  int64 seasonId = 11;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/PopularTopEntrance.java
+message PopularTopEntrance {
+  Base base = 1;
+  repeated EntranceItem items = 2;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/RcmdOneItem.java
+message RcmdOneItem {
+  Base base = 1;
+  ReasonStyle topRcmdReasonStyle = 2;
+  SmallCoverRcmdItem item = 3;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/ReasonStyle.java
+message ReasonStyle {
+  string text = 1;
+  string textColor = 2;
+  string bgColor = 3;
+  string borderColor = 4;
+  string iconUrl = 5;
+  string textColorNight = 6;
+  string bgColorNight = 7;
+  string borderColorNight = 8;
+  string iconNightUrl = 9;
+  int32 bgStyle = 10;
+  string uri = 11;
+  string iconBgUrl = 12;
+  string event = 13;
+  string eventV2 = 14;
+  int32 rightIconType = 15;
+  string leftIconType = 16;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/Relation.java
+message Relation {
+  int32 status = 1;
+  int32 isFollow = 2;
+  int32 isFollowed = 3;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/SharePlane.java
+message SharePlane {
+  string title = 1;
+  string shareSubtitle = 2;
+  string desc = 3;
+  string cover = 4;
+  int64 aid = 5;
+  string bvid = 6;
+  map<string, bool> shareTo = 7;
+  string author = 8;
+  int64 authorId = 9;
+  string shortLink = 10;
+  string playNumber = 11;
+  int64 firstCid = 12;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/SmallChannelSpecial.java
+message SmallChannelSpecial {
+  Base base = 1;
+  string bgCover = 2;
+  string desc1 = 3;
+  string desc2 = 4;
+  string badge = 5;
+  ReasonStyle rcmdReasonStyle2 = 6;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/SmallCoverConvergeV2.java
+message SmallCoverConvergeV2 {
+  Base base = 1;
+  string coverLeftText1 = 2;
+  int32 coverLeftIcon1 = 3;
+  string coverLeftText2 = 4;
+  int32 coverLeftIcon2 = 5;
+  string coverRightText = 6;
+  string coverRightTopText = 7;
+  ReasonStyle rcmdReasonStyle = 8;
+  ReasonStyle rcmdReasonStyleV2 = 9;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/SmallCoverRcmdItem.java
+message SmallCoverRcmdItem {
+  string title = 1;
+  string cover = 2;
+  string uri = 3;
+  string param = 4;
+  string goto = 5;
+  string coverRightText1 = 6;
+  string rightDesc1 = 7;
+  string rightDesc2 = 8;
+  string coverGif = 9;
+  int32 rightIcon1 = 10;
+  int32 rightIcon2 = 11;
+  string coverRightTextContentDescription = 12;
+  string rightDesc1ContentDescription = 13;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/SmallCoverV2.java
+message SmallCoverV2 {
+  Base base = 1;
+  string coverGif = 2;
+  int32 coverBlur = 3;
+  string coverLeftText1 = 4;
+  int32 coverLeftIcon1 = 5;
+  string coverLeftText2 = 6;
+  int32 coverLeftIcon2 = 7;
+  string coverRightText = 8;
+  int32 coverRightIcon = 9;
+  string coverRightBackgroundColor = 10;
+  string subtitle = 11;
+  string badge = 12;
+  string rcmdReason = 13;
+  string desc = 14;
+  Avatar avatar = 15;
+  int32 officialIcon = 16;
+  int32 canPlay = 17;
+  ReasonStyle rcmdReasonStyle = 18;
+  ReasonStyle rcmdReasonStyleV2 = 19;
+  LikeButton likeButton = 20;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/SmallCoverV3.java
+message SmallCoverV3 {
+  Base base = 1;
+  Avatar avatar = 2;
+  string coverLeftText = 3;
+  Button coverRightButton = 4;
+  string rcmdReason = 5;
+  string desc = 6;
+  int32 officialIcon = 7;
+  int32 canPlay = 8;
+  ReasonStyle rcmdReasonStyle = 9;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/SmallCoverV4.java
+message SmallCoverV4 {
+  Base base = 1;
+  string coverBadge = 2;
+  string desc = 3;
+  string titleRightText = 4;
+  int32 titleRightPic = 5;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/SmallCoverV5.java
+message SmallCoverV5 {
+  Base base = 1;
+  string coverGif = 2;
+  Up up = 3;
+  string coverRightText1 = 4;
+  string rightDesc1 = 5;
+  string rightDesc2 = 6;
+  ReasonStyle rcmdReasonStyle = 7;
+  HotwordEntrance hotwordEntrance = 8;
+  ReasonStyle cornerMarkStyle = 9;
+  int32 rightIcon1 = 10;
+  int32 rightIcon2 = 11;
+  ReasonStyle leftCornerMarkStyle = 12;
+  string coverRightTextContentDescription = 13;
+  string rightDesc1ContentDescription = 14;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/SmallCoverV5Ad.java
+message SmallCoverV5Ad {
+  Base base = 1;
+  string coverGif = 2;
+  Up up = 3;
+  string coverRightText1 = 4;
+  string rightDesc1 = 5;
+  string rightDesc2 = 6;
+  ReasonStyle rcmdReasonStyle = 7;
+  HotwordEntrance hotwordEntrance = 8;
+  ReasonStyle cornerMarkStyle = 9;
+  int32 rightIcon1 = 10;
+  int32 rightIcon2 = 11;
+  ReasonStyle leftCornerMarkStyle = 12;
+  string coverRightTextContentDescription = 13;
+  string rightDesc1ContentDescription = 14;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/SmallCoverV7.java
+message SmallCoverV7 {
+  Base base = 1;
+  string desc = 2;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/SmallCoverV9.java
+message SmallCoverV9 {
+  Base base = 1;
+  string coverLeftText1 = 2;
+  int32 coverLeftIcon1 = 3;
+  string coverLeftText2 = 4;
+  int32 coverLeftIcon2 = 5;
+  string coverRightText = 6;
+  int32 coverRightIcon = 7;
+  int32 canPlay = 8;
+  ReasonStyle rcmdReasonStyle = 9;
+  Up up = 10;
+  ReasonStyle leftCoverBadgeStyle = 11;
+  ReasonStyle leftBottomRcmdReasonStyle = 12;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/ThreeItemAllV2.java
+message ThreeItemAllV2 {
+  Base base = 1;
+  ReasonStyle topRcmdReasonStyle = 2;
+  repeated TwoItemHV1Item item = 3;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/ThreeItemV1.java
+message ThreeItemV1 {
+  Base base = 1;
+  int32 titleIcon = 2;
+  string moreUri = 3;
+  string moreText = 4;
+  repeated ThreeItemV1Item items = 5;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/ThreeItemV1Item.java
+message ThreeItemV1Item {
+  Base base = 1;
+  string coverLeftText = 2;
+  int32 coverLeftIcon = 3;
+  string desc1 = 4;
+  string desc2 = 5;
+  string badge = 6;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/ThreeItemV2.java
+message ThreeItemV2 {
+  Base base = 1;
+  int32 titleIcon = 2;
+  string moreUri = 3;
+  string moreText = 4;
+  repeated ThreeItemV2Item items = 5;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/ThreeItemV2Item.java
+message ThreeItemV2Item {
+  Base base = 1;
+  int32 coverLeftIcon = 2;
+  string descText1 = 3;
+  int32 descIcon1 = 4;
+  string descText2 = 5;
+  int32 descIcon2 = 6;
+  string badge = 7;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/ThreePicV2.java
+message ThreePicV2 {
+  Base base = 1;
+  string leftCover = 2;
+  string rightCover1 = 3;
+  string rightCover2 = 4;
+  string coverLeftText1 = 5;
+  int32 coverLeftIcon1 = 6;
+  string coverLeftText2 = 7;
+  int32 coverLeftIcon2 = 8;
+  string coverRightText = 9;
+  int32 coverRightIcon = 10;
+  string coverRightBackgroundColor = 11;
+  string badge = 12;
+  string rcmdReason = 13;
+  string desc = 14;
+  Avatar avatar = 15;
+  ReasonStyle rcmdReasonStyle = 16;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/ThreePicV3.java
+message ThreePicV3 {
+  Base base = 1;
+  string leftCover = 2;
+  string rightCover1 = 3;
+  string rightCover2 = 4;
+  string coverLeftText1 = 5;
+  int32 coverLeftIcon1 = 6;
+  string coverLeftText2 = 7;
+  int32 coverLeftIcon2 = 8;
+  string coverRightText = 9;
+  int32 coverRightIcon = 10;
+  string coverRightBackgroundColor = 11;
+  string badge = 12;
+  ReasonStyle rcmdReasonStyle = 13;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/ThreePoint.java
+message ThreePoint {
+  repeated DislikeReason dislikeReasons = 1;
+  repeated DislikeReason feedbacks = 2;
+  int32 watchLater = 3;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/ThreePointV2.java
+message ThreePointV2 {
+  string title = 1;
+  string subtitle = 2;
+  repeated DislikeReason reasons = 3;
+  string type = 4;
+  int64 id = 5;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/ThreePointV3.java
+message ThreePointV3 {
+  string title = 1;
+  string selectedTitle = 2;
+  string subtitle = 3;
+  repeated DislikeReason reasons = 4;
+  string type = 5;
+  int64 id = 6;
+  int32 selected = 7;
+  string icon = 8;
+  string selectedIcon = 9;
+  string url = 10;
+  int32 defaultId = 11;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/ThreePointV4.java
+message ThreePointV4 {
+  SharePlane sharePlane = 1;
+  WatchLater watchLater = 2;
+  TranslateButton translateButton = 3;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/TopicButton.java
+message TopicButton {
+  string title = 1;
+  string jumpUri = 2;
+  bool redDot = 3;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/TopicList.java
+message TopicList {
+  Base base = 1;
+  string title = 2;
+  string titleIcon = 3;
+  TopicButton moreButton = 4;
+  repeated TopicListItem topicListItem = 5;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/TopicListItem.java
+message TopicListItem {
+  string icon = 1;
+  string iconTitle = 2;
+  int64 topicId = 3;
+  string topicName = 4;
+  string url = 5;
+  int64 upMid = 6;
+  int64 position = 7;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/TranslateButton.java
+message TranslateButton {
+  TranslateStatus buttonStatus = 1;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/TwoItemHV1Item.java
+message TwoItemHV1Item {
+  string title = 1;
+  string cover = 2;
+  string uri = 3;
+  string param = 4;
+  Args args = 5;
+  string goto = 6;
+  string coverLeftText1 = 7;
+  int32 coverLeftIcon1 = 8;
+  string coverRightText = 9;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/TwoItemV2.java
+message TwoItemV2 {
+  Base base = 1;
+  repeated TwoItemV2Item items = 2;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/TwoItemV2Item.java
+message TwoItemV2Item {
+  Base base = 1;
+  string badge = 2;
+  string coverLeftText1 = 3;
+  int32 coverLeftIcon1 = 4;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/Up.java
+message Up {
+  int64 id = 1;
+  string name = 2;
+  string desc = 3;
+  Avatar avatar = 4;
+  int32 officialIcon = 5;
+  Button descButton = 6;
+  string cooperation = 7;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/UpArgs.java
+message UpArgs {
+  int64 upId = 1;
+  string upName = 2;
+  string upFace = 3;
+  int64 selected = 4;
+}
+
+// Source: com/bapis/bilibili/app/card/v1/WatchLater.java
+message WatchLater {
+  int64 aid = 1;
+  string bvid = 2;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/card/v1";

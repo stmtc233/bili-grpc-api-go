@@ -1,0 +1,107 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.playerunite.v1;
+
+enum AdditionType {
+  ADDITION_TYPE_UNKNOWN = 0;
+  ADDITION_TYPE_UGC_VIEW_INFO_MATERIAL = 1;
+  ADDITION_TYPE_TRANSLATION_INTRO = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum ResourceType {
+  RESOURCE_TYPE_DEFAULT = 0;
+  RESOURCE_TYPE_OPUS = 1;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/playerunite/v1/PlayAdditionReply.java
+message PlayAdditionReply {
+  UgcViewInfoMaterial ugcViewInfoMaterial = 1;
+  TranslationIntro translationIntro = 2;
+}
+
+// Source: com/bapis/bilibili/app/playerunite/v1/PlayAdditionReq.java
+message PlayAdditionReq {
+  repeated IntList types = 1;
+}
+
+// Source: com/bapis/bilibili/app/playerunite/v1/PlayHalfChannelsReply.java
+message PlayHalfChannelsReply {
+  repeated SettingGroup groups = 1;
+}
+
+// Source: com/bapis/bilibili/app/playerunite/v1/PlayHalfChannelsReq.java
+message PlayHalfChannelsReq {
+  int64 aid = 1;
+  int64 cid = 2;
+  map<string, string> extraContent = 3;
+  string fromScene = 4;
+  ResourceType resourceType = 5;
+  string playMode = 6;
+}
+
+// Source: com/bapis/bilibili/app/playerunite/v1/PlayQnEventReply.java
+message PlayQnEventReply {
+}
+
+// Source: com/bapis/bilibili/app/playerunite/v1/PlayQnEventReq.java
+message PlayQnEventReq {
+  int64 aid = 1;
+  int64 cid = 2;
+  int64 qn = 3;
+  CanWatchQnReason reason = 4;
+  map<string, string> reportParams = 5;
+}
+
+// Source: com/bapis/bilibili/app/playerunite/v1/PlayViewUniteReply.java
+message PlayViewUniteReply {
+  VodInfo vodInfo = 1;
+  PlayArcConf playArcConf = 2;
+  PlayDeviceConf playDeviceConf = 3;
+  Event event = 4;
+  Any supplement = 5;
+  PlayArc playArc = 6;
+  QnTrialInfo qnTrialInfo = 7;
+  History history = 8;
+  ViewInfo viewInfo = 9;
+  FragmentVideo fragmentVideo = 10;
+  VideoCtrl videoCtrl = 11;
+  Language language = 12;
+}
+
+// Source: com/bapis/bilibili/app/playerunite/v1/PlayViewUniteReq.java
+message PlayViewUniteReq {
+  VideoVod vod = 1;
+  string spmid = 2;
+  string fromSpmid = 3;
+  map<string, string> extraContent = 4;
+  string bvid = 5;
+  string adExtra = 6;
+  Fragment fragment = 7;
+  string fromScene = 8;
+  PlayCtrl playCtrl = 9;
+}
+
+// Source: com/bapis/bilibili/app/playerunite/v1/TranslationIntro.java
+message TranslationIntro {
+  string aiTranslationIntro = 1;
+  string multiTranslationIntro = 2;
+}
+
+// Source: com/bapis/bilibili/app/playerunite/v1/UgcViewInfoMaterial.java
+message UgcViewInfoMaterial {
+  string title = 1;
+  string btnText = 2;
+  string btnUrl = 3;
+  int32 btnJumpType = 4;
+  string descText = 5;
+  string descUrl = 6;
+  map<string, string> track = 7;
+  string badgeText = 8;
+  map<string, string> abParameter = 9;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/playerunite/v1";

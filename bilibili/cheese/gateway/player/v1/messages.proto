@@ -1,0 +1,126 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.cheese.gateway.player.v1;
+
+enum DrmTechType {
+  NON = 0;
+  FAIR_PLAY = 1;
+  WIDE_VINE = 2;
+  BILI_DRM = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum SecurityLevel {
+  LEVEL_UNKNOWN = 0;
+  LEVEL_L1 = 1;
+  LEVEL_L2 = 2;
+  LEVEL_L3 = 3;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/cheese/gateway/player/v1/PlayAbilityConf.java
+message PlayAbilityConf {
+  bool backgroundPlayDisable = 1;
+  bool flipDisable = 2;
+  bool castDisable = 3;
+  bool feedbackDisable = 4;
+  bool subtitleDisable = 5;
+  bool playbackRateDisable = 6;
+  bool timeUpDisable = 7;
+  bool playbackModeDisable = 8;
+  bool scaleModeDisable = 9;
+  bool likeDisable = 10;
+  bool dislikeDisable = 11;
+  bool coinDisable = 12;
+  bool elecDisable = 13;
+  bool shareDisable = 14;
+  bool screenShotDisable = 15;
+  bool lockScreenDisable = 16;
+  bool recommendDisable = 17;
+  bool playbackSpeedDisable = 18;
+  bool definitionDisable = 19;
+  bool selectionsDisable = 20;
+  bool nextDisable = 21;
+  bool editDmDisable = 22;
+  bool outerDmDisable = 25;
+  bool innerDmDisable = 26;
+  bool smallWindowDisable = 27;
+  string castDisableReasonCode = 28;
+  string castDisableReasonText = 29;
+}
+
+// Source: com/bapis/bilibili/cheese/gateway/player/v1/PlayViewBusinessInfo.java
+message PlayViewBusinessInfo {
+  DrmTechType drmTechType = 1;
+}
+
+// Source: com/bapis/bilibili/cheese/gateway/player/v1/PlayViewReply.java
+message PlayViewReply {
+  VideoInfo videoInfo = 1;
+  PlayAbilityConf playConf = 2;
+  PlayViewBusinessInfo business = 3;
+  RiskControl riskControl = 4;
+  WatermarkConfig watermarkConfig = 5;
+}
+
+// Source: com/bapis/bilibili/cheese/gateway/player/v1/PlayViewReq.java
+message PlayViewReq {
+  int64 epId = 1;
+  int64 cid = 2;
+  int64 qn = 3;
+  int32 fnver = 4;
+  int32 fnval = 5;
+  uint32 download = 6;
+  int32 forceHost = 7;
+  bool fourk = 8;
+  string spmid = 9;
+  string fromSpmid = 10;
+  int32 teenagersMode = 11;
+  CodeType preferCodecType = 12;
+  bool isPreview = 13;
+  bool isRawStream = 14;
+  SecurityLevel securityLevel = 15;
+}
+
+// Source: com/bapis/bilibili/cheese/gateway/player/v1/ProjectReply.java
+message ProjectReply {
+  PlayURLReply project = 1;
+}
+
+// Source: com/bapis/bilibili/cheese/gateway/player/v1/ProjectReq.java
+message ProjectReq {
+  int64 epId = 1;
+  int64 cid = 2;
+  int64 qn = 3;
+  int32 fnver = 4;
+  int32 fnval = 5;
+  uint32 download = 6;
+  int32 forceHost = 7;
+  bool fourk = 8;
+  string spmid = 9;
+  string fromSpmid = 10;
+  int32 protocol = 11;
+  int32 deviceType = 12;
+  bool flvProj = 13;
+  int64 aid = 14;
+}
+
+// Source: com/bapis/bilibili/cheese/gateway/player/v1/RiskControl.java
+message RiskControl {
+  bool needSendSms = 1;
+  string title = 2;
+  string riskMessage = 3;
+  string actionDesc = 4;
+  string sendSmsUrl = 5;
+  string buvid = 6;
+}
+
+// Source: com/bapis/bilibili/cheese/gateway/player/v1/WatermarkConfig.java
+message WatermarkConfig {
+  bool enable = 1;
+  string watermark = 2;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/cheese/gateway/player/v1";

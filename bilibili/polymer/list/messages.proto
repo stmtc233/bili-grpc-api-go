@@ -1,0 +1,34 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.polymer.list;
+
+// Source: com/bapis/bilibili/polymer/list/CheckAccountReply.java
+message CheckAccountReply {
+  bool isNew = 1;
+}
+
+// Source: com/bapis/bilibili/polymer/list/CheckAccountReq.java
+message CheckAccountReq {
+  int64 uid = 1;
+  string periods = 2;
+}
+
+// Source: com/bapis/bilibili/polymer/list/FavoriteTabItem.java
+message FavoriteTabItem {
+  string name = 1;
+  string uri = 2;
+  string type = 3;
+}
+
+// Source: com/bapis/bilibili/polymer/list/FavoriteTabReply.java
+message FavoriteTabReply {
+  repeated FavoriteTabItem items = 1;
+}
+
+// Source: com/bapis/bilibili/polymer/list/FavoriteTabReq.java
+message FavoriteTabReq {
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/polymer/list";

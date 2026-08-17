@@ -1,0 +1,31 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.growth.v1;
+
+// Source: com/bapis/bilibili/app/growth/v1/AdDeviceInfo.java
+message AdDeviceInfo {
+  string oaid = 1;
+  string oaidMd5 = 2;
+  string androidId = 3;
+  string androidIdMd5 = 4;
+  string imei = 5;
+  string imeiMd5 = 6;
+}
+
+// Source: com/bapis/bilibili/app/growth/v1/ReportAttributionReq.java
+message ReportAttributionReq {
+  int64 clickTime = 1;
+  int64 downloadTime = 2;
+  int64 installTime = 3;
+  string attributionData = 4;
+  string referrerEx = 5;
+  AdDeviceInfo adDeviceInfo = 6;
+}
+
+// Source: com/bapis/bilibili/app/growth/v1/ReportAttributionResp.java
+message ReportAttributionResp {
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/growth/v1";

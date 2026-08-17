@@ -1,0 +1,67 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.playerunite.ugcanymodel;
+
+enum ClipType {
+  CLIP_TYPE_UNSPECIFIED = 0;
+  CLIP_TYPE_HE = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum PlayLimitCode {
+  PLC_UNKNOWN = 0;
+  PLC_UGCNOTPAYED = 1;
+  PLC_ChargingPlusNotPass = 2;
+  PLC_ChargingPlusUpgrade = 3;
+  PLC_ChargingPlusReject = 4;
+  PLC_COMMON_CODE = 5;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/playerunite/ugcanymodel/ButtonStyle.java
+message ButtonStyle {
+  string text = 1;
+  string textColor = 2;
+  string bgColor = 3;
+  string jumpLink = 4;
+}
+
+// Source: com/bapis/bilibili/app/playerunite/ugcanymodel/ChargingExtend.java
+message ChargingExtend {
+  int64 adUnlockTimeOnce = 1;
+  bool isIaa = 2;
+  string fullScreenPanelLink = 3;
+  string halfScreenPanelLink = 4;
+}
+
+// Source: com/bapis/bilibili/app/playerunite/ugcanymodel/Clip.java
+message Clip {
+  ClipInfo clipInfo = 1;
+}
+
+// Source: com/bapis/bilibili/app/playerunite/ugcanymodel/ClipInfo.java
+message ClipInfo {
+  ClipType clipType = 1;
+  int64 materialNo = 2;
+  int64 start = 3;
+  int64 end = 4;
+}
+
+// Source: com/bapis/bilibili/app/playerunite/ugcanymodel/PlayLimit.java
+message PlayLimit {
+  PlayLimitCode code = 1;
+  string message_ = 2;
+  string subMessage = 3;
+  ButtonStyle button = 4;
+}
+
+// Source: com/bapis/bilibili/app/playerunite/ugcanymodel/UGCAnyModel.java
+message UGCAnyModel {
+  PlayLimit playLimit = 1;
+  Clip clip = 3;
+  ChargingExtend charigingExtend = 4;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/playerunite/ugcanymodel";

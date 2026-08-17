@@ -1,0 +1,40 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.api.ticket.v1;
+
+// Source: com/bapis/bilibili/api/ticket/v1/GenWebTicketRequest.java
+message GenWebTicketRequest {
+  map<string, string> context = 1;
+  string keyId = 2;
+  string hexsign = 3;
+  string token = 4;
+}
+
+// Source: com/bapis/bilibili/api/ticket/v1/GenWebTicketResponse.java
+message GenWebTicketResponse {
+  string ticket = 1;
+  int32 createdAt = 2;
+  int32 ttl = 3;
+  int32 context = 4;
+  int32 nav = 5;
+}
+
+// Source: com/bapis/bilibili/api/ticket/v1/GetTicketRequest.java
+message GetTicketRequest {
+  map<string, bytes> context = 1;
+  string keyId = 2;
+  bytes sign = 3;
+  string token = 4;
+}
+
+// Source: com/bapis/bilibili/api/ticket/v1/GetTicketResponse.java
+message GetTicketResponse {
+  string ticket = 1;
+  int32 createdAt = 2;
+  int32 ttl = 3;
+  int32 context = 4;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/api/ticket/v1";

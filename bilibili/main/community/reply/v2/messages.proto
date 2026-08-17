@@ -1,0 +1,159 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.main.community.reply.v2;
+
+enum EditorIconState {
+  EditorIconState_DEFAULT = 0;
+  EditorIconState_ENABLE = 1;
+  EditorIconState_DISABLE = 2;
+  EditorIconState_HIDE = 3;
+  UNRECOGNIZED = -1;
+}
+
+enum FunctionButtonType {
+  FunctionButtonType_DEFAULT = 0;
+  FunctionButtonType_Screenshot = 1;
+  FunctionButtonType_UploadPicture = 2;
+  FunctionButtonType_Vote = 3;
+  FunctionButtonType_Note = 4;
+  FunctionButtonType_Goods = 5;
+  FunctionButtonType_InsertContent = 6;
+  FunctionButtonType_Elec = 7;
+  FunctionButtonType_CMBizHelper = 8;
+  UNRECOGNIZED = -1;
+}
+
+enum UserCallbackAction {
+  USER_CALLBACK_ACTION_DEFAULT = 0;
+  USER_CALLBACK_ACTION_DISMISS = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum UserCallbackScene {
+  USER_CALLBACK_SCENE_DEFAULT = 0;
+  USER_CALLBACK_SCENE_INSERT = 1;
+  USER_CALLBACK_SCENE_RECOMMEND_SUPERB_REPLY = 2;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v2/Emote.java
+message Emote {
+  int64 size = 1;
+  string url = 2;
+  string jumpUrl = 3;
+  string jumpTitle = 4;
+  int64 id = 5;
+  int64 packageId = 6;
+  string gifUrl = 7;
+  string text = 8;
+  string webpUrl = 9;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v2/EmptyPage.java
+message EmptyPage {
+  string imageUrl = 1;
+  repeated Text texts = 2;
+  int32 leftButton = 3;
+  int32 rightButton = 4;
+  enum Action {
+    UNAVAILABLE = 0;
+    SHOW_KEYBOARD = 1;
+    SEND_REPLY_WITH_BOLD_TEXT = 2;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v2/GuideText.java
+message GuideText {
+  repeated string texts = 1;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v2/PlayerParams.java
+message PlayerParams {
+  bool isStory = 1;
+  bool disableFilterTag = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v2/Resource.java
+message Resource {
+  BizKind bizKind = 1;
+  string url = 2;
+  enum BizKind {
+    UNKNOWN = 0;
+    LIKE_SUCCESS = 1;
+    REPLY_SUCCESS = 2;
+    REPLY_EASTER_EGG = 3;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v2/RichText.java
+message RichText {
+  string raw = 1;
+  TextStyle style = 2;
+  int32 marginLeft = 3;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v2/SubjectDescriptionReply.java
+message SubjectDescriptionReply {
+  bool count = 1;
+  repeated InputConfig input = 2;
+  int32 emote = 3;
+  int32 emptyPage = 4;
+  repeated int32 supportFilterTags = 5;
+  repeated int32 preloadResUrls = 6;
+  repeated int32 userCallbacks = 7;
+  int32 upMid = 8;
+  repeated int32 preloadResources = 9;
+  int32 guestLimit = 10;
+  int32 filterGuideText = 11;
+  int32 upFilterLink = 12;
+  int32 webUpFilterLink = 13;
+  enum GradeType {
+    UNKNOWN = 0;
+    S13 = 1;
+    ESPORTS = 2;
+    OGV = 3;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v2/SubjectDescriptionReq.java
+message SubjectDescriptionReq {
+  SubjectID subjectId = 1;
+  PlayerParams playerParams = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v2/SubjectID.java
+message SubjectID {
+  int64 oid = 1;
+  int64 type = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v2/TextStyle.java
+message TextStyle {
+  int32 fontSize = 1;
+  FontStyle fontStyle = 2;
+  string textDayColor = 3;
+  string textNightColor = 4;
+  enum FontStyle {
+    NORMAL = 0;
+    BOLD = 1;
+    MEDIUM = 2;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v2/UserCallback.java
+message UserCallback {
+  UserCallbackScene scene = 1;
+  UserCallbackAction action = 2;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/main/community/reply/v2";

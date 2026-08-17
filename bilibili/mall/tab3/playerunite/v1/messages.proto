@@ -1,0 +1,29 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.mall.tab3.playerunite.v1;
+
+// Source: com/bapis/bilibili/mall/tab3/playerunite/v1/PlayViewUniteReply.java
+message PlayViewUniteReply {
+  VodInfo vodInfo = 1;
+  PlayArcConf playArcConf = 2;
+  PlayDeviceConf playDeviceConf = 3;
+  Event event = 4;
+  Any supplement = 5;
+  PlayArc playArc = 6;
+  QnTrialInfo qnTrialInfo = 7;
+  History history = 8;
+  ViewInfo viewInfo = 9;
+}
+
+// Source: com/bapis/bilibili/mall/tab3/playerunite/v1/PlayViewUniteReq.java
+message PlayViewUniteReq {
+  VideoVod vod = 1;
+  string spmid = 2;
+  string fromSpmid = 3;
+  map<string, string> extraContent = 4;
+  string bvid = 5;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/mall/tab3/playerunite/v1";

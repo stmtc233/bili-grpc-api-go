@@ -1,0 +1,54 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.metadata.network;
+
+enum CellularType {
+  C_NONE = 0;
+  C_2G = 1;
+  C_3G = 2;
+  C_4G = 3;
+  C_5G = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum NetworkType {
+  NT_UNKNOWN = 0;
+  WIFI = 1;
+  CELLULAR = 2;
+  OFFLINE = 3;
+  OTHERNET = 4;
+  ETHERNET = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum TFType {
+  TF_UNKNOWN = 0;
+  U_CARD = 1;
+  U_PKG = 2;
+  C_CARD = 3;
+  C_PKG = 4;
+  T_CARD = 5;
+  T_PKG = 6;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/metadata/network/NetQuality.java
+message NetQuality {
+  float successRate = 1;
+  int32 speed = 2;
+  int64 speedTimestamp = 3;
+  int32 netType = 4;
+}
+
+// Source: com/bapis/bilibili/metadata/network/Network.java
+message Network {
+  NetworkType type = 1;
+  TFType tf = 2;
+  string oid = 3;
+  CellularType cellular = 4;
+  NetQuality quality = 5;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/metadata/network";

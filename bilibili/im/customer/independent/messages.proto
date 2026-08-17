@@ -1,0 +1,53 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.im.customer.independent;
+
+enum EvaluateType {
+  EvaluateMachineMsg = 0;
+  EvaluateCustomer = 1;
+  EvaluateCustomerInvited = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum Select {
+  ABLE = 0;
+  SELECTED = 1;
+  UNABLE = 2;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/im/customer/independent/EvaluationShowInfo.java
+message EvaluationShowInfo {
+  bool show = 1;
+  EvaluateType type = 2;
+  repeated EvaluationStepSelect stepSelect = 3;
+  uint64 msgKey = 4;
+  bool up = 5;
+  string feedback = 6;
+  uint64 customerSessId = 7;
+  bool done = 8;
+  string editorInput = 9;
+}
+
+// Source: com/bapis/bilibili/im/customer/independent/EvaluationStepSelect.java
+message EvaluationStepSelect {
+  string text = 1;
+  Select select = 2;
+}
+
+// Source: com/bapis/bilibili/im/customer/independent/FinishParagraphsRenderStopPos.java
+message FinishParagraphsRenderStopPos {
+  uint64 para = 1;
+  uint64 node = 2;
+}
+
+// Source: com/bapis/bilibili/im/customer/independent/MsgParagraphText.java
+message MsgParagraphText {
+  repeated Paragraph paragraphs = 1;
+  EvaluationShowInfo evaluation = 2;
+  FinishParagraphsRenderStopPos stopPos = 3;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/im/customer/independent";

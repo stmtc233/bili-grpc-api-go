@@ -1,0 +1,1068 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.viewunite.v1;
+
+enum BizType {
+  BizTypeNone = 0;
+  BizTypeFollowVideo = 1;
+  BizTypeReserveActivity = 2;
+  BizTypeJumpLink = 3;
+  BizTypeFavSeason = 4;
+  BizTypeReserveGame = 5;
+  BizTypeGiftGame = 6;
+  UNRECOGNIZED = -1;
+}
+
+enum ButtonAction {
+  BUTTON_ACTION_DEFAULT = 0;
+  BUTTON_ACTION_CANCEL = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum CacheCode {
+  PLAY = 0;
+  UPOWERSTATE_INACTIVE = 100;
+  REPEAT_LAST_OPERATION = 101;
+  UNRECOGNIZED = -1;
+}
+
+enum ECode {
+  CODE_DEFAULT = 0;
+  CODE_404 = 1;
+  CODE_ARC_PRIVACY = 2;
+  CODE_TEENAGER = 78301;
+  UNRECOGNIZED = -1;
+}
+
+enum JumpShowType {
+  JST_DEFAULT = 0;
+  JST_FULLSCREEN = 1;
+  JST_HALFSCREEN = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum MaterialBizType {
+  NONE = 0;
+  ACTIVITY = 1;
+  BGM = 2;
+  EFFECT = 3;
+  SHOOT_SAME = 4;
+  SHOOT_TOGETHER = 5;
+  ACTIVITY_ICON = 6;
+  NEW_BGM = 7;
+  GENERAL_TYPE = 8;
+  UNRECOGNIZED = -1;
+}
+
+enum MaterialSource {
+  DEFAULT = 0;
+  BIJIAN = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum PageCategory {
+  COMMON_PAGE = 0;
+  ACTIVITY_PAGE = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum PageType {
+  H5 = 0;
+  NA = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum PauseType {
+  PAUSE_TYPE_DEFAULT = 0;
+  PAUSE_TYPE_ADS = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum PlayToastEnum {
+  PLAYTOAST_UNKNOWN = 0;
+  PLAYTOAST_CHARGINGPLUS = 1;
+  UNRECOGNIZED = -1;
+}
+
+enum SourceContentType {
+  SC_DEFAULT = 0;
+  SC_AV = 1;
+  SC_LIVE = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum TabType {
+  TAB_NONE = 0;
+  TAB_INTRODUCTION = 1;
+  TAB_REPLY = 2;
+  TAB_OGV_ACTIVITY = 3;
+  TAB_CATALOG = 4;
+  UNRECOGNIZED = -1;
+}
+
+enum UnionType {
+  UGC = 0;
+  OGV = 1;
+  PUGV = 2;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/ActivityResource.java
+message ActivityResource {
+  string darkTextColor = 1;
+  string dividerColor = 2;
+  string bgColor = 3;
+  string selectedBgColor = 4;
+  string textColor = 5;
+  string lightTextColor = 6;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/AIRelateAsyncReply.java
+message AIRelateAsyncReply {
+  CM cm = 1;
+  AsyncModule module = 2;
+  Any supplement = 3;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/AIRelateAsyncReq.java
+message AIRelateAsyncReq {
+  ViewReq req = 1;
+  RelateAsync relateAsync = 2;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/AIRelateParam.java
+message AIRelateParam {
+  int64 now = 1;
+  bool newDeviceByBuvid = 2;
+  bool isOverseas = 3;
+  int32 typeId = 4;
+  int32 pidV2 = 5;
+  int32 typeIdV2 = 6;
+  int32 copyright = 7;
+  int32 attribute = 8;
+  int64 attributeV2 = 9;
+  int64 orderId = 10;
+  repeated int64 tagIds = 11;
+  map<int64, int64> forbidGroup = 12;
+  int64 zoneId = 13;
+  int64 legalZoneId = 14;
+  bool isContainedRecom = 15;
+  bool dauIsOverseas = 16;
+  string dauRegion = 17;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/Arc.java
+message Arc {
+  int64 aid = 1;
+  int64 cid = 2;
+  int64 duration = 3;
+  Stat stat = 4;
+  string bvid = 5;
+  int32 copyright = 6;
+  Rights right = 7;
+  string cover = 8;
+  int64 typeId = 9;
+  string title = 10;
+  int32 state = 11;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/ArcRefreshReply.java
+message ArcRefreshReply {
+  Stat stat = 1;
+  SimpleReqUser reqUser = 2;
+  SimpleArc arc = 3;
+  Online online = 4;
+  LikeConfig likeConfig = 5;
+  SimpleOwner owner = 6;
+  ReplyStyle replyStyle = 7;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/ArcRefreshReq.java
+message ArcRefreshReq {
+  int64 aid = 1;
+  string bvid = 2;
+  UnionType type = 3;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/AsyncModule.java
+message AsyncModule {
+  repeated Module modules = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/AttentionCard.java
+message AttentionCard {
+  repeated ShowTime showTime = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/BgPlayNotice.java
+message BgPlayNotice {
+  bool allowShow = 1;
+  string text = 2;
+  string btnText1 = 3;
+  string btnText2 = 4;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/BizFollowVideoParam.java
+message BizFollowVideoParam {
+  int64 seasonId = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/BizGameBackflowParam.java
+message BizGameBackflowParam {
+  string extra = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/BizJumpLinkParam.java
+message BizJumpLinkParam {
+  string url = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/BizReserveActivityParam.java
+message BizReserveActivityParam {
+  int64 activityId = 1;
+  string from = 2;
+  string type = 3;
+  int64 oid = 4;
+  int64 reserveId = 5;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/BizReserveGameParam.java
+message BizReserveGameParam {
+  int64 gameId = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/Button.java
+message Button {
+  string title = 1;
+  string uri = 2;
+  string icon = 3;
+  JumpShowType jumpShowType = 4;
+  string textColor = 5;
+  string bgColor = 6;
+  string borderColor = 7;
+  map<string, string> report = 8;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/ButtonInfo.java
+message ButtonInfo {
+  string text = 1;
+  string textColor = 2;
+  string textColorNight = 3;
+  string bgColor = 4;
+  string bgColorNight = 5;
+  ButtonAction actionType = 6;
+  int32 fontSize = 7;
+  string frameColor = 8;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/CacheAuthenticationReply.java
+message CacheAuthenticationReply {
+  map<int64, CachePlayAvRly> item = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/CacheAuthenticationReq.java
+message CacheAuthenticationReq {
+  repeated CachePlayAv av = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/CachePlayAv.java
+message CachePlayAv {
+  int64 aid = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/CachePlayAvRly.java
+message CachePlayAvRly {
+  CacheCode code = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/ChargingPlus.java
+message ChargingPlus {
+  bool pass = 1;
+  repeated PlayToast playToast = 2;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/Chronos.java
+message Chronos {
+  string md5 = 1;
+  string file = 2;
+  string sign = 3;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/ChronosParam.java
+message ChronosParam {
+  string engineVersion = 1;
+  string messageProtocol = 2;
+  string serviceKey = 3;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/CM.java
+message CM {
+  Any cmUnderPlayer = 1;
+  Any adsControl = 2;
+  repeated Any sourceContent = 3;
+  PadRelateCM padRelateCm = 4;
+  repeated SourceContentItem sourceContentItem = 5;
+  Any cmHalfPanel = 6;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/CommandDm.java
+message CommandDm {
+  int64 id = 1;
+  int64 oid = 2;
+  int64 mid = 3;
+  string command = 4;
+  string content = 5;
+  int32 progress = 6;
+  string ctime = 7;
+  string mtime = 8;
+  string extra = 9;
+  string idstr = 10;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/Config.java
+message Config {
+  Online online = 1;
+  PlayerIcon playerIcon = 2;
+  StoryEntrance storyEntrance = 3;
+  BgPlayNotice bgPlayNotice = 4;
+  Immersion immersion = 5;
+  TranslateGuide translateGuide = 6;
+  Listen listen = 7;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/ContractCard.java
+message ContractCard {
+  float displayProgress = 1;
+  int64 displayAccuracy = 2;
+  int64 displayDuration = 3;
+  int32 showMode = 4;
+  int32 pageType = 5;
+  UpperInfos upper = 6;
+  int32 isFollowDisplay = 7;
+  ContractText text = 8;
+  int64 followDisplayEndDuration = 9;
+  int32 isPlayDisplay = 10;
+  int32 isInteractDisplay = 11;
+  bool playDisplaySwitch = 12;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/ContractText.java
+message ContractText {
+  string title = 1;
+  string subtitle = 2;
+  string inlineTitle = 3;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/Control.java
+message Control {
+  bool limit = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/DmResource.java
+message DmResource {
+  repeated bytes commanddms = 1;
+  AttentionCard attention = 2;
+  repeated OperationCard cards = 3;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/ECodeConfig.java
+message ECodeConfig {
+  string redirectUrl = 1;
+  string msg = 2;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/FloorAdSearchItem.java
+message FloorAdSearchItem {
+  Any sourceContent = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/FloorAdSearchReply.java
+message FloorAdSearchReply {
+  FloorAdSearchTab tab = 1;
+  repeated FloorAdSearchItem item = 3;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/FloorAdSearchReq.java
+message FloorAdSearchReq {
+  int64 aid = 1;
+  string adExtra = 2;
+  string spmid = 3;
+  string fromSpmid = 4;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/FloorAdSearchTab.java
+message FloorAdSearchTab {
+  string title = 1;
+  string butTitle = 2;
+  string butUrl = 3;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/FragmentArc.java
+message FragmentArc {
+  int64 aid = 1;
+  int64 cid = 2;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/FragmentParam.java
+message FragmentParam {
+  repeated FragmentArc fragmentArcs = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/FragmentRes.java
+message FragmentRes {
+  map<int64, VideoShot> videoShot = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/IconData.java
+message IconData {
+  string metaJson = 1;
+  string spritsImg = 2;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/Immersion.java
+message Immersion {
+  bool open = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/IntroductionTab.java
+message IntroductionTab {
+  string title = 1;
+  repeated Module modules = 2;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/LikeConfig.java
+message LikeConfig {
+  UpLikeImg tripleLike = 1;
+  string likeAnimation = 2;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/Listen.java
+message Listen {
+  bool isNewListen = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/Material.java
+message Material {
+  string icon = 1;
+  string text = 2;
+  string url = 3;
+  MaterialBizType type = 4;
+  string param = 5;
+  string staticIcon = 6;
+  string bgColor = 7;
+  string bgPic = 8;
+  int32 jumpType = 9;
+  PageType pageType = 10;
+  bool needLogin = 11;
+  map<string, string> report = 12;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/OldFan.java
+message OldFan {
+  int32 isFollowDisplay = 1;
+  string wingPic = 2;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/Online.java
+message Online {
+  bool onlineShow = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/OperationCard.java
+message OperationCard {
+  int64 id = 1;
+  int32 from = 2;
+  int32 to = 3;
+  bool status = 4;
+  BizType bizType = 5;
+  OperationCardContent content = 6;
+  oneof oneof_0 {
+    BizFollowVideoParam follow = 7;
+    BizReserveActivityParam reserve = 8;
+    BizJumpLinkParam jump = 9;
+    BizReserveGameParam game = 10;
+    BizGameBackflowParam gameBackflow = 11;
+  }
+  enum ParamCase {
+    FOLLOW = 7;
+    RESERVE = 8;
+    JUMP = 9;
+    GAME = 10;
+    GAME_BACKFLOW = 11;
+    PARAM_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/OperationCardContent.java
+message OperationCardContent {
+  string title = 1;
+  string subtitle = 2;
+  string icon = 3;
+  string buttonTitle = 4;
+  string buttonSelectedTitle = 5;
+  bool showSelected = 6;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/PadRelateCM.java
+message PadRelateCM {
+  RelateCM cm = 1;
+  oneof oneof_0 {
+    RelateLiveCM live = 2;
+  }
+  enum DataCase {
+    LIVE = 2;
+    DATA_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/PageControl.java
+message PageControl {
+  Control toastShow = 1;
+  Control materialShow = 2;
+  Control upShow = 3;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/PagesReply.java
+message PagesReply {
+  repeated Page pages = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/PagesReq.java
+message PagesReq {
+  int64 aid = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/PauseAds.java
+message PauseAds {
+  repeated PauseSourceContentList list = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/PauseAdsAV.java
+message PauseAdsAV {
+  int64 aid = 1;
+  Stat stat = 2;
+  string cover = 3;
+  string title = 4;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/PauseBar.java
+message PauseBar {
+  TextInfo title = 1;
+  int64 timerCountdown = 2;
+  bool countdownEnable = 3;
+  repeated ButtonInfo button = 6;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/PauseSourceContentList.java
+message PauseSourceContentList {
+  Any sourceContent = 1;
+  repeated PauseAdsAV av = 2;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/PGCInfo.java
+message PGCInfo {
+  string vipPayTip = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/PlayerIcon.java
+message PlayerIcon {
+  string url1 = 1;
+  string hash1 = 2;
+  string url2 = 3;
+  string hash2 = 4;
+  string dragLeftPng = 5;
+  string middlePng = 6;
+  string dragRightPng = 7;
+  IconData dragData = 8;
+  IconData nodragData = 9;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/PlayListReqParam.java
+message PlayListReqParam {
+  int64 mediaId = 1;
+  int64 bizId = 2;
+  int64 type = 3;
+  bool pageDirection = 4;
+  bool firstPage = 5;
+  int64 offset = 6;
+  int64 sortDesc = 7;
+  int64 sortField = 8;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/PlayPauseReply.java
+message PlayPauseReply {
+  PauseType type = 1;
+  PauseBar bar = 2;
+  oneof oneof_0 {
+    PauseAds ads = 3;
+  }
+  enum DataCase {
+    ADS = 3;
+    DATA_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/PlayPauseReq.java
+message PlayPauseReq {
+  int64 aid = 1;
+  int64 cid = 2;
+  TabType tabType = 3;
+  string bizExtra = 4;
+  string adExtra = 5;
+  map<string, string> extraContent = 6;
+  string sessionId = 7;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/PlayToast.java
+message PlayToast {
+  PlayToastEnum business = 1;
+  string iconUrl = 2;
+  string text = 3;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/PointMaterial.java
+message PointMaterial {
+  string url = 1;
+  MaterialSource materialSource = 2;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/Relate.java
+message Relate {
+  int64 deviceType = 1;
+  Pagination pagination = 2;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/RelateCM.java
+message RelateCM {
+  int64 aid = 1;
+  Any sourceContent = 2;
+  int64 duration = 3;
+  Stat stat = 4;
+  Owner owner = 5;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/RelateID.java
+message RelateID {
+  int64 id = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/RelateLiveCM.java
+message RelateLiveCM {
+  int64 roomId = 1;
+  int64 liveStatus = 2;
+  StatInfo statInfo = 3;
+  string areaName = 4;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/RelatesFeedReply.java
+message RelatesFeedReply {
+  repeated RelateCard relates = 1;
+  Pagination pagination = 2;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/RelatesFeedReq.java
+message RelatesFeedReq {
+  int64 aid = 1;
+  string bvid = 2;
+  string from = 3;
+  string spmid = 4;
+  string fromSpmid = 5;
+  PlayerArgs playerArgs = 6;
+  Pagination pagination = 7;
+  string sessionId = 8;
+  int64 autoPlay = 9;
+  string fromTrackId = 10;
+  string bizExtra = 11;
+  string adExtra = 12;
+  int64 tabCategory = 13;
+  string tabCategoryName = 14;
+  map<string, string> extraContent = 15;
+  string playMode = 16;
+  string fromScene = 17;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/ReplyStyle.java
+message ReplyStyle {
+  string badgeUrl = 1;
+  string badgeText = 2;
+  int64 badgeType = 3;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/ReplyTab.java
+message ReplyTab {
+  ReplyStyle replyStyle = 1;
+  string title = 2;
+  TabControl control = 3;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/ReqUser.java
+message ReqUser {
+  int32 favorite = 1;
+  int32 like = 2;
+  int32 coin = 3;
+  int32 favSeason = 4;
+  int32 follow = 5;
+  int32 dislike = 6;
+  Button elecPlusBtn = 7;
+  ChargingPlus chargingPlus = 8;
+  ReqUserExtra extra = 9;
+  int32 paid = 10;
+  OldFan oldFan = 11;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/ReqUserExtra.java
+message ReqUserExtra {
+  bool userFlagNew = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/Rights.java
+message Rights {
+  bool onlyVipDownload = 1;
+  bool noReprint = 2;
+  bool download = 3;
+  bool isChargingPay = 4;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/ShowTime.java
+message ShowTime {
+  int32 startTime = 1;
+  int32 endTime = 2;
+  double posX = 3;
+  double posY = 4;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/SimpleArc.java
+message SimpleArc {
+  int32 copyright = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/SimpleOwner.java
+message SimpleOwner {
+  AttentionRelationStatus attentionRelation = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/SimpleReqUser.java
+message SimpleReqUser {
+  int32 favorite = 1;
+  int32 like = 2;
+  int32 coin = 3;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/SourceContentAV.java
+message SourceContentAV {
+  int64 aid = 1;
+  Stat stat = 2;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/SourceContentItem.java
+message SourceContentItem {
+  Any sourceContent = 1;
+  SourceContentType scType = 2;
+  oneof oneof_0 {
+    SourceContentAV av = 3;
+    SourceContentLive live = 4;
+  }
+  enum DataCase {
+    AV = 3;
+    LIVE = 4;
+    DATA_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/StoryActualCardWrapper.java
+message StoryActualCardWrapper {
+  oneof oneof_0 {
+    StoryVideoCard videoCard = 1;
+  }
+  enum ActualCardCase {
+    VIDEO_CARD = 1;
+    ACTUALCARD_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/StoryEntrance.java
+message StoryEntrance {
+  bool arcPlayStory = 1;
+  string storyIcon = 2;
+  bool arcLandscapeStory = 3;
+  string landscapeIcon = 4;
+  bool playStory = 5;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/StoryReply.java
+message StoryReply {
+  repeated StoryActualCardWrapper storyCardWrappers = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/StoryReq.java
+message StoryReq {
+  int64 aid = 1;
+  string bvid = 2;
+  PlayerArgs playerArgs = 3;
+  oneof oneof_0 {
+    StoryReqParam storyReqParam = 4;
+    PlayListReqParam playListReqParam = 5;
+  }
+  int64 pull = 6;
+  string from = 7;
+  string spmid = 8;
+  string fromSpmid = 9;
+  enum ParamCase {
+    STORY_REQ_PARAM = 4;
+    PLAY_LIST_REQ_PARAM = 5;
+    PARAM_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/StoryReqParam.java
+message StoryReqParam {
+  string trackId = 1;
+  int64 displayId = 2;
+  map<string, string> extraContent = 3;
+  bool refresh = 4;
+  map<string, string> businessInfo = 5;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/StoryVideoCard.java
+message StoryVideoCard {
+  VideoPlayData playData = 1;
+  ViewReply viewContent = 2;
+  string recommendSessionId = 3;
+  string cover = 4;
+  string trackId = 5;
+  string goto = 6;
+  PGCInfo pgcInfo = 7;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/Tab.java
+message Tab {
+  repeated TabModule tabModule = 1;
+  string tabBg = 2;
+  TabControl danmakuEntrance = 3;
+  string tabBgPad = 4;
+  string tabBgWidescreen = 5;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/TabControl.java
+message TabControl {
+  bool limit = 1;
+  bool disable = 2;
+  string disableClickTip = 3;
+  float disableAlpha = 4;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/TabModule.java
+message TabModule {
+  TabType tabType = 1;
+  oneof oneof_0 {
+    IntroductionTab introduction = 2;
+    ReplyTab reply = 3;
+    ActivityTab activityTab = 4;
+    CatalogTab catalog = 5;
+  }
+  enum TabCase {
+    INTRODUCTION = 2;
+    REPLY = 3;
+    ACTIVITY_TAB = 4;
+    CATALOG = 5;
+    TAB_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/TextInfo.java
+message TextInfo {
+  string text = 1;
+  string textColor = 2;
+  string textColorNight = 3;
+  int32 fontSize = 4;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/TranslateGuide.java
+message TranslateGuide {
+  bool guideSwitch = 1;
+  bool isInWhite = 2;
+  string aiTranslationTitle = 3;
+  string aiTranslationContent = 4;
+  string cancelButtonText = 5;
+  string confirmButtonText = 6;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/Translation.java
+message Translation {
+  int32 translationStatus = 1;
+  string curLanguage = 2;
+  string arcLanguage = 3;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/UpperInfos.java
+message UpperInfos {
+  int64 fansCount = 1;
+  int64 arcCountLastHalfYear = 2;
+  int64 firstUpDates = 3;
+  int64 totalPlayCount = 4;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/VideoGuide.java
+message VideoGuide {
+  repeated Material material = 1;
+  VideoViewPoint videoPoint = 2;
+  ContractCard contractCard = 3;
+  Material rightMaterial = 4;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/VideoMentionsReply.java
+message VideoMentionsReply {
+  repeated Mention mentions = 1;
+  string title = 2;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/VideoMentionsReq.java
+message VideoMentionsReq {
+  string videoReq = 1;
+  int64 aid = 2;
+  string spmid = 3;
+  string fromSpmid = 4;
+  string fromTrackid = 5;
+  string fromScene = 6;
+  string bizExtra = 7;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/VideoPlayData.java
+message VideoPlayData {
+  string url = 1;
+  Dimension dimension = 2;
+  int64 aid = 3;
+  int64 epId = 4;
+  int64 cid = 5;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/VideoPoint.java
+message VideoPoint {
+  int32 type = 1;
+  int64 from = 2;
+  int64 to = 3;
+  string content = 4;
+  string cover = 5;
+  string logoUrl = 6;
+  string teamType = 7;
+  string teamName = 8;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/VideoShot.java
+message VideoShot {
+  string pvData = 1;
+  int32 imgXLen = 2;
+  int32 imgYLen = 3;
+  int32 imgXSize = 4;
+  int32 imgYSize = 5;
+  repeated string image = 6;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/VideoViewPoint.java
+message VideoViewPoint {
+  repeated VideoPoint points = 1;
+  PointMaterial pointMaterial = 2;
+  bool pointPermanent = 3;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/ViewBase.java
+message ViewBase {
+  BizType bizType = 1;
+  PageCategory pageType = 2;
+  PageControl control = 3;
+  ActivityResource activityResource = 4;
+  Config config = 5;
+  Translation translation = 6;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/ViewEndPageCard.java
+message ViewEndPageCard {
+  RelateCard relate = 1;
+  int64 cardIndex = 2;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/ViewEndPageReply.java
+message ViewEndPageReply {
+  repeated ViewEndPageCard relates = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/ViewEndPageReq.java
+message ViewEndPageReq {
+  int64 aid = 1;
+  string bvid = 2;
+  string from = 3;
+  string spmid = 4;
+  string fromSpmid = 5;
+  string sessionId = 6;
+  repeated RelateID relateIds = 7;
+  string trackId = 8;
+  map<string, string> extraContent = 9;
+  string adExtra = 10;
+  PlayerArgs playerArgs = 11;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/ViewProgressReply.java
+message ViewProgressReply {
+  VideoGuide videoGuide = 1;
+  Chronos chronos = 2;
+  VideoShot arcShot = 3;
+  DmResource dm = 4;
+  FragmentRes fragmentRes = 5;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/ViewProgressReq.java
+message ViewProgressReq {
+  int64 aid = 1;
+  int64 cid = 2;
+  int64 upMid = 3;
+  ChronosParam chronosParam = 4;
+  UnionType type = 5;
+  FragmentParam fragmentParam = 6;
+  string fromScene = 7;
+  PlayCtrl playCtrl = 8;
+  map<string, string> extraContent = 9;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/ViewReply.java
+message ViewReply {
+  ViewBase viewBase = 1;
+  Arc arc = 2;
+  ReqUser reqUser = 3;
+  Owner owner = 4;
+  Tab tab = 5;
+  Any supplement = 6;
+  CM cm = 7;
+  ECode ecode = 8;
+  ECodeConfig ecodeConfig = 9;
+  map<string, string> report = 10;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/v1/ViewReq.java
+message ViewReq {
+  int64 aid = 1;
+  string bvid = 2;
+  string from = 3;
+  string spmid = 4;
+  string fromSpmid = 5;
+  string sessionId = 6;
+  PlayerArgs playerArgs = 7;
+  string trackId = 8;
+  map<string, string> extraContent = 9;
+  string playMode = 10;
+  Relate relate = 11;
+  string bizExtra = 12;
+  string adExtra = 13;
+  string fromScene = 14;
+  PlayCtrl playCtrl = 15;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/viewunite/v1";

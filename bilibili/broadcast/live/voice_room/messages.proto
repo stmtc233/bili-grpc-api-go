@@ -1,0 +1,129 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.broadcast.live.voice_room;
+
+enum LiveInteractBusinessType {
+  LiveInteractBusinessTypeNode = 0;
+  LiveInteractBusinessTypeMultiVoice = 10;
+  UNRECOGNIZED = -1;
+}
+
+enum LiveInteractOperationType {
+  LiveInteractOperationTypeInvalid = 0;
+  LiveInteractOperationTypeAccept = 1;
+  LiveInteractOperationTypeReject = 2;
+  LiveInteractOperationTypeCancel = 3;
+  LiveInteractOperationTypeNoReply = 4;
+  LiveInteractOperationTypeInvited = 5;
+  UNRECOGNIZED = -1;
+}
+
+enum LiveMultiVoiceRole {
+  LiveMultiVoiceRoleCommon = 0;
+  LiveMultiVoiceRoleManager = 1;
+  LiveMultiVoiceRoleAnchor = 2;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/broadcast/live/voice_room/BattleInfo.java
+message BattleInfo {
+  int64 pkid = 1;
+  int64 status = 2;
+  int32 battletype = 3;
+  int32 timestamp = 4;
+  int32 initinfo = 5;
+  int32 matchinfo = 6;
+}
+
+// Source: com/bapis/bilibili/broadcast/live/voice_room/LiveBaseOperateEvent.java
+message LiveBaseOperateEvent {
+  int64 uid = 1;
+  int64 totalprice = 2;
+  int64 ts = 3;
+  int64 position = 4;
+  int64 version = 5;
+  string totalpricetext = 6;
+  int64 pktotalprice = 7;
+  string pktotalpricetext = 8;
+  string pkgroupid = 9;
+  int64 pkgrouptotalprice = 10;
+  string pkgrouptotalpricetext = 11;
+  LiveMultiChatHatLevel hat = 12;
+  int64 roomid = 13;
+  string pkid = 14;
+  bytes battleinfo = 15;
+  bool isPeiPei = 16;
+  int64 posRoomId = 17;
+}
+
+// Source: com/bapis/bilibili/broadcast/live/voice_room/LiveMultiChatHatLevel.java
+message LiveMultiChatHatLevel {
+  string name = 1;
+  string image = 2;
+  string icon = 3;
+  string desc = 4;
+  int64 level = 5;
+  string backgroundcolorstart = 6;
+  string backgroundcolorend = 7;
+  string animationwebp = 8;
+  string animationsvga = 9;
+  int64 price = 10;
+}
+
+// Source: com/bapis/bilibili/broadcast/live/voice_room/LiveMultiVoiceApplicationUserModel.java
+message LiveMultiVoiceApplicationUserModel {
+  int64 count = 1;
+  int64 uid = 2;
+  int64 roomid = 3;
+  LiveMultiVoiceRole role = 4;
+  int64 anchoruid = 6;
+  int64 operateuid = 7;
+  int64 wantposition = 8;
+  int64 event = 9;
+  string toast = 10;
+  string channel = 11;
+  string traceid = 12;
+}
+
+// Source: com/bapis/bilibili/broadcast/live/voice_room/LiveMultiVoiceInvitaionEvent.java
+message LiveMultiVoiceInvitaionEvent {
+  int64 initiator = 1;
+  int64 inviteduid = 2;
+  int32 businesstype = 3;
+  string chid = 4;
+  string channelinfo = 5;
+  int32 cdn = 6;
+  int64 interactid = 7;
+  int64 linkid = 8;
+  int64 ts = 9;
+  string toast = 10;
+  int32 operatetype = 11;
+  string innerextra = 12;
+  string operationuname = 13;
+  repeated int64 existuids = 14;
+  string traceid = 15;
+}
+
+// Source: com/bapis/bilibili/broadcast/live/voice_room/LiveMultiVoiceJoinEvent.java
+message LiveMultiVoiceJoinEvent {
+  string chid = 1;
+  int32 businesstype = 2;
+  string innerextra = 3;
+  string buvid = 4;
+  int64 initiator = 5;
+  int64 inviteduid = 6;
+  int32 cdn = 7;
+  string channelinfo = 8;
+  int64 interactid = 9;
+  int64 linkid = 10;
+  int64 ts = 11;
+  repeated int64 existuids = 12;
+  string traceid = 13;
+  string bizSessionId = 14;
+  string joinToken = 15;
+  bool reconnect = 16;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/live/voice_room";

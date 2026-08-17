@@ -1,0 +1,292 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.broadcast.v1;
+
+enum Action {
+  UNKNOWN = 0;
+  UPDATE = 1;
+  DELETE = 2;
+  UNRECOGNIZED = -1;
+}
+
+enum LinkType {
+  LINK_TYPE_UNKNOWN = 0;
+  LINK_TYPE_BANGUMI = 1;
+  LINK_TYPE_VIDEO = 2;
+  LINK_TYPE_LIVE = 3;
+  LINK_MESSAGE = 4;
+  UNRECOGNIZED = -1;
+}
+
+// Source: com/bapis/bilibili/broadcast/v1/AuthReq.java
+message AuthReq {
+  string guid = 1;
+  string connId = 2;
+  int64 lastMsgId = 3;
+}
+
+// Source: com/bapis/bilibili/broadcast/v1/AuthResp.java
+message AuthResp {
+}
+
+// Source: com/bapis/bilibili/broadcast/v1/BroadcastFrame.java
+message BroadcastFrame {
+  FrameOption options = 1;
+  string targetPath = 2;
+  Any body = 3;
+}
+
+// Source: com/bapis/bilibili/broadcast/v1/FrameOption.java
+message FrameOption {
+  int64 messageId = 1;
+  int64 sequence = 2;
+  bool isAck = 3;
+  Status status = 4;
+  string ackOrigin = 5;
+  int64 timestamp = 6;
+  int64 msgType = 7;
+}
+
+// Source: com/bapis/bilibili/broadcast/v1/HeartbeatReq.java
+message HeartbeatReq {
+}
+
+// Source: com/bapis/bilibili/broadcast/v1/HeartbeatResp.java
+message HeartbeatResp {
+  OpType opType = 1;
+  string targetHostname = 2;
+  string targetIp = 3;
+  int64 targetPort = 4;
+  int64 targetTtl = 5;
+  enum OpType {
+    DEFAULT = 0;
+    UNHEALTHY = 1;
+    MIGRATION = 2;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/broadcast/v1/LaserLogUploadResp.java
+message LaserLogUploadResp {
+  int64 taskid = 1;
+  string date = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/v1/MessageAckReq.java
+message MessageAckReq {
+  int64 ackId = 1;
+  string ackOrigin = 2;
+  string targetPath = 3;
+  int64 msgType = 4;
+}
+
+// Source: com/bapis/bilibili/broadcast/v1/ModResourceResp.java
+message ModResourceResp {
+  Action atcion = 1;
+  string appKey = 2;
+  string poolName = 3;
+  string moduleName = 4;
+  int64 moduleVersion = 5;
+  int64 listVersion = 6;
+}
+
+// Source: com/bapis/bilibili/broadcast/v1/PageBlackList.java
+message PageBlackList {
+  string id = 1;
+}
+
+// Source: com/bapis/bilibili/broadcast/v1/PageView.java
+message PageView {
+  string id = 1;
+}
+
+// Source: com/bapis/bilibili/broadcast/v1/PageWhiteList.java
+message PageWhiteList {
+  string id = 1;
+}
+
+// Source: com/bapis/bilibili/broadcast/v1/PushMessageResp.java
+message PushMessageResp {
+  int64 oldTaskid = 1;
+  Biz biz = 2;
+  Type type = 3;
+  string title = 4;
+  string summary = 5;
+  string img = 6;
+  string link = 7;
+  Position position = 8;
+  int32 duration = 9;
+  int64 expire = 10;
+  string taskid = 11;
+  repeated bytes pageBlacklist = 12;
+  repeated PageView pageView = 13;
+  TargetResource targetResource = 14;
+  ImageFrame imageFrame = 15;
+  ImageMarker imageMarker = 16;
+  ImagePosition imagePosition = 17;
+  int64 job = 18;
+  string msgSource = 19;
+  bool hideArrow = 20;
+  map<string, string> metadata = 21;
+  string pureImg = 22;
+  DisplayType displayType = 23;
+  PopType popType = 24;
+  int32 reserve = 25;
+  int32 level = 26;
+  bool query = 27;
+  int32 bid = 28;
+  string extra = 30;
+  MsgType msgType = 31;
+  repeated bytes pageWhitelist = 32;
+  enum Biz {
+    BIZ_UNKNOWN = 0;
+    BIZ_VIDEO = 1;
+    BIZ_LIVE = 2;
+    BIZ_ACTIVITY = 3;
+    UNRECOGNIZED = -1;
+  }
+
+  enum DisplayType {
+    DisPlayText = 0;
+    DisplaySatic = 1;
+    DisplayGif = 2;
+    UNRECOGNIZED = -1;
+  }
+
+  enum ImageFrame {
+    FRAME_UNKNOWN = 0;
+    FRAME_LIVE = 1;
+    UNRECOGNIZED = -1;
+  }
+
+  enum ImageMarker {
+    MARKER_UNKNOWN = 0;
+    MARKER_LIVE = 1;
+    UNRECOGNIZED = -1;
+  }
+
+  enum ImagePosition {
+    IMAGE_POS_UNKNOWN = 0;
+    IMAGE_POS_LEFT = 1;
+    IMAGE_POS_RIGHT = 2;
+    UNRECOGNIZED = -1;
+  }
+
+  enum MsgType {
+    MSG_ONLINE = 0;
+    MSG_OFFLINE = 1;
+    UNRECOGNIZED = -1;
+  }
+
+  enum PopType {
+    TopToBottom = 0;
+    RightToLeft = 1;
+    UNRECOGNIZED = -1;
+  }
+
+  enum Position {
+    POS_UNKNOWN = 0;
+    POS_TOP = 1;
+    UNRECOGNIZED = -1;
+  }
+
+  enum Type {
+    TYPE_UNKNOWN = 0;
+    TYPE_DEFAULT = 1;
+    TYPE_HOT = 2;
+    TYPE_REALTIME = 3;
+    TYPE_RECOMMEND = 4;
+    TYPE_REPLY = 5;
+    UNRECOGNIZED = -1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/broadcast/v1/RoomErrorEvent.java
+message RoomErrorEvent {
+  Status status = 1;
+}
+
+// Source: com/bapis/bilibili/broadcast/v1/RoomJoinEvent.java
+message RoomJoinEvent {
+}
+
+// Source: com/bapis/bilibili/broadcast/v1/RoomLeaveEvent.java
+message RoomLeaveEvent {
+}
+
+// Source: com/bapis/bilibili/broadcast/v1/RoomMessageEvent.java
+message RoomMessageEvent {
+  string targetPath = 1;
+  Any body = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/v1/RoomOnlineEvent.java
+message RoomOnlineEvent {
+  int32 online = 1;
+  int32 allOnline = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/v1/RoomReq.java
+message RoomReq {
+  string id = 1;
+  oneof oneof_0 {
+    RoomJoinEvent join = 2;
+    RoomLeaveEvent leave = 3;
+    RoomOnlineEvent online = 4;
+    RoomMessageEvent msg = 5;
+  }
+  enum EventCase {
+    JOIN = 2;
+    LEAVE = 3;
+    ONLINE = 4;
+    MSG = 5;
+    EVENT_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/broadcast/v1/RoomResp.java
+message RoomResp {
+  string id = 1;
+  oneof oneof_0 {
+    RoomJoinEvent join = 2;
+    RoomLeaveEvent leave = 3;
+    RoomOnlineEvent online = 4;
+    RoomMessageEvent msg = 5;
+    RoomErrorEvent err = 6;
+  }
+  enum EventCase {
+    JOIN = 2;
+    LEAVE = 3;
+    ONLINE = 4;
+    MSG = 5;
+    ERR = 6;
+    EVENT_NOT_SET = 0;
+  }
+
+}
+
+// Source: com/bapis/bilibili/broadcast/v1/TargetPath.java
+message TargetPath {
+  repeated string targetPaths = 1;
+}
+
+// Source: com/bapis/bilibili/broadcast/v1/TargetResource.java
+message TargetResource {
+  LinkType type = 1;
+  map<string, string> resource = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/v1/TestResp.java
+message TestResp {
+  int64 taskid = 1;
+  int64 timestamp = 2;
+  string message_ = 3;
+  Any extra = 4;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/v1";

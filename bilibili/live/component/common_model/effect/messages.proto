@@ -1,0 +1,47 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.live.component.common_model.effect;
+
+// Source: com/bapis/bilibili/live/component/common_model/effect/EffectConfigItem.java
+message EffectConfigItem {
+  int64 type = 1;
+  string webSvga = 2;
+  string horizontalSvga = 3;
+  string verticalSvga = 4;
+  string webMp4 = 5;
+  string webMp4Json = 6;
+  string horizontalMp4 = 7;
+  string verticalMp4 = 8;
+  int64 id = 9;
+  repeated int64 planPlatform = 10;
+  repeated int64 bindGiftIds = 11;
+  string webMp4Md5 = 12;
+  string horizontalMp4Md5 = 13;
+  string verticalMp4Md5 = 14;
+  int64 webMp4Crc32 = 15;
+  int64 horizontalMp4Crc32 = 16;
+  int64 verticalMp4Crc32 = 17;
+  int64 webMp4FileSize = 18;
+  int64 horizontalMp4FileSize = 19;
+  int64 verticalMp4FileSize = 20;
+  H265Conf h265Conf = 21;
+}
+
+// Source: com/bapis/bilibili/live/component/common_model/effect/FileConfItem.java
+message FileConfItem {
+  string mp4 = 1;
+  string mp4Md5 = 2;
+  string mp4Json = 3;
+  int64 mp4Crc32 = 4;
+  int64 mp4FileSize = 5;
+}
+
+// Source: com/bapis/bilibili/live/component/common_model/effect/H265Conf.java
+message H265Conf {
+  FileConfItem horizontalMp4 = 1;
+  FileConfItem verticalMp4 = 2;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/live/component/common_model/effect";

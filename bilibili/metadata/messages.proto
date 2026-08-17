@@ -1,0 +1,18 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.metadata;
+
+// Source: com/bapis/bilibili/metadata/Metadata.java
+message Metadata {
+  string accessKey = 1;
+  string mobiApp = 2;
+  string device = 3;
+  int32 build = 4;
+  string channel = 5;
+  string buvid = 6;
+  string platform = 7;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/metadata";
