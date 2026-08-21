@@ -63,6 +63,7 @@ enum UserCallbackAction {
 enum UserCallbackScene {
   Insert = 0;
   RecommendSuperbReply = 1;
+  Hotspot = 2;
   UNRECOGNIZED = -1;
 }
 
@@ -362,6 +363,50 @@ message GoodsSearchItem {
   string label = 6;
 }
 
+// Source: com/bapis/bilibili/main/community/reply/v1/HotReplyInfo.java
+message HotReplyInfo {
+  string arcTitle = 1;
+  int32 opinionIdx = 2;
+  string fromText = 3;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/HotspotCard.java
+message HotspotCard {
+  string icon = 1;
+  string title = 2;
+  string titleText = 3;
+  int64 rpid = 4;
+  int64 oid = 5;
+  Content content = 6;
+  MemberV2 member = 7;
+  int64 hotspotId = 8;
+  ReplyControl replyControl = 9;
+  int64 like = 10;
+  string arcTitle = 11;
+  string fromText = 12;
+  int32 type = 13;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/HotspotPageReq.java
+message HotspotPageReq {
+  int64 tid = 1;
+  int32 ps = 2;
+  int32 opinionIdx = 3;
+  string cursor = 4;
+  ReferReply referReply = 5;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/HotspotPageResp.java
+message HotspotPageResp {
+  string hotspotTitle = 1;
+  string hotspotDesc = 2;
+  repeated Opinion opinions = 3;
+  PageInfo page = 4;
+  repeated ReplyInfo replies = 5;
+  string updateText = 6;
+  string icon = 7;
+}
+
 // Source: com/bapis/bilibili/main/community/reply/v1/LikeInfo.java
 message LikeInfo {
   repeated Item items = 1;
@@ -527,10 +572,12 @@ message MixedCard {
   oneof oneof_0 {
     QuestionCard question = 4;
     FoldCard fold = 5;
+    HotspotCard hotspot = 6;
   }
   enum ItemCase {
     QUESTION = 4;
     FOLD = 5;
+    HOTSPOT = 6;
     ITEM_NOT_SET = 0;
   }
 
@@ -538,6 +585,7 @@ message MixedCard {
     UNKNOWN = 0;
     QUESTION = 1;
     FOLD = 2;
+    HOTSPOT = 3;
     UNRECOGNIZED = -1;
   }
 
@@ -606,6 +654,21 @@ message OperationV2 {
     UNRECOGNIZED = -1;
   }
 
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/Opinion.java
+message Opinion {
+  int32 idx = 1;
+  string title = 2;
+  string desc = 3;
+  int32 count = 4;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/PageInfo.java
+message PageInfo {
+  int32 ps = 1;
+  int32 total = 2;
+  string nextCursor = 3;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/ParentReplyMember.java
@@ -779,6 +842,12 @@ message QuizShareReq {
   int64 oid = 2;
 }
 
+// Source: com/bapis/bilibili/main/community/reply/v1/ReferReply.java
+message ReferReply {
+  int64 oid = 1;
+  int64 rpid = 2;
+}
+
 // Source: com/bapis/bilibili/main/community/reply/v1/ReplyCardLabel.java
 message ReplyCardLabel {
   string textContent = 1;
@@ -901,6 +970,7 @@ message ReplyInfo {
   string trackInfo = 16;
   Content translatedContent = 17;
   ParentReplyMember parentReplyMember = 18;
+  HotReplyInfo hotInfo = 19;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/ReplyInfoReply.java

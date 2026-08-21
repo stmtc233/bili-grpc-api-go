@@ -646,6 +646,7 @@ message Item {
   bool isHorizontalCover = 72;
   int32 cardGroupId = 75;
   string originGoto = 76;
+  map<string, string> reportExtra = 77;
   enum CardItemCase {
     SPECIAL = 7;
     ARTICLE = 8;

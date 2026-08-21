@@ -69,6 +69,7 @@ message PlayViewUniteReply {
   FragmentVideo fragmentVideo = 10;
   VideoCtrl videoCtrl = 11;
   Language language = 12;
+  OverseasAdInfo adInfo = 13;
 }
 
 // Source: com/bapis/bilibili/app/playerunite/v1/PlayViewUniteReq.java

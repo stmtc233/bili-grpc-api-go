@@ -193,5 +193,24 @@ message PublicityNotify {
   int64 status = 3;
 }
 
+// Source: com/bapis/bilibili/broadcast/message/tv/TVAssistantCommand.java
+message TVAssistantCommand {
+  string tvAssistantSessionId = 1;
+  string requestId = 2;
+  string cmd = 3;
+  int64 tvMid = 4;
+  string tvBuvid = 5;
+  int64 mobileMid = 6;
+  string mobileBuvid = 7;
+  int64 videoType = 8;
+  int64 aid = 9;
+  int64 cid = 10;
+  int64 seasonId = 11;
+  int64 epId = 12;
+  int64 roomId = 13;
+  string payload = 14;
+  int64 ts = 15;
+}
+
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/message/tv";
