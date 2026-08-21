@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.bilibili.broadcast.live.universal_interact;
 
+import "bilibili/live/app/room/v1/messages.proto";
+
 enum CloseUserReason {
   CloseUserReason_Invalid = 0;
   CloseUserReason_DissolveChannel = 1;
@@ -168,7 +170,7 @@ message UniversalInteractApplyEvent {
 message UniversalInteractEventGift {
   int64 roomId = 1;
   int64 anchorUid = 2;
-  UniversalInfoResp info = 3;
+  com.bapis.bilibili.live.app.room.v1.UniversalInfoResp info = 3;
 }
 
 // Source: com/bapis/bilibili/broadcast/live/universal_interact/UniversalInteractInvitationEvent.java

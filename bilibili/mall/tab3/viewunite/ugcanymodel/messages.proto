@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.bilibili.mall.tab3.viewunite.ugcanymodel;
 
+import "bilibili/mall/tab3/viewunite/common/messages.proto";
+
 enum PremiereState {
   premiere_none = 0;
   premiere_before = 1;
@@ -84,7 +86,7 @@ message ViewUgcAny {
   Dislike dislike = 2;
   string shortLink = 3;
   string shareSubtitle = 4;
-  repeated Page pages = 5;
+  repeated com.bapis.bilibili.mall.tab3.viewunite.common.Page pages = 5;
   ElecRank elecRank = 6;
 }
 

@@ -3,9 +3,12 @@ syntax = "proto3";
 
 package com.bapis.bilibili.dagw.component.avatar.v1;
 
+import "bilibili/dagw/component/avatar/common/messages.proto";
+import "bilibili/dagw/component/avatar/v1/plugin/messages.proto";
+
 // Source: com/bapis/bilibili/dagw/component/avatar/v1/AvatarItem.java
 message AvatarItem {
-  SizeSpec containerSize = 1;
+  com.bapis.bilibili.dagw.component.avatar.common.SizeSpec containerSize = 1;
   repeated LayerGroup layers = 2;
   LayerGroup fallbackLayers = 3;
   int64 mid = 4;
@@ -47,7 +50,7 @@ message GeneralConfig {
 message Layer {
   string layerId = 1;
   bool visible = 2;
-  LayerGeneralSpec generalSpec = 3;
+  com.bapis.bilibili.dagw.component.avatar.common.LayerGeneralSpec generalSpec = 3;
   LayerConfig layerConfig = 4;
   BasicLayerResource resource = 5;
 }
@@ -57,14 +60,14 @@ message LayerConfig {
   map<string, LayerTagConfig> tags = 1;
   bool isCritical = 2;
   bool allowOverPaint = 3;
-  MaskProperty layerMask = 4;
+  com.bapis.bilibili.dagw.component.avatar.common.MaskProperty layerMask = 4;
 }
 
 // Source: com/bapis/bilibili/dagw/component/avatar/v1/LayerGroup.java
 message LayerGroup {
   string groupId = 1;
   repeated Layer layers = 2;
-  MaskProperty groupMask = 3;
+  com.bapis.bilibili.dagw.component.avatar.common.MaskProperty groupMask = 3;
   bool isCriticalGroup = 4;
 }
 
@@ -73,12 +76,12 @@ message LayerTagConfig {
   TagConfigType configType = 1;
   oneof oneof_0 {
     GeneralConfig generalConfig = 2;
-    GyroConfig gyroConfig = 3;
-    CommentDoubleClickConfig commentDoubleClickConfig = 4;
-    LiveAnimeConfig liveAnimeConfig = 5;
-    WebLiveAnimeConfig webLiveAnimeConfig = 6;
-    FollowIconConfig followIconConfig = 7;
-    FollowActionConfig followActionConfig = 8;
+    com.bapis.bilibili.dagw.component.avatar.v1.plugin.GyroConfig gyroConfig = 3;
+    com.bapis.bilibili.dagw.component.avatar.v1.plugin.CommentDoubleClickConfig commentDoubleClickConfig = 4;
+    com.bapis.bilibili.dagw.component.avatar.v1.plugin.LiveAnimeConfig liveAnimeConfig = 5;
+    com.bapis.bilibili.dagw.component.avatar.v1.plugin.WebLiveAnimeConfig webLiveAnimeConfig = 6;
+    com.bapis.bilibili.dagw.component.avatar.v1.plugin.FollowIconConfig followIconConfig = 7;
+    com.bapis.bilibili.dagw.component.avatar.v1.plugin.FollowActionConfig followActionConfig = 8;
   }
   enum ConfigCase {
     CONFIG_NOT_SET = 0;
@@ -107,17 +110,17 @@ message LayerTagConfig {
 
 // Source: com/bapis/bilibili/dagw/component/avatar/v1/ResAnimation.java
 message ResAnimation {
-  ResourceSource webpSrc = 1;
+  com.bapis.bilibili.dagw.component.avatar.common.ResourceSource webpSrc = 1;
 }
 
 // Source: com/bapis/bilibili/dagw/component/avatar/v1/ResImage.java
 message ResImage {
-  ResourceSource imageSrc = 1;
+  com.bapis.bilibili.dagw.component.avatar.common.ResourceSource imageSrc = 1;
 }
 
 // Source: com/bapis/bilibili/dagw/component/avatar/v1/ResNativeDraw.java
 message ResNativeDraw {
-  ResourceSource drawSrc = 1;
+  com.bapis.bilibili.dagw.component.avatar.common.ResourceSource drawSrc = 1;
 }
 
 

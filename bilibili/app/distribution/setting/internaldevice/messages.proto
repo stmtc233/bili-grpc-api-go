@@ -3,9 +3,11 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.distribution.setting.internaldevice;
 
+import "bilibili/app/distribution/messages.proto";
+
 // Source: com/bapis/bilibili/app/distribution/setting/internaldevice/InternalDeviceConfig.java
 message InternalDeviceConfig {
-  Int64Value fts = 1;
+  com.bapis.bilibili.app.distribution.Int64Value fts = 1;
 }
 
 

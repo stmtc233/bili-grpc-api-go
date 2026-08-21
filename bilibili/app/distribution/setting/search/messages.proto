@@ -3,10 +3,12 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.distribution.setting.search;
 
+import "bilibili/app/distribution/messages.proto";
+
 // Source: com/bapis/bilibili/app/distribution/setting/search/SearchAutoPlay.java
 message SearchAutoPlay {
-  Int64Value value = 1;
-  BoolValue affectedByServerSide = 2;
+  com.bapis.bilibili.app.distribution.Int64Value value = 1;
+  com.bapis.bilibili.app.distribution.BoolValue affectedByServerSide = 2;
 }
 
 // Source: com/bapis/bilibili/app/distribution/setting/search/SearchDeviceConfig.java

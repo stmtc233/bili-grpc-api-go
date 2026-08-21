@@ -3,9 +3,11 @@ syntax = "proto3";
 
 package com.bapis.bilibili.dagw.component.avatar.v1.plugin;
 
+import "bilibili/dagw/component/avatar/common/messages.proto";
+
 // Source: com/bapis/bilibili/dagw/component/avatar/v1/plugin/BorderConfig.java
 message BorderConfig {
-  ColorConfig color = 1;
+  com.bapis.bilibili.dagw.component.avatar.common.ColorConfig color = 1;
   double borderWidth = 2;
   double ratio = 3;
 }
@@ -19,9 +21,9 @@ message CommentDoubleClickConfig {
 // Source: com/bapis/bilibili/dagw/component/avatar/v1/plugin/FollowActionConfig.java
 message FollowActionConfig {
   bool hasFollow = 1;
-  ResourceSource iconRes = 2;
+  com.bapis.bilibili.dagw.component.avatar.common.ResourceSource iconRes = 2;
   double borderWidth = 3;
-  ColorConfig borderColor = 4;
+  com.bapis.bilibili.dagw.component.avatar.common.ColorConfig borderColor = 4;
   int64 mid = 5;
   double iconWidthRatio = 6;
   double iconSizeOffset = 7;
@@ -30,9 +32,9 @@ message FollowActionConfig {
 // Source: com/bapis/bilibili/dagw/component/avatar/v1/plugin/FollowIconConfig.java
 message FollowIconConfig {
   bool hasFollow = 1;
-  ResourceSource iconRes = 2;
+  com.bapis.bilibili.dagw.component.avatar.common.ResourceSource iconRes = 2;
   double borderWidth = 3;
-  ColorConfig borderColor = 4;
+  com.bapis.bilibili.dagw.component.avatar.common.ColorConfig borderColor = 4;
   int64 mid = 5;
 }
 
@@ -72,7 +74,7 @@ message LiveAnimeConfig {
 
 // Source: com/bapis/bilibili/dagw/component/avatar/v1/plugin/LiveAnimeItem.java
 message LiveAnimeItem {
-  ColorConfig color = 1;
+  com.bapis.bilibili.dagw.component.avatar.common.ColorConfig color = 1;
   double startRatio = 2;
   double endRatio = 3;
   double startStroke = 4;
@@ -87,8 +89,8 @@ message LiveTextConfig {
   double offsetY = 3;
   double borderWidth = 4;
   double textSize = 5;
-  ColorConfig borderColor = 7;
-  ColorConfig background = 8;
+  com.bapis.bilibili.dagw.component.avatar.common.ColorConfig borderColor = 7;
+  com.bapis.bilibili.dagw.component.avatar.common.ColorConfig background = 8;
 }
 
 // Source: com/bapis/bilibili/dagw/component/avatar/v1/plugin/NFTImageV2.java

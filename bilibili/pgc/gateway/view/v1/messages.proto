@@ -3,10 +3,13 @@ syntax = "proto3";
 
 package com.bapis.bilibili.pgc.gateway.view.v1;
 
+import "bilibili/app/viewunite/common/messages.proto";
+import "bilibili/app/viewunite/pgcanymodel/messages.proto";
+
 // Source: com/bapis/bilibili/pgc/gateway/view/v1/PageSectionEpisodesReply.java
 message PageSectionEpisodesReply {
-  repeated ViewEpisode episodes = 1;
-  SectionPagination pagination = 2;
+  repeated com.bapis.bilibili.app.viewunite.common.ViewEpisode episodes = 1;
+  com.bapis.bilibili.app.viewunite.pgcanymodel.SectionPagination pagination = 2;
   int32 sectionId = 3;
 }
 
@@ -36,9 +39,9 @@ message PageSectionEpisodesReq {
 
 // Source: com/bapis/bilibili/pgc/gateway/view/v1/SeasonSectionsReply.java
 message SeasonSectionsReply {
-  repeated SectionData sections = 1;
-  Reserve reserve = 2;
-  map<int32, SectionPagination> sectionPagination = 3;
+  repeated com.bapis.bilibili.app.viewunite.common.SectionData sections = 1;
+  com.bapis.bilibili.app.viewunite.pgcanymodel.Reserve reserve = 2;
+  map<int32, com.bapis.bilibili.app.viewunite.pgcanymodel.SectionPagination> sectionPagination = 3;
 }
 
 // Source: com/bapis/bilibili/pgc/gateway/view/v1/SeasonSectionsReq.java

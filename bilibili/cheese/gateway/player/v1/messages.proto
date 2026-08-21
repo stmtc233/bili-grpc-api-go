@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.bilibili.cheese.gateway.player.v1;
 
+import "bilibili/app/playurl/v1/messages.proto";
+
 enum DrmTechType {
   NON = 0;
   FAIR_PLAY = 1;
@@ -57,7 +59,7 @@ message PlayViewBusinessInfo {
 
 // Source: com/bapis/bilibili/cheese/gateway/player/v1/PlayViewReply.java
 message PlayViewReply {
-  VideoInfo videoInfo = 1;
+  com.bapis.bilibili.app.playurl.v1.VideoInfo videoInfo = 1;
   PlayAbilityConf playConf = 2;
   PlayViewBusinessInfo business = 3;
   RiskControl riskControl = 4;
@@ -77,7 +79,7 @@ message PlayViewReq {
   string spmid = 9;
   string fromSpmid = 10;
   int32 teenagersMode = 11;
-  CodeType preferCodecType = 12;
+  com.bapis.bilibili.app.playurl.v1.CodeType preferCodecType = 12;
   bool isPreview = 13;
   bool isRawStream = 14;
   SecurityLevel securityLevel = 15;
@@ -85,7 +87,7 @@ message PlayViewReq {
 
 // Source: com/bapis/bilibili/cheese/gateway/player/v1/ProjectReply.java
 message ProjectReply {
-  PlayURLReply project = 1;
+  com.bapis.bilibili.app.playurl.v1.PlayURLReply project = 1;
 }
 
 // Source: com/bapis/bilibili/cheese/gateway/player/v1/ProjectReq.java

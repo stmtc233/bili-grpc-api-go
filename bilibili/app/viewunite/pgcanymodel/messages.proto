@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.viewunite.pgcanymodel;
 
+import "bilibili/app/viewunite/common/messages.proto";
+
 enum SectionPaginationMode {
   SECTION_PAGINATION_MODE_UNKNOWN = 0;
   SECTION_PAGINATION_MODE_PAGED = 1;
@@ -58,7 +60,7 @@ message OgvData {
   MultiViewInfo multiViewInfo = 12;
   OgvSwitch ogvSwitch = 13;
   int32 totalEp = 14;
-  NewEp newEp = 15;
+  com.bapis.bilibili.app.viewunite.common.NewEp newEp = 15;
   Reserve reserve = 16;
   int32 status = 17;
   repeated PlayFloatLayerActivity activityFloatLayer = 18;
@@ -96,7 +98,7 @@ message PlayFloatLayerActivity {
   string link = 5;
   string picUrl = 6;
   string picAnimaUrl = 7;
-  BadgeInfo badge = 8;
+  com.bapis.bilibili.app.viewunite.common.BadgeInfo badge = 8;
   int64 showRateTime = 9;
 }
 
@@ -122,7 +124,7 @@ message Publish {
 
 // Source: com/bapis/bilibili/app/viewunite/pgcanymodel/Reserve.java
 message Reserve {
-  repeated ViewEpisode episodes = 1;
+  repeated com.bapis.bilibili.app.viewunite.common.ViewEpisode episodes = 1;
   string tip = 2;
 }
 
@@ -185,7 +187,7 @@ message Skin {
 // Source: com/bapis/bilibili/app/viewunite/pgcanymodel/Stat.java
 message Stat {
   string followers = 1;
-  StatInfo playData = 2;
+  com.bapis.bilibili.app.viewunite.common.StatInfo playData = 2;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/pgcanymodel/UserStatus.java
@@ -203,7 +205,7 @@ message UserStatus {
 // Source: com/bapis/bilibili/app/viewunite/pgcanymodel/ViewPgcAny.java
 message ViewPgcAny {
   OgvData ogvData = 1;
-  map<int64, Staff> allUpInfo = 2;
+  map<int64, com.bapis.bilibili.app.viewunite.common.Staff> allUpInfo = 2;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/pgcanymodel/WatchProgress.java

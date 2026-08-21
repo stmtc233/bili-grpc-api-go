@@ -3,16 +3,18 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.coldstart.v1;
 
+import "google/protobuf/any.proto";
+
 // Source: com/bapis/bilibili/app/coldstart/v1/ColdStartBizReq.java
 message ColdStartBizReq {
   string bizKey = 1;
-  Any bizParam = 2;
+  google.protobuf.Any bizParam = 2;
 }
 
 // Source: com/bapis/bilibili/app/coldstart/v1/ColdStartBizResp.java
 message ColdStartBizResp {
   string bizKey = 1;
-  Any bizResp = 2;
+  google.protobuf.Any bizResp = 2;
   oneof oneof_0 {
     GrpcStatus grpcStatus = 3;
     HttpStatus httpStatus = 4;

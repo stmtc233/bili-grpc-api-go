@@ -3,6 +3,9 @@ syntax = "proto3";
 
 package com.bapis.bilibili.im.gateway.interfaces.v1;
 
+import "bilibili/app/dynamic/v2/messages.proto";
+import "bilibili/im/type/messages.proto";
+
 enum MsgFeedActionType {
   MSG_FEED_ACTION_TYPE_INVALID = 0;
   MSG_FEED_ACTION_TYPE_THANK = 1;
@@ -356,8 +359,8 @@ message MsgRelationTag {
 // Source: com/bapis/bilibili/im/gateway/interfaces/v1/MsgTextTag.java
 message MsgTextTag {
   string text = 1;
-  Colors textColor = 2;
-  Colors backgroundColor = 3;
+  com.bapis.bilibili.app.dynamic.v2.Colors textColor = 2;
+  com.bapis.bilibili.app.dynamic.v2.Colors backgroundColor = 3;
 }
 
 // Source: com/bapis/bilibili/im/gateway/interfaces/v1/Notice.java
@@ -495,12 +498,12 @@ message ReqSingleInbox {
 
 // Source: com/bapis/bilibili/im/gateway/interfaces/v1/RichTextContent.java
 message RichTextContent {
-  repeated Paragraph paragraphs = 1;
+  repeated com.bapis.bilibili.app.dynamic.v2.Paragraph paragraphs = 1;
 }
 
 // Source: com/bapis/bilibili/im/gateway/interfaces/v1/RspGetAIInfo.java
 message RspGetAIInfo {
-  AiInfo aiInfo = 1;
+  com.bapis.bilibili.im.type.AiInfo aiInfo = 1;
 }
 
 // Source: com/bapis/bilibili/im/gateway/interfaces/v1/RspGetSystemNotice.java

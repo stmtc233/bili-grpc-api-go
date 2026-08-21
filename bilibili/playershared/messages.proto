@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.bilibili.playershared;
 
+import "google/protobuf/any.proto";
+
 enum ArcType {
   ARC_TYPE_NORMAL = 0;
   ARC_TYPE_INTERACT = 1;
@@ -657,7 +659,7 @@ message FragmentInfo {
   int64 aid = 4;
   int64 cid = 5;
   int64 startTime = 6;
-  Any report = 7;
+  google.protobuf.Any report = 7;
 }
 
 // Source: com/bapis/bilibili/playershared/FragmentVideo.java

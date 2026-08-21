@@ -3,9 +3,11 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.distribution.setting.dynamic;
 
+import "bilibili/app/distribution/messages.proto";
+
 // Source: com/bapis/bilibili/app/distribution/setting/dynamic/DynamicAutoPlay.java
 message DynamicAutoPlay {
-  Int64Value value = 1;
+  com.bapis.bilibili.app.distribution.Int64Value value = 1;
 }
 
 // Source: com/bapis/bilibili/app/distribution/setting/dynamic/DynamicDeviceConfig.java

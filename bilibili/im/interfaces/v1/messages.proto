@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.bilibili.im.interfaces.v1;
 
+import "bilibili/im/type/messages.proto";
+
 enum MSG_LIKE_ACTION {
   ACTION_UNSPECIFIED = 0;
   ACTION_LIKE = 1;
@@ -179,7 +181,7 @@ message ReqRemoveSession {
 
 // Source: com/bapis/bilibili/im/interfaces/v1/ReqSendMsg.java
 message ReqSendMsg {
-  Msg msg = 1;
+  com.bapis.bilibili.im.type.Msg msg = 1;
   string cookie = 2;
   string cookie2 = 3;
   int32 errorCode = 4;
@@ -293,7 +295,7 @@ message RspGetDiscussListInImPage {
 
 // Source: com/bapis/bilibili/im/interfaces/v1/RspGetMsg.java
 message RspGetMsg {
-  repeated Msg msg = 1;
+  repeated com.bapis.bilibili.im.type.Msg msg = 1;
 }
 
 // Source: com/bapis/bilibili/im/interfaces/v1/RspLiveInfo.java
@@ -315,10 +317,10 @@ message RspMyGroupUnread {
 // Source: com/bapis/bilibili/im/interfaces/v1/RspRelationSync.java
 message RspRelationSync {
   int32 full = 1;
-  repeated RelationLog relationLogs = 2;
-  repeated FriendRelation friendList = 3;
+  repeated com.bapis.bilibili.im.type.RelationLog relationLogs = 2;
+  repeated com.bapis.bilibili.im.type.FriendRelation friendList = 3;
   uint64 serverRelationOplogSeqno = 4;
-  repeated GroupRelation groupList = 5;
+  repeated com.bapis.bilibili.im.type.GroupRelation groupList = 5;
 }
 
 // Source: com/bapis/bilibili/im/interfaces/v1/RspSendMsg.java
@@ -326,19 +328,19 @@ message RspSendMsg {
   uint64 msgKey = 1;
   repeated EmotionInfo eInfos = 2;
   string msgContent = 3;
-  KeyHitInfos keyHitInfos = 4;
-  RichTextMsgContent richTextMsgContent = 5;
+  com.bapis.bilibili.im.type.KeyHitInfos keyHitInfos = 4;
+  com.bapis.bilibili.im.type.RichTextMsgContent richTextMsgContent = 5;
   uint64 seqno = 6;
 }
 
 // Source: com/bapis/bilibili/im/interfaces/v1/RspSessionDetails.java
 message RspSessionDetails {
-  repeated SessionInfo sessInfos = 1;
+  repeated com.bapis.bilibili.im.type.SessionInfo sessInfos = 1;
 }
 
 // Source: com/bapis/bilibili/im/interfaces/v1/RspSessionMsg.java
 message RspSessionMsg {
-  repeated Msg messages = 1;
+  repeated com.bapis.bilibili.im.type.Msg messages = 1;
   int32 hasMore = 2;
   uint64 minSeqno = 3;
   uint64 maxSeqno = 4;
@@ -347,7 +349,7 @@ message RspSessionMsg {
 
 // Source: com/bapis/bilibili/im/interfaces/v1/RspSessions.java
 message RspSessions {
-  repeated SessionInfo sessionList = 1;
+  repeated com.bapis.bilibili.im.type.SessionInfo sessionList = 1;
   uint32 hasMore = 2;
   bool antiDisturbCleaning = 3;
   int32 isAddressListEmpty = 4;

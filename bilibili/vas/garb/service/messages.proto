@@ -3,9 +3,12 @@ syntax = "proto3";
 
 package com.bapis.bilibili.vas.garb.service;
 
+import "bilibili/metadata/device/messages.proto";
+import "bilibili/vas/garb/model/messages.proto";
+
 // Source: com/bapis/bilibili/vas/garb/service/SailingEquipMultiReply.java
 message SailingEquipMultiReply {
-  map<int64, UserSailing> data = 1;
+  map<int64, com.bapis.bilibili.vas.garb.model.UserSailing> data = 1;
 }
 
 // Source: com/bapis/bilibili/vas/garb/service/SailingEquipMultiReq.java
@@ -15,7 +18,7 @@ message SailingEquipMultiReq {
   int64 otype = 3;
   int64 oid = 4;
   int64 mid = 5;
-  Device device = 6;
+  com.bapis.bilibili.metadata.device.Device device = 6;
 }
 
 // Source: com/bapis/bilibili/vas/garb/service/UserCard.java
@@ -29,9 +32,9 @@ message UserCard {
   int64 expireTime = 7;
   string cardTypeName = 8;
   string jumpUrl = 9;
-  UserFanShow fan = 10;
+  com.bapis.bilibili.vas.garb.model.UserFanShow fan = 10;
   string imageEnhance = 12;
-  ImageGroup imageGroup = 13;
+  com.bapis.bilibili.vas.garb.model.ImageGroup imageGroup = 13;
 }
 
 // Source: com/bapis/bilibili/vas/garb/service/UserCardMultiReply.java
@@ -42,7 +45,7 @@ message UserCardMultiReply {
 // Source: com/bapis/bilibili/vas/garb/service/UserCardMultiReq.java
 message UserCardMultiReq {
   repeated int64 mids = 1;
-  Device device = 2;
+  com.bapis.bilibili.metadata.device.Device device = 2;
   int64 mid = 3;
 }
 

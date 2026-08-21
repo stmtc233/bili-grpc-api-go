@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.bilibili.broadcast.message.main;
 
+import "bilibili/app/dynamic/v2/messages.proto";
+
 enum LikeState {
   DEFAULT = 0;
   LIKE = 1;
@@ -34,13 +36,13 @@ message ArticleCard {
 
 // Source: com/bapis/bilibili/broadcast/message/main/Bubble.java
 message Bubble {
-  repeated Paragraph paragraphs = 1;
+  repeated com.bapis.bilibili.app.dynamic.v2.Paragraph paragraphs = 1;
   repeated CardItem item = 2;
 }
 
 // Source: com/bapis/bilibili/broadcast/message/main/BubbleV2.java
 message BubbleV2 {
-  repeated ModuleParagraph paragraphs = 1;
+  repeated com.bapis.bilibili.app.dynamic.v2.ModuleParagraph paragraphs = 1;
 }
 
 // Source: com/bapis/bilibili/broadcast/message/main/CardItem.java
@@ -184,7 +186,7 @@ message RedDot {
 
 // Source: com/bapis/bilibili/broadcast/message/main/Reference.java
 message Reference {
-  repeated ModuleAdditional items = 1;
+  repeated com.bapis.bilibili.app.dynamic.v2.ModuleAdditional items = 1;
 }
 
 // Source: com/bapis/bilibili/broadcast/message/main/Stats.java

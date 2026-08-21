@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.bilibili.pgc.gateway.player.v2;
 
+import "google/protobuf/timestamp.proto";
+
 enum CanWatchQnReason {
   CAN_WATCH_QN_REASON_DEFAULT = 0;
   CAN_WATCH_QN_REASON_VIP_QN_TRY_WATCH = 1;
@@ -201,7 +203,7 @@ message Coupon {
   string payButtonText = 7;
   string payButtonTextLineThrough = 8;
   string realAmount = 9;
-  Timestamp expireTime = 10;
+  google.protobuf.Timestamp expireTime = 10;
   int64 otype = 11;
   string amount = 12;
   RedemptionMode redemptionMode = 13;

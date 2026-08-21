@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.bilibili.dynamic.interfaces.feed.v1;
 
+import "bilibili/dynamic/common/messages.proto";
+
 enum ConfigABEntry {
   CONFIG_AB_ENTRY_NONE = 0;
   CONFIG_AB_ENTRY_PUB_PAGE_TITLE = 1;
@@ -98,7 +100,7 @@ message AddDynamicReportRsp {
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/AddOpusArticleDraftReq.java
 message AddOpusArticleDraftReq {
-  OpusArticleDraftArg arg = 1;
+  com.bapis.bilibili.dynamic.common.OpusArticleDraftArg arg = 1;
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/AddOpusArticleDraftRsp.java
@@ -193,13 +195,13 @@ message ArticleInCollectionSortRsp {
 message AttachCardButtonReq {
   int32 curBtnStatus = 1;
   int64 dynamicId = 2;
-  AttachCardType attachCardType = 3;
+  com.bapis.bilibili.dynamic.common.AttachCardType attachCardType = 3;
   string spmId = 4;
   int64 reserveTotal = 5;
   string dynamicIdStr = 6;
   string cardType = 7;
   string cardBizId = 8;
-  OpusBizType opusBizType = 9;
+  com.bapis.bilibili.dynamic.common.OpusBizType opusBizType = 9;
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/AttachCardButtonRsp.java
@@ -260,8 +262,8 @@ message ConfigRsp {
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreateCheckTribeeResp.java
 message CreateCheckTribeeResp {
   TribeePublishConfig setting = 1;
-  repeated TribeeCategory categories = 2;
-  UpPermission permissions = 3;
+  repeated com.bapis.bilibili.dynamic.common.TribeeCategory categories = 2;
+  com.bapis.bilibili.dynamic.common.UpPermission permissions = 3;
   TribeePublishText publishText = 4;
   repeated TribeeVisaInfo visaTribees = 5;
   string tribeeIcon = 6;
@@ -270,8 +272,8 @@ message CreateCheckTribeeResp {
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreateCheckTribeeWebResp.java
 message CreateCheckTribeeWebResp {
   TribeePublishConfig setting = 1;
-  repeated TribeeCategory categories = 2;
-  PermissionsWeb permissions = 3;
+  repeated com.bapis.bilibili.dynamic.common.TribeeCategory categories = 2;
+  com.bapis.bilibili.dynamic.common.PermissionsWeb permissions = 3;
   TribeePublishText publishText = 4;
   repeated TribeeVisaInfo visaTribees = 5;
   string tribeeIcon = 6;
@@ -279,29 +281,29 @@ message CreateCheckTribeeWebResp {
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreateDynReq.java
 message CreateDynReq {
-  UserCreateMeta meta = 1;
-  CreateContent content = 2;
-  CreateScene scene = 3;
-  repeated CreatePic pics = 4;
-  DynIdentity repostSrc = 5;
-  CreateDynVideo video = 6;
+  com.bapis.bilibili.dynamic.common.UserCreateMeta meta = 1;
+  com.bapis.bilibili.dynamic.common.CreateContent content = 2;
+  com.bapis.bilibili.dynamic.common.CreateScene scene = 3;
+  repeated com.bapis.bilibili.dynamic.common.CreatePic pics = 4;
+  com.bapis.bilibili.dynamic.common.DynIdentity repostSrc = 5;
+  com.bapis.bilibili.dynamic.common.CreateDynVideo video = 6;
   int64 sketchType = 7;
-  Sketch sketch = 8;
-  Program program = 9;
-  CreateTag dynTag = 10;
-  CreateAttachCard attachCard = 11;
-  CreateOption option_ = 12;
-  CreateTopic topic = 13;
+  com.bapis.bilibili.dynamic.common.Sketch sketch = 8;
+  com.bapis.bilibili.dynamic.common.Program program = 9;
+  com.bapis.bilibili.dynamic.common.CreateTag dynTag = 10;
+  com.bapis.bilibili.dynamic.common.CreateAttachCard attachCard = 11;
+  com.bapis.bilibili.dynamic.common.CreateOption option_ = 12;
+  com.bapis.bilibili.dynamic.common.CreateTopic topic = 13;
   string uploadId = 14;
-  CreateExtraInfo extraInfo = 15;
-  CreateBaseDraft draft = 16;
+  com.bapis.bilibili.dynamic.common.CreateExtraInfo extraInfo = 15;
+  com.bapis.bilibili.dynamic.common.CreateBaseDraft draft = 16;
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreateInitCheckReq.java
 message CreateInitCheckReq {
-  CreateInitCheckScene scene = 1;
-  MetaDataCtrl meta = 2;
-  RepostInitCheck repost = 3;
+  com.bapis.bilibili.dynamic.common.CreateInitCheckScene scene = 1;
+  com.bapis.bilibili.dynamic.common.MetaDataCtrl meta = 2;
+  com.bapis.bilibili.dynamic.common.RepostInitCheck repost = 3;
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreateOpusInitCheckReq.java
@@ -314,7 +316,7 @@ message CreateOpusInitCheckReq {
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreateOpusInitCheckRsp.java
 message CreateOpusInitCheckRsp {
   OpusPublishTopTips topTips = 1;
-  UpPermission permission = 2;
+  com.bapis.bilibili.dynamic.common.UpPermission permission = 2;
   OpusInitConfig config = 3;
   OpusInitVerify verify = 4;
   OpusCollection opusCollection = 5;
@@ -322,15 +324,15 @@ message CreateOpusInitCheckRsp {
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreateOpusReq.java
 message CreateOpusReq {
-  UserCreateMeta meta = 1;
-  Opus opus = 2;
-  CreateScene scene = 3;
-  CreateOption option_ = 4;
-  CreateTopic topic = 5;
-  CreateBaseDraft draft = 6;
+  com.bapis.bilibili.dynamic.common.UserCreateMeta meta = 1;
+  com.bapis.bilibili.dynamic.common.Opus opus = 2;
+  com.bapis.bilibili.dynamic.common.CreateScene scene = 3;
+  com.bapis.bilibili.dynamic.common.CreateOption option_ = 4;
+  com.bapis.bilibili.dynamic.common.CreateTopic topic = 5;
+  com.bapis.bilibili.dynamic.common.CreateBaseDraft draft = 6;
   string uploadId = 7;
-  DynIdentity repostSrc = 8;
-  TribeeArg tribeeArg = 9;
+  com.bapis.bilibili.dynamic.common.DynIdentity repostSrc = 8;
+  com.bapis.bilibili.dynamic.common.TribeeArg tribeeArg = 9;
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreatePageCommercialInfo.java
@@ -348,8 +350,8 @@ message CreatePageInfosReq {
   int64 topicId = 1;
   int64 commercialEntityType = 2;
   int64 commercialEntityId = 3;
-  CreateScene scene = 4;
-  repeated GoodsContent goods = 5;
+  com.bapis.bilibili.dynamic.common.CreateScene scene = 4;
+  repeated com.bapis.bilibili.dynamic.common.GoodsContent goods = 5;
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreatePageInfosRsp.java
@@ -368,7 +370,7 @@ message CreatePageTopicInfo {
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreatePermissionButtonClickReq.java
 message CreatePermissionButtonClickReq {
-  UpPermissionType type = 1;
+  com.bapis.bilibili.dynamic.common.UpPermissionType type = 1;
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/CreatePermissionButtonClickRsp.java
@@ -413,10 +415,10 @@ message DynamicButtonClickRsp {
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DynamicRepostReq.java
 message DynamicRepostReq {
   int64 uid = 1;
-  CreateContent content = 2;
-  DynIdentity repostSrc = 3;
-  CreateOption option_ = 4;
-  CreateTopic topic = 5;
+  com.bapis.bilibili.dynamic.common.CreateContent content = 2;
+  com.bapis.bilibili.dynamic.common.DynIdentity repostSrc = 3;
+  com.bapis.bilibili.dynamic.common.CreateOption option_ = 4;
+  com.bapis.bilibili.dynamic.common.CreateTopic topic = 5;
   string uploadId = 6;
 }
 
@@ -474,15 +476,15 @@ message EditArticleCollectionRsp {
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/EditDynReq.java
 message EditDynReq {
   int64 dynId = 1;
-  CreateScene scene = 2;
-  UserCreateMeta meta = 3;
-  CreateContent content = 4;
-  repeated CreatePic pics = 5;
-  DynIdentity repostSrc = 6;
-  CreateTag dynTag = 7;
-  CreateAttachCard attachCard = 8;
-  CreateOption option_ = 9;
-  CreateTopic topic = 10;
+  com.bapis.bilibili.dynamic.common.CreateScene scene = 2;
+  com.bapis.bilibili.dynamic.common.UserCreateMeta meta = 3;
+  com.bapis.bilibili.dynamic.common.CreateContent content = 4;
+  repeated com.bapis.bilibili.dynamic.common.CreatePic pics = 5;
+  com.bapis.bilibili.dynamic.common.DynIdentity repostSrc = 6;
+  com.bapis.bilibili.dynamic.common.CreateTag dynTag = 7;
+  com.bapis.bilibili.dynamic.common.CreateAttachCard attachCard = 8;
+  com.bapis.bilibili.dynamic.common.CreateOption option_ = 9;
+  com.bapis.bilibili.dynamic.common.CreateTopic topic = 10;
   string uploadId = 11;
 }
 
@@ -495,14 +497,14 @@ message EditDynRsp {
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/EditOpusReq.java
 message EditOpusReq {
   int64 dynId = 1;
-  UserCreateMeta meta = 2;
-  Opus opus = 3;
-  CreateScene scene = 4;
-  CreateOption option_ = 5;
-  CreateTopic topic = 6;
-  CreateBaseDraft draft = 7;
+  com.bapis.bilibili.dynamic.common.UserCreateMeta meta = 2;
+  com.bapis.bilibili.dynamic.common.Opus opus = 3;
+  com.bapis.bilibili.dynamic.common.CreateScene scene = 4;
+  com.bapis.bilibili.dynamic.common.CreateOption option_ = 5;
+  com.bapis.bilibili.dynamic.common.CreateTopic topic = 6;
+  com.bapis.bilibili.dynamic.common.CreateBaseDraft draft = 7;
   string uploadId = 8;
-  TribeeArg tribeeArg = 9;
+  com.bapis.bilibili.dynamic.common.TribeeArg tribeeArg = 9;
   int64 cvid = 10;
 }
 
@@ -517,33 +519,33 @@ message EditOpusRsp {
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/GetEditDynInfoReq.java
 message GetEditDynInfoReq {
   int64 dynId = 1;
-  CreateInitCheckScene scene = 2;
-  MetaDataCtrl meta = 3;
-  RepostInitCheck repost = 4;
+  com.bapis.bilibili.dynamic.common.CreateInitCheckScene scene = 2;
+  com.bapis.bilibili.dynamic.common.MetaDataCtrl meta = 3;
+  com.bapis.bilibili.dynamic.common.RepostInitCheck repost = 4;
   string editorVersion = 5;
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/GetEditDynInfoRsp.java
 message GetEditDynInfoRsp {
-  repeated CreatePic pics = 1;
+  repeated com.bapis.bilibili.dynamic.common.CreatePic pics = 1;
   int64 origDynId = 2;
   int64 preDynId = 3;
   repeated CreatePageTopicInfo topicInfos = 4;
-  CreateAttachCard attachCard = 5;
-  PublishSetting setting = 6;
-  UpPermission permission = 7;
-  ShareChannel shareInfo = 8;
-  PublishYellowBar yellowBar = 9;
-  PlusRedDot plusRedDot = 10;
+  com.bapis.bilibili.dynamic.common.CreateAttachCard attachCard = 5;
+  com.bapis.bilibili.dynamic.common.PublishSetting setting = 6;
+  com.bapis.bilibili.dynamic.common.UpPermission permission = 7;
+  com.bapis.bilibili.dynamic.common.ShareChannel shareInfo = 8;
+  com.bapis.bilibili.dynamic.common.PublishYellowBar yellowBar = 9;
+  com.bapis.bilibili.dynamic.common.PlusRedDot plusRedDot = 10;
   int64 onlyFans = 11;
   string editAlertMsg = 12;
   int64 remainEditTimes = 13;
   CreatePageCommercialInfo commercial = 14;
   TribeePublishConfig tribeeSetting = 15;
-  Opus opus = 16;
+  com.bapis.bilibili.dynamic.common.Opus opus = 16;
   int64 dynType = 17;
   int32 picMode = 18;
-  repeated TribeeCategory tribeeCategories = 19;
+  repeated com.bapis.bilibili.dynamic.common.TribeeCategory tribeeCategories = 19;
   repeated TribeeVisaInfo visaTribees = 20;
   string tribeeIcon = 21;
 }
@@ -551,15 +553,15 @@ message GetEditDynInfoRsp {
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/GetEditDynInfoWebReq.java
 message GetEditDynInfoWebReq {
   string dynId = 1;
-  CreateInitCheckScene scene = 2;
-  MetaDataCtrl meta = 3;
+  com.bapis.bilibili.dynamic.common.CreateInitCheckScene scene = 2;
+  com.bapis.bilibili.dynamic.common.MetaDataCtrl meta = 3;
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/GetEditDynInfoWebRsp.java
 message GetEditDynInfoWebRsp {
-  PublishWebSettings settings = 1;
-  PermissionsWeb permissions = 2;
-  CreateAttachCard attachCard = 3;
+  com.bapis.bilibili.dynamic.common.PublishWebSettings settings = 1;
+  com.bapis.bilibili.dynamic.common.PermissionsWeb permissions = 2;
+  com.bapis.bilibili.dynamic.common.CreateAttachCard attachCard = 3;
   CreatePageCommercialInfo commercial = 4;
   int64 onlyFans = 5;
   string editAlertMsg = 6;
@@ -567,8 +569,8 @@ message GetEditDynInfoWebRsp {
   string origDynIdStr = 8;
   string preDynIdStr = 9;
   TribeePublishConfig tribeeSetting = 10;
-  Opus opus = 11;
-  repeated TribeeCategory tribeeCategories = 12;
+  com.bapis.bilibili.dynamic.common.Opus opus = 11;
+  repeated com.bapis.bilibili.dynamic.common.TribeeCategory tribeeCategories = 12;
   repeated CreatePageTopicInfo topicInfos = 13;
   repeated TribeeVisaInfo visaTribees = 14;
   string tribeeIcon = 15;
@@ -579,7 +581,7 @@ message GoodsAttachCardPreviewReq {
   repeated int64 itemIds = 1;
   int64 dynId = 2;
   int64 mid = 3;
-  MetaDataCtrl meta = 4;
+  com.bapis.bilibili.dynamic.common.MetaDataCtrl meta = 4;
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/GoodsAttachCardPreviewRsp.java
@@ -626,9 +628,9 @@ message HotSearchRsp {
 message ICreateGoodsReplySyncReq {
   int64 uid = 1;
   int64 goodsId = 2;
-  CreateContent content = 3;
-  CreateScene scene = 4;
-  repeated CreatePic pics = 5;
+  com.bapis.bilibili.dynamic.common.CreateContent content = 3;
+  com.bapis.bilibili.dynamic.common.CreateScene scene = 4;
+  repeated com.bapis.bilibili.dynamic.common.CreatePic pics = 5;
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ICreateResp.java
@@ -686,15 +688,15 @@ message NearbyPoiListRsp {
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/OpusArticleDraftListReq.java
 message OpusArticleDraftListReq {
-  Page page = 1;
+  com.bapis.bilibili.dynamic.common.Page page = 1;
   string editorVersion = 2;
   string keyword = 3;
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/OpusArticleDraftListRsp.java
 message OpusArticleDraftListRsp {
-  repeated DraftMeta drafts = 1;
-  Page page = 2;
+  repeated com.bapis.bilibili.dynamic.common.DraftMeta drafts = 1;
+  com.bapis.bilibili.dynamic.common.Page page = 2;
   string draftUrl = 3;
   repeated string keywords = 4;
 }
@@ -706,7 +708,7 @@ message OpusArticleDraftViewReq {
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/OpusArticleDraftViewRsp.java
 message OpusArticleDraftViewRsp {
-  DraftMeta draft = 1;
+  com.bapis.bilibili.dynamic.common.DraftMeta draft = 1;
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/OpusCollection.java
@@ -810,7 +812,7 @@ message RecommendPoiRsp {
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ReprintOpusToTribeeReq.java
 message ReprintOpusToTribeeReq {
-  UserCreateMeta meta = 1;
+  com.bapis.bilibili.dynamic.common.UserCreateMeta meta = 1;
   int64 opusId = 2;
   int64 tribeeId = 3;
   int64 categoryId = 4;
@@ -902,12 +904,12 @@ message SetSpaceTopRsp {
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/SubmitCheckReq.java
 message SubmitCheckReq {
-  CreateContent content = 1;
-  repeated CreatePic pics = 2;
-  CreateAttachCard attachCard = 3;
-  CreateScene scene = 4;
-  CreateOption createOption = 5;
-  Opus opus = 6;
+  com.bapis.bilibili.dynamic.common.CreateContent content = 1;
+  repeated com.bapis.bilibili.dynamic.common.CreatePic pics = 2;
+  com.bapis.bilibili.dynamic.common.CreateAttachCard attachCard = 3;
+  com.bapis.bilibili.dynamic.common.CreateScene scene = 4;
+  com.bapis.bilibili.dynamic.common.CreateOption createOption = 5;
+  com.bapis.bilibili.dynamic.common.Opus opus = 6;
   string dynIdStr = 7;
 }
 

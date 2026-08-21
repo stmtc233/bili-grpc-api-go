@@ -3,11 +3,13 @@ syntax = "proto3";
 
 package com.bapis.bilibili.rpc;
 
+import "google/protobuf/any.proto";
+
 // Source: com/bapis/bilibili/rpc/Status.java
 message Status {
   int32 code = 1;
   string message_ = 2;
-  repeated Any details = 3;
+  repeated google.protobuf.Any details = 3;
 }
 
 

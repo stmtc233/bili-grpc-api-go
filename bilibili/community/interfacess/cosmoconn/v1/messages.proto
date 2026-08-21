@@ -3,6 +3,9 @@ syntax = "proto3";
 
 package com.bapis.bilibili.community.interfacess.cosmoconn.v1;
 
+import "bilibili/app/dynamic/v2/messages.proto";
+import "bilibili/dynamic/common/messages.proto";
+
 enum Action {
   ACTION_INVALID = 0;
   ACTION_THUMB = 1;
@@ -50,7 +53,7 @@ enum TribeeMemberStatus {
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AddTribeeDraftReq.java
 message AddTribeeDraftReq {
   int64 draftId = 1;
-  Opus opus = 2;
+  com.bapis.bilibili.dynamic.common.Opus opus = 2;
   TribeeDraftSetting setting = 3;
   string draftIdStr = 4;
 }
@@ -233,8 +236,8 @@ message JoinTribeeByInviteCodeReq {
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/JoinTribeeByInviteCodeRsp.java
 message JoinTribeeByInviteCodeRsp {
   JoinTribeeByInviteCodeResult result = 1;
-  ToastDialog toastDialog = 2;
-  GlobalPermissionType permType = 3;
+  com.bapis.bilibili.app.dynamic.v2.ToastDialog toastDialog = 2;
+  com.bapis.bilibili.app.dynamic.v2.GlobalPermissionType permType = 3;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/JoinTribeeByVisaReq.java
@@ -252,8 +255,8 @@ message JoinTribeeByVisaReq {
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/JoinTribeeByVisaRsp.java
 message JoinTribeeByVisaRsp {
   JoinTribeeByInviteCodeResult result = 1;
-  GlobalPermissionType permType = 2;
-  ToastDialog toastDialog = 3;
+  com.bapis.bilibili.app.dynamic.v2.GlobalPermissionType permType = 2;
+  com.bapis.bilibili.app.dynamic.v2.ToastDialog toastDialog = 3;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/JoinTribeeCandidatePoolReq.java
@@ -264,7 +267,7 @@ message JoinTribeeCandidatePoolReq {
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/JoinTribeeCandidatePoolRsp.java
 message JoinTribeeCandidatePoolRsp {
   string toast = 1;
-  GlobalPermissionType permType = 2;
+  com.bapis.bilibili.app.dynamic.v2.GlobalPermissionType permType = 2;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/Page.java
@@ -452,7 +455,7 @@ message TribeeDraftViewReq {
 message TribeeDraftViewRsp {
   int64 draftId = 1;
   string draftIdStr = 2;
-  Opus opus = 3;
+  com.bapis.bilibili.dynamic.common.Opus opus = 3;
   TribeeDraftSetting setting = 4;
 }
 
@@ -494,7 +497,7 @@ message TribeeManageGetAllCategoriesReq {
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeManageGetAllCategoriesRsp.java
 message TribeeManageGetAllCategoriesRsp {
-  repeated TribeeCategory categories = 1;
+  repeated com.bapis.bilibili.dynamic.common.TribeeCategory categories = 1;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeManageRejectThreadSelectedReq.java

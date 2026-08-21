@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.bilibili.pgc.gateway.player.v1;
 
+import "bilibili/app/playurl/v1/messages.proto";
+
 // Source: com/bapis/bilibili/pgc/gateway/player/v1/BusinessInfo.java
 message BusinessInfo {
   bool isPreview = 1;
@@ -74,7 +76,7 @@ message PlayAbilityConf {
 
 // Source: com/bapis/bilibili/pgc/gateway/player/v1/PlayViewReply.java
 message PlayViewReply {
-  VideoInfo videoInfo = 1;
+  com.bapis.bilibili.app.playurl.v1.VideoInfo videoInfo = 1;
   PlayAbilityConf playConf = 2;
   BusinessInfo business = 3;
   Event event = 4;
@@ -93,14 +95,14 @@ message PlayViewReq {
   string spmid = 9;
   string fromSpmid = 10;
   int32 teenagersMode = 11;
-  CodeType preferCodecType = 12;
+  com.bapis.bilibili.app.playurl.v1.CodeType preferCodecType = 12;
   bool isPreview = 13;
   int64 roomId = 14;
 }
 
 // Source: com/bapis/bilibili/pgc/gateway/player/v1/ProjectReply.java
 message ProjectReply {
-  PlayURLReply project = 1;
+  com.bapis.bilibili.app.playurl.v1.PlayURLReply project = 1;
 }
 
 // Source: com/bapis/bilibili/pgc/gateway/player/v1/ProjectReq.java

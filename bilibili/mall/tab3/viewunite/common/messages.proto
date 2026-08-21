@@ -3,6 +3,10 @@ syntax = "proto3";
 
 package com.bapis.bilibili.mall.tab3.viewunite.common;
 
+import "bilibili/dagw/component/avatar/v1/messages.proto";
+import "bilibili/pagination/messages.proto";
+import "google/protobuf/any.proto";
+
 enum AttentionRelationStatus {
   ARS_NONE = 0;
   ARS_N0RELATION = 1;
@@ -762,7 +766,7 @@ message OgvTitle {
 
 // Source: com/bapis/bilibili/mall/tab3/viewunite/common/Owner.java
 message Owner {
-  AvatarItem avatar = 1;
+  com.bapis.bilibili.dagw.component.avatar.v1.AvatarItem avatar = 1;
   string url = 2;
   string title = 3;
   string fans = 4;
@@ -919,7 +923,7 @@ message RelateCard {
     RelateSpecial special = 14;
   }
   RelateThreePoint threePoint = 10;
-  Any cmStock = 11;
+  google.protobuf.Any cmStock = 11;
   CardBasicInfo basicInfo = 12;
   enum CardCase {
     CARD_NOT_SET = 0;
@@ -940,7 +944,7 @@ message RelateCard {
 // Source: com/bapis/bilibili/mall/tab3/viewunite/common/RelateCMCard.java
 message RelateCMCard {
   int64 aid = 1;
-  Any sourceContent = 2;
+  google.protobuf.Any sourceContent = 2;
   int64 duration = 3;
   Stat stat = 4;
 }
@@ -949,7 +953,7 @@ message RelateCMCard {
 message RelateConfig {
   int64 validShowM = 1;
   int64 validShowN = 2;
-  Pagination pagination = 3;
+  com.bapis.bilibili.pagination.Pagination pagination = 3;
   bool canLoadMore = 4;
 }
 

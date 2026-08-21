@@ -3,6 +3,11 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.interfaces.v1;
 
+import "bilibili/app/archive/middleware/v1/messages.proto";
+import "bilibili/app/archive/v1/messages.proto";
+import "bilibili/app/card/v1/messages.proto";
+import "bilibili/app/dynamic/v2/messages.proto";
+
 enum ButType {
   BUT_INVALID = 0;
   BUT_REDIRECT = 1;
@@ -106,7 +111,7 @@ enum TranslateStatus {
 
 // Source: com/bapis/bilibili/app/interfaces/v1/Arc.java
 message Arc {
-  Arc archive = 1;
+  com.bapis.bilibili.app.archive.v1.Arc archive = 1;
   string uri = 2;
   string viewContent = 3;
   int64 iconType = 4;
@@ -143,11 +148,11 @@ message BigItem {
   UserCard userCard = 9;
   LikeButton likeButton = 10;
   int64 param = 11;
-  SharePlane sharePlane = 12;
-  PanelMeta threePointMeta = 13;
-  InlineProgressBar inlineProgressBar = 14;
+  com.bapis.bilibili.app.card.v1.SharePlane sharePlane = 12;
+  com.bapis.bilibili.app.card.v1.PanelMeta threePointMeta = 13;
+  com.bapis.bilibili.app.card.v1.InlineProgressBar inlineProgressBar = 14;
   int32 canPlay = 15;
-  PlayerArgs playerArgs = 16;
+  com.bapis.bilibili.app.card.v1.PlayerArgs playerArgs = 16;
   bool isFav = 17;
 }
 
@@ -321,7 +326,7 @@ message CursorReq {
   Cursor cursor = 1;
   string business = 2;
   PlayerPreloadParams playerPreload = 3;
-  PlayerArgs playerArgs = 4;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 4;
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/CursorTab.java
@@ -345,7 +350,7 @@ message CursorV2Req {
   Cursor cursor = 1;
   string business = 2;
   PlayerPreloadParams playerPreload = 3;
-  PlayerArgs playerArgs = 4;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 4;
   bool isLocal = 5;
 }
 
@@ -400,7 +405,7 @@ message DeviceType {
 
 // Source: com/bapis/bilibili/app/interfaces/v1/Dynamic.java
 message Dynamic {
-  DynamicItem dynamic = 1;
+  com.bapis.bilibili.app.dynamic.v2.DynamicItem dynamic = 1;
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/EnableOverseasTeenagersModeReply.java
@@ -581,7 +586,7 @@ message MediaVideoReq {
   int64 feedId = 3;
   string offset = 5;
   int32 ps = 6;
-  PlayerArgs playerArgs = 7;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 7;
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/ModeStatusReply.java
@@ -751,7 +756,7 @@ message SearchArchiveReq {
   int64 mid = 2;
   int64 pn = 3;
   int64 ps = 4;
-  PlayerArgs playerArgs = 5;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 5;
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/SearchDynamicReply.java
@@ -766,7 +771,7 @@ message SearchDynamicReq {
   int64 mid = 2;
   int64 pn = 3;
   int64 ps = 4;
-  PlayerArgs playerArgs = 5;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 5;
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/SearchReply.java

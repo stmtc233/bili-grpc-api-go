@@ -3,6 +3,12 @@ syntax = "proto3";
 
 package com.bapis.bilibili.mall.tab3.viewunite.v1;
 
+import "bilibili/app/archive/middleware/v1/messages.proto";
+import "bilibili/mall/tab3/viewunite/common/messages.proto";
+import "bilibili/pagination/messages.proto";
+import "bilibili/playershared/messages.proto";
+import "google/protobuf/any.proto";
+
 enum BizType {
   BizTypeNone = 0;
   BizTypeFollowVideo = 1;
@@ -92,7 +98,7 @@ message Arc {
   int64 aid = 1;
   int64 cid = 2;
   int64 duration = 3;
-  Stat stat = 4;
+  com.bapis.bilibili.mall.tab3.viewunite.common.Stat stat = 4;
   string bvid = 5;
   int32 copyright = 6;
   Rights right = 7;
@@ -103,7 +109,7 @@ message Arc {
 
 // Source: com/bapis/bilibili/mall/tab3/viewunite/v1/ArcRefreshReply.java
 message ArcRefreshReply {
-  Stat stat = 1;
+  com.bapis.bilibili.mall.tab3.viewunite.common.Stat stat = 1;
   SimpleReqUser reqUser = 2;
   SimpleArc arc = 3;
   Online online = 4;
@@ -175,9 +181,9 @@ message ChronosParam {
 
 // Source: com/bapis/bilibili/mall/tab3/viewunite/v1/CM.java
 message CM {
-  Any cmUnderPlayer = 1;
-  Any adsControl = 2;
-  repeated Any sourceContent = 3;
+  google.protobuf.Any cmUnderPlayer = 1;
+  google.protobuf.Any adsControl = 2;
+  repeated google.protobuf.Any sourceContent = 3;
 }
 
 // Source: com/bapis/bilibili/mall/tab3/viewunite/v1/CommandDm.java
@@ -250,12 +256,12 @@ message IconData {
 // Source: com/bapis/bilibili/mall/tab3/viewunite/v1/IntroductionTab.java
 message IntroductionTab {
   string title = 1;
-  repeated Module modules = 2;
+  repeated com.bapis.bilibili.mall.tab3.viewunite.common.Module modules = 2;
 }
 
 // Source: com/bapis/bilibili/mall/tab3/viewunite/v1/LikeConfig.java
 message LikeConfig {
-  UpLikeImg tripleLike = 1;
+  com.bapis.bilibili.mall.tab3.viewunite.common.UpLikeImg tripleLike = 1;
   string likeAnimation = 2;
 }
 
@@ -349,13 +355,13 @@ message PointMaterial {
 // Source: com/bapis/bilibili/mall/tab3/viewunite/v1/Relate.java
 message Relate {
   int64 deviceType = 1;
-  Pagination pagination = 2;
+  com.bapis.bilibili.pagination.Pagination pagination = 2;
 }
 
 // Source: com/bapis/bilibili/mall/tab3/viewunite/v1/RelatesFeedReply.java
 message RelatesFeedReply {
-  repeated RelateCard relates = 1;
-  Pagination pagination = 2;
+  repeated com.bapis.bilibili.mall.tab3.viewunite.common.RelateCard relates = 1;
+  com.bapis.bilibili.pagination.Pagination pagination = 2;
 }
 
 // Source: com/bapis/bilibili/mall/tab3/viewunite/v1/RelatesFeedReq.java
@@ -365,8 +371,8 @@ message RelatesFeedReq {
   string from = 3;
   string spmid = 4;
   string fromSpmid = 5;
-  PlayerArgs playerArgs = 6;
-  Pagination pagination = 7;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 6;
+  com.bapis.bilibili.pagination.Pagination pagination = 7;
   string sessionId = 8;
   int64 autoPlay = 9;
   string fromTrackId = 10;
@@ -454,7 +460,7 @@ message TabModule {
   oneof oneof_0 {
     IntroductionTab introduction = 2;
     ReplyTab reply = 3;
-    ActivityTab activityTab = 4;
+    com.bapis.bilibili.mall.tab3.viewunite.common.ActivityTab activityTab = 4;
   }
   enum TabCase {
     TAB_NOT_SET = 0;
@@ -510,7 +516,7 @@ message VideoViewPoint {
 
 // Source: com/bapis/bilibili/mall/tab3/viewunite/v1/ViewBase.java
 message ViewBase {
-  BizType bizType = 1;
+  com.bapis.bilibili.playershared.BizType bizType = 1;
   PageCategory pageType = 2;
   PageControl control = 3;
   ActivityResource activityResource = 4;
@@ -539,9 +545,9 @@ message ViewReply {
   ViewBase viewBase = 1;
   Arc arc = 2;
   ReqUser reqUser = 3;
-  Owner owner = 4;
+  com.bapis.bilibili.mall.tab3.viewunite.common.Owner owner = 4;
   Tab tab = 5;
-  Any supplement = 6;
+  google.protobuf.Any supplement = 6;
   CM cm = 7;
   ECode ecode = 8;
   ECodeConfig ecodeConfig = 9;
@@ -556,7 +562,7 @@ message ViewReq {
   string spmid = 4;
   string fromSpmid = 5;
   string sessionId = 6;
-  PlayerArgs playerArgs = 7;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 7;
   string trackId = 8;
   map<string, string> extraContent = 9;
   string playMode = 10;
