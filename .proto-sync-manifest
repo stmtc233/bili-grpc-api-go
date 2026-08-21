@@ -32,6 +32,7 @@ bilibili/app/im/v1/messages.proto
 bilibili/app/interfaces/v1/messages.proto
 bilibili/app/listener/v1/messages.proto
 bilibili/app/mine/v1/messages.proto
+bilibili/app/overseas/ad/v1/messages.proto
 bilibili/app/playeronline/v1/messages.proto
 bilibili/app/playerunite/pgcanymodel/messages.proto
 bilibili/app/playerunite/pugvanymodel/messages.proto

@@ -2326,6 +2326,7 @@ message VideoMentions {
   VideoMentionButton button = 2;
   string videoReq = 3;
   string title = 4;
+  map<string, string> ab = 5;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/common/VideoSeason.java
