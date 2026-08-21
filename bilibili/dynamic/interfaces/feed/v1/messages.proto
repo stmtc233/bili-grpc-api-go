@@ -397,7 +397,7 @@ message DelArticleDraftRsp {
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DynamicButtonClickReq.java
 message DynamicButtonClickReq {
-  repeated IntList bizType = 1;
+  repeated DynamicButtonClickBizType bizType = 1;
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DynamicButtonClickRsp.java
@@ -612,8 +612,13 @@ message HotSearchReq {
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/HotSearchRsp.java
 message HotSearchRsp {
-  repeated string items = 1;
-  int32 version = 2;
+  repeated HotSearchRsp_Item items = 1;
+  string version = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/HotSearchRsp.java
+message HotSearchRsp_Item {
+  string words = 1;
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ICreateGoodsReplySyncReq.java
@@ -935,7 +940,21 @@ message TribeePublishConfig {
 message TribeePublishText {
   string title = 1;
   string placeholder = 2;
-  string topTips = 3;
+  TribeePublishText_TopTips topTips = 3;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/TribeePublishText.java
+message TribeePublishText_TopTips {
+  string text = 2;
+  string icon = 3;
+  TribeePublishText_TopTips_Layer layer = 4;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/TribeePublishText.java
+message TribeePublishText_TopTips_Layer {
+  string title = 1;
+  string contentPicLight = 2;
+  string contentPicDark = 3;
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/TribeeVisaInfo.java

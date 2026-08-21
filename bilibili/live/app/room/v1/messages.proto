@@ -83,8 +83,33 @@ message GetStudioListReq {
 
 // Source: com/bapis/bilibili/live/app/room/v1/GetStudioListResp.java
 message GetStudioListResp {
-  string status = 1;
-  repeated int64 masterList = 2;
+  int64 status = 1;
+  repeated GetStudioListResp_StudioMaster masterList = 2;
+}
+
+// Source: com/bapis/bilibili/live/app/room/v1/GetStudioListResp.java
+message GetStudioListResp_Pendants {
+  GetStudioListResp_Pendants_Pendant frame = 1;
+  GetStudioListResp_Pendants_Pendant badge = 2;
+}
+
+// Source: com/bapis/bilibili/live/app/room/v1/GetStudioListResp.java
+message GetStudioListResp_Pendants_Pendant {
+  string name = 1;
+  int64 position = 2;
+  string value = 3;
+  string desc = 4;
+}
+
+// Source: com/bapis/bilibili/live/app/room/v1/GetStudioListResp.java
+message GetStudioListResp_StudioMaster {
+  int64 uid = 1;
+  int64 roomId = 2;
+  string uname = 3;
+  string face = 4;
+  GetStudioListResp_Pendants pendants = 5;
+  string tag = 6;
+  int64 tagType = 7;
 }
 
 // Source: com/bapis/bilibili/live/app/room/v1/InteractConnect.java
@@ -111,7 +136,7 @@ message InteractLayoutData {
 // Source: com/bapis/bilibili/live/app/room/v1/InteractMode.java
 message InteractMode {
   InteractModeType interactModeType = 1;
-  repeated IntList joinTypes = 2;
+  repeated InteractJoinType joinTypes = 2;
   int64 inviteTimeout = 3;
   int64 applyTimeout = 4;
   InteractPositionMode positionMode = 5;
@@ -129,11 +154,18 @@ message InteractSceneConfig {
 // Source: com/bapis/bilibili/live/app/room/v1/InteractTemplate.java
 message InteractTemplate {
   string templateId = 1;
-  string isVariableLayout = 2;
-  repeated int64 layoutList = 3;
-  int32 showInteractUi = 4;
-  int32 layoutId = 5;
-  int32 layoutData = 6;
+  bool isVariableLayout = 2;
+  repeated InteractTemplate_Layout layoutList = 3;
+  bool showInteractUi = 4;
+  string layoutId = 5;
+  InteractLayoutData layoutData = 6;
+}
+
+// Source: com/bapis/bilibili/live/app/room/v1/InteractTemplate.java
+message InteractTemplate_Layout {
+  string layoutId = 1;
+  string videoSize = 2;
+  int64 maxUsers = 3;
 }
 
 // Source: com/bapis/bilibili/live/app/room/v1/LayoutCell.java
@@ -169,9 +201,16 @@ message Members {
 
 // Source: com/bapis/bilibili/live/app/room/v1/MultiConnInfo.java
 message MultiConnInfo {
-  repeated int64 scores = 1;
+  repeated MultiConnInfo_Score scores = 1;
   int64 roomOwner = 2;
-  string showScore = 3;
+  int64 showScore = 3;
+}
+
+// Source: com/bapis/bilibili/live/app/room/v1/MultiConnInfo.java
+message MultiConnInfo_Score {
+  int64 uid = 1;
+  int64 price = 2;
+  string priceText = 3;
 }
 
 // Source: com/bapis/bilibili/live/app/room/v1/MultiConnInfoReq.java
@@ -183,12 +222,23 @@ message MultiConnInfoReq {
 
 // Source: com/bapis/bilibili/live/app/room/v1/MultiConnInfoResp.java
 message MultiConnInfoResp {
-  repeated int64 data = 1;
+  repeated MultiConnInfoResp_info data = 1;
   int64 invokingTime = 2;
-  string version = 3;
+  int64 version = 3;
   string layout = 4;
   int64 roomStatus = 5;
   string bizSessionId = 6;
+}
+
+// Source: com/bapis/bilibili/live/app/room/v1/MultiConnInfoResp.java
+message MultiConnInfoResp_info {
+  int64 uid = 1;
+  int64 roomId = 2;
+  string avatar = 3;
+  string nickname = 4;
+  int64 price = 5;
+  string priceText = 6;
+  int64 gender = 7;
 }
 
 // Source: com/bapis/bilibili/live/app/room/v1/Operator.java
@@ -255,9 +305,33 @@ message UniversalInfoResp {
 
 // Source: com/bapis/bilibili/live/app/room/v1/UserStreamControl.java
 message UserStreamControl {
-  int64 audioControl = 1;
-  UserStreamControlItem videoControl = 2;
-  int32 pubSubControl = 3;
+  UserStreamControl_UserStreamControlItem audioControl = 1;
+  UserStreamControl_UserStreamControlItem videoControl = 2;
+  UserStreamControl_PubSubControl pubSubControl = 3;
+}
+
+// Source: com/bapis/bilibili/live/app/room/v1/UserStreamControl.java
+message UserStreamControl_ExplicitSubMode {
+  int64 uid = 1;
+  SubMode subMode = 2;
+}
+
+// Source: com/bapis/bilibili/live/app/room/v1/UserStreamControl.java
+message UserStreamControl_PubSubControl {
+  PubStatus pubStatus = 1;
+  repeated UserStreamControl_ExplicitSubMode explicitSubUsers = 2;
+  int64 version = 3;
+  RtcResolution rtcResolution = 4;
+  map<int64, int32> subVideoIndex = 5;
+  RtcResolution rtcResolutionSimulcast = 6;
+}
+
+// Source: com/bapis/bilibili/live/app/room/v1/UserStreamControl.java
+message UserStreamControl_UserStreamControlItem {
+  MuteLocalMode muteLocalMode = 1;
+  repeated int64 muteRemoteUids = 2;
+  repeated int64 receiveUids = 3;
+  int64 version = 4;
 }
 
 

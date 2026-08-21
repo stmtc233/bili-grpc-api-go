@@ -81,14 +81,32 @@ message InteractLayoutData {
 
 // Source: com/bapis/bilibili/broadcast/live/universal_interact/InteractSceneConfiguration.java
 message InteractSceneConfiguration {
-  string interactMode = 1;
-  string interactTemplate = 2;
+  InteractMode interactMode = 1;
+  InteractSceneConfiguration_InteractTemplate interactTemplate = 2;
   int64 interactMaxUsers = 3;
   enum InteractMode {
     InteractModeB2B = 0;
     InteractModeB2C = 1;
   }
 
+}
+
+// Source: com/bapis/bilibili/broadcast/live/universal_interact/InteractSceneConfiguration.java
+message InteractSceneConfiguration_InteractTemplate {
+  string layout = 1;
+  string templateId = 2;
+  bool isVariableLayout = 3;
+  repeated InteractSceneConfiguration_InteractTemplate_Layout layoutList = 4;
+  bool showInteractUi = 5;
+  string layoutId = 6;
+  InteractLayoutData layoutData = 7;
+}
+
+// Source: com/bapis/bilibili/broadcast/live/universal_interact/InteractSceneConfiguration.java
+message InteractSceneConfiguration_InteractTemplate_Layout {
+  string layoutId = 1;
+  string videoSize = 2;
+  int64 maxUsers = 3;
 }
 
 // Source: com/bapis/bilibili/broadcast/live/universal_interact/LayoutCell.java
@@ -185,12 +203,31 @@ message UniversalInteractInvitationEvent {
 
 // Source: com/bapis/bilibili/broadcast/live/universal_interact/UniversalInteractJoinEvent.java
 message UniversalInteractJoinEvent {
-  uint64 config = 1;
-  int64 bizExtra = 2;
+  UniversalInteractJoinEvent_Config config = 1;
+  UniversalBizExtra bizExtra = 2;
   string traceId = 3;
-  string streamControl = 4;
-  string channelUsers = 5;
-  int64 reconnect = 6;
+  UniversalInteractStreamControl streamControl = 4;
+  repeated int64 channelUsers = 5;
+  bool reconnect = 6;
+}
+
+// Source: com/bapis/bilibili/broadcast/live/universal_interact/UniversalInteractJoinEvent.java
+message UniversalInteractJoinEvent_Config {
+  uint64 rtcChannelId = 1;
+  int64 uid = 2;
+  string buvid = 3;
+  string linkId = 4;
+  string joinToken = 5;
+  int64 waitRemoteTimeout = 6;
+  string bizLabel = 7;
+  string bizSessionId = 8;
+  bool enableAudio = 9;
+  bool enableVideo = 10;
+  bool enableExternalAudioCapture = 11;
+  bool enableExternalVideoCapture = 12;
+  PlayMode audioPlayMode = 13;
+  PlayMode videoPlayMode = 14;
+  SubMode defaultSubMode = 15;
 }
 
 // Source: com/bapis/bilibili/broadcast/live/universal_interact/UniversalInteractLeaveEvent.java
@@ -226,9 +263,9 @@ message UniversalInteractOperationEvent {
 
 // Source: com/bapis/bilibili/broadcast/live/universal_interact/UniversalInteractStreamControl.java
 message UniversalInteractStreamControl {
-  int64 audioControl = 1;
-  UserStreamControlItem videoControl = 2;
-  int32 pubSubControl = 3;
+  UniversalInteractStreamControl_UserStreamControlItem audioControl = 1;
+  UniversalInteractStreamControl_UserStreamControlItem videoControl = 2;
+  UniversalInteractStreamControl_PubSubControl pubSubControl = 3;
   enum MuteLocalMode {
     mute_mode_none = 0;
     mute_mode_packet = 1;
@@ -242,6 +279,31 @@ message UniversalInteractStreamControl {
     pub_status_all = 3;
   }
 
+}
+
+// Source: com/bapis/bilibili/broadcast/live/universal_interact/UniversalInteractStreamControl.java
+message UniversalInteractStreamControl_ExplicitSubMode {
+  int64 uid = 1;
+  SubMode subMode = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/live/universal_interact/UniversalInteractStreamControl.java
+message UniversalInteractStreamControl_PubSubControl {
+  UniversalInteractStreamControl.PubStatus pubStatus = 1;
+  repeated UniversalInteractStreamControl_ExplicitSubMode explicitSubUsers = 2;
+  int64 version = 3;
+  RtcResolution rtcResolution = 4;
+  map<int64, int32> subVideoIndex = 5;
+  RtcResolution rtcResolutionSimulcast = 6;
+}
+
+// Source: com/bapis/bilibili/broadcast/live/universal_interact/UniversalInteractStreamControl.java
+message UniversalInteractStreamControl_UserStreamControlItem {
+  UniversalInteractStreamControl.MuteLocalMode muteLocalMode = 1;
+  repeated int64 muteRemoteUids = 2;
+  repeated int64 receiveUids = 3;
+  int64 version = 4;
+  int64 operatorUid = 5;
 }
 
 // Source: com/bapis/bilibili/broadcast/live/universal_interact/UniversalInteractStreamControlEvent.java

@@ -376,8 +376,20 @@ message ChatBubbleWidget {
 
 // Source: com/bapis/bilibili/app/im/v1/ChatHintMessages.java
 message ChatHintMessages {
-  PushInfoMessage pushInfoMessage = 1;
-  PushSettingChangedMessage pushSettingChangedMessage = 2;
+  ChatHintMessages_PushInfoMessage pushInfoMessage = 1;
+  ChatHintMessages_PushSettingChangedMessage pushSettingChangedMessage = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ChatHintMessages.java
+message ChatHintMessages_PushInfoMessage {
+  com.bapis.bilibili.app.dynamic.v2.Paragraph pushInfo1 = 1;
+  com.bapis.bilibili.app.dynamic.v2.Paragraph pushInfo2 = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/ChatHintMessages.java
+message ChatHintMessages_PushSettingChangedMessage {
+  com.bapis.bilibili.app.dynamic.v2.Paragraph enabled = 1;
+  com.bapis.bilibili.app.dynamic.v2.Paragraph disabled = 2;
 }
 
 // Source: com/bapis/bilibili/app/im/v1/ChatInfoReply.java
@@ -749,11 +761,23 @@ message MsgBuildDepInfoReply {
 
 // Source: com/bapis/bilibili/app/im/v1/MsgBuildDepInfoReq.java
 message MsgBuildDepInfoReq {
-  int64 mode = 1;
-  long mid = 2;
-  int32 vmid = 3;
-  int32 fetchMessage = 4;
-  int32 msgBuild = 5;
+  int32 mode = 1;
+  int64 mid = 2;
+  int64 vmid = 3;
+  MsgBuildDepInfoReq_FetchMsgReq fetchMessage = 4;
+  MsgBuildDepInfoReq_MsgBuildReq msgBuild = 5;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/MsgBuildDepInfoReq.java
+message MsgBuildDepInfoReq_FetchMsgReq {
+  int64 beginSequenceNumber = 1;
+  FetchDirection direction = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/MsgBuildDepInfoReq.java
+message MsgBuildDepInfoReq_MsgBuildReq {
+  repeated int64 msgIds = 1;
+  repeated int64 seqNos = 2;
 }
 
 // Source: com/bapis/bilibili/app/im/v1/MsgFrame.java

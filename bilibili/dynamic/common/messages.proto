@@ -11,7 +11,7 @@ enum AttachCardType {
   ATTACH_CARD_VOTE = 2;
   ATTACH_CARD_UGC = 3;
   ATTACH_CARD_ACTIVITY = 4;
-  ATTACH_CARD_OFFICIAL_ACTIVITY = 5;
+  ATTACH_CARD_TYPE_ATTACH_CARD_OFFICIAL_ACTIVITY = 5;
   ATTACH_CARD_TOPIC = 6;
   ATTACH_CARD_OGV = 7;
   ATTACH_CARD_AUTO_OGV = 8;
@@ -32,22 +32,22 @@ enum AttachCardType {
 enum ContentType {
   CONTENT_TYPE_NONE = 0;
   TEXT = 1;
-  AT = 2;
-  LOTTERY = 3;
-  VOTE = 4;
+  CONTENT_TYPE_AT = 2;
+  CONTENT_TYPE_LOTTERY = 3;
+  CONTENT_TYPE_VOTE = 4;
   TOPIC = 5;
-  GOODS = 6;
+  CONTENT_TYPE_GOODS = 6;
   BV = 7;
   AV = 8;
   EMOJI = 9;
   USER = 10;
-  CV = 11;
+  CONTENT_TYPE_CV = 11;
   VC = 12;
   WEB = 13;
   TAOBAO = 14;
-  MAIL = 15;
+  CONTENT_TYPE_MAIL = 15;
   OGV_SEASON = 16;
-  OGV_EP = 17;
+  CONTENT_TYPE_OGV_EP = 17;
 }
 
 enum CreateInitCheckScene {
@@ -93,24 +93,24 @@ enum OpusBizType {
   DEFAULT = 0;
   VIDEO = 1;
   RESERVE = 2;
-  VOTE = 3;
+  OPUS_BIZ_TYPE_VOTE = 3;
   LIVE = 4;
-  LOTTERY = 5;
+  OPUS_BIZ_TYPE_LOTTERY = 5;
   MATCH = 6;
-  GOODS = 7;
+  OPUS_BIZ_TYPE_GOODS = 7;
   OGV_SS = 8;
-  OGV_EP = 9;
+  OPUS_BIZ_TYPE_OGV_EP = 9;
   MANGA = 10;
   CHEESE = 11;
   VIDEO_TS = 12;
-  AT = 13;
+  OPUS_BIZ_TYPE_AT = 13;
   HASH_TAG = 14;
-  CV = 15;
+  OPUS_BIZ_TYPE_CV = 15;
   URL = 16;
-  MAIL = 17;
+  OPUS_BIZ_TYPE_MAIL = 17;
   LBS = 18;
   ACTIVITY = 19;
-  ATTACH_CARD_OFFICIAL_ACTIVITY = 20;
+  OPUS_BIZ_TYPE_ATTACH_CARD_OFFICIAL_ACTIVITY = 20;
   GAME = 21;
   DECORATION = 22;
   UP_TOPIC = 23;
@@ -747,22 +747,32 @@ message LineParagraph {
 
 // Source: com/bapis/bilibili/dynamic/common/LinkNode.java
 message LinkNode {
-  bool showText = 1;
-  bool link = 2;
-  bool icon = 3;
-  bool iconSuffix = 4;
-  double linkType = 5;
-  int32 bizId = 6;
-  string videoTs = 7;
-  int32 style = 8;
-  repeated int32 pics = 9;
-  int32 bgStyle = 10;
-  int32 contentCard = 11;
-  int32 hashTagType = 12;
+  string showText = 1;
+  string link = 2;
+  string icon = 3;
+  string iconSuffix = 4;
+  OpusBizType linkType = 5;
+  string bizId = 6;
+  VideoTs videoTs = 7;
+  LinkNode_LinkNodeStyle style = 8;
+  repeated Pic pics = 9;
+  BgStyle bgStyle = 10;
+  ContentLinkCard contentCard = 11;
+  HashTagType hashTagType = 12;
   enum HashTagType {
     DEFAULT = 0;
   }
 
+}
+
+// Source: com/bapis/bilibili/dynamic/common/LinkNode.java
+message LinkNode_LinkNodeStyle {
+  bool bold = 1;
+  bool italic = 2;
+  bool strikethrough = 3;
+  bool underline = 4;
+  double fontSize = 5;
+  string fontLevel = 7;
 }
 
 // Source: com/bapis/bilibili/dynamic/common/LiveWaterMark.java
@@ -926,13 +936,13 @@ message Page {
 
 // Source: com/bapis/bilibili/dynamic/common/Paragraph.java
 message Paragraph {
-  int32 paraType = 1;
-  int32 format = 2;
-  int32 text = 3;
-  int32 pic = 4;
-  int32 line = 5;
-  int32 linkCard = 6;
-  int32 code = 7;
+  ParagraphType paraType = 1;
+  Paragraph_ParagraphFormat format = 2;
+  TextParagraph text = 3;
+  PicParagraph pic = 4;
+  LineParagraph line = 5;
+  CardParagraph linkCard = 6;
+  CodeParagraph code = 7;
   enum HeadingType {
     H_DEFAULT = 0;
     H1 = 1;
@@ -959,6 +969,40 @@ message Paragraph {
     HEADING = 9;
   }
 
+}
+
+// Source: com/bapis/bilibili/dynamic/common/Paragraph.java
+message Paragraph_IndentFormat {
+  int32 firstLineIndent = 1;
+  int32 indent = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/common/Paragraph.java
+message Paragraph_ListFormat {
+  int32 level = 1;
+  int32 order = 2;
+  string theme = 3;
+  Paragraph_ListFormat_OrderStyle orderStyle = 4;
+}
+
+// Source: com/bapis/bilibili/dynamic/common/Paragraph.java
+message Paragraph_ListFormat_OrderStyle {
+  bool bold = 1;
+  bool italic = 2;
+  bool strikethrough = 3;
+  bool underline = 4;
+  string fontLevel = 5;
+  Colors colors = 6;
+  BgStyle bgStyle = 7;
+}
+
+// Source: com/bapis/bilibili/dynamic/common/Paragraph.java
+message Paragraph_ParagraphFormat {
+  Paragraph.ParagraphAlign align = 1;
+  Paragraph_ListFormat listFormat = 2;
+  Paragraph_IndentFormat indent = 3;
+  string combineHash = 4;
+  Paragraph.HeadingType headingType = 5;
 }
 
 // Source: com/bapis/bilibili/dynamic/common/PermissionsWeb.java
@@ -1279,15 +1323,23 @@ message VideoTs {
 
 // Source: com/bapis/bilibili/dynamic/common/WordNode.java
 message WordNode {
-  bool words = 1;
-  bool fontSize = 2;
-  bool color = 3;
-  bool darkColor = 4;
-  int32 style = 5;
-  int32 fontLevel = 7;
-  int32 translatedWords = 8;
-  int32 bgStyle = 9;
-  int32 biliTheme = 10;
+  string words = 1;
+  double fontSize = 2;
+  string color = 3;
+  string darkColor = 4;
+  WordNode_WordNodeStyle style = 5;
+  string fontLevel = 7;
+  string translatedWords = 8;
+  BgStyle bgStyle = 9;
+  string biliTheme = 10;
+}
+
+// Source: com/bapis/bilibili/dynamic/common/WordNode.java
+message WordNode_WordNodeStyle {
+  bool bold = 1;
+  bool italic = 2;
+  bool strikethrough = 3;
+  bool underline = 4;
 }
 
 

@@ -419,7 +419,7 @@ message WindowOption {
   string title = 2;
   string url = 3;
   WindowOptionAction action = 4;
-  repeated IntList tags = 5;
+  repeated WindowOptionTag tags = 5;
   bool isClickReport = 6;
   string clickReportId = 7;
   WindowOptionMessageExtra messageExtra = 8;

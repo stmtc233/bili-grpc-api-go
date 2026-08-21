@@ -330,7 +330,7 @@ message ArcConf {
   bool isSupport = 1;
   bool disabled = 2;
   ExtraContent extraContent = 3;
-  repeated IntList unsupportScene = 4;
+  repeated UnsupportScene unsupportScene = 4;
   UnsupportState unsupportState = 5;
 }
 

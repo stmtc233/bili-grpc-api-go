@@ -158,7 +158,14 @@ message FeedCardTask {
 // Source: com/bapis/bilibili/app/topic/v1/FeedCardUserRating.java
 message FeedCardUserRating {
   string title = 1;
-  repeated string options = 2;
+  repeated FeedCardUserRating_UserRatingOption options = 2;
+}
+
+// Source: com/bapis/bilibili/app/topic/v1/FeedCardUserRating.java
+message FeedCardUserRating_UserRatingOption {
+  string icon = 1;
+  string text = 2;
+  FeedCardUserRatingOptionType type = 3;
 }
 
 // Source: com/bapis/bilibili/app/topic/v1/FoldCardItem.java

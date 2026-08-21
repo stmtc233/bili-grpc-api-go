@@ -27,10 +27,16 @@ enum LiveMultiVoiceRole {
 message BattleInfo {
   int64 pkid = 1;
   int64 status = 2;
-  int32 battletype = 3;
-  int32 timestamp = 4;
-  int32 initinfo = 5;
-  int32 matchinfo = 6;
+  int64 battletype = 3;
+  int64 timestamp = 4;
+  bytes initinfo = 5;
+  bytes matchinfo = 6;
+}
+
+// Source: com/bapis/bilibili/broadcast/live/voice_room/BattleInfo.java
+message BattleInfo_roomInfo {
+  int64 roomid = 1;
+  int64 votes = 2;
 }
 
 // Source: com/bapis/bilibili/broadcast/live/voice_room/LiveBaseOperateEvent.java

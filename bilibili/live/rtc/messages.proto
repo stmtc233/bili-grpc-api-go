@@ -91,7 +91,7 @@ message BAPILiveRTCTokenProto_TurnAddr {
   string username = 1;
   string password = 2;
   repeated string addr = 3;
-  repeated IntList protocol = 4;
+  repeated BAPILiveRTCTokenProto_TurnProtocol protocol = 4;
   bool turnOnly = 5;
 }
 

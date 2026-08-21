@@ -14,10 +14,21 @@ message GenWebTicketRequest {
 // Source: com/bapis/bilibili/api/ticket/v1/GenWebTicketResponse.java
 message GenWebTicketResponse {
   string ticket = 1;
-  int32 createdAt = 2;
-  int32 ttl = 3;
-  int32 context = 4;
-  int32 nav = 5;
+  int64 createdAt = 2;
+  int64 ttl = 3;
+  GenWebTicketResponse_Context context = 4;
+  GenWebTicketResponse_Nav nav = 5;
+}
+
+// Source: com/bapis/bilibili/api/ticket/v1/GenWebTicketResponse.java
+message GenWebTicketResponse_Context {
+  string vVoucher = 1;
+}
+
+// Source: com/bapis/bilibili/api/ticket/v1/GenWebTicketResponse.java
+message GenWebTicketResponse_Nav {
+  string img = 1;
+  string sub = 2;
 }
 
 // Source: com/bapis/bilibili/api/ticket/v1/GetTicketRequest.java
@@ -31,9 +42,14 @@ message GetTicketRequest {
 // Source: com/bapis/bilibili/api/ticket/v1/GetTicketResponse.java
 message GetTicketResponse {
   string ticket = 1;
-  int32 createdAt = 2;
-  int32 ttl = 3;
-  int32 context = 4;
+  int64 createdAt = 2;
+  int64 ttl = 3;
+  GetTicketResponse_Context context = 4;
+}
+
+// Source: com/bapis/bilibili/api/ticket/v1/GetTicketResponse.java
+message GetTicketResponse_Context {
+  string vVoucher = 1;
 }
 
 

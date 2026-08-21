@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.bilibili.main.community.reply.v2;
 
+import "google/protobuf/wrappers.proto";
+
 enum EditorIconState {
   EditorIconState_DEFAULT = 0;
   EditorIconState_ENABLE = 1;
@@ -49,9 +51,9 @@ message Emote {
 // Source: com/bapis/bilibili/main/community/reply/v2/EmptyPage.java
 message EmptyPage {
   string imageUrl = 1;
-  repeated Text texts = 2;
-  int32 leftButton = 3;
-  int32 rightButton = 4;
+  repeated EmptyPage_Text texts = 2;
+  EmptyPage_Button leftButton = 3;
+  EmptyPage_Button rightButton = 4;
   enum Action {
     UNAVAILABLE = 0;
     SHOW_KEYBOARD = 1;
@@ -60,9 +62,29 @@ message EmptyPage {
 
 }
 
+// Source: com/bapis/bilibili/main/community/reply/v2/EmptyPage.java
+message EmptyPage_Button {
+  string title = 1;
+  EmptyPage.Action action = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v2/EmptyPage.java
+message EmptyPage_Text {
+  string raw = 1;
+  TextStyle style = 2;
+  EmptyPage.Action action = 3;
+}
+
 // Source: com/bapis/bilibili/main/community/reply/v2/GuideText.java
 message GuideText {
-  repeated string texts = 1;
+  repeated GuideText_Text texts = 1;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v2/GuideText.java
+message GuideText_Text {
+  string raw = 1;
+  TextStyle style = 2;
+  string link = 3;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v2/PlayerParams.java
@@ -93,19 +115,79 @@ message RichText {
 
 // Source: com/bapis/bilibili/main/community/reply/v2/SubjectDescriptionReply.java
 message SubjectDescriptionReply {
-  bool count = 1;
-  repeated InputConfig input = 2;
-  int32 emote = 3;
-  int32 emptyPage = 4;
-  repeated int32 supportFilterTags = 5;
-  repeated int32 preloadResUrls = 6;
-  repeated int32 userCallbacks = 7;
-  int32 upMid = 8;
-  repeated int32 preloadResources = 9;
-  int32 guestLimit = 10;
-  int32 filterGuideText = 11;
-  int32 upFilterLink = 12;
-  int32 webUpFilterLink = 13;
+  int64 count = 1;
+  SubjectDescriptionReply_InputConfig input = 2;
+  SubjectDescriptionReply_EmoteConfig emote = 3;
+  EmptyPage emptyPage = 4;
+  repeated SubjectDescriptionReply_FilterTag supportFilterTags = 5;
+  repeated string preloadResUrls = 6;
+  repeated UserCallback userCallbacks = 7;
+  int64 upMid = 8;
+  repeated Resource preloadResources = 9;
+  bool guestLimit = 10;
+  GuideText filterGuideText = 11;
+  string upFilterLink = 12;
+  string webUpFilterLink = 13;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v2/SubjectDescriptionReply.java
+message SubjectDescriptionReply_EmoteConfig {
+  bool jumpEmoteDisabled = 1;
+  repeated Emote suggestEmotes = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v2/SubjectDescriptionReply.java
+message SubjectDescriptionReply_FilterTag {
+  int64 id = 1;
+  string title = 2;
+  string eventId = 3;
+  bool supportPicList = 4;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v2/SubjectDescriptionReply.java
+message SubjectDescriptionReply_InputConfig {
+  bool disabled = 1;
+  string rootText = 2;
+  string childText = 3;
+  string giveUpText = 4;
+  SubjectDescriptionReply_InputConfig_EditorIconConfig editorIconConfig = 5;
+  SubjectDescriptionReply_InputConfig_GradePanel gradePanel = 6;
+  SubjectDescriptionReply_InputConfig_FunctionButtonGroup funcButtons = 7;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v2/SubjectDescriptionReply.java
+message SubjectDescriptionReply_InputConfig_EditorIconConfig {
+  EditorIconState screenshotIconState = 1;
+  EditorIconState uploadPictureIconState = 2;
+  EditorIconState voteIconState = 3;
+  EditorIconState noteIconState = 4;
+  EditorIconState goodsIconState = 5;
+  EditorIconState insertContentIconState = 6;
+  EditorIconState elecIconState = 7;
+  EditorIconState cmBizHelperIconState = 8;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v2/SubjectDescriptionReply.java
+message SubjectDescriptionReply_InputConfig_FunctionButton {
+  FunctionButtonType type = 1;
+  string name = 2;
+  EditorIconState state = 3;
+  string link = 4;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v2/SubjectDescriptionReply.java
+message SubjectDescriptionReply_InputConfig_FunctionButtonGroup {
+  repeated SubjectDescriptionReply_InputConfig_FunctionButton buttons = 1;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v2/SubjectDescriptionReply.java
+message SubjectDescriptionReply_InputConfig_GradePanel {
+  string promptText = 1;
+  repeated SubjectDescriptionReply_InputConfig_GradePanel_Grade grades = 2;
+  repeated SubjectDescriptionReply_InputConfig_GradePanel_CidGradeGroup cidGradeGroups = 3;
+  SubjectDescriptionReply_InputConfig_GradePanel_Grade singleGrade = 4;
+  GradeType gradeType = 5;
+  string replyAddReportParams = 6;
   enum GradeType {
     UNKNOWN = 0;
     S13 = 1;
@@ -113,6 +195,25 @@ message SubjectDescriptionReply {
     OGV = 3;
   }
 
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v2/SubjectDescriptionReply.java
+message SubjectDescriptionReply_InputConfig_GradePanel_CidGradeGroup {
+  int64 cid = 1;
+  string title = 2;
+  repeated SubjectDescriptionReply_InputConfig_GradePanel_Grade grades = 3;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v2/SubjectDescriptionReply.java
+message SubjectDescriptionReply_InputConfig_GradePanel_Grade {
+  int64 id = 1;
+  string image = 2;
+  string title = 3;
+  google.protobuf.Int32Value defaultScore = 4;
+  bool disableZero = 5;
+  string gradePrompt = 6;
+  repeated RichText richTitle = 7;
+  repeated RichText richSubtitle = 8;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v2/SubjectDescriptionReq.java

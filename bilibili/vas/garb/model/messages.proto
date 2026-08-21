@@ -13,9 +13,22 @@ message FanNumColorFormat {
 
 // Source: com/bapis/bilibili/vas/garb/model/ImageGroup.java
 message ImageGroup {
-  string type = 1;
-  int64 effectVisual = 2;
-  bool cardGame = 3;
+  int64 type = 1;
+  ImageGroup_VisualEffect effectVisual = 2;
+  ImageGroup_CardGame cardGame = 3;
+}
+
+// Source: com/bapis/bilibili/vas/garb/model/ImageGroup.java
+message ImageGroup_CardGame {
+  string numberQualifier = 1;
+  int64 gradeLevel = 2;
+  bool isTopLevel = 3;
+}
+
+// Source: com/bapis/bilibili/vas/garb/model/ImageGroup.java
+message ImageGroup_VisualEffect {
+  string medalImage = 1;
+  string colorTheme = 2;
 }
 
 // Source: com/bapis/bilibili/vas/garb/model/UserCardBG.java

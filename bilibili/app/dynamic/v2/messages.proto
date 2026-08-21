@@ -1768,38 +1768,51 @@ message Config {
 // Source: com/bapis/bilibili/app/dynamic/v2/ContentCommentCard.java
 message ContentCommentCard {
   int64 id = 1;
-  string source = 2;
-  bool content = 3;
-  bool link = 4;
-  int32 parentComment = 5;
-  int32 user = 6;
-  int32 thumbup = 7;
-  repeated int32 pics = 8;
-  int32 cardType = 9;
+  CommentSource source = 2;
+  TextParagraph content = 3;
+  string link = 4;
+  CommentSimpleInfo parentComment = 5;
+  BasicUserInfoV2 user = 6;
+  ContentCommentCard_ThumbUpContent thumbup = 7;
+  repeated MdlDynDrawItem pics = 8;
+  string cardType = 9;
   int32 defaultShowLines = 10;
-  int32 linkShowText = 11;
-  int32 picMode = 12;
+  string linkShowText = 11;
+  MdlDynDrawItem picMode = 12;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/ContentCommentCard.java
+message ContentCommentCard_ThumbUpContent {
+  int64 count = 1;
+  string text = 2;
+  bool isThumbup = 3;
+  bool isUpThumbup = 4;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/ContentOpusCard.java
 message ContentOpusCard {
-  long opusId = 1;
-  int32 title = 2;
-  int32 content = 3;
-  int32 jumpUrl = 4;
-  int32 authorName = 5;
-  int32 publishText = 6;
-  int32 view = 7;
-  int32 reply = 9;
-  repeated int32 pics = 10;
-  int32 badge = 11;
-  int32 cardType = 12;
-  int32 linkShowText = 13;
-  int32 isOnlyFans = 14;
-  int32 cardBadge = 15;
-  int32 block = 16;
-  int32 like = 17;
-  int32 summary = 18;
+  int64 opusId = 1;
+  string title = 2;
+  string content = 3;
+  string jumpUrl = 4;
+  string authorName = 5;
+  string publishText = 6;
+  string view = 7;
+  string reply = 9;
+  repeated MdlDynDrawItem pics = 10;
+  string badge = 11;
+  string cardType = 12;
+  string linkShowText = 13;
+  bool isOnlyFans = 14;
+  ContentOpusCard_CardBadge cardBadge = 15;
+  OnlyFansBlock block = 16;
+  string like = 17;
+  string summary = 18;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/ContentOpusCard.java
+message ContentOpusCard_CardBadge {
+  IconBadge iconBadge = 1;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/ContentUpCard.java
@@ -1814,27 +1827,27 @@ message ContentUpCard {
 
 // Source: com/bapis/bilibili/app/dynamic/v2/ContentVideoCard.java
 message ContentVideoCard {
-  string avid = 1;
-  int32 cid = 2;
+  int64 avid = 1;
+  int64 cid = 2;
   int64 epid = 3;
-  int32 bvid = 4;
-  int32 cover = 5;
-  int32 uri = 6;
-  int32 jumpUrl = 7;
-  int32 title = 8;
-  int32 desc = 9;
-  repeated int32 statInfos = 10;
-  int32 badge = 11;
-  int32 mediaType = 12;
-  int32 videoTs = 13;
-  int32 playIcon = 14;
-  int32 cardType = 15;
-  int32 dimension = 16;
-  int32 ssid = 17;
-  int32 isOnlyFans = 18;
-  int32 authorName = 19;
-  int32 publishText = 20;
-  int32 summary = 21;
+  string bvid = 4;
+  string cover = 5;
+  string uri = 6;
+  string jumpUrl = 7;
+  string title = 8;
+  string desc = 9;
+  repeated ContentVideoCard_StatInfo statInfos = 10;
+  VideoBadge badge = 11;
+  MediaType mediaType = 12;
+  VideoTs videoTs = 13;
+  string playIcon = 14;
+  string cardType = 15;
+  Dimension dimension = 16;
+  int64 ssid = 17;
+  bool isOnlyFans = 18;
+  string authorName = 19;
+  string publishText = 20;
+  string summary = 21;
   enum StatInfoType {
     STAT_INFO_NONE = 0;
     VIDEO_VIEW_INFO = 1;
@@ -1842,6 +1855,13 @@ message ContentVideoCard {
     VIDEO_REPLY_INFO = 3;
   }
 
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/ContentVideoCard.java
+message ContentVideoCard_StatInfo {
+  string text = 1;
+  int64 count = 3;
+  ContentVideoCard.StatInfoType type = 4;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/CooperationStaffListReq.java
@@ -3722,7 +3742,7 @@ message ModuleButtom {
   ModuleStat moduleStat = 1;
   bool commentBox = 2;
   string commentBoxMsg = 3;
-  repeated IntList interactionIcons = 4;
+  repeated InteractionIcon interactionIcons = 4;
   repeated InteractionFace faces = 5;
   enum InteractionIcon {
     ICON_INVALID = 0;
@@ -3879,20 +3899,26 @@ message ModuleFold {
 // Source: com/bapis/bilibili/app/dynamic/v2/ModuleHeadResource.java
 message ModuleHeadResource {
   string icon = 1;
-  string text = 2;
-  int32 suffix = 3;
-  int32 subtext = 4;
-  int32 type = 5;
-  int32 moduleId = 6;
-  int32 subModuleId = 7;
-  int32 moduleType = 8;
-  repeated int32 tribeeHeadInfos = 9;
+  ModuleHeadResource_LinkText text = 2;
+  string suffix = 3;
+  bytes subtext = 4;
+  ResourceType type = 5;
+  int64 moduleId = 6;
+  int64 subModuleId = 7;
+  string moduleType = 8;
+  repeated TribeeHeadInfo tribeeHeadInfos = 9;
   enum ResourceType {
     Default = 0;
     Topic = 1;
     Tribee = 2;
   }
 
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/ModuleHeadResource.java
+message ModuleHeadResource_LinkText {
+  string text = 1;
+  string url = 2;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/ModuleInteraction.java
@@ -4115,7 +4141,15 @@ message ModuleTopTag {
 
 // Source: com/bapis/bilibili/app/dynamic/v2/MultipleResourcesCard.java
 message MultipleResourcesCard {
-  repeated Resource resources = 1;
+  repeated MultipleResourcesCard_Resource resources = 1;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/MultipleResourcesCard.java
+message MultipleResourcesCard_Resource {
+  oneof oneof_0 {
+    ContentOpusCard opus = 1;
+    ContentVideoCard video = 2;
+  }
   enum ContentCase {
     CONTENT_NOT_SET = 0;
     OPUS = 1;
@@ -4546,23 +4580,25 @@ message PageOffset {
 
 // Source: com/bapis/bilibili/app/dynamic/v2/Paragraph.java
 message Paragraph {
-  double paraType = 1;
-  double paraFormat = 2;
-  int32 text = 3;
-  int32 pic = 4;
-  int32 line = 5;
-  int32 linkCard = 6;
-  int32 code = 7;
-  int32 jumpUrl = 8;
-  int32 table = 9;
+  ParagraphType paraType = 1;
+  Paragraph_ParagraphFormat paraFormat = 2;
+  oneof oneof_0 {
+    TextParagraph text = 3;
+    PicParagraph pic = 4;
+    LineParagraph line = 5;
+    CardParagraph linkCard = 6;
+    CodeParagraph code = 7;
+    TableParagraph table = 9;
+  }
+  string jumpUrl = 8;
   enum ContentCase {
     CONTENT_NOT_SET = 0;
-    TEXT = 3;
+    CONTENT_CASE_TEXT = 3;
     PIC = 4;
-    LINE = 5;
-    LINK_CARD = 6;
-    CODE = 7;
-    TABLE = 9;
+    CONTENT_CASE_LINE = 5;
+    CONTENT_CASE_LINK_CARD = 6;
+    CONTENT_CASE_CODE = 7;
+    CONTENT_CASE_TABLE = 9;
   }
 
   enum HeadingType {
@@ -4581,18 +4617,65 @@ message Paragraph {
 
   enum ParagraphType {
     INVALID = 0;
-    TEXT = 1;
+    PARAGRAPH_TYPE_TEXT = 1;
     PICTURES = 2;
-    LINE = 3;
+    PARAGRAPH_TYPE_LINE = 3;
     REFERENCE = 4;
     SORTED_LIST = 5;
     UNSORTED_LIST = 6;
-    LINK_CARD = 7;
-    CODE = 8;
+    PARAGRAPH_TYPE_LINK_CARD = 7;
+    PARAGRAPH_TYPE_CODE = 8;
     HEADING = 9;
-    TABLE = 10;
+    PARAGRAPH_TYPE_TABLE = 10;
   }
 
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/Paragraph.java
+message Paragraph_IndentFormat {
+  double firstLineIndent = 1;
+  double indent = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/Paragraph.java
+message Paragraph_ListFormat {
+  int32 level = 1;
+  int32 order = 2;
+  string theme = 3;
+  Paragraph_ListFormat_OrderStyle orderStyle = 4;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/Paragraph.java
+message Paragraph_ListFormat_OrderStyle {
+  bool bold = 1;
+  bool italic = 2;
+  bool strikethrough = 3;
+  bool underline = 4;
+  double fontSize = 5;
+  string fontLevel = 6;
+  int32 fontWeight = 7;
+  Colors color = 8;
+  BgStyle bgStyle = 9;
+  bool invisible = 10;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/Paragraph.java
+message Paragraph_ParagraphBaseStyle {
+  double fontSize = 1;
+  int32 fontWeight = 2;
+  Colors fontColor = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/Paragraph.java
+message Paragraph_ParagraphFormat {
+  Paragraph.ParagraphAlign align = 1;
+  Paragraph_ListFormat listFormat = 2;
+  int32 maxLines = 3;
+  Paragraph_IndentFormat indent = 4;
+  Paragraph_ParagraphBaseStyle baseStyle = 5;
+  string combineHash = 6;
+  Paragraph.HeadingType headingType = 7;
+  double blockquoteGap = 8;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/ParaSpacing.java
@@ -4829,10 +4912,21 @@ message RepostOpus2TribeeOptionsReq {
 // Source: com/bapis/bilibili/app/dynamic/v2/RepostOpus2TribeeOptionsResp.java
 message RepostOpus2TribeeOptionsResp {
   string headTips = 1;
-  repeated string items = 2;
-  bool confirmText = 3;
+  repeated OptionItem items = 2;
+  string confirmText = 3;
   string footTips = 4;
-  int64 params = 5;
+  RepostOpus2TribeeOptionsResp_RenderParams params = 5;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/RepostOpus2TribeeOptionsResp.java
+message RepostOpus2TribeeOptionsResp_RenderParams {
+  string faceUrl = 1;
+  string nickname = 2;
+  bool hasTitle = 3;
+  string defaultTribeeName = 4;
+  int64 defaultTribeeId = 5;
+  int64 remainCnt = 6;
+  int64 totalCnt = 7;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/RepostTribeeListReq.java
@@ -5065,23 +5159,23 @@ message SunflowerParsedItem {
   string linkText = 12;
   enum ContentCase {
     CONTENT_NOT_SET = 0;
-    UNKNOWN = 4;
+    CONTENT_CASE_UNKNOWN = 4;
     LINK = 5;
-    VIDEO = 6;
-    OPUS = 7;
-    EMOTE = 8;
-    COMMENT = 9;
-    UP = 11;
+    CONTENT_CASE_VIDEO = 6;
+    CONTENT_CASE_OPUS = 7;
+    CONTENT_CASE_EMOTE = 8;
+    CONTENT_CASE_COMMENT = 9;
+    CONTENT_CASE_UP = 11;
   }
 
   enum ParsedType {
-    UNKNOWN = 0;
+    PARSED_TYPE_UNKNOWN = 0;
     WHITELIST_URL = 1;
-    VIDEO = 2;
-    OPUS = 3;
-    EMOTE = 4;
-    COMMENT = 5;
-    UP = 6;
+    PARSED_TYPE_VIDEO = 2;
+    PARSED_TYPE_OPUS = 3;
+    PARSED_TYPE_EMOTE = 4;
+    PARSED_TYPE_COMMENT = 5;
+    PARSED_TYPE_UP = 6;
   }
 
 }
@@ -5128,18 +5222,18 @@ message TextNode {
   enum TextCase {
     TEXT_NOT_SET = 0;
     WORD = 3;
-    EMOTE = 4;
+    TEXT_CASE_EMOTE = 4;
     LINK = 5;
-    FORMULA = 6;
+    TEXT_CASE_FORMULA = 6;
   }
 
   enum TextNodeType {
     INVALID = 0;
     WORDS = 1;
-    EMOTE = 2;
+    TEXT_NODE_TYPE_EMOTE = 2;
     AT = 3;
     BIZ_LINK = 4;
-    FORMULA = 5;
+    TEXT_NODE_TYPE_FORMULA = 5;
   }
 
 }
@@ -5875,8 +5969,8 @@ message TribeeSearchAllReq {
 message TribeeSearchAllResp {
   repeated TribeeSearchCard contents = 1;
   com.bapis.bilibili.pagination.PaginationReply nextPage = 2;
-  repeated IntList possibleTypes = 3;
-  repeated IntList possibleOrders = 4;
+  repeated TribeeSearchType possibleTypes = 3;
+  repeated TribeeSearchOrder possibleOrders = 4;
   string qvId = 5;
   TribeeSearchTab tab = 6;
 }
@@ -5916,13 +6010,28 @@ message TribeeSearchCard {
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeSearchComment.java
 message TribeeSearchComment {
-  string id = 1;
-  string source = 2;
-  string content = 3;
-  int64 link = 4;
-  int32 user = 5;
-  int32 thumbup = 6;
+  int64 id = 1;
+  TribeeSearchComment_CommentSource source = 2;
+  TextParagraph content = 3;
+  string link = 4;
+  BasicUserInfoV2 user = 5;
+  TribeeSearchComment_Thumbup thumbup = 6;
   int32 defaultShowLines = 7;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeSearchComment.java
+message TribeeSearchComment_CommentSource {
+  string source = 1;
+  string title = 2;
+  string jumpUrl = 3;
+  int64 oid = 4;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeSearchComment.java
+message TribeeSearchComment_Thumbup {
+  int64 count = 1;
+  string text = 2;
+  bool isThumbup = 3;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeSearchDyn.java
@@ -5933,9 +6042,15 @@ message TribeeSearchDyn {
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeSearchTab.java
 message TribeeSearchTab {
-  repeated TribeeSearchTabItem items = 1;
-  repeated TribeeSearchType selectedType = 2;
-  int32 selectedOrder = 3;
+  repeated TribeeSearchTab_TribeeSearchTabItem items = 1;
+  TribeeSearchType selectedType = 2;
+  TribeeSearchOrder selectedOrder = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeSearchTab.java
+message TribeeSearchTab_TribeeSearchTabItem {
+  TribeeSearchType type = 1;
+  repeated TribeeSearchOrder orders = 2;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeSearchTips.java
@@ -5946,9 +6061,24 @@ message TribeeSearchTips {
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeSelectBox.java
 message TribeeSelectBox {
-  repeated string tribees = 1;
+  repeated TribeeSelectBox_Tribee tribees = 1;
   int64 selectedTribeeIdx = 2;
-  int32 selectedCategoryIdx = 3;
+  int64 selectedCategoryIdx = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeSelectBox.java
+message TribeeSelectBox_Category {
+  string name = 1;
+  int64 id = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeSelectBox.java
+message TribeeSelectBox_Tribee {
+  string name = 1;
+  int64 id = 2;
+  string picUrl = 3;
+  string desc = 4;
+  repeated TribeeSelectBox_Category categories = 5;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeSendInviteCodeOptionsReq.java
@@ -5959,17 +6089,46 @@ message TribeeSendInviteCodeOptionsReq {
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeSendInviteCodeOptionsResp.java
 message TribeeSendInviteCodeOptionsResp {
-  int32 selectMdlTitle = 1;
-  repeated string tribeeList = 2;
-  bytes inviteMdlTitle = 3;
-  repeated string inviteTypeItems = 4;
-  repeated int64 confirmBtnText = 5;
+  string selectMdlTitle = 1;
+  repeated TribeeSendInviteCodeOptionsResp_TribeeSelectItem tribeeList = 2;
+  string inviteMdlTitle = 3;
+  repeated TribeeSendInviteCodeOptionsResp_InviteTypeItem inviteTypeItems = 4;
+  string confirmBtnText = 5;
   enum InviteType {
     UNKNOWN = 0;
     GRANT_INVITE = 1;
     INVITE_JOIN = 2;
   }
 
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeSendInviteCodeOptionsResp.java
+message TribeeSendInviteCodeOptionsResp_InviteTypeItem {
+  TribeeSendInviteCodeOptionsResp.InviteType type = 1;
+  string text = 2;
+  TribeeSendInviteCodeOptionsResp_NoticeCardPreview noticePreview = 3;
+  string sendCountTitle = 4;
+  repeated int64 sendCountOptions = 5;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeSendInviteCodeOptionsResp.java
+message TribeeSendInviteCodeOptionsResp_NoticeCardPreview {
+  string title = 1;
+  string tips = 2;
+  string picUrl = 3;
+  double width = 4;
+  double height = 5;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeSendInviteCodeOptionsResp.java
+message TribeeSendInviteCodeOptionsResp_TribeeSelectItem {
+  int64 id = 1;
+  string title = 2;
+  string subTitle = 3;
+  string faceUrl = 4;
+  int64 codeCount = 5;
+  string tipsSend = 6;
+  string tipsUsed = 7;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeSortInfo.java
@@ -6493,15 +6652,29 @@ message WFItemDefault {
 
 // Source: com/bapis/bilibili/app/dynamic/v2/WordNode.java
 message WordNode {
-  double words = 1;
+  string words = 1;
   double fontSize = 2;
-  int32 color = 3;
-  int32 style = 4;
-  int32 underlineStyle = 5;
-  int32 fontLevel = 7;
+  Colors color = 3;
+  WordNode_WordNodeStyle style = 4;
+  WordNode_UnderlineStyle underlineStyle = 5;
+  string fontLevel = 7;
   int32 fontWeight = 8;
-  int32 bgStyle = 9;
-  int32 pressedBgStyle = 10;
+  BgStyle bgStyle = 9;
+  BgStyle pressedBgStyle = 10;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/WordNode.java
+message WordNode_UnderlineStyle {
+  double underlineWidth = 1;
+  Colors underlineColor = 2;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/WordNode.java
+message WordNode_WordNodeStyle {
+  bool bold = 1;
+  bool italic = 2;
+  bool strikethrough = 3;
+  bool underline = 4;
 }
 
 
