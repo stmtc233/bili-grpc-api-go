@@ -4115,9 +4115,7 @@ message ModuleTopTag {
 
 // Source: com/bapis/bilibili/app/dynamic/v2/MultipleResourcesCard.java
 message MultipleResourcesCard {
-  oneof oneof_0 {
-    repeated Resource resources = 1;
-  }
+  repeated Resource resources = 1;
   enum ContentCase {
     CONTENT_NOT_SET = 0;
     OPUS = 1;
