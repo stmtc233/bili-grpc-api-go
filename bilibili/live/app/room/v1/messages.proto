@@ -6,14 +6,12 @@ package com.bapis.bilibili.live.app.room.v1;
 enum Gender {
   Gender_Woman = 0;
   Gender_Man = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum InteractConnectType {
   InteractConnectTypeAll = 0;
   InteractConnectTypeOnlyVoice = 1;
   InteractConnectTypeOnlyVideo = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum InteractJoinType {
@@ -22,40 +20,34 @@ enum InteractJoinType {
   InteractJoinTypeApply = 2;
   InteractJoinTypeChannelLink = 3;
   InteractJoinTypePullUp = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum InteractModeType {
   InteractModeB2B = 0;
   InteractModeB2C = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum InteractPositionMode {
   InteractPositionModeDefault = 0;
   InteractPositionModeChronological = 1;
   InteractPositionModeCustom = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum LayoutCellOpen {
   LayoutCellOpenInvalid = 0;
   LayoutCellOpenVisible = 1;
   LayoutCellOpenInvisible = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum MuteLocalMode {
   mute_mode_none = 0;
   mute_mode_packet = 1;
   mute_mode_capture = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum PlayMode {
   play_mode_default = 0;
   play_mode_explicit = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum PubStatus {
@@ -63,21 +55,18 @@ enum PubStatus {
   pub_status_audio = 1;
   pub_status_video = 2;
   pub_status_all = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum RoomStatus {
   RoomStatusNotStart = 0;
   RoomStatusStarted = 1;
   RoomStatusEnded = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum SessionStatus {
   SessionStatusNotStart = 0;
   SessionStatusStarted = 1;
   SessionStatusEnded = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum SubMode {
@@ -85,7 +74,6 @@ enum SubMode {
   sub_mode_audio = 1;
   sub_mode_video = 2;
   sub_mode_all = 3;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/live/app/room/v1/GetStudioListReq.java

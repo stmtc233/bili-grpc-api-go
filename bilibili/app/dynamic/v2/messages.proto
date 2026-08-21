@@ -15,33 +15,28 @@ enum AddButtonBgStyle {
   fill = 0;
   stroke = 1;
   gray = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum AddButtonType {
   bt_none = 0;
   bt_jump = 1;
   bt_button = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum AdditionalButtonClickType {
   click_none = 0;
   click_up = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum AdditionalButtonStatus {
   none = 0;
   uncheck = 1;
   check = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum AdditionalShareShowType {
   st_none = 0;
   st_show = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum AdditionalType {
@@ -61,14 +56,12 @@ enum AdditionalType {
   additional_type_content_video = 13;
   additional_type_content_comment = 14;
   additional_type_content_up = 15;
-  UNRECOGNIZED = -1;
 }
 
 enum AdditionVoteState {
   addition_vote_state_none = 0;
   addition_vote_state_open = 1;
   addition_vote_state_close = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum AdditionVoteType {
@@ -76,34 +69,29 @@ enum AdditionVoteType {
   addition_vote_type_word = 1;
   addition_vote_type_pic = 2;
   addition_vote_type_default = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum AuthorBadgeStyle {
   AUTHOR_BADGE_STYLE_INVALID = 0;
   AUTHOR_BADGE_STYLE_GRAY_OUTLINE = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum CampusEntryType {
   NONE = 0;
   ENTRY_DYNAMIC = 1;
   ENTRY_HOME = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum CampusHomePageType {
   PAGE_MAJOR = 0;
   PAGE_SUBORDINATE = 1;
   PAGE_MAJOR_DETAIL = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum CampusMngAuditStatus {
   campus_mng_audit_none = 0;
   campus_mng_audit_in_process = 1;
   campus_mng_audit_failed = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum CampusMngItemType {
@@ -112,20 +100,17 @@ enum CampusMngItemType {
   campus_mng_badge = 2;
   campus_mng_slogan = 3;
   campus_mng_quiz = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum CampusMngQuizAction {
   campus_mng_quiz_act_list = 0;
   campus_mng_quiz_act_add = 1;
   campus_mng_quiz_act_del = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum CampusOnlineStatus {
   campus_online_offline = 0;
   campus_online_online = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum CampusRcmdReqFrom {
@@ -135,13 +120,11 @@ enum CampusRcmdReqFrom {
   CAMPUS_RCMD_FROM_HOME_MOMENT = 3;
   CAMPUS_RCMD_FROM_DYN_MOMENT = 4;
   CAMPUS_RCMD_FROM_PAGE_SUBORDINATE_MOMENT = 5;
-  UNRECOGNIZED = -1;
 }
 
 enum CampusReqFromType {
   DYNAMIC = 0;
   HOME = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum CampusTabType {
@@ -152,7 +135,6 @@ enum CampusTabType {
   campus_billboard = 4;
   campus_topic = 5;
   campues_other = 6;
-  UNRECOGNIZED = -1;
 }
 
 enum CommentSourceType {
@@ -160,7 +142,6 @@ enum CommentSourceType {
   COMMENT_SOURCE_TYPE_VIDEO = 1;
   COMMENT_SOURCE_TYPE_OPUS = 2;
   COMMENT_SOURCE_TYPE_SUB_COMMENT = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum CoverIcon {
@@ -175,7 +156,6 @@ enum CoverIcon {
   cover_icon_fav = 8;
   cover_icon_coin = 9;
   cover_icon_self_seen = 10;
-  UNRECOGNIZED = -1;
 }
 
 enum DescType {
@@ -198,19 +178,16 @@ enum DescType {
   desc_type_ogv_season = 16;
   desc_type_ogv_ep = 17;
   desc_type_search_word = 18;
-  UNRECOGNIZED = -1;
 }
 
 enum DisableState {
   highlight = 0;
   gary = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum DisplayAppMineIconAction {
   ICON_ACTION_NONE = 0;
   ICON_ACTION_ADD_TO_MINE_TIPS = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum DynamicType {
@@ -244,7 +221,6 @@ enum DynamicType {
   text_notice = 27;
   onetime_notice = 28;
   manga_ep = 29;
-  UNRECOGNIZED = -1;
 }
 
 enum DynExtendType {
@@ -259,7 +235,6 @@ enum DynExtendType {
   dyn_ext_type_auto_ogv = 8;
   dyn_ext_type_article_tag = 9;
   dyn_ext_type_tribee = 10;
-  UNRECOGNIZED = -1;
 }
 
 enum DynModuleType {
@@ -312,13 +287,11 @@ enum DynModuleType {
   module_recommend_cards = 46;
   module_rcmd_reason = 47;
   module_paywall = 48;
-  UNRECOGNIZED = -1;
 }
 
 enum DynVisibilityStatus {
   DYN_VISIBILITY_PUBLIC = 0;
   DYN_VISIBILITY_SELF_SEEN_ONLY = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum EmojiType {
@@ -326,24 +299,20 @@ enum EmojiType {
   emoji_old = 1;
   emoji_new = 2;
   vip = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum EmoteClickAction {
   EMOTE_CLICK_NONE = 0;
   EMOTE_CLICK_POPUP_PREVIEW = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum EspaceStyle {
   moba = 0;
-  UNRECOGNIZED = -1;
 }
 
 enum FlowItemType {
   FLOW_ITEM_TYPE_INVALID = 0;
   FLOW_ITEM_TYPE_OPUS = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum FoldType {
@@ -353,7 +322,6 @@ enum FoldType {
   FoldTypeUnite = 3;
   FoldTypeLimit = 4;
   FoldTypeTopicMerged = 5;
-  UNRECOGNIZED = -1;
 }
 
 enum GlobalPermissionType {
@@ -366,27 +334,23 @@ enum GlobalPermissionType {
   QUALIFIED_BUT_BANNED = 6;
   ALLOW_OUTSIDER_PUB = 7;
   VISA_FREE_JOIN = 8;
-  UNRECOGNIZED = -1;
 }
 
 enum GoodsJumpType {
   goods_none = 0;
   goods_schema = 1;
   goods_url = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum HighlightTextStyle {
   style_none = 0;
   style_highlight = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum HomePageTabSttingStatus {
   SETTING_INVALID = 0;
   SETTING_OPEN = 1;
   SETTING_CLOSE = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum HorizontalAlign {
@@ -394,44 +358,37 @@ enum HorizontalAlign {
   HORIZONTAL_ALIGN_LEFT = 1;
   HORIZONTAL_ALIGN_CENTER = 2;
   HORIZONTAL_ALIGN_RIGHT = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum IconResLocal {
   ICON_RES_LOCAL_NONE = 0;
   ICON_RES_LOCAL_LIVE = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum ImageStyle {
   add_style_vertical = 0;
   add_style_square = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum InviteCodeStatus {
   UNUSED = 0;
   USED = 1;
   EXPIRED = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum LightFromType {
   from_login = 0;
   from_unlogin = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum LinkNodeBubbleType {
   BUBBLE_VIDEO = 0;
   BUBBLE_COMMENT = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum LinkNodeShowType {
   PLAIN_TEXT = 0;
   RICH_TEXT = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum LinkNodeType {
@@ -482,14 +439,12 @@ enum LinkNodeType {
   REFERENCE_COMMENT = 45;
   MULTIPLE_RESOURCES = 46;
   REFERENCE = 47;
-  UNRECOGNIZED = -1;
 }
 
 enum LiveState {
   live_none = 0;
   live_live = 1;
   live_rotation = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum LocalIconType {
@@ -498,7 +453,6 @@ enum LocalIconType {
   local_icon_avatar = 2;
   local_icon_cover = 3;
   local_icon_like_and_forward = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum MangaLikePageDirection {
@@ -506,14 +460,12 @@ enum MangaLikePageDirection {
   PAGE_DIRECTION_LEFT_TO_RIGHT = 1;
   PAGE_DIRECTION_RIGHT_TO_LEFT = 2;
   PAGE_DIRECTION_LEFT_TO_RIGHT_ROTATE = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum MangaLikePicClickAction {
   CLICK_ACT_NONE = 0;
   CLICK_ACT_MANGA_BROWSER = 1;
   CLICK_ACT_NORMAL_BROWSER = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum MdlBlockedStyle {
@@ -522,14 +474,12 @@ enum MdlBlockedStyle {
   BLOCKED_STYLE_ONLY_FANS_LIST = 2;
   BLOCKED_STYLE_ONLY_FANS_VIDEO = 3;
   BLOCKED_STYLE_MANGA_PURCHASE = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum MdlDynCommonType {
   mdl_dyn_common_none = 0;
   mdl_dyn_common_square = 1;
   mdl_dyn_common_vertica = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum MdlDynDrawTagType {
@@ -539,14 +489,12 @@ enum MdlDynDrawTagType {
   mdl_draw_tag_user = 3;
   mdl_draw_tag_topic = 4;
   mdl_draw_tag_lbs = 5;
-  UNRECOGNIZED = -1;
 }
 
 enum MdlDynSubscriptionNewStyle {
   mdl_dyn_subscription_new_style_nont = 0;
   mdl_dyn_subscription_new_style_live = 1;
   mdl_dyn_subscription_new_style_draw = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum MediaType {
@@ -555,7 +503,6 @@ enum MediaType {
   MediaTypePGC = 2;
   MediaTypeLive = 3;
   MediaTypeVCS = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum ModuleAuthorBadgeType {
@@ -563,13 +510,11 @@ enum ModuleAuthorBadgeType {
   module_author_badge_type_threePoint = 1;
   module_author_badge_type_button = 2;
   module_author_badge_type_weight = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum ModuleBannerType {
   module_banner_type_none = 0;
   module_banner_type_user = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum ModuleDynamicType {
@@ -593,7 +538,6 @@ enum ModuleDynamicType {
   mdl_dyn_topic_set = 17;
   mdl_dyn_charging_archive = 18;
   mdl_dyn_share_charging_qa = 19;
-  UNRECOGNIZED = -1;
 }
 
 enum NavigationType {
@@ -605,7 +549,6 @@ enum NavigationType {
   GAME_STATS = 5;
   DISPLAY_APP_MINE = 6;
   VISA_CARD = 7;
-  UNRECOGNIZED = -1;
 }
 
 enum NetworkType {
@@ -615,28 +558,24 @@ enum NetworkType {
   OFFLINE = 3;
   OTHERNET = 4;
   ETHERNET = 5;
-  UNRECOGNIZED = -1;
 }
 
 enum NFTRegionType {
   nft_region_default = 0;
   nft_region_mainlang = 1;
   nft_region_gat = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum NFTShowStatus {
   nft_show_default = 0;
   nft_show_zoominmainlang = 1;
   nft_show_raw = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum OptionItemType {
   OPTION_ITEM_TYPE_DEFAULT = 0;
   OPTION_ITEM_TYPE_SWITCH = 1;
   OPTION_ITEM_TYPE_SELECT = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum OpusType {
@@ -646,14 +585,12 @@ enum OpusType {
   OPUS_TYPE_WORD = 3;
   OPUS_TYPE_REPOST = 4;
   OPUS_TYPE_MANGA_EP = 5;
-  UNRECOGNIZED = -1;
 }
 
 enum PaywallStyle {
   PAYWALL_STYLE_NONE = 0;
   PAYWALL_STYLE_RECOMMEND_LIST = 1;
   PAYWALL_STYLE_BLOCKED = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum RcmdReasonStyle {
@@ -661,20 +598,17 @@ enum RcmdReasonStyle {
   rcmd_reason_style_campus_nearby = 1;
   rcmd_reason_style_campus_up = 2;
   rcmd_reason_style_campus_near_up_mix = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum RcmdType {
   rcmd_archive = 0;
   rcmd_dynamic = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum RecommendCardReasonStyle {
   RECOMMEND_CARD_REASON_STYLE_NONE = 0;
   RECOMMEND_CARD_REASON_STYLE_FOLLOW = 1;
   RECOMMEND_CARD_REASON_STYLE_GENERAL = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum RecommendCardType {
@@ -683,13 +617,11 @@ enum RecommendCardType {
   RECOMMEND_CARD_TYPE_VIDEO = 2;
   RECOMMEND_CARD_TYPE_LIVE = 3;
   RECOMMEND_CARD_TYPE_OGV = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum Refresh {
   refresh_new = 0;
   refresh_history = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum RelationStatus {
@@ -699,44 +631,37 @@ enum RelationStatus {
   relation_status_followed = 3;
   relation_status_mutual_concern = 4;
   relation_status_special = 5;
-  UNRECOGNIZED = -1;
 }
 
 enum RepostType {
   repost_hot = 0;
   repost_general = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum ReserveRelationLotteryType {
   reserve_relation_lottery_type_default = 0;
   reserve_relation_lottery_type_cron = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum ReserveType {
   reserve_none = 0;
   reserve_recall = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum RouterAction {
   OPEN = 0;
   EMBED = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum ShowType {
   show_type_none = 0;
   show_type_backup = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum StyleType {
   STYLE_TYPE_NONE = 0;
   STYLE_TYPE_LIVE = 1;
   STYLE_TYPE_DYN_UP = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum TFType {
@@ -747,13 +672,11 @@ enum TFType {
   C_PKG = 4;
   T_CARD = 5;
   T_PKG = 6;
-  UNRECOGNIZED = -1;
 }
 
 enum ThreePointAttentionStatus {
   tp_not_attention = 0;
   tp_attention = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum ThreePointType {
@@ -789,26 +712,22 @@ enum ThreePointType {
   tribee_approved_thread = 29;
   recommend_remove = 30;
   tribee_reject_thread = 31;
-  UNRECOGNIZED = -1;
 }
 
 enum ThumbType {
   cancel = 0;
   thumb = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum TopType {
   top_none = 0;
   top_cancel = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum TribeeCategoryType {
   NORMAL_CATEGORY = 0;
   OUTSIDER_PUB_CATEGORY = 1;
   MEMBER_WATCHING_CATEGORY = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum TribeeEntryApplyStatus {
@@ -816,14 +735,12 @@ enum TribeeEntryApplyStatus {
   TRIBEE_ENTRY_APPLY_STATUS_PENDING = 1;
   TRIBEE_ENTRY_APPLY_STATUS_REJECTED = 2;
   TRIBEE_ENTRY_APPLY_STATUS_PASSED = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum TribeeGameStatsStatus {
   TRIBEE_GAME_STATS_UNUSED = 0;
   TRIBEE_GAME_STATS_NOT_BIND = 1;
   TRIBEE_GAME_STATS_BINDED = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum TribeeSearchOrder {
@@ -831,14 +748,12 @@ enum TribeeSearchOrder {
   TribeeSearchOrder_DESC = 1;
   TribeeSearchOrder_LIKE = 2;
   TribeeSearchOrder_COMMENT = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum TribeeSearchType {
   TribeeSearchType_DEFAULT = 0;
   TribeeSearchType_DYN = 1;
   TribeeSearchType_COMMENT = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum TribeeSortType {
@@ -846,7 +761,6 @@ enum TribeeSortType {
   TRIBEE_SORT_TYPE_NEW_REPLY = 1;
   TRIBEE_SORT_TYPE_NEW_POST = 2;
   TRIBEE_SORT_TYPE_HOT = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum UserItemType {
@@ -860,7 +774,6 @@ enum UserItemType {
   user_item_type_live_card = 7;
   user_item_type_ogv_season = 8;
   user_item_type_ugc_season = 9;
-  UNRECOGNIZED = -1;
 }
 
 enum VideoSubType {
@@ -870,7 +783,6 @@ enum VideoSubType {
   VideoSubTypeDocumentary = 3;
   VideoSubTypeDomestic = 4;
   VideoSubTypeTeleplay = 5;
-  UNRECOGNIZED = -1;
 }
 
 enum VideoType {
@@ -878,27 +790,23 @@ enum VideoType {
   video_type_dynamic = 1;
   video_type_playback = 2;
   video_type_story = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum VoteStatus {
   normal = 0;
   anonymous = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum WeightType {
   weight_none = 0;
   weight_dislike = 1;
   weight_jump = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum WFItemType {
   WATER_FLOW_TYPE_NONE = 0;
   WATER_FLOW_TYPE_ARCHIVE = 1;
   WATER_FLOW_TYPE_DYNAMIC = 2;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/AdditionalActSkin.java
@@ -1277,7 +1185,6 @@ message BgStyle {
   enum Style {
     DEFAULT = 0;
     HALF_BOTTOM = 1;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -1933,7 +1840,6 @@ message ContentVideoCard {
     VIDEO_VIEW_INFO = 1;
     VIDEO_DANMAKU_INFO = 2;
     VIDEO_REPLY_INFO = 3;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -1987,7 +1893,6 @@ message CreationItemAction {
     CREATION_ACTION_EDIT_CV = 5;
     CREATION_ACTION_VISIBILITY_CHANGE = 6;
     CREATION_ACTION_EDIT_TRIBEE = 7;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -2639,7 +2544,6 @@ message ExtInfoCommon {
   enum ExtTagStyle {
     EXT_TAG_STYLE_DEFAULT = 0;
     EXT_TAG_STYLE_PURE_TEXT = 1;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -2790,7 +2694,6 @@ message GoodsItem {
   enum GoodsItemType {
     GOODS_ITEM_DEFAULT = 0;
     GOODS_ITEM_MEMBER_TICKET = 1;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -2934,7 +2837,6 @@ message JoinMethod {
     INVITE_CODE = 1;
     POST = 2;
     QUIZ = 3;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -3035,7 +2937,6 @@ message LineParagraph {
   enum LineType {
     PIC = 0;
     HR = 1;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -3355,7 +3256,6 @@ message MdlDynDrawItem {
     LEFT = 0;
     CENTER = 1;
     RIGHT = 2;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -3830,7 +3730,6 @@ message ModuleButtom {
     ICON_COMMENT = 2;
     ICON_FAVORITE = 3;
     ICON_LIKE = 4;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -3992,7 +3891,6 @@ message ModuleHeadResource {
     Default = 0;
     Topic = 1;
     Tribee = 2;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -4674,7 +4572,6 @@ message Paragraph {
     H1 = 1;
     H2 = 2;
     H3 = 3;
-    UNRECOGNIZED = -1;
   }
 
   enum ParagraphAlign {
@@ -4682,7 +4579,6 @@ message Paragraph {
     MIDDLE = 1;
     RIGHT = 2;
     UNSPECIFIED = 3;
-    UNRECOGNIZED = -1;
   }
 
   enum ParagraphType {
@@ -4697,7 +4593,6 @@ message Paragraph {
     CODE = 8;
     HEADING = 9;
     TABLE = 10;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -4724,7 +4619,6 @@ message PicParagraph {
     INVALID = 0;
     NINE_CELL = 1;
     BIG_SCROLL = 2;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -5190,7 +5084,6 @@ message SunflowerParsedItem {
     EMOTE = 4;
     COMMENT = 5;
     UP = 6;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -5249,7 +5142,6 @@ message TextNode {
     AT = 3;
     BIZ_LINK = 4;
     FORMULA = 5;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -5281,7 +5173,6 @@ message ThreeDotItem {
     THREEDOT_BUSINESS_DEFAULT = 0;
     THREEDOT_BUSINESS_UNBIND = 1;
     THREEDOT_BUSINESS_MYSELF = 2;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -5555,7 +5446,6 @@ message TipsCard {
   enum TipsCardType {
     TIPS_CARD_SELF = 0;
     TIPS_CARD_JUMP = 1;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -5585,7 +5475,6 @@ message TitleTagPic {
     UNKNOWN = 0;
     TOP = 1;
     FEATURE = 2;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -5620,7 +5509,6 @@ message ToastDialog {
     OUTSIDER_INVITE_CODE_SUCCESS = 13;
     VISA_JOIN_SUCCESS = 14;
     VISA_PUBLISH_SUCCESS = 15;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -6017,7 +5905,6 @@ message TribeeSearchCard {
     CardType_TIPS_V1 = 1;
     CardType_DYN_V1 = 2;
     CardType_COMMENT_V1 = 3;
-    UNRECOGNIZED = -1;
   }
 
   enum DataCase {
@@ -6083,7 +5970,6 @@ message TribeeSendInviteCodeOptionsResp {
     UNKNOWN = 0;
     GRANT_INVITE = 1;
     INVITE_JOIN = 2;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -6132,7 +6018,6 @@ message TribeeSteamHomeAchievement {
     Achievement_Type_Default = 0;
     Achievement_Type_Empty = 1;
     Achievement_Type_Success = 2;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -6155,7 +6040,6 @@ message TribeeSteamHomeAchievementItem {
   enum AchievementType {
     ACHIEVEMENT_DEFAULT = 0;
     ACHIEVEMENT_HIDDEN = 1;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -6181,7 +6065,6 @@ message TribeeSteamHomeAchievementSuccess {
     Achievement_Success_Default = 0;
     Achievement_Success_Empty = 1;
     Achievement_Success_Success = 2;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -6228,7 +6111,6 @@ message TribeeSteamHomeBindResp {
     ACCOUNT_STATUS_FAILED = 2;
     ACCOUNT_STATUS_PRIVATE = 3;
     ACCOUNT_STATUS_SUCCESS = 4;
-    UNRECOGNIZED = -1;
   }
 
   enum DataCase {

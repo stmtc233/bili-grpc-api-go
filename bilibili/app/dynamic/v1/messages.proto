@@ -8,7 +8,6 @@ import "bilibili/app/archive/middleware/v1/messages.proto";
 enum BgType {
   bg_type_default = 0;
   bg_type_face = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum BubbleModuleType {
@@ -17,7 +16,6 @@ enum BubbleModuleType {
   BUBBLE_MODULE_TEXT = 2;
   BUBBLE_MODULE_COLORED_TIP = 3;
   BUBBLE_MODULE_PIC = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum CornerType {
@@ -27,7 +25,6 @@ enum CornerType {
   corner_type_static = 3;
   corner_type_red_dot = 4;
   corner_type_number = 5;
-  UNRECOGNIZED = -1;
 }
 
 enum FoldType {
@@ -36,7 +33,6 @@ enum FoldType {
   FoldTypeFrequent = 2;
   FoldTypeUnite = 3;
   FoldTypeLimit = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum MediaType {
@@ -45,7 +41,6 @@ enum MediaType {
   MediaTypePGC = 2;
   MediaTypeLive = 3;
   MediaTypeVCS = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum RelationStatus {
@@ -55,7 +50,6 @@ enum RelationStatus {
   relation_status_followed = 3;
   relation_status_mutual_concern = 4;
   relation_status_special = 5;
-  UNRECOGNIZED = -1;
 }
 
 enum StyleType {
@@ -64,7 +58,6 @@ enum StyleType {
   STYLE_TYPE_DYN_UP = 2;
   STYLE_TYPE_OGV_UP = 3;
   STYLE_TYPE_COLLECTION_UP = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum SVideoType {
@@ -72,7 +65,6 @@ enum SVideoType {
   TypeDynamic = 1;
   TypePopularIndex = 2;
   TypePopularHotword = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum VideoSubType {
@@ -82,7 +74,6 @@ enum VideoSubType {
   VideoSubTypeDocumentary = 3;
   VideoSubTypeDomestic = 4;
   VideoSubTypeTeleplay = 5;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v1/AddressComponent.java
@@ -446,7 +437,6 @@ message DynRedReq {
     RED_REQ_RETURN_TO_TAB_1 = 1;
     RED_REQ_PERIODICALLY_AWAKE = 2;
     RED_REQ_SWITCH_ACCOUNT = 3;
-    UNRECOGNIZED = -1;
   }
 
 }

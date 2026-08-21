@@ -12,14 +12,12 @@ enum ButType {
   BUT_INVALID = 0;
   BUT_REDIRECT = 1;
   BUT_LIKE = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum CommentType {
   comment_type_none = 0;
   comment_type_redirect = 1;
   comment_type_judge = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum DT {
@@ -31,33 +29,28 @@ enum DT {
   Car = 5;
   Iot = 6;
   AndPad = 7;
-  UNRECOGNIZED = -1;
 }
 
 enum FacialRecognitionVerifyFrom {
   VerifyUnknownFrom = 0;
   VerifyFromGuardian = 1;
   VerifyFromAppeal = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum From {
   ArchiveTab = 0;
   DynamicTab = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum HistorySource {
   history = 0;
   shopping = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum ModelStatus {
   CloseStatus = 0;
   OpenStatus = 1;
   NotSetStatus = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum PwdFrom {
@@ -77,20 +70,17 @@ enum PwdFrom {
   OSTeenagersLogout = 13;
   TeenagersSetAge = 14;
   OSTeenagersSetAge = 15;
-  UNRECOGNIZED = -1;
 }
 
 enum SugPostIcon {
   SUG_POST_ICON_DEFAULT = 0;
   SUG_POST_ICON_ARROW = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum SugPreIcon {
   SUG_PRE_ICON_DEFAULT = 0;
   SUG_PRE_ICON_CLOCK = 1;
   SUG_PRE_ICON_MAGNIFYING_GLASS = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum TabType {
@@ -99,14 +89,12 @@ enum TabType {
   TAB_OGV_REPLY = 7;
   TAB_FEED_BID = 8;
   TAB_FEED_SMALL = 9;
-  UNRECOGNIZED = -1;
 }
 
 enum TranslateStatus {
   TRANSLATE_STATUS_UNNEEDED = 0;
   TRANSLATE_STATUS_TRANSLATED = 1;
   TRANSLATE_STATUS_UNTRANSLATED = 2;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/Arc.java

@@ -36,7 +36,6 @@ message BasicLayerResource {
     RES_TYPE_IMAGE = 3;
     RES_TYPE_ANIMATION = 4;
     RES_TYPE_NATIVE_DRAW = 5;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -103,7 +102,6 @@ message LayerTagConfig {
     TAG_CFG_WEB_IN_LIVE = 5;
     TAG_CFG_FOLLOW_ICON = 6;
     TAG_CFG_FOLLOW_ACTION = 7;
-    UNRECOGNIZED = -1;
   }
 
 }

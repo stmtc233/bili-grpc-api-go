@@ -10,7 +10,6 @@ enum PremiereState {
   premiere_before = 1;
   premiere_in = 2;
   premiere_after = 3;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/mall/tab3/viewunite/ugcanymodel/Dislike.java

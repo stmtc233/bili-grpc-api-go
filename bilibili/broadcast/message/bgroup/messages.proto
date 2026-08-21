@@ -9,7 +9,6 @@ enum AppEvent {
   AppEventInvisible = 2;
   AppEventHomePage = 3;
   AppEventColdStart = 4;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/broadcast/message/bgroup/AppEventMessage.java

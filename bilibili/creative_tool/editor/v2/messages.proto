@@ -106,7 +106,6 @@ enum FeatureFlag {
   LiveToEditor = 127;
   LiveClipRecreation = 128;
   TTVMaterialTag = 129;
-  UNRECOGNIZED = -1;
 }
 
 enum MaterialForm {
@@ -114,7 +113,6 @@ enum MaterialForm {
   AIRecommend = 1;
   TacticsRecommend = 2;
   Search = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum MaterialType {
@@ -181,7 +179,6 @@ enum MaterialType {
   VideoGenMaterialUse = 79;
   AiDrawingModel = 74;
   AiPlayModel = 75;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/creative_tool/editor/v2/EditorBody.java

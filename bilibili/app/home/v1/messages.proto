@@ -11,7 +11,6 @@ enum BgStyle {
   BG_STYLE_STROKE = 2;
   BG_STYLE_FILL_AND_STROKE = 3;
   BG_STYLE_NO_FILL_AND_NO_STROKE = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum ModuleType {
@@ -19,7 +18,6 @@ enum ModuleType {
   MODULE_TYPE_TOVIEW = 1;
   MODULE_TYPE_RECENT_FAV = 2;
   MODULE_TYPE_HALF_WATCHED_VIDEO = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum RecentRecReasonEnum {
@@ -32,7 +30,6 @@ enum RecentRecReasonEnum {
   RECENT_REC_REASON_LOOK_BACK_HALF = 32;
   RECENT_REC_REASON_LOOK_BACK_MORE_HALF = 33;
   RECENT_REC_REASON_LOOK_BACK_MORE = 34;
-  UNRECOGNIZED = -1;
 }
 
 enum RecType {
@@ -41,7 +38,6 @@ enum RecType {
   REC_TYPE_OGV = 2;
   REC_TYPE_SEASON = 3;
   REC_TYPE_FAV_FOLDER = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum Tab {
@@ -49,7 +45,6 @@ enum Tab {
   TAB_LISTEN = 1;
   TAB_STORY = 2;
   TAB_RECENT = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum TabSelection {
@@ -58,20 +53,17 @@ enum TabSelection {
   TS_ONLY_STORY = 2;
   TS_ONLY_RECENT = 3;
   TS_ALL = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum TabUpdateSource {
   SOURCE_RECENT = 0;
   SOURCE_GAME = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum TopLeftGoto {
   GOTO_UNKNOWN = 0;
   GOTO_MINE = 1;
   GOTO_RECENT = 2;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/app/home/v1/ArcContentPool.java

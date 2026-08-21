@@ -13,7 +13,6 @@ enum CardModuleType {
   Module_header = 1;
   Module_archive = 2;
   Module_cbtn = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum ListOrder {
@@ -21,7 +20,6 @@ enum ListOrder {
   ORDER_NORMAL = 1;
   ORDER_REVERSE = 2;
   ORDER_RANDOM = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum ListSortField {
@@ -29,7 +27,6 @@ enum ListSortField {
   SORT_CTIME = 1;
   SORT_VIEWCNT = 2;
   SORT_FAVCNT = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum PlaylistSource {
@@ -42,7 +39,6 @@ enum PlaylistSource {
   AUDIO_CACHE = 6;
   PICK_CARD = 7;
   MEDIA_LIST = 8;
-  UNRECOGNIZED = -1;
 }
 
 enum TopCardType {
@@ -51,7 +47,6 @@ enum TopCardType {
   FAVORITE_FOLDER = 2;
   UP_RECALL = 3;
   PICK_TODAY = 4;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/app/listener/v1/Author.java
@@ -141,7 +136,6 @@ message ClickReq {
   enum ClickAction {
     INVALID = 0;
     SHARE = 1;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -208,7 +202,6 @@ message EventReq {
   enum EventType {
     INVALID = 0;
     GUIDE_BAR_SHOW = 1;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -260,7 +253,6 @@ message FavFolderAction {
     UNSPECIFIED = 0;
     ADD = 1;
     DEL = 2;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -466,7 +458,6 @@ message FollowRelation {
     FOLLOWED = 3;
     MUTUAL_FOLLOWING = 4;
     SPECIAL_FOLLOWING = 5;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -577,7 +568,6 @@ message MenuSubscribeReq {
     INVALID = 0;
     ADD = 1;
     DEL = 2;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -631,7 +621,6 @@ message PageOption {
   enum Direction {
     SCROLL_DOWN = 0;
     SCROLL_UP = 1;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -822,7 +811,6 @@ message PlaylistOffset {
   enum PlaylistScrollDirection {
     DOWN = 0;
     UP = 1;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -897,7 +885,6 @@ message RcmdPlaylistReq {
     UP_ARCHIVE = 1;
     INDEX_ENTRY = 2;
     ARCHIVE_VIEW = 3;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -938,7 +925,6 @@ message ThumbUpReq {
     CANCEL_LIKE = 1;
     DISLIKE = 2;
     CANCEL_DISLIKE = 3;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -973,7 +959,6 @@ message TopCard {
     NO_INTERRUPT = 0;
     PLAY_TARGET = 1;
     PLAY_FIRST = 2;
-    UNRECOGNIZED = -1;
   }
 
 }

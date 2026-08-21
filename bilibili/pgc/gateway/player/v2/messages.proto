@@ -12,7 +12,6 @@ enum CanWatchQnReason {
   CAN_WATCH_QN_REASON_BIG_VIP = 3;
   CAN_WATCH_QN_REASON_TV_BIG_VIP = 4;
   CAN_WATCH_QN_REASON_OGV_TVOD_PAY = 5;
-  UNRECOGNIZED = -1;
 }
 
 enum ClipType {
@@ -23,14 +22,12 @@ enum ClipType {
   CLIP_TYPE_MULTI_VIEW = 4;
   CLIP_TYPE_AD = 5;
   CLIP_TYPE_PREVIEW = 6;
-  UNRECOGNIZED = -1;
 }
 
 enum CodeType {
   NOCODE = 0;
   CODE264 = 1;
   CODE265 = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum DrmTechType {
@@ -38,14 +35,12 @@ enum DrmTechType {
   FAIR_PLAY = 1;
   WIDE_VINE = 2;
   BILI_DRM = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum EpPublicityVideoType {
   PRE = 0;
   INLINE = 1;
   ADV_TYPE_UNKNOWN = -1;
-  UNRECOGNIZED = -1;
 }
 
 enum InlineScene {
@@ -53,7 +48,6 @@ enum InlineScene {
   RELATED_EP = 1;
   HE = 2;
   SKIP = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum InlineType {
@@ -61,47 +55,40 @@ enum InlineType {
   TYPE_WHOLE = 1;
   TYPE_HE_CLIP = 2;
   TYPE_PREVIEW = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum LimitActionType {
   LAT_UNKNOWN = 0;
   SHOW_LIMIT_DIALOG = 1;
   SKIP_CURRENT_EP = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum LimitWatchQnReason {
   LIMIT_WATCH_QN_REASON_DEFAULT = 0;
   LIMIT_WATCH_QN_REASON_QN_VIP_PLAY = 1;
   LIMIT_WATCH_QN_REASON_CTCC_HOME_NETWORK_DEVICE_LIMIT = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum PlayErr {
   NoErr = 0;
   WithMultiDeviceLoginErr = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum PromptBarType {
   PROMPT_BAR_TYPE_UNKNOWN = 0;
   OPEN_PROMPT_BAR = 1;
   TRY_PROMPT_BAR = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum QnGroupType {
   UNKNOWN_GROUP = 0;
   VIP_VISION = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum RedemptionMode {
   REDEMPTION_MODE_UNKNOWN = 0;
   EXCHANGE = 1;
   PAYMENT = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum SecurityLevel {
@@ -109,7 +96,6 @@ enum SecurityLevel {
   LEVEL_L1 = 1;
   LEVEL_L2 = 2;
   LEVEL_L3 = 3;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/pgc/gateway/player/v2/Animation.java
@@ -310,7 +296,6 @@ message DolbyItem {
     NONE = 0;
     COMMON = 1;
     ATMOS = 2;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -736,7 +721,6 @@ message Scheme {
   enum ActionType {
     UNKNOWN = 0;
     SHOW_TOAST = 1;
-    UNRECOGNIZED = -1;
   }
 
 }

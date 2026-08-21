@@ -6,7 +6,6 @@ package com.bapis.bilibili.community.service.cert.v1;
 enum Action {
   ACTION_CERT_CANCEL = 0;
   ACTION_CERT_CONFIRM = 1;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/community/service/cert/v1/FieldCertPopActionReq.java

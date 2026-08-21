@@ -10,7 +10,6 @@ enum PremiereState {
   premiere_before = 1;
   premiere_in = 2;
   premiere_after = 3;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/ugcanymodel/AiExtra.java
@@ -129,7 +128,6 @@ message ShareGuideExpConfig {
     UNKNOWN = 0;
     SHARE_FIRST_REWARD = 1;
     SHARE_ONLINE_VIEWERS = 2;
-    UNRECOGNIZED = -1;
   }
 
 }

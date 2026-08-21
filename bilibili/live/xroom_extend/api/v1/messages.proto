@@ -6,7 +6,6 @@ package com.bapis.bilibili.live.xroom_extend.api.v1;
 enum ReportStatus {
   REPORT_EXCEPTION = 0;
   REPORT_SUCCESS = 1;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/live/xroom_extend/api/v1/SendReportInfoReq.java

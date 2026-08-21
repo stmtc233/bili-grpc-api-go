@@ -6,52 +6,44 @@ package com.bapis.bilibili.subtitle;
 enum FontSizeType {
   FontSizeDefault = 0;
   FontSizeOGV = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum ProductionType {
   PRODUCTION_TYPE_DEFAULT = 0;
   PRODUCTION_TYPE_UPLOAD = 1;
   PRODUCTION_TYPE_AI = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum PurposeType {
   PurposeCover = 0;
   PurposeOGV = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum SubtitleAiStatus {
   None = 0;
   Exposure = 1;
   Assist = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum SubtitleAiType {
   Normal = 0;
   Translate = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum SubtitleFormat {
   JSON = 0;
   ASS = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum SubtitleRole {
   Default = 0;
   Main = 1;
   Secondary = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum SubtitleType {
   CC = 0;
   AI = 1;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/subtitle/SubtitleHeight.java

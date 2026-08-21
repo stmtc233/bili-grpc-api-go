@@ -20,7 +20,6 @@ enum TranslationBusiness {
   TRANS_BIZ_CHARGING = 13;
   TRANS_BIZ_IM = 14;
   TRANS_BIZ_OGV_SERIES = 15;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/app/translation/v1/TranslatedField.java

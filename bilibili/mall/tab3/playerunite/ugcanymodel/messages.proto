@@ -9,7 +9,6 @@ enum PlayLimitCode {
   PLC_ChargingPlusNotPass = 2;
   PLC_ChargingPlusUpgrade = 3;
   PLC_ChargingPlusReject = 4;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/mall/tab3/playerunite/ugcanymodel/ButtonStyle.java

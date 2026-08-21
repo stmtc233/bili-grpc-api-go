@@ -8,19 +8,16 @@ import "bilibili/app/archive/middleware/v1/messages.proto";
 enum GuideStyleVersion {
   GUIDE_STYLE_DEFAULT = 0;
   GUIDE_STYLE_FUNC_NEW = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum GuideType {
   GUIDE_TYPE_DEFAULT = 0;
   GUIDE_TYPE_FUNC = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum RegionCardType {
   REGION_CARD_TYPE_DEFAULT = 0;
   REGION_CARD_TYPE_AV = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum RegionLimitCode {
@@ -28,7 +25,6 @@ enum RegionLimitCode {
   REGION_LIMIT_CODE_NO_LOGIN = 1;
   REGION_LIMIT_CODE_MAX = 2;
   REGION_LIMIT_CODE_ERROR = 3;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/app/show/mixture/v1/ChannelRedirectReply.java

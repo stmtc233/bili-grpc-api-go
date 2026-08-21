@@ -9,7 +9,6 @@ enum LikeState {
   DEFAULT = 0;
   LIKE = 1;
   DISLIKE = 2;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/broadcast/message/main/Animate.java

@@ -6,7 +6,6 @@ package com.bapis.bilibili.im.customer.model;
 enum ComplianceAlertType {
   None = 0;
   AIModel = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum ConfirmButtonAction {
@@ -15,7 +14,6 @@ enum ConfirmButtonAction {
   CONFIRM_BUTTON_ACTION_END_SESSION_FROM_INPUT_BOX = 2;
   CONFIRM_BUTTON_ACTION_END_SESSION_FROM_BACK = 3;
   CONFIRM_BUTTON_ACTION_KEEP_SESSION_FROM_BACK = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum CustomerRankStatus {
@@ -34,7 +32,6 @@ enum CustomerRankStatus {
   RANKING_ONLY = 12;
   NO_CUSTOMER_ONLY = 13;
   OFFLINE_PROCESS = 14;
-  UNRECOGNIZED = -1;
 }
 
 enum EvaluateType {
@@ -49,7 +46,6 @@ enum EvaluateType {
   NewSystemInviteEvaluateCustomSession = 8;
   NewUserEvaluateMachineSession = 9;
   NewSystemInviteEvaluateMachineSession = 10;
-  UNRECOGNIZED = -1;
 }
 
 enum MsgSource {
@@ -63,7 +59,6 @@ enum MsgSource {
   Biz = 7;
   ThirdShopStage = 8;
   AI = 9;
-  UNRECOGNIZED = -1;
 }
 
 enum MsgType {
@@ -101,7 +96,6 @@ enum MsgType {
   MSG_TYPE_CLOSE_VIRTUAL_COME = 10025;
   MSG_TYPE_COMMENT_QUOTE = 10026;
   MSG_TYPE_ARCHIVE = 10027;
-  UNRECOGNIZED = -1;
 }
 
 enum NotifyMsgType {
@@ -109,14 +103,12 @@ enum NotifyMsgType {
   RANK_UPDATE = 400;
   MSG_TALK = 401;
   SUBMIT_WORK_ORDER_DRAFT = 402;
-  UNRECOGNIZED = -1;
 }
 
 enum Select {
   ABLE = 0;
   SELECTED = 1;
   UNABLE = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum Situation {
@@ -130,14 +122,12 @@ enum Situation {
   Else = 7;
   Live = 8;
   Space = 9;
-  UNRECOGNIZED = -1;
 }
 
 enum SplitAnsMsgContentType {
   BUSINESS = 0;
   GROUP = 1;
   CUSTOM = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum TalkerType {
@@ -145,7 +135,6 @@ enum TalkerType {
   CUSTOMER = 1;
   SYS_NOTICE = 2;
   USER = 3;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/im/customer/model/BackButton.java
@@ -310,13 +299,11 @@ message InputBoxButton {
     InputBoxActionWebLayer = 2;
     InputBoxActionEndSession = 3;
     InputBoxActionEvaluation = 4;
-    UNRECOGNIZED = -1;
   }
 
   enum InputBoxUrlType {
     InputBoxUrlTypeDefault = 0;
     InputBoxUrlTypeArchive = 1;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -371,7 +358,6 @@ message SatisfactionOption {
     SATISFACTION_LEVEL_NORMAL = 3;
     SATISFACTION_LEVEL_GOOD = 4;
     SATISFACTION_LEVEL_VERY_GOOD = 5;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -442,13 +428,11 @@ message WindowOption {
     WindowOptionActionDefault = 0;
     WindowOptionActionUrl = 1;
     WindowOptionActionWebLayer = 2;
-    UNRECOGNIZED = -1;
   }
 
   enum WindowOptionTag {
     WindowOptionTagDefault = 0;
     WindowOptionTagNew = 1;
-    UNRECOGNIZED = -1;
   }
 
   enum WindowOptionUrlType {
@@ -459,7 +443,6 @@ message WindowOption {
     WindowOptionUrlTypeMessage = 4;
     WindowOptionUrlTypeHistory = 5;
     WindowOptionUrlTypeArchive = 6;
-    UNRECOGNIZED = -1;
   }
 
 }

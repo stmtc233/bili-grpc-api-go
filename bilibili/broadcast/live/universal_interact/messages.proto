@@ -13,32 +13,27 @@ enum CloseUserReason {
   CloseUserReason_Normal = 4;
   CloseUserReason_BySelf = 5;
   CloseUserReason_ByOther = 6;
-  UNRECOGNIZED = -1;
 }
 
 enum Gender {
   Gender_Woman = 0;
   Gender_Man = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum InteractScene {
   InteractSceneVoice1V1 = 0;
   InteractSceneVideoB2B = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum LayoutCellOpen {
   LayoutCellOpenInvalid = 0;
   LayoutCellOpenVisible = 1;
   LayoutCellOpenInvisible = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum PlayMode {
   play_mode_default = 0;
   play_mode_explicit = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum SubMode {
@@ -46,13 +41,11 @@ enum SubMode {
   sub_mode_audio = 1;
   sub_mode_video = 2;
   sub_mode_all = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum UniversalInteractActionType {
   UniversalInteractActionTypeApply = 0;
   UniversalInteractActionTypeInvitation = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum UniversalInteractOperationType {
@@ -61,7 +54,6 @@ enum UniversalInteractOperationType {
   UniversalInteractOperationReject = 2;
   UniversalInteractOperationCancel = 3;
   UniversalInteractOperationTimeoutCancel = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum UniversalItemStatus {
@@ -74,7 +66,6 @@ enum UniversalItemStatus {
   UniversalItemStatus_Applying = 6;
   UniversalItemStatus_Inviting = 7;
   UniversalItemStatus_Connecting = 8;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/broadcast/live/universal_interact/InteractLayoutData.java
@@ -96,7 +87,6 @@ message InteractSceneConfiguration {
   enum InteractMode {
     InteractModeB2B = 0;
     InteractModeB2C = 1;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -243,7 +233,6 @@ message UniversalInteractStreamControl {
     mute_mode_none = 0;
     mute_mode_packet = 1;
     mute_mode_capture = 2;
-    UNRECOGNIZED = -1;
   }
 
   enum PubStatus {
@@ -251,7 +240,6 @@ message UniversalInteractStreamControl {
     pub_status_audio = 1;
     pub_status_video = 2;
     pub_status_all = 3;
-    UNRECOGNIZED = -1;
   }
 
 }

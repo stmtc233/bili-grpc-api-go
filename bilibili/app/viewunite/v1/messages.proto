@@ -18,20 +18,17 @@ enum BizType {
   BizTypeFavSeason = 4;
   BizTypeReserveGame = 5;
   BizTypeGiftGame = 6;
-  UNRECOGNIZED = -1;
 }
 
 enum ButtonAction {
   BUTTON_ACTION_DEFAULT = 0;
   BUTTON_ACTION_CANCEL = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum CacheCode {
   PLAY = 0;
   UPOWERSTATE_INACTIVE = 100;
   REPEAT_LAST_OPERATION = 101;
-  UNRECOGNIZED = -1;
 }
 
 enum ECode {
@@ -39,14 +36,12 @@ enum ECode {
   CODE_404 = 1;
   CODE_ARC_PRIVACY = 2;
   CODE_TEENAGER = 78301;
-  UNRECOGNIZED = -1;
 }
 
 enum JumpShowType {
   JST_DEFAULT = 0;
   JST_FULLSCREEN = 1;
   JST_HALFSCREEN = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum MaterialBizType {
@@ -59,44 +54,37 @@ enum MaterialBizType {
   ACTIVITY_ICON = 6;
   NEW_BGM = 7;
   GENERAL_TYPE = 8;
-  UNRECOGNIZED = -1;
 }
 
 enum MaterialSource {
   DEFAULT = 0;
   BIJIAN = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum PageCategory {
   COMMON_PAGE = 0;
   ACTIVITY_PAGE = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum PageType {
   H5 = 0;
   NA = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum PauseType {
   PAUSE_TYPE_DEFAULT = 0;
   PAUSE_TYPE_ADS = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum PlayToastEnum {
   PLAYTOAST_UNKNOWN = 0;
   PLAYTOAST_CHARGINGPLUS = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum SourceContentType {
   SC_DEFAULT = 0;
   SC_AV = 1;
   SC_LIVE = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum TabType {
@@ -105,14 +93,12 @@ enum TabType {
   TAB_REPLY = 2;
   TAB_OGV_ACTIVITY = 3;
   TAB_CATALOG = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum UnionType {
   UGC = 0;
   OGV = 1;
   PUGV = 2;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/v1/ActivityResource.java

@@ -16,13 +16,11 @@ enum ReserveState {
   End = 7;
   Canceled = -1;
   Expired = -2;
-  UNRECOGNIZED = -1;
 }
 
 enum UpActReserveRelationLotteryType {
   UpActReserveRelationLotteryTypeDefault = 0;
   UpActReserveRelationLotteryTypeCron = 1;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/mall/tab3/dynamic/v1/AuthorInfo.java

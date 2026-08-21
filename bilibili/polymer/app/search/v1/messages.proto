@@ -14,21 +14,18 @@ enum CategorySort {
   CATEGORY_SORT_CLICK_COUNT = 2;
   CATEGORY_SORT_COMMENT_COUNT = 3;
   CATEGORY_SORT_LIKE_COUNT = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum GroupStyle {
   GROUP_STYLE_NONE = 0;
   GROUP_STYLE_ROUNDED = 1;
   GROUP_STYLE_ALIENATION = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum OpusType {
   OPUS_TYPE_UNKNOWN = 0;
   OPUS_TYPE_ARTICLE = 1;
   OPUS_TYPE_TWITTER = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum ReserveType {
@@ -36,7 +33,6 @@ enum ReserveType {
   RESERVE_TYPE_OGV = 1;
   RESERVE_TYPE_LIVE = 2;
   RESERVE_TYPE_SPORTS = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum Sort {
@@ -44,19 +40,16 @@ enum Sort {
   SORT_VIEW_COUNT = 1;
   SORT_PUBLISH_TIME = 2;
   SORT_DANMAKU_COUNT = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum Style {
   score = 0;
   bikan = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum TribeeCoverStyle {
   TRIBEE_COVER_STYLE_BLUR_SQUARE = 0;
   TRIBEE_COVER_STYLE_CROP_16_9 = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum UserSort {
@@ -65,7 +58,6 @@ enum UserSort {
   USER_SORT_FANS_ASCEND = 2;
   USER_SORT_LEVEL_DESCEND = 3;
   USER_SORT_LEVEL_ASCEND = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum UserType {
@@ -73,7 +65,6 @@ enum UserType {
   UP = 1;
   NORMAL_USER = 2;
   AUTHENTICATED_USER = 3;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/Args.java

@@ -9,19 +9,16 @@ enum Action {
   ACTION_CANCEL_LIKE = 2;
   ACTION_DISLIKE = 3;
   ACTION_CANCEL_DISLIKE = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum FeedbackScene {
   FEEDBACK_SCENE_UNSPECIFIED = 0;
   FEEDBACK_SCENE_RELATED_SEARCH = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum FollowTypeEnum {
   UNKNOWN = 0;
   COMIC = 1;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/app/search/v2/CancelChatTaskReply.java

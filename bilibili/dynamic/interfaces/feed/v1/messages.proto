@@ -11,20 +11,17 @@ enum ConfigABEntry {
   CONFIG_AB_ENTRY_SELECT_PIC_PANEL = 2;
   CONFIG_AB_BIG_PLUS_PUB_ARTICLE = 3;
   CONFIG_AB_LIVE_PHOTO = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum DynamicButtonClickBizType {
   DYNAMIC_BUTTON_CLICK_BIZ_TYPE_NONE = 0;
   DYNAMIC_BUTTON_CLICK_BIZ_TYPE_LIVE = 1;
   DYNAMIC_BUTTON_CLICK_BIZ_TYPE_DYN_UP = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum MaxPicCountType {
   MAX_PIC_COUNT_NINE = 0;
   MAX_PIC_COUNT_EIGHTEEN = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum OpusInitVerifyType {
@@ -36,7 +33,6 @@ enum OpusInitVerifyType {
   OPUS_INIT_VERIFY_POST_COUNT_EXCEEDED = 5;
   OPUS_INIT_VERIFY_EDIT_COUNT_EXCEEDED = 6;
   OPUS_INIT_VERIFY_EDITOR_VERSION_UNQUALIFIED = 7;
-  UNRECOGNIZED = -1;
 }
 
 enum POI_TYPE {
@@ -44,21 +40,18 @@ enum POI_TYPE {
   CITY = 1;
   NATION = 2;
   BILI = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum ReserveButtonMode {
   RESERVE_BUTTON_MODE_NONE = 0;
   RESERVE_BUTTON_MODE_RESERVE = 1;
   RESERVE_BUTTON_MODE_UP_CANCEL = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum ReserveButtonStatus {
   RESERVE_BUTTON_STATUS_NONE = 0;
   RESERVE_BUTTON_STATUS_UNCHECK = 1;
   RESERVE_BUTTON_STATUS_CHECK = 2;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ActiveReportMessage.java
@@ -69,7 +62,6 @@ message ActiveReportMessage {
     REPORT_ACTION_NONE = 0;
     REPORT_ACTION_EXPOSURE = 1;
     REPORT_ACTION_CLICK = 2;
-    UNRECOGNIZED = -1;
   }
 
 }

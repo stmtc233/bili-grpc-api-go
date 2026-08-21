@@ -11,7 +11,6 @@ enum DetailListScene {
   REPLY = 0;
   MSG_FEED = 1;
   NOTIFY = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum EditorIconState {
@@ -19,7 +18,6 @@ enum EditorIconState {
   EditorIconState_ENABLE = 1;
   EditorIconState_DISABLE = 2;
   EditorIconState_HIDE = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum Mode {
@@ -27,14 +25,12 @@ enum Mode {
   UNSPECIFIED = 1;
   MAIN_LIST_TIME = 2;
   MAIN_LIST_HOT = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum ReplyNotificationSwitch {
   ReplyNotificationSwitch_UNSPECIFIED = 0;
   ReplyNotificationSwitch_OFF = 1;
   ReplyNotificationSwitch_ON = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum SearchItemType {
@@ -42,13 +38,11 @@ enum SearchItemType {
   GOODS = 1;
   VIDEO = 2;
   ARTICLE = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum SearchItemVideoSubType {
   UGC = 0;
   PGC = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum TranslationSwitch {
@@ -56,19 +50,16 @@ enum TranslationSwitch {
   TRANSLATION_SWITCH_UNSUPPORTED = 1;
   TRANSLATION_SWITCH_SHOW_TRANSLATION = 2;
   TRANSLATION_SWITCH_SHOW_ORIGIN = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum UserCallbackAction {
   Dismiss = 0;
-  UNRECOGNIZED = -1;
 }
 
 enum UserCallbackScene {
   Insert = 0;
   RecommendSuperbReply = 1;
   Hotspot = 2;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/Activity.java
@@ -119,7 +110,6 @@ message AddReplyResp {
   enum SuccessAction {
     Display = 0;
     None = 1;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -157,7 +147,6 @@ message AtGroup {
     AT_GROUP_TYPE_FOLLOW = 2;
     AT_GROUP_TYPE_FANS = 3;
     AT_GROUP_TYPE_OTHERS = 4;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -316,7 +305,6 @@ message EmptyPage {
     UNAVAILABLE = 0;
     SHOW_KEYBOARD = 1;
     SEND_REPLY_WITH_BOLD_TEXT = 2;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -520,14 +508,12 @@ message Member {
     DEFAULT = 0;
     MAINLAND = 1;
     GAT = 2;
-    UNRECOGNIZED = -1;
   }
 
   enum ShowStatus {
     SHOWDEFAULT = 0;
     ZOOMINMAINLAND = 1;
     RAW = 2;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -547,14 +533,12 @@ message MemberV2 {
     DEFAULT = 0;
     MAINLAND = 1;
     GAT = 2;
-    UNRECOGNIZED = -1;
   }
 
   enum ShowStatus {
     SHOWDEFAULT = 0;
     ZOOMINMAINLAND = 1;
     RAW = 2;
-    UNRECOGNIZED = -1;
   }
 
   enum Status {
@@ -563,7 +547,6 @@ message MemberV2 {
     Senior = 2;
     WillExpire = 3;
     Expired = 4;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -590,7 +573,6 @@ message MixedCard {
     QUESTION = 1;
     FOLD = 2;
     HOTSPOT = 3;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -625,7 +607,6 @@ message Operation {
     NOTE = 1;
     TOPIC = 2;
     NOTICE = 3;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -647,7 +628,6 @@ message OperationV2 {
   enum Position {
     PREFIX = 0;
     SUFFIX = 1;
-    UNRECOGNIZED = -1;
   }
 
   enum Type {
@@ -655,7 +635,6 @@ message OperationV2 {
     NOTE = 1;
     TOPIC = 2;
     SEARCH = 4;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -870,7 +849,6 @@ message ReplyCardLabel {
   enum Type {
     UNDERLINE = 0;
     BACKGROUND = 1;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -921,7 +899,6 @@ message ReplyControl {
     RED = 1;
     BLUE = 2;
     PLAIN = 3;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -990,12 +967,10 @@ message ReplyInfoReq {
   enum BizScene {
     DEFAULT = 0;
     INSERT_NEW = 1;
-    UNRECOGNIZED = -1;
   }
 
   enum ReplyInfoScene {
     Insert = 0;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -1229,7 +1204,6 @@ message SubjectTopCards {
     VOTE = 6;
     ESPORTS_GRADE = 7;
     QUIZ = 8;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -1254,7 +1228,6 @@ message TextStyle {
   enum FontStyle {
     NORMAL = 0;
     BOLD = 1;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -1328,13 +1301,11 @@ message Url {
     Popup = 0;
     FullScreen = 1;
     HalfScreen = 2;
-    UNRECOGNIZED = -1;
   }
 
   enum IconPosition {
     Prefix = 0;
     Suffix = 1;
-    UNRECOGNIZED = -1;
   }
 
 }

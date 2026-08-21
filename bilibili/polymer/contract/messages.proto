@@ -21,7 +21,6 @@ message AddContractReq {
   enum Source {
     PLAY = 0;
     SPACE = 1;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -61,7 +60,6 @@ message ContractConfigReq {
     PLAY = 0;
     SPACE = 1;
     STORY = 2;
-    UNRECOGNIZED = -1;
   }
 
 }

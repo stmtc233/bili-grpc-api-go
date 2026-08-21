@@ -14,7 +14,6 @@ enum Act {
   ACT_ADD_BLACK = 5;
   ACT_DEL_BLACK = 6;
   ACT_DEL_FOLLOWER = 7;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/relation/interfaces/AtGroup.java
@@ -28,7 +27,6 @@ message AtGroup {
     AT_GROUP_TYPE_FOLLOW = 2;
     AT_GROUP_TYPE_FANS = 3;
     AT_GROUP_TYPE_OTHERS = 4;
-    UNRECOGNIZED = -1;
   }
 
 }

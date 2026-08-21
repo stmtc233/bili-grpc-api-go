@@ -6,13 +6,11 @@ package com.bapis.bilibili.app.resource.privacy.v1;
 enum PrivacyConfigState {
   close = 0;
   open = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum PrivacyConfigType {
   none = 0;
   dynamic_city = 1;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/app/resource/privacy/v1/NoArgRequest.java

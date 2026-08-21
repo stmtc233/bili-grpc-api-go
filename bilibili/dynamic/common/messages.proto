@@ -27,7 +27,6 @@ enum AttachCardType {
   ATTACH_CARD_MEMBER_GOODS = 18;
   ATTACH_CARD_MAN_TIAN_XING = 19;
   ATTACH_CARD_LOTTERY = 20;
-  UNRECOGNIZED = -1;
 }
 
 enum ContentType {
@@ -49,7 +48,6 @@ enum ContentType {
   MAIL = 15;
   OGV_SEASON = 16;
   OGV_EP = 17;
-  UNRECOGNIZED = -1;
 }
 
 enum CreateInitCheckScene {
@@ -60,7 +58,6 @@ enum CreateInitCheckScene {
   CREATE_INIT_CHECK_SCENE_RESERVE_SHARE = 4;
   CREATE_INIT_CHECK_SCENE_ARTICLE = 5;
   CREATE_INIT_CHECK_SCENE_TRIBEE = 6;
-  UNRECOGNIZED = -1;
 }
 
 enum CreateScene {
@@ -78,21 +75,18 @@ enum CreateScene {
   CREATE_SCENE_CREATE_LIVE_RCMD = 11;
   CREATE_SCENE_CREATE_ARTICLE = 12;
   CREATE_SCENE_CREATE_TRIBEE = 13;
-  UNRECOGNIZED = -1;
 }
 
 enum LangMatchResult {
   LANG_MATCH_UNSPECIFIED = 0;
   LANG_MATCH_CONSISTENT = 1;
   LANG_MATCH_INCONSISTENT = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum OnlyFansOptionType {
   ONLY_FANS_OPTION_NONE = 0;
   ONLY_FANS_OPTION_UPOWER = 1;
   ONLY_FANS_OPTION_HIGH_UPOWER = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum OpusBizType {
@@ -136,7 +130,6 @@ enum OpusBizType {
   CONTENT_VIDEO = 41;
   CONTENT_COMMENT = 42;
   CONTENT_UP = 44;
-  UNRECOGNIZED = -1;
 }
 
 enum OpusSource {
@@ -150,7 +143,6 @@ enum OpusSource {
   REPOST = 7;
   MANGA_EP = 8;
   MIXED_CONTENT = 9;
-  UNRECOGNIZED = -1;
 }
 
 enum PosterSource {
@@ -159,13 +151,11 @@ enum PosterSource {
   POSTER_SOURCE_AI = 2;
   POSTER_SOURCE_CONTENT_PIC = 3;
   POSTER_SOURCE_CUSTOM = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum ReserveSource {
   RESERVE_SOURCE_NEW = 0;
   RESERVE_SOURCE_ASSOCIATED = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum TranslateState {
@@ -175,7 +165,6 @@ enum TranslateState {
   TRANSLATE_NOT_TRANSLATE = 3;
   TRANSLATE_MATCH = 4;
   TRANSLATE_NOT_SUPPORTED = 5;
-  UNRECOGNIZED = -1;
 }
 
 enum UpPermissionType {
@@ -199,7 +188,6 @@ enum UpPermissionType {
   UP_PERMISSION_TYPE_PRIVATE = 17;
   UP_PERMISSION_TYPE_AIGC_MARK = 18;
   UP_PERMISSION_TYPE_JOINED_TRIBEE = 19;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/dynamic/common/Article.java
@@ -270,7 +258,6 @@ message BgStyle {
   enum Style {
     DEFAULT = 0;
     HALF_BOTTOM = 1;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -754,7 +741,6 @@ message LineParagraph {
   enum LineType {
     PIC = 0;
     HR = 1;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -775,7 +761,6 @@ message LinkNode {
   int32 hashTagType = 12;
   enum HashTagType {
     DEFAULT = 0;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -953,14 +938,12 @@ message Paragraph {
     H1 = 1;
     H2 = 2;
     H3 = 3;
-    UNRECOGNIZED = -1;
   }
 
   enum ParagraphAlign {
     LEFT = 0;
     MIDDLE = 1;
     RIGHT = 2;
-    UNRECOGNIZED = -1;
   }
 
   enum ParagraphType {
@@ -974,7 +957,6 @@ message Paragraph {
     LINK_CARD = 7;
     CODE = 8;
     HEADING = 9;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -1030,7 +1012,6 @@ message PicParagraph {
     DEFAULT = 0;
     NINE_CELL = 1;
     SCROLL = 2;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -1185,7 +1166,6 @@ message TextNode {
     AT = 3;
     BIZ_LINK = 4;
     FORMULA = 5;
-    UNRECOGNIZED = -1;
   }
 
 }

@@ -8,7 +8,6 @@ import "bilibili/pagination/messages.proto";
 enum RoomType {
   Watched = 0;
   Popularity = 1;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/live/app/interfaces/api/grpc/v1/GetMoreLiveRoomsReq.java

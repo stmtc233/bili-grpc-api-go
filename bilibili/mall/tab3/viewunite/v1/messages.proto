@@ -16,21 +16,18 @@ enum BizType {
   BizTypeJumpLink = 3;
   BizTypeFavSeason = 4;
   BizTypeReserveGame = 5;
-  UNRECOGNIZED = -1;
 }
 
 enum ECode {
   CODE_DEFAULT = 0;
   CODE_404 = 1;
   CODE_TEENAGER = 78301;
-  UNRECOGNIZED = -1;
 }
 
 enum JumpShowType {
   JST_DEFAULT = 0;
   JST_FULLSCREEN = 1;
   JST_HALFSCREEN = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum MaterialBizType {
@@ -42,31 +39,26 @@ enum MaterialBizType {
   SHOOT_TOGETHER = 5;
   ACTIVITY_ICON = 6;
   NEW_BGM = 7;
-  UNRECOGNIZED = -1;
 }
 
 enum MaterialSource {
   DEFAULT = 0;
   BIJIAN = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum PageCategory {
   COMMON_PAGE = 0;
   ACTIVITY_PAGE = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum PageType {
   H5 = 0;
   NA = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum PlayToastEnum {
   PLAYTOAST_UNKNOWN = 0;
   PLAYTOAST_CHARGINGPLUS = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum TabType {
@@ -74,13 +66,11 @@ enum TabType {
   TAB_INTRODUCTION = 1;
   TAB_REPLY = 2;
   TAB_OGV_ACTIVITY = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum UnionType {
   UGC = 0;
   OGV = 1;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/mall/tab3/viewunite/v1/ActivityResource.java

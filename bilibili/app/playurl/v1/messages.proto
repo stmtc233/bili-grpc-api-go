@@ -6,14 +6,12 @@ package com.bapis.bilibili.app.playurl.v1;
 enum Business {
   UNKNOWN = 0;
   STORY = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum ButtonAction {
   BUTTON_UNKNOWN = 0;
   CHARGINGPLUS = 1;
   VIP = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum CanWatchQnReason {
@@ -23,7 +21,6 @@ enum CanWatchQnReason {
   CAN_WATCH_QN_REASON_BIG_VIP = 3;
   CAN_WATCH_QN_REASON_TV_BIG_VIP = 4;
   CAN_WATCH_QN_REASON_OGV_TVOD_PAY = 5;
-  UNRECOGNIZED = -1;
 }
 
 enum CodeType {
@@ -32,7 +29,6 @@ enum CodeType {
   CODE265 = 2;
   CODEAV1 = 3;
   CODE266 = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum ConfType {
@@ -67,7 +63,6 @@ enum ConfType {
   DOLBY = 28;
   COLORFILTER = 29;
   LOSSLESS = 30;
-  UNRECOGNIZED = -1;
 }
 
 enum Group {
@@ -75,27 +70,23 @@ enum Group {
   A = 1;
   B = 2;
   C = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum GuideStyle {
   STYLE_UNKNOWN = 0;
   CHARGING_TEXT = 1;
   VERTICAL_TEXT = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum LimitWatchQnReason {
   LIMIT_WATCH_QN_REASON_DEFAULT = 0;
   LIMIT_WATCH_QN_REASON_QN_VIP_PLAY = 1;
   LIMIT_WATCH_QN_REASON_CTCC_HOME_NETWORK_DEVICE_LIMIT = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum PlayErr {
   NoErr = 0;
   WithMultiDeviceLoginErr = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum PlayLimitCode {
@@ -103,14 +94,12 @@ enum PlayLimitCode {
   PLCUgcNotPayed = 1;
   PLCChargingPlusNotPass = 2;
   PLCChargingPlusUpgrade = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum ToastType {
   TOAST_TYPE_UNKNOWN = 0;
   CHARGING_TOAST = 1;
   CTCC_TOAST = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum VideoType {
@@ -118,7 +107,6 @@ enum VideoType {
   FLV = 1;
   DASH = 2;
   MP4 = 3;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/app/playurl/v1/AB.java
@@ -258,7 +246,6 @@ message DolbyItem {
     NONE = 0;
     COMMON = 1;
     ATMOS = 2;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -556,7 +543,6 @@ message Scheme {
   enum ActionType {
     UNKNOWN = 0;
     SHOW_TOAST = 1;
-    UNRECOGNIZED = -1;
   }
 
 }
