@@ -986,8 +986,8 @@ message AdditionEsport {
   string type = 3;
   string cardType = 4;
   enum ItemCase {
-    ADDITION_ESPORT_MOBA = 2;
     ITEM_NOT_SET = 0;
+    ADDITION_ESPORT_MOBA = 2;
   }
 
 }
@@ -1134,10 +1134,10 @@ message AdditionVote2 {
   string badge = 23;
   string desc = 24;
   enum ItemCase {
+    ITEM_NOT_SET = 0;
     ADDITION_VOTE_WORD = 10;
     ADDITION_VOTE_PIC = 11;
     ADDITION_VOTE_DEFAULE = 12;
-    ITEM_NOT_SET = 0;
   }
 
 }
@@ -1455,11 +1455,11 @@ message CampusMngItem {
     CampusMngQuiz quiz = 9;
   }
   enum ItemCase {
+    ITEM_NOT_SET = 0;
     BASIC_INFO = 6;
     BADGE = 7;
     SLOGAN = 8;
     QUIZ = 9;
-    ITEM_NOT_SET = 0;
   }
 
 }
@@ -1694,8 +1694,8 @@ message CampusWaterFlowItem {
     WFItemDefault itemDefault = 3;
   }
   enum FlowItemCase {
-    ITEM_DEFAULT = 3;
     FLOWITEM_NOT_SET = 0;
+    ITEM_DEFAULT = 3;
   }
 
 }
@@ -3070,9 +3070,9 @@ message LinkNodeRich {
     EmoteNode emote = 2;
   }
   enum ContentCase {
+    CONTENT_NOT_SET = 0;
     TEXT = 1;
     EMOTE = 2;
-    CONTENT_NOT_SET = 0;
   }
 
 }
@@ -3479,9 +3479,9 @@ message MdlDynSubscriptionNew {
     MdlDynLiveRcmd dynLiveRcmd = 3;
   }
   enum ItemCase {
+    ITEM_NOT_SET = 0;
     DYN_SUBSCRIPTION = 2;
     DYN_LIVE_RCMD = 3;
-    ITEM_NOT_SET = 0;
   }
 
 }
@@ -3591,6 +3591,7 @@ message Module {
     ModulePaywall modulePaywall = 48;
   }
   enum ModuleItemCase {
+    MODULEITEM_NOT_SET = 0;
     MODULE_AUTHOR = 2;
     MODULE_DISPUTE = 3;
     MODULE_DESC = 4;
@@ -3638,7 +3639,6 @@ message Module {
     MODULE_RECOMMEND_CARDS = 46;
     MODULE_RCMD_REASON = 47;
     MODULE_PAYWALL = 48;
-    MODULEITEM_NOT_SET = 0;
   }
 
 }
@@ -3677,6 +3677,7 @@ message ModuleAdditional {
   int64 rid = 7;
   bool needWriteCalender = 11;
   enum ItemCase {
+    ITEM_NOT_SET = 0;
     PGC = 2;
     GOODS = 3;
     VOTE = 4;
@@ -3693,7 +3694,6 @@ message ModuleAdditional {
     COMMENT = 17;
     CONTENTUP = 18;
     MULTIPLE_RESOURCES = 19;
-    ITEM_NOT_SET = 0;
   }
 
 }
@@ -3770,8 +3770,8 @@ message ModuleBanner {
   string dislikeText = 4;
   string dislikeIcon = 5;
   enum ItemCase {
-    USER = 3;
     ITEM_NOT_SET = 0;
+    USER = 3;
   }
 
 }
@@ -3906,6 +3906,7 @@ message ModuleDynamic {
     MdlDynShareChargingQA dynShareChargingQa = 21;
   }
   enum ModuleItemCase {
+    MODULEITEM_NOT_SET = 0;
     DYN_ARCHIVE = 2;
     DYN_PGC = 3;
     DYN_COUR_SEASON = 4;
@@ -3926,7 +3927,6 @@ message ModuleDynamic {
     DYN_TOPIC_SET = 19;
     DYN_CHARGING_ARCHIVE = 20;
     DYN_SHARE_CHARGING_QA = 21;
-    MODULEITEM_NOT_SET = 0;
   }
 
 }
@@ -3949,13 +3949,13 @@ message ModuleExtendItem {
     ExtInfoOGV extInfoOgv = 7;
   }
   enum ExtendCase {
+    EXTEND_NOT_SET = 0;
     EXT_INFO_TOPIC = 2;
     EXT_INFO_LBS = 3;
     EXT_INFO_HOT = 4;
     EXT_INFO_GAME = 5;
     EXT_INFO_COMMON = 6;
     EXT_INFO_OGV = 7;
-    EXTEND_NOT_SET = 0;
   }
 
 }
@@ -4213,9 +4213,9 @@ message MultipleResourcesCard {
     repeated Resource resources = 1;
   }
   enum ContentCase {
+    CONTENT_NOT_SET = 0;
     OPUS = 1;
     VIDEO = 2;
-    CONTENT_NOT_SET = 0;
   }
 
 }
@@ -4252,12 +4252,12 @@ message NavigationEntry {
     NavigationEntryVisaCard visaCard = 7;
   }
   enum DataCase {
+    DATA_NOT_SET = 0;
     JOINED_OTHER_TRIBEE = 3;
     INVITE_CODE = 4;
     GAME_STATS = 5;
     DISPLAY_APP_MINE = 6;
     VISA_CARD = 7;
-    DATA_NOT_SET = 0;
   }
 
 }
@@ -4394,9 +4394,9 @@ message OfficialItem {
     OfficialRcmdDynamic rcmdDynamic = 3;
   }
   enum RcmdItemCase {
+    RCMDITEM_NOT_SET = 0;
     RCMD_ARCHIVE = 2;
     RCMD_DYNAMIC = 3;
-    RCMDITEM_NOT_SET = 0;
   }
 
 }
@@ -4603,8 +4603,8 @@ message OpusFlowItem {
     FlowItemOpus flowItemOpus = 4;
   }
   enum DataCase {
-    FLOW_ITEM_OPUS = 4;
     DATA_NOT_SET = 0;
+    FLOW_ITEM_OPUS = 4;
   }
 
 }
@@ -4652,13 +4652,13 @@ message Paragraph {
   int32 jumpUrl = 8;
   int32 table = 9;
   enum ContentCase {
+    CONTENT_NOT_SET = 0;
     TEXT = 3;
     PIC = 4;
     LINE = 5;
     LINK_CARD = 6;
     CODE = 7;
     TABLE = 9;
-    CONTENT_NOT_SET = 0;
   }
 
   enum HeadingType {
@@ -4810,8 +4810,8 @@ message RcmdItem {
     RcmdArchive rcmdArchive = 2;
   }
   enum RcmdItemCase {
-    RCMD_ARCHIVE = 2;
     RCMDITEM_NOT_SET = 0;
+    RCMD_ARCHIVE = 2;
   }
 
 }
@@ -5116,8 +5116,8 @@ message StoryItem {
     StoryArchive storyArchive = 5;
   }
   enum RcmdItemCase {
-    STORY_ARCHIVE = 5;
     RCMDITEM_NOT_SET = 0;
+    STORY_ARCHIVE = 5;
   }
 
 }
@@ -5164,6 +5164,7 @@ message SunflowerParsedItem {
   string linkIcon = 10;
   string linkText = 12;
   enum ContentCase {
+    CONTENT_NOT_SET = 0;
     UNKNOWN = 4;
     LINK = 5;
     VIDEO = 6;
@@ -5171,7 +5172,6 @@ message SunflowerParsedItem {
     EMOTE = 8;
     COMMENT = 9;
     UP = 11;
-    CONTENT_NOT_SET = 0;
   }
 
   enum ParsedType {
@@ -5227,11 +5227,11 @@ message TextNode {
     FormulaNode formula = 6;
   }
   enum TextCase {
+    TEXT_NOT_SET = 0;
     WORD = 3;
     EMOTE = 4;
     LINK = 5;
     FORMULA = 6;
-    TEXT_NOT_SET = 0;
   }
 
   enum TextNodeType {
@@ -5403,6 +5403,7 @@ message ThreePointItem {
   }
   bool isAdminOperation = 20;
   enum ItemCase {
+    ITEM_NOT_SET = 0;
     DEFAULT = 2;
     AUTO_PLAYER = 3;
     SHARE = 4;
@@ -5423,7 +5424,6 @@ message ThreePointItem {
     TRIBEE_FEATURED = 19;
     TRIBEE_APPROVED_THREAD = 21;
     TRIBEE_REJECT_THREAD_SELECTED = 22;
-    ITEM_NOT_SET = 0;
   }
 
 }
@@ -6013,10 +6013,10 @@ message TribeeSearchCard {
   }
 
   enum DataCase {
+    DATA_NOT_SET = 0;
     TIPS = 2;
     DYN = 3;
     COMMENT = 5;
-    DATA_NOT_SET = 0;
   }
 
 }
@@ -6115,9 +6115,9 @@ message TribeeSteamHomeAchievement {
     TribeeSteamHomeAchievementSuccess success = 5;
   }
   enum DataCase {
+    DATA_NOT_SET = 0;
     EMPTY = 4;
     SUCCESS = 5;
-    DATA_NOT_SET = 0;
   }
 
   enum TribeeSteamHomeAchievementType {
@@ -6164,9 +6164,9 @@ message TribeeSteamHomeAchievementSuccess {
   string playTimeIcon = 6;
   string achieveCountIcon = 7;
   enum DataCase {
+    DATA_NOT_SET = 0;
     EMPTY = 4;
     SUCCESS = 5;
-    DATA_NOT_SET = 0;
   }
 
   enum TribeeSteamHomeAchievementSuccessType {
@@ -6224,9 +6224,9 @@ message TribeeSteamHomeBindResp {
   }
 
   enum DataCase {
+    DATA_NOT_SET = 0;
     NORMAL = 2;
     ABNORMAL = 3;
-    DATA_NOT_SET = 0;
   }
 
 }
@@ -6290,9 +6290,9 @@ message TribeeSteamHomeResp {
   }
   TipsFootCard goToBindTips = 6;
   enum DataCase {
+    DATA_NOT_SET = 0;
     NOT_BIND = 3;
     BIND = 4;
-    DATA_NOT_SET = 0;
   }
 
 }
@@ -6584,9 +6584,9 @@ message WeightItem {
     WeightDislike dislike = 3;
   }
   enum ItemCase {
+    ITEM_NOT_SET = 0;
     BUTTON = 2;
     DISLIKE = 3;
-    ITEM_NOT_SET = 0;
   }
 
 }

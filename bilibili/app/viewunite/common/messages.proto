@@ -629,12 +629,12 @@ message DeliveryData {
   int32 id = 8;
   map<string, string> report = 9;
   enum DataCase {
+    DATA_NOT_SET = 0;
     ACTIVITY = 4;
     CHARACTERS = 5;
     THEATRE_HOT_TOPIC = 6;
     AGG_EPS = 7;
     ACT_PAGE_ITEMS = 10;
-    DATA_NOT_SET = 0;
   }
 
 }
@@ -729,8 +729,8 @@ message Honor {
     ProfessionHonorExtend professionExt = 15;
   }
   enum ExtendCase {
-    PROFESSION_EXT = 15;
     EXTEND_NOT_SET = 0;
+    PROFESSION_EXT = 15;
   }
 
 }
@@ -774,9 +774,9 @@ message KingPos {
     CoinExtend coin = 7;
   }
   enum ExtendCase {
+    EXTEND_NOT_SET = 0;
     LIKE = 6;
     COIN = 7;
-    EXTEND_NOT_SET = 0;
   }
 
 }
@@ -860,6 +860,7 @@ message MentionCard {
     VideoLottery lottery = 8;
   }
   enum DataCase {
+    DATA_NOT_SET = 0;
     GAME = 2;
     STREAMER = 3;
     CHARGE_UGC = 4;
@@ -867,7 +868,6 @@ message MentionCard {
     OGV = 6;
     COURSE = 7;
     LOTTERY = 8;
-    DATA_NOT_SET = 0;
   }
 
 }
@@ -987,6 +987,7 @@ message Module {
     OgvReserveReminder ogvReserveReminder = 54;
   }
   enum DataCase {
+    DATA_NOT_SET = 0;
     OGV_INTRODUCTION = 2;
     UGC_INTRODUCTION = 3;
     KING_POSITION = 4;
@@ -1040,7 +1041,6 @@ message Module {
     PUGV_SEASON_COMBINE = 52;
     VIDEO_MENTIONS = 53;
     OGV_RESERVE_REMINDER = 54;
-    DATA_NOT_SET = 0;
   }
 
 }
@@ -1357,9 +1357,9 @@ message PugvSeasonDescription {
     PugvSeasonDescriptionImage image = 4;
   }
   enum ContentCase {
+    CONTENT_NOT_SET = 0;
     TEXT = 3;
     IMAGE = 4;
-    CONTENT_NOT_SET = 0;
   }
 
 }
@@ -1686,6 +1686,7 @@ message RelateCard {
   Any cmStock = 11;
   CardBasicInfo basicInfo = 12;
   enum CardCase {
+    CARD_NOT_SET = 0;
     AV = 2;
     BANGUMI = 3;
     RESOURCE = 4;
@@ -1699,7 +1700,6 @@ message RelateCard {
     COURSE = 15;
     MINI_PROGRAM = 16;
     HISTORY_AV = 17;
-    CARD_NOT_SET = 0;
   }
 
 }
@@ -1851,9 +1851,9 @@ message ReserveButton {
     BizFavParam fav = 9;
   }
   enum OrderParamCase {
+    ORDERPARAM_NOT_SET = 0;
     RESERVE = 8;
     FAV = 9;
-    ORDERPARAM_NOT_SET = 0;
   }
 
 }
@@ -2228,8 +2228,8 @@ message UpTool {
   }
   map<string, string> report = 7;
   enum DataCase {
-    MENTION = 6;
     DATA_NOT_SET = 0;
+    MENTION = 6;
   }
 
 }

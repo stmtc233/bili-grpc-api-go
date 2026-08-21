@@ -20,10 +20,10 @@ message BasicLayerResource {
     ResNativeDraw resNativeDraw = 4;
   }
   enum PayloadCase {
+    PAYLOAD_NOT_SET = 0;
     RES_IMAGE = 2;
     RES_ANIMATION = 3;
     RES_NATIVE_DRAW = 4;
-    PAYLOAD_NOT_SET = 0;
   }
 
   enum ResType {
@@ -81,6 +81,7 @@ message LayerTagConfig {
     FollowActionConfig followActionConfig = 8;
   }
   enum ConfigCase {
+    CONFIG_NOT_SET = 0;
     GENERAL_CONFIG = 2;
     GYRO_CONFIG = 3;
     COMMENT_DOUBLE_CLICK_CONFIG = 4;
@@ -88,7 +89,6 @@ message LayerTagConfig {
     WEB_LIVE_ANIME_CONFIG = 6;
     FOLLOW_ICON_CONFIG = 7;
     FOLLOW_ACTION_CONFIG = 8;
-    CONFIG_NOT_SET = 0;
   }
 
   enum TagConfigType {

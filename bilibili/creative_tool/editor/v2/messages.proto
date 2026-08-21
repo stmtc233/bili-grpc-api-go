@@ -4,6 +4,7 @@ syntax = "proto3";
 package com.bapis.bilibili.creative_tool.editor.v2;
 
 enum FeatureFlag {
+  _ff_none = 0;
   LinearMask = 1;
   MirrorMask = 2;
   RectangularMask = 3;

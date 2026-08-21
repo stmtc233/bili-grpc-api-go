@@ -113,8 +113,8 @@ message RegionCard {
   }
   ThreePoint threePoint = 3;
   enum ItemCase {
-    AV = 2;
     ITEM_NOT_SET = 0;
+    AV = 2;
   }
 
 }

@@ -25,11 +25,11 @@ message PageSectionEpisodesReq {
     int64 cid = 23;
   }
   enum LocatorCase {
+    LOCATOR_NOT_SET = 0;
     PAGE_INDEX = 20;
     CURSOR_EP_ID = 21;
     AID = 22;
     CID = 23;
-    LOCATOR_NOT_SET = 0;
   }
 
 }

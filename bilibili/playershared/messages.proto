@@ -483,9 +483,9 @@ message ConfValue {
     int64 selectedVal = 2;
   }
   enum ValueCase {
+    VALUE_NOT_SET = 0;
     SWITCH_VAL = 1;
     SELECTED_VAL = 2;
-    VALUE_NOT_SET = 0;
   }
 
 }
@@ -615,12 +615,12 @@ message ExtData {
     QrCode qrCode = 6;
   }
   enum DataCase {
+    DATA_NOT_SET = 0;
     PLAY_LIST_INFO = 2;
     BANNER = 3;
     EP_INLINE_VIDEO_INFO = 4;
     CHARGING_EXT = 5;
     QR_CODE = 6;
-    DATA_NOT_SET = 0;
   }
 
 }
@@ -638,8 +638,8 @@ message FoldData {
     CountDownItem countDown = 2;
   }
   enum DataCase {
-    COUNT_DOWN = 2;
     DATA_NOT_SET = 0;
+    COUNT_DOWN = 2;
   }
 
 }
@@ -879,9 +879,9 @@ message QnItem {
     QnGroup qnGroup = 2;
   }
   enum ContentCase {
+    CONTENT_NOT_SET = 0;
     STREAM_INFO = 1;
     QN_GROUP = 2;
-    CONTENT_NOT_SET = 0;
   }
 
 }
@@ -999,10 +999,10 @@ message SettingItem {
     SettingSwitch switch = 5;
   }
   enum ValueCase {
+    VALUE_NOT_SET = 0;
     MORE = 3;
     VERTICAL = 4;
     SWITCH = 5;
-    VALUE_NOT_SET = 0;
   }
 
 }
@@ -1063,10 +1063,10 @@ message Stream {
     MultiDashVideo multiDashVideo = 4;
   }
   enum ContentCase {
+    CONTENT_NOT_SET = 0;
     DASH_VIDEO = 2;
     SEGMENT_VIDEO = 3;
     MULTI_DASH_VIDEO = 4;
-    CONTENT_NOT_SET = 0;
   }
 
 }

@@ -239,11 +239,11 @@ message RoomReq {
     RoomMessageEvent msg = 5;
   }
   enum EventCase {
+    EVENT_NOT_SET = 0;
     JOIN = 2;
     LEAVE = 3;
     ONLINE = 4;
     MSG = 5;
-    EVENT_NOT_SET = 0;
   }
 
 }
@@ -259,12 +259,12 @@ message RoomResp {
     RoomErrorEvent err = 6;
   }
   enum EventCase {
+    EVENT_NOT_SET = 0;
     JOIN = 2;
     LEAVE = 3;
     ONLINE = 4;
     MSG = 5;
     ERR = 6;
-    EVENT_NOT_SET = 0;
   }
 
 }

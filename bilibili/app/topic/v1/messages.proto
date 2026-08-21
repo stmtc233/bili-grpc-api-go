@@ -134,11 +134,11 @@ message FeedCard {
     FeedCardTask taskCard = 5;
   }
   enum DetailCase {
+    DETAIL_NOT_SET = 0;
     USER_RATING = 2;
     LEAD_COLLECTION = 3;
     ITEM_CARD = 4;
     TASK_CARD = 5;
-    DETAIL_NOT_SET = 0;
   }
 
 }
@@ -320,8 +320,8 @@ message OperationCard {
     LargeCoverInline largeCoverInline = 1;
   }
   enum CardCase {
-    LARGE_COVER_INLINE = 1;
     CARD_NOT_SET = 0;
+    LARGE_COVER_INLINE = 1;
   }
 
 }
@@ -711,6 +711,7 @@ message TopicTopCard {
   int64 startTime = 9;
   int64 endTime = 10;
   enum CardItemCase {
+    CARDITEM_NOT_SET = 0;
     CAPSULES = 2;
     TRAFFIC_CARD = 3;
     GAME_CARD = 4;
@@ -721,7 +722,6 @@ message TopicTopCard {
     IP_TOPIC_CARD = 11;
     HEAD_CLICK_AREA_CARD = 12;
     ITEM_CARD = 13;
-    CARDITEM_NOT_SET = 0;
   }
 
 }

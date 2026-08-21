@@ -121,10 +121,10 @@ message CardModule {
     PkcmCenterButton moduleCbtn = 4;
   }
   enum ModuleCase {
+    MODULE_NOT_SET = 0;
     MODULE_HEADER = 2;
     MODULE_ARCHIVE = 3;
     MODULE_CBTN = 4;
-    MODULE_NOT_SET = 0;
   }
 
 }
@@ -348,9 +348,9 @@ message FavItemAddReq {
   }
   bool isFastAddFav = 5;
   enum ItemCase {
+    ITEM_NOT_SET = 0;
     PLAY = 3;
     FAV = 4;
-    ITEM_NOT_SET = 0;
   }
 
 }
@@ -374,9 +374,9 @@ message FavItemBatchReq {
     FavItem fav = 3;
   }
   enum ItemCase {
+    ITEM_NOT_SET = 0;
     PLAY = 2;
     FAV = 3;
-    ITEM_NOT_SET = 0;
   }
 
 }
@@ -396,9 +396,9 @@ message FavItemDelReq {
   }
   bool isFastDelFav = 5;
   enum ItemCase {
+    ITEM_NOT_SET = 0;
     PLAY = 3;
     FAV = 4;
-    ITEM_NOT_SET = 0;
   }
 
 }
@@ -769,9 +769,9 @@ message PlayInfo {
   uint64 expireTime = 13;
   VolumeInfo volume = 14;
   enum InfoCase {
+    INFO_NOT_SET = 0;
     PLAY_URL = 4;
     PLAY_DASH = 5;
-    INFO_NOT_SET = 0;
   }
 
 }
@@ -794,10 +794,10 @@ message PlaylistAddReq {
     bool tail = 4;
   }
   enum PosCase {
+    POS_NOT_SET = 0;
     AFTER = 2;
     HEAD = 3;
     TAIL = 4;
-    POS_NOT_SET = 0;
   }
 
 }
@@ -957,11 +957,11 @@ message TopCard {
   int64 pos = 8;
   string titleIcon = 9;
   enum CardCase {
+    CARD_NOT_SET = 0;
     LISTEN_HISTORY = 4;
     FAV_FOLDER = 5;
     UP_RECALL = 6;
     PICK_TODAY = 7;
-    CARD_NOT_SET = 0;
   }
 
   enum PlayStrategy {

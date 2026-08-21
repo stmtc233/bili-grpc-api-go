@@ -128,8 +128,8 @@ message RerankCardInfo {
     RerankAdInfo adInfo = 6;
   }
   enum InfoCase {
-    AD_INFO = 6;
     INFO_NOT_SET = 0;
+    AD_INFO = 6;
   }
 
 }

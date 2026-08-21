@@ -34,6 +34,7 @@ message CommandMsg {
     ChatPushSettingChangedCommand chatPushSettingChangedCommand = 7;
   }
   enum CommandCase {
+    COMMAND_NOT_SET = 0;
     UPDATE_TOTAL_UNREAD_COMMAND = 1;
     UPDATE_SESSION_LIST_COMMAND = 2;
     UPDATE_QUICK_LINK_COMMAND = 3;
@@ -41,7 +42,6 @@ message CommandMsg {
     UPDATE_SESSION_ONE_COMMAND = 5;
     UPDATE_CHAT_INFO_COMMAND = 6;
     CHAT_PUSH_SETTING_CHANGED_COMMAND = 7;
-    COMMAND_NOT_SET = 0;
   }
 
 }

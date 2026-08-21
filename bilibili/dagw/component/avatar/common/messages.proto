@@ -98,10 +98,10 @@ message ResourceSource {
   }
 
   enum ResCase {
+    RES_NOT_SET = 0;
     REMOTE = 3;
     LOCAL = 4;
     DRAW = 5;
-    RES_NOT_SET = 0;
   }
 
   enum SourceType {

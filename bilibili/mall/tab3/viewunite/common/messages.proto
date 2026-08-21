@@ -442,12 +442,12 @@ message DeliveryData {
   int32 id = 8;
   map<string, string> report = 9;
   enum DataCase {
+    DATA_NOT_SET = 0;
     ACTIVITY = 4;
     CHARACTERS = 5;
     THEATRE_HOT_TOPIC = 6;
     AGG_EPS = 7;
     ACT_PAGE_ITEMS = 10;
-    DATA_NOT_SET = 0;
   }
 
 }
@@ -558,9 +558,9 @@ message KingPos {
     CoinExtend coin = 7;
   }
   enum ExtendCase {
+    EXTEND_NOT_SET = 0;
     LIKE = 6;
     COIN = 7;
-    EXTEND_NOT_SET = 0;
   }
 
 }
@@ -656,6 +656,7 @@ message Module {
     ProfessionApproval professionApproval = 30;
   }
   enum DataCase {
+    DATA_NOT_SET = 0;
     OGV_INTRODUCTION = 2;
     UGC_INTRODUCTION = 3;
     KING_POSITION = 4;
@@ -685,7 +686,6 @@ message Module {
     SPECIAL_TAG = 28;
     UP_DATA_MODULE = 29;
     PROFESSION_APPROVAL = 30;
-    DATA_NOT_SET = 0;
   }
 
 }
@@ -922,6 +922,7 @@ message RelateCard {
   Any cmStock = 11;
   CardBasicInfo basicInfo = 12;
   enum CardCase {
+    CARD_NOT_SET = 0;
     AV = 2;
     BANGUMI = 3;
     RESOURCE = 4;
@@ -932,7 +933,6 @@ message RelateCard {
     AI_CARD = 9;
     BANGUMI_UGC = 13;
     SPECIAL = 14;
-    CARD_NOT_SET = 0;
   }
 
 }
@@ -1037,9 +1037,9 @@ message ReserveButton {
     BizFavParam fav = 9;
   }
   enum OrderParamCase {
+    ORDERPARAM_NOT_SET = 0;
     RESERVE = 8;
     FAV = 9;
-    ORDERPARAM_NOT_SET = 0;
   }
 
 }

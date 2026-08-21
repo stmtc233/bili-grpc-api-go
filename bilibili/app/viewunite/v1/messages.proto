@@ -486,12 +486,12 @@ message OperationCard {
     BizGameBackflowParam gameBackflow = 11;
   }
   enum ParamCase {
+    PARAM_NOT_SET = 0;
     FOLLOW = 7;
     RESERVE = 8;
     JUMP = 9;
     GAME = 10;
     GAME_BACKFLOW = 11;
-    PARAM_NOT_SET = 0;
   }
 
 }
@@ -513,8 +513,8 @@ message PadRelateCM {
     RelateLiveCM live = 2;
   }
   enum DataCase {
-    LIVE = 2;
     DATA_NOT_SET = 0;
+    LIVE = 2;
   }
 
 }
@@ -601,8 +601,8 @@ message PlayPauseReply {
     PauseAds ads = 3;
   }
   enum DataCase {
-    ADS = 3;
     DATA_NOT_SET = 0;
+    ADS = 3;
   }
 
 }
@@ -768,9 +768,9 @@ message SourceContentItem {
     SourceContentLive live = 4;
   }
   enum DataCase {
+    DATA_NOT_SET = 0;
     AV = 3;
     LIVE = 4;
-    DATA_NOT_SET = 0;
   }
 
 }
@@ -781,8 +781,8 @@ message StoryActualCardWrapper {
     StoryVideoCard videoCard = 1;
   }
   enum ActualCardCase {
-    VIDEO_CARD = 1;
     ACTUALCARD_NOT_SET = 0;
+    VIDEO_CARD = 1;
   }
 
 }
@@ -815,9 +815,9 @@ message StoryReq {
   string spmid = 8;
   string fromSpmid = 9;
   enum ParamCase {
+    PARAM_NOT_SET = 0;
     STORY_REQ_PARAM = 4;
     PLAY_LIST_REQ_PARAM = 5;
-    PARAM_NOT_SET = 0;
   }
 
 }
@@ -869,11 +869,11 @@ message TabModule {
     CatalogTab catalog = 5;
   }
   enum TabCase {
+    TAB_NOT_SET = 0;
     INTRODUCTION = 2;
     REPLY = 3;
     ACTIVITY_TAB = 4;
     CATALOG = 5;
-    TAB_NOT_SET = 0;
   }
 
 }

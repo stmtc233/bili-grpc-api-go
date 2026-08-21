@@ -119,11 +119,11 @@ message BubbleModule {
     BubbleModulePic pic = 5;
   }
   enum ModuleCase {
+    MODULE_NOT_SET = 0;
     USER = 2;
     TEXT = 3;
     COLORED_TIP = 4;
     PIC = 5;
-    MODULE_NOT_SET = 0;
   }
 
 }
@@ -323,11 +323,11 @@ message DynOurCityModule {
     DynOurCityModuleExtend moduleExtend = 5;
   }
   enum ModuleItemCase {
+    MODULEITEM_NOT_SET = 0;
     MODULE_COVER = 2;
     MODULE_DESC = 3;
     MODULE_AUTHOR = 4;
     MODULE_EXTEND = 5;
-    MODULEITEM_NOT_SET = 0;
   }
 
 }
@@ -364,8 +364,8 @@ message DynOurCityModuleExtend {
     DynOurCityModuleExtendLBS extendLbs = 2;
   }
   enum ExtendCase {
-    EXTEND_LBS = 2;
     EXTEND_NOT_SET = 0;
+    EXTEND_LBS = 2;
   }
 
 }
@@ -566,11 +566,11 @@ message Extend {
     ExtInfoGame extInfoGame = 5;
   }
   enum ExtendCase {
+    EXTEND_NOT_SET = 0;
     EXT_INFO_TOPIC = 2;
     EXT_INFO_LBS = 3;
     EXT_INFO_HOT = 4;
     EXT_INFO_GAME = 5;
-    EXTEND_NOT_SET = 0;
   }
 
 }
@@ -699,6 +699,7 @@ message Module {
     bytes moduleFollowlist = 12;
   }
   enum ModuleItemCase {
+    MODULEITEM_NOT_SET = 0;
     MODULE_FOLD = 2;
     MODULE_AUTHOR = 3;
     MODULE_DYNAMIC = 4;
@@ -710,7 +711,6 @@ message Module {
     MODULE_LIKEUSER = 10;
     MODULE_UPLIST = 11;
     MODULE_FOLLOWLIST = 12;
-    MODULEITEM_NOT_SET = 0;
   }
 
 }
@@ -745,11 +745,11 @@ message ModuleDynamic {
     CardCurrBatch cardCurrBatch = 5;
   }
   enum CardCase {
+    CARD_NOT_SET = 0;
     CARD_UGC = 2;
     CARD_PGC = 3;
     CARD_CURR_SEASON = 4;
     CARD_CURR_BATCH = 5;
-    CARD_NOT_SET = 0;
   }
 
 }
@@ -907,11 +907,11 @@ message SVideoModule {
     SVideoModuleStat moduleStat = 5;
   }
   enum ModuleItemCase {
+    MODULEITEM_NOT_SET = 0;
     MODULE_AUTHOR = 2;
     MODULE_PLAYER = 3;
     MODULE_DESC = 4;
     MODULE_STAT = 5;
-    MODULEITEM_NOT_SET = 0;
   }
 
 }

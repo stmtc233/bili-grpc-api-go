@@ -366,9 +366,9 @@ message EpPublicityVideo {
     EpInlineVideo epInline = 3;
   }
   enum DataCase {
+    DATA_NOT_SET = 0;
     EP_PRE_VIDEO = 2;
     EP_INLINE = 3;
-    DATA_NOT_SET = 0;
   }
 
 }
@@ -665,9 +665,9 @@ message QnItem {
     QnGroup qnGroup = 2;
   }
   enum ContentCase {
+    CONTENT_NOT_SET = 0;
     STREAM_INFO = 1;
     QN_GROUP = 2;
-    CONTENT_NOT_SET = 0;
   }
 
 }
@@ -771,10 +771,10 @@ message Stream {
     MultiDashVideo multiDashVideo = 4;
   }
   enum ContentCase {
+    CONTENT_NOT_SET = 0;
     DASH_VIDEO = 2;
     SEGMENT_VIDEO = 3;
     MULTI_DASH_VIDEO = 4;
-    CONTENT_NOT_SET = 0;
   }
 
 }

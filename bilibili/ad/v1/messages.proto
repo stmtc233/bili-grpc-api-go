@@ -444,8 +444,8 @@ message BrandPausePageDto {
     BrandPauseLoopCardDto loopCard = 1;
   }
   enum CardCase {
-    LOOP_CARD = 1;
     CARD_NOT_SET = 0;
+    LOOP_CARD = 1;
   }
 
 }
@@ -947,8 +947,8 @@ message PausedDynamicPage {
   }
   repeated int64 relatedAids = 2;
   enum PageCase {
-    BX_PAGE = 1;
     PAGE_NOT_SET = 0;
+    BX_PAGE = 1;
   }
 
 }
