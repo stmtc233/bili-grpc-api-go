@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.bilibili.community.interfacess.biligram.v1;
 
+import "bilibili/pagination/messages.proto";
+
 enum IconPosition {
   IconPositionPrefix = 0;
   IconPositionSuffix = 1;
@@ -297,7 +299,7 @@ message MessagesReply {
   int64 upMid = 2;
   int64 permission = 3;
   repeated Message message_ = 4;
-  FeedPaginationReply page = 5;
+  com.bapis.bilibili.pagination.FeedPaginationReply page = 5;
   Button setting = 6;
   Input input = 7;
 }
@@ -305,7 +307,7 @@ message MessagesReply {
 // Source: com/bapis/bilibili/community/interfacess/biligram/v1/MessagesReq.java
 message MessagesReq {
   int64 id = 1;
-  FeedPagination page = 2;
+  com.bapis.bilibili.pagination.FeedPagination page = 2;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/biligram/v1/Picture.java

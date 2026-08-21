@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.mine.v1;
 
+import "bilibili/app/dynamic/v2/messages.proto";
+
 enum ArcState {
   STATE_UNKNOWN = 0;
   OPEN = 1;
@@ -69,7 +71,7 @@ message CardMore {
 
 // Source: com/bapis/bilibili/app/mine/v1/CardOpus.java
 message CardOpus {
-  Paragraph wordParagraph = 1;
+  com.bapis.bilibili.app.dynamic.v2.Paragraph wordParagraph = 1;
   string cover = 2;
   string url = 3;
   SubTitleWithStat statTitle = 4;

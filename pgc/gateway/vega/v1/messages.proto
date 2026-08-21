@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.pgc.gateway.vega.v1;
 
+import "google/protobuf/any.proto";
+
 // Source: com/bapis/pgc/gateway/vega/v1/AuthReq.java
 message AuthReq {
 }
@@ -46,14 +48,14 @@ message SubscribeReq {
 // Source: com/bapis/pgc/gateway/vega/v1/TargetPath.java
 message TargetPath {
   string key = 1;
-  Any subs = 2;
+  google.protobuf.Any subs = 2;
 }
 
 // Source: com/bapis/pgc/gateway/vega/v1/VegaFrame.java
 message VegaFrame {
   FrameOption options = 1;
   string routePath = 2;
-  Any body = 3;
+  google.protobuf.Any body = 3;
   bytes subbiz = 4;
 }
 

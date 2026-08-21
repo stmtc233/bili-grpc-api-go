@@ -3,23 +3,25 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.distribution.setting.pegasus;
 
+import "bilibili/app/distribution/messages.proto";
+
 // Source: com/bapis/bilibili/app/distribution/setting/pegasus/FeedModeValue.java
 message FeedModeValue {
-  Int64Value value = 1;
+  com.bapis.bilibili.app.distribution.Int64Value value = 1;
 }
 
 // Source: com/bapis/bilibili/app/distribution/setting/pegasus/PegasusAutoPlay.java
 message PegasusAutoPlay {
-  Int64Value single = 1;
-  Int64Value double_ = 2;
-  BoolValue singleAffectedByServerSide = 3;
-  BoolValue doubleAffectedByServerSide = 4;
+  com.bapis.bilibili.app.distribution.Int64Value single = 1;
+  com.bapis.bilibili.app.distribution.Int64Value double_ = 2;
+  com.bapis.bilibili.app.distribution.BoolValue singleAffectedByServerSide = 3;
+  com.bapis.bilibili.app.distribution.BoolValue doubleAffectedByServerSide = 4;
 }
 
 // Source: com/bapis/bilibili/app/distribution/setting/pegasus/PegasusColumnValue.java
 message PegasusColumnValue {
-  Int64Value value = 1;
-  BoolValue affectedByServerSide = 2;
+  com.bapis.bilibili.app.distribution.Int64Value value = 1;
+  com.bapis.bilibili.app.distribution.BoolValue affectedByServerSide = 2;
 }
 
 // Source: com/bapis/bilibili/app/distribution/setting/pegasus/PegasusDeviceConfig.java
@@ -31,13 +33,13 @@ message PegasusDeviceConfig {
 
 // Source: com/bapis/bilibili/app/distribution/setting/pegasus/PegasusDeviceWithoutFplocalConfig.java
 message PegasusDeviceWithoutFplocalConfig {
-  Int64Value autoRefreshState = 1;
+  com.bapis.bilibili.app.distribution.Int64Value autoRefreshState = 1;
 }
 
 // Source: com/bapis/bilibili/app/distribution/setting/pegasus/PegasusMidConfig.java
 message PegasusMidConfig {
-  Int64Value column = 1;
-  Int64Value playMode = 2;
+  com.bapis.bilibili.app.distribution.Int64Value column = 1;
+  com.bapis.bilibili.app.distribution.Int64Value playMode = 2;
 }
 
 

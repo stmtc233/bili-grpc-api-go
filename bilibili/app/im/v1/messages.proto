@@ -3,6 +3,10 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.im.v1;
 
+import "bilibili/account/service/v1/messages.proto";
+import "bilibili/app/dynamic/v2/messages.proto";
+import "bilibili/dagw/component/avatar/v1/messages.proto";
+
 enum AiIdType {
   AI_ID_TYPE_UNKNOWN = 0;
   AI_ID_TYPE_MAIN = 1;
@@ -269,7 +273,7 @@ message AiId {
 
 // Source: com/bapis/bilibili/app/im/v1/AiIntroduceModule.java
 message AiIntroduceModule {
-  AvatarItem avatar = 1;
+  com.bapis.bilibili.dagw.component.avatar.v1.AvatarItem avatar = 1;
   string displayName = 2;
   string aiMark = 3;
   string limitText = 4;
@@ -456,10 +460,10 @@ message ClearUnreadReq {
 message Contact {
   int64 id = 1;
   string name = 2;
-  AvatarItem avatar = 3;
+  com.bapis.bilibili.dagw.component.avatar.v1.AvatarItem avatar = 3;
   string vipInfo = 4;
   string url = 5;
-  NameRender nameRender = 6;
+  com.bapis.bilibili.account.service.v1.NameRender nameRender = 6;
   bool isSpecialFollow = 7;
   string face = 8;
   int32 officialType = 9;
@@ -633,12 +637,12 @@ message GroupId {
 
 // Source: com/bapis/bilibili/app/im/v1/HintTextModule.java
 message HintTextModule {
-  Paragraph paragraph = 1;
+  com.bapis.bilibili.app.dynamic.v2.Paragraph paragraph = 1;
 }
 
 // Source: com/bapis/bilibili/app/im/v1/HintTextWidget.java
 message HintTextWidget {
-  Paragraph paragraph = 1;
+  com.bapis.bilibili.app.dynamic.v2.Paragraph paragraph = 1;
 }
 
 // Source: com/bapis/bilibili/app/im/v1/ImageLabel.java
@@ -1072,7 +1076,7 @@ message PrivateId {
 // Source: com/bapis/bilibili/app/im/v1/PushAdditionalMsgModule.java
 message PushAdditionalMsgModule {
   string avatar = 1;
-  Paragraph content = 2;
+  com.bapis.bilibili.app.dynamic.v2.Paragraph content = 2;
   string refIcon = 3;
 }
 
@@ -1080,8 +1084,8 @@ message PushAdditionalMsgModule {
 message PushArticleModule {
   int64 articleId = 1;
   repeated PictureModule coverImg = 2;
-  Paragraph title = 3;
-  Paragraph summary = 4;
+  com.bapis.bilibili.app.dynamic.v2.Paragraph title = 3;
+  com.bapis.bilibili.app.dynamic.v2.Paragraph summary = 4;
 }
 
 // Source: com/bapis/bilibili/app/im/v1/PushEmptyFrame.java
@@ -1262,8 +1266,8 @@ message SessionId {
 // Source: com/bapis/bilibili/app/im/v1/SessionInfo.java
 message SessionInfo {
   string sessionName = 1;
-  NameRender nameRender = 2;
-  AvatarItem avatar = 3;
+  com.bapis.bilibili.account.service.v1.NameRender nameRender = 2;
+  com.bapis.bilibili.dagw.component.avatar.v1.AvatarItem avatar = 3;
   string vipInfo = 4;
   UserLabel userLabel = 5;
   bool isLive = 6;
@@ -1449,10 +1453,10 @@ message SettingText {
 
 // Source: com/bapis/bilibili/app/im/v1/SettingUserInfo.java
 message SettingUserInfo {
-  AvatarItem avatar = 1;
+  com.bapis.bilibili.dagw.component.avatar.v1.AvatarItem avatar = 1;
   string name = 2;
   string vipInfo = 3;
-  NameRender nameRender = 4;
+  com.bapis.bilibili.account.service.v1.NameRender nameRender = 4;
   string gender = 5;
   int32 level = 6;
   string firstText = 7;
@@ -1473,9 +1477,9 @@ message ShareAppletModule {
 // Source: com/bapis/bilibili/app/im/v1/ShareArticleModule.java
 message ShareArticleModule {
   int64 articleId = 1;
-  Paragraph title = 2;
+  com.bapis.bilibili.app.dynamic.v2.Paragraph title = 2;
   repeated PictureModule images = 3;
-  Paragraph summary = 4;
+  com.bapis.bilibili.app.dynamic.v2.Paragraph summary = 4;
   string stats = 5;
 }
 
@@ -1518,13 +1522,13 @@ message ShareDynamicAttachModule {
 
 // Source: com/bapis/bilibili/app/im/v1/ShareDynamicForwardModule.java
 message ShareDynamicForwardModule {
-  Paragraph paragraph = 1;
+  com.bapis.bilibili.app.dynamic.v2.Paragraph paragraph = 1;
   int64 id = 2;
 }
 
 // Source: com/bapis/bilibili/app/im/v1/ShareDynamicModule.java
 message ShareDynamicModule {
-  Paragraph paragraph = 1;
+  com.bapis.bilibili.app.dynamic.v2.Paragraph paragraph = 1;
   string image = 2;
   bool isForward = 3;
   string url = 4;
@@ -1544,7 +1548,7 @@ message ShareListReq {
 
 // Source: com/bapis/bilibili/app/im/v1/ShareTarget.java
 message ShareTarget {
-  AvatarItem avatar = 1;
+  com.bapis.bilibili.dagw.component.avatar.v1.AvatarItem avatar = 1;
   string name = 2;
   SessionId sessionId = 3;
 }
@@ -1610,7 +1614,7 @@ message TalkerInfo {
 
 // Source: com/bapis/bilibili/app/im/v1/TextModule.java
 message TextModule {
-  Paragraph paragraph = 1;
+  com.bapis.bilibili.app.dynamic.v2.Paragraph paragraph = 1;
 }
 
 // Source: com/bapis/bilibili/app/im/v1/ThreeDotItem.java
@@ -1692,7 +1696,7 @@ message UserPlaceholder {
 // Source: com/bapis/bilibili/app/im/v1/UserTalkerInfo.java
 message UserTalkerInfo {
   int64 mid = 1;
-  AvatarItem avatar = 2;
+  com.bapis.bilibili.dagw.component.avatar.v1.AvatarItem avatar = 2;
   string avatarUrl = 3;
   string name = 4;
   string handle = 5;

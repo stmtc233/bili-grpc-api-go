@@ -3,6 +3,9 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.show.popular.v1;
 
+import "bilibili/app/archive/middleware/v1/messages.proto";
+import "bilibili/app/card/v1/messages.proto";
+
 // Source: com/bapis/bilibili/app/show/popular/v1/Bubble.java
 message Bubble {
   string bubbleContent = 1;
@@ -42,7 +45,7 @@ message PopularAd {
 
 // Source: com/bapis/bilibili/app/show/popular/v1/PopularReply.java
 message PopularReply {
-  repeated Card items = 1;
+  repeated com.bapis.bilibili.app.card.v1.Card items = 1;
   Config config = 2;
   string ver = 3;
 }
@@ -63,7 +66,7 @@ message PopularResultReq {
   string locationIds = 12;
   int32 sourceId = 13;
   int32 flush = 14;
-  PlayerArgs playerArgs = 15;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 15;
   PopularAd popularAd = 16;
   bool isAdaptWide = 17;
 }

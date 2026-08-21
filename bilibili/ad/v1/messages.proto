@@ -3,6 +3,9 @@ syntax = "proto3";
 
 package com.bapis.bilibili.ad.v1;
 
+import "google/protobuf/any.proto";
+import "google/protobuf/wrappers.proto";
+
 enum PauseAdFormType {
   DEFAULT = 0;
   RADIO = 1;
@@ -1001,9 +1004,9 @@ message SourceContentDto {
   int32 sourceId = 2;
   int32 resourceId = 3;
   bool isAdLoc = 4;
-  Int32Value serverType = 5;
+  google.protobuf.Int32Value serverType = 5;
   string clientIp = 6;
-  Int32Value cardIndex = 7;
+  google.protobuf.Int32Value cardIndex = 7;
   int32 index = 8;
   AdDto adContent = 9;
 }
@@ -1124,7 +1127,7 @@ message TabExtraDto {
 // Source: com/bapis/bilibili/ad/v1/TabInfoDto.java
 message TabInfoDto {
   string tabName = 1;
-  Any extra = 2;
+  google.protobuf.Any extra = 2;
   int32 tabVersion = 3;
 }
 

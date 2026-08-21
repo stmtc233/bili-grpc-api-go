@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.dynamic.v1;
 
+import "bilibili/app/archive/middleware/v1/messages.proto";
+
 enum BgType {
   bg_type_default = 0;
   bg_type_face = 1;
@@ -406,7 +408,7 @@ message DynOurCityReq {
   int32 lbsState = 12;
   uint32 refreshCity = 13;
   ExpConf expConf = 14;
-  PlayerArgs playerArgs = 15;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 15;
   int64 cityCode = 16;
   int64 buildTime = 17;
 }
@@ -971,7 +973,7 @@ message SVideoReq {
   string fromSpmid = 10;
   PlayerPreloadParams playerPreload = 11;
   int64 focusAid = 12;
-  PlayerArgs playerArgs = 13;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 13;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v1/SVideoStatInfo.java

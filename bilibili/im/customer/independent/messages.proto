@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.bilibili.im.customer.independent;
 
+import "bilibili/app/dynamic/v2/messages.proto";
+
 enum EvaluateType {
   EvaluateMachineMsg = 0;
   EvaluateCustomer = 1;
@@ -44,7 +46,7 @@ message FinishParagraphsRenderStopPos {
 
 // Source: com/bapis/bilibili/im/customer/independent/MsgParagraphText.java
 message MsgParagraphText {
-  repeated Paragraph paragraphs = 1;
+  repeated com.bapis.bilibili.app.dynamic.v2.Paragraph paragraphs = 1;
   EvaluationShowInfo evaluation = 2;
   FinishParagraphsRenderStopPos stopPos = 3;
 }

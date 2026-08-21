@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.distribution;
 
+import "google/protobuf/any.proto";
+
 // Source: com/bapis/bilibili/app/distribution/BoolValue.java
 message BoolValue {
   bool value = 1;
@@ -65,7 +67,7 @@ message FloatValue {
 
 // Source: com/bapis/bilibili/app/distribution/GetUserPreferenceReply.java
 message GetUserPreferenceReply {
-  repeated Any value = 1;
+  repeated google.protobuf.Any value = 1;
 }
 
 // Source: com/bapis/bilibili/app/distribution/GetUserPreferenceReq.java
@@ -96,7 +98,7 @@ message SetUserPreferenceReply {
 
 // Source: com/bapis/bilibili/app/distribution/SetUserPreferenceReq.java
 message SetUserPreferenceReq {
-  repeated Any preference = 1;
+  repeated google.protobuf.Any preference = 1;
   map<string, string> extraContext = 2;
 }
 
@@ -126,7 +128,7 @@ message UInt64Value {
 
 // Source: com/bapis/bilibili/app/distribution/UserPreferenceReply.java
 message UserPreferenceReply {
-  repeated Any preference = 1;
+  repeated google.protobuf.Any preference = 1;
 }
 
 // Source: com/bapis/bilibili/app/distribution/UserPreferenceReq.java

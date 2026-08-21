@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.bilibili.live.app.interfaces.api.grpc.v1;
 
+import "bilibili/pagination/messages.proto";
+
 enum RoomType {
   Watched = 0;
   Popularity = 1;
@@ -12,16 +14,16 @@ enum RoomType {
 // Source: com/bapis/bilibili/live/app/interfaces/api/grpc/v1/GetMoreLiveRoomsReq.java
 message GetMoreLiveRoomsReq {
   int64 roomId = 1;
-  Pagination idolPagination = 2;
-  Pagination roomsPagination = 3;
+  com.bapis.bilibili.pagination.Pagination idolPagination = 2;
+  com.bapis.bilibili.pagination.Pagination roomsPagination = 3;
   int64 uid = 4;
   int64 fnval = 5;
 }
 
 // Source: com/bapis/bilibili/live/app/interfaces/api/grpc/v1/GetMoreLiveRoomsResp.java
 message GetMoreLiveRoomsResp {
-  PaginationReply idolPaginationReply = 1;
-  PaginationReply roomsPaginationReply = 2;
+  com.bapis.bilibili.pagination.PaginationReply idolPaginationReply = 1;
+  com.bapis.bilibili.pagination.PaginationReply roomsPaginationReply = 2;
   bool idolHasMore = 3;
   repeated MyIdolInfo myIdolInfo = 4;
   repeated MoreLiveRoomInfo moreLiveInfo = 5;
@@ -31,14 +33,14 @@ message GetMoreLiveRoomsResp {
 // Source: com/bapis/bilibili/live/app/interfaces/api/grpc/v1/GetViewHistoryReq.java
 message GetViewHistoryReq {
   int64 uid = 1;
-  Pagination pagination = 2;
+  com.bapis.bilibili.pagination.Pagination pagination = 2;
   int64 fnval = 3;
 }
 
 // Source: com/bapis/bilibili/live/app/interfaces/api/grpc/v1/GetViewHistoryResp.java
 message GetViewHistoryResp {
   repeated ViewHistory history = 1;
-  PaginationReply paginationReply = 2;
+  com.bapis.bilibili.pagination.PaginationReply paginationReply = 2;
 }
 
 // Source: com/bapis/bilibili/live/app/interfaces/api/grpc/v1/MoreLiveRoomInfo.java

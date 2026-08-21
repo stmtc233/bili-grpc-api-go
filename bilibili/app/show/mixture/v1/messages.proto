@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.show.mixture.v1;
 
+import "bilibili/app/archive/middleware/v1/messages.proto";
+
 enum GuideStyleVersion {
   GUIDE_STYLE_DEFAULT = 0;
   GUIDE_STYLE_FUNC_NEW = 1;
@@ -147,7 +149,7 @@ message RegionIndexReq {
   int64 rid = 1;
   int32 displayId = 2;
   bool needBanner = 3;
-  PlayerArgs playerArgs = 4;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 4;
   string uuid = 5;
 }
 

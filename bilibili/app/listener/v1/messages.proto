@@ -3,6 +3,11 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.listener.v1;
 
+import "bilibili/app/archive/middleware/v1/messages.proto";
+import "bilibili/app/interfaces/v1/messages.proto";
+import "bilibili/app/playurl/v1/messages.proto";
+import "bilibili/pagination/messages.proto";
+
 enum CardModuleType {
   Module_invalid = 0;
   Module_header = 1;
@@ -60,7 +65,7 @@ message Author {
 // Source: com/bapis/bilibili/app/listener/v1/BKArcDetailsReq.java
 message BKArcDetailsReq {
   repeated PlayItem items = 1;
-  PlayerArgs playerArgs = 2;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 2;
 }
 
 // Source: com/bapis/bilibili/app/listener/v1/BKArcDetailsResp.java
@@ -192,7 +197,7 @@ message DetailItem {
   PlayItem associatedItem = 11;
   int64 lastPlayTime = 12;
   string historyTag = 13;
-  DeviceType deviceType = 14;
+  com.bapis.bilibili.app.interfaces.v1.DeviceType deviceType = 14;
   FavFolder ugcSeasonInfo = 15;
 }
 
@@ -739,7 +744,7 @@ message PlayHistoryDelReq {
 message PlayHistoryReq {
   PageOption pageOpt = 1;
   int64 localTodayZero = 2;
-  Pagination pagination = 3;
+  com.bapis.bilibili.pagination.Pagination pagination = 3;
 }
 
 // Source: com/bapis/bilibili/app/listener/v1/PlayHistoryResp.java
@@ -747,7 +752,7 @@ message PlayHistoryResp {
   uint32 total = 1;
   bool reachEnd = 2;
   repeated DetailItem list = 3;
-  PaginationReply paginationReply = 4;
+  com.bapis.bilibili.pagination.PaginationReply paginationReply = 4;
 }
 
 // Source: com/bapis/bilibili/app/listener/v1/PlayInfo.java
@@ -767,7 +772,7 @@ message PlayInfo {
   uint32 code = 11;
   string message_ = 12;
   uint64 expireTime = 13;
-  VolumeInfo volume = 14;
+  com.bapis.bilibili.app.playurl.v1.VolumeInfo volume = 14;
   enum InfoCase {
     INFO_NOT_SET = 0;
     PLAY_URL = 4;
@@ -828,10 +833,10 @@ message PlaylistReq {
   int64 id = 2;
   PlayItem anchor = 3;
   PageOption pageOpt = 4;
-  PlayerArgs playerArgs = 5;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 5;
   int64 extraId = 6;
   SortOption sortOpt = 7;
-  Pagination pagination = 8;
+  com.bapis.bilibili.pagination.Pagination pagination = 8;
 }
 
 // Source: com/bapis/bilibili/app/listener/v1/PlaylistResp.java
@@ -842,7 +847,7 @@ message PlaylistResp {
   repeated DetailItem list = 4;
   PlayItem lastPlay = 5;
   int64 lastProgress = 6;
-  PaginationReply paginationReply = 7;
+  com.bapis.bilibili.pagination.PaginationReply paginationReply = 7;
 }
 
 // Source: com/bapis/bilibili/app/listener/v1/PlayURL.java
@@ -853,7 +858,7 @@ message PlayURL {
 // Source: com/bapis/bilibili/app/listener/v1/PlayURLReq.java
 message PlayURLReq {
   PlayItem item = 1;
-  PlayerArgs playerArgs = 2;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 2;
 }
 
 // Source: com/bapis/bilibili/app/listener/v1/PlayURLResp.java
@@ -884,8 +889,8 @@ message RcmdPlaylistReq {
   int64 id = 2;
   bool needHistory = 3;
   bool needTopCards = 4;
-  PlayerArgs playerArgs = 5;
-  Pagination page = 6;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 5;
+  com.bapis.bilibili.pagination.Pagination page = 6;
   map<string, string> annotations = 7;
   enum RcmdFrom {
     UNSPECIFIED = 0;
@@ -902,7 +907,7 @@ message RcmdPlaylistResp {
   repeated DetailItem list = 1;
   int64 historyLen = 2;
   repeated TopCard topCards = 3;
-  PaginationReply nextPage = 4;
+  com.bapis.bilibili.pagination.PaginationReply nextPage = 4;
 }
 
 // Source: com/bapis/bilibili/app/listener/v1/ResponseUrl.java

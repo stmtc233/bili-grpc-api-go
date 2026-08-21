@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.bilibili.mall.tab3.dynamic.v1;
 
+import "bilibili/app/dynamic/v2/messages.proto";
+
 enum ReserveState {
   INVALID = 0;
   Reserve = 1;
@@ -39,8 +41,8 @@ message AuthorInfo {
 
 // Source: com/bapis/bilibili/mall/tab3/dynamic/v1/Bottom.java
 message Bottom {
-  ModuleButtom moduleButtom = 1;
-  DynModuleType moduleType = 2;
+  com.bapis.bilibili.app.dynamic.v2.ModuleButtom moduleButtom = 1;
+  com.bapis.bilibili.app.dynamic.v2.DynModuleType moduleType = 2;
 }
 
 // Source: com/bapis/bilibili/mall/tab3/dynamic/v1/CreatorSmallShopEntry.java
@@ -64,8 +66,8 @@ message IconInfo {
 
 // Source: com/bapis/bilibili/mall/tab3/dynamic/v1/IpCity.java
 message IpCity {
-  ModuleCopyright moduleCopyright = 1;
-  DynModuleType moduleType = 2;
+  com.bapis.bilibili.app.dynamic.v2.ModuleCopyright moduleCopyright = 1;
+  com.bapis.bilibili.app.dynamic.v2.DynModuleType moduleType = 2;
 }
 
 // Source: com/bapis/bilibili/mall/tab3/dynamic/v1/ItemInfoDescVO.java
@@ -115,7 +117,7 @@ message OpusDetailReq {
 
 // Source: com/bapis/bilibili/mall/tab3/dynamic/v1/OpusDetailResp.java
 message OpusDetailResp {
-  OpusItem opusItem = 1;
+  com.bapis.bilibili.app.dynamic.v2.OpusItem opusItem = 1;
   TitleInfo title = 2;
   AuthorInfo authorInfo = 3;
   IpCity ipCity = 4;
@@ -220,7 +222,7 @@ message SupportInfo {
 
 // Source: com/bapis/bilibili/mall/tab3/dynamic/v1/TitleInfo.java
 message TitleInfo {
-  repeated Module modules = 1;
+  repeated com.bapis.bilibili.app.dynamic.v2.Module modules = 1;
 }
 
 // Source: com/bapis/bilibili/mall/tab3/dynamic/v1/TopicInfo.java

@@ -3,6 +3,12 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.view.v1;
 
+import "bilibili/account/service/v1/messages.proto";
+import "bilibili/app/archive/middleware/v1/messages.proto";
+import "bilibili/app/archive/v1/messages.proto";
+import "bilibili/pagination/messages.proto";
+import "google/protobuf/any.proto";
+
 enum BizType {
   BizTypeNone = 0;
   BizTypeFollowVideo = 1;
@@ -136,7 +142,7 @@ message ActivityResource {
 
 // Source: com/bapis/bilibili/app/view/v1/ActivitySeason.java
 message ActivitySeason {
-  Arc arc = 1;
+  com.bapis.bilibili.app.archive.v1.Arc arc = 1;
   repeated ViewPage pages = 2;
   OnwerExt ownerExt = 3;
   ReqUser reqUser = 4;
@@ -343,7 +349,7 @@ message BuzzwordConfig {
 
 // Source: com/bapis/bilibili/app/view/v1/CacheViewReply.java
 message CacheViewReply {
-  Arc arc = 1;
+  com.bapis.bilibili.app.archive.v1.Arc arc = 1;
   repeated ViewPage pages = 2;
   OnwerExt ownerExt = 3;
   ReqUser reqUser = 4;
@@ -429,19 +435,19 @@ message ClickPlayerCardReq {
 
 // Source: com/bapis/bilibili/app/view/v1/CM.java
 message CM {
-  Any sourceContent = 1;
+  google.protobuf.Any sourceContent = 1;
 }
 
 // Source: com/bapis/bilibili/app/view/v1/CMConfig.java
 message CMConfig {
-  Any adsControl = 1;
+  google.protobuf.Any adsControl = 1;
 }
 
 // Source: com/bapis/bilibili/app/view/v1/CmIpad.java
 message CmIpad {
   CM cm = 1;
-  Author author = 2;
-  Stat stat = 3;
+  com.bapis.bilibili.app.archive.v1.Author author = 2;
+  com.bapis.bilibili.app.archive.v1.Stat stat = 3;
   int64 duration = 4;
   int64 aid = 5;
   ArchiveStat statV2 = 6;
@@ -535,7 +541,7 @@ message ContinuousPlayReq {
   string spmid = 4;
   string fromSpmid = 5;
   int32 autoplay = 6;
-  PlayerArgs playerArgs = 7;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 7;
   int64 deviceType = 8;
   string sessionId = 9;
   int64 displayId = 10;
@@ -683,10 +689,10 @@ message Episode {
   string title = 4;
   string cover = 5;
   string coverRightText = 6;
-  Page page = 7;
-  Stat stat = 8;
+  com.bapis.bilibili.app.archive.v1.Page page = 7;
+  com.bapis.bilibili.app.archive.v1.Stat stat = 8;
   string bvid = 9;
-  Author author = 10;
+  com.bapis.bilibili.app.archive.v1.Author author = 10;
   string authorDesc = 11;
   BadgeStyle badgeStyle = 12;
   bool needPay = 13;
@@ -694,7 +700,7 @@ message Episode {
   bool freeWatch = 15;
   string firstFrame = 16;
   ArchiveStat statV2 = 17;
-  repeated Page pages = 18;
+  repeated com.bapis.bilibili.app.archive.v1.Page pages = 18;
   double progressPercent = 19;
   int64 duration = 20;
   EpDownload download = 21;
@@ -735,7 +741,7 @@ message FeedViewReq {
   string from = 3;
   string spmid = 4;
   string fromSpmid = 5;
-  PlayerArgs playerArgs = 6;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 6;
   int64 displayId = 7;
   string sessionId = 8;
   string pageVersion = 9;
@@ -750,7 +756,7 @@ message GetArcsPlayerReply {
 // Source: com/bapis/bilibili/app/view/v1/GetArcsPlayerReq.java
 message GetArcsPlayerReq {
   repeated PlayAv playAvs = 1;
-  PlayerArgs playerArgs = 2;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 2;
 }
 
 // Source: com/bapis/bilibili/app/view/v1/GetUserReply.java
@@ -991,7 +997,7 @@ message OnwerExt {
   int64 fans = 5;
   string arcCount = 6;
   NftFaceIcon nftFaceIcon = 7;
-  NameRender nameRender = 8;
+  com.bapis.bilibili.account.service.v1.NameRender nameRender = 8;
 }
 
 // Source: com/bapis/bilibili/app/view/v1/OperationCard.java
@@ -1146,7 +1152,7 @@ message PlayerRelatesReq {
   string from = 3;
   string spmid = 4;
   string fromSpmid = 5;
-  PlayerArgs playerArgs = 6;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 6;
   string sessionId = 7;
   string fromTrackId = 8;
 }
@@ -1308,8 +1314,8 @@ message Relate {
   int64 aid = 1;
   string pic = 2;
   string title = 3;
-  Author author = 4;
-  Stat stat = 5;
+  com.bapis.bilibili.app.archive.v1.Author author = 4;
+  com.bapis.bilibili.app.archive.v1.Stat stat = 5;
   int64 duration = 6;
   string goto = 7;
   string param = 8;
@@ -1340,7 +1346,7 @@ message Relate {
   int64 materialId = 33;
   int64 fromSourceType = 34;
   string fromSourceId = 35;
-  Dimension dimension = 36;
+  com.bapis.bilibili.app.archive.v1.Dimension dimension = 36;
   string cover = 37;
   ReasonStyle badgeStyle = 38;
   PowerIconStyle powerIconStyle = 39;
@@ -1366,7 +1372,7 @@ message RelateItem {
 message RelatesFeedReply {
   repeated Relate list = 1;
   bool hasNext = 2;
-  PaginationReply pagination = 3;
+  com.bapis.bilibili.pagination.PaginationReply pagination = 3;
 }
 
 // Source: com/bapis/bilibili/app/view/v1/RelatesFeedReq.java
@@ -1376,7 +1382,7 @@ message RelatesFeedReq {
   string from = 3;
   string spmid = 4;
   string fromSpmid = 5;
-  PlayerArgs playerArgs = 6;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 6;
   int64 relatesPage = 7;
   string sessionId = 8;
   int32 autoplay = 9;
@@ -1384,7 +1390,7 @@ message RelatesFeedReq {
   string bizExtra = 11;
   int64 deviceType = 12;
   string adExtra = 13;
-  Pagination pagination = 14;
+  com.bapis.bilibili.pagination.Pagination pagination = 14;
   int32 refreshNum = 15;
 }
 
@@ -1583,7 +1589,7 @@ message Staff {
   Vip vip = 6;
   int32 attention = 7;
   int32 labelStyle = 8;
-  NameRender nameRender = 9;
+  com.bapis.bilibili.account.service.v1.NameRender nameRender = 9;
 }
 
 // Source: com/bapis/bilibili/app/view/v1/StandardCard.java
@@ -1623,7 +1629,7 @@ message Tab {
   string textColorSelected = 8;
   string pic = 9;
   int64 id = 10;
-  Any adTabInfo = 11;
+  google.protobuf.Any adTabInfo = 11;
 }
 
 // Source: com/bapis/bilibili/app/view/v1/TabModule.java
@@ -1870,7 +1876,7 @@ message ViewMaterialReq {
 
 // Source: com/bapis/bilibili/app/view/v1/ViewPage.java
 message ViewPage {
-  Page page = 1;
+  com.bapis.bilibili.app.archive.v1.Page page = 1;
   Audio audio = 2;
   DM dm = 3;
   string downloadTitle = 4;
@@ -1900,7 +1906,7 @@ message ViewProgressReq {
 
 // Source: com/bapis/bilibili/app/view/v1/ViewReply.java
 message ViewReply {
-  Arc arc = 1;
+  com.bapis.bilibili.app.archive.v1.Arc arc = 1;
   repeated ViewPage pages = 2;
   OnwerExt ownerExt = 3;
   ReqUser reqUser = 4;
@@ -1947,7 +1953,7 @@ message ViewReply {
   repeated Tag descTag = 45;
   SpecialCell specialCell = 46;
   Online online = 47;
-  Any cmUnderPlayer = 48;
+  google.protobuf.Any cmUnderPlayer = 48;
   repeated ViewMaterial videoSource = 49;
   repeated SpecialCell specialCellNew = 50;
   PremiereResource premiere = 51;
@@ -1956,7 +1962,7 @@ message ViewReply {
   int64 notesCount = 54;
   PullClientAction pullAction = 55;
   ArcExtra arcExtra = 56;
-  PaginationReply pagination = 57;
+  com.bapis.bilibili.pagination.PaginationReply pagination = 57;
   LikeAnimation likeAnimation = 58;
   ReplyStyle replyPreface = 59;
   RefreshPage refreshPage = 60;
@@ -1989,7 +1995,7 @@ message ViewReq {
   string spmid = 11;
   string fromSpmid = 12;
   int32 autoplay = 13;
-  PlayerArgs playerArgs = 14;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 14;
   string pageVersion = 15;
   string bizExtra = 16;
   int64 deviceType = 17;
@@ -1997,7 +2003,7 @@ message ViewReq {
   string sessionId = 19;
   int32 inFeedPlay = 20;
   string playMode = 21;
-  Pagination pagination = 22;
+  com.bapis.bilibili.pagination.Pagination pagination = 22;
   int32 refresh = 23;
   int32 refreshNum = 24;
 }

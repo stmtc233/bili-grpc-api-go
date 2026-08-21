@@ -3,6 +3,10 @@ syntax = "proto3";
 
 package com.bapis.bilibili.im.type;
 
+import "bilibili/account/service/v1/messages.proto";
+import "bilibili/app/dynamic/v2/messages.proto";
+import "bilibili/dagw/component/avatar/v1/messages.proto";
+
 enum ActionType {
   INVALID = 0;
   RECALL = 1;
@@ -150,7 +154,7 @@ message Card {
   AttestationDisplay attestation = 28;
   ExpertInfo expertInfo = 29;
   UserHonourInfo honours = 30;
-  NameRender nameRender = 31;
+  com.bapis.bilibili.account.service.v1.NameRender nameRender = 31;
 }
 
 // Source: com/bapis/bilibili/im/type/CommonInfo.java
@@ -337,7 +341,7 @@ message RelationLog {
 
 // Source: com/bapis/bilibili/im/type/RichTextMsgContent.java
 message RichTextMsgContent {
-  repeated Paragraph paragraphs = 1;
+  repeated com.bapis.bilibili.app.dynamic.v2.Paragraph paragraphs = 1;
 }
 
 // Source: com/bapis/bilibili/im/type/SessionInfo.java
@@ -405,7 +409,7 @@ message StoryItem {
 
 // Source: com/bapis/bilibili/im/type/UInfo.java
 message UInfo {
-  AvatarItem ava = 1;
+  com.bapis.bilibili.dagw.component.avatar.v1.AvatarItem ava = 1;
   Card card = 2;
 }
 

@@ -3,6 +3,10 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.topic.v1;
 
+import "bilibili/app/archive/middleware/v1/messages.proto";
+import "bilibili/app/card/v1/messages.proto";
+import "bilibili/app/dynamic/v2/messages.proto";
+
 enum FeedCardType {
   FEED_CARD_TYPE_UNKNOWN = 0;
   FEED_CARD_TYPE_USER_RATING = 1;
@@ -248,7 +252,7 @@ message ItemCard {
 
 // Source: com/bapis/bilibili/app/topic/v1/LargeCoverInline.java
 message LargeCoverInline {
-  Base base = 1;
+  com.bapis.bilibili.app.card.v1.Base base = 1;
   string coverLeftText1 = 2;
   int32 coverLeftIcon1 = 3;
   string coverLeftText2 = 4;
@@ -494,7 +498,7 @@ message TopicCapsuleInfo {
 // Source: com/bapis/bilibili/app/topic/v1/TopicCardItem.java
 message TopicCardItem {
   TopicCardType type = 1;
-  DynamicItem dynamicItem = 2;
+  com.bapis.bilibili.app.dynamic.v2.DynamicItem dynamicItem = 2;
   FoldCardItem fordCardItem = 3;
   VideoSmallCardItem videoSmallCardItem = 4;
   FeedCard feedCard = 5;
@@ -529,7 +533,7 @@ message TopicDetailsAllReq {
   string offset = 3;
   int32 pageSize = 4;
   int32 localTime = 5;
-  PlayerArgs playerArgs = 6;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 6;
   int32 needRefresh = 7;
   string source = 8;
   TopicDetailsExtMode topicDetailsExtMode = 9;
@@ -550,7 +554,7 @@ message TopicDetailsFoldReq {
   string offset = 2;
   int32 pageSize = 3;
   int32 localTime = 4;
-  PlayerArgs playerArgs = 5;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 5;
   int64 fromSortBy = 6;
 }
 
@@ -597,7 +601,7 @@ message TopicMergedResourceReq {
   int32 mergeType = 4;
   string offset = 5;
   int32 localTime = 6;
-  PlayerArgs playerArgs = 7;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 7;
   int64 fromSortBy = 8;
 }
 
@@ -690,7 +694,7 @@ message TopicSortByConf {
 
 // Source: com/bapis/bilibili/app/topic/v1/TopicThreePoint.java
 message TopicThreePoint {
-  repeated ThreePointItem dynThreePointItems = 1;
+  repeated com.bapis.bilibili.app.dynamic.v2.ThreePointItem dynThreePointItems = 1;
 }
 
 // Source: com/bapis/bilibili/app/topic/v1/TopicTopCard.java

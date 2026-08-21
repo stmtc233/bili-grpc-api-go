@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.bilibili.dynamic.common;
 
+import "bilibili/app/dynamic/v2/messages.proto";
+
 enum AttachCardType {
   ATTACH_CARD_NONE = 0;
   ATTACH_CARD_GOODS = 1;
@@ -513,11 +515,11 @@ message CreateResp {
   string dynIdStr = 2;
   int64 dynType = 3;
   int64 dynRid = 4;
-  DynamicItem fakeCard = 5;
+  com.bapis.bilibili.app.dynamic.v2.DynamicItem fakeCard = 5;
   CreateDynVideoResult videoResult = 6;
   ShareDynWindow shareWindow = 7;
   int64 artEditorJumpFeed = 8;
-  TribeeDyn tribeeFakeCard = 9;
+  com.bapis.bilibili.app.dynamic.v2.TribeeDyn tribeeFakeCard = 9;
   int64 tribeeCategoryId = 10;
   string tribeeToast = 11;
 }
@@ -1115,7 +1117,7 @@ message ShareChannelItem {
 message ShareDynWindow {
   string mainTitle = 1;
   string subTitle = 2;
-  DynamicItem dynItem = 3;
+  com.bapis.bilibili.app.dynamic.v2.DynamicItem dynItem = 3;
 }
 
 // Source: com/bapis/bilibili/dynamic/common/ShareReserve.java

@@ -3,6 +3,11 @@ syntax = "proto3";
 
 package com.bapis.bilibili.polymer.app.search.v1;
 
+import "bilibili/app/archive/middleware/v1/messages.proto";
+import "bilibili/broadcast/message/main/messages.proto";
+import "bilibili/dagw/component/avatar/v1/messages.proto";
+import "bilibili/pagination/messages.proto";
+
 enum CategorySort {
   CATEGORY_SORT_DEFAULT = 0;
   CATEGORY_SORT_PUBLISH_TIME = 1;
@@ -1136,8 +1141,8 @@ message SearchAllRequest {
   int32 isOrgQuery = 7;
   int32 localTime = 8;
   string adExtra = 9;
-  Pagination pagination = 10;
-  PlayerArgs playerArgs = 11;
+  com.bapis.bilibili.pagination.Pagination pagination = 10;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 11;
   map<string, string> fromExtra = 12;
   int32 forcedDisplayChatCard = 13;
   int32 isRefresh = 14;
@@ -1165,7 +1170,7 @@ message SearchAllResponse {
   string orgExtraWord = 8;
   int64 selectBarType = 9;
   int64 newSearchExpNum = 10;
-  PaginationReply pagination = 11;
+  com.bapis.bilibili.pagination.PaginationReply pagination = 11;
   DisplayOption appDisplayOption = 12;
   map<string, string> annotation = 13;
   int64 page = 14;
@@ -1233,7 +1238,7 @@ message SearchAuthorNewCard {
   Feedback feedback = 31;
   repeated string userCardInfo = 32;
   CardLayout cardLayout = 33;
-  AvatarItem avatarInfo = 34;
+  com.bapis.bilibili.dagw.component.avatar.v1.AvatarItem avatarInfo = 34;
   int64 translationStatus = 35;
   string handle = 36;
   FollowButtonV2 followButton = 37;
@@ -1298,8 +1303,8 @@ message SearchByTypeRequest {
   int64 categoryId = 4;
   UserType userType = 5;
   UserSort userSort = 6;
-  Pagination pagination = 7;
-  PlayerArgs playerArgs = 8;
+  com.bapis.bilibili.pagination.Pagination pagination = 7;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 8;
   string fromSeid = 9;
   string fromSource = 10;
   string userAct = 11;
@@ -1314,7 +1319,7 @@ message SearchByTypeResponse {
   string keyword = 4;
   int32 resultIsRecommend = 5;
   repeated Item items = 6;
-  PaginationReply pagination = 7;
+  com.bapis.bilibili.pagination.PaginationReply pagination = 7;
   map<string, string> annotation = 8;
   double realExposureRatio = 9;
   int64 page = 10;
@@ -1411,7 +1416,7 @@ message SearchComicResponse {
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/SearchCommentCard.java
 message SearchCommentCard {
-  AvatarItem avatarInfo = 1;
+  com.bapis.bilibili.dagw.component.avatar.v1.AvatarItem avatarInfo = 1;
   int64 mid = 2;
   string name = 3;
   string pubTime = 4;
@@ -1632,7 +1637,7 @@ message SearchLiveInlineCard {
   string inlineType = 8;
   Feedback feedback = 9;
   CardLayout cardLayout = 10;
-  AvatarItem avatarInfo = 11;
+  com.bapis.bilibili.dagw.component.avatar.v1.AvatarItem avatarInfo = 11;
   repeated ThreePoint threePoint = 12;
   int64 translationStatus = 13;
   string translatedTitle = 14;
@@ -1663,7 +1668,7 @@ message SearchLiveMaster {
   string cateParentName = 20;
   string cateName = 21;
   string liveLink = 22;
-  AvatarItem avatarInfo = 23;
+  com.bapis.bilibili.dagw.component.avatar.v1.AvatarItem avatarInfo = 23;
   repeated ThreePoint threePoint = 24;
   int64 translationStatus = 25;
   string translatedTitle = 26;
@@ -1836,7 +1841,7 @@ message SearchOGVReply {
   int32 needOrder = 2;
   repeated Item items = 3;
   repeated DetailsRelationItem relationItems = 4;
-  PaginationReply pagination = 5;
+  com.bapis.bilibili.pagination.PaginationReply pagination = 5;
   int64 page = 6;
   map<string, string> annotation = 7;
   string query = 8;
@@ -1851,8 +1856,8 @@ message SearchOGVReq {
   string secondExtraWord = 3;
   string fromSource = 4;
   string keyword = 5;
-  Pagination pagination = 6;
-  PlayerArgs playerArgs = 7;
+  com.bapis.bilibili.pagination.Pagination pagination = 6;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 7;
   string userAct = 8;
   bool needOgvExtraWord = 9;
   bool isWideScreen = 10;
@@ -1950,7 +1955,7 @@ message SearchQACard {
   Disclaimer disclaimer = 8;
   string title = 9;
   bool autoExpand = 10;
-  ChatResult result = 11;
+  com.bapis.bilibili.broadcast.message.main.ChatResult result = 11;
   Feedback feedback = 12;
 }
 
@@ -2162,7 +2167,7 @@ message SearchUgcInlineCard {
   FullTextResult fullText = 10;
   Feedback feedback = 11;
   CardLayout cardLayout = 12;
-  AvatarItem avatarInfo = 13;
+  com.bapis.bilibili.dagw.component.avatar.v1.AvatarItem avatarInfo = 13;
   repeated ThreePoint threePoint = 14;
   int64 translationStatus = 15;
   string translatedTitle = 16;
@@ -2190,7 +2195,7 @@ message SearchUpperCard {
   Relation relation = 17;
   string liveLink = 18;
   Notice notice = 19;
-  AvatarItem avatarInfo = 20;
+  com.bapis.bilibili.dagw.component.avatar.v1.AvatarItem avatarInfo = 20;
   string userCardDesc = 21;
   string handle = 22;
   FollowButtonV2 followButton = 23;
@@ -2506,7 +2511,7 @@ message UPRecommendItem {
   repeated string userCardInfo = 7;
   repeated ThreePoint threePoint = 8;
   Relation relation = 9;
-  AvatarItem avatarInfo = 10;
+  com.bapis.bilibili.dagw.component.avatar.v1.AvatarItem avatarInfo = 10;
   SharePlane sharePlane = 11;
   string liveLink = 12;
   int32 isLive = 13;

@@ -3,6 +3,13 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.viewunite.v1;
 
+import "bilibili/app/archive/middleware/v1/messages.proto";
+import "bilibili/app/overseas/ad/v1/messages.proto";
+import "bilibili/app/viewunite/common/messages.proto";
+import "bilibili/pagination/messages.proto";
+import "bilibili/playershared/messages.proto";
+import "google/protobuf/any.proto";
+
 enum BizType {
   BizTypeNone = 0;
   BizTypeFollowVideo = 1;
@@ -122,13 +129,13 @@ message ActivityResource {
 message AIRelateAsyncReply {
   CM cm = 1;
   AsyncModule module = 2;
-  Any supplement = 3;
+  google.protobuf.Any supplement = 3;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/v1/AIRelateAsyncReq.java
 message AIRelateAsyncReq {
   ViewReq req = 1;
-  RelateAsync relateAsync = 2;
+  com.bapis.bilibili.app.viewunite.common.RelateAsync relateAsync = 2;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/v1/AIRelateParam.java
@@ -157,7 +164,7 @@ message Arc {
   int64 aid = 1;
   int64 cid = 2;
   int64 duration = 3;
-  Stat stat = 4;
+  com.bapis.bilibili.app.viewunite.common.Stat stat = 4;
   string bvid = 5;
   int32 copyright = 6;
   Rights right = 7;
@@ -169,7 +176,7 @@ message Arc {
 
 // Source: com/bapis/bilibili/app/viewunite/v1/ArcRefreshReply.java
 message ArcRefreshReply {
-  Stat stat = 1;
+  com.bapis.bilibili.app.viewunite.common.Stat stat = 1;
   SimpleReqUser reqUser = 2;
   SimpleArc arc = 3;
   Online online = 4;
@@ -187,7 +194,7 @@ message ArcRefreshReq {
 
 // Source: com/bapis/bilibili/app/viewunite/v1/AsyncModule.java
 message AsyncModule {
-  repeated Module modules = 1;
+  repeated com.bapis.bilibili.app.viewunite.common.Module modules = 1;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/v1/AttentionCard.java
@@ -298,13 +305,13 @@ message ChronosParam {
 
 // Source: com/bapis/bilibili/app/viewunite/v1/CM.java
 message CM {
-  Any cmUnderPlayer = 1;
-  Any adsControl = 2;
-  repeated Any sourceContent = 3;
+  google.protobuf.Any cmUnderPlayer = 1;
+  google.protobuf.Any adsControl = 2;
+  repeated google.protobuf.Any sourceContent = 3;
   PadRelateCM padRelateCm = 4;
   repeated SourceContentItem sourceContentItem = 5;
-  Any cmHalfPanel = 6;
-  OverseasAdInfo overseasAdInfo = 7;
+  google.protobuf.Any cmHalfPanel = 6;
+  com.bapis.bilibili.app.overseas.ad.v1.OverseasAdInfo overseasAdInfo = 7;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/v1/CommandDm.java
@@ -375,7 +382,7 @@ message ECodeConfig {
 
 // Source: com/bapis/bilibili/app/viewunite/v1/FloorAdSearchItem.java
 message FloorAdSearchItem {
-  Any sourceContent = 1;
+  google.protobuf.Any sourceContent = 1;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/v1/FloorAdSearchReply.java
@@ -429,12 +436,12 @@ message Immersion {
 // Source: com/bapis/bilibili/app/viewunite/v1/IntroductionTab.java
 message IntroductionTab {
   string title = 1;
-  repeated Module modules = 2;
+  repeated com.bapis.bilibili.app.viewunite.common.Module modules = 2;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/v1/LikeConfig.java
 message LikeConfig {
-  UpLikeImg tripleLike = 1;
+  com.bapis.bilibili.app.viewunite.common.UpLikeImg tripleLike = 1;
   string likeAnimation = 2;
 }
 
@@ -528,7 +535,7 @@ message PageControl {
 
 // Source: com/bapis/bilibili/app/viewunite/v1/PagesReply.java
 message PagesReply {
-  repeated Page pages = 1;
+  repeated com.bapis.bilibili.app.viewunite.common.Page pages = 1;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/v1/PagesReq.java
@@ -544,7 +551,7 @@ message PauseAds {
 // Source: com/bapis/bilibili/app/viewunite/v1/PauseAdsAV.java
 message PauseAdsAV {
   int64 aid = 1;
-  Stat stat = 2;
+  com.bapis.bilibili.app.viewunite.common.Stat stat = 2;
   string cover = 3;
   string title = 4;
 }
@@ -559,7 +566,7 @@ message PauseBar {
 
 // Source: com/bapis/bilibili/app/viewunite/v1/PauseSourceContentList.java
 message PauseSourceContentList {
-  Any sourceContent = 1;
+  google.protobuf.Any sourceContent = 1;
   repeated PauseAdsAV av = 2;
 }
 
@@ -634,16 +641,16 @@ message PointMaterial {
 // Source: com/bapis/bilibili/app/viewunite/v1/Relate.java
 message Relate {
   int64 deviceType = 1;
-  Pagination pagination = 2;
+  com.bapis.bilibili.pagination.Pagination pagination = 2;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/v1/RelateCM.java
 message RelateCM {
   int64 aid = 1;
-  Any sourceContent = 2;
+  google.protobuf.Any sourceContent = 2;
   int64 duration = 3;
-  Stat stat = 4;
-  Owner owner = 5;
+  com.bapis.bilibili.app.viewunite.common.Stat stat = 4;
+  com.bapis.bilibili.app.viewunite.common.Owner owner = 5;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/v1/RelateID.java
@@ -655,14 +662,14 @@ message RelateID {
 message RelateLiveCM {
   int64 roomId = 1;
   int64 liveStatus = 2;
-  StatInfo statInfo = 3;
+  com.bapis.bilibili.app.viewunite.common.StatInfo statInfo = 3;
   string areaName = 4;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/v1/RelatesFeedReply.java
 message RelatesFeedReply {
-  repeated RelateCard relates = 1;
-  Pagination pagination = 2;
+  repeated com.bapis.bilibili.app.viewunite.common.RelateCard relates = 1;
+  com.bapis.bilibili.pagination.Pagination pagination = 2;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/v1/RelatesFeedReq.java
@@ -672,8 +679,8 @@ message RelatesFeedReq {
   string from = 3;
   string spmid = 4;
   string fromSpmid = 5;
-  PlayerArgs playerArgs = 6;
-  Pagination pagination = 7;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 6;
+  com.bapis.bilibili.pagination.Pagination pagination = 7;
   string sessionId = 8;
   int64 autoPlay = 9;
   string fromTrackId = 10;
@@ -743,7 +750,7 @@ message SimpleArc {
 
 // Source: com/bapis/bilibili/app/viewunite/v1/SimpleOwner.java
 message SimpleOwner {
-  AttentionRelationStatus attentionRelation = 1;
+  com.bapis.bilibili.app.viewunite.common.AttentionRelationStatus attentionRelation = 1;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/v1/SimpleReqUser.java
@@ -756,16 +763,16 @@ message SimpleReqUser {
 // Source: com/bapis/bilibili/app/viewunite/v1/SourceContentAV.java
 message SourceContentAV {
   int64 aid = 1;
-  Stat stat = 2;
+  com.bapis.bilibili.app.viewunite.common.Stat stat = 2;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/v1/SourceContentItem.java
 message SourceContentItem {
-  Any sourceContent = 1;
+  google.protobuf.Any sourceContent = 1;
   SourceContentType scType = 2;
   oneof oneof_0 {
     SourceContentAV av = 3;
-    SourceContentLive live = 4;
+    com.bapis.bilibili.app.viewunite.common.SourceContentLive live = 4;
   }
   enum DataCase {
     DATA_NOT_SET = 0;
@@ -805,7 +812,7 @@ message StoryReply {
 message StoryReq {
   int64 aid = 1;
   string bvid = 2;
-  PlayerArgs playerArgs = 3;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 3;
   oneof oneof_0 {
     StoryReqParam storyReqParam = 4;
     PlayListReqParam playListReqParam = 5;
@@ -865,8 +872,8 @@ message TabModule {
   oneof oneof_0 {
     IntroductionTab introduction = 2;
     ReplyTab reply = 3;
-    ActivityTab activityTab = 4;
-    CatalogTab catalog = 5;
+    com.bapis.bilibili.app.viewunite.common.ActivityTab activityTab = 4;
+    com.bapis.bilibili.app.viewunite.common.CatalogTab catalog = 5;
   }
   enum TabCase {
     TAB_NOT_SET = 0;
@@ -921,7 +928,7 @@ message VideoGuide {
 
 // Source: com/bapis/bilibili/app/viewunite/v1/VideoMentionsReply.java
 message VideoMentionsReply {
-  repeated Mention mentions = 1;
+  repeated com.bapis.bilibili.app.viewunite.common.Mention mentions = 1;
   string title = 2;
   map<string, string> ab = 3;
 }
@@ -940,7 +947,7 @@ message VideoMentionsReq {
 // Source: com/bapis/bilibili/app/viewunite/v1/VideoPlayData.java
 message VideoPlayData {
   string url = 1;
-  Dimension dimension = 2;
+  com.bapis.bilibili.playershared.Dimension dimension = 2;
   int64 aid = 3;
   int64 epId = 4;
   int64 cid = 5;
@@ -977,7 +984,7 @@ message VideoViewPoint {
 
 // Source: com/bapis/bilibili/app/viewunite/v1/ViewBase.java
 message ViewBase {
-  BizType bizType = 1;
+  com.bapis.bilibili.playershared.BizType bizType = 1;
   PageCategory pageType = 2;
   PageControl control = 3;
   ActivityResource activityResource = 4;
@@ -987,7 +994,7 @@ message ViewBase {
 
 // Source: com/bapis/bilibili/app/viewunite/v1/ViewEndPageCard.java
 message ViewEndPageCard {
-  RelateCard relate = 1;
+  com.bapis.bilibili.app.viewunite.common.RelateCard relate = 1;
   int64 cardIndex = 2;
 }
 
@@ -1008,7 +1015,7 @@ message ViewEndPageReq {
   string trackId = 8;
   map<string, string> extraContent = 9;
   string adExtra = 10;
-  PlayerArgs playerArgs = 11;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 11;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/v1/ViewProgressReply.java
@@ -1029,7 +1036,7 @@ message ViewProgressReq {
   UnionType type = 5;
   FragmentParam fragmentParam = 6;
   string fromScene = 7;
-  PlayCtrl playCtrl = 8;
+  com.bapis.bilibili.playershared.PlayCtrl playCtrl = 8;
   map<string, string> extraContent = 9;
 }
 
@@ -1038,9 +1045,9 @@ message ViewReply {
   ViewBase viewBase = 1;
   Arc arc = 2;
   ReqUser reqUser = 3;
-  Owner owner = 4;
+  com.bapis.bilibili.app.viewunite.common.Owner owner = 4;
   Tab tab = 5;
-  Any supplement = 6;
+  google.protobuf.Any supplement = 6;
   CM cm = 7;
   ECode ecode = 8;
   ECodeConfig ecodeConfig = 9;
@@ -1055,7 +1062,7 @@ message ViewReq {
   string spmid = 4;
   string fromSpmid = 5;
   string sessionId = 6;
-  PlayerArgs playerArgs = 7;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 7;
   string trackId = 8;
   map<string, string> extraContent = 9;
   string playMode = 10;
@@ -1063,7 +1070,7 @@ message ViewReq {
   string bizExtra = 12;
   string adExtra = 13;
   string fromScene = 14;
-  PlayCtrl playCtrl = 15;
+  com.bapis.bilibili.playershared.PlayCtrl playCtrl = 15;
 }
 
 

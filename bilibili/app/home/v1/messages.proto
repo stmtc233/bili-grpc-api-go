@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.home.v1;
 
+import "bilibili/app/archive/middleware/v1/messages.proto";
+
 enum BgStyle {
   BG_STYLE_UNKNOWN = 0;
   BG_STYLE_FILL = 1;
@@ -250,7 +252,7 @@ message RecentRecommendMetaInfo {
 
 // Source: com/bapis/bilibili/app/home/v1/RecentReq.java
 message RecentReq {
-  PlayerArgs playerArgs = 1;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 1;
 }
 
 // Source: com/bapis/bilibili/app/home/v1/RecentRes.java

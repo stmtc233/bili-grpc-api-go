@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.bilibili.im.customer.interfaces;
 
+import "bilibili/im/customer/model/messages.proto";
+
 // Source: com/bapis/bilibili/im/customer/interfaces/AiInfo.java
 message AiInfo {
   string name = 1;
@@ -87,7 +89,7 @@ message GetSessDetailReq {
 
 // Source: com/bapis/bilibili/im/customer/interfaces/GetSessDetailRsp.java
 message GetSessDetailRsp {
-  repeated SessionInfo sessionList = 1;
+  repeated com.bapis.bilibili.im.customer.model.SessionInfo sessionList = 1;
 }
 
 // Source: com/bapis/bilibili/im/customer/interfaces/GetSessionsReq.java
@@ -119,7 +121,7 @@ message OutCustomerQueueReq {
 
 // Source: com/bapis/bilibili/im/customer/interfaces/PopResultUpdateReq.java
 message PopResultUpdateReq {
-  ComplianceAlertType popField = 1;
+  com.bapis.bilibili.im.customer.model.ComplianceAlertType popField = 1;
   bool isAllow = 2;
 }
 
@@ -130,7 +132,7 @@ message PopResultUpdateRsp {
 
 // Source: com/bapis/bilibili/im/customer/interfaces/PreEvaluateReq.java
 message PreEvaluateReq {
-  EvaluateType type = 1;
+  com.bapis.bilibili.im.customer.model.EvaluateType type = 1;
   uint64 shopFatherId = 2;
   uint64 shopId = 3;
   uint64 msgKey = 4;
@@ -140,8 +142,8 @@ message PreEvaluateReq {
 
 // Source: com/bapis/bilibili/im/customer/interfaces/PreEvaluateRsp.java
 message PreEvaluateRsp {
-  EvaluationShowInfo rsp = 1;
-  EvaluationShowInfoV2 rspV2 = 2;
+  com.bapis.bilibili.im.customer.model.EvaluationShowInfo rsp = 1;
+  com.bapis.bilibili.im.customer.model.EvaluationShowInfoV2 rspV2 = 2;
 }
 
 // Source: com/bapis/bilibili/im/customer/interfaces/RemoveSessionReq.java
@@ -169,7 +171,7 @@ message SendMsgExt {
 
 // Source: com/bapis/bilibili/im/customer/interfaces/SendMsgReq.java
 message SendMsgReq {
-  Msg msg = 1;
+  com.bapis.bilibili.im.customer.model.Msg msg = 1;
   int64 skillGroupId = 2;
   SendMsgExt ext = 3;
 }
@@ -178,7 +180,7 @@ message SendMsgReq {
 message SendMsgRsp {
   uint64 msgKey = 1;
   string msgContent = 2;
-  repeated EmotionInfo eInfos = 3;
+  repeated com.bapis.bilibili.im.customer.model.EmotionInfo eInfos = 3;
   AiInfo aiInfo = 4;
 }
 
@@ -204,18 +206,18 @@ message SessionMsgReqExt {
 
 // Source: com/bapis/bilibili/im/customer/interfaces/SessionMsgRsp.java
 message SessionMsgRsp {
-  repeated Msg messages = 1;
+  repeated com.bapis.bilibili.im.customer.model.Msg messages = 1;
   int32 hasMore = 2;
   uint64 minSeqno = 3;
   uint64 maxSeqno = 4;
-  repeated EmotionInfo eInfos = 5;
+  repeated com.bapis.bilibili.im.customer.model.EmotionInfo eInfos = 5;
   uint32 fetchInterval = 6;
-  HotUpdateSessionInfo hotUpdateSessionInfo = 7;
+  com.bapis.bilibili.im.customer.model.HotUpdateSessionInfo hotUpdateSessionInfo = 7;
 }
 
 // Source: com/bapis/bilibili/im/customer/interfaces/SessionsRsp.java
 message SessionsRsp {
-  repeated SessionInfo sessionList = 1;
+  repeated com.bapis.bilibili.im.customer.model.SessionInfo sessionList = 1;
   uint32 hasMore = 2;
 }
 
@@ -285,11 +287,11 @@ message WindowOptionsReq {
 
 // Source: com/bapis/bilibili/im/customer/interfaces/WindowOptionsRsp.java
 message WindowOptionsRsp {
-  WindowOptionGoods goods = 1;
-  WindowOptionOrder order = 2;
-  WindowOptionEvaluation evaluation = 3;
-  WindowOptionMessage message_ = 4;
-  WindowOptionHistory history = 5;
+  com.bapis.bilibili.im.customer.model.WindowOptionGoods goods = 1;
+  com.bapis.bilibili.im.customer.model.WindowOptionOrder order = 2;
+  com.bapis.bilibili.im.customer.model.WindowOptionEvaluation evaluation = 3;
+  com.bapis.bilibili.im.customer.model.WindowOptionMessage message_ = 4;
+  com.bapis.bilibili.im.customer.model.WindowOptionHistory history = 5;
 }
 
 // Source: com/bapis/bilibili/im/customer/interfaces/WindowOptionsV2Req.java
@@ -302,7 +304,7 @@ message WindowOptionsV2Req {
 
 // Source: com/bapis/bilibili/im/customer/interfaces/WindowOptionsV2Rsp.java
 message WindowOptionsV2Rsp {
-  repeated WindowOption windowOptions = 1;
+  repeated com.bapis.bilibili.im.customer.model.WindowOption windowOptions = 1;
 }
 
 

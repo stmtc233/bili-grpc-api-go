@@ -3,6 +3,14 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.dynamic.v2;
 
+import "bilibili/account/service/v1/messages.proto";
+import "bilibili/app/archive/middleware/v1/messages.proto";
+import "bilibili/app/dynamic/common/messages.proto";
+import "bilibili/dagw/component/avatar/v1/messages.proto";
+import "bilibili/pagination/messages.proto";
+import "bilibili/vas/garb/service/messages.proto";
+import "google/protobuf/any.proto";
+
 enum AddButtonBgStyle {
   fill = 0;
   stroke = 1;
@@ -1229,7 +1237,7 @@ message AlumniDynamicsReply {
 message AlumniDynamicsReq {
   int64 campusId = 1;
   int32 firstTime = 2;
-  PlayerArgs playerArgs = 3;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 3;
   int32 localTime = 4;
   int32 page = 5;
   CampusReqFromType fromType = 6;
@@ -1251,14 +1259,14 @@ message BasicUserInfoV2 {
   int64 mid = 1;
   string name = 2;
   string face = 3;
-  AvatarItem avatar = 4;
+  com.bapis.bilibili.dagw.component.avatar.v1.AvatarItem avatar = 4;
   int32 level = 5;
   int32 isSeniorMember = 6;
   VipInfo vip = 7;
   string jumpUri = 8;
   Relation relation = 9;
   string nameSubText = 10;
-  NameRender nameRender = 11;
+  com.bapis.bilibili.account.service.v1.NameRender nameRender = 11;
   string handle = 12;
 }
 
@@ -1320,7 +1328,7 @@ message CampusBillBoardReply {
 message CampusBillBoardReq {
   int64 campusId = 1;
   string versionCode = 2;
-  PlayerArgs playerArgs = 3;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 3;
   CampusReqFromType fromType = 4;
 }
 
@@ -1376,7 +1384,7 @@ message CampusHomePagesReq {
   string campusName = 2;
   double lat = 3;
   double lng = 4;
-  PlayerArgs playerArgs = 5;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 5;
   CampusHomePageType pageType = 6;
 }
 
@@ -1535,7 +1543,7 @@ message CampusRcmdFeedReply {
 message CampusRcmdFeedReq {
   int64 campusId = 1;
   int32 firstTime = 2;
-  PlayerArgs playerArgs = 3;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 3;
   int32 localTime = 4;
   int32 page = 5;
   int32 scroll = 6;
@@ -1572,7 +1580,7 @@ message CampusRcmdReq {
   string campusName = 2;
   double lat = 3;
   double lng = 4;
-  PlayerArgs playerArgs = 5;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 5;
   CampusReqFromType fromType = 6;
   CampusHomePageType pageType = 7;
 }
@@ -1610,7 +1618,7 @@ message CampusRecommendReply {
 message CampusRecommendReq {
   int64 campusId = 1;
   int64 pageNo = 2;
-  PlayerArgs playerArgs = 3;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 3;
   CampusRcmdReqFrom from = 4;
 }
 
@@ -1681,7 +1689,7 @@ message CampusTopicRcmdFeedReply {
 message CampusTopicRcmdFeedReq {
   int64 campusId = 1;
   string offset = 2;
-  PlayerArgs playerArgs = 3;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 3;
   int32 localTime = 4;
   CampusReqFromType fromType = 5;
 }
@@ -1689,7 +1697,7 @@ message CampusTopicRcmdFeedReq {
 // Source: com/bapis/bilibili/app/dynamic/v2/CampusWaterFlowItem.java
 message CampusWaterFlowItem {
   WFItemType itemType = 1;
-  ItemWHRatio whRatio = 2;
+  com.bapis.bilibili.app.dynamic.common.ItemWHRatio whRatio = 2;
   oneof oneof_0 {
     WFItemDefault itemDefault = 3;
   }
@@ -2015,7 +2023,7 @@ message DecorateCard {
   string cardUrl = 2;
   string jumpUrl = 3;
   DecoCardFan fan = 4;
-  UserCard vasDecoCard = 5;
+  com.bapis.bilibili.vas.garb.service.UserCard vasDecoCard = 5;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/Description.java
@@ -2076,7 +2084,7 @@ message DynAllPersonalReq {
   int32 localTime = 6;
   string footprint = 7;
   string from = 8;
-  PlayerArgs playerArgs = 9;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 9;
   string personalExtra = 10;
   AdParam adParam = 11;
 }
@@ -2105,7 +2113,7 @@ message DynAllReq {
   AdParam adParam = 9;
   int32 coldStart = 10;
   string from = 11;
-  PlayerArgs playerArgs = 12;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 12;
   int64 tabRecallUid = 13;
   StyleType tabRecallType = 14;
   string tabRecallExtra = 15;
@@ -2154,7 +2162,7 @@ message DynDetailReq {
   int64 rid = 4;
   AdParam adParam = 5;
   string from = 6;
-  PlayerArgs playerArgs = 7;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 7;
   string shareId = 8;
   int32 shareMode = 9;
   int32 localTime = 10;
@@ -2172,7 +2180,7 @@ message DynDetailsReq {
   string dynamicIds = 1;
   PlayurlParam playurlParam = 2;
   int32 localTime = 3;
-  PlayerArgs playerArgs = 4;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 4;
   Config config = 5;
 }
 
@@ -2202,7 +2210,7 @@ message DynFriendReply {
 message DynFriendReq {
   string offset = 1;
   int32 localTime = 2;
-  PlayerArgs playerArgs = 3;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 3;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/DynLightReply.java
@@ -2215,7 +2223,7 @@ message DynLightReq {
   string historyOffset = 1;
   int32 page = 2;
   string from = 3;
-  PlayerArgs playerArgs = 4;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 4;
   int32 localTime = 5;
   LightFromType fromType = 6;
   int64 fakeUid = 7;
@@ -2253,7 +2261,7 @@ message DynRcmdReply {
 
 // Source: com/bapis/bilibili/app/dynamic/v2/DynRcmdReq.java
 message DynRcmdReq {
-  PlayerArgs playerArgs = 1;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 1;
   int32 localTime = 2;
   int64 fakeUid = 3;
   bool isRefresh = 4;
@@ -2328,7 +2336,7 @@ message DynSearchReq {
   string keyword = 1;
   int32 page = 2;
   int32 localTime = 3;
-  PlayerArgs playerArgs = 4;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 4;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/DynServerDetailsReply.java
@@ -2340,7 +2348,7 @@ message DynServerDetailsReply {
 message DynServerDetailsReq {
   repeated int64 dynamicIds = 1;
   int32 localTime = 2;
-  PlayerArgs playerArgs = 3;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 3;
   string mobiApp = 4;
   string device = 5;
   string buvid = 6;
@@ -2355,7 +2363,7 @@ message DynServerDetailsReq {
 message DynSpaceReq {
   int64 hostUid = 1;
   string historyOffset = 2;
-  PlayerArgs playerArgs = 3;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 3;
   int32 localTime = 4;
   int64 page = 5;
   string from = 6;
@@ -2378,7 +2386,7 @@ message DynSpaceSearchDetailsReq {
   repeated int64 dynamicIds = 1;
   repeated string searchWords = 2;
   int32 localTime = 3;
-  PlayerArgs playerArgs = 4;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 4;
   string mobiApp = 5;
   string device = 6;
   string buvid = 7;
@@ -2436,9 +2444,9 @@ message DynTranslateReq {
   int64 dynId = 1;
   int32 localTime = 2;
   string from = 3;
-  PlayerArgs playerArgs = 4;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 4;
   string scene = 5;
-  TranslateSwitch switch = 6;
+  com.bapis.bilibili.app.dynamic.common.TranslateSwitch switch = 6;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/DynTranslateResp.java
@@ -2468,7 +2476,7 @@ message DynVideoPersonalReq {
   int32 localTime = 6;
   string footprint = 7;
   string from = 8;
-  PlayerArgs playerArgs = 9;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 9;
   int64 pegasusAvid = 10;
   string personalExtra = 11;
 }
@@ -2491,7 +2499,7 @@ message DynVideoReq {
   string assistBaseline = 6;
   int32 localTime = 7;
   string from = 8;
-  PlayerArgs playerArgs = 9;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 9;
   FeedSortOptionReq reqSortOption = 10;
   string sessionId = 11;
 }
@@ -2574,7 +2582,7 @@ message Extend {
   int64 dynType = 13;
   int64 uid = 14;
   string cardUrl = 15;
-  Any sourceContent = 16;
+  google.protobuf.Any sourceContent = 16;
   string origFace = 17;
   ExtendReply reply = 18;
   string trackId = 19;
@@ -2594,7 +2602,7 @@ message Extend {
   map<string, string> report = 33;
   int64 tribeeId = 34;
   TribeeExtendInfo tribeeInfo = 35;
-  TranslateState translateState = 36;
+  com.bapis.bilibili.app.dynamic.common.TranslateState translateState = 36;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/ExtendReply.java
@@ -2682,7 +2690,7 @@ message FeedFilterReq {
   string offset = 1;
   string tab = 2;
   int32 localTime = 3;
-  PlayerArgs playerArgs = 4;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 4;
   AdParam adParam = 5;
   int32 coldStart = 6;
   int64 page = 7;
@@ -2716,7 +2724,7 @@ message FetchTabSettingReply {
 // Source: com/bapis/bilibili/app/dynamic/v2/FlowItemOpus.java
 message FlowItemOpus {
   MdlDynDrawItem coverPic = 1;
-  ItemWHRatio coverWhRatio = 2;
+  com.bapis.bilibili.app.dynamic.common.ItemWHRatio coverWhRatio = 2;
   CoverIconWithText bottomLeftText1 = 3;
   CoverIconWithText bottomLeftText2 = 4;
   Paragraph textParagraph = 5;
@@ -2956,7 +2964,7 @@ message LbsPoiReq {
   string offset = 3;
   Refresh refreshType = 4;
   int32 localTime = 5;
-  PlayerArgs playerArgs = 6;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 6;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/LegacyTopicFeedReply.java
@@ -3053,7 +3061,7 @@ message LinkNode {
   int64 timestamp = 8;
   GoodsItem goodsItem = 9;
   NoteVideoTS noteVideoTs = 10;
-  Any bizData = 11;
+  google.protobuf.Any bizData = 11;
   MdlDynDraw linkPics = 12;
   ClickBubble linkClickBubble = 13;
   LinkNodeShowType showType = 14;
@@ -3087,27 +3095,27 @@ message LinkUrl {
 message ListCreationReq {
   SelectedClassificationAndSortType preference = 1;
   int32 localTime = 2;
-  Pagination pagination = 3;
+  com.bapis.bilibili.pagination.Pagination pagination = 3;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/ListCreationResp.java
 message ListCreationResp {
   repeated CreationClassification classifications = 1;
   repeated CreationSortType sortTypes = 2;
-  PaginationReply nextPage = 3;
+  com.bapis.bilibili.pagination.PaginationReply nextPage = 3;
   repeated OpusCreationItem creationList = 4;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/ListFavReq.java
 message ListFavReq {
   int32 localTime = 1;
-  Pagination pagination = 2;
+  com.bapis.bilibili.pagination.Pagination pagination = 2;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/ListFavResp.java
 message ListFavResp {
   repeated OpusFavItem itemList = 1;
-  PaginationReply nextPage = 2;
+  com.bapis.bilibili.pagination.PaginationReply nextPage = 2;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/LiveInfo.java
@@ -3527,8 +3535,8 @@ message MixUpListItem {
   Relation relation = 9;
   int32 premiereState = 10;
   string uri = 11;
-  AvatarItem avatar = 12;
-  NameRender nameRender = 13;
+  com.bapis.bilibili.dagw.component.avatar.v1.AvatarItem avatar = 12;
+  com.bapis.bilibili.account.service.v1.NameRender nameRender = 13;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/MixUpListLiveItem.java
@@ -3645,7 +3653,7 @@ message Module {
 
 // Source: com/bapis/bilibili/app/dynamic/v2/ModuleAd.java
 message ModuleAd {
-  Any sourceContent = 1;
+  google.protobuf.Any sourceContent = 1;
   ModuleAuthor moduleAuthor = 2;
   int32 adContentType = 3;
   string coverLeftText1 = 4;
@@ -4114,7 +4122,7 @@ message ModuleRecommend {
   string tag = 3;
   string title = 4;
   string jumpUrl = 5;
-  repeated Any ad = 6;
+  repeated google.protobuf.Any ad = 6;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/ModuleRecommendCards.java
@@ -4375,7 +4383,7 @@ message OfficialDynamicsReply {
   repeated OfficialItem items = 1;
   int64 offset = 2;
   bool hasMore = 3;
-  PlayerArgs playerArgs = 4;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 4;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/OfficialDynamicsReq.java
@@ -4568,12 +4576,12 @@ message OpusDetailReq {
   string shareId = 4;
   int32 shareMode = 9;
   int32 localTime = 10;
-  PlayerArgs playerArgs = 11;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 11;
   Config config = 12;
   AdParam adParam = 13;
   string from = 14;
   string pattern = 15;
-  TranslateSwitch switch = 16;
+  com.bapis.bilibili.app.dynamic.common.TranslateSwitch switch = 16;
   map<string, string> abGroups = 17;
   string fromSpmid = 18;
 }
@@ -4581,7 +4589,7 @@ message OpusDetailReq {
 // Source: com/bapis/bilibili/app/dynamic/v2/OpusDetailResp.java
 message OpusDetailResp {
   OpusItem opusItem = 1;
-  TranslateState state = 2;
+  com.bapis.bilibili.app.dynamic.common.TranslateState state = 2;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/OpusFavItem.java
@@ -4622,14 +4630,14 @@ message OpusItem {
 message OpusSpaceFlowReq {
   int64 hostMid = 1;
   int32 localTime = 2;
-  Pagination pagination = 3;
+  com.bapis.bilibili.pagination.Pagination pagination = 3;
   string filterType = 4;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/OpusSpaceFlowResp.java
 message OpusSpaceFlowResp {
   repeated OpusFlowItem itemList = 1;
-  PaginationReply nextPage = 2;
+  com.bapis.bilibili.pagination.PaginationReply nextPage = 2;
   SectionOpusCollection hostUpOpusCollection = 3;
   SectionNoteNavigationBar hostUpNoteNavBar = 4;
 }
@@ -4867,7 +4875,7 @@ message ReactionListReq {
 // Source: com/bapis/bilibili/app/dynamic/v2/RecommendCard.java
 message RecommendCard {
   string cover = 1;
-  ItemWHRatio coverWhRatio = 2;
+  com.bapis.bilibili.app.dynamic.common.ItemWHRatio coverWhRatio = 2;
   IconBadge badge = 3;
   string title = 4;
   string upName = 5;
@@ -4937,7 +4945,7 @@ message RepostOpus2TribeeOptionsResp {
 
 // Source: com/bapis/bilibili/app/dynamic/v2/RepostTribeeListReq.java
 message RepostTribeeListReq {
-  Pagination page = 1;
+  com.bapis.bilibili.pagination.Pagination page = 1;
   int64 defaultTribeeId = 2;
 }
 
@@ -5482,7 +5490,7 @@ message ThreePointTopicTop {
 message ThreePointTranslate {
   string icon = 1;
   string title = 2;
-  TranslateSwitch switch = 3;
+  com.bapis.bilibili.app.dynamic.common.TranslateSwitch switch = 3;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/ThreePointTribeeApprovedThread.java
@@ -5758,7 +5766,7 @@ message TribeeCategoryInfo {
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeContent.java
 message TribeeContent {
   repeated TribeeDyn dynList = 1;
-  PaginationReply nextPage = 2;
+  com.bapis.bilibili.pagination.PaginationReply nextPage = 2;
   repeated TribeeMemberWatchingItem memberWatchingList = 3;
   string memberWatchingTopBvid = 4;
 }
@@ -5791,8 +5799,8 @@ message TribeeDyn {
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeDynAllReq.java
 message TribeeDynAllReq {
   int64 tribeeId = 1;
-  TribeeRefresh refreshType = 2;
-  Pagination page = 3;
+  com.bapis.bilibili.app.dynamic.common.TribeeRefresh refreshType = 2;
+  com.bapis.bilibili.pagination.Pagination page = 3;
   int64 categoryId = 4;
   TribeeSortType sortType = 5;
   string memberWatchingTopBvid = 6;
@@ -5973,14 +5981,14 @@ message TribeeSearchAllReq {
   int64 tribeeId = 2;
   TribeeSearchType type = 3;
   TribeeSearchOrder order = 4;
-  Pagination page = 5;
+  com.bapis.bilibili.pagination.Pagination page = 5;
   bool needMeta = 6;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeSearchAllResp.java
 message TribeeSearchAllResp {
   repeated TribeeSearchCard contents = 1;
-  PaginationReply nextPage = 2;
+  com.bapis.bilibili.pagination.PaginationReply nextPage = 2;
   repeated IntList possibleTypes = 3;
   repeated IntList possibleOrders = 4;
   string qvId = 5;
@@ -6308,7 +6316,7 @@ message TribeeSteamHomeShareConfig {
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeSteamHomeUserInfo.java
 message TribeeSteamHomeUserInfo {
-  AvatarItem avatar = 1;
+  com.bapis.bilibili.dagw.component.avatar.v1.AvatarItem avatar = 1;
   string faceUrl = 2;
   string name = 3;
   string jumpUrl = 4;
@@ -6361,13 +6369,13 @@ message TribeeVisaFreeItem {
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeVisaFreeListReq.java
 message TribeeVisaFreeListReq {
   int64 tribeeId = 1;
-  Pagination page = 2;
+  com.bapis.bilibili.pagination.Pagination page = 2;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeVisaFreeListResp.java
 message TribeeVisaFreeListResp {
   repeated TribeeVisaFreeItem tribees = 1;
-  PaginationReply nextPage = 2;
+  com.bapis.bilibili.pagination.PaginationReply nextPage = 2;
   int64 total = 3;
   repeated int64 redDotTribeeIds = 4;
 }
@@ -6470,8 +6478,8 @@ message UserInfo {
   int32 faceNftNew = 13;
   NFTInfo nftInfo = 14;
   int32 isSeniorMember = 15;
-  AvatarItem avatar = 16;
-  NameRender nameRender = 17;
+  com.bapis.bilibili.dagw.component.avatar.v1.AvatarItem avatar = 16;
+  com.bapis.bilibili.account.service.v1.NameRender nameRender = 17;
   string handle = 18;
 }
 
@@ -6545,15 +6553,15 @@ message VisaGuideBubble {
 // Source: com/bapis/bilibili/app/dynamic/v2/WaterFlowRcmdReq.java
 message WaterFlowRcmdReq {
   int64 campusId = 1;
-  FeedPagination page = 2;
-  PlayerArgs playerArgs = 3;
+  com.bapis.bilibili.pagination.FeedPagination page = 2;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 3;
   CampusRcmdReqFrom from = 4;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/WaterFlowRcmdResp.java
 message WaterFlowRcmdResp {
   repeated CampusWaterFlowItem items = 1;
-  FeedPaginationReply offset = 2;
+  com.bapis.bilibili.pagination.FeedPaginationReply offset = 2;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/Weight.java

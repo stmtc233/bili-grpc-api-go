@@ -3,6 +3,10 @@ syntax = "proto3";
 
 package com.bapis.bilibili.main.community.reply.v1;
 
+import "bilibili/app/dynamic/v2/messages.proto";
+import "bilibili/pagination/messages.proto";
+import "google/protobuf/any.proto";
+
 enum DetailListScene {
   REPLY = 0;
   MSG_FEED = 1;
@@ -186,7 +190,7 @@ message AtSearchReq {
 
 // Source: com/bapis/bilibili/main/community/reply/v1/CM.java
 message CM {
-  Any sourceContent = 1;
+  google.protobuf.Any sourceContent = 1;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/Content.java
@@ -244,7 +248,7 @@ message DetailListReq {
   CursorReq cursor = 5;
   DetailListScene scene = 6;
   Mode mode = 7;
-  FeedPagination pagination = 8;
+  com.bapis.bilibili.pagination.FeedPagination pagination = 8;
   string extra = 9;
   string adExtra = 10;
   bool needSubjectTitle = 11;
@@ -256,7 +260,7 @@ message DialogListReply {
   SubjectControl subjectControl = 2;
   repeated ReplyInfo replies = 3;
   Activity activity = 4;
-  FeedPaginationReply paginationReply = 5;
+  com.bapis.bilibili.pagination.FeedPaginationReply paginationReply = 5;
   string sessionId = 6;
 }
 
@@ -267,7 +271,7 @@ message DialogListReq {
   int64 root = 3;
   int64 dialog = 4;
   CursorReq cursor = 5;
-  FeedPagination pagination = 6;
+  com.bapis.bilibili.pagination.FeedPagination pagination = 6;
   string extra = 7;
   string adExtra = 8;
 }
@@ -328,7 +332,7 @@ message ESportsGradeCard {
 // Source: com/bapis/bilibili/main/community/reply/v1/FoldCard.java
 message FoldCard {
   string bottomText = 1;
-  FeedPagination foldPagination = 2;
+  com.bapis.bilibili.pagination.FeedPagination foldPagination = 2;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/FoldListReq.java
@@ -336,13 +340,13 @@ message FoldListReq {
   int64 oid = 1;
   int64 type = 2;
   string extra = 3;
-  FeedPagination pagination = 4;
+  com.bapis.bilibili.pagination.FeedPagination pagination = 4;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/FoldListResp.java
 message FoldListResp {
   repeated ReplyInfo replies = 1;
-  FeedPaginationReply paginationReply = 2;
+  com.bapis.bilibili.pagination.FeedPaginationReply paginationReply = 2;
   string title = 3;
   SubjectControl subjectControl = 4;
 }
@@ -448,7 +452,7 @@ message MainListReply {
   OperationV2 operationV2 = 17;
   Mode mode = 18;
   string modeText = 19;
-  FeedPaginationReply paginationReply = 20;
+  com.bapis.bilibili.pagination.FeedPaginationReply paginationReply = 20;
   string sessionId = 21;
   string reportParams = 22;
   VoteCard voteCard = 23;
@@ -470,7 +474,7 @@ message MainListReq {
   int64 seekRpid = 7;
   string filterTagName = 8;
   Mode mode = 9;
-  FeedPagination pagination = 10;
+  com.bapis.bilibili.pagination.FeedPagination pagination = 10;
   repeated int64 clientRecallRpids = 11;
   WordSearchParam wordSearchParam = 12;
 }
@@ -708,7 +712,7 @@ message PictureListReq {
   string extra = 3;
   int64 afterRpid = 4;
   Mode mode = 5;
-  FeedPagination pagination = 6;
+  com.bapis.bilibili.pagination.FeedPagination pagination = 6;
   string sessionId = 7;
   string mainListSessionId = 8;
 }
@@ -716,7 +720,7 @@ message PictureListReq {
 // Source: com/bapis/bilibili/main/community/reply/v1/PictureListResp.java
 message PictureListResp {
   repeated ReplyInfo replies = 1;
-  FeedPaginationReply paginationReply = 2;
+  com.bapis.bilibili.pagination.FeedPaginationReply paginationReply = 2;
   string sessionId = 3;
   string reportParams = 4;
   string contextFeature = 5;
@@ -1005,7 +1009,7 @@ message ReplyTrackInfo {
 message RichText {
   oneof oneof_0 {
     RichTextNote note = 1;
-    OpusItem opus = 2;
+    com.bapis.bilibili.app.dynamic.v2.OpusItem opus = 2;
   }
   enum ItemCase {
     ITEM_NOT_SET = 0;

@@ -3,13 +3,15 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.playerunite.pgcanymodel;
 
+import "bilibili/pgc/gateway/player/v2/messages.proto";
+
 // Source: com/bapis/bilibili/app/playerunite/pgcanymodel/PGCAnyModel.java
 message PGCAnyModel {
-  PlayViewBusinessInfo business = 3;
-  Event event = 4;
-  ViewInfo viewInfo = 5;
-  PlayAbilityExtConf playExtConf = 6;
-  PlayExtInfo playExtInfo = 7;
+  com.bapis.bilibili.pgc.gateway.player.v2.PlayViewBusinessInfo business = 3;
+  com.bapis.bilibili.pgc.gateway.player.v2.Event event = 4;
+  com.bapis.bilibili.pgc.gateway.player.v2.ViewInfo viewInfo = 5;
+  com.bapis.bilibili.pgc.gateway.player.v2.PlayAbilityExtConf playExtConf = 6;
+  com.bapis.bilibili.pgc.gateway.player.v2.PlayExtInfo playExtInfo = 7;
 }
 
 

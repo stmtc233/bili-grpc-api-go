@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.bilibili.broadcast.live;
 
+import "google/protobuf/any.proto";
+
 enum MessageFormat {
   MessageFormatUnknown = 0;
   MessageFormatProto = 1;
@@ -13,7 +15,7 @@ enum MessageFormat {
 // Source: com/bapis/bilibili/broadcast/live/BroadcastMessage.java
 message BroadcastMessage {
   string targetPath = 1;
-  Any bizBody = 2;
+  google.protobuf.Any bizBody = 2;
   Common common = 3;
 }
 

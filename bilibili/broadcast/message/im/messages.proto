@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.bilibili.broadcast.message.im;
 
+import "bilibili/app/im/v1/messages.proto";
+
 enum CmdId {
   EN_CMD_ID_INVALID = 0;
   EN_CMD_ID_MSG_NOTIFY = 1;
@@ -18,7 +20,7 @@ enum PLType {
 
 // Source: com/bapis/bilibili/broadcast/message/im/ChatPushSettingChangedCommand.java
 message ChatPushSettingChangedCommand {
-  SessionId sessionId = 1;
+  com.bapis.bilibili.app.im.v1.SessionId sessionId = 1;
   bool setting = 2;
 }
 
@@ -48,7 +50,7 @@ message CommandMsg {
 
 // Source: com/bapis/bilibili/broadcast/message/im/FetchMessageCommand.java
 message FetchMessageCommand {
-  SessionId sessionId = 1;
+  com.bapis.bilibili.app.im.v1.SessionId sessionId = 1;
 }
 
 // Source: com/bapis/bilibili/broadcast/message/im/Msg.java
@@ -97,7 +99,7 @@ message ReqServerNotify {
 
 // Source: com/bapis/bilibili/broadcast/message/im/UpdateChatInfoCommand.java
 message UpdateChatInfoCommand {
-  SessionId sessionId = 1;
+  com.bapis.bilibili.app.im.v1.SessionId sessionId = 1;
 }
 
 // Source: com/bapis/bilibili/broadcast/message/im/UpdateQuickLinkCommand.java
@@ -110,7 +112,7 @@ message UpdateSessionListCommand {
 
 // Source: com/bapis/bilibili/broadcast/message/im/UpdateSessionOneCommand.java
 message UpdateSessionOneCommand {
-  SessionId sessionId = 1;
+  com.bapis.bilibili.app.im.v1.SessionId sessionId = 1;
 }
 
 // Source: com/bapis/bilibili/broadcast/message/im/UpdateTotalUnreadCommand.java

@@ -3,9 +3,11 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.distribution.setting.im;
 
+import "bilibili/app/distribution/messages.proto";
+
 // Source: com/bapis/bilibili/app/distribution/setting/im/MidImConfig.java
 message MidImConfig {
-  BoolValue canAirdropToIm = 1;
+  com.bapis.bilibili.app.distribution.BoolValue canAirdropToIm = 1;
 }
 
 

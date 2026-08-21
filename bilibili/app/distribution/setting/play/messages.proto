@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.distribution.setting.play;
 
+import "bilibili/app/distribution/messages.proto";
+
 // Source: com/bapis/bilibili/app/distribution/setting/play/CloudPlayConfig.java
 message CloudPlayConfig {
   bytes enablepanorama = 1;
@@ -15,7 +17,7 @@ message CloudPlayConfig {
 
 // Source: com/bapis/bilibili/app/distribution/setting/play/MidPlayConfig.java
 message MidPlayConfig {
-  BoolValue dynamicToPlaylist = 1;
+  com.bapis.bilibili.app.distribution.BoolValue dynamicToPlaylist = 1;
 }
 
 // Source: com/bapis/bilibili/app/distribution/setting/play/PlayConfig.java

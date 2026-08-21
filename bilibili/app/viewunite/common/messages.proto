@@ -3,6 +3,12 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.viewunite.common;
 
+import "bilibili/account/service/v1/messages.proto";
+import "bilibili/dagw/component/avatar/v1/messages.proto";
+import "bilibili/pagination/messages.proto";
+import "bilibili/playershared/messages.proto";
+import "google/protobuf/any.proto";
+
 enum AttentionRelationStatus {
   ARS_NONE = 0;
   ARS_N0RELATION = 1;
@@ -909,7 +915,7 @@ message MerchandiseCard {
   string title = 2;
   repeated MerchandiseTitle subTitle = 3;
   MerchandiseButton button = 4;
-  Any sourceContent = 5;
+  google.protobuf.Any sourceContent = 5;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/common/MerchandiseTitle.java
@@ -1151,7 +1157,7 @@ message OperateAction {
 
 // Source: com/bapis/bilibili/app/viewunite/common/Owner.java
 message Owner {
-  AvatarItem avatar = 1;
+  com.bapis.bilibili.dagw.component.avatar.v1.AvatarItem avatar = 1;
   string url = 2;
   string title = 3;
   string fans = 4;
@@ -1168,7 +1174,7 @@ message Owner {
   int64 fansNum = 15;
   repeated int64 assists = 16;
   string seasonCount = 17;
-  NameRender nameRender = 18;
+  com.bapis.bilibili.account.service.v1.NameRender nameRender = 18;
   string handle = 19;
 }
 
@@ -1683,7 +1689,7 @@ message RelateCard {
     RelateHistoryAVCard historyAv = 17;
   }
   RelateThreePoint threePoint = 10;
-  Any cmStock = 11;
+  google.protobuf.Any cmStock = 11;
   CardBasicInfo basicInfo = 12;
   enum CardCase {
     CARD_NOT_SET = 0;
@@ -1707,7 +1713,7 @@ message RelateCard {
 // Source: com/bapis/bilibili/app/viewunite/common/RelateCMCard.java
 message RelateCMCard {
   int64 aid = 1;
-  Any sourceContent = 2;
+  google.protobuf.Any sourceContent = 2;
   int64 duration = 3;
   Stat stat = 4;
   int32 natureAd = 5;
@@ -1726,7 +1732,7 @@ message RelateCMLive {
 message RelateConfig {
   int64 validShowM = 1;
   int64 validShowN = 2;
-  Pagination pagination = 3;
+  com.bapis.bilibili.pagination.Pagination pagination = 3;
   bool canLoadMore = 4;
   CoverDimension dimension = 5;
 }
@@ -2003,7 +2009,7 @@ message Staff {
   Vip vip = 7;
   int32 labelStyle = 8;
   string fans = 9;
-  NameRender nameRender = 10;
+  com.bapis.bilibili.account.service.v1.NameRender nameRender = 10;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/common/Staffs.java
@@ -2133,7 +2139,7 @@ message UgcEpisode {
   double progressPercent = 12;
   int64 duration = 13;
   Author author = 14;
-  BizType bizType = 15;
+  com.bapis.bilibili.playershared.BizType bizType = 15;
   EpDownload download = 16;
 }
 

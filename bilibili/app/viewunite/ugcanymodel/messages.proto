@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.viewunite.ugcanymodel;
 
+import "bilibili/app/viewunite/common/messages.proto";
+
 enum PremiereState {
   premiere_none = 0;
   premiere_before = 1;
@@ -152,12 +154,12 @@ message ViewUgcAny {
   Dislike dislike = 2;
   string shortLink = 3;
   string shareSubtitle = 4;
-  repeated Page pages = 5;
+  repeated com.bapis.bilibili.app.viewunite.common.Page pages = 5;
   ElecRank elecRank = 6;
   UgcSeasonConf ugcSeasonConf = 7;
   AiExtra aiExtra = 8;
   Experiment experiment = 9;
-  RelateAsync relateAsync = 10;
+  com.bapis.bilibili.app.viewunite.common.RelateAsync relateAsync = 10;
 }
 
 
