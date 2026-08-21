@@ -7,7 +7,6 @@ enum AdArbitration {
   AD_ARBITRATION_UNSPECIFIED = 0;
   AD_ARBITRATION_PRIORITY = 1;
   AD_ARBITRATION_BID = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum BizType {
@@ -15,7 +14,6 @@ enum BizType {
   BIZ_TYPE_UGC = 1;
   BIZ_TYPE_PGC = 2;
   BIZ_TYPE_PUGV = 3;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/app/overseas/ad/v1/GetSdkAdConfigReply.java

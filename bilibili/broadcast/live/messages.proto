@@ -9,7 +9,6 @@ enum MessageFormat {
   MessageFormatUnknown = 0;
   MessageFormatProto = 1;
   MessageFormatJSON = 2;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/broadcast/live/BroadcastMessage.java

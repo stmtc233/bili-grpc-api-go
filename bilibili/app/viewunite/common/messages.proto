@@ -17,21 +17,18 @@ enum AttentionRelationStatus {
   ARS_BUDDY = 4;
   ARS_SPECIAL = 5;
   ARS_CANCELBLOCK = 6;
-  UNRECOGNIZED = -1;
 }
 
 enum DescType {
   DescTypeUnknown = 0;
   DescTypeText = 1;
   DescTypeAt = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum ExtType {
   ExtNone = 0;
   ExtDataCenter = 1;
   ExtDataEarnings = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum HonorJumpType {
@@ -39,7 +36,6 @@ enum HonorJumpType {
   HONOR_OPEN_URL = 1;
   HONOR_HALF_SCREEN = 2;
   HONOR_POPUP = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum HonorType {
@@ -56,7 +52,6 @@ enum HonorType {
   HONOR_REPLY = 10;
   HONOR_PROFESSION = 11;
   HONOR_HOT_WORD = 12;
-  UNRECOGNIZED = -1;
 }
 
 enum JumpType {
@@ -65,7 +60,6 @@ enum JumpType {
   REFRESH = 2;
   HALF_SCREEN = 3;
   OPEN_URL_BY_OUTER_BROWSER = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum KingPositionType {
@@ -77,7 +71,6 @@ enum KingPositionType {
   SHARE = 5;
   CACHE = 6;
   DANMAKU = 7;
-  UNRECOGNIZED = -1;
 }
 
 enum MentionType {
@@ -89,7 +82,6 @@ enum MentionType {
   MENTION_TYPE_OGV = 5;
   MENTION_TYPE_COURSE = 6;
   MENTION_TYPE_LOTTERY = 7;
-  UNRECOGNIZED = -1;
 }
 
 enum ModuleType {
@@ -158,14 +150,12 @@ enum ModuleType {
   PUGV_SEASON_COMBINE = 62;
   VIDEO_MENTIONS = 63;
   OGV_RESERVE_REMINDER = 64;
-  UNRECOGNIZED = -1;
 }
 
 enum OccupationType {
   STAFF = 0;
   CAST = 1;
   UNKNOWN_TYPE = -1;
-  UNRECOGNIZED = -1;
 }
 
 enum PugvBadgeType {
@@ -176,28 +166,24 @@ enum PugvBadgeType {
   PUGV_BADGE_TYPE_SELECTED = 4;
   PUGV_BADGE_TYPE_AI = 5;
   PUGV_BADGE_TYPE_VIP = 6;
-  UNRECOGNIZED = -1;
 }
 
 enum PugvSeasonDescriptionType {
   PUGV_SEASON_DESCRIPTION_TYPE_UNSPECIFIED = 0;
   PUGV_SEASON_DESCRIPTION_TYPE_TEXT = 1;
   PUGV_SEASON_DESCRIPTION_TYPE_IMAGE = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum PugvSeasonPrimarySellPointType {
   PUGV_SEASON_PRIMARY_SELL_POINT_TYPE_UNSPECIFIED = 0;
   PUGV_SEASON_PRIMARY_SELL_POINT_TYPE_MANUAL = 1;
   PUGV_SEASON_PRIMARY_SELL_POINT_TYPE_AUTO = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum PugvSeasonRecommendShowStyle {
   PUGV_SEASON_RECOMMEND_SHOW_STYLE_UNSPECIFIED = 0;
   PUGV_SEASON_RECOMMEND_SHOW_STYLE_MORE = 1;
   PUGV_SEASON_RECOMMEND_SHOW_STYLE_FEED = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum PugvSeriesItemState {
@@ -205,14 +191,12 @@ enum PugvSeriesItemState {
   PUGV_SERIRES_ITEM_STATE_NOT_START = 1;
   PUGV_SERIRES_ITEM_STATE_START = 2;
   PUGV_SERIRES_ITEM_STATE_END = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum PugvZoneItemType {
   PUGV_ZONE_ITEM_TYPE_UNSPECIFIED = 0;
   PUGV_ZONE_ITEM_TYPE_SEASON = 1;
   PUGV_ZONE_ITEM_TYPE_POSTGRADUATE = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum RelateCardType {
@@ -231,28 +215,24 @@ enum RelateCardType {
   MINI_PROGRAM = 12;
   HISTORY_AV = 13;
   PLACEHOLDER = 14;
-  UNRECOGNIZED = -1;
 }
 
 enum ReserveBizType {
   BizTypeNone = 0;
   BizTypeReserveActivity = 1;
   BizTypeFavSeason = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum SeasonType {
   Unknown = 0;
   Base = 1;
   Good = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum SerialSeasonCoverStyle {
   TITLE = 0;
   PICTURE = 1;
   SERIAL_SEASON_COVER_STYLE_UNKNOWN = -1;
-  UNRECOGNIZED = -1;
 }
 
 enum ShowStyle {
@@ -260,7 +240,6 @@ enum ShowStyle {
   ONE_ROW_ONE_COLUMN = 1;
   ONE_ROW_MULTI_COLUMN = 2;
   ONE_COLUMN_MULTI_ROW = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum ToolType {
@@ -269,7 +248,6 @@ enum ToolType {
   TAKE_OFF = 2;
   UNIVERSAL = 3;
   UP_VIDEO_MENTIONS = 4;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/common/ActBannerItem.java

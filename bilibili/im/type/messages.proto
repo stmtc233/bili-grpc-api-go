@@ -10,13 +10,11 @@ import "bilibili/dagw/component/avatar/v1/messages.proto";
 enum ActionType {
   INVALID = 0;
   RECALL = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum Exp {
   Invalid = 0;
   New_Ava = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum MsgType {
@@ -78,7 +76,6 @@ enum MsgType {
   EN_MSG_TYPE_MODIFY_MSG_TYPE = 51;
   EN_MSG_TYPE_CUSTOM_RANK_UPDATE = 400;
   EN_MSG_TYPE_CUSTOM_MSG_NOTICE = 401;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/im/type/AccountInfo.java

@@ -8,7 +8,6 @@ enum ModeType {
   TEENAGERS = 1;
   LESSONS = 2;
   BASIC = 3;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/metadata/restriction/Restriction.java

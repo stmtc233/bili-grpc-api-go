@@ -6,7 +6,6 @@ package com.bapis.bilibili.app.archive.middleware.v1;
 enum QnPolicy {
   QN_POLICY_DEFAULT = 0;
   QN_POLICY_AUTO_QN_ENABLE = 1;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/app/archive/middleware/v1/PlayerArgs.java

@@ -7,13 +7,11 @@ enum EncryptType {
   INVALID_ENCRYPT_TYPE = 0;
   CLIENT_AES = 1;
   SERVER_RSA_AES = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum PayloadType {
   INVALID_PAYLOAD = 0;
   DEVICE_APP_LIST = 1;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/gaia/gw/DeviceAppList.java

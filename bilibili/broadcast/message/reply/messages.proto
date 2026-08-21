@@ -14,7 +14,6 @@ message SubjectInteractionResp {
   enum Interaction {
     Unknown = 0;
     ReplyLike = 1;
-    UNRECOGNIZED = -1;
   }
 
 }

@@ -8,7 +8,6 @@ import "google/protobuf/any.proto";
 enum ArcType {
   ARC_TYPE_NORMAL = 0;
   ARC_TYPE_INTERACT = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum BizType {
@@ -16,7 +15,6 @@ enum BizType {
   BIZ_TYPE_UGC = 1;
   BIZ_TYPE_PGC = 2;
   BIZ_TYPE_PUGV = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum ButtonAction {
@@ -42,7 +40,6 @@ enum ButtonAction {
   RELOAD = 19;
   ADUNLOCK = 20;
   SWITCH_QN = 21;
-  UNRECOGNIZED = -1;
 }
 
 enum CanWatchQnReason {
@@ -52,7 +49,6 @@ enum CanWatchQnReason {
   CAN_WATCH_QN_REASON_BIG_VIP = 3;
   CAN_WATCH_QN_REASON_TV_BIG_VIP = 4;
   CAN_WATCH_QN_REASON_OGV_TVOD_PAY = 5;
-  UNRECOGNIZED = -1;
 }
 
 enum CodeType {
@@ -61,7 +57,6 @@ enum CodeType {
   CODE265 = 2;
   CODEAV1 = 3;
   CODE266 = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum ConfType {
@@ -107,7 +102,6 @@ enum ConfType {
   TRANSLATE = 39;
   COMMENT = 40;
   FAVORITE = 41;
-  UNRECOGNIZED = -1;
 }
 
 enum DrmTechType {
@@ -115,14 +109,12 @@ enum DrmTechType {
   FAIR_PLAY = 1;
   WIDE_VINE = 2;
   BILI_DRM = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum Effects {
   EFFECTS_UNKNOWN = 0;
   GAUSSIAN_BLUR = 1;
   HALF_ALPHA = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum ExtDataType {
@@ -132,14 +124,12 @@ enum ExtDataType {
   HE_INLINE = 3;
   EXT_DATA_TYPE_CHARGING = 4;
   QR_CODE = 5;
-  UNRECOGNIZED = -1;
 }
 
 enum FoldStyle {
   FOLD_STYLE_UNSPECIFIED = 0;
   FOLD_STYLE_COUNT_DOWN = 1;
   FOLD_STYLE_ONLY_BUTTON = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum FragmentPosition {
@@ -147,7 +137,6 @@ enum FragmentPosition {
   PRE = 1;
   MIDDLE = 2;
   POST = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum FragmentType {
@@ -155,13 +144,11 @@ enum FragmentType {
   AD_FRAGMENT = 1;
   OGV_FRAGMENT = 2;
   PUGV_FRAGMENT = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum GroupStyle {
   GROUP_STYLE_DEFAULT = 0;
   GROUP_STYLE_HORIZON = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum GuideStyle {
@@ -172,40 +159,34 @@ enum GuideStyle {
   CHARGING_TEXT = 4;
   UNIVERSAL_INTERCEPT = 5;
   MSG_ATTACH_QR_CODE = 6;
-  UNRECOGNIZED = -1;
 }
 
 enum LimitActionType {
   LAT_UNKNOWN = 0;
   SHOW_LIMIT_DIALOG = 1;
   SKIP_CURRENT_EP = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum LimitWatchQnReason {
   LIMIT_WATCH_QN_REASON_DEFAULT = 0;
   LIMIT_WATCH_QN_REASON_QN_VIP_PLAY = 1;
   LIMIT_WATCH_QN_REASON_CTCC_HOME_NETWORK_DEVICE_LIMIT = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum PlayCtrl {
   PLAY_CTRL_DEFAULT = 0;
   PLAY_CTRL_SIMPLE = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum PlayErr {
   NoErr = 0;
   WithMultiDeviceLoginErr = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum ProductionType {
   PRODUCTION_TYPE_DEFAULT = 0;
   PRODUCTION_TYPE_UPLOAD = 1;
   PRODUCTION_TYPE_AI = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum PromptBarStyle {
@@ -214,26 +195,22 @@ enum PromptBarStyle {
   CURING_BENEFITS = 2;
   CARD_OPENING_GIFT = 3;
   COUNTDOWN = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum PromptBarType {
   PROMPT_BAR_TYPE_UNKNOWN = 0;
   OPEN_PROMPT_BAR = 1;
   TRY_PROMPT_BAR = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum QnGroupType {
   UNKNOWN_GROUP = 0;
   VIP_VISION = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum QnPolicy {
   QN_POLICY_DEFAULT = 0;
   QN_POLICY_AUTO_QN_ENABLE = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum SettingItemStyle {
@@ -242,7 +219,6 @@ enum SettingItemStyle {
   SETTING_STYLE_MORE = 2;
   SETTING_STYLE_SELECT = 3;
   SETTING_STYLE_VERTICAL = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum SettingItemType {
@@ -285,7 +261,6 @@ enum SettingItemType {
   SETTING_AI_AUDIO_EXCHANGE = 36;
   SETTING_TRANSLATE = 37;
   SETTING_DM_SWITCH = 38;
-  UNRECOGNIZED = -1;
 }
 
 enum SettingJumpType {
@@ -293,14 +268,12 @@ enum SettingJumpType {
   SETTING_JUMP_TYPE_OPEN_URL = 1;
   SETTING_JUMP_TYPE_HALF_SCREEN = 2;
   SETTING_JUMP_TYPE_OPEN_URL_BY_OUTER_BROWSER = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum ShowStyleType {
   SHOW_STYLE_TYPE_UNKNOWN = 0;
   SHOW_STYLE_TYPE_ORDINARY = 1;
   SHOW_STYLE_TYPE_RESIDENT = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum ToastType {
@@ -319,20 +292,17 @@ enum ToastType {
   S_VIP_TOAST = 12;
   TELECOM_VIP_TOAST = 13;
   SPONSOR_TOAST = 14;
-  UNRECOGNIZED = -1;
 }
 
 enum UnsupportScene {
   UNKNOWN_SCENE = 0;
   PREMIERE = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum UnsupportState {
   NONE = 0;
   HALF = 1;
   FULL = 2;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/playershared/AIAudio.java
@@ -577,7 +547,6 @@ message DolbyItem {
     NONE = 0;
     COMMON = 1;
     ATMOS = 2;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -958,7 +927,6 @@ message Scheme {
   enum ActionType {
     UNKNOWN = 0;
     SHOW_TOAST = 1;
-    UNRECOGNIZED = -1;
   }
 
 }

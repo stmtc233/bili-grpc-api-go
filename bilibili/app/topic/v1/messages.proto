@@ -13,7 +13,6 @@ enum FeedCardType {
   FEED_CARD_TYPE_LEAD_COLLECTION = 2;
   FEED_CARD_TYPE_ITEM = 3;
   FEED_CARD_TYPE_TASK = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum FeedCardUserRatingOptionType {
@@ -23,28 +22,24 @@ enum FeedCardUserRatingOptionType {
   FEED_CARD_USER_RATING_OPTION_TYPE_AVERAGE = 3;
   FEED_CARD_USER_RATING_OPTION_TYPE_SATISFIED = 4;
   FEED_CARD_USER_RATING_OPTION_TYPE_VERY_SATISFIED = 5;
-  UNRECOGNIZED = -1;
 }
 
 enum ReserveButtonMode {
   RESERVE_BUTTON_MODE_NONE = 0;
   RESERVE_BUTTON_MODE_RESERVE = 1;
   RESERVE_BUTTON_MODE_UP_CANCEL = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum ReserveButtonStatus {
   RESERVE_BUTTON_STATUS_NONE = 0;
   RESERVE_BUTTON_STATUS_UNCHECK = 1;
   RESERVE_BUTTON_STATUS_CHECK = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum ResSetTopOptType {
   ResSetTopNone = 0;
   ResSetTop = 1;
   ResSetTopCancel = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum TopicCardType {
@@ -53,7 +48,6 @@ enum TopicCardType {
   FOLD = 2;
   VIDEO_SMALL_CARD = 3;
   FEED_CARD = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum TopicCategory {
@@ -61,13 +55,11 @@ enum TopicCategory {
   Questions = 1;
   IPTopic = 2;
   Commerce = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum TopicDetailsExtMode {
   MODE_ILLEGAL_TYPE = 0;
   STORY = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum TopicTopCardType {
@@ -82,7 +74,6 @@ enum TopicTopCardType {
   IPTopic_Card_Type = 8;
   Head_Click_Area_Card_Type = 9;
   Item_Card_Type = 10;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/app/topic/v1/ButtonMeta.java

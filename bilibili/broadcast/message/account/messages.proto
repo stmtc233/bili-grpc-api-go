@@ -6,7 +6,6 @@ package com.bapis.bilibili.broadcast.message.account;
 enum EventAction {
   ACTION_UNKNOWN = 0;
   ACTION_UPDATE_VIP = 1;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/broadcast/message/account/AccountNotifyReply.java

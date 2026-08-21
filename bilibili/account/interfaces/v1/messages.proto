@@ -11,7 +11,6 @@ enum ProfileField {
   PROFILE_FIELD_BIRTHDAY = 4;
   PROFILE_FIELD_SEX = 5;
   PROFILE_FIELD_HANDLE = 6;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/account/interfaces/v1/AccountProfile.java

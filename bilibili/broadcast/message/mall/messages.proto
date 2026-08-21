@@ -11,7 +11,6 @@ enum MsgType {
   MERCHANT_ADD = 4;
   USER_ADD = 5;
   MERCHANT_REJET = 6;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/broadcast/message/mall/NotifyReq.java

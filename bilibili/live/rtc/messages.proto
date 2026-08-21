@@ -8,14 +8,12 @@ enum BAPILiveRTCStreamProto_Codec {
   H264 = 1;
   H265 = 2;
   AV1 = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum BAPILiveRTCTokenProto_TurnProtocol {
   UDP = 0;
   TCP = 1;
   TLS = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum BAPILiveRTCUserProto_UserLeaveReason {
@@ -24,7 +22,6 @@ enum BAPILiveRTCUserProto_UserLeaveReason {
   TIMEOUT = 2;
   KILLED = 3;
   RECONNECT = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum BAPILiveRTCUserProto_UserRole {
@@ -35,7 +32,6 @@ enum BAPILiveRTCUserProto_UserRole {
   App = 4;
   Mix = 5;
   Unknown = 99;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/live/rtc/BAPILiveRTCStreamProto$AudioMetaData.java

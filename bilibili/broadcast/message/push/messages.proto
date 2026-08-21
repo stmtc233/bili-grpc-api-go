@@ -18,7 +18,6 @@ message UpStreamMessage {
     TYPE_FILTER = 2;
     TYPE_SHOW = 3;
     TYPE_CLICK = 4;
-    UNRECOGNIZED = -1;
   }
 
 }

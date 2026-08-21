@@ -11,14 +11,12 @@ enum MSG_LIKE_ACTION {
   ACTION_CANCEL_LIKE = 2;
   ACTION_DISLIKE = 3;
   ACTION_CANCEL_DISLIKE = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum MSG_LIKE_STATE {
   STATE_UNSPECIFIED = 0;
   STATE_LIKE = 1;
   STATE_DISLIKE = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum UpdateUnreadScope {
@@ -26,7 +24,6 @@ enum UpdateUnreadScope {
   Dustbin = 1;
   Unfollowed = 2;
   Stranger = 3;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/im/interfaces/v1/DummyReq.java

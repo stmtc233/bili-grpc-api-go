@@ -10,7 +10,6 @@ enum Action {
   UNKNOWN = 0;
   UPDATE = 1;
   DELETE = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum LinkType {
@@ -19,7 +18,6 @@ enum LinkType {
   LINK_TYPE_VIDEO = 2;
   LINK_TYPE_LIVE = 3;
   LINK_MESSAGE = 4;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/broadcast/v1/AuthReq.java
@@ -66,7 +64,6 @@ message HeartbeatResp {
     DEFAULT = 0;
     UNHEALTHY = 1;
     MIGRATION = 2;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -148,51 +145,43 @@ message PushMessageResp {
     BIZ_VIDEO = 1;
     BIZ_LIVE = 2;
     BIZ_ACTIVITY = 3;
-    UNRECOGNIZED = -1;
   }
 
   enum DisplayType {
     DisPlayText = 0;
     DisplaySatic = 1;
     DisplayGif = 2;
-    UNRECOGNIZED = -1;
   }
 
   enum ImageFrame {
     FRAME_UNKNOWN = 0;
     FRAME_LIVE = 1;
-    UNRECOGNIZED = -1;
   }
 
   enum ImageMarker {
     MARKER_UNKNOWN = 0;
     MARKER_LIVE = 1;
-    UNRECOGNIZED = -1;
   }
 
   enum ImagePosition {
     IMAGE_POS_UNKNOWN = 0;
     IMAGE_POS_LEFT = 1;
     IMAGE_POS_RIGHT = 2;
-    UNRECOGNIZED = -1;
   }
 
   enum MsgType {
     MSG_ONLINE = 0;
     MSG_OFFLINE = 1;
-    UNRECOGNIZED = -1;
   }
 
   enum PopType {
     TopToBottom = 0;
     RightToLeft = 1;
-    UNRECOGNIZED = -1;
   }
 
   enum Position {
     POS_UNKNOWN = 0;
     POS_TOP = 1;
-    UNRECOGNIZED = -1;
   }
 
   enum Type {
@@ -202,7 +191,6 @@ message PushMessageResp {
     TYPE_REALTIME = 3;
     TYPE_RECOMMEND = 4;
     TYPE_REPLY = 5;
-    UNRECOGNIZED = -1;
   }
 
 }

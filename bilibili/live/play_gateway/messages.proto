@@ -7,7 +7,6 @@ enum PlayStyle {
   PLAY_STYLE_HORRIZ = 0;
   PLAY_STYLE_VERT = 1;
   PLAY_STYLE_TINYWINDOW = 2;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/live/play_gateway/Behavior.java

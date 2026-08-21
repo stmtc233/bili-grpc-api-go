@@ -9,7 +9,6 @@ enum SectionPaginationMode {
   SECTION_PAGINATION_MODE_UNKNOWN = 0;
   SECTION_PAGINATION_MODE_PAGED = 1;
   SECTION_PAGINATION_MODE_PAGED_CURATED = 3;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/pgcanymodel/CacheAuthConfig.java

@@ -12,7 +12,6 @@ enum PauseAdFormType {
   CHECKBOX = 2;
   TEXT = 3;
   PHONE = 4;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/ad/v1/AdAutoPlayVideoDto.java

@@ -7,35 +7,30 @@ enum GT14Status {
   LT14 = 0;
   GE14 = 1;
   UNKNOWN_GT14 = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum NFTStatus {
   UNDEFINED = 0;
   NORMAL = 1;
   DOING = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum PolicyAgreeStatus {
   UNSIGNED = 0;
   ACCEPTED = 1;
   EXPIRED = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum PolicyType {
   UNKNOWN_POLICY = 0;
   WALLET = 1;
   SALE = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum RecordType {
   All = 0;
   input = 1;
   output = 2;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/pangu/gallery/v1/AgreePolicyReply.java

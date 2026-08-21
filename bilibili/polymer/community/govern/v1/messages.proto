@@ -9,7 +9,6 @@ enum AntiHarassmentLimit {
   ReFollowLimit = 2;
   TwoWayFollow = 3;
   AllLimit = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum BizType {
@@ -20,7 +19,6 @@ enum BizType {
   ReplyMe = 4;
   LikeMe = 5;
   AtMe = 6;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/polymer/community/govern/v1/AntiHarassmentInfo.java

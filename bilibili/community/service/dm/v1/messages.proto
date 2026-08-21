@@ -6,27 +6,23 @@ package com.bapis.bilibili.community.service.dm.v1;
 enum AvatarType {
   AvatarTypeNone = 0;
   AvatarTypeNFT = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum BubbleType {
   BubbleTypeNone = 0;
   BubbleTypeClickButton = 1;
   BubbleTypeDmSettingPanel = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum CheckboxType {
   CheckboxTypeNone = 0;
   CheckboxTypeEncourage = 1;
   CheckboxTypeColorDM = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum DmColorfulType {
   NoneType = 0;
   VipGradualColor = 60001;
-  UNRECOGNIZED = -1;
 }
 
 enum DmFromType {
@@ -34,7 +30,6 @@ enum DmFromType {
   DmFromNormal = 1;
   DmFromCmd = 2;
   DmFromLive = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum DmMaskWallBizType {
@@ -45,26 +40,22 @@ enum DmMaskWallBizType {
   Record = 4;
   Cloud = 5;
   AIGC = 6;
-  UNRECOGNIZED = -1;
 }
 
 enum DmMaskWallContentType {
   DmMaskWallContentTypeUnknown = 0;
   DmMaskWallContentTypeText = 1;
   DmMaskWallContentTypePic = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum ExposureType {
   ExposureTypeNone = 0;
   ExposureTypeDMSend = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum FontSizeType {
   FontSizeDefault = 0;
   FontSizeOGV = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum PostPanelBizType {
@@ -76,65 +67,55 @@ enum PostPanelBizType {
   PostPanelBizTypeRecommend = 5;
   PostPanelBizTypePlotLeak = 6;
   PostPanelBizTypeAntiHarassment = 7;
-  UNRECOGNIZED = -1;
 }
 
 enum PostStatus {
   PostStatusNormal = 0;
   PostStatusClosed = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum ProductionType {
   PRODUCTION_TYPE_DEFAULT = 0;
   PRODUCTION_TYPE_UPLOAD = 1;
   PRODUCTION_TYPE_AI = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum PurposeType {
   PurposeCover = 0;
   PurposeOGV = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum RenderType {
   RenderTypeNone = 0;
   RenderTypeSingle = 1;
   RenderTypeRotation = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum SubtitleAiStatus {
   None = 0;
   Exposure = 1;
   Assist = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum SubtitleAiType {
   Normal = 0;
   Translate = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum SubtitleRole {
   Default = 0;
   Main = 1;
   Secondary = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum SubtitleType {
   CC = 0;
   AI = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum ToastFunctionType {
   ToastFunctionTypeNone = 0;
   ToastFunctionTypePostPanel = 1;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/community/service/dm/v1/Avatar.java

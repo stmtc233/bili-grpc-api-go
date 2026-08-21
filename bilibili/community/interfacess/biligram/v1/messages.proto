@@ -8,7 +8,6 @@ import "bilibili/pagination/messages.proto";
 enum IconPosition {
   IconPositionPrefix = 0;
   IconPositionSuffix = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum ItemContentType {
@@ -16,14 +15,12 @@ enum ItemContentType {
   ItemContentTypeText = 1;
   ItemContentTypeHighlight = 2;
   ItemContentTypeEmoji = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum MessageActionType {
   MessageActionTypeUnknown = 0;
   MessageActionTypeLike = 1;
   MessageActionTypeUnlike = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum MessageItemType {
@@ -33,7 +30,6 @@ enum MessageItemType {
   MessageItemTypeContent = 3;
   MessageItemTypePicture = 4;
   MessageItemTypeAddition = 5;
-  UNRECOGNIZED = -1;
 }
 
 enum MessageStatus {
@@ -41,21 +37,18 @@ enum MessageStatus {
   MessageStatusAudit = 1;
   MessageStatusSelfSeen = 2;
   MessageStatusDelete = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum MessageType {
   MessageTypeNone = 0;
   MessageTypeText = 1;
   MessageTypeImage = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum ServerStatus {
   ServerStatusUnknown = 0;
   ServerStatusOnline = 1;
   ServerStatusOffline = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum TopicStatus {
@@ -64,7 +57,6 @@ enum TopicStatus {
   TopicStatusAudit = 2;
   TopicStatusDeleted = 3;
   TopicStatusAuditDeleted = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum TopicTailType {
@@ -72,7 +64,6 @@ enum TopicTailType {
   TopicTailTypeUnreadGray = 1;
   TopicTailTypeUnreadRed = 2;
   TopicTailTypeEdit = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum UpServerType {
@@ -80,7 +71,6 @@ enum UpServerType {
   UpServerTypeCreate = 1;
   UpServerTypeUp = 2;
   UpServerTypeFollow = 3;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/biligram/v1/ActionButton.java

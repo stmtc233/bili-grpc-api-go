@@ -8,7 +8,6 @@ enum EditorIconState {
   EditorIconState_ENABLE = 1;
   EditorIconState_DISABLE = 2;
   EditorIconState_HIDE = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum FunctionButtonType {
@@ -21,20 +20,17 @@ enum FunctionButtonType {
   FunctionButtonType_InsertContent = 6;
   FunctionButtonType_Elec = 7;
   FunctionButtonType_CMBizHelper = 8;
-  UNRECOGNIZED = -1;
 }
 
 enum UserCallbackAction {
   USER_CALLBACK_ACTION_DEFAULT = 0;
   USER_CALLBACK_ACTION_DISMISS = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum UserCallbackScene {
   USER_CALLBACK_SCENE_DEFAULT = 0;
   USER_CALLBACK_SCENE_INSERT = 1;
   USER_CALLBACK_SCENE_RECOMMEND_SUPERB_REPLY = 2;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v2/Emote.java
@@ -60,7 +56,6 @@ message EmptyPage {
     UNAVAILABLE = 0;
     SHOW_KEYBOARD = 1;
     SEND_REPLY_WITH_BOLD_TEXT = 2;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -85,7 +80,6 @@ message Resource {
     LIKE_SUCCESS = 1;
     REPLY_SUCCESS = 2;
     REPLY_EASTER_EGG = 3;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -117,7 +111,6 @@ message SubjectDescriptionReply {
     S13 = 1;
     ESPORTS = 2;
     OGV = 3;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -144,7 +137,6 @@ message TextStyle {
     NORMAL = 0;
     BOLD = 1;
     MEDIUM = 2;
-    UNRECOGNIZED = -1;
   }
 
 }

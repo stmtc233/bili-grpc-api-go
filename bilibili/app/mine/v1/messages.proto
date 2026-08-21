@@ -16,7 +16,6 @@ enum ArcState {
   USER_DELAY = 7;
   FAST_PUB = 8;
   XCODE_FAIL = 9;
-  UNRECOGNIZED = -1;
 }
 
 enum CardType {
@@ -25,7 +24,6 @@ enum CardType {
   UGC = 2;
   OPUS = 3;
   MORE = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum DisplayPos {
@@ -35,14 +33,12 @@ enum DisplayPos {
   VIP_BUTTON_BIRTHDAY = 3;
   VIP_BACKGROUND = 4;
   FANS_EFFECT = 5;
-  UNRECOGNIZED = -1;
 }
 
 enum OpusState {
   OPUS_UNKNOWN = 0;
   OPUS_OPEN = 1;
   OPUS_NO_FORWARD = 2;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/app/mine/v1/Arc.java

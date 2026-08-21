@@ -9,7 +9,6 @@ enum Category {
   CATEGORY_TWO = 2;
   CATEGORY_THREE = 3;
   CATEGORY_FOUR = 4;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/api/probe/v1/CodeReply.java

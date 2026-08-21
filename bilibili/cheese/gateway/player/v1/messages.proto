@@ -10,7 +10,6 @@ enum DrmTechType {
   FAIR_PLAY = 1;
   WIDE_VINE = 2;
   BILI_DRM = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum SecurityLevel {
@@ -18,7 +17,6 @@ enum SecurityLevel {
   LEVEL_L1 = 1;
   LEVEL_L2 = 2;
   LEVEL_L3 = 3;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/cheese/gateway/player/v1/PlayAbilityConf.java

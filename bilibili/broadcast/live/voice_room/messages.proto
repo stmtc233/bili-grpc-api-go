@@ -6,7 +6,6 @@ package com.bapis.bilibili.broadcast.live.voice_room;
 enum LiveInteractBusinessType {
   LiveInteractBusinessTypeNode = 0;
   LiveInteractBusinessTypeMultiVoice = 10;
-  UNRECOGNIZED = -1;
 }
 
 enum LiveInteractOperationType {
@@ -16,14 +15,12 @@ enum LiveInteractOperationType {
   LiveInteractOperationTypeCancel = 3;
   LiveInteractOperationTypeNoReply = 4;
   LiveInteractOperationTypeInvited = 5;
-  UNRECOGNIZED = -1;
 }
 
 enum LiveMultiVoiceRole {
   LiveMultiVoiceRoleCommon = 0;
   LiveMultiVoiceRoleManager = 1;
   LiveMultiVoiceRoleAnchor = 2;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/broadcast/live/voice_room/BattleInfo.java

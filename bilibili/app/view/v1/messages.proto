@@ -16,60 +16,51 @@ enum BizType {
   BizTypeJumpLink = 3;
   BizTypeFavSeason = 4;
   BizTypeReserveGame = 5;
-  UNRECOGNIZED = -1;
 }
 
 enum Category {
   CategoryUnknown = 0;
   CategorySeason = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum DescType {
   DescTypeUnknown = 0;
   DescTypeText = 1;
   DescTypeAt = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum ECode {
   DEFAULT = 0;
   CODE404 = 1;
   CODEVERSIONLIMIT = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum ExtType {
   ExtNone = 0;
   ExtDataCenter = 1;
   ExtDataEarnings = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum JumpShowType {
   JST_DEFAULT = 0;
   JST_FULLSCREEN = 1;
   JST_HALFSCREEN = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum MaterialSource {
   Default = 0;
   BiJian = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum OperationCardType {
   CardTypeNone = 0;
   CardTypeStandard = 1;
   CardTypeSkip = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum PayState {
   PayStateUnknown = 0;
   PayStateActive = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum PlayerCardType {
@@ -77,13 +68,11 @@ enum PlayerCardType {
   PlayerCardTypeAttention = 1;
   PlayerCardTypeOperation = 2;
   PlayerCardTypeContract = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum PlayToastEnum {
   PLAYTOAST_UNKNOWN = 0;
   PLAYTOAST_CHARGINGPLUS = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum PremiereState {
@@ -91,20 +80,17 @@ enum PremiereState {
   premiere_before = 1;
   premiere_in = 2;
   premiere_after = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum RejectPageEnum {
   REJECTPAGE_UNKNOWN = 0;
   REJECTPAGE_CHARGINGPLUS = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum SeasonType {
   Unknown = 0;
   Base = 1;
   Good = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum TabOtype {
@@ -112,20 +98,17 @@ enum TabOtype {
   URL = 1;
   TopicNA = 2;
   CmURI = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum TabStyle {
   UnknownStyle = 0;
   Text = 1;
   Pic = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum ViewState {
   ViewNone = 0;
   ViewHostOnlySelf = 1;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/app/view/v1/ActivityResource.java

@@ -6,7 +6,6 @@ package com.bapis.bilibili.app.playerunite.ugcanymodel;
 enum ClipType {
   CLIP_TYPE_UNSPECIFIED = 0;
   CLIP_TYPE_HE = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum PlayLimitCode {
@@ -16,7 +15,6 @@ enum PlayLimitCode {
   PLC_ChargingPlusUpgrade = 3;
   PLC_ChargingPlusReject = 4;
   PLC_COMMON_CODE = 5;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/app/playerunite/ugcanymodel/ButtonStyle.java

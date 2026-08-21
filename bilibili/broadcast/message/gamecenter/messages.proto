@@ -7,7 +7,6 @@ enum PushEvent {
   PushEventUnknown = 0;
   PushEventDownload = 1;
   PushEventBookDownload = 2;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/broadcast/message/gamecenter/PushEventMessage.java

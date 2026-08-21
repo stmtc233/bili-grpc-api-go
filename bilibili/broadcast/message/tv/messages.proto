@@ -6,7 +6,6 @@ package com.bapis.bilibili.broadcast.message.tv;
 enum LiveSource {
   LiveSourceMLive = 0;
   LiveSourceBizTrigger = 1;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/broadcast/message/tv/AccountNotify.java

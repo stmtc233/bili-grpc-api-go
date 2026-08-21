@@ -9,13 +9,11 @@ enum CmdId {
   EN_CMD_ID_INVALID = 0;
   EN_CMD_ID_MSG_NOTIFY = 1;
   EN_CMD_ID_KICK_OUT = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum PLType {
   EN_PAYLOAD_NORMAL = 0;
   EN_PAYLOAD_BASE64 = 1;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/broadcast/message/im/ChatPushSettingChangedCommand.java

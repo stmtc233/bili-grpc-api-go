@@ -18,14 +18,12 @@ message OtherSettingsConfig {
     None = 1;
     Center = 2;
     BottomRight = 3;
-    UNRECOGNIZED = -1;
   }
 
   enum WebImageQualityType {
     High = 0;
     Low = 1;
     Auto = 2;
-    UNRECOGNIZED = -1;
   }
 
 }

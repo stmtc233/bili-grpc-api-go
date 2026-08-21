@@ -11,13 +11,11 @@ enum AdditionType {
   ADDITION_TYPE_UNKNOWN = 0;
   ADDITION_TYPE_UGC_VIEW_INFO_MATERIAL = 1;
   ADDITION_TYPE_TRANSLATION_INTRO = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum ResourceType {
   RESOURCE_TYPE_DEFAULT = 0;
   RESOURCE_TYPE_OPUS = 1;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/app/playerunite/v1/PlayAdditionReply.java

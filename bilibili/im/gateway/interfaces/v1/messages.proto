@@ -9,14 +9,12 @@ import "bilibili/im/type/messages.proto";
 enum MsgFeedActionType {
   MSG_FEED_ACTION_TYPE_INVALID = 0;
   MSG_FEED_ACTION_TYPE_THANK = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum MsgFeedFilterType {
   MsgFeed_All = 0;
   MsgFeed_Following = 1;
   MsgFeed_AtMe = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum MsgFeedMsgType {
@@ -26,7 +24,6 @@ enum MsgFeedMsgType {
   DanmuMsg = 3;
   CoinMsg = 4;
   FavoriteMsg = 5;
-  UNRECOGNIZED = -1;
 }
 
 enum MsgTabType {
@@ -38,20 +35,17 @@ enum MsgTabType {
   NewFollow = 5;
   ReceiveReply = 100;
   ReceiveLike = 101;
-  UNRECOGNIZED = -1;
 }
 
 enum SessionsFilterType {
   Sessions_All = 0;
   Sessions_Following = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum ToastType {
   ToastTypeDefault = 0;
   ToastTypeBanned = 1;
   ToastTypeReport = 2;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/im/gateway/interfaces/v1/AtBiz.java

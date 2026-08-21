@@ -12,21 +12,18 @@ enum AiIdType {
   AI_ID_TYPE_MAIN = 1;
   AI_ID_TYPE_CUSTOMER = 2;
   AI_ID_TYPE_BOTH = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum AirDropFrom {
   ADF_UNKNOWN = 0;
   ADF_INSIDE_APP = 1;
   ADF_OUTSIDE_APP = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum AlertToastType {
   ALERT_TOAST_TYPE_UNSPECIFIED = 0;
   ALERT_TOAST_TYPE_BANNED = 1;
   ALERT_TOAST_TYPE_REPORT = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum AssistantType {
@@ -35,14 +32,12 @@ enum AssistantType {
   ASSISTANT_TYPE_UP = 2;
   ASSISTANT_TYPE_PAY = 3;
   ASSISTANT_TYPE_REPORT = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum BubbleStyle {
   BUBBLE_STYLE_ROUND_CORNER = 0;
   BUBBLE_STYLE_SHARP_CORNER = 1;
   BUBBLE_STYLE_BACKGROUND_CLEAR = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum ContactTabType {
@@ -50,7 +45,6 @@ enum ContactTabType {
   TAB_GROUP = 1;
   TAB_FOLLOW = 2;
   TAB_FANS = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum EntityMsgType {
@@ -68,13 +62,11 @@ enum EntityMsgType {
   ENTITY_MSG_TYPE_SEARCH_GPT = 11;
   ENTITY_MSG_TYPE_AI_INTRODUCE = 12;
   ENTITY_MSG_TYPE_CUSTOM_STICKER = 13;
-  UNRECOGNIZED = -1;
 }
 
 enum FetchDirection {
   FETCH_DIRECTION_EARLIER = 0;
   FETCH_DIRECTION_LATER = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum GhostMsgType {
@@ -82,7 +74,6 @@ enum GhostMsgType {
   GHOST_MSG_TYPE_DELETE_MSG = 1;
   GHOST_MSG_TYPE_RECALL_MSG = 2;
   GHOST_MSG_TYPE_UPDATE_MSG = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum IMSettingType {
@@ -120,7 +111,6 @@ enum IMSettingType {
   SETTING_TYPE_REPORT_USER = 31;
   SETTING_TYPE_USER_INFO = 32;
   SETTING_TYPE_CHAT_BG = 33;
-  UNRECOGNIZED = -1;
 }
 
 enum LabelType {
@@ -133,7 +123,6 @@ enum LabelType {
   LABEL_TYPE_SPECIAL_ATTENTION_2 = 6;
   LABEL_TYPE_FANS_MEDAL = 7;
   LABEL_TYPE_GUARD_MEDAL = 8;
-  UNRECOGNIZED = -1;
 }
 
 enum MsgSummaryPrefixType {
@@ -142,7 +131,6 @@ enum MsgSummaryPrefixType {
   MSG_SUMMARY_PREFIX_TYPE_GROUP_BLOCKED = 2;
   MSG_SUMMARY_PREFIX_TYPE_MENTIONED = 3;
   MSG_SUMMARY_PREFIX_TYPE_UNREAD = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum QuickLinkItemType {
@@ -155,7 +143,6 @@ enum QuickLinkItemType {
   QUICK_LINK_ITEM_TYPE_FOLLOW = 6;
   QUICK_LINK_ITEM_TYPE_REPLY = 100;
   QUICK_LINK_ITEM_TYPE_LIKE = 101;
-  UNRECOGNIZED = -1;
 }
 
 enum QuickLinkMsgType {
@@ -165,13 +152,11 @@ enum QuickLinkMsgType {
   DanmuMsg = 3;
   CoinMsg = 4;
   FavoriteMsg = 5;
-  UNRECOGNIZED = -1;
 }
 
 enum SessionFilterType {
   FILTER_DEFAULT = 0;
   FILTER_FOLLOW = 1;
-  UNRECOGNIZED = -1;
 }
 
 enum SessionPageType {
@@ -184,7 +169,6 @@ enum SessionPageType {
   SESSION_PAGE_TYPE_HUA_HUO = 6;
   SESSION_PAGE_TYPE_AI = 7;
   SESSION_PAGE_TYPE_CUSTOMER = 8;
-  UNRECOGNIZED = -1;
 }
 
 enum SessionType {
@@ -202,7 +186,6 @@ enum SessionType {
   SESSION_TYPE_ASSISTANT_ID = 11;
   SESSION_TYPE_AI_ID = 12;
   SESSION_TYPE_TMP_ANNUAL_REPORT = 99;
-  UNRECOGNIZED = -1;
 }
 
 enum ShortcutType {
@@ -211,7 +194,6 @@ enum ShortcutType {
   SHORTCUT_TYPE_PUSH_DISABLE = 2;
   SHORTCUT_TYPE_BLOCK = 3;
   SHORTCUT_TYPE_FOLLOW = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum ThreeDotItemType {
@@ -227,28 +209,24 @@ enum ThreeDotItemType {
   THREE_DOT_ITEM_TYPE_CLEAR_LIST = 9;
   THREE_DOT_ITEM_TYPE_ANTI_HARASSMENT = 10;
   THREE_DOT_ITEM_TYPE_REPORT_HELPER = 11;
-  UNRECOGNIZED = -1;
 }
 
 enum TipsType {
   TIPS_TYPE_UNSPECIFIED = 0;
   TIPS_TYPE_BANNED = 1;
   TIPS_TYPE_BLOCKED = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum TranslateSwitch {
   TRANSLATE_UNKNOWN = 0;
   TRANSLATE_TRANSLATED = 1;
   TRANSLATE_ORIGINAL = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum UnreadStyle {
   UNREAD_STYLE_NONE = 0;
   UNREAD_STYLE_DOT = 1;
   UNREAD_STYLE_NUMBER = 2;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/app/im/v1/AckSessionReply.java
@@ -1493,7 +1471,6 @@ message ShareCommonModule {
   enum ShareCommonModuleType {
     DEFAULT = 0;
     LIVE = 1;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -1515,7 +1492,6 @@ message ShareDynamicAttachModule {
     COURSE = 7;
     UGC_SEASON = 8;
     MEDIA_LIST = 9;
-    UNRECOGNIZED = -1;
   }
 
 }

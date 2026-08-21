@@ -12,7 +12,6 @@ enum Action {
   ACTION_CANCEL_THUMB = 2;
   ACTION_FAV = 3;
   ACTION_CANCEL_FAV = 4;
-  UNRECOGNIZED = -1;
 }
 
 enum EntityBiz {
@@ -22,7 +21,6 @@ enum EntityBiz {
   ENTITY_BIZ_DYNAMIC = 3;
   ENTITY_BIZ_REPLY = 4;
   ENTITY_BIZ_TOPIC = 5;
-  UNRECOGNIZED = -1;
 }
 
 enum InvFeedBackType {
@@ -30,7 +28,6 @@ enum InvFeedBackType {
   HOME_PAGE_BUBBLE_SHOW = 1;
   HOME_PAGE_REDDOT_CLICK = 2;
   MY_PAGE_REDDOT_CLICK = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum JoinTribeeByInviteCodeResult {
@@ -38,7 +35,6 @@ enum JoinTribeeByInviteCodeResult {
   JOIN_BY_INV_SUCCESS = 1;
   JOIN_BY_INV_FAIL_CODE_STATUS_ERR = 2;
   JOIN_BY_INV_FAIL_JOINED = 3;
-  UNRECOGNIZED = -1;
 }
 
 enum TribeeMemberStatus {
@@ -47,7 +43,6 @@ enum TribeeMemberStatus {
   OWNER = 2;
   MAINTAINER = 3;
   BANNED = 100;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AddTribeeDraftReq.java
@@ -228,7 +223,6 @@ message JoinTribeeByInviteCodeReq {
   enum InviteCodeScene {
     INVITE_CODE_SCENE_LEGO_BACKEND = 0;
     INVITE_CODE_SCENE_TRIBEE_OPUS_JOIN = 1;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -247,7 +241,6 @@ message JoinTribeeByVisaReq {
   enum VisaScene {
     VISA_SCENE_JOIN = 0;
     VISA_SCENE_PUBLISH = 1;
-    UNRECOGNIZED = -1;
   }
 
 }
@@ -527,7 +520,6 @@ message TribeeManageThreadFeaturedReq {
     ACTION_TYPE_NONE = 0;
     ACTION_TYPE_FEATURED = 1;
     ACTION_TYPE_UNFEATURED = 2;
-    UNRECOGNIZED = -1;
   }
 
 }

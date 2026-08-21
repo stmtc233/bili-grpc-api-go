@@ -9,14 +9,12 @@ enum EvaluateType {
   EvaluateMachineMsg = 0;
   EvaluateCustomer = 1;
   EvaluateCustomerInvited = 2;
-  UNRECOGNIZED = -1;
 }
 
 enum Select {
   ABLE = 0;
   SELECTED = 1;
   UNABLE = 2;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/im/customer/independent/EvaluationShowInfo.java

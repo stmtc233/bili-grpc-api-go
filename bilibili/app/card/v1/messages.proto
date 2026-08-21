@@ -6,7 +6,6 @@ package com.bapis.bilibili.app.card.v1;
 enum TranslateStatus {
   TRANSLATE_STATUS_DEFAULT = 0;
   TRANSLATE_STATUS_SEE_ORIGINAL = 1;
-  UNRECOGNIZED = -1;
 }
 
 // Source: com/bapis/bilibili/app/card/v1/AdInfo.java
