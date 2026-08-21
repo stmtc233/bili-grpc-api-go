@@ -79,6 +79,9 @@ jobs:
       - name: Generate Go package files
         run: bash scripts/generate_go.sh
 
+      - name: Test Go package
+        run: go test ./...
+
       - name: Detect generated changes
         id: changes
         run: |
