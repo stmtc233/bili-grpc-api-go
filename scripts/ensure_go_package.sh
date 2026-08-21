@@ -21,6 +21,9 @@ while IFS= read -r -d '' file; do
   else
     expected_go_package="${module_path}/${relative_dir}"
   fi
+  if [[ "$(basename "${relative_dir}")" == "main" ]]; then
+    expected_go_package="${expected_go_package};mainpb"
+  fi
 
   tmp_file="$(mktemp)"
 

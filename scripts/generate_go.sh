@@ -14,6 +14,8 @@ repo_root="${1:-.}"
     exit 0
   fi
 
+  find . -type f -name '*.pb.go' ! -path './.git/*' ! -path './upstream/*' -delete
+
   while IFS= read -r file; do
     [[ -z "${file}" ]] && continue
 
