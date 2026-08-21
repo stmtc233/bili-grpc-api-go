@@ -101,9 +101,9 @@ message CardUGC {
   bool hasShare = 7;
   string archiveVideoAuditJson = 8;
   enum SubtitleCase {
+    SUBTITLE_NOT_SET = 0;
     BUTTON_TITLE = 3;
     STAT_TITLE = 4;
-    SUBTITLE_NOT_SET = 0;
   }
 
 }
@@ -138,11 +138,11 @@ message PubCard {
   }
   CardType type = 5;
   enum CardCase {
+    CARD_NOT_SET = 0;
     PUB_GUIDE = 1;
     UGC = 2;
     OPUS = 3;
     MORE = 4;
-    CARD_NOT_SET = 0;
   }
 
 }

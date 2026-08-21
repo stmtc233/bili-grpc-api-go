@@ -118,6 +118,7 @@ message Card {
     TopicList topicList = 12;
   }
   enum ItemCase {
+    ITEM_NOT_SET = 0;
     SMALL_COVER_V5 = 1;
     LARGE_COVER_V1 = 2;
     THREE_ITEM_ALL_V2 = 3;
@@ -130,7 +131,6 @@ message Card {
     RCMD_ONE_ITEM = 10;
     SMALL_COVER_V5_AD = 11;
     TOPIC_LIST = 12;
-    ITEM_NOT_SET = 0;
   }
 
 }
@@ -164,10 +164,10 @@ message DoubleCards {
     ThreePicV2 threePicV2 = 3;
   }
   enum CardCase {
+    CARD_NOT_SET = 0;
     SMALL_COVER_V2 = 1;
     ONE_PIC_V2 = 2;
     THREE_PIC_V2 = 3;
-    CARD_NOT_SET = 0;
   }
 
 }

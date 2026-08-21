@@ -406,9 +406,9 @@ message ClickActivitySeasonReq {
   }
   int64 action = 5;
   enum OrderParamCase {
+    ORDERPARAM_NOT_SET = 0;
     RESERVE = 3;
     FAV_SEASON = 4;
-    ORDERPARAM_NOT_SET = 0;
   }
 
 }
@@ -449,8 +449,8 @@ message CmIpad {
     CmIpadLive live = 7;
   }
   enum DataCase {
-    LIVE = 7;
     DATA_NOT_SET = 0;
+    LIVE = 7;
   }
 
 }
@@ -1024,17 +1024,17 @@ message OperationCardNew {
     BizReserveGameParam game = 12;
   }
   enum ParamCase {
+    PARAM_NOT_SET = 0;
     FOLLOW = 9;
     RESERVE = 10;
     JUMP = 11;
     GAME = 12;
-    PARAM_NOT_SET = 0;
   }
 
   enum RenderCase {
+    RENDER_NOT_SET = 0;
     STANDARD = 6;
     SKIP = 7;
-    RENDER_NOT_SET = 0;
   }
 
 }
@@ -1054,11 +1054,11 @@ message OperationCardV2 {
     BizReserveGameParam game = 10;
   }
   enum ParamCase {
+    PARAM_NOT_SET = 0;
     FOLLOW = 7;
     RESERVE = 8;
     JUMP = 9;
     GAME = 10;
-    PARAM_NOT_SET = 0;
   }
 
 }
@@ -1096,9 +1096,9 @@ message Order {
   string intro = 10;
   StatInfo seasonStatViewVt = 11;
   enum OrderParamCase {
+    ORDERPARAM_NOT_SET = 0;
     RESERVE = 8;
     FAV_SEASON = 9;
-    ORDERPARAM_NOT_SET = 0;
   }
 
 }

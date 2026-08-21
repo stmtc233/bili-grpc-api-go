@@ -575,10 +575,10 @@ message MixedCard {
     HotspotCard hotspot = 6;
   }
   enum ItemCase {
+    ITEM_NOT_SET = 0;
     QUESTION = 4;
     FOLD = 5;
     HOTSPOT = 6;
-    ITEM_NOT_SET = 0;
   }
 
   enum Type {
@@ -944,8 +944,8 @@ message ReplyInAppPushPayload {
   Subject subject = 3;
   repeated SubjectMaterial subjectMaterial = 4;
   enum ItemCase {
-    ARC = 1;
     ITEM_NOT_SET = 0;
+    ARC = 1;
   }
 
 }
@@ -1008,9 +1008,9 @@ message RichText {
     OpusItem opus = 2;
   }
   enum ItemCase {
+    ITEM_NOT_SET = 0;
     NOTE = 1;
     OPUS = 2;
-    ITEM_NOT_SET = 0;
   }
 
 }
@@ -1032,10 +1032,10 @@ message SearchItem {
     ArticleSearchItem article = 4;
   }
   enum ItemCase {
+    ITEM_NOT_SET = 0;
     GOODS = 2;
     VIDEO = 3;
     ARTICLE = 4;
-    ITEM_NOT_SET = 0;
   }
 
 }
@@ -1142,10 +1142,10 @@ message ShareReplyMaterialResp {
   int32 parentReply = 15;
   int32 subjectControl = 16;
   enum ItemCase {
+    ITEM_NOT_SET = 0;
     ARCHIVE_MATERIAL = 1;
     DYNAMIC_MATERIAL = 2;
     ARTICLE_MATERIAL = 3;
-    ITEM_NOT_SET = 0;
   }
 
 }
@@ -1204,6 +1204,7 @@ message SubjectTopCards {
     QuizCard quiz = 10;
   }
   enum ItemCase {
+    ITEM_NOT_SET = 0;
     OGV_GRADE = 3;
     UP_PROTECTION = 4;
     CM = 5;
@@ -1212,7 +1213,6 @@ message SubjectTopCards {
     VOTE = 8;
     ESPORTS_GRADE = 9;
     QUIZ = 10;
-    ITEM_NOT_SET = 0;
   }
 
   enum Type {
@@ -1357,9 +1357,9 @@ message VideoSearchItem {
     PGCVideoSearchItem pgc = 3;
   }
   enum VideoItemCase {
+    VIDEOITEM_NOT_SET = 0;
     UGC = 2;
     PGC = 3;
-    VIDEOITEM_NOT_SET = 0;
   }
 
 }

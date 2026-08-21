@@ -458,12 +458,12 @@ message FilterValue {
     UserType userType = 7;
   }
   enum FilterParamCase {
+    FILTERPARAM_NOT_SET = 0;
     PARAM = 3;
     SORT = 4;
     USER_SORT = 5;
     CATEGORY_SORT = 6;
     USER_TYPE = 7;
-    FILTERPARAM_NOT_SET = 0;
   }
 
 }
@@ -648,6 +648,7 @@ message Item {
   string originGoto = 76;
   map<string, string> reportExtra = 77;
   enum CardItemCase {
+    CARDITEM_NOT_SET = 0;
     SPECIAL = 7;
     ARTICLE = 8;
     BANNER = 9;
@@ -713,7 +714,6 @@ message Item {
     TWITTER_GIANT_CARD = 71;
     AI_CHAT = 73;
     TRIBEE_CARD = 74;
-    CARDITEM_NOT_SET = 0;
   }
 
 }

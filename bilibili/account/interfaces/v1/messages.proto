@@ -94,8 +94,8 @@ message UserFieldSetting {
     UserHandleFieldSetting handleSetting = 2;
   }
   enum SettingCase {
-    HANDLE_SETTING = 2;
     SETTING_NOT_SET = 0;
+    HANDLE_SETTING = 2;
   }
 
 }

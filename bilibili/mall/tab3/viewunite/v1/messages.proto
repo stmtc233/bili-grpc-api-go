@@ -294,11 +294,11 @@ message OperationCard {
     BizReserveGameParam game = 10;
   }
   enum ParamCase {
+    PARAM_NOT_SET = 0;
     FOLLOW = 7;
     RESERVE = 8;
     JUMP = 9;
     GAME = 10;
-    PARAM_NOT_SET = 0;
   }
 
 }
@@ -457,10 +457,10 @@ message TabModule {
     ActivityTab activityTab = 4;
   }
   enum TabCase {
+    TAB_NOT_SET = 0;
     INTRODUCTION = 2;
     REPLY = 3;
     ACTIVITY_TAB = 4;
-    TAB_NOT_SET = 0;
   }
 
 }

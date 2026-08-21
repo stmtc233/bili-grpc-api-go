@@ -300,13 +300,13 @@ message MsgItem {
     FavoriteCard favoriteCard = 6;
   }
   enum MsgCardCase {
+    MSGCARD_NOT_SET = 0;
     REPLY_CARD = 1;
     AT_CARD = 2;
     DANMU_CARD = 3;
     LIKE_CARD = 4;
     COIN_CARD = 5;
     FAVORITE_CARD = 6;
-    MSGCARD_NOT_SET = 0;
   }
 
 }
@@ -345,10 +345,10 @@ message MsgRelationTag {
     string imageUrl = 4;
   }
   enum ContentCase {
+    CONTENT_NOT_SET = 0;
     TEXT = 2;
     MEDAL = 3;
     IMAGE_URL = 4;
-    CONTENT_NOT_SET = 0;
   }
 
 }

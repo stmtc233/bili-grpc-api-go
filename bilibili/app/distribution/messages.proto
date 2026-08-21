@@ -33,6 +33,7 @@ message defaultValue {
     bytes bytesValue = 9;
   }
   enum ValueCase {
+    VALUE_NOT_SET = 0;
     DOUBLE_VALUE = 1;
     FLOAT_VALUE = 2;
     INT64_VALUE = 3;
@@ -42,7 +43,6 @@ message defaultValue {
     BOOL_VALUE = 7;
     STRING_VALUE = 8;
     BYTES_VALUE = 9;
-    VALUE_NOT_SET = 0;
   }
 
 }

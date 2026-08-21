@@ -202,9 +202,9 @@ message ConfValue {
     int64 selectedVal = 2;
   }
   enum ValueCase {
+    VALUE_NOT_SET = 0;
     SWITCH_VAL = 1;
     SELECTED_VAL = 2;
-    VALUE_NOT_SET = 0;
   }
 
 }
@@ -280,8 +280,8 @@ message FieldValue {
     bool switch = 1;
   }
   enum ValueCase {
-    SWITCH = 1;
     VALUE_NOT_SET = 0;
+    SWITCH = 1;
   }
 
 }
@@ -580,10 +580,10 @@ message Stream {
     MultiDashVideo multiDashVideo = 4;
   }
   enum ContentCase {
+    CONTENT_NOT_SET = 0;
     DASH_VIDEO = 2;
     SEGMENT_VIDEO = 3;
     MULTI_DASH_VIDEO = 4;
-    CONTENT_NOT_SET = 0;
   }
 
 }

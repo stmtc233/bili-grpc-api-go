@@ -338,8 +338,8 @@ message BizInfo {
     AIBizInfo aiBizInfo = 1;
   }
   enum InfoCase {
-    AI_BIZ_INFO = 1;
     INFO_NOT_SET = 0;
+    AI_BIZ_INFO = 1;
   }
 
 }
@@ -385,9 +385,9 @@ message ChatBubbleWidget {
     VoiceToTextWidget voiceToTextWidget = 2;
   }
   enum ContentCase {
+    CONTENT_NOT_SET = 0;
     HINT_TEXT_WIDGET = 1;
     VOICE_TO_TEXT_WIDGET = 2;
-    CONTENT_NOT_SET = 0;
   }
 
 }
@@ -426,9 +426,9 @@ message ChatStickyModule {
     StickyShortcutsModule shortcutsModule = 2;
   }
   enum ModuleCase {
+    MODULE_NOT_SET = 0;
     TIPS_MODULE = 1;
     SHORTCUTS_MODULE = 2;
-    MODULE_NOT_SET = 0;
   }
 
 }
@@ -753,9 +753,9 @@ message Msg {
     GhostMsg ghostMsg = 2;
   }
   enum ContentCase {
+    CONTENT_NOT_SET = 0;
     ENTITY_MSG = 1;
     GHOST_MSG = 2;
-    CONTENT_NOT_SET = 0;
   }
 
 }
@@ -784,12 +784,12 @@ message MsgFrame {
     NilFrame nilFrame = 5;
   }
   enum FrameCase {
+    FRAME_NOT_SET = 0;
     CHAT_BUBBLE_FRAME = 1;
     ROUND_CORNER_FRAME = 2;
     SYSTEM_HINT_FRAME = 3;
     PUSH_EMPTY_FRAME = 4;
     NIL_FRAME = 5;
-    FRAME_NOT_SET = 0;
   }
 
 }
@@ -817,6 +817,7 @@ message MsgMenuContent {
     MsgMenuCancelTranslate cancelTranslation = 7;
   }
   enum ItemCase {
+    ITEM_NOT_SET = 0;
     COPY = 1;
     DELETE = 2;
     RECALL = 3;
@@ -824,7 +825,6 @@ message MsgMenuContent {
     SAVE_STICKER = 5;
     TRANSLATE = 6;
     CANCEL_TRANSLATION = 7;
-    ITEM_NOT_SET = 0;
   }
 
 }
@@ -891,6 +891,7 @@ message MsgModule {
     QOEModule qoeModule = 24;
   }
   enum ModuleCase {
+    MODULE_NOT_SET = 0;
     TEXT_MODULE = 1;
     PICTURE_MODULE = 2;
     AUTHOR_MODULE = 3;
@@ -915,7 +916,6 @@ message MsgModule {
     AI_INTRODUCE_MODULE = 22;
     INVALID_RESOURCE_MODULE = 23;
     QOE_MODULE = 24;
-    MODULE_NOT_SET = 0;
   }
 
 }
@@ -961,9 +961,9 @@ message NotifyDetailAddition {
     string liveEndContent = 3;
   }
   enum BadgeCase {
+    BADGE_NOT_SET = 0;
     LIVE_CONTENT = 2;
     LIVE_END_CONTENT = 3;
-    BADGE_NOT_SET = 0;
   }
 
 }
@@ -1247,6 +1247,7 @@ message SessionId {
     AssistantId assistantId = 7;
   }
   enum IdCase {
+    ID_NOT_SET = 0;
     PRIVATE_ID = 1;
     GROUP_ID = 2;
     FOLD_ID = 3;
@@ -1254,7 +1255,6 @@ message SessionId {
     CUSTOMER_ID = 5;
     AI_ID = 6;
     ASSISTANT_ID = 7;
-    ID_NOT_SET = 0;
   }
 
 }
@@ -1349,9 +1349,9 @@ message SessionTag {
     BetaTag betaTage = 2;
   }
   enum TagCase {
+    TAG_NOT_SET = 0;
     LIVE_TAG = 1;
     BETA_TAGE = 2;
-    TAG_NOT_SET = 0;
   }
 
 }
@@ -1398,11 +1398,11 @@ message Setting {
     SettingText text = 4;
   }
   enum ContentCase {
+    CONTENT_NOT_SET = 0;
     SWITCH = 1;
     SELECT = 2;
     REDIRECT = 3;
     TEXT = 4;
-    CONTENT_NOT_SET = 0;
   }
 
 }
@@ -1419,11 +1419,11 @@ message SettingRedirect {
   string subtitle = 4;
   string selectedSummary = 5;
   enum ContentCase {
+    CONTENT_NOT_SET = 0;
     SETTING_PAGE = 1;
     OTHER_PAGE = 2;
     POPUP = 6;
     WINDOW_SELECT = 7;
-    CONTENT_NOT_SET = 0;
   }
 
 }
@@ -1601,9 +1601,9 @@ message TalkerInfo {
     UserPlaceholder userPlaceholder = 2;
   }
   enum InfoCase {
+    INFO_NOT_SET = 0;
     USER_TALKER_INFO = 1;
     USER_PLACEHOLDER = 2;
-    INFO_NOT_SET = 0;
   }
 
 }
@@ -1675,11 +1675,11 @@ message UserLabelStyle {
     Medal medalLabel = 5;
   }
   enum StyleCase {
+    STYLE_NOT_SET = 0;
     BORDERED_LABEL = 2;
     FILLED_LABEL = 3;
     IMAGE_LABEL = 4;
     MEDAL_LABEL = 5;
-    STYLE_NOT_SET = 0;
   }
 
 }
@@ -1705,9 +1705,9 @@ message VideoId {
     OGVVideoId ogvVideoId = 2;
   }
   enum IdCase {
+    ID_NOT_SET = 0;
     UGC_VIDEO_ID = 1;
     OGV_VIDEO_ID = 2;
-    ID_NOT_SET = 0;
   }
 
 }

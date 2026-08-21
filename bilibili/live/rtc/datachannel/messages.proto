@@ -17,9 +17,9 @@ message ClientStatsReq {
   int32 rawPayload = 6;
   int32 pbStatsPayload = 7;
   enum PayloadCase {
+    PAYLOAD_NOT_SET = 0;
     RAW_PAYLOAD = 6;
     PB_STATS_PAYLOAD = 7;
-    PAYLOAD_NOT_SET = 0;
   }
 
 }
@@ -92,9 +92,9 @@ message MuteNotify {
   }
   MuteReason reason = 4;
   enum MuteStatusCase {
+    MUTESTATUS_NOT_SET = 0;
     MUTE_AUDIO = 2;
     MUTE_VIDEO = 3;
-    MUTESTATUS_NOT_SET = 0;
   }
 
 }
@@ -106,9 +106,9 @@ message MuteReq {
     bool muteVideo = 2;
   }
   enum MuteReqCase {
+    MUTEREQ_NOT_SET = 0;
     MUTE_AUDIO = 1;
     MUTE_VIDEO = 2;
-    MUTEREQ_NOT_SET = 0;
   }
 
 }
@@ -150,6 +150,7 @@ message RequestMessage {
     UpdateCodecReq updateCodec = 15;
   }
   enum ReqCase {
+    REQ_NOT_SET = 0;
     JOIN = 4;
     LEAVE = 5;
     PUB = 6;
@@ -162,7 +163,6 @@ message RequestMessage {
     UPDATE_SUB = 13;
     CLIENT_STATS = 14;
     UPDATE_CODEC = 15;
-    REQ_NOT_SET = 0;
   }
 
 }
@@ -195,6 +195,7 @@ message ResponseMessage {
     UpdateCodecNotify updateCodecNotify = 23;
   }
   enum DataCase {
+    DATA_NOT_SET = 0;
     JOIN_RESP = 4;
     LEAVE_RESP = 5;
     PUB_RESP = 6;
@@ -215,7 +216,6 @@ message ResponseMessage {
     CLIENT_STATS_RESP = 21;
     UPDATE_CODEC_RESP = 22;
     UPDATE_CODEC_NOTIFY = 23;
-    DATA_NOT_SET = 0;
   }
 
 }
@@ -226,8 +226,8 @@ message SubReq {
   repeated bool subUsers = 2;
   bool pauseSend = 3;
   enum SubOfferCase {
-    SDP = 1;
     SUBOFFER_NOT_SET = 0;
+    SDP = 1;
   }
 
 }
@@ -289,23 +289,23 @@ message UpdateSubReq {
   int32 subVideo = 3;
   int32 layer = 4;
   enum AudioOptionCase {
-    SUB_AUDIO = 2;
     AUDIOOPTION_NOT_SET = 0;
+    SUB_AUDIO = 2;
   }
 
   enum VideoLayerOptionCase {
-    LAYER = 4;
     VIDEOLAYEROPTION_NOT_SET = 0;
+    LAYER = 4;
   }
 
   enum VideoOptionCase {
-    SUB_VIDEO = 3;
     VIDEOOPTION_NOT_SET = 0;
+    SUB_VIDEO = 3;
   }
 
   enum VideoTemporalLayerOptionCase {
-    TEMPORAL_INDEX = 2;
     VIDEOTEMPORALLAYEROPTION_NOT_SET = 0;
+    TEMPORAL_INDEX = 2;
   }
 
 }

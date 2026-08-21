@@ -53,9 +53,9 @@ message CardItem {
     VideoCard av = 5;
   }
   enum CardItemCase {
+    CARDITEM_NOT_SET = 0;
     ARTICLE = 4;
     AV = 5;
-    CARDITEM_NOT_SET = 0;
   }
 
 }

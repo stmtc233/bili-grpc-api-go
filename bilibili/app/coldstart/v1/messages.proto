@@ -18,9 +18,9 @@ message ColdStartBizResp {
     HttpStatus httpStatus = 4;
   }
   enum StatusCase {
+    STATUS_NOT_SET = 0;
     GRPC_STATUS = 3;
     HTTP_STATUS = 4;
-    STATUS_NOT_SET = 0;
   }
 
 }

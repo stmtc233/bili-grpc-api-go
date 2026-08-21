@@ -54,9 +54,9 @@ message BAPILiveRTCStreamProto_StreamMeta {
     BAPILiveRTCStreamProto_VideoMetaData video = 3;
   }
   enum MetadataCase {
+    METADATA_NOT_SET = 0;
     AUDIO = 2;
     VIDEO = 3;
-    METADATA_NOT_SET = 0;
   }
 
 }
