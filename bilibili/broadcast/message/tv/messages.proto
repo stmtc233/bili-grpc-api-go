@@ -39,8 +39,65 @@ message DanmakuElem {
 
 // Source: com/bapis/bilibili/broadcast/message/tv/DmActivityReply.java
 message DmActivityReply {
-  string roomId = 1;
-  repeated string activityList = 2;
+  int64 roomId = 1;
+  repeated DmActivityReply_ActivityInfo activityList = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/DmActivityReply.java
+message DmActivityReply_ActivityInfo {
+  int64 id = 1;
+  int64 stime = 2;
+  int64 etime = 3;
+  int32 status = 4;
+  int64 dmMode = 5;
+  repeated int64 platform = 6;
+  int64 screenType = 7;
+  int64 dmSettingSwitch = 8;
+  DmActivityReply_ActivityInfo_MaterialConf materialConf = 9;
+  string extra = 10;
+  repeated DmActivityReply_ActivityInfo_MockOption mockOptions = 11;
+  LiveSource source = 12;
+  string uniqueId = 13;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/DmActivityReply.java
+message DmActivityReply_ActivityInfo_MaterialConf {
+  int64 activityType = 1;
+  string mainStateDmColor = 2;
+  string objectiveStateDmColor = 3;
+  string webMaterial = 4;
+  string activityTestMaterial = 5;
+  repeated DmActivityReply_ActivityInfo_MaterialConf_SpecialDmMaterialMobi materialMode = 6;
+  string mainStrokeColor = 7;
+  string objectiveStrokeColor = 8;
+  ModResource modResource = 9;
+  string backupUrl = 10;
+  int64 mainHeadFps = 11;
+  int64 objectiveHeadFps = 12;
+  int64 mainTailFps = 13;
+  int64 objectiveTailFps = 14;
+  string backgroundColor = 15;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/DmActivityReply.java
+message DmActivityReply_ActivityInfo_MaterialConf_MaterialMobiConf {
+  string mobiPool = 1;
+  string mobiModule = 2;
+  string mobiModuleFile = 3;
+  int64 mobiModuleVersion = 4;
+  string mobiModuleFileName = 5;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/DmActivityReply.java
+message DmActivityReply_ActivityInfo_MaterialConf_SpecialDmMaterialMobi {
+  string appKey = 1;
+  DmActivityReply_ActivityInfo_MaterialConf_MaterialMobiConf mobiMaterial = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/DmActivityReply.java
+message DmActivityReply_ActivityInfo_MockOption {
+  string dmExtra = 1;
+  int64 triggerTime = 2;
 }
 
 // Source: com/bapis/bilibili/broadcast/message/tv/DmLiveElem.java

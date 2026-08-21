@@ -3,6 +3,8 @@ syntax = "proto3";
 
 package com.bapis.bilibili.live.rtc.datachannel;
 
+import "bilibili/live/rtc/datachannel/report/messages.proto";
+
 enum MuteReason {
   UserMute = 0;
   AdminMute = 1;
@@ -12,9 +14,11 @@ enum MuteReason {
 message ClientStatsReq {
   string eventType = 1;
   string encoding = 2;
-  string app = 3;
-  int32 rawPayload = 6;
-  int32 pbStatsPayload = 7;
+  ClientStatsReq_App app = 3;
+  oneof oneof_0 {
+    bytes rawPayload = 6;
+    com.bapis.bilibili.live.rtc.datachannel.report.ClientStatsPayload pbStatsPayload = 7;
+  }
   enum PayloadCase {
     PAYLOAD_NOT_SET = 0;
     RAW_PAYLOAD = 6;
@@ -23,35 +27,52 @@ message ClientStatsReq {
 
 }
 
+// Source: com/bapis/bilibili/live/rtc/datachannel/ClientStatsReq.java
+message ClientStatsReq_App {
+  string appName = 1;
+  string appVersion = 2;
+  string sdkVersion = 3;
+  string platform = 4;
+  string network = 5;
+}
+
 // Source: com/bapis/bilibili/live/rtc/datachannel/ClientStatsResp.java
 message ClientStatsResp {
   uint32 reportInterval = 1;
-  uint32 score = 2;
+  ClientStatsResp_Score score = 2;
+}
+
+// Source: com/bapis/bilibili/live/rtc/datachannel/ClientStatsResp.java
+message ClientStatsResp_Score {
+  uint32 upScore = 1;
+  uint32 downScore = 2;
+  uint32 serverUpScore = 3;
+  uint32 serverDownScore = 4;
 }
 
 // Source: com/bapis/bilibili/live/rtc/datachannel/JoinNotify.java
 message JoinNotify {
-  BAPILiveRTCUserProto_User user = 1;
+  bytes user = 1;
 }
 
 // Source: com/bapis/bilibili/live/rtc/datachannel/JoinReq.java
 message JoinReq {
-  BAPILiveRTCUserProto_User user = 1;
+  bytes user = 1;
   bool autoSubscribe = 2;
   string token = 3;
 }
 
 // Source: com/bapis/bilibili/live/rtc/datachannel/JoinResp.java
 message JoinResp {
-  repeated BAPILiveRTCUserProto_User users = 1;
+  repeated bytes users = 1;
   uint32 callId = 2;
-  BAPILiveRTCUserProto_CodecCapability encodeCapability = 3;
+  bytes encodeCapability = 3;
 }
 
 // Source: com/bapis/bilibili/live/rtc/datachannel/LeaveNotify.java
 message LeaveNotify {
   uint64 uid = 1;
-  BAPILiveRTCUserProto_UserLeaveReason reason = 2;
+  int32 reason = 2;
 }
 
 // Source: com/bapis/bilibili/live/rtc/datachannel/LeaveReq.java
@@ -71,7 +92,7 @@ message MembersReq {
 
 // Source: com/bapis/bilibili/live/rtc/datachannel/MembersResp.java
 message MembersResp {
-  repeated BAPILiveRTCUserProto_User users = 1;
+  repeated bytes users = 1;
 }
 
 // Source: com/bapis/bilibili/live/rtc/datachannel/MessageNotify.java
@@ -115,13 +136,13 @@ message MuteReq {
 // Source: com/bapis/bilibili/live/rtc/datachannel/PubNotify.java
 message PubNotify {
   uint64 uid = 1;
-  BAPILiveRTCUserProto_Stream stream = 2;
+  bytes stream = 2;
 }
 
 // Source: com/bapis/bilibili/live/rtc/datachannel/PubReq.java
 message PubReq {
   string sdp = 1;
-  BAPILiveRTCUserProto_Stream stream = 2;
+  bytes stream = 2;
 }
 
 // Source: com/bapis/bilibili/live/rtc/datachannel/PubResp.java
@@ -221,14 +242,24 @@ message ResponseMessage {
 
 // Source: com/bapis/bilibili/live/rtc/datachannel/SubReq.java
 message SubReq {
-  uint64 sdp = 1;
-  repeated bool subUsers = 2;
+  oneof oneof_0 {
+    string sdp = 1;
+  }
+  repeated SubReq_SubUser subUsers = 2;
   bool pauseSend = 3;
   enum SubOfferCase {
     SUBOFFER_NOT_SET = 0;
     SDP = 1;
   }
 
+}
+
+// Source: com/bapis/bilibili/live/rtc/datachannel/SubReq.java
+message SubReq_SubUser {
+  uint64 uid = 1;
+  bool subVideo = 2;
+  bool subAudio = 3;
+  uint32 videoIndex = 4;
 }
 
 // Source: com/bapis/bilibili/live/rtc/datachannel/SubResp.java
@@ -245,7 +276,7 @@ message TokenNotify {
 // Source: com/bapis/bilibili/live/rtc/datachannel/UnPubNotify.java
 message UnPubNotify {
   uint64 uid = 1;
-  BAPILiveRTCUserProto_Stream stream = 2;
+  bytes stream = 2;
 }
 
 // Source: com/bapis/bilibili/live/rtc/datachannel/UnPubReq.java
@@ -267,12 +298,12 @@ message UnSubResp {
 
 // Source: com/bapis/bilibili/live/rtc/datachannel/UpdateCodecNotify.java
 message UpdateCodecNotify {
-  BAPILiveRTCUserProto_CodecCapability encodeCapability = 1;
+  bytes encodeCapability = 1;
 }
 
 // Source: com/bapis/bilibili/live/rtc/datachannel/UpdateCodecReq.java
 message UpdateCodecReq {
-  BAPILiveRTCUserProto_CodecCapability decodeCapability = 1;
+  bytes decodeCapability = 1;
 }
 
 // Source: com/bapis/bilibili/live/rtc/datachannel/UpdateCodecResp.java
@@ -281,12 +312,16 @@ message UpdateCodecResp {
 
 // Source: com/bapis/bilibili/live/rtc/datachannel/UpdateSubReq.java
 message UpdateSubReq {
-  uint32 uid = 1;
+  uint64 uid = 1;
   oneof oneof_0 {
-    uint32 subAudio = 2;
+    bool subAudio = 2;
   }
-  int32 subVideo = 3;
-  int32 layer = 4;
+  oneof oneof_1 {
+    bool subVideo = 3;
+  }
+  oneof oneof_2 {
+    UpdateSubReq_video_prefer_layer layer = 4;
+  }
   enum AudioOptionCase {
     AUDIOOPTION_NOT_SET = 0;
     SUB_AUDIO = 2;
@@ -302,6 +337,14 @@ message UpdateSubReq {
     SUB_VIDEO = 3;
   }
 
+}
+
+// Source: com/bapis/bilibili/live/rtc/datachannel/UpdateSubReq.java
+message UpdateSubReq_video_prefer_layer {
+  uint32 videoIndex = 1;
+  oneof oneof_0 {
+    uint32 temporalIndex = 2;
+  }
   enum VideoTemporalLayerOptionCase {
     VIDEOTEMPORALLAYEROPTION_NOT_SET = 0;
     TEMPORAL_INDEX = 2;

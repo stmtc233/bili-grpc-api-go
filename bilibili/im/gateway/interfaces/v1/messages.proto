@@ -446,7 +446,7 @@ message ReqGetSessions {
   uint32 sortRule = 7;
   uint32 teenagerMode = 8;
   uint32 lessonsMode = 9;
-  repeated IntList sids = 11;
+  repeated com.bapis.bilibili.im.type.Exp sids = 11;
   int64 aiUid = 12;
 }
 
@@ -460,7 +460,7 @@ message ReqNewSessions {
   uint32 size = 2;
   uint32 teenagerMode = 3;
   uint32 lessonsMode = 4;
-  repeated IntList sids = 6;
+  repeated com.bapis.bilibili.im.type.Exp sids = 6;
 }
 
 // Source: com/bapis/bilibili/im/gateway/interfaces/v1/ReqRemoveSession.java

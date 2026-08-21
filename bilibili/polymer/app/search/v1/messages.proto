@@ -310,7 +310,13 @@ message DetailsRelationItem {
 // Source: com/bapis/bilibili/polymer/app/search/v1/Disclaimer.java
 message Disclaimer {
   string title = 1;
-  repeated string list = 2;
+  repeated Disclaimer_Item list = 2;
+}
+
+// Source: com/bapis/bilibili/polymer/app/search/v1/Disclaimer.java
+message Disclaimer_Item {
+  string icon = 1;
+  string text = 2;
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/DislikeReason.java
@@ -1735,8 +1741,13 @@ message SearchNoResultSuggestWordCard {
 // Source: com/bapis/bilibili/polymer/app/search/v1/SearchNPSCard.java
 message SearchNPSCard {
   string title = 1;
-  repeated int32 options = 2;
-  int32 cardLayout = 3;
+  repeated SearchNPSCard_Option options = 2;
+  CardLayout cardLayout = 3;
+}
+
+// Source: com/bapis/bilibili/polymer/app/search/v1/SearchNPSCard.java
+message SearchNPSCard_Option {
+  string text = 1;
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/SearchOgvCard.java

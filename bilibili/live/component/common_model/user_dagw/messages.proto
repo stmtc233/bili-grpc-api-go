@@ -64,7 +64,7 @@ message BaseOption {
   bool needMystery = 1;
   RiskCtrl riskCtrl = 2;
   RoomAnonCtrl roomAnonCtrl = 3;
-  repeated IntList riskCtrlHandles = 4;
+  repeated RiskPolicyEnum riskCtrlHandles = 4;
 }
 
 // Source: com/bapis/bilibili/live/component/common_model/user_dagw/Guard.java

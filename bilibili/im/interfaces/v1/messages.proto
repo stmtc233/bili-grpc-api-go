@@ -122,7 +122,7 @@ message ReqGetSessions {
   uint32 sortRule = 7;
   uint32 teenagerMode = 8;
   uint32 lessonsMode = 9;
-  repeated IntList sids = 10;
+  repeated com.bapis.bilibili.im.type.Exp sids = 10;
   int64 aiUid = 11;
 }
 
@@ -160,7 +160,7 @@ message ReqNewSessions {
   uint32 size = 2;
   uint32 teenagerMode = 3;
   uint32 lessonsMode = 4;
-  repeated IntList sids = 5;
+  repeated com.bapis.bilibili.im.type.Exp sids = 5;
 }
 
 // Source: com/bapis/bilibili/im/interfaces/v1/ReqRelationSync.java

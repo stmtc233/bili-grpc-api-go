@@ -3,33 +3,79 @@ syntax = "proto3";
 
 package com.bapis.bilibili.live.xuserreward.v1;
 
+import "bilibili/live/component/common_model/fans_club/messages.proto";
+import "bilibili/live/component/common_model/user_dagw/messages.proto";
+
 // Source: com/bapis/bilibili/live/xuserreward/v1/InteractWord.java
 message InteractWord {
   int64 uid = 1;
-  int32 uname = 2;
-  int32 unameColor = 3;
-  int32 identities = 4;
-  int32 msgType = 5;
-  int32 roomid = 6;
-  int32 timestamp = 7;
-  int32 score = 8;
-  int32 fansMedal = 9;
-  int32 isSpread = 10;
-  int32 spreadInfo = 11;
-  int32 contribution = 12;
-  int32 spreadDesc = 13;
-  int32 tailIcon = 14;
-  int32 triggerTime = 15;
-  int32 privilegeType = 16;
-  int32 coreUserType = 17;
-  int32 tailText = 18;
-  int32 contributionV2 = 19;
-  int32 groupMedal = 20;
-  int32 isMystery = 21;
-  int32 uinfo = 22;
-  int32 relationTail = 23;
-  int32 controlInfo = 24;
-  int32 from = 25;
+  string uname = 2;
+  string unameColor = 3;
+  repeated int64 identities = 4;
+  int64 msgType = 5;
+  int64 roomid = 6;
+  int64 timestamp = 7;
+  int64 score = 8;
+  InteractWord_FansMedalInfo fansMedal = 9;
+  int64 isSpread = 10;
+  string spreadInfo = 11;
+  InteractWord_ContributionInfo contribution = 12;
+  string spreadDesc = 13;
+  int64 tailIcon = 14;
+  int64 triggerTime = 15;
+  int64 privilegeType = 16;
+  int64 coreUserType = 17;
+  string tailText = 18;
+  InteractWord_ContributionInfoV2 contributionV2 = 19;
+  com.bapis.bilibili.live.component.common_model.fans_club.GroupMedalBrief groupMedal = 20;
+  bool isMystery = 21;
+  com.bapis.bilibili.live.component.common_model.user_dagw.UserInfo uinfo = 22;
+  InteractWord_UserAnchorRelation relationTail = 23;
+  InteractWord_ControlInfo controlInfo = 24;
+  int64 from = 25;
+}
+
+// Source: com/bapis/bilibili/live/xuserreward/v1/InteractWord.java
+message InteractWord_ContributionInfo {
+  int64 grade = 1;
+}
+
+// Source: com/bapis/bilibili/live/xuserreward/v1/InteractWord.java
+message InteractWord_ContributionInfoV2 {
+  int64 grade = 1;
+  string rankType = 2;
+  string text = 3;
+}
+
+// Source: com/bapis/bilibili/live/xuserreward/v1/InteractWord.java
+message InteractWord_ControlInfo {
+  int64 type = 1;
+  string text = 2;
+  string textColor = 3;
+}
+
+// Source: com/bapis/bilibili/live/xuserreward/v1/InteractWord.java
+message InteractWord_FansMedalInfo {
+  int64 targetId = 1;
+  int64 medalLevel = 2;
+  string medalName = 3;
+  int64 medalColor = 4;
+  int64 medalColorStart = 5;
+  int64 medalColorEnd = 6;
+  int64 medalColorBorder = 7;
+  int64 isLighted = 8;
+  int64 guardLevel = 9;
+  string special = 10;
+  int64 iconId = 11;
+  int64 anchorRoomid = 12;
+  int64 score = 13;
+}
+
+// Source: com/bapis/bilibili/live/xuserreward/v1/InteractWord.java
+message InteractWord_UserAnchorRelation {
+  string tailIcon = 1;
+  string tailGuideText = 2;
+  int64 tailType = 3;
 }
 
 

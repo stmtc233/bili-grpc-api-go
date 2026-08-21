@@ -3,8 +3,11 @@ syntax = "proto3";
 
 package com.bapis.bilibili.main.community.reply.v1;
 
+import "bilibili/account/service/v1/messages.proto";
 import "bilibili/app/dynamic/v2/messages.proto";
+import "bilibili/dagw/component/avatar/v1/messages.proto";
 import "bilibili/pagination/messages.proto";
+import "bilibili/vas/garb/model/messages.proto";
 import "google/protobuf/any.proto";
 
 enum DetailListScene {
@@ -101,17 +104,23 @@ message AddReplyReq {
 
 // Source: com/bapis/bilibili/main/community/reply/v1/AddReplyResp.java
 message AddReplyResp {
-  string successAction = 1;
+  SuccessAction successAction = 1;
   string successToast = 2;
-  int32 successAnimation = 3;
-  int32 changeNicknamePrompt = 4;
-  int32 reply = 5;
-  int32 easterEgg = 6;
+  string successAnimation = 3;
+  bool changeNicknamePrompt = 4;
+  ReplyInfo reply = 5;
+  AddReplyResp_EasterEgg easterEgg = 6;
   enum SuccessAction {
     Display = 0;
     None = 1;
   }
 
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/AddReplyResp.java
+message AddReplyResp_EasterEgg {
+  string jumpUrl = 1;
+  string resource = 2;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/AnswerQuestionReq.java
@@ -122,11 +131,18 @@ message AnswerQuestionReq {
 
 // Source: com/bapis/bilibili/main/community/reply/v1/AnswerQuestionResp.java
 message AnswerQuestionResp {
-  string passed = 1;
-  string memberPassed = 2;
-  string memberPassedPopup = 3;
-  int32 bottomText = 4;
-  int32 stat = 5;
+  bool passed = 1;
+  bool memberPassed = 2;
+  AnswerQuestionResp_MemberPassedPopup memberPassedPopup = 3;
+  string bottomText = 4;
+  QuestionCardStat stat = 5;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/AnswerQuestionResp.java
+message AnswerQuestionResp_MemberPassedPopup {
+  string title = 1;
+  string subtitle = 2;
+  string h5Link = 3;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/ArticleSearchItem.java
@@ -215,17 +231,26 @@ message CursorReq {
 
 // Source: com/bapis/bilibili/main/community/reply/v1/DetailListReply.java
 message DetailListReply {
-  string cursor = 1;
-  string subjectControl = 2;
-  string root = 3;
-  int64 activity = 4;
+  CursorReply cursor = 1;
+  SubjectControl subjectControl = 2;
+  ReplyInfo root = 3;
+  Activity activity = 4;
   LikeInfo likes = 5;
-  int32 mode = 6;
-  int32 modeText = 7;
-  int32 paginationReply = 8;
-  int32 sessionId = 9;
-  int32 subjectTitle = 10;
-  repeated int32 mixedCards = 11;
+  Mode mode = 6;
+  string modeText = 7;
+  com.bapis.bilibili.pagination.FeedPaginationReply paginationReply = 8;
+  string sessionId = 9;
+  DetailListReply_SubjectTitle subjectTitle = 10;
+  repeated MixedCard mixedCards = 11;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/DetailListReply.java
+message DetailListReply_SubjectTitle {
+  string leftIcon = 1;
+  string title = 2;
+  string link = 3;
+  int64 rpidMute = 4;
+  ReplyNotificationSwitch pushSwitch = 5;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/DetailListReq.java
@@ -298,15 +323,28 @@ message Emote {
 // Source: com/bapis/bilibili/main/community/reply/v1/EmptyPage.java
 message EmptyPage {
   string imageUrl = 1;
-  repeated Text texts = 2;
-  int32 leftButton = 3;
-  int32 rightButton = 4;
+  repeated EmptyPage_Text texts = 2;
+  EmptyPage_Button leftButton = 3;
+  EmptyPage_Button rightButton = 4;
   enum Action {
     UNAVAILABLE = 0;
     SHOW_KEYBOARD = 1;
     SEND_REPLY_WITH_BOLD_TEXT = 2;
   }
 
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/EmptyPage.java
+message EmptyPage_Button {
+  string title = 1;
+  EmptyPage.Action action = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/EmptyPage.java
+message EmptyPage_Text {
+  string raw = 1;
+  TextStyle style = 2;
+  EmptyPage.Action action = 3;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/ESportsGradeCard.java
@@ -401,8 +439,13 @@ message HotspotPageResp {
 
 // Source: com/bapis/bilibili/main/community/reply/v1/LikeInfo.java
 message LikeInfo {
-  repeated Item items = 1;
-  int32 title = 2;
+  repeated LikeInfo_Item items = 1;
+  string title = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/LikeInfo.java
+message LikeInfo_Item {
+  Member member = 1;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/Lottery.java
@@ -469,41 +512,149 @@ message MainListReq {
 
 // Source: com/bapis/bilibili/main/community/reply/v1/Member.java
 message Member {
-  long mid = 1;
+  int64 mid = 1;
   string name = 2;
-  int32 sex = 3;
-  int32 face = 4;
-  int32 level = 5;
-  int32 officialVerifyType = 6;
-  int32 vipType = 7;
-  int32 vipStatus = 8;
-  int32 vipThemeType = 9;
-  int32 vipLabelPath = 10;
-  int32 garbPendantImage = 11;
-  int32 garbCardImage = 12;
-  int32 garbCardImageWithFocus = 13;
-  int32 garbCardJumpUrl = 14;
-  int32 garbCardNumber = 15;
-  int32 garbCardFanColor = 16;
-  int32 garbCardIsFan = 17;
-  int32 fansMedalName = 18;
-  int32 fansMedalLevel = 19;
-  int32 fansMedalColor = 20;
-  int32 vipNicknameColor = 21;
+  string sex = 3;
+  string face = 4;
+  int64 level = 5;
+  int64 officialVerifyType = 6;
+  int64 vipType = 7;
+  int64 vipStatus = 8;
+  int64 vipThemeType = 9;
+  string vipLabelPath = 10;
+  string garbPendantImage = 11;
+  string garbCardImage = 12;
+  string garbCardImageWithFocus = 13;
+  string garbCardJumpUrl = 14;
+  string garbCardNumber = 15;
+  string garbCardFanColor = 16;
+  bool garbCardIsFan = 17;
+  string fansMedalName = 18;
+  int64 fansMedalLevel = 19;
+  int64 fansMedalColor = 20;
+  string vipNicknameColor = 21;
   int32 vipAvatarSubscript = 22;
-  int32 vipLabelText = 23;
-  int32 vipLabelTheme = 24;
-  int32 fansMedalColorEnd = 25;
-  int32 fansMedalColorBorder = 26;
-  int32 fansMedalColorName = 27;
-  int32 fansMedalColorLevel = 28;
-  int32 fansGuardLevel = 29;
+  string vipLabelText = 23;
+  string vipLabelTheme = 24;
+  int64 fansMedalColorEnd = 25;
+  int64 fansMedalColorBorder = 26;
+  int64 fansMedalColorName = 27;
+  int64 fansMedalColorLevel = 28;
+  int64 fansGuardLevel = 29;
   int32 faceNft = 30;
   int32 faceNftNew = 31;
   int32 isSeniorMember = 32;
-  int32 nftInteraction = 33;
-  int32 fansGuardIcon = 34;
-  int32 fansHonorIcon = 35;
+  Member_NftInteraction nftInteraction = 33;
+  string fansGuardIcon = 34;
+  string fansHonorIcon = 35;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/Member.java
+message Member_NftInteraction {
+  string itype = 1;
+  string metadataUrl = 2;
+  string nftId = 3;
+  Member_NftInteraction_Region region = 4;
+  enum RegionType {
+    DEFAULT = 0;
+    MAINLAND = 1;
+    GAT = 2;
+  }
+
+  enum ShowStatus {
+    SHOWDEFAULT = 0;
+    ZOOMINMAINLAND = 1;
+    RAW = 2;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/Member.java
+message Member_NftInteraction_Region {
+  Member_NftInteraction.RegionType type = 1;
+  string icon = 2;
+  Member_NftInteraction.ShowStatus showStatus = 3;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/MemberV2.java
+message MemberV2 {
+  MemberV2_Basic basic = 1;
+  MemberV2_Official official = 2;
+  MemberV2_Vip vip = 3;
+  MemberV2_Garb garb = 4;
+  MemberV2_Medal medal = 5;
+  MemberV2_Nft nft = 6;
+  MemberV2_Senior senior = 7;
+  MemberV2_Contractor contractor = 8;
+  com.bapis.bilibili.vas.garb.model.UserSailing userSailing = 9;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/MemberV2.java
+message MemberV2_Basic {
+  int64 mid = 1;
+  string name = 2;
+  string sex = 3;
+  string face = 4;
+  int64 level = 5;
+  com.bapis.bilibili.dagw.component.avatar.v1.AvatarItem avatarItem = 6;
+  com.bapis.bilibili.account.service.v1.NameRender nameRender = 7;
+  string handle = 8;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/MemberV2.java
+message MemberV2_Contractor {
+  bool isContractor = 1;
+  string contractDesc = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/MemberV2.java
+message MemberV2_Garb {
+  string pendantImage = 1;
+  string cardImage = 2;
+  string cardImageWithFocus = 3;
+  string cardJumpUrl = 4;
+  string cardNumber = 5;
+  string cardFanColor = 6;
+  bool cardIsFan = 7;
+  string fanNumPrefix = 8;
+  MemberV2_Garb_FanNumColorFormat fanNumColorFormat = 9;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/MemberV2.java
+message MemberV2_Garb_FanNumColorFormat {
+  string startPoint = 1;
+  string endPoint = 2;
+  repeated string colors = 3;
+  repeated int64 gradients = 4;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/MemberV2.java
+message MemberV2_Medal {
+  string name = 1;
+  int64 level = 2;
+  int64 colorStart = 3;
+  int64 colorEnd = 4;
+  int64 colorBorder = 5;
+  int64 colorName = 6;
+  int64 colorLevel = 7;
+  int64 guardLevel = 8;
+  string firstIcon = 9;
+  string secondIcon = 10;
+  int64 levelBgColor = 11;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/MemberV2.java
+message MemberV2_Nft {
+  int32 face = 1;
+  MemberV2_Nft_Interaction interaction = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/MemberV2.java
+message MemberV2_Nft_Interaction {
+  string itype = 1;
+  string metadataUrl = 2;
+  string nftId = 3;
+  MemberV2_Nft_Interaction_Region region = 4;
   enum RegionType {
     DEFAULT = 0;
     MAINLAND = 1;
@@ -519,28 +670,21 @@ message Member {
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/MemberV2.java
-message MemberV2 {
-  int64 basic = 1;
-  string official = 2;
-  string vip = 3;
-  string garb = 4;
-  int64 medal = 5;
-  Nft nft = 6;
-  Senior senior = 7;
-  string contractor = 8;
-  int32 userSailing = 9;
-  enum RegionType {
-    DEFAULT = 0;
-    MAINLAND = 1;
-    GAT = 2;
-  }
+message MemberV2_Nft_Interaction_Region {
+  MemberV2_Nft_Interaction.RegionType type = 1;
+  string icon = 2;
+  MemberV2_Nft_Interaction.ShowStatus showStatus = 3;
+}
 
-  enum ShowStatus {
-    SHOWDEFAULT = 0;
-    ZOOMINMAINLAND = 1;
-    RAW = 2;
-  }
+// Source: com/bapis/bilibili/main/community/reply/v1/MemberV2.java
+message MemberV2_Official {
+  int64 verifyType = 1;
+}
 
+// Source: com/bapis/bilibili/main/community/reply/v1/MemberV2.java
+message MemberV2_Senior {
+  int32 isSeniorMember = 1;
+  Status status = 2;
   enum Status {
     Normal = 0;
     Pending = 1;
@@ -549,6 +693,18 @@ message MemberV2 {
     Expired = 4;
   }
 
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/MemberV2.java
+message MemberV2_Vip {
+  int64 type = 1;
+  int64 status = 2;
+  int64 themeType = 3;
+  string labelPath = 4;
+  string nicknameColor = 5;
+  int32 avatarSubscript = 6;
+  string labelText = 7;
+  string vipLabelTheme = 8;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/MixedCard.java
@@ -563,16 +719,16 @@ message MixedCard {
   }
   enum ItemCase {
     ITEM_NOT_SET = 0;
-    QUESTION = 4;
-    FOLD = 5;
-    HOTSPOT = 6;
+    ITEM_CASE_QUESTION = 4;
+    ITEM_CASE_FOLD = 5;
+    ITEM_CASE_HOTSPOT = 6;
   }
 
   enum Type {
     UNKNOWN = 0;
-    QUESTION = 1;
-    FOLD = 2;
-    HOTSPOT = 3;
+    TYPE_QUESTION = 1;
+    TYPE_FOLD = 2;
+    TYPE_HOTSPOT = 3;
   }
 
 }
@@ -621,20 +777,26 @@ message OperationTitle {
 message OperationV2 {
   Type type = 1;
   string prefixText = 2;
-  int32 icon = 3;
-  int32 title = 4;
-  int32 link = 5;
-  int32 reportExtra = 6;
-  enum Position {
-    PREFIX = 0;
-    SUFFIX = 1;
-  }
-
+  OperationV2_Icon icon = 3;
+  string title = 4;
+  string link = 5;
+  string reportExtra = 6;
   enum Type {
     UNKNOWN = 0;
     NOTE = 1;
     TOPIC = 2;
     SEARCH = 4;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/OperationV2.java
+message OperationV2_Icon {
+  Position position = 1;
+  string url = 2;
+  enum Position {
+    PREFIX = 0;
+    SUFFIX = 1;
   }
 
 }
@@ -757,9 +919,23 @@ message QoeScoreItem {
 
 // Source: com/bapis/bilibili/main/community/reply/v1/QuestionCard.java
 message QuestionCard {
-  string question = 1;
-  string stat = 2;
-  int32 bottomText = 3;
+  QuestionCard_Question question = 1;
+  QuestionCardStat stat = 2;
+  string bottomText = 3;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/QuestionCard.java
+message QuestionCard_Option {
+  string key = 1;
+  string title = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/QuestionCard.java
+message QuestionCard_Question {
+  int64 qid = 1;
+  string title = 2;
+  bool mustRight = 3;
+  repeated QuestionCard_Option options = 4;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/QuestionCardStat.java
@@ -771,20 +947,28 @@ message QuestionCardStat {
 
 // Source: com/bapis/bilibili/main/community/reply/v1/QuizCard.java
 message QuizCard {
-  int32 quizId = 1;
+  int64 quizId = 1;
   string title = 2;
   int32 count = 3;
-  string allCoin = 4;
-  int32 quizText = 5;
-  repeated int32 options = 6;
+  int32 allCoin = 4;
+  string quizText = 5;
+  repeated QuizCard_Option options = 6;
   int32 myOption = 7;
   int32 upOption = 8;
-  int32 url = 9;
+  string url = 9;
   int32 state = 10;
   int32 winOption = 11;
-  int32 editUrl = 12;
-  int32 quizIcon = 13;
+  string editUrl = 12;
+  string quizIcon = 13;
   int32 initialPoolCoin = 14;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/QuizCard.java
+message QuizCard_Option {
+  int32 idx = 1;
+  string desc = 2;
+  int32 coinPer = 3;
+  string prefixText = 4;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/QuizOption.java
@@ -855,45 +1039,83 @@ message ReplyCardLabel {
 
 // Source: com/bapis/bilibili/main/community/reply/v1/ReplyControl.java
 message ReplyControl {
-  string action = 1;
-  string upLike = 2;
-  int32 upReply = 3;
-  int32 showFollowBtn = 4;
-  int32 isAssist = 5;
-  int32 labelText = 6;
-  int32 following = 7;
-  int32 followed = 8;
-  int32 blocked = 9;
-  int32 hasFoldedReply = 10;
-  int32 isFoldedReply = 11;
-  int32 isUpTop = 12;
-  int32 isAdminTop = 13;
-  int32 isVoteTop = 14;
-  int32 maxLine = 15;
-  int32 invisible = 16;
-  int32 isContractor = 17;
-  int32 isNote = 18;
-  repeated int32 cardLabels = 19;
-  int32 subReplyEntryText = 20;
-  int32 subReplyTitleText = 21;
-  int32 contractDesc = 22;
-  int32 timeDesc = 23;
-  int32 bizScene = 24;
-  int32 location = 25;
-  int32 foldPictures = 26;
-  int32 isNoteV2 = 27;
-  int32 hideNoteIcon = 28;
-  int32 cmRecommendComponent = 29;
-  int32 voteOption = 30;
-  int32 chargedDesc = 31;
-  int32 gradeRecord = 32;
-  int32 presetReplyText = 33;
-  int32 easterEggLabel = 34;
-  int32 contextFeature = 35;
-  int32 insertEffect = 36;
-  int32 translationSwitch = 37;
-  int32 supportShare = 38;
-  int32 flyInfo = 39;
+  int64 action = 1;
+  bool upLike = 2;
+  bool upReply = 3;
+  bool showFollowBtn = 4;
+  bool isAssist = 5;
+  string labelText = 6;
+  bool following = 7;
+  bool followed = 8;
+  bool blocked = 9;
+  bool hasFoldedReply = 10;
+  bool isFoldedReply = 11;
+  bool isUpTop = 12;
+  bool isAdminTop = 13;
+  bool isVoteTop = 14;
+  int64 maxLine = 15;
+  bool invisible = 16;
+  bool isContractor = 17;
+  bool isNote = 18;
+  repeated ReplyCardLabel cardLabels = 19;
+  string subReplyEntryText = 20;
+  string subReplyTitleText = 21;
+  string contractDesc = 22;
+  string timeDesc = 23;
+  string bizScene = 24;
+  string location = 25;
+  bool foldPictures = 26;
+  bool isNoteV2 = 27;
+  bool hideNoteIcon = 28;
+  string cmRecommendComponent = 29;
+  ReplyControl_VoteOption voteOption = 30;
+  string chargedDesc = 31;
+  ReplyControl_GradeRecord gradeRecord = 32;
+  string presetReplyText = 33;
+  ReplyControl_EasterEggLabel easterEggLabel = 34;
+  string contextFeature = 35;
+  ReplyControl_InsertEffect insertEffect = 36;
+  TranslationSwitch translationSwitch = 37;
+  bool supportShare = 38;
+  ReplyControl_FlyInfo flyInfo = 39;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ReplyControl.java
+message ReplyControl_EasterEggLabel {
+  string image = 1;
+  string jumpUrl = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ReplyControl.java
+message ReplyControl_FlyInfo {
+  string orderId = 1;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ReplyControl.java
+message ReplyControl_GradeRecord {
+  int32 score = 1;
+  repeated ReplyControl_GradeRecord_Text texts = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ReplyControl.java
+message ReplyControl_GradeRecord_Text {
+  string raw = 1;
+  TextStyle style = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ReplyControl.java
+message ReplyControl_InsertEffect {
+  string content = 1;
+  string icon = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ReplyControl.java
+message ReplyControl_VoteOption {
+  LabelKind labelKind = 1;
+  string desc = 2;
+  int64 idx = 3;
+  int64 voteId = 4;
+  string prefixText = 5;
   enum LabelKind {
     DEFAULT = 0;
     RED = 1;
@@ -920,15 +1142,65 @@ message ReplyExtra {
 
 // Source: com/bapis/bilibili/main/community/reply/v1/ReplyInAppPushPayload.java
 message ReplyInAppPushPayload {
-  string reply = 1;
-  Reply parentReply = 2;
-  Subject subject = 3;
-  repeated SubjectMaterial subjectMaterial = 4;
+  ReplyInAppPushPayload_Reply reply = 1;
+  ReplyInAppPushPayload_Reply parentReply = 2;
+  ReplyInAppPushPayload_Subject subject = 3;
+  ReplyInAppPushPayload_SubjectMaterial subjectMaterial = 4;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ReplyInAppPushPayload.java
+message ReplyInAppPushPayload_Content {
+  string message_ = 1;
+  map<string, Emote> emotes = 2;
+  map<string, int64> atNameToMid = 3;
+  repeated Picture pictures = 4;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ReplyInAppPushPayload.java
+message ReplyInAppPushPayload_Member {
+  int64 mid = 1;
+  string name = 2;
+  string face = 3;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ReplyInAppPushPayload.java
+message ReplyInAppPushPayload_Reply {
+  int64 id = 1;
+  int64 type = 2;
+  int64 oid = 3;
+  int64 mid = 4;
+  int64 root = 5;
+  int64 parent = 6;
+  int64 dialog = 7;
+  int64 ctime = 8;
+  ReplyInAppPushPayload_Content content = 9;
+  ReplyInAppPushPayload_Member member = 10;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ReplyInAppPushPayload.java
+message ReplyInAppPushPayload_Subject {
+  int64 type = 1;
+  int64 oid = 2;
+  int64 upMid = 3;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ReplyInAppPushPayload.java
+message ReplyInAppPushPayload_SubjectMaterial {
+  oneof oneof_0 {
+    ReplyInAppPushPayload_SubjectMaterial_Archive arc = 1;
+  }
   enum ItemCase {
     ITEM_NOT_SET = 0;
     ARC = 1;
   }
 
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ReplyInAppPushPayload.java
+message ReplyInAppPushPayload_SubjectMaterial_Archive {
+  int64 aid = 1;
+  string title = 2;
+  string cover = 3;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/ReplyInfo.java
@@ -1035,7 +1307,7 @@ message SearchItemCursorReq {
 message SearchItemPreHookReply {
   string placeholderText = 1;
   string backgroundText = 2;
-  repeated IntList orderedType = 3;
+  repeated SearchItemType orderedType = 3;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/SearchItemPreHookReq.java
@@ -1073,15 +1345,20 @@ message ShareRepliesInfoReq {
 
 // Source: com/bapis/bilibili/main/community/reply/v1/ShareRepliesInfoResp.java
 message ShareRepliesInfoResp {
-  repeated bool infos = 1;
-  int32 fromTitle = 2;
-  int32 fromUp = 3;
-  int32 fromPic = 4;
-  int32 url = 5;
-  int32 sloganPic = 6;
-  int32 sloganText = 7;
-  int32 topic = 8;
-  int32 extra = 9;
+  repeated ShareReplyInfo infos = 1;
+  string fromTitle = 2;
+  string fromUp = 3;
+  string fromPic = 4;
+  string url = 5;
+  string sloganPic = 6;
+  string sloganText = 7;
+  ShareReplyTopic topic = 8;
+  ShareRepliesInfoResp_ShareExtra extra = 9;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ShareRepliesInfoResp.java
+message ShareRepliesInfoResp_ShareExtra {
+  bool isPgc = 1;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/ShareReplyInfo.java
@@ -1104,22 +1381,64 @@ message ShareReplyMaterialReq {
 
 // Source: com/bapis/bilibili/main/community/reply/v1/ShareReplyMaterialResp.java
 message ShareReplyMaterialResp {
-  string subjectMaterial = 1;
+  ShareReplyMaterialResp_SubjectMaterial subjectMaterial = 1;
   string qrcodeUrl = 2;
   string savePicText = 3;
   string openAppText = 4;
-  int64 shareTimeText = 5;
-  int64 biliLogoIcon = 6;
-  int32 extra = 7;
-  int32 fromSubjectTypeText = 8;
-  int32 openAppTextSubtitle = 9;
-  int32 bgColor = 10;
-  int32 contentBgColor = 11;
-  int32 contentAnchorImage = 12;
-  int32 bgTopOverlayImage = 13;
-  int32 reply = 14;
-  int32 parentReply = 15;
-  int32 subjectControl = 16;
+  string shareTimeText = 5;
+  string biliLogoIcon = 6;
+  ShareReplyMaterialResp_ExtraData extra = 7;
+  string fromSubjectTypeText = 8;
+  string openAppTextSubtitle = 9;
+  string bgColor = 10;
+  string contentBgColor = 11;
+  string contentAnchorImage = 12;
+  string bgTopOverlayImage = 13;
+  ReplyInfo reply = 14;
+  ReplyInfo parentReply = 15;
+  SubjectControl subjectControl = 16;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ShareReplyMaterialResp.java
+message ShareReplyMaterialResp_ArchiveMaterial {
+  string title = 1;
+  string cover = 2;
+  string upName = 3;
+  string upIcon = 4;
+  int64 videos = 5;
+  int64 duration = 6;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ShareReplyMaterialResp.java
+message ShareReplyMaterialResp_ArticleMaterial {
+  string title = 1;
+  string message_ = 2;
+  string titleV2 = 3;
+  string cover = 4;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ShareReplyMaterialResp.java
+message ShareReplyMaterialResp_DynamicMaterial {
+  string title = 1;
+  string message_ = 2;
+  string titleV2 = 3;
+  string cover = 4;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ShareReplyMaterialResp.java
+message ShareReplyMaterialResp_ExtraData {
+  bool isPgc = 1;
+  string originText = 2;
+  int64 topicId = 3;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ShareReplyMaterialResp.java
+message ShareReplyMaterialResp_SubjectMaterial {
+  oneof oneof_0 {
+    ShareReplyMaterialResp_ArchiveMaterial archiveMaterial = 1;
+    ShareReplyMaterialResp_DynamicMaterial dynamicMaterial = 2;
+    ShareReplyMaterialResp_ArticleMaterial articleMaterial = 3;
+  }
   enum ItemCase {
     ITEM_NOT_SET = 0;
     ARCHIVE_MATERIAL = 1;
@@ -1138,34 +1457,47 @@ message ShareReplyTopic {
 // Source: com/bapis/bilibili/main/community/reply/v1/SubjectControl.java
 message SubjectControl {
   int64 upMid = 1;
-  string isAssist = 2;
-  string readOnly = 3;
-  int32 hasVoteAccess = 4;
-  int32 hasLotteryAccess = 5;
-  int32 hasFoldedReply = 6;
-  int32 bgText = 7;
-  int32 upBlocked = 8;
-  int32 hasActivityAccess = 9;
-  int32 showTitle = 10;
-  int32 showUpAction = 11;
-  int32 switcherType = 12;
-  int32 inputDisable = 13;
-  int32 rootText = 14;
-  int32 childText = 15;
-  int32 count = 16;
-  int32 title = 17;
-  int32 giveupText = 18;
-  int32 hasNoteAccess = 19;
-  int32 disableJumpEmote = 20;
-  int32 emptyBackgroundTextPlain = 21;
-  int32 emptyBackgroundTextHighlight = 22;
-  int32 emptyBackgroundUri = 23;
-  repeated int32 supportFilterTags = 24;
-  int32 screenshotIconState = 25;
-  int32 uploadPictureIconState = 26;
-  int32 emptyPage = 27;
-  int32 cmTopReplyProtection = 28;
-  int32 enableCharged = 29;
+  bool isAssist = 2;
+  bool readOnly = 3;
+  bool hasVoteAccess = 4;
+  bool hasLotteryAccess = 5;
+  bool hasFoldedReply = 6;
+  string bgText = 7;
+  bool upBlocked = 8;
+  bool hasActivityAccess = 9;
+  bool showTitle = 10;
+  bool showUpAction = 11;
+  int64 switcherType = 12;
+  bool inputDisable = 13;
+  string rootText = 14;
+  string childText = 15;
+  int64 count = 16;
+  string title = 17;
+  string giveupText = 18;
+  bool hasNoteAccess = 19;
+  bool disableJumpEmote = 20;
+  string emptyBackgroundTextPlain = 21;
+  string emptyBackgroundTextHighlight = 22;
+  string emptyBackgroundUri = 23;
+  repeated SubjectControl_FilterTag supportFilterTags = 24;
+  EditorIconState screenshotIconState = 25;
+  EditorIconState uploadPictureIconState = 26;
+  EmptyPage emptyPage = 27;
+  SubjectControl_CmTopReplyProtection cmTopReplyProtection = 28;
+  bool enableCharged = 29;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/SubjectControl.java
+message SubjectControl_CmTopReplyProtection {
+  int64 protectedTopRpid = 1;
+  string popupMessage = 2;
+  string appealUrl = 3;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/SubjectControl.java
+message SubjectControl_FilterTag {
+  string name = 1;
+  string eventId = 2;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/SubjectTopCards.java
@@ -1184,26 +1516,26 @@ message SubjectTopCards {
   }
   enum ItemCase {
     ITEM_NOT_SET = 0;
-    OGV_GRADE = 3;
-    UP_PROTECTION = 4;
-    CM = 5;
-    UP_SELECTION = 6;
-    OPERATION = 7;
-    VOTE = 8;
-    ESPORTS_GRADE = 9;
-    QUIZ = 10;
+    ITEM_CASE_OGV_GRADE = 3;
+    ITEM_CASE_UP_PROTECTION = 4;
+    ITEM_CASE_CM = 5;
+    ITEM_CASE_UP_SELECTION = 6;
+    ITEM_CASE_OPERATION = 7;
+    ITEM_CASE_VOTE = 8;
+    ITEM_CASE_ESPORTS_GRADE = 9;
+    ITEM_CASE_QUIZ = 10;
   }
 
   enum Type {
     UNKNOWN = 0;
-    OGV_GRADE = 1;
-    UP_PROTECTION = 2;
-    CM = 3;
-    UP_SELECTION = 4;
-    OPERATION = 5;
-    VOTE = 6;
-    ESPORTS_GRADE = 7;
-    QUIZ = 8;
+    TYPE_OGV_GRADE = 1;
+    TYPE_UP_PROTECTION = 2;
+    TYPE_CM = 3;
+    TYPE_UP_SELECTION = 4;
+    TYPE_OPERATION = 5;
+    TYPE_VOTE = 6;
+    TYPE_ESPORTS_GRADE = 7;
+    TYPE_QUIZ = 8;
   }
 
 }
@@ -1283,29 +1615,41 @@ message UpSelection {
 
 // Source: com/bapis/bilibili/main/community/reply/v1/Url.java
 message Url {
-  int64 title = 1;
-  string state = 2;
-  int32 prefixIcon = 3;
-  bool appUrlSchema = 4;
-  int64 appName = 5;
+  string title = 1;
+  int64 state = 2;
+  string prefixIcon = 3;
+  string appUrlSchema = 4;
+  string appName = 5;
   string appPackageName = 6;
   string clickReport = 7;
-  int64 isHalfScreen = 8;
-  int32 exposureReport = 9;
-  int32 extra = 10;
-  int32 underline = 11;
-  int32 matchOnce = 12;
-  int32 pcUrl = 13;
-  int32 iconPosition = 14;
+  bool isHalfScreen = 8;
+  string exposureReport = 9;
+  Url_Extra extra = 10;
+  bool underline = 11;
+  bool matchOnce = 12;
+  string pcUrl = 13;
+  IconPosition iconPosition = 14;
+  enum IconPosition {
+    Prefix = 0;
+    Suffix = 1;
+  }
+
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/Url.java
+message Url_Extra {
+  int64 goodsItemId = 1;
+  string goodsPrefetchedCache = 2;
+  GoodsShowType goodsShowType = 3;
+  bool isWordSearch = 4;
+  int64 goodsCmControl = 5;
+  string goodsClickReport = 6;
+  string goodsExposureReport = 7;
+  int64 goodsShowPopWindow = 8;
   enum GoodsShowType {
     Popup = 0;
     FullScreen = 1;
     HalfScreen = 2;
-  }
-
-  enum IconPosition {
-    Prefix = 0;
-    Suffix = 1;
   }
 
 }
@@ -1351,8 +1695,15 @@ message VoteCard {
   int64 voteId = 1;
   string title = 2;
   int64 count = 3;
-  repeated int32 options = 4;
-  int32 myVoteOption = 5;
+  repeated VoteCard_Option options = 4;
+  int64 myVoteOption = 5;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/VoteCard.java
+message VoteCard_Option {
+  int64 idx = 1;
+  string desc = 2;
+  int64 count = 3;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/WordSearchParam.java

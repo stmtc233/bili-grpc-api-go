@@ -123,7 +123,14 @@ message DeviceFeatureResp {
 
 // Source: com/bapis/bilibili/app/mine/v1/DisplayReportReq.java
 message DisplayReportReq {
-  repeated int64 content = 1;
+  repeated DisplayReportReq_ReportContent content = 1;
+}
+
+// Source: com/bapis/bilibili/app/mine/v1/DisplayReportReq.java
+message DisplayReportReq_ReportContent {
+  int64 times = 1;
+  DisplayPos pos = 2;
+  string extra = 3;
 }
 
 // Source: com/bapis/bilibili/app/mine/v1/PubCard.java

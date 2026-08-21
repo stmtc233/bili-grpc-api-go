@@ -302,7 +302,7 @@ message TopLeftTabReq {
 
 // Source: com/bapis/bilibili/app/home/v1/TopLeftTabRes.java
 message TopLeftTabRes {
-  repeated IntList tabs = 1;
+  repeated Tab tabs = 1;
   Tab defaultTab = 2;
   TabExtraInfo extra = 3;
 }

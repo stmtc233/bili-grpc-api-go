@@ -19,7 +19,7 @@ message FrameOption {
   string reqId = 2;
   int64 sequence = 3;
   bool isAck = 4;
-  Status status = 5;
+  bytes status = 5;
   string ackOrigin = 6;
   int64 mid = 7;
 }
