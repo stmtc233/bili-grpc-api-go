@@ -112,11 +112,11 @@ jobs:
         with:
           go-version-file: go.mod
 
-      - name: Set up protoc
+      - name: Install protoc
         if: steps.selection.outputs.enabled == 'true'
-        uses: arduino/setup-protoc@v3
-        with:
-          version: '25.1'
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes protobuf-compiler
 
       - name: Install protoc plugins
         if: steps.selection.outputs.enabled == 'true'
