@@ -1,0 +1,28 @@
+// Reconstructed from the checked-in gRPC service catalog.
+syntax = "proto3";
+
+package com.bapis.bilibili.broadcast.message.tv;
+
+import "bilibili/broadcast/message/tv/messages.proto";
+import "google/protobuf/empty.proto";
+
+service Tv {
+  rpc Account(.google.protobuf.Empty) returns (stream AccountNotify);
+  rpc CommonPush(.google.protobuf.Empty) returns (stream CommonPushNotify);
+  rpc Esports(.google.protobuf.Empty) returns (stream EsportsNotify);
+  rpc FeedClientSmart(.google.protobuf.Empty) returns (stream FeedClientSmartNotify);
+  rpc LiveBottom(.google.protobuf.Empty) returns (stream LiveBottomConfNotify);
+  rpc LiveCommonMsg(.google.protobuf.Empty) returns (stream LiveCommonNotify);
+  rpc LiveSkip(.google.protobuf.Empty) returns (stream LiveSkipNotify);
+  rpc LiveStatus(.google.protobuf.Empty) returns (stream LiveStatusNotify);
+  rpc MainRedDot(.google.protobuf.Empty) returns (stream MainRedDotReply);
+  rpc NotifyPop(.google.protobuf.Empty) returns (stream NotifyPopReply);
+  rpc OgvPayOrder(.google.protobuf.Empty) returns (stream OgvPayOrderReply);
+  rpc Proj(.google.protobuf.Empty) returns (stream ProjReply);
+  rpc ProjCore(.google.protobuf.Empty) returns (stream ProjReply);
+  rpc ProjLiveEvent(.google.protobuf.Empty) returns (stream ProjLiveEventNotify);
+  rpc Publicity(.google.protobuf.Empty) returns (stream PublicityNotify);
+  rpc ViewerNumMsg(.google.protobuf.Empty) returns (stream LiveViewerMsgNotify);
+}
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/message/tv";

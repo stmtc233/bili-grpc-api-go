@@ -1,0 +1,16 @@
+// Reconstructed from the checked-in gRPC service catalog.
+syntax = "proto3";
+
+package com.bapis.bilibili.community.interfacess.cosmoconn.v1;
+
+import "bilibili/community/interfacess/cosmoconn/v1/messages.proto";
+import "google/protobuf/empty.proto";
+
+service CosmoInterface {
+  rpc Ping(.google.protobuf.Empty) returns (.google.protobuf.Empty);
+  rpc SimpleAction(SimpleActionReq) returns (SimpleActionRsp);
+  rpc Subscribe(SubscribeReq) returns (SubscribeRsp);
+  rpc SubscribeCard(SubscribeCardReq) returns (SubscribeCardRsp);
+}
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/community/interfacess/cosmoconn/v1";

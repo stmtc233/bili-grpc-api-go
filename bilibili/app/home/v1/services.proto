@@ -1,0 +1,19 @@
+// Reconstructed from the checked-in gRPC service catalog.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.home.v1;
+
+import "bilibili/app/home/v1/messages.proto";
+
+service Home {
+  rpc HomePopup(HomePopupReq) returns (HomePopupRes);
+  rpc MineSelectionContent(MineSelectionContentReq) returns (MineSelectionContentRes);
+  rpc MineSelectionOptionItems(MineSelectionOptionItemsReq) returns (MineSelectionOptionItemsRes);
+  rpc MineSelectionOptionUpdate(MineSelectionOptionUpdateReq) returns (MineSelectionOptionUpdateRes);
+  rpc Recent(RecentReq) returns (RecentRes);
+  rpc RemoveVideo(RemoveVideoReq) returns (RemoveVideoRes);
+  rpc TopLeftTab(TopLeftTabReq) returns (TopLeftTabRes);
+  rpc TopLeftTabUpdate(TopLeftTabUpdateReq) returns (TopLeftTabUpdateRes);
+}
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/home/v1";

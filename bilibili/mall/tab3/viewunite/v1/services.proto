@@ -1,0 +1,15 @@
+// Reconstructed from the checked-in gRPC service catalog.
+syntax = "proto3";
+
+package com.bapis.bilibili.mall.tab3.viewunite.v1;
+
+import "bilibili/mall/tab3/viewunite/v1/messages.proto";
+
+service View {
+  rpc ArcRefresh(ArcRefreshReq) returns (ArcRefreshReply);
+  rpc RelatesFeed(RelatesFeedReq) returns (RelatesFeedReply);
+  rpc View(ViewReq) returns (ViewReply);
+  rpc ViewProgress(ViewProgressReq) returns (ViewProgressReply);
+}
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/mall/tab3/viewunite/v1";

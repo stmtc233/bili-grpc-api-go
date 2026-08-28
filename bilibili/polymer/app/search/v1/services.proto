@@ -1,0 +1,17 @@
+// Reconstructed from the checked-in gRPC service catalog.
+syntax = "proto3";
+
+package com.bapis.bilibili.polymer.app.search.v1;
+
+import "bilibili/polymer/app/search/v1/messages.proto";
+
+service Search {
+  rpc SearchAll(SearchAllRequest) returns (SearchAllResponse);
+  rpc SearchByType(SearchByTypeRequest) returns (SearchByTypeResponse);
+  rpc SearchComic(SearchComicRequest) returns (SearchComicResponse);
+  rpc SearchOGV(SearchOGVReq) returns (SearchOGVReply);
+  rpc SearchReserve(SearchReserveRequest) returns (SearchReserveResponse);
+  rpc SearchReserveCancel(SearchReserveRequest) returns (SearchReserveResponse);
+}
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/polymer/app/search/v1";

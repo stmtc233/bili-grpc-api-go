@@ -1,0 +1,86 @@
+// Reconstructed from the checked-in gRPC service catalog.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.dynamic.v2;
+
+import "bilibili/app/dynamic/v2/messages.proto";
+
+service Campus {
+  rpc WaterFlowRcmd(WaterFlowRcmdReq) returns (WaterFlowRcmdResp);
+}
+
+service Dynamic {
+  rpc AlumniDynamics(AlumniDynamicsReq) returns (AlumniDynamicsReply);
+  rpc CampusBillboard(CampusBillBoardReq) returns (CampusBillBoardReply);
+  rpc CampusBillBoard(CampusBillBoardReq) returns (CampusBillBoardReply);
+  rpc CampusBillboardInternal(CampusBillboardInternalReq) returns (CampusBillBoardReply);
+  rpc CampusEntryTab(CampusEntryTabReq) returns (CampusEntryTabResp);
+  rpc CampusFeedback(CampusFeedbackReq) returns (CampusFeedbackReply);
+  rpc CampusHomePages(CampusHomePagesReq) returns (CampusHomePagesReply);
+  rpc CampusMateLikeList(CampusMateLikeListReq) returns (CampusMateLikeListReply);
+  rpc CampusMngDetail(CampusMngDetailReq) returns (CampusMngDetailReply);
+  rpc CampusMngQuizOperate(CampusMngQuizOperateReq) returns (CampusMngQuizOperateReply);
+  rpc CampusMngSubmit(CampusMngSubmitReq) returns (CampusMngSubmitReply);
+  rpc CampusRcmd(CampusRcmdReq) returns (CampusRcmdReply);
+  rpc CampusRcmdFeed(CampusRcmdFeedReq) returns (CampusRcmdFeedReply);
+  rpc CampusRecommend(CampusRecommendReq) returns (CampusRecommendReply);
+  rpc CampusRedDot(CampusRedDotReq) returns (CampusRedDotReply);
+  rpc CampusSquare(CampusSquareReq) returns (CampusSquareReply);
+  rpc CampusTopicRcmdFeed(CampusTopicRcmdFeedReq) returns (CampusTopicRcmdFeedReply);
+  rpc CooperationStaffList(CooperationStaffListReq) returns (CooperationStaffListResp);
+  rpc DynAdditionCommonFollow(DynAdditionCommonFollowReq) returns (DynAdditionCommonFollowReply);
+  rpc DynAll(DynAllReq) returns (DynAllReply);
+  rpc DynAllPersonal(DynAllPersonalReq) returns (DynAllPersonalReply);
+  rpc DynAllUpdOffset(DynAllUpdOffsetReq) returns (NoReply);
+  rpc DynDetail(DynDetailReq) returns (DynDetailReply);
+  rpc DynDetails(DynDetailsReq) returns (DynDetailsReply);
+  rpc DynFakeCard(DynFakeCardReq) returns (DynFakeCardReply);
+  rpc DynFriend(DynFriendReq) returns (DynFriendReply);
+  rpc DynLight(DynLightReq) returns (DynLightReply);
+  rpc DynMixUpListSearch(DynMixUpListSearchReq) returns (DynMixUpListSearchReply);
+  rpc DynMixUpListViewMore(DynMixUpListViewMoreReq) returns (DynMixUpListViewMoreReply);
+  rpc DynRcmdUpExchange(DynRcmdUpExchangeReq) returns (DynRcmdUpExchangeReply);
+  rpc DynSearch(DynSearchReq) returns (DynSearchReply);
+  rpc DynServerDetails(DynServerDetailsReq) returns (DynServerDetailsReply);
+  rpc DynSpace(DynSpaceReq) returns (DynSpaceRsp);
+  rpc DynSpaceSearchDetails(DynSpaceSearchDetailsReq) returns (DynSpaceSearchDetailsReply);
+  rpc DynTab(DynTabReq) returns (DynTabReply);
+  rpc DynThumb(DynThumbReq) returns (NoReply);
+  rpc DynUnLoginRcmd(DynRcmdReq) returns (DynRcmdReply);
+  rpc DynVideo(DynVideoReq) returns (DynVideoReply);
+  rpc DynVideoPersonal(DynVideoPersonalReq) returns (DynVideoPersonalReply);
+  rpc DynVideoUpdOffset(DynVideoUpdOffsetReq) returns (NoReply);
+  rpc DynVote(DynVoteReq) returns (DynVoteReply);
+  rpc FeedFilter(FeedFilterReq) returns (FeedFilterReply);
+  rpc FetchTabSetting(NoReq) returns (FetchTabSettingReply);
+  rpc HomeSubscribe(HomeSubscribeReq) returns (HomeSubscribeReply);
+  rpc LbsPoi(LbsPoiReq) returns (LbsPoiReply);
+  rpc LegacyTopicFeed(LegacyTopicFeedReq) returns (LegacyTopicFeedReply);
+  rpc LikeList(LikeListReq) returns (LikeListReply);
+  rpc OfficialAccounts(OfficialAccountsReq) returns (OfficialAccountsReply);
+  rpc OfficialDynamics(OfficialDynamicsReq) returns (OfficialDynamicsReply);
+  rpc QuickConsumeMoreAvatarList(QuickConsumeMoreAvatarListReq) returns (QuickConsumeMoreAvatarListReply);
+  rpc ReactionList(ReactionListReq) returns (ReactionListReply);
+  rpc RepostList(RepostListReq) returns (RepostListRsp);
+  rpc SchoolRecommend(SchoolRecommendReq) returns (SchoolRecommendReply);
+  rpc SchoolSearch(SchoolSearchReq) returns (SchoolSearchReply);
+  rpc SetDecision(SetDecisionReq) returns (NoReply);
+  rpc SetRecentCampus(SetRecentCampusReq) returns (NoReply);
+  rpc SubscribeCampus(SubscribeCampusReq) returns (NoReply);
+  rpc SubscriptionClick(SubscriptionClickReq) returns (SubscriptionClickResp);
+  rpc TopicList(TopicListReq) returns (TopicListReply);
+  rpc TopicSquare(TopicSquareReq) returns (TopicSquareReply);
+  rpc UnfollowMatch(UnfollowMatchReq) returns (NoReply);
+  rpc UpdateTabSetting(UpdateTabSettingReq) returns (NoReply);
+}
+
+service Opus {
+  rpc ListCreation(ListCreationReq) returns (ListCreationResp);
+  rpc ListFav(ListFavReq) returns (ListFavResp);
+  rpc OpusCollectionDetail(OpusCollectionDetailReq) returns (OpusCollectionDetailResp);
+  rpc OpusDetail(OpusDetailReq) returns (OpusDetailResp);
+  rpc OpusSpaceFlow(OpusSpaceFlowReq) returns (OpusSpaceFlowResp);
+  rpc SignResources(SignResourcesReq) returns (SignResourcesResp);
+}
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/dynamic/v2";

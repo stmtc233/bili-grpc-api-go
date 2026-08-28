@@ -1,0 +1,20 @@
+// Reconstructed from the checked-in gRPC service catalog.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.topic.v1;
+
+import "bilibili/app/topic/v1/messages.proto";
+import "google/protobuf/empty.proto";
+
+service Topic {
+  rpc ReportUserCloseFeedCard(ReportUserCloseFeedCardReq) returns (.google.protobuf.Empty);
+  rpc ReportUserRatingFeedCardChoice(ReportUserRatingFeedCardChoiceReq) returns (.google.protobuf.Empty);
+  rpc SetTopTopicRes(SetTopTopicResReq) returns (SetTopTopicResReply);
+  rpc TopicDetailsAll(TopicDetailsAllReq) returns (TopicDetailsAllReply);
+  rpc TopicDetailsFold(TopicDetailsFoldReq) returns (TopicDetailsFoldReply);
+  rpc TopicMergedResource(TopicMergedResourceReq) returns (TopicMergedResourceReply);
+  rpc TopicReserveButtonClick(TopicReserveButtonClickReq) returns (TopicReserveButtonClickReply);
+  rpc TopicSetDetails(TopicSetDetailsReq) returns (TopicSetDetailsReply);
+}
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/topic/v1";
