@@ -1,13 +1,13 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.broadcast.message.archive;
+package bilibili.broadcast.message.archive;
 
 import "bilibili/broadcast/message/archive/messages.proto";
 import "google/protobuf/empty.proto";
 
 service VideoUp {
-  rpc VideoData(.google.protobuf.Empty) returns (stream VideoDataReply);
+  rpc VideoData(.google.protobuf.Empty) returns (stream .com.bapis.bilibili.broadcast.message.archive.VideoDataReply);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/message/archive";

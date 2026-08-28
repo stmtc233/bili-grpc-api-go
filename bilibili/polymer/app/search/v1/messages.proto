@@ -1177,6 +1177,7 @@ message SearchAllResponse {
   SearchFilter searchFilter = 21;
   bool hasWideAutoFill = 22;
   map<int32, CardGroupRule> cardGroupRules = 23;
+  int32 ogvRevampExpGroup = 24;
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/SearchArticleCard.java
@@ -1283,6 +1284,9 @@ message SearchBangumiCard {
   int32 iconType = 37;
   repeated ThreePoint threePoint = 38;
   Share share = 39;
+  repeated ReasonStyle qualityTags = 40;
+  Feedback feedback = 41;
+  string moduleTitle = 42;
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/SearchBannerCard.java
@@ -1392,6 +1396,9 @@ message SearchComicCard {
   int64 cid = 14;
   repeated ThreePoint threePoint = 15;
   Share share = 16;
+  repeated ReasonStyle qualityTags = 17;
+  Feedback feedback = 18;
+  string moduleTitle = 19;
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/SearchComicInfo.java
@@ -1835,6 +1842,7 @@ message SearchOgvRelationCard {
   int32 moreSearchType = 9;
   CardLayout cardLayout = 10;
   SaleInfo saleInfo = 11;
+  ReasonStyle moreTextStyle = 12;
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/SearchOGVReply.java

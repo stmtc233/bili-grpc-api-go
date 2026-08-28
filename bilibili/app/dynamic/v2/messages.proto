@@ -549,6 +549,7 @@ enum NavigationType {
   GAME_STATS = 5;
   DISPLAY_APP_MINE = 6;
   VISA_CARD = 7;
+  DATA_CENTER = 8;
 }
 
 enum NetworkType {
@@ -617,11 +618,17 @@ enum RecommendCardType {
   RECOMMEND_CARD_TYPE_VIDEO = 2;
   RECOMMEND_CARD_TYPE_LIVE = 3;
   RECOMMEND_CARD_TYPE_OGV = 4;
+  RECOMMEND_CARD_TYPE_TRIBEE = 5;
 }
 
 enum Refresh {
   refresh_new = 0;
   refresh_history = 1;
+}
+
+enum RelatedTribeeFeedbackAction {
+  RELATED_TRIBEE_FEEDBACK_ACTION_UNSPECIFIED = 0;
+  RELATED_TRIBEE_FEEDBACK_ACTION_REMOVE = 1;
 }
 
 enum RelationStatus {
@@ -1100,6 +1107,8 @@ message AddToMineGuide {
   AddToMineWeakPrompt weakPrompt = 1;
   AddToMineStrongPrompt strongPrompt = 2;
   FootHoverToast helpGuide = 3;
+  AddToMineWeakPrompt joinedPrompt = 4;
+  FootHoverToast exitRetain = 5;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/AddToMineStrongPrompt.java
@@ -1127,6 +1136,8 @@ message AddToMineWeakPrompt {
   int32 cooldownSec = 6;
   string helpIconUrl = 7;
   string buttonTextAdded = 8;
+  string jumpUrl = 9;
+  int32 addedStateDismissMs = 10;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/AdParam.java
@@ -2602,6 +2613,18 @@ message ExtInfoTopic {
   string icon = 3;
 }
 
+// Source: com/bapis/bilibili/app/dynamic/v2/FeedbackRelatedTribeeReq.java
+message FeedbackRelatedTribeeReq {
+  int64 opusId = 1;
+  int64 tribeeId = 2;
+  RelatedTribeeFeedbackAction action = 3;
+  string fromSpmid = 4;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/FeedbackRelatedTribeeRsp.java
+message FeedbackRelatedTribeeRsp {
+}
+
 // Source: com/bapis/bilibili/app/dynamic/v2/FeedFilterReply.java
 message FeedFilterReply {
   string offset = 1;
@@ -4052,6 +4075,7 @@ message ModuleRecommend {
 // Source: com/bapis/bilibili/app/dynamic/v2/ModuleRecommendCards.java
 message ModuleRecommendCards {
   RecommendCard item = 1;
+  map<string, string> report = 2;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/ModuleShareInfo.java
@@ -4861,6 +4885,7 @@ message RecommendCard {
   string jumpUrl = 10;
   RecommendCardType cardType = 11;
   int64 bizId = 12;
+  int64 attachedBizId = 13;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/RecommendCardReason.java

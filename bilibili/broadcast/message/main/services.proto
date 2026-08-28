@@ -1,21 +1,21 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.broadcast.message.main;
+package bilibili.broadcast.message.main;
 
 import "bilibili/broadcast/message/main/messages.proto";
 import "google/protobuf/empty.proto";
 
 service NativePage {
-  rpc WatchNotify(.google.protobuf.Empty) returns (stream NativePageEvent);
+  rpc WatchNotify(.google.protobuf.Empty) returns (stream .com.bapis.bilibili.broadcast.message.main.NativePageEvent);
 }
 
 service Resource {
-  rpc TopActivity(.google.protobuf.Empty) returns (stream TopActivityReply);
+  rpc TopActivity(.google.protobuf.Empty) returns (stream .com.bapis.bilibili.broadcast.message.main.TopActivityReply);
 }
 
 service Search {
-  rpc ChatResultPush(.google.protobuf.Empty) returns (stream ChatResult);
+  rpc ChatResultPush(.google.protobuf.Empty) returns (stream .com.bapis.bilibili.broadcast.message.main.ChatResult);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/message/main;mainpb";

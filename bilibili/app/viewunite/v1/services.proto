@@ -1,18 +1,18 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.app.viewunite.v1;
+package bilibili.app.viewunite.v1;
 
 import "bilibili/app/viewunite/v1/messages.proto";
 
 service View {
-  rpc ArcRefresh(ArcRefreshReq) returns (ArcRefreshReply);
-  rpc CacheAuthentication(CacheAuthenticationReq) returns (CacheAuthenticationReply);
-  rpc FloorAdSearch(FloorAdSearchReq) returns (FloorAdSearchReply);
-  rpc RelatesFeed(RelatesFeedReq) returns (RelatesFeedReply);
-  rpc Story(StoryReq) returns (StoryReply);
-  rpc View(ViewReq) returns (ViewReply);
-  rpc ViewProgress(ViewProgressReq) returns (ViewProgressReply);
+  rpc ArcRefresh(.com.bapis.bilibili.app.viewunite.v1.ArcRefreshReq) returns (.com.bapis.bilibili.app.viewunite.v1.ArcRefreshReply);
+  rpc CacheAuthentication(.com.bapis.bilibili.app.viewunite.v1.CacheAuthenticationReq) returns (.com.bapis.bilibili.app.viewunite.v1.CacheAuthenticationReply);
+  rpc FloorAdSearch(.com.bapis.bilibili.app.viewunite.v1.FloorAdSearchReq) returns (.com.bapis.bilibili.app.viewunite.v1.FloorAdSearchReply);
+  rpc RelatesFeed(.com.bapis.bilibili.app.viewunite.v1.RelatesFeedReq) returns (.com.bapis.bilibili.app.viewunite.v1.RelatesFeedReply);
+  rpc Story(.com.bapis.bilibili.app.viewunite.v1.StoryReq) returns (.com.bapis.bilibili.app.viewunite.v1.StoryReply);
+  rpc View(.com.bapis.bilibili.app.viewunite.v1.ViewReq) returns (.com.bapis.bilibili.app.viewunite.v1.ViewReply);
+  rpc ViewProgress(.com.bapis.bilibili.app.viewunite.v1.ViewProgressReq) returns (.com.bapis.bilibili.app.viewunite.v1.ViewProgressReply);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/viewunite/v1";

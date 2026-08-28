@@ -1,12 +1,12 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.vega.deneb.v1;
+package bilibili.vega.deneb.v1;
 
 import "bilibili/vega/deneb/v1/messages.proto";
 
 service VegaDenebRPC {
-  rpc MessagePulls(MessagePullsReq) returns (MessagePullsReply);
+  rpc MessagePulls(.com.bapis.bilibili.vega.deneb.v1.MessagePullsReq) returns (.com.bapis.bilibili.vega.deneb.v1.MessagePullsReply);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/vega/deneb/v1";

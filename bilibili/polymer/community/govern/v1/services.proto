@@ -1,13 +1,13 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.polymer.community.govern.v1;
+package bilibili.polymer.community.govern.v1;
 
 import "bilibili/polymer/community/govern/v1/messages.proto";
 
 service AntiHarassmentService {
-  rpc LoadAntiHarassmentSettings(LoadAntiHarassmentSettingsReq) returns (LoadAntiHarassmentSettingsRsp);
-  rpc StoreAntiHarassmentSettings(StoreAntiHarassmentSettingsReq) returns (StoreAntiHarassmentSettingsRsp);
+  rpc LoadAntiHarassmentSettings(.com.bapis.bilibili.polymer.community.govern.v1.LoadAntiHarassmentSettingsReq) returns (.com.bapis.bilibili.polymer.community.govern.v1.LoadAntiHarassmentSettingsRsp);
+  rpc StoreAntiHarassmentSettings(.com.bapis.bilibili.polymer.community.govern.v1.StoreAntiHarassmentSettingsReq) returns (.com.bapis.bilibili.polymer.community.govern.v1.StoreAntiHarassmentSettingsRsp);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/polymer/community/govern/v1";

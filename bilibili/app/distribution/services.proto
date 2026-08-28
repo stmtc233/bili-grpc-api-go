@@ -1,14 +1,14 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.app.distribution;
+package bilibili.app.distribution;
 
 import "bilibili/app/distribution/messages.proto";
 
 service Distribution {
-  rpc GetUserPreference(GetUserPreferenceReq) returns (GetUserPreferenceReply);
-  rpc SetUserPreference(SetUserPreferenceReq) returns (SetUserPreferenceReply);
-  rpc UserPreference(UserPreferenceReq) returns (UserPreferenceReply);
+  rpc GetUserPreference(.com.bapis.bilibili.app.distribution.GetUserPreferenceReq) returns (.com.bapis.bilibili.app.distribution.GetUserPreferenceReply);
+  rpc SetUserPreference(.com.bapis.bilibili.app.distribution.SetUserPreferenceReq) returns (.com.bapis.bilibili.app.distribution.SetUserPreferenceReply);
+  rpc UserPreference(.com.bapis.bilibili.app.distribution.UserPreferenceReq) returns (.com.bapis.bilibili.app.distribution.UserPreferenceReply);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/distribution";

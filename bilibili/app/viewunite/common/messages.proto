@@ -150,6 +150,7 @@ enum ModuleType {
   PUGV_SEASON_COMBINE = 62;
   VIDEO_MENTIONS = 63;
   OGV_RESERVE_REMINDER = 64;
+  SEARCH_QUERY = 65;
 }
 
 enum OccupationType {

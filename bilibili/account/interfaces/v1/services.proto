@@ -1,14 +1,14 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.account.interfaces.v1;
+package bilibili.account.interfaces.v1;
 
 import "bilibili/account/interfaces/v1/messages.proto";
 
 service AccountInterfaceV1 {
-  rpc MidByName(MidByNameReq) returns (MidByNameReply);
-  rpc UnameMessage(UnameMessageReq) returns (UnameMessageReply);
-  rpc UpdateNameV2(UpdateNameReq) returns (UpdateNameReply);
+  rpc MidByName(.com.bapis.bilibili.account.interfaces.v1.MidByNameReq) returns (.com.bapis.bilibili.account.interfaces.v1.MidByNameReply);
+  rpc UnameMessage(.com.bapis.bilibili.account.interfaces.v1.UnameMessageReq) returns (.com.bapis.bilibili.account.interfaces.v1.UnameMessageReply);
+  rpc UpdateNameV2(.com.bapis.bilibili.account.interfaces.v1.UpdateNameReq) returns (.com.bapis.bilibili.account.interfaces.v1.UpdateNameReply);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/account/interfaces/v1";

@@ -1,13 +1,13 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.relation.interfaces;
+package bilibili.relation.interfaces;
 
 import "bilibili/relation/interfaces/messages.proto";
 
 service RelationInterface {
-  rpc AtSearch(AtSearchReq) returns (AtSearchReply);
-  rpc ModifyRelation(FollowingReq) returns (ModifyRelationReply);
+  rpc AtSearch(.com.bapis.bilibili.relation.interfaces.AtSearchReq) returns (.com.bapis.bilibili.relation.interfaces.AtSearchReply);
+  rpc ModifyRelation(.com.bapis.bilibili.relation.interfaces.FollowingReq) returns (.com.bapis.bilibili.relation.interfaces.ModifyRelationReply);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/relation/interfaces";

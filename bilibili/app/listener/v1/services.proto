@@ -1,50 +1,50 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.app.listener.v1;
+package bilibili.app.listener.v1;
 
 import "bilibili/app/listener/v1/messages.proto";
 import "google/protobuf/empty.proto";
 
 service Listener {
-  rpc BkarcDetails(BKArcDetailsReq) returns (BKArcDetailsResp);
-  rpc BKArcDetails(BKArcDetailsReq) returns (BKArcDetailsResp);
-  rpc CoinAdd(CoinAddReq) returns (CoinAddResp);
-  rpc Event(EventReq) returns (EventResp);
-  rpc FavFolderCreate(FavFolderCreateReq) returns (FavFolderCreateResp);
-  rpc FavFolderDelete(FavFolderDeleteReq) returns (FavFolderDeleteResp);
-  rpc FavFolderDetail(FavFolderDetailReq) returns (FavFolderDetailResp);
-  rpc FavFolderList(FavFolderListReq) returns (FavFolderListResp);
-  rpc FavItemAdd(FavItemAddReq) returns (FavItemAddResp);
-  rpc FavItemBatch(FavItemBatchReq) returns (FavItemBatchResp);
-  rpc FavItemDel(FavItemDelReq) returns (FavItemDelResp);
-  rpc FavoredInAnyFolders(FavoredInAnyFoldersReq) returns (FavoredInAnyFoldersResp);
-  rpc Medialist(MedialistReq) returns (MedialistResp);
-  rpc PickCardDetail(PickCardDetailReq) returns (PickCardDetailResp);
-  rpc PickFeed(PickFeedReq) returns (PickFeedResp);
+  rpc BkarcDetails(.com.bapis.bilibili.app.listener.v1.BKArcDetailsReq) returns (.com.bapis.bilibili.app.listener.v1.BKArcDetailsResp);
+  rpc BKArcDetails(.com.bapis.bilibili.app.listener.v1.BKArcDetailsReq) returns (.com.bapis.bilibili.app.listener.v1.BKArcDetailsResp);
+  rpc CoinAdd(.com.bapis.bilibili.app.listener.v1.CoinAddReq) returns (.com.bapis.bilibili.app.listener.v1.CoinAddResp);
+  rpc Event(.com.bapis.bilibili.app.listener.v1.EventReq) returns (.com.bapis.bilibili.app.listener.v1.EventResp);
+  rpc FavFolderCreate(.com.bapis.bilibili.app.listener.v1.FavFolderCreateReq) returns (.com.bapis.bilibili.app.listener.v1.FavFolderCreateResp);
+  rpc FavFolderDelete(.com.bapis.bilibili.app.listener.v1.FavFolderDeleteReq) returns (.com.bapis.bilibili.app.listener.v1.FavFolderDeleteResp);
+  rpc FavFolderDetail(.com.bapis.bilibili.app.listener.v1.FavFolderDetailReq) returns (.com.bapis.bilibili.app.listener.v1.FavFolderDetailResp);
+  rpc FavFolderList(.com.bapis.bilibili.app.listener.v1.FavFolderListReq) returns (.com.bapis.bilibili.app.listener.v1.FavFolderListResp);
+  rpc FavItemAdd(.com.bapis.bilibili.app.listener.v1.FavItemAddReq) returns (.com.bapis.bilibili.app.listener.v1.FavItemAddResp);
+  rpc FavItemBatch(.com.bapis.bilibili.app.listener.v1.FavItemBatchReq) returns (.com.bapis.bilibili.app.listener.v1.FavItemBatchResp);
+  rpc FavItemDel(.com.bapis.bilibili.app.listener.v1.FavItemDelReq) returns (.com.bapis.bilibili.app.listener.v1.FavItemDelResp);
+  rpc FavoredInAnyFolders(.com.bapis.bilibili.app.listener.v1.FavoredInAnyFoldersReq) returns (.com.bapis.bilibili.app.listener.v1.FavoredInAnyFoldersResp);
+  rpc Medialist(.com.bapis.bilibili.app.listener.v1.MedialistReq) returns (.com.bapis.bilibili.app.listener.v1.MedialistResp);
+  rpc PickCardDetail(.com.bapis.bilibili.app.listener.v1.PickCardDetailReq) returns (.com.bapis.bilibili.app.listener.v1.PickCardDetailResp);
+  rpc PickFeed(.com.bapis.bilibili.app.listener.v1.PickFeedReq) returns (.com.bapis.bilibili.app.listener.v1.PickFeedResp);
   rpc Ping(.google.protobuf.Empty) returns (.google.protobuf.Empty);
-  rpc PlayActionReport(PlayActionReportReq) returns (.google.protobuf.Empty);
-  rpc PlayHistory(PlayHistoryReq) returns (PlayHistoryResp);
-  rpc PlayHistoryAdd(PlayHistoryAddReq) returns (.google.protobuf.Empty);
-  rpc PlayHistoryDel(PlayHistoryDelReq) returns (.google.protobuf.Empty);
-  rpc Playlist(PlaylistReq) returns (PlaylistResp);
-  rpc PlaylistAdd(PlaylistAddReq) returns (.google.protobuf.Empty);
-  rpc PlaylistDel(PlaylistDelReq) returns (.google.protobuf.Empty);
-  rpc PlayUrl(PlayURLReq) returns (PlayURLResp);
-  rpc PlayURL(PlayURLReq) returns (PlayURLResp);
-  rpc RcmdPlaylist(RcmdPlaylistReq) returns (RcmdPlaylistResp);
-  rpc ThumbUp(ThumbUpReq) returns (ThumbUpResp);
-  rpc TripleLike(TripleLikeReq) returns (TripleLikeResp);
+  rpc PlayActionReport(.com.bapis.bilibili.app.listener.v1.PlayActionReportReq) returns (.google.protobuf.Empty);
+  rpc PlayHistory(.com.bapis.bilibili.app.listener.v1.PlayHistoryReq) returns (.com.bapis.bilibili.app.listener.v1.PlayHistoryResp);
+  rpc PlayHistoryAdd(.com.bapis.bilibili.app.listener.v1.PlayHistoryAddReq) returns (.google.protobuf.Empty);
+  rpc PlayHistoryDel(.com.bapis.bilibili.app.listener.v1.PlayHistoryDelReq) returns (.google.protobuf.Empty);
+  rpc Playlist(.com.bapis.bilibili.app.listener.v1.PlaylistReq) returns (.com.bapis.bilibili.app.listener.v1.PlaylistResp);
+  rpc PlaylistAdd(.com.bapis.bilibili.app.listener.v1.PlaylistAddReq) returns (.google.protobuf.Empty);
+  rpc PlaylistDel(.com.bapis.bilibili.app.listener.v1.PlaylistDelReq) returns (.google.protobuf.Empty);
+  rpc PlayUrl(.com.bapis.bilibili.app.listener.v1.PlayURLReq) returns (.com.bapis.bilibili.app.listener.v1.PlayURLResp);
+  rpc PlayURL(.com.bapis.bilibili.app.listener.v1.PlayURLReq) returns (.com.bapis.bilibili.app.listener.v1.PlayURLResp);
+  rpc RcmdPlaylist(.com.bapis.bilibili.app.listener.v1.RcmdPlaylistReq) returns (.com.bapis.bilibili.app.listener.v1.RcmdPlaylistResp);
+  rpc ThumbUp(.com.bapis.bilibili.app.listener.v1.ThumbUpReq) returns (.com.bapis.bilibili.app.listener.v1.ThumbUpResp);
+  rpc TripleLike(.com.bapis.bilibili.app.listener.v1.TripleLikeReq) returns (.com.bapis.bilibili.app.listener.v1.TripleLikeResp);
 }
 
 service Music {
-  rpc Click(ClickReq) returns (ClickResp);
-  rpc FavTabShow(FavTabShowReq) returns (FavTabShowResp);
-  rpc MainFavMusicMenuList(MainFavMusicMenuListReq) returns (MainFavMusicMenuListResp);
-  rpc MainFavMusicSubTabList(MainFavMusicSubTabListReq) returns (MainFavMusicSubTabListResp);
-  rpc MenuDelete(MenuDeleteReq) returns (MenuDeleteResp);
-  rpc MenuEdit(MenuEditReq) returns (MenuEditResp);
-  rpc MenuSubscribe(MenuSubscribeReq) returns (MenuSubscribeResp);
+  rpc Click(.com.bapis.bilibili.app.listener.v1.ClickReq) returns (.com.bapis.bilibili.app.listener.v1.ClickResp);
+  rpc FavTabShow(.com.bapis.bilibili.app.listener.v1.FavTabShowReq) returns (.com.bapis.bilibili.app.listener.v1.FavTabShowResp);
+  rpc MainFavMusicMenuList(.com.bapis.bilibili.app.listener.v1.MainFavMusicMenuListReq) returns (.com.bapis.bilibili.app.listener.v1.MainFavMusicMenuListResp);
+  rpc MainFavMusicSubTabList(.com.bapis.bilibili.app.listener.v1.MainFavMusicSubTabListReq) returns (.com.bapis.bilibili.app.listener.v1.MainFavMusicSubTabListResp);
+  rpc MenuDelete(.com.bapis.bilibili.app.listener.v1.MenuDeleteReq) returns (.com.bapis.bilibili.app.listener.v1.MenuDeleteResp);
+  rpc MenuEdit(.com.bapis.bilibili.app.listener.v1.MenuEditReq) returns (.com.bapis.bilibili.app.listener.v1.MenuEditResp);
+  rpc MenuSubscribe(.com.bapis.bilibili.app.listener.v1.MenuSubscribeReq) returns (.com.bapis.bilibili.app.listener.v1.MenuSubscribeResp);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/listener/v1";

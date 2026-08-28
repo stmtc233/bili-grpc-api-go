@@ -45,6 +45,7 @@ bilibili/app/listener/v1/services.proto
 bilibili/app/mine/v1/messages.proto
 bilibili/app/mine/v1/services.proto
 bilibili/app/overseas/ad/v1/messages.proto
+bilibili/app/overseas/app/v1/messages.proto
 bilibili/app/playeronline/v1/messages.proto
 bilibili/app/playeronline/v1/services.proto
 bilibili/app/playerunite/pgcanymodel/messages.proto
@@ -100,8 +101,6 @@ bilibili/broadcast/message/im/messages.proto
 bilibili/broadcast/message/im/services.proto
 bilibili/broadcast/message/main/messages.proto
 bilibili/broadcast/message/main/services.proto
-bilibili/broadcast/message/mall/messages.proto
-bilibili/broadcast/message/mall/services.proto
 bilibili/broadcast/message/push/messages.proto
 bilibili/broadcast/message/push/services.proto
 bilibili/broadcast/message/reply/messages.proto
@@ -162,15 +161,6 @@ bilibili/main/community/reply/v1/messages.proto
 bilibili/main/community/reply/v1/services.proto
 bilibili/main/community/reply/v2/messages.proto
 bilibili/main/community/reply/v2/services.proto
-bilibili/mall/tab3/dynamic/v1/messages.proto
-bilibili/mall/tab3/dynamic/v1/services.proto
-bilibili/mall/tab3/playerunite/ugcanymodel/messages.proto
-bilibili/mall/tab3/playerunite/v1/messages.proto
-bilibili/mall/tab3/playerunite/v1/services.proto
-bilibili/mall/tab3/viewunite/common/messages.proto
-bilibili/mall/tab3/viewunite/ugcanymodel/messages.proto
-bilibili/mall/tab3/viewunite/v1/messages.proto
-bilibili/mall/tab3/viewunite/v1/services.proto
 bilibili/metadata/device/messages.proto
 bilibili/metadata/fawkes/messages.proto
 bilibili/metadata/locale/messages.proto

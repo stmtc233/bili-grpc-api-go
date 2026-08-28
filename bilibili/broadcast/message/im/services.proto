@@ -1,13 +1,13 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.broadcast.message.im;
+package bilibili.broadcast.message.im;
 
 import "bilibili/broadcast/message/im/messages.proto";
 import "google/protobuf/empty.proto";
 
 service Notify {
-  rpc WatchNotify(.google.protobuf.Empty) returns (stream NotifyRsp);
+  rpc WatchNotify(.google.protobuf.Empty) returns (stream .com.bapis.bilibili.broadcast.message.im.NotifyRsp);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/message/im";

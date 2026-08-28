@@ -1,15 +1,15 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.app.story.v1;
+package bilibili.app.story.v1;
 
 import "bilibili/app/story/v1/messages.proto";
 
 service Story {
-  rpc AIAudio(AIAudioReq) returns (AIAudioReply);
-  rpc ArchiveStatus(ArchiveStatusReq) returns (ArchiveStatusReply);
-  rpc BgmPlay(BgmPlayReq) returns (BgmPlayReply);
-  rpc Rerank(RerankReq) returns (RerankReply);
+  rpc AIAudio(.com.bapis.bilibili.app.story.v1.AIAudioReq) returns (.com.bapis.bilibili.app.story.v1.AIAudioReply);
+  rpc ArchiveStatus(.com.bapis.bilibili.app.story.v1.ArchiveStatusReq) returns (.com.bapis.bilibili.app.story.v1.ArchiveStatusReply);
+  rpc BgmPlay(.com.bapis.bilibili.app.story.v1.BgmPlayReq) returns (.com.bapis.bilibili.app.story.v1.BgmPlayReply);
+  rpc Rerank(.com.bapis.bilibili.app.story.v1.RerankReq) returns (.com.bapis.bilibili.app.story.v1.RerankReply);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/story/v1";

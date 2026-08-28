@@ -1,12 +1,12 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.dynamic.interfaces.vote.v1;
+package bilibili.dynamic.interfaces.vote.v1;
 
 import "bilibili/dynamic/interfaces/vote/v1/messages.proto";
 
 service Vote {
-  rpc NewDoVote(NewDoVoteReq) returns (NewDoVoteRsp);
+  rpc NewDoVote(.com.bapis.bilibili.dynamic.interfaces.vote.v1.NewDoVoteReq) returns (.com.bapis.bilibili.dynamic.interfaces.vote.v1.NewDoVoteRsp);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/dynamic/interfaces/vote/v1";

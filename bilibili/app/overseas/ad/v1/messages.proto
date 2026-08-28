@@ -67,17 +67,17 @@ message UnitAdConfigs {
 
 // Source: com/bapis/bilibili/app/overseas/ad/v1/VideoAttr.java
 message VideoAttr {
-  int64 avid = 1;
-  int64 cid = 2;
-  int64 category = 3;
-  int64 subCategory = 4;
-  int64 upMid = 5;
-  int64 duration = 6;
-  int64 upType = 7;
-  bool playerIsVertical = 9;
-  BizType bizType = 10;
-  int64 sid = 11;
-  int64 epid = 12;
+  BizType bizType = 1;
+  int64 avid = 2;
+  int64 cid = 3;
+  int64 sid = 4;
+  int64 epid = 5;
+  int64 category = 6;
+  int64 subCategory = 7;
+  int64 upType = 8;
+  int64 upMid = 9;
+  int64 duration = 10;
+  bool isVertical = 11;
 }
 
 

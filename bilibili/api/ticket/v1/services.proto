@@ -1,13 +1,13 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.api.ticket.v1;
+package bilibili.api.ticket.v1;
 
 import "bilibili/api/ticket/v1/messages.proto";
 
 service Ticket {
-  rpc GenWebTicket(GenWebTicketRequest) returns (GenWebTicketResponse);
-  rpc GetTicket(GetTicketRequest) returns (GetTicketResponse);
+  rpc GenWebTicket(.com.bapis.bilibili.api.ticket.v1.GenWebTicketRequest) returns (.com.bapis.bilibili.api.ticket.v1.GenWebTicketResponse);
+  rpc GetTicket(.com.bapis.bilibili.api.ticket.v1.GetTicketRequest) returns (.com.bapis.bilibili.api.ticket.v1.GetTicketResponse);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/api/ticket/v1";

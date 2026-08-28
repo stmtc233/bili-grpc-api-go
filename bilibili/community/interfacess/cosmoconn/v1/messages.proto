@@ -284,6 +284,7 @@ message QuizQuestionItem {
   repeated QuizQuestionOption options = 3;
   repeated int32 answer = 4;
   int64 creatorUid = 5;
+  string creatorUidStr = 6;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/QuizQuestionOption.java

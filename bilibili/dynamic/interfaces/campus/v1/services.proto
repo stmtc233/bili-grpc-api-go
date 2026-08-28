@@ -1,12 +1,12 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.dynamic.interfaces.campus.v1;
+package bilibili.dynamic.interfaces.campus.v1;
 
 import "bilibili/dynamic/interfaces/campus/v1/messages.proto";
 
 service Campus {
-  rpc ActionReport(ActionReportReq) returns (ActionReportReply);
+  rpc ActionReport(.com.bapis.bilibili.dynamic.interfaces.campus.v1.ActionReportReq) returns (.com.bapis.bilibili.dynamic.interfaces.campus.v1.ActionReportReply);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/dynamic/interfaces/campus/v1";

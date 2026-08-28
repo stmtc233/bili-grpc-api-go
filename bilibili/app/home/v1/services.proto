@@ -1,19 +1,19 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.app.home.v1;
+package bilibili.app.home.v1;
 
 import "bilibili/app/home/v1/messages.proto";
 
 service Home {
-  rpc HomePopup(HomePopupReq) returns (HomePopupRes);
-  rpc MineSelectionContent(MineSelectionContentReq) returns (MineSelectionContentRes);
-  rpc MineSelectionOptionItems(MineSelectionOptionItemsReq) returns (MineSelectionOptionItemsRes);
-  rpc MineSelectionOptionUpdate(MineSelectionOptionUpdateReq) returns (MineSelectionOptionUpdateRes);
-  rpc Recent(RecentReq) returns (RecentRes);
-  rpc RemoveVideo(RemoveVideoReq) returns (RemoveVideoRes);
-  rpc TopLeftTab(TopLeftTabReq) returns (TopLeftTabRes);
-  rpc TopLeftTabUpdate(TopLeftTabUpdateReq) returns (TopLeftTabUpdateRes);
+  rpc HomePopup(.com.bapis.bilibili.app.home.v1.HomePopupReq) returns (.com.bapis.bilibili.app.home.v1.HomePopupRes);
+  rpc MineSelectionContent(.com.bapis.bilibili.app.home.v1.MineSelectionContentReq) returns (.com.bapis.bilibili.app.home.v1.MineSelectionContentRes);
+  rpc MineSelectionOptionItems(.com.bapis.bilibili.app.home.v1.MineSelectionOptionItemsReq) returns (.com.bapis.bilibili.app.home.v1.MineSelectionOptionItemsRes);
+  rpc MineSelectionOptionUpdate(.com.bapis.bilibili.app.home.v1.MineSelectionOptionUpdateReq) returns (.com.bapis.bilibili.app.home.v1.MineSelectionOptionUpdateRes);
+  rpc Recent(.com.bapis.bilibili.app.home.v1.RecentReq) returns (.com.bapis.bilibili.app.home.v1.RecentRes);
+  rpc RemoveVideo(.com.bapis.bilibili.app.home.v1.RemoveVideoReq) returns (.com.bapis.bilibili.app.home.v1.RemoveVideoRes);
+  rpc TopLeftTab(.com.bapis.bilibili.app.home.v1.TopLeftTabReq) returns (.com.bapis.bilibili.app.home.v1.TopLeftTabRes);
+  rpc TopLeftTabUpdate(.com.bapis.bilibili.app.home.v1.TopLeftTabUpdateReq) returns (.com.bapis.bilibili.app.home.v1.TopLeftTabUpdateRes);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/home/v1";
