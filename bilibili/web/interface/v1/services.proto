@@ -1,0 +1,12 @@
+// Reconstructed from gRPC service descriptors.
+syntax = "proto3";
+
+package bilibili.web.interface.v1;
+
+import "bilibili/web/interfaces/v1/messages.proto";
+
+service WebInterface {
+  rpc ViewDetail(.com.bapis.bilibili.web.interfaces.v1.ViewDetailReq) returns (.com.bapis.bilibili.web.interfaces.v1.ViewDetailReply);
+}
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/web/interface/v1";

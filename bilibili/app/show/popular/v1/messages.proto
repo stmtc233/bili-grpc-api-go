@@ -3,7 +3,6 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.show.popular.v1;
 
-import "bilibili/app/archive/middleware/v1/messages.proto";
 import "bilibili/app/card/v1/messages.proto";
 
 // Source: com/bapis/bilibili/app/show/popular/v1/Bubble.java
@@ -22,8 +21,6 @@ message Config {
   repeated EntranceShow topItems = 5;
   string headImage = 6;
   repeated EntranceShow pageItems = 7;
-  int64 hit = 8;
-  string toast = 9;
 }
 
 // Source: com/bapis/bilibili/app/show/popular/v1/EntranceShow.java
@@ -36,11 +33,6 @@ message EntranceShow {
   int64 entranceId = 6;
   string topPhoto = 7;
   int32 entranceType = 8;
-}
-
-// Source: com/bapis/bilibili/app/show/popular/v1/PopularAd.java
-message PopularAd {
-  string extra = 1;
 }
 
 // Source: com/bapis/bilibili/app/show/popular/v1/PopularReply.java
@@ -65,10 +57,6 @@ message PopularResultReq {
   int64 entranceId = 11;
   string locationIds = 12;
   int32 sourceId = 13;
-  int32 flush = 14;
-  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 15;
-  PopularAd popularAd = 16;
-  bool isAdaptWide = 17;
 }
 
 

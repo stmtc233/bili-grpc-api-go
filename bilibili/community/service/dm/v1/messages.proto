@@ -20,6 +20,12 @@ enum CheckboxType {
   CheckboxTypeColorDM = 2;
 }
 
+enum DMAttrBit {
+  DMAttrBitProtect = 0;
+  DMAttrBitFromLive = 1;
+  DMAttrHighLike = 2;
+}
+
 enum DmColorfulType {
   NoneType = 0;
   VipGradualColor = 60001;
@@ -53,11 +59,6 @@ enum ExposureType {
   ExposureTypeDMSend = 1;
 }
 
-enum FontSizeType {
-  FontSizeDefault = 0;
-  FontSizeOGV = 1;
-}
-
 enum PostPanelBizType {
   PostPanelBizTypeNone = 0;
   PostPanelBizTypeEncourage = 1;
@@ -72,17 +73,6 @@ enum PostPanelBizType {
 enum PostStatus {
   PostStatusNormal = 0;
   PostStatusClosed = 1;
-}
-
-enum ProductionType {
-  PRODUCTION_TYPE_DEFAULT = 0;
-  PRODUCTION_TYPE_UPLOAD = 1;
-  PRODUCTION_TYPE_AI = 2;
-}
-
-enum PurposeType {
-  PurposeCover = 0;
-  PurposeOGV = 1;
 }
 
 enum RenderType {
@@ -242,7 +232,6 @@ message DanmakuElem {
   int32 pool = 11;
   string idStr = 12;
   int32 attr = 13;
-  int64 likeCount = 15;
   string animation = 22;
   string extra = 23;
   DmColorfulType colorful = 24;
@@ -316,7 +305,6 @@ message DanmuPlayerConfig {
   int32 playerDanmakuDensity = 26;
   bool playerDanmakuSubtitleProof = 27;
   bool playerDanmakuPeopleProof = 28;
-  int32 playerDanmakuSwitchState = 29;
 }
 
 // Source: com/bapis/bilibili/community/service/dm/v1/DanmuPlayerConfigPanel.java
@@ -366,8 +354,6 @@ message DanmuWebPlayerConfig {
   bool blocktopBottom = 24;
   int32 dmAreaV2 = 25;
   int32 dmDensity = 26;
-  bool subtitleProof = 27;
-  int32 dmSwitchState = 28;
 }
 
 // Source: com/bapis/bilibili/community/service/dm/v1/DmColorful.java
@@ -438,25 +424,6 @@ message DmPlayerConfigReq {
   PlayerDanmakuDensity density = 24;
   PlayerDanmakuSubtitleProof subtitleProof = 25;
   PlayerDanmakuPeopleProof peopleProof = 26;
-  PlayerDanmakuSwitchState switchState = 27;
-}
-
-// Source: com/bapis/bilibili/community/service/dm/v1/DMRestrict.java
-message DMRestrict {
-  repeated DMRestrictPeriod periods = 1;
-}
-
-// Source: com/bapis/bilibili/community/service/dm/v1/DMRestrictPeriod.java
-message DMRestrictPeriod {
-  int64 start = 1;
-  int64 end = 2;
-}
-
-// Source: com/bapis/bilibili/community/service/dm/v1/DmSegCacheReq.java
-message DmSegCacheReq {
-  int32 type = 1;
-  int64 oid = 2;
-  int64 pid = 3;
 }
 
 // Source: com/bapis/bilibili/community/service/dm/v1/DmSegConfig.java
@@ -553,7 +520,6 @@ message DmViewReply {
   string kv = 23;
   repeated DmSubView subViews = 24;
   QoeInfo qoe = 25;
-  DMRestrict dmRestrict = 26;
 }
 
 // Source: com/bapis/bilibili/community/service/dm/v1/DmViewReq.java
@@ -564,9 +530,6 @@ message DmViewReq {
   string spmid = 4;
   int32 isHardBoot = 5;
   string contextExt = 6;
-  string curLanguage = 7;
-  ProductionType curProductionType = 8;
-  bool withoutSubtitle = 9;
 }
 
 // Source: com/bapis/bilibili/community/service/dm/v1/DmWebViewReply.java
@@ -588,9 +551,6 @@ message DmWebViewReply {
   repeated PostPanelV2 postPanel2 = 15;
   repeated DmSubView subViews = 16;
   QoeInfo qoe = 17;
-  repeated DmMaskWall maskWalls = 18;
-  DMRestrict dmRestrict = 19;
-  VideoSubtitle subtitle = 20;
 }
 
 // Source: com/bapis/bilibili/community/service/dm/v1/ExpoReport.java
@@ -754,12 +714,6 @@ message PlayerDanmakuSwitchSave {
   bool value = 1;
 }
 
-// Source: com/bapis/bilibili/community/service/dm/v1/PlayerDanmakuSwitchState.java
-message PlayerDanmakuSwitchState {
-  int32 value = 1;
-  bool canignore = 2;
-}
-
 // Source: com/bapis/bilibili/community/service/dm/v1/PlayerDanmakuUseDefaultConfig.java
 message PlayerDanmakuUseDefaultConfig {
   bool value = 1;
@@ -809,11 +763,6 @@ message Response {
   string message_ = 2;
 }
 
-// Source: com/bapis/bilibili/community/service/dm/v1/SubtitleHeight.java
-message SubtitleHeight {
-  double value = 1;
-}
-
 // Source: com/bapis/bilibili/community/service/dm/v1/SubtitleItem.java
 message SubtitleItem {
   int64 id = 1;
@@ -827,16 +776,6 @@ message SubtitleItem {
   SubtitleAiType aiType = 9;
   SubtitleAiStatus aiStatus = 10;
   SubtitleRole role = 11;
-  SubtitleHeight subtitleHeight = 12;
-}
-
-// Source: com/bapis/bilibili/community/service/dm/v1/SubtitlePosition.java
-message SubtitlePosition {
-  double xMin = 1;
-  double yMin = 2;
-  double xMax = 3;
-  double yMax = 4;
-  PurposeType purpose = 5;
 }
 
 // Source: com/bapis/bilibili/community/service/dm/v1/TextInput.java
@@ -906,8 +845,6 @@ message VideoSubtitle {
   string lan = 1;
   string lanDoc = 2;
   repeated SubtitleItem subtitles = 3;
-  SubtitlePosition subtitlePosition = 4;
-  FontSizeType fontSizeType = 5;
 }
 
 // Source: com/bapis/bilibili/community/service/dm/v1/ViewHerdDmElem.java

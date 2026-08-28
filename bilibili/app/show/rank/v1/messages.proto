@@ -31,8 +31,6 @@ message Item {
   OfficialVerify officialVerify = 24;
   repeated Item children = 25;
   Relation relation = 26;
-  string playText = 27;
-  int32 playIcon = 28;
 }
 
 // Source: com/bapis/bilibili/app/show/rank/v1/OfficialVerify.java
@@ -51,23 +49,6 @@ message RankAllResultReq {
 // Source: com/bapis/bilibili/app/show/rank/v1/RankListReply.java
 message RankListReply {
   repeated Item items = 1;
-}
-
-// Source: com/bapis/bilibili/app/show/rank/v1/RankRegionInfo.java
-message RankRegionInfo {
-  int32 tid = 1;
-  string name = 2;
-  int32 regionType = 3;
-  string uri = 4;
-}
-
-// Source: com/bapis/bilibili/app/show/rank/v1/RankRegionListReply.java
-message RankRegionListReply {
-  repeated RankRegionInfo regions = 1;
-}
-
-// Source: com/bapis/bilibili/app/show/rank/v1/RankRegionListReq.java
-message RankRegionListReq {
 }
 
 // Source: com/bapis/bilibili/app/show/rank/v1/RankRegionResultReq.java

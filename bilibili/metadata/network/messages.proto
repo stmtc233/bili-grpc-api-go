@@ -3,14 +3,6 @@ syntax = "proto3";
 
 package com.bapis.bilibili.metadata.network;
 
-enum CellularType {
-  C_NONE = 0;
-  C_2G = 1;
-  C_3G = 2;
-  C_4G = 3;
-  C_5G = 4;
-}
-
 enum NetworkType {
   NT_UNKNOWN = 0;
   WIFI = 1;
@@ -30,21 +22,11 @@ enum TFType {
   T_PKG = 6;
 }
 
-// Source: com/bapis/bilibili/metadata/network/NetQuality.java
-message NetQuality {
-  float successRate = 1;
-  int32 speed = 2;
-  int64 speedTimestamp = 3;
-  int32 netType = 4;
-}
-
 // Source: com/bapis/bilibili/metadata/network/Network.java
 message Network {
   NetworkType type = 1;
   TFType tf = 2;
   string oid = 3;
-  CellularType cellular = 4;
-  NetQuality quality = 5;
 }
 
 

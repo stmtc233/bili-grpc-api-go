@@ -1,0 +1,36 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bcg.sunspot.test.dto;
+
+import "bcg/sunspot/test/bce/messages.proto";
+import "google/protobuf/wrappers.proto";
+
+// Source: com/bapis/bcg/sunspot/test/dto/AdOgvEpDto.java
+message AdOgvEpDto {
+  int64 epid = 1;
+  bool hasRecommend = 2;
+}
+
+// Source: com/bapis/bcg/sunspot/test/dto/AdsControlDto.java
+message AdsControlDto {
+  int32 hasDanmu = 1;
+  repeated int64 cids = 2;
+  repeated AdOgvEpDto eps = 3;
+}
+
+// Source: com/bapis/bcg/sunspot/test/dto/SourceContentDto.java
+message SourceContentDto {
+  string requestId = 1;
+  int32 sourceId = 2;
+  int32 resourceId = 3;
+  bool isAdLoc = 4;
+  google.protobuf.Int32Value serverType = 5;
+  string clientIp = 6;
+  google.protobuf.Int32Value cardIndex = 7;
+  int32 index = 8;
+  com.bapis.bcg.sunspot.test.bce.AdDto adContent = 9;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bcg/sunspot/test/dto";

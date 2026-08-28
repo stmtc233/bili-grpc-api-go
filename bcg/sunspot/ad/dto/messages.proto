@@ -1,0 +1,523 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bcg.sunspot.ad.dto;
+
+import "bcg/sunspot/ad/bce/messages.proto";
+import "google/protobuf/any.proto";
+import "google/protobuf/wrappers.proto";
+
+// Source: com/bapis/bcg/sunspot/ad/dto/AccountBusinessCategoryTupleDto.java
+message AccountBusinessCategoryTupleDto {
+  int32 acType = 1;
+  int64 acId = 2;
+  int32 businessCategoryLevel = 3;
+  int32 businessCategoryId = 4;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/dto/AdEventDto.java
+message AdEventDto {
+  string adId = 1;
+  int32 count = 2;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/dto/AdOgvEpDto.java
+message AdOgvEpDto {
+  int64 epid = 1;
+  bool hasRecommend = 2;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/dto/AdRequestDto.java
+message AdRequestDto {
+  string requestId = 1;
+  int64 requestTime = 2;
+  string requestType = 3;
+  int64 mid = 4;
+  string buvid = 5;
+  string sid = 6;
+  repeated LocationResourceDto resourceList = 7;
+  string ip = 8;
+  string country = 9;
+  string province = 10;
+  string city = 11;
+  string network = 12;
+  string mobiApp = 13;
+  int32 build = 14;
+  bool coldBoot = 15;
+  bool feeds = 16;
+  bool videoPageRecommend = 17;
+  bool dynamicPage = 18;
+  string imei = 19;
+  string idfa = 20;
+  string androidId = 21;
+  string mac = 22;
+  string oaid = 23;
+  string miniGameAppId = 24;
+  string lon = 25;
+  string lat = 26;
+  string screenSize = 27;
+  string vendor = 28;
+  string model = 29;
+  string ua = 30;
+  string uaSys = 31;
+  string uaWeb = 32;
+  string osV = 33;
+  int32 imageStyle = 34;
+  string fromSpmid = 35;
+  string spmid = 36;
+  string from = 37;
+  int64 aid = 38;
+  int64 cid = 39;
+  int64 seasonId = 40;
+  int64 epId = 41;
+  int32 videoCategory = 42;
+  int64 videoUpMid = 43;
+  repeated int32 vctags = 44;
+  bool videoPoliticalSensitive = 45;
+  string avDuration = 46;
+  int32 avOriginal = 47;
+  int32 avIsVerticalScreen = 48;
+  int32 avPlayDuration = 49;
+  int32 avPlayDurationPercent = 50;
+  int32 avNumDanmu = 51;
+  int32 avNumReply = 52;
+  int32 avNumCoin = 53;
+  int32 avNumShare = 54;
+  int32 avNumFav = 55;
+  int32 avNumLike = 56;
+  int32 dmpUserProfileMark = 57;
+  bool vip = 58;
+  int32 age = 59;
+  repeated double ageProbList = 60;
+  int32 gender = 61;
+  double genderProb = 62;
+  repeated int32 preferTagIds = 63;
+  repeated int32 expPreferTagIds = 64;
+  repeated int32 crowIds = 65;
+  repeated int32 regularGroups = 66;
+  repeated int32 businessGroups = 67;
+  repeated int32 packageGroups = 68;
+  repeated int32 extendGroups = 69;
+  repeated int32 otherGroups = 70;
+  repeated int64 followList = 71;
+  repeated int64 blackListMids = 72;
+  repeated int64 blackListedMids = 73;
+  repeated int64 persoanlFlyShieldList = 74;
+  repeated int32 preferStypeIds = 75;
+  repeated LongEventEntryDto lastVideos = 76;
+  repeated LongEventEntryDto lastAdsClick = 77;
+  repeated UserAppInfoDto userAppInfoList = 78;
+  repeated string unitConversions = 79;
+  repeated string adAccountConversions = 80;
+  repeated string companyGroupConversions = 81;
+  repeated int32 dmpContentTags = 82;
+  repeated AdEventDto dmpClickEvents = 83;
+  repeated AdEventDto companyGroupClickEvents = 84;
+  repeated int32 dmpFollowUps = 85;
+  repeated int32 dmpFollowUpCategories = 86;
+  repeated int32 subscribeTags = 87;
+  repeated StringEventEntryDto searchKeyWords = 88;
+  repeated int32 bangumis = 89;
+  repeated int64 sensitiveCategoryIds = 90;
+  repeated int64 sensitiveCompanyIds = 91;
+  repeated int64 styleAbilityEnumIds = 92;
+  repeated int64 sensitiveCreativeTagIds = 93;
+  repeated int64 avoidCompanyGroupIdSet = 94;
+  int32 feedsNxtPtr = 95;
+  map<int64, int64> unitShowCounts = 96;
+  map<int64, int64> scheduleShowCounts = 97;
+  map<int64, int64> unitShowConfigCounts = 98;
+  repeated int64 recentUnitIds = 99;
+  repeated int64 feedsUnitIdSet = 100;
+  repeated int64 videoAvoidUnitIdSet = 101;
+  repeated LongEventEntryDto lastAds = 102;
+  int32 inlineControlModule = 103;
+  repeated AccountBusinessCategoryTupleDto recentAccountBusinessCategoryTupleSetForFeeds = 104;
+  repeated AccountBusinessCategoryTupleDto recentAccountBusinessCategoryTupleSetForVideo = 105;
+  repeated AccountBusinessCategoryTupleDto recentCompanyGroupProductTupleSetForFeeds = 106;
+  map<string, int64> namedFrequencyCellShowCounts = 107;
+  map<string, IntLatestCellDto> namedLastestCells = 108;
+  map<string, StringLongEntryMap> typedNamedFrequencyCells = 109;
+  map<string, LongList> feedsTypeLatestSingleFrequencyTargets = 110;
+  map<string, StringLongMap> typeLastestSingleCoolings = 111;
+  repeated CompanyGroupProductTupleDto coGroupOrAccMultiBrushTupleSetForDynamic = 112;
+  repeated CompanyGroupOrAccountProductInfoDto coGroupOrAccHoursTupleInfoForDynamic = 113;
+  repeated CompanyGroupOrAccountProductInfoDto coGroupOrAccDaysTupleInfoForDynamic = 114;
+  map<string, int64> styleAbilityCooling = 115;
+  repeated string styleAbilityBrush = 116;
+  map<int32, StringList> dislikeGradeConcreteIds = 117;
+  string experimentName = 118;
+  bool cpcPriceFirst = 119;
+  bool openCpc = 120;
+  bool cpcTagFilter = 121;
+  bool cpcCrowdTarget = 122;
+  bool enableFilterByMinEcpm = 123;
+  bool playPageCtrPredictor = 124;
+  bool noQJust = 125;
+  bool enableDynamicFlowControl = 126;
+  bool feedTargeting = 127;
+  bool feedLooseFreq = 128;
+  bool coldBootBudget = 129;
+  bool feedsRandomResult = 130;
+  bool videoPageRandomResult = 131;
+  bool lrBussInterestOn = 132;
+  bool playpageMidPlaypage7dShwClkFromRedisOn = 133;
+  bool dmpOnPreferTagExp = 134;
+  string pcvrStrategy = 135;
+  string pcvrTable = 136;
+  int32 adxPkEnhanceFatcor = 137;
+  int32 adMechanismMonitor = 138;
+  repeated int32 disabledSources = 139;
+  int32 feedsRotateBrushes = 140;
+  int32 feedsRotateBrushesForVip = 141;
+  int32 userAdsShowEta = 142;
+  int32 videoAvoidUnitTimes = 143;
+  int32 videoAvoidUnitTimesForVip = 144;
+  bool enableGd = 145;
+  bool removeFrequencyControl = 146;
+  string pctrStrategy = 147;
+  string pctrFlyStrategy = 148;
+  string playpagePctrStrategy = 149;
+  bool usePlaypagePctrStrategy = 150;
+  bool pctrForCpm = 151;
+  string genderDemographicStrategyEnum = 152;
+  string ageDemographicStrategyEnum = 153;
+  bool brushDuplicateFilterForVip = 154;
+  bool brushDuplicateFilterForNormal = 155;
+  double outterCtrQFactor = 156;
+  double innerCtrQFactor = 157;
+  double pkOuterCtrQFactor = 158;
+  double pkInnerCtrQFactor = 159;
+  string accTagWeightName = 160;
+  int32 freqLimit = 161;
+  bool outerThres = 162;
+  bool outerThresBottom = 163;
+  bool outerQuitWhenNoInner = 164;
+  int64 outerLowCtrLimit = 165;
+  int64 androidCpcCtrThreshold = 166;
+  int64 iosCpcCtrThreshold = 167;
+  int64 ipadCpcCtrThreshold = 168;
+  int64 androidCpcEcpmThreshold = 169;
+  int64 iosCpcEcpmThreshold = 170;
+  int64 ipadCpcEcpmThreshold = 171;
+  int64 androidCpmCtrThreshold = 172;
+  int64 iosCpmCtrThreshold = 173;
+  int64 ipadCpmCtrThreshold = 174;
+  int64 androidCpmEcpmThreshold = 175;
+  int64 iosCpmEcpmThreshold = 176;
+  int64 ipadCpmEcpmThreshold = 177;
+  double dpaPctrCoefficient = 178;
+  double unDpaPctrCoefficient = 179;
+  int64 dpaAndroidCtrThreshold = 180;
+  int64 dpaIosCtrThreshold = 181;
+  int64 unDpaAndroidCtrThreshold = 182;
+  int64 unDpaIosCtrThreshold = 183;
+  double dpaAndroidEcpmThreshold = 184;
+  double dpaIosEcpmThreshold = 185;
+  double unDpaAndroidEcpmThreshold = 186;
+  double unDpaIosEcpmThreshold = 187;
+  int64 playpageInnerAndroidCtrThreshold = 188;
+  int64 playpageInnerIosCtrThreshold = 189;
+  double playpageInnerAndroidEcpmThreshold = 190;
+  double playpageInnerIosEcpmThreshold = 191;
+  bool usePrior = 192;
+  bool useRedisStockConfig = 193;
+  string playpagePcvrTable = 194;
+  string cpaPcvrTable = 195;
+  string cpaPlayPagePcvrTable = 196;
+  string cpaConfigKey = 197;
+  int32 expRatioTracer = 198;
+  string dynamicFrom = 199;
+  int32 dynamicBrushTimes = 200;
+  bool enableCtrTruncation = 201;
+  int32 ctrTruncationNewOuterUnitNum = 202;
+  int32 ctrTruncationNewInnerUnitNum = 203;
+  int32 ctrTruncationOldOuterUnitNum = 204;
+  int32 ctrTruncationOldInnerUnitNum = 205;
+  bool enableColdBootStrategy = 206;
+  int32 coldBootPickedNumber = 207;
+  bool outerAdPriority = 208;
+  int64 androidInnerCpcCtrThreshold = 209;
+  int64 iosInnerCpcCtrThreshold = 210;
+  int64 androidInnerCpcEcpmThreshold = 211;
+  int64 iosInnerCpcEcpmThreshold = 212;
+  int64 ipadInnerCpcEcpmThreshold = 213;
+  int64 androidInnerCpmCtrThreshold = 214;
+  int64 iosInnerCpmCtrThreshold = 215;
+  int64 androidInnerCpmEcpmThreshold = 216;
+  int64 iosInnerCpmEcpmThreshold = 217;
+  bool switchOnLowCreativeWeight = 218;
+  int32 nonRotateSourceIndex = 219;
+  bool noOuterAdOverMaxBrush = 220;
+  int32 cardIndexInnerOuterControl = 221;
+  int32 feedbackStrategyId = 222;
+  bool enableCvrThreshold = 223;
+  int32 resistGif = 224;
+  bool landscape = 225;
+  int64 personalFlyFeedCtrThreshold = 226;
+  int64 personalFlyPlayPageCtrThreshold = 227;
+  int64 personalFlyFeedEcpmThreshold = 228;
+  int64 personalFlyPlayPageEcpmThreshold = 229;
+  int64 contentUpMinCtr = 230;
+  int64 contentFlyFeedEcpmThreshold = 231;
+  int64 contentFlyPlayPageEcpmThreshold = 232;
+  double personalUpEcpmWeight = 233;
+  string personalUpFeatureWeightExpName = 234;
+  double personalUpFeatureWeightInnerSquashing = 235;
+  double personalUpFeatureWeightOuterSquashing = 236;
+  bool openDivin = 237;
+  int64 upMid = 238;
+  bool followPolicy = 239;
+  string outerBeatInnerExpName = 240;
+  bool onFilterOptimize = 241;
+  bool enablePredictionForDpa = 242;
+  bool openFlyDynamicThreshold = 243;
+  bool useNewDynamicThreshold = 244;
+  double personUpDynamicThresholdPlayCounts = 245;
+  double personUpDynamicThresholdFansIncreaseT = 246;
+  string personUpDynamicThresholdExpKey = 247;
+  double personUpDynamicThresholdPlayCountDefaultThreshold = 248;
+  double personUpDynamicThresholdFansIncreaseDefaultThreshold = 249;
+  int32 creativeGradeScore = 250;
+  string creativeGradeStrategy = 251;
+  bool enableCompanyProductFilter = 252;
+  bool removeComCreativeTypeFilter = 253;
+  bool limitAdxAfterTime = 254;
+  string pricingStrategyName = 255;
+  int32 innerDynamicPriceRatio = 256;
+  int32 outerDynamicPriceRatio = 257;
+  bool enablePricingStrategy = 258;
+  bool enableParallel = 259;
+  string playpageRecallStrategy = 260;
+  string feedRecallStrategy = 261;
+  string businessMarkGroup = 262;
+  string dynamicFlyExpName = 263;
+  bool openDivinPcvr = 264;
+  bool openDivinPf = 265;
+  bool useH5 = 266;
+  int32 h5AndroidTestVersion = 267;
+  int32 h5IosTestVersion = 268;
+  int32 h5IpadTestVersion = 269;
+  bool openPlayPageDynamicTitle = 270;
+  bool openFeedsDynamicTitle = 271;
+  bool openPlayPageDynamicImg = 272;
+  bool openFeedsDynamicImg = 273;
+  string dynamicTitleTableName = 274;
+  string dynamicImgTableName = 275;
+  bool ocpxNew = 276;
+  string flyCpaConfigKey = 277;
+  string pcvrFlyStrategy = 278;
+  string performanceExpName = 279;
+  int32 topViewId = 280;
+  string gameId = 281;
+  bool playpageDpaCreativeCutOn = 282;
+  bool feedsDpaCreativeCutOn = 283;
+  int32 feedsDpaCreativeCutCount = 284;
+  int32 playpageDpaCreativeCutCount = 285;
+  int32 dpaCutRandomRatio = 286;
+  int32 cutOffCreativeMinShow = 287;
+  map<string, StringDoubleMap> powderRisingC = 288;
+  double powderRisingDefaultAvgCvr = 289;
+  double powderRisingBetaMin = 290;
+  double powderRisingBetaMax = 291;
+  string powderRisingExpKey = 292;
+  bool sspParallel = 293;
+  repeated FreqRuleDto freqRules = 294;
+  int32 ctrPredictorTimeout = 295;
+  string pcvrThresholdExpKey = 296;
+  bool dpaCutByRecall = 297;
+  bool feedsCloseSmallBudget = 298;
+  bool playpageCloseSmallBudget = 299;
+  bool sortAdx = 300;
+  repeated int64 sensitiveAccountIds = 301;
+  int32 userAdsShowEtaForVip = 302;
+  bool preLoading = 303;
+  bool dmpOnExp = 304;
+  string dmpExpKey = 305;
+  bool dmpOnAgeExp = 306;
+  bool dmpOnGenderExp = 307;
+  bool dmpOnContentTagExp = 308;
+  bool dmpOnGroupsExp = 309;
+  int32 dmpIgnoredType = 310;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/dto/AdResponseDto.java
+message AdResponseDto {
+  bytes sourceads = 1;
+  int32 hasdanmu = 2;
+  repeated int64 cids = 3;
+  map<int64, bool> epids = 4;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/dto/AdsControlDto.java
+message AdsControlDto {
+  int32 hasDanmu = 1;
+  repeated int64 cids = 2;
+  repeated AdOgvEpDto eps = 3;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/dto/BceAdDto.java
+message BceAdDto {
+  int32 cmMark = 1;
+  bool isAd = 2;
+  string adType = 3;
+  int64 creativeId = 4;
+  int64 unitId = 5;
+  int64 planId = 6;
+  int64 accountId = 7;
+  int64 companyGroupId = 8;
+  int64 orderId = 9;
+  int64 scheduleId = 10;
+  int32 frequencyUnit = 11;
+  int32 frequencyLimit = 12;
+  int32 styleAbility = 13;
+  int32 cardType = 14;
+  int32 firstBusinessCategoryId = 15;
+  int32 secondBusinessCategoryId = 16;
+  int32 thirdBusinessCategoryId = 17;
+  StringFrequencyCellMap namedFrequencyCells = 18;
+  string namedLatestIdsJsonString = 19;
+  map<string, StringFrequencyCellMap> typedNamedFrequencyCells = 20;
+  int32 danmuBegin = 21;
+  google.protobuf.Any adInfo = 22;
+  repeated FreqUpdateDto freqUpdates = 23;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/dto/CompanyGroupOrAccountProductInfoDto.java
+message CompanyGroupOrAccountProductInfoDto {
+  bytes companygroupproducttuple = 1;
+  int32 showCount = 2;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/dto/CompanyGroupProductTupleDto.java
+message CompanyGroupProductTupleDto {
+  int32 acType = 1;
+  int64 acId = 2;
+  int32 productId = 3;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/dto/FreqRuleDto.java
+message FreqRuleDto {
+  string name = 1;
+  int32 freqTarget = 2;
+  int32 interval = 3;
+  int32 freqUnit = 4;
+  int32 limit = 5;
+  map<string, int32> showInfo = 6;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/dto/FrequencyCellDto.java
+message FrequencyCellDto {
+  int32 frequencyUnit = 1;
+  int32 frequencyInterval = 2;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/dto/FreqUpdateDto.java
+message FreqUpdateDto {
+  string name = 1;
+  string id = 2;
+  int64 eta = 3;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/dto/IntLatestCellDto.java
+message IntLatestCellDto {
+  repeated int32 currentset = 1;
+  repeated IntList recentHisList = 2;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/dto/IntList.java
+message IntList {
+  repeated int32 data = 1;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/dto/LocationResourceDto.java
+message LocationResourceDto {
+  int32 resourceId = 1;
+  int32 resourceType = 2;
+  int32 pageId = 3;
+  int32 platform = 4;
+  bool feeds = 5;
+  bool videoPageRecommend = 6;
+  bool dynamicPage = 7;
+  repeated LocationSourceDto sourceList = 8;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/dto/LocationSourceDto.java
+message LocationSourceDto {
+  int32 sourceId = 1;
+  int32 index = 2;
+  repeated int32 templateIdList = 3;
+  bool supportAdx = 4;
+  int32 cardIndex = 5;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/dto/LongEventEntryDto.java
+message LongEventEntryDto {
+  int64 event = 1;
+  int64 time = 2;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/dto/LongList.java
+message LongList {
+  repeated int64 data = 1;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/dto/ServiceResponseDto.java
+message ServiceResponseDto {
+  int32 code = 1;
+  string message_ = 2;
+  AdResponseDto data = 3;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/dto/SourceContentDto.java
+message SourceContentDto {
+  string requestId = 1;
+  int32 sourceId = 2;
+  int32 resourceId = 3;
+  bool isAdLoc = 4;
+  google.protobuf.Int32Value serverType = 5;
+  string clientIp = 6;
+  google.protobuf.Int32Value cardIndex = 7;
+  int32 index = 8;
+  com.bapis.bcg.sunspot.ad.bce.AdDto adContent = 9;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/dto/StringDoubleMap.java
+message StringDoubleMap {
+  map<string, double> data = 1;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/dto/StringEventEntryDto.java
+message StringEventEntryDto {
+  string event = 1;
+  int64 time = 2;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/dto/StringFrequencyCellMap.java
+message StringFrequencyCellMap {
+  map<string, FrequencyCellDto> data = 1;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/dto/StringList.java
+message StringList {
+  repeated string data = 1;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/dto/StringLongEntryMap.java
+message StringLongEntryMap {
+  map<string, LongEventEntryDto> data = 1;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/dto/StringLongMap.java
+message StringLongMap {
+  map<string, int64> data = 1;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/dto/UserAppInfoDto.java
+message UserAppInfoDto {
+  int32 id = 1;
+  int32 type = 2;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bcg/sunspot/ad/dto";

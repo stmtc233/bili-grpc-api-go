@@ -3,156 +3,12 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.interfaces.v1;
 
-import "bilibili/app/archive/middleware/v1/messages.proto";
-import "bilibili/app/archive/v1/messages.proto";
-import "bilibili/app/card/v1/messages.proto";
-import "bilibili/app/dynamic/v2/messages.proto";
-
-enum ButType {
-  BUT_INVALID = 0;
-  BUT_REDIRECT = 1;
-  BUT_LIKE = 2;
-}
-
-enum CommentType {
-  comment_type_none = 0;
-  comment_type_redirect = 1;
-  comment_type_judge = 2;
-}
-
 enum DT {
   Unknown = 0;
   Phone = 1;
   Pad = 2;
   PC = 3;
   TV = 4;
-  Car = 5;
-  Iot = 6;
-  AndPad = 7;
-}
-
-enum FacialRecognitionVerifyFrom {
-  VerifyUnknownFrom = 0;
-  VerifyFromGuardian = 1;
-  VerifyFromAppeal = 2;
-}
-
-enum From {
-  ArchiveTab = 0;
-  DynamicTab = 1;
-}
-
-enum HistorySource {
-  history = 0;
-  shopping = 1;
-}
-
-enum ModelStatus {
-  CloseStatus = 0;
-  OpenStatus = 1;
-  NotSetStatus = 2;
-}
-
-enum PwdFrom {
-  UnknownFrom = 0;
-  TeenagersAntiAddictionFrom = 1;
-  TeenagersCurfewFrom = 2;
-  TeenagersLoginFrom = 3;
-  TeenagersLogOutFrom = 4;
-  FamilyAntiAddictionFrom = 5;
-  FamilyCurfewFrom = 6;
-  FamilyLogOutFrom = 7;
-  FamilyTimeLockFrom = 8;
-  TeenagersQuitPwdFrom = 9;
-  TeenagersModifyPwdFrom = 10;
-  FamilyQuitFrom = 11;
-  OSTeenagersLogin = 12;
-  OSTeenagersLogout = 13;
-  TeenagersSetAge = 14;
-  OSTeenagersSetAge = 15;
-}
-
-enum SugPostIcon {
-  SUG_POST_ICON_DEFAULT = 0;
-  SUG_POST_ICON_ARROW = 1;
-}
-
-enum SugPreIcon {
-  SUG_PRE_ICON_DEFAULT = 0;
-  SUG_PRE_ICON_CLOCK = 1;
-  SUG_PRE_ICON_MAGNIFYING_GLASS = 2;
-}
-
-enum TabType {
-  TAB_INVALID = 0;
-  TAB_OGV_DETAIL = 6;
-  TAB_OGV_REPLY = 7;
-  TAB_FEED_BID = 8;
-  TAB_FEED_SMALL = 9;
-}
-
-enum TranslateStatus {
-  TRANSLATE_STATUS_UNNEEDED = 0;
-  TRANSLATE_STATUS_TRANSLATED = 1;
-  TRANSLATE_STATUS_UNTRANSLATED = 2;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/Arc.java
-message Arc {
-  com.bapis.bilibili.app.archive.v1.Arc archive = 1;
-  string uri = 2;
-  string viewContent = 3;
-  int64 iconType = 4;
-  string coverIcon = 5;
-  bool isFold = 6;
-  bool isPugv = 7;
-  string publishTimeText = 8;
-  repeated string badges = 9;
-  bool isOneself = 10;
-  string coverLeftIcon = 11;
-  string coverLeftText = 12;
-  string subTitleIcon = 13;
-  string subTitle = 14;
-  string coverRightIcon = 15;
-  string coverRightText = 16;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/Badge.java
-message Badge {
-  string text = 1;
-  string icon = 2;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/BigItem.java
-message BigItem {
-  string title = 1;
-  string coverImageUri = 2;
-  string uri = 3;
-  string coverRightText = 4;
-  string coverLeftText1 = 5;
-  int64 coverLeftIcon1 = 6;
-  string coverLeftText2 = 7;
-  int64 coverLeftIcon2 = 8;
-  UserCard userCard = 9;
-  LikeButton likeButton = 10;
-  int64 param = 11;
-  com.bapis.bilibili.app.card.v1.SharePlane sharePlane = 12;
-  com.bapis.bilibili.app.card.v1.PanelMeta threePointMeta = 13;
-  com.bapis.bilibili.app.card.v1.InlineProgressBar inlineProgressBar = 14;
-  int32 canPlay = 15;
-  com.bapis.bilibili.app.card.v1.PlayerArgs playerArgs = 16;
-  bool isFav = 17;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/Button.java
-message Button {
-  string title = 1;
-  string link = 2;
-  string id = 3;
-  int64 icon = 4;
-  ButType butType = 5;
-  int32 followState = 6;
-  string hasTitle = 7;
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/CardArticle.java
@@ -171,23 +27,6 @@ message CardCheese {
   int64 progress = 2;
   int64 duration = 3;
   string subtitle = 4;
-  int64 state = 5;
-  int64 seasonId = 6;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/CardDrama.java
-message CardDrama {
-  string cover = 1;
-  int64 progress = 2;
-  int64 duration = 3;
-  string subtitle = 4;
-  string badge = 5;
-  int64 state = 6;
-  int64 seasonId = 7;
-  int64 episodeId = 8;
-  string miniAppName = 9;
-  string miniAppId = 10;
-  string jumpUrl = 11;
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/CardLive.java
@@ -199,8 +38,6 @@ message CardLive {
   int32 status = 5;
   bool displayAttention = 6;
   Relation relation = 7;
-  string badge = 8;
-  string coverTopText = 9;
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/CardOGV.java
@@ -209,8 +46,6 @@ message CardOGV {
   int64 progress = 2;
   int64 duration = 3;
   string subtitle = 4;
-  string badge = 5;
-  int64 state = 6;
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/CardUGC.java
@@ -225,41 +60,6 @@ message CardUGC {
   int32 page = 8;
   string subtitle = 9;
   Relation relation = 10;
-  string bvid = 11;
-  int64 videos = 12;
-  string shortLink = 13;
-  string shareSubtitle = 14;
-  int64 view = 15;
-  int64 state = 16;
-  string badge = 17;
-  Badge badgeV2 = 18;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/Cast.java
-message Cast {
-  repeated MediaPerson person = 1;
-  string title = 2;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/ChannelInfo.java
-message ChannelInfo {
-  int64 channelId = 1;
-  bool subscribed = 2;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/ClearReq.java
-message ClearReq {
-  string business = 1;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/CommentItem.java
-message CommentItem {
-  string icon = 1;
-  string url = 2;
-  string title = 3;
-  CommentType type = 4;
-  string actionType = 5;
-  string id = 6;
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/Cursor.java
@@ -276,7 +76,6 @@ message CursorItem {
     CardArticle cardArticle = 3;
     CardLive cardLive = 4;
     CardCheese cardCheese = 5;
-    CardDrama cardDrama = 17;
   }
   string title = 6;
   string uri = 7;
@@ -286,9 +85,6 @@ message CursorItem {
   string business = 11;
   int32 tp = 12;
   DeviceType dt = 13;
-  bool hasShare = 14;
-  string report = 15;
-  TranslateInfo translateInfo = 16;
   enum CardItemCase {
     CARDITEM_NOT_SET = 0;
     CARD_UGC = 1;
@@ -296,7 +92,6 @@ message CursorItem {
     CARD_ARTICLE = 3;
     CARD_LIVE = 4;
     CARD_CHEESE = 5;
-    CARD_DRAMA = 17;
   }
 
 }
@@ -313,76 +108,17 @@ message CursorReply {
 message CursorReq {
   Cursor cursor = 1;
   string business = 2;
-  PlayerPreloadParams playerPreload = 3;
-  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 4;
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/CursorTab.java
 message CursorTab {
   string business = 1;
   string name = 2;
-  string router = 3;
-  bool focus = 4;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/CursorV2Reply.java
-message CursorV2Reply {
-  repeated CursorItem items = 1;
-  Cursor cursor = 2;
-  bool hasMore = 3;
-  string emptyLink = 4;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/CursorV2Req.java
-message CursorV2Req {
-  Cursor cursor = 1;
-  string business = 2;
-  PlayerPreloadParams playerPreload = 3;
-  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 4;
-  bool isLocal = 5;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/DefaultWordsReply.java
-message DefaultWordsReply {
-  string trackid = 1;
-  string param = 2;
-  string show = 3;
-  string word = 4;
-  int64 showFront = 5;
-  string expStr = 6;
-  string goto = 7;
-  string value = 8;
-  string uri = 9;
-  int64 enableRefresh = 10;
-  uint64 refreshIntervalMilli = 11;
-  int64 enableAnimation = 12;
-  uint64 animationTimeMilli = 13;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/DefaultWordsReq.java
-message DefaultWordsReq {
-  int64 from = 1;
-  int64 loginEvent = 2;
-  int32 teenagersMode = 3;
-  int32 lessonsMode = 4;
-  string tab = 5;
-  string eventId = 6;
-  string avid = 7;
-  string query = 8;
-  int64 an = 9;
-  int64 isFresh = 10;
-  string splashGuide = 11;
-  int64 splashId = 12;
-  int64 refreshType = 13;
-  string userAct = 14;
-  int32 searchPageReturn = 15;
-  string dislike = 16;
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/DeleteReq.java
 message DeleteReq {
   repeated HisInfo hisInfo = 1;
-  string tab = 2;
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/DeviceType.java
@@ -391,241 +127,10 @@ message DeviceType {
   string icon = 2;
 }
 
-// Source: com/bapis/bilibili/app/interfaces/v1/Dynamic.java
-message Dynamic {
-  com.bapis.bilibili.app.dynamic.v2.DynamicItem dynamic = 1;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/EnableOverseasTeenagersModeReply.java
-message EnableOverseasTeenagersModeReply {
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/EnableOverseasTeenagersModeReq.java
-message EnableOverseasTeenagersModeReq {
-  string deviceToken = 1;
-  int64 ageThreshold = 2;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/FacialRecognitionVerifyReply.java
-message FacialRecognitionVerifyReply {
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/FacialRecognitionVerifyReq.java
-message FacialRecognitionVerifyReq {
-  FacialRecognitionVerifyFrom from = 1;
-  string deviceToken = 2;
-}
-
 // Source: com/bapis/bilibili/app/interfaces/v1/HisInfo.java
 message HisInfo {
   string business = 1;
   int64 kid = 2;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/HistoryTabReply.java
-message HistoryTabReply {
-  repeated CursorTab tab = 1;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/HistoryTabReq.java
-message HistoryTabReq {
-  string business = 1;
-  HistorySource source = 2;
-  string keyword = 3;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/LatestHistoryReply.java
-message LatestHistoryReply {
-  CursorItem items = 1;
-  string scene = 2;
-  int64 rtime = 3;
-  string flag = 4;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/LatestHistoryReq.java
-message LatestHistoryReq {
-  string business = 1;
-  PlayerPreloadParams playerPreload = 2;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/LikeButton.java
-message LikeButton {
-  int64 aid = 1;
-  int32 count = 2;
-  bool showCount = 3;
-  string event = 4;
-  int32 selected = 5;
-  string eventV2 = 6;
-  LikeButtonResource likeResource = 7;
-  LikeButtonResource disLikeResource = 8;
-  LikeButtonResource likeNightResource = 9;
-  LikeButtonResource disLikeNightResource = 10;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/LikeButtonResource.java
-message LikeButtonResource {
-  string url = 1;
-  string hash = 2;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/LikeCard.java
-message LikeCard {
-  int64 like = 1;
-  bool isFollow = 2;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/MediaCard.java
-message MediaCard {
-  string cover = 1;
-  string curTitle = 2;
-  string style = 3;
-  string label = 4;
-  Button butFirst = 5;
-  Supernatant butSecond = 6;
-  Scores scores = 7;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/MediaCommentReply.java
-message MediaCommentReply {
-  string errMsg = 1;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/MediaCommentReq.java
-message MediaCommentReq {
-  string id = 1;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/MediaDetailReply.java
-message MediaDetailReply {
-  Cast cast = 1;
-  Staff staff = 2;
-  Overview overview = 3;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/MediaDetailReq.java
-message MediaDetailReq {
-  int64 bizId = 1;
-  int64 bizType = 2;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/MediaFollowReply.java
-message MediaFollowReply {
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/MediaFollowReq.java
-message MediaFollowReq {
-  string id = 1;
-  ButType type = 2;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/MediaPerson.java
-message MediaPerson {
-  string realName = 1;
-  string squareUrl = 2;
-  string character = 3;
-  int64 personId = 4;
-  string type = 5;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/MediaRelationReply.java
-message MediaRelationReply {
-  string offset = 1;
-  bool hasMore = 2;
-  repeated SmallItem list = 3;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/MediaRelationReq.java
-message MediaRelationReq {
-  int64 bizId = 1;
-  int64 bizType = 2;
-  int64 feedId = 3;
-  string offset = 5;
-  int32 ps = 6;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/MediaTabReply.java
-message MediaTabReply {
-  MediaCard mediaCard = 1;
-  repeated ShowTab tab = 2;
-  int64 defaultTabIndex = 3;
-  ChannelInfo channelInfo = 4;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/MediaTabReq.java
-message MediaTabReq {
-  int64 bizId = 1;
-  int64 bizType = 2;
-  string source = 3;
-  string spmid = 4;
-  map<string, string> args = 5;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/MediaVideoReply.java
-message MediaVideoReply {
-  string offset = 1;
-  bool hasMore = 2;
-  repeated BigItem list = 3;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/MediaVideoReq.java
-message MediaVideoReq {
-  int64 bizId = 1;
-  int64 bizType = 2;
-  int64 feedId = 3;
-  string offset = 5;
-  int32 ps = 6;
-  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 7;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/ModeStatusReply.java
-message ModeStatusReply {
-  repeated UserModel userModels = 1;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/ModeStatusReq.java
-message ModeStatusReq {
-  string deviceToken = 1;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/ModifyPwdReply.java
-message ModifyPwdReply {
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/ModifyPwdReq.java
-message ModifyPwdReq {
-  string oldPwd = 1;
-  string newPwd = 2;
-  string deviceToken = 3;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/NegativeFeedback.java
-message NegativeFeedback {
-  string defaultWordsFeedbackTitle = 1;
-  string feedbackTitleV2 = 2;
-  bool displayFeedback = 3;
-  string feedbackTitle = 4;
-  string feedbackReasonTitle = 5;
-  int64 toastTime = 6;
-  repeated NegativeFeedbackItem feedbackList = 7;
-  string submitText = 8;
-  string hideSearchDiscoverText = 9;
-  string submitSuccessText = 10;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/NegativeFeedbackItem.java
-message NegativeFeedbackItem {
-  string text = 1;
-  bool isUserFill = 2;
-  string userFillTitle = 3;
-  int64 sortIndex = 4;
-  int64 userFillLimit = 5;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/NftFaceIcon.java
-message NftFaceIcon {
-  int32 regionType = 1;
-  string icon = 2;
-  int32 showStatus = 3;
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/NoReply.java
@@ -636,33 +141,6 @@ message NoReply {
 message OfficialVerify {
   int32 type = 1;
   string desc = 2;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/Overview.java
-message Overview {
-  string title = 1;
-  string text = 2;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/Page.java
-message Page {
-  int64 pn = 1;
-  int64 total = 2;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/PlayerPreloadParams.java
-message PlayerPreloadParams {
-  int64 qn = 1;
-  int64 fnver = 2;
-  int64 fnval = 3;
-  int64 forceHost = 4;
-  int64 fourk = 5;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/Policy.java
-message Policy {
-  int64 interval = 1;
-  bool useLocalTime = 2;
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/ReasonStyle.java
@@ -712,121 +190,6 @@ message ResultItem {
   repeated ReasonStyle badges = 24;
   string styles = 25;
   int64 moduleId = 26;
-  string liveLink = 27;
-  int32 faceNftNew = 28;
-  NftFaceIcon nftFaceIcon = 29;
-  int32 isSeniorMember = 30;
-  int32 isSugStyleExp = 31;
-  bool showLiveIcon = 32;
-  int64 sugRef = 33;
-  int64 sugRef1 = 34;
-  string sugSubType = 35;
-  string sugQueryTag = 36;
-  SugPreIcon preIcon = 37;
-  SugPostIcon postIcon = 38;
-  string sugRcmdReason = 39;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/Scores.java
-message Scores {
-  float score = 1;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/SearchArchiveReply.java
-message SearchArchiveReply {
-  repeated Arc archives = 1;
-  int64 total = 2;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/SearchArchiveReq.java
-message SearchArchiveReq {
-  string keyword = 1;
-  int64 mid = 2;
-  int64 pn = 3;
-  int64 ps = 4;
-  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 5;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/SearchDynamicReply.java
-message SearchDynamicReply {
-  repeated Dynamic dynamics = 1;
-  int64 total = 2;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/SearchDynamicReq.java
-message SearchDynamicReq {
-  string keyword = 1;
-  int64 mid = 2;
-  int64 pn = 3;
-  int64 ps = 4;
-  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 5;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/SearchReply.java
-message SearchReply {
-  repeated CursorItem items = 1;
-  bool hasMore = 2;
-  Page page = 3;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/SearchReq.java
-message SearchReq {
-  string keyword = 1;
-  int64 pn = 2;
-  string business = 3;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/SearchTabReply.java
-message SearchTabReply {
-  int64 focus = 1;
-  repeated Tab tabs = 2;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/SearchTabReq.java
-message SearchTabReq {
-  string keyword = 1;
-  int64 mid = 2;
-  From from = 3;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/SetTeenagersModelAgeReply.java
-message SetTeenagersModelAgeReply {
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/SetTeenagersModelAgeReq.java
-message SetTeenagersModelAgeReq {
-  string pwd = 1;
-  PwdFrom pwdFrom = 2;
-  string deviceToken = 3;
-  int32 age = 4;
-  bool isDynamic = 5;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/ShowTab.java
-message ShowTab {
-  TabType tabType = 1;
-  string title = 2;
-  string url = 3;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/SmallItem.java
-message SmallItem {
-  string title = 1;
-  string coverImageUri = 2;
-  string uri = 3;
-  string coverRightText = 4;
-  string coverLeftText1 = 5;
-  int64 coverLeftIcon1 = 6;
-  string coverLeftText2 = 7;
-  int64 coverLeftIcon2 = 8;
-  int64 param = 9;
-  int64 mid = 10;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/Staff.java
-message Staff {
-  string title = 1;
-  string text = 2;
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/SuggestionResult3Reply.java
@@ -834,7 +197,6 @@ message SuggestionResult3Reply {
   string trackid = 1;
   repeated ResultItem list = 2;
   string expStr = 3;
-  NegativeFeedback negativeFeedback = 4;
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/SuggestionResult3Req.java
@@ -842,86 +204,6 @@ message SuggestionResult3Req {
   string keyword = 1;
   int32 highlight = 2;
   int32 teenagersMode = 3;
-  string userAct = 4;
-  string feedbackList = 5;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/Supernatant.java
-message Supernatant {
-  string title = 1;
-  repeated CommentItem item = 2;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/Tab.java
-message Tab {
-  string title = 1;
-  string uri = 2;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/TranslateInfo.java
-message TranslateInfo {
-  TranslateStatus translationStatus = 1;
-  string translatedTitle = 2;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/UpdateReserveStartTimeReply.java
-message UpdateReserveStartTimeReply {
-  string descText = 1;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/UpdateReserveStartTimeReq.java
-message UpdateReserveStartTimeReq {
-  int64 sid = 1;
-  int64 newLivePlanStartTime = 2;
-  int64 type = 3;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/UpdateStatusReply.java
-message UpdateStatusReply {
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/UpdateStatusReq.java
-message UpdateStatusReq {
-  string pwd = 1;
-  bool switch = 2;
-  PwdFrom pwdFrom = 3;
-  string deviceToken = 4;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/UserCard.java
-message UserCard {
-  string userName = 1;
-  string userFace = 2;
-  string userUrl = 3;
-  int64 mid = 4;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/UserModel.java
-message UserModel {
-  int64 mid = 1;
-  string mode = 2;
-  string wsxcde = 3;
-  ModelStatus status = 4;
-  Policy policy = 5;
-  bool isForced = 6;
-  bool mustTeen = 7;
-  bool mustRealName = 8;
-  bool isParentControl = 9;
-  int32 age = 10;
-  bool isOverseas = 11;
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/VerifyPwdReply.java
-message VerifyPwdReply {
-}
-
-// Source: com/bapis/bilibili/app/interfaces/v1/VerifyPwdReq.java
-message VerifyPwdReq {
-  string pwd = 1;
-  PwdFrom pwdFrom = 2;
-  bool isDynamic = 3;
-  bool closeDevice = 4;
-  string deviceToken = 5;
 }
 
 

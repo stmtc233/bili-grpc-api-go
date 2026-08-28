@@ -15,24 +15,6 @@ message Device {
   string brand = 8;
   string model = 9;
   string osver = 10;
-  string fpLocal = 11;
-  string fpRemote = 12;
-  string versionName = 13;
-  string fp = 14;
-  int64 fts = 15;
-  string guestId = 16;
-}
-
-// Source: com/bapis/bilibili/metadata/device/DeviceType.java
-message DeviceType {
-}
-
-// Source: com/bapis/bilibili/metadata/device/MobiApp.java
-message MobiApp {
-}
-
-// Source: com/bapis/bilibili/metadata/device/Platform.java
-message Platform {
 }
 
 

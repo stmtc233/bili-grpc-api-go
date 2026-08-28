@@ -1,0 +1,38 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.show.region.v1;
+
+// Source: com/bapis/bilibili/app/show/region/v1/RegionConfig.java
+message RegionConfig {
+  string scenesName = 1;
+  string scenesType = 2;
+}
+
+// Source: com/bapis/bilibili/app/show/region/v1/RegionInfo.java
+message RegionInfo {
+  int32 tid = 1;
+  int32 reid = 2;
+  string name = 3;
+  string logo = 4;
+  string goto = 5;
+  string param = 6;
+  string uri = 7;
+  int32 type = 8;
+  int32 isBangumi = 9;
+  repeated RegionInfo children = 10;
+  repeated RegionConfig config = 11;
+}
+
+// Source: com/bapis/bilibili/app/show/region/v1/RegionReply.java
+message RegionReply {
+  repeated RegionInfo regions = 1;
+}
+
+// Source: com/bapis/bilibili/app/show/region/v1/RegionReq.java
+message RegionReq {
+  string lang = 1;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/show/region/v1";

@@ -1,0 +1,12 @@
+// Reconstructed from gRPC service descriptors.
+syntax = "proto3";
+
+package bcg.sunspot.ad.api;
+
+import "bcg/sunspot/ad/vo/messages.proto";
+
+service Sunspot {
+  rpc AdSearch(.com.bapis.bcg.sunspot.ad.vo.SunspotAdRequestForView) returns (.com.bapis.bcg.sunspot.ad.vo.SunspotAdReplyForView);
+}
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bcg/sunspot/ad/api";

@@ -1,0 +1,14 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bcg.rtb.ad.api;
+
+import "bcg/sunspot/ad/spi/messages.proto";
+
+// Source: com/bapis/bcg/rtb/ad/api/SearchObj.java
+message SearchObj {
+  com.bapis.bcg.sunspot.ad.spi.Empty empty = 1;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bcg/rtb/ad/api";

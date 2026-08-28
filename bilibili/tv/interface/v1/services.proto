@@ -1,0 +1,24 @@
+// Reconstructed from gRPC service descriptors.
+syntax = "proto3";
+
+package bilibili.tv.interface.v1;
+
+import "bilibili/tv/messages.proto";
+
+service CardView {
+  rpc CardViewV2(.com.bapis.bilibili.tv.CardViewV2Req) returns (.com.bapis.bilibili.tv.CardViewV2Reply);
+  rpc MockMetaData(.com.bapis.bilibili.tv.MockMetaDataReq) returns (.com.bapis.bilibili.tv.MockMetaDataReply);
+}
+
+service DM {
+  rpc CommandDmsOtt(.com.bapis.bilibili.tv.CommandDmsOttReq) returns (.com.bapis.bilibili.tv.CommandDmsOttReply);
+  rpc DmSegMobile(.com.bapis.bilibili.tv.DmSegMobileReq) returns (.com.bapis.bilibili.tv.DmSegMobileReply);
+  rpc DmView(.com.bapis.bilibili.tv.DmViewReq) returns (.com.bapis.bilibili.tv.DmViewReply);
+  rpc TvViewProgress(.com.bapis.bilibili.tv.TvViewProgressReq) returns (.com.bapis.bilibili.tv.TvViewProgressReply);
+}
+
+service Search {
+  rpc SearchV2(.com.bapis.bilibili.tv.SearchV2Req) returns (.com.bapis.bilibili.tv.SearchV2Reply);
+}
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/tv/interface/v1";

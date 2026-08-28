@@ -1,41 +1,41 @@
-// Reconstructed from the checked-in gRPC service catalog.
+// Reconstructed from gRPC service descriptors.
 syntax = "proto3";
 
-package com.bapis.bilibili.broadcast.v1;
+package bilibili.broadcast.v1;
 
 import "bilibili/broadcast/v1/messages.proto";
 import "google/protobuf/empty.proto";
 
+service Add {
+  rpc Add(stream .com.bapis.bilibili.broadcast.v1.AddParams) returns (stream .com.bapis.bilibili.broadcast.v1.AddResult);
+}
+
 service Broadcast {
-  rpc Auth(AuthReq) returns (AuthResp);
-  rpc Heartbeat(HeartbeatReq) returns (HeartbeatResp);
-  rpc MessageAck(MessageAckReq) returns (.google.protobuf.Empty);
-  rpc Subscribe(TargetPath) returns (.google.protobuf.Empty);
-  rpc Unsubscribe(TargetPath) returns (.google.protobuf.Empty);
+  rpc Auth(.com.bapis.bilibili.broadcast.v1.AuthReq) returns (.com.bapis.bilibili.broadcast.v1.AuthResp);
+  rpc Heartbeat(.com.bapis.bilibili.broadcast.v1.HeartbeatReq) returns (.com.bapis.bilibili.broadcast.v1.HeartbeatResp);
+  rpc MessageAck(.com.bapis.bilibili.broadcast.v1.MessageAckReq) returns (.google.protobuf.Empty);
+  rpc Subscribe(.com.bapis.bilibili.broadcast.v1.TargetPath) returns (.google.protobuf.Empty);
+  rpc Unsubscribe(.com.bapis.bilibili.broadcast.v1.TargetPath) returns (.google.protobuf.Empty);
 }
 
 service BroadcastRoom {
-  rpc Enter(stream RoomReq) returns (stream RoomResp);
+  rpc Enter(stream .com.bapis.bilibili.broadcast.v1.RoomReq) returns (stream .com.bapis.bilibili.broadcast.v1.RoomResp);
 }
 
 service BroadcastTunnel {
-  rpc CreateTunnel(stream BroadcastFrame) returns (stream BroadcastFrame);
+  rpc CreateTunnel(stream .com.bapis.bilibili.broadcast.v1.BroadcastFrame) returns (stream .com.bapis.bilibili.broadcast.v1.BroadcastFrame);
 }
 
 service Laser {
-  rpc WatchLogUploadEvent(.google.protobuf.Empty) returns (stream LaserLogUploadResp);
+  rpc WatchLogUploadEvent(.google.protobuf.Empty) returns (stream .com.bapis.bilibili.broadcast.v1.LaserLogUploadResp);
 }
 
 service ModManager {
-  rpc WatchResource(.google.protobuf.Empty) returns (stream ModResourceResp);
+  rpc WatchResource(.google.protobuf.Empty) returns (stream .com.bapis.bilibili.broadcast.v1.ModResourceResp);
 }
 
 service Push {
-  rpc WatchMessage(.google.protobuf.Empty) returns (stream PushMessageResp);
-}
-
-service Test {
-  rpc WatchTestEvent(.google.protobuf.Empty) returns (stream TestResp);
+  rpc WatchMessage(.google.protobuf.Empty) returns (stream .com.bapis.bilibili.broadcast.v1.PushMessageResp);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/v1";

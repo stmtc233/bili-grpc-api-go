@@ -1,13 +1,13 @@
-// Reconstructed from the checked-in gRPC service catalog.
+// Reconstructed from gRPC service descriptors.
 syntax = "proto3";
 
-package com.bapis.bilibili.polymer.chronos.v1;
+package bilibili.polymer.chronos.v1;
 
 import "bilibili/polymer/chronos/v1/messages.proto";
 
 service ChronosService {
-  rpc ObtainChronosPackage(ObtainChronosPackageReq) returns (ObtainChronosPackageRsp);
-  rpc ObtainChronosPackageV2(ObtainChronosPackageV2Req) returns (ObtainChronosPackageRsp);
+  rpc ObtainChronosPackage(.com.bapis.bilibili.polymer.chronos.v1.ObtainChronosPackageReq) returns (.com.bapis.bilibili.polymer.chronos.v1.ObtainChronosPackageRsp);
+  rpc ObtainChronosPackageV2(.com.bapis.bilibili.polymer.chronos.v1.ObtainChronosPackageV2Req) returns (.com.bapis.bilibili.polymer.chronos.v1.ObtainChronosPackageRsp);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/polymer/chronos/v1";

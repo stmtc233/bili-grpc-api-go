@@ -1,0 +1,533 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.web.interfaces.v1;
+
+enum ReplyEmoteMetaSize {
+  EMOTE_META_SIZE_UNSPECIFIED = 0;
+  EMOTE_META_SIZE_SMALL = 1;
+  EMOTE_META_SIZE_BIG = 2;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/AccInfo.java
+message AccInfo {
+  int64 mid = 1;
+  string name = 2;
+  string sex = 3;
+  string face = 4;
+  string sign = 5;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/AccountCard.java
+message AccountCard {
+  string mid = 1;
+  string name = 2;
+  string sex = 3;
+  string rank = 4;
+  string face = 5;
+  int32 spacesta = 6;
+  string sign = 7;
+  CardLevelInfo levelInfo = 8;
+  PendantInfo pendant = 9;
+  NameplateInfo nameplate = 10;
+  OfficialInfo official = 11;
+  OfficialVerify officialVerify = 12;
+  CardVip vip = 13;
+  int64 fans = 14;
+  int64 friend = 15;
+  int64 attention = 16;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/Arc.java
+message Arc {
+  int64 aid = 1;
+  int64 videos = 2;
+  int32 typeId = 3;
+  string typeName = 4;
+  int32 copyright = 5;
+  string pic = 6;
+  string title = 7;
+  int64 pubdate = 8;
+  int64 ctime = 9;
+  string desc = 10;
+  int32 state = 11;
+  int32 access = 12;
+  int32 attribute = 13;
+  string tag = 14;
+  repeated string tags = 15;
+  int64 duration = 16;
+  int64 missionId = 17;
+  int64 orderId = 18;
+  string redirectUrl = 19;
+  int64 forward = 20;
+  Rights rights = 21;
+  Author author = 22;
+  Stat stat = 23;
+  string reportResult = 24;
+  string dynamic = 25;
+  int64 firstCid = 26;
+  Dimension dimension = 27;
+  repeated StaffInfo staffInfo = 28;
+  int64 seasonId = 29;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/Author.java
+message Author {
+  int64 mid = 1;
+  string name = 2;
+  string face = 3;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/Card.java
+message Card {
+  AccountCard card = 1;
+  Space space = 2;
+  bool following = 3;
+  int64 archiveCount = 4;
+  int32 articleCount = 5;
+  int64 follower = 6;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/CardLevelInfo.java
+message CardLevelInfo {
+  int32 cur = 1;
+  int32 min = 2;
+  int32 nowExp = 3;
+  int32 nextExp = 4;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/CardVip.java
+message CardVip {
+  int32 type = 1;
+  string dueRemark = 2;
+  int32 accessStatus = 3;
+  int32 vipStatus = 4;
+  string vipStatusWarn = 5;
+  int32 themeType = 6;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/Dimension.java
+message Dimension {
+  int64 width = 1;
+  int64 height = 2;
+  int64 rotate = 3;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/HotReply.java
+message HotReply {
+  ReplyPage page = 1;
+  repeated Reply replies = 2;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/NameplateInfo.java
+message NameplateInfo {
+  int32 nid = 1;
+  string name = 2;
+  string image = 3;
+  string imageSmall = 4;
+  string level = 5;
+  string condition = 6;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/OfficialInfo.java
+message OfficialInfo {
+  int32 role = 1;
+  string title = 2;
+  string desc = 3;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/OfficialVerify.java
+message OfficialVerify {
+  int32 type = 1;
+  string desc = 2;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/Page.java
+message Page {
+  int64 cid = 1;
+  int32 page = 2;
+  string from = 3;
+  string part = 4;
+  int64 duration = 5;
+  string vid = 6;
+  string desc = 7;
+  string weblink = 8;
+  Dimension dimension = 9;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/PendantInfo.java
+message PendantInfo {
+  int32 pid = 1;
+  string name = 2;
+  string image = 3;
+  int64 expire = 4;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/Reply.java
+message Reply {
+  int64 rpid = 1;
+  int64 oid = 2;
+  int32 type = 3;
+  int64 mid = 4;
+  int64 root = 5;
+  int64 parent = 6;
+  int64 dialog = 7;
+  int32 count = 8;
+  int32 rcount = 9;
+  int32 floor = 10;
+  int32 state = 11;
+  int32 fansGrade = 12;
+  uint32 attr = 13;
+  int64 ctime = 14;
+  string rpidStr = 15;
+  string rootStr = 16;
+  string parentStr = 17;
+  string dialogStr = 18;
+  int32 like = 19;
+  int32 hate = 20;
+  int32 action = 21;
+  ReplyMember member = 22;
+  ReplyContent content = 23;
+  repeated Reply replies = 24;
+  int32 assist = 25;
+  ReplyFolder folder = 26;
+  ReplyUpAction upAction = 27;
+  ReplyLabel label = 28;
+  string rawInput = 29;
+  bool showFollow = 30;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/ReplyContent.java
+message ReplyContent {
+  int64 rpId = 1;
+  string message_ = 2;
+  ReplyVote vote = 3;
+  repeated int64 ats = 4;
+  repeated string topics = 5;
+  uint32 ip = 6;
+  int32 plat = 7;
+  string device = 8;
+  string version = 9;
+  repeated ReplyMemberInfo members = 10;
+  map<string, ReplyEmote> emote = 11;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/ReplyEmote.java
+message ReplyEmote {
+  int64 id = 1;
+  int64 packageId = 2;
+  int64 state = 3;
+  int64 type = 4;
+  int64 attr = 5;
+  string text = 6;
+  string url = 7;
+  ReplyEmoteMeta meta = 8;
+  int64 ctime = 9;
+  int64 mtime = 10;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/ReplyEmoteMeta.java
+message ReplyEmoteMeta {
+  ReplyEmoteMetaSize size = 1;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/ReplyFansDetail.java
+message ReplyFansDetail {
+  int64 uid = 1;
+  int32 medalId = 2;
+  string medalName = 3;
+  int32 score = 4;
+  int32 level = 5;
+  int32 intimacy = 6;
+  int32 status = 7;
+  int32 received = 8;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/ReplyFolder.java
+message ReplyFolder {
+  bool hasFolded = 1;
+  bool isFolded = 2;
+  string rule = 3;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/ReplyLabel.java
+message ReplyLabel {
+  int64 rpid = 1;
+  string content = 2;
+  string textColor = 3;
+  string textColorNightMode = 4;
+  string bgColor = 5;
+  string bgColorNightMode = 6;
+  string link = 7;
+  string position = 8;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/ReplyLevelInfo.java
+message ReplyLevelInfo {
+  int32 cur = 1;
+  int32 min = 2;
+  int32 nowExp = 3;
+  int32 nextExp = 4;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/ReplyMember.java
+message ReplyMember {
+  ReplyMemberInfo info = 1;
+  ReplyFansDetail fansDetail = 2;
+  int32 following = 3;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/ReplyMemberInfo.java
+message ReplyMemberInfo {
+  int32 role = 1;
+  string mid = 2;
+  string name = 3;
+  string sex = 4;
+  string sign = 5;
+  string avatar = 6;
+  string rank = 7;
+  string displayRank = 8;
+  ReplyLevelInfo levelInfo = 9;
+  PendantInfo pendant = 10;
+  NameplateInfo nameplate = 11;
+  OfficialVerify officialVerify = 12;
+  ReplyVip vip = 13;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/ReplyPage.java
+message ReplyPage {
+  int64 acount = 1;
+  int64 count = 2;
+  int64 num = 3;
+  int64 size = 4;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/ReplyUpAction.java
+message ReplyUpAction {
+  bool like = 1;
+  bool reply = 2;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/ReplyVip.java
+message ReplyVip {
+  int32 type = 1;
+  int64 dueDate = 2;
+  string dueRemark = 3;
+  int32 accessStatus = 4;
+  int32 vipStatus = 5;
+  string vipStatusWarn = 6;
+  int32 themeType = 7;
+  VipLabel label = 8;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/ReplyVote.java
+message ReplyVote {
+  int64 id = 1;
+  string title = 2;
+  int32 cnt = 3;
+  string desc = 4;
+  bool deleted = 5;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/Rights.java
+message Rights {
+  int32 bp = 1;
+  int32 elec = 2;
+  int32 download = 3;
+  int32 movie = 4;
+  int32 pay = 5;
+  int32 hd5 = 6;
+  int32 noReprint = 7;
+  int32 autoplay = 8;
+  int32 ugcPay = 9;
+  int32 isCooperation = 10;
+  int32 ugcPayPreview = 11;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/SeasonEpisode.java
+message SeasonEpisode {
+  int64 seasonId = 1;
+  int64 sectionId = 2;
+  int64 id = 3;
+  int64 aid = 4;
+  int64 cid = 5;
+  string title = 6;
+  int64 attribute = 7;
+  Arc arc = 8;
+  Page page = 9;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/SeasonSection.java
+message SeasonSection {
+  int64 seasonId = 1;
+  int64 id = 2;
+  string title = 3;
+  int64 type = 4;
+  repeated SeasonEpisode episodes = 5;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/SeasonStat.java
+message SeasonStat {
+  int64 seasonId = 1;
+  int32 view = 2;
+  int32 danmaku = 3;
+  int32 reply = 4;
+  int32 fav = 5;
+  int32 coin = 6;
+  int32 share = 7;
+  int32 nowRank = 8;
+  int32 hisRank = 9;
+  int32 like = 10;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/Space.java
+message Space {
+  string sImg = 1;
+  string lImg = 2;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/Staff.java
+message Staff {
+  int64 mid = 1;
+  string title = 2;
+  string name = 3;
+  string face = 4;
+  VipInfo vip = 5;
+  OfficialInfo official = 6;
+  int64 follower = 7;
+  int32 labelStyle = 8;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/StaffInfo.java
+message StaffInfo {
+  int64 mid = 1;
+  string title = 2;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/Stat.java
+message Stat {
+  int64 aid = 1;
+  int32 view = 2;
+  int32 danmaku = 3;
+  int32 reply = 4;
+  int32 fav = 5;
+  int32 coin = 6;
+  int32 share = 7;
+  int32 nowRank = 8;
+  int32 hisRank = 9;
+  int32 like = 10;
+  int32 dislike = 11;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/Subtitle.java
+message Subtitle {
+  bool allowSubmit = 1;
+  repeated SubtitleItem list = 2;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/SubtitleItem.java
+message SubtitleItem {
+  int64 id = 1;
+  string lan = 2;
+  string lanDoc = 3;
+  bool isLock = 4;
+  int64 authorMid = 5;
+  string subtitleUrl = 6;
+  AccInfo author = 7;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/Tag.java
+message Tag {
+  int64 id = 1;
+  string name = 2;
+  string cover = 3;
+  string headCover = 4;
+  string content = 5;
+  string shortContent = 6;
+  int32 type = 7;
+  int32 state = 8;
+  int64 ctime = 9;
+  TagCount tagCount = 10;
+  int32 isAtten = 11;
+  int64 likes = 12;
+  int64 hates = 13;
+  int32 attribute = 14;
+  int32 liked = 15;
+  int32 hated = 16;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/TagCount.java
+message TagCount {
+  int64 view = 1;
+  int64 use = 2;
+  int64 atten = 3;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/UGCPayAsset.java
+message UGCPayAsset {
+  int64 price = 1;
+  map<string, int64> platformPrice = 2;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/UGCSeason.java
+message UGCSeason {
+  int64 id = 1;
+  string title = 2;
+  string cover = 3;
+  int64 mid = 4;
+  string intro = 5;
+  int32 signState = 6;
+  int64 attribute = 7;
+  repeated SeasonSection sections = 8;
+  SeasonStat stat = 9;
+  int64 epCount = 10;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/View.java
+message View {
+  Arc arc = 1;
+  bool noCache = 2;
+  repeated Page pages = 3;
+  Subtitle subtitle = 4;
+  UGCPayAsset asset = 5;
+  ViewLabel label = 6;
+  repeated Staff staff = 7;
+  UGCSeason ugcSeason = 8;
+  int64 steinGuideCid = 9;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/ViewDetailReply.java
+message ViewDetailReply {
+  View view = 1;
+  Card card = 2;
+  repeated Tag tags = 3;
+  HotReply reply = 4;
+  repeated Arc related = 5;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/ViewDetailReq.java
+message ViewDetailReq {
+  int64 aid = 1;
+  string bvid = 2;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/ViewLabel.java
+message ViewLabel {
+  int64 type = 1;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/VipInfo.java
+message VipInfo {
+  int32 type = 1;
+  int32 status = 2;
+  int32 vipPayType = 3;
+  int32 themeType = 4;
+}
+
+// Source: com/bapis/bilibili/web/interfaces/v1/VipLabel.java
+message VipLabel {
+  string path = 1;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/web/interfaces/v1";

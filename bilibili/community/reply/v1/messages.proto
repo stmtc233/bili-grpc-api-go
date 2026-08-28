@@ -1,0 +1,158 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.community.reply.v1;
+
+// Source: com/bapis/bilibili/community/reply/v1/Content.java
+message Content {
+  string message_ = 1;
+  map<string, Member> members = 2;
+  map<string, Emote> emotes = 3;
+  map<string, Topic> topics = 4;
+  map<string, Url> urls = 5;
+  Vote vote = 6;
+}
+
+// Source: com/bapis/bilibili/community/reply/v1/CursorReply.java
+message CursorReply {
+  int64 next = 1;
+  int64 prev = 2;
+  bool isBegin = 3;
+  bool isEnd = 4;
+}
+
+// Source: com/bapis/bilibili/community/reply/v1/CursorReq.java
+message CursorReq {
+  int64 next = 1;
+  int64 prev = 2;
+}
+
+// Source: com/bapis/bilibili/community/reply/v1/Emote.java
+message Emote {
+  int32 size = 1;
+  string url = 2;
+}
+
+// Source: com/bapis/bilibili/community/reply/v1/Lottery.java
+message Lottery {
+  int64 lotteryId = 1;
+  int64 oid = 2;
+  int64 type = 3;
+  int64 ctime = 4;
+  Content content = 5;
+  Member member = 6;
+  ReplyControl replyControl = 7;
+}
+
+// Source: com/bapis/bilibili/community/reply/v1/MainListReply.java
+message MainListReply {
+  CursorReply cursor = 1;
+  repeated ReplyInfo replies = 2;
+  SubjectControl subjectControl = 3;
+  repeated ReplyInfo tops = 4;
+  Notice notice = 5;
+  Lottery lottery = 6;
+}
+
+// Source: com/bapis/bilibili/community/reply/v1/MainListReq.java
+message MainListReq {
+  int64 oid = 1;
+  int64 type = 2;
+  CursorReq cursor = 3;
+  int32 mode = 4;
+}
+
+// Source: com/bapis/bilibili/community/reply/v1/Member.java
+message Member {
+  int64 mid = 1;
+  string name = 2;
+  string sex = 3;
+  string face = 4;
+  int32 level = 5;
+  int32 officialVerifyType = 6;
+  int32 vipType = 7;
+  int32 vipThemeType = 8;
+  int32 vipLabel = 9;
+  string garbPendantImage = 10;
+  string garbCardImage = 11;
+  string garbCardImageWithFocus = 12;
+  string garbCardJumpUrl = 13;
+  string garbCardNumber = 14;
+  string fansMedalName = 15;
+  string fansMedalLevel = 16;
+}
+
+// Source: com/bapis/bilibili/community/reply/v1/Notice.java
+message Notice {
+  string content = 1;
+  string link = 2;
+}
+
+// Source: com/bapis/bilibili/community/reply/v1/ReplyControl.java
+message ReplyControl {
+  int32 action = 1;
+  int32 upAction = 2;
+  bool showFollowBtn = 3;
+  bool isAssist = 4;
+  string labelText = 5;
+  bool following = 6;
+  bool followed = 7;
+  bool blocked = 8;
+  bool hasFoldedReply = 9;
+}
+
+// Source: com/bapis/bilibili/community/reply/v1/ReplyInfo.java
+message ReplyInfo {
+  repeated ReplyInfo replies = 1;
+  int64 id = 2;
+  int64 oid = 3;
+  int64 type = 4;
+  int64 mid = 5;
+  int64 root = 6;
+  int64 parent = 7;
+  int64 dialog = 8;
+  int32 like = 9;
+  int64 ctime = 10;
+  Content content = 11;
+  Member member = 12;
+  ReplyControl replyControl = 13;
+}
+
+// Source: com/bapis/bilibili/community/reply/v1/SubjectControl.java
+message SubjectControl {
+  int64 upMid = 1;
+  bool isAssist = 2;
+  bool readOnly = 3;
+  bool hasVoteAccess = 4;
+  bool hasLotteryAccess = 5;
+  bool hasFoldedReply = 6;
+  string bgText = 7;
+  string inputText = 8;
+}
+
+// Source: com/bapis/bilibili/community/reply/v1/Topic.java
+message Topic {
+  string link = 1;
+}
+
+// Source: com/bapis/bilibili/community/reply/v1/Url.java
+message Url {
+  string title = 1;
+  int32 state = 2;
+  string prefixIcon = 3;
+  string appUrlSchema = 4;
+  string appName = 5;
+  string appPackageName = 6;
+  string clickReport = 7;
+}
+
+// Source: com/bapis/bilibili/community/reply/v1/Vote.java
+message Vote {
+  int64 id = 1;
+  string title = 2;
+  int64 count = 3;
+  string desc = 4;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/community/reply/v1";

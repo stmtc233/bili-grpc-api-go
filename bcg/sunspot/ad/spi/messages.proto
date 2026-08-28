@@ -1,0 +1,11 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bcg.sunspot.ad.spi;
+
+// Source: com/bapis/bcg/sunspot/ad/spi/Empty.java
+message Empty {
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bcg/sunspot/ad/spi";

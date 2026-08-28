@@ -1,0 +1,65 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bcg.sunspot.ad.vo;
+
+import "google/protobuf/any.proto";
+
+// Source: com/bapis/bcg/sunspot/ad/vo/MixResourceContentDto.java
+message MixResourceContentDto {
+  int32 resourceId = 1;
+  map<int32, MixSourceContentDto> sourceContents = 2;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/vo/MixSourceContentDto.java
+message MixSourceContentDto {
+  google.protobuf.Any sourceContent = 1;
+  int32 cardIndex = 2;
+  int64 avId = 3;
+  int32 cardType = 4;
+  string jumpUrl = 5;
+  bool isAd = 6;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/vo/SunspotAdReplyForView.java
+message SunspotAdReplyForView {
+  google.protobuf.Any adsControl = 1;
+  map<int32, MixResourceContentDto> resourceContents = 2;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/vo/SunspotAdRequestForView.java
+message SunspotAdRequestForView {
+  int64 mid = 1;
+  string buvid = 2;
+  repeated int32 resource = 3;
+  string ip = 4;
+  string country = 5;
+  string province = 6;
+  string city = 7;
+  string network = 8;
+  string mobiApp = 9;
+  int64 aid = 10;
+  int64 cid = 11;
+  int64 avRid = 12;
+  string avTid = 13;
+  int64 avUpId = 14;
+  string adExtra = 15;
+  int32 build = 16;
+  string openEvent = 17;
+  int32 style = 18;
+  int64 seasonId = 19;
+  int64 epId = 20;
+  string fromSpmid = 21;
+  string spmid = 22;
+  int32 topViewId = 23;
+  string sid = 24;
+  string dynamicfrom = 25;
+  int32 index = 26;
+  int32 mayResistGif = 27;
+  string device = 28;
+  string from = 29;
+  string requestType = 30;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bcg/sunspot/ad/vo";

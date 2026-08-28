@@ -1,0 +1,1664 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.tv;
+
+enum DmColorfulType {
+  NoneType = 0;
+  VipGradualColor = 60001;
+}
+
+enum DmFromType {
+  DmFromUnknown = 0;
+  DmFromNormal = 1;
+  DmFromCmd = 2;
+  DmFromLive = 3;
+}
+
+enum LiveSource {
+  LiveSourceMLive = 0;
+  LiveSourceBizTrigger = 1;
+}
+
+enum SubtitleAiStatus {
+  None = 0;
+  Exposure = 1;
+  Assist = 2;
+}
+
+enum SubtitleAiType {
+  Normal = 0;
+  Translate = 1;
+}
+
+enum SubtitleRole {
+  Default = 0;
+  Main = 1;
+  Secondary = 2;
+}
+
+enum SubtitleType {
+  CC = 0;
+  AI = 1;
+}
+
+// Source: com/bapis/bilibili/tv/AccessToken.java
+message AccessToken {
+  int64 expiresIn = 1;
+  int64 mid = 2;
+  string accessToken = 3;
+  string refreshToken = 4;
+}
+
+// Source: com/bapis/bilibili/tv/ActivityInfo.java
+message ActivityInfo {
+  int64 id = 1;
+  int64 stime = 2;
+  int64 etime = 3;
+  int32 status = 4;
+  int64 dmMode = 5;
+  repeated int64 platform = 6;
+  int64 screenType = 7;
+  int64 dmSettingSwitch = 8;
+  ActivityInfo_MaterialConf materialConf = 9;
+  string extra = 10;
+  repeated ActivityInfo_MockOption mockOptions = 11;
+  LiveSource source = 12;
+  string uniqueId = 13;
+}
+
+// Source: com/bapis/bilibili/tv/ActivityInfo.java
+message ActivityInfo_MaterialConf {
+  int64 activityType = 1;
+  string mainStateDmColor = 2;
+  string objectiveStateDmColor = 3;
+  string webMaterial = 4;
+  string activityTestMaterial = 5;
+  repeated ActivityInfo_MaterialConf_SpecialDmMaterialMobi materialMode = 6;
+  string mainStrokeColor = 7;
+  string objectiveStrokeColor = 8;
+  ModResource modResource = 9;
+  string backupUrl = 10;
+  int64 mainHeadFps = 11;
+  int64 objectiveHeadFps = 12;
+  int64 mainTailFps = 13;
+  int64 objectiveTailFps = 14;
+  string backgroundColor = 15;
+}
+
+// Source: com/bapis/bilibili/tv/ActivityInfo.java
+message ActivityInfo_MaterialConf_MaterialMobiConf {
+  string mobiPool = 1;
+  string mobiModule = 2;
+  string mobiModuleFile = 3;
+  int64 mobiModuleVersion = 4;
+  string mobiModuleFileName = 5;
+}
+
+// Source: com/bapis/bilibili/tv/ActivityInfo.java
+message ActivityInfo_MaterialConf_SpecialDmMaterialMobi {
+  string appKey = 1;
+  ActivityInfo_MaterialConf_MaterialMobiConf mobiMaterial = 2;
+}
+
+// Source: com/bapis/bilibili/tv/ActivityInfo.java
+message ActivityInfo_MockOption {
+  string dmExtra = 1;
+  int64 triggerTime = 2;
+}
+
+// Source: com/bapis/bilibili/tv/AdExtra.java
+message AdExtra {
+  string adCb = 1;
+  int64 creativeId = 2;
+  string clientIp = 3;
+  bool isAd = 4;
+  string requestId = 5;
+  int64 resourceId = 6;
+  int64 sourceId = 7;
+  int64 cardIndex = 8;
+  bool isAdLoc = 9;
+  FeedAdExtraAdTagStyle adTagStyle = 10;
+  string jumpUrl = 11;
+  int64 referralPopActiveTime = 12;
+  int64 referralPopTime = 13;
+  FeedAdExtraVideo video = 14;
+  repeated string showUrls = 15;
+  repeated string clickUrls = 16;
+  string ottJumpUrl = 17;
+  string referralBgImg = 18;
+  string referralActImg = 19;
+  bool isShop = 20;
+  string fromTrackId = 21;
+  string cmFromTrackId = 22;
+  int64 shopFrom = 23;
+  string adFrom = 24;
+  int64 adId = 25;
+  repeated BlueLinkAd blueLinkAd = 29;
+  RestrictionConfig restrictionConfig = 30;
+}
+
+// Source: com/bapis/bilibili/tv/AuthInfo.java
+message AuthInfo {
+  AccessToken tokenInfo = 1;
+  CookieInfo cookieInfo = 2;
+}
+
+// Source: com/bapis/bilibili/tv/AutoPlay.java
+message AutoPlay {
+  int64 cidCount = 1;
+  repeated CidList cidList = 2;
+}
+
+// Source: com/bapis/bilibili/tv/AvoidObstruction.java
+message AvoidObstruction {
+  bool showOption = 1;
+  bool ignoreLocalValue = 2;
+  int32 value = 3;
+}
+
+// Source: com/bapis/bilibili/tv/BlueLinkAd.java
+message BlueLinkAd {
+  string adContent = 1;
+  string adImage = 2;
+  string adLinkIcon = 3;
+  string qrcodeUrl = 4;
+  string qrcodeBottomText = 5;
+  string topTipText = 6;
+  string bottomTipText = 7;
+  int32 styleType = 8;
+  bool needReport = 9;
+  int64 adStartTime = 10;
+  int64 adDuration = 11;
+  string qrcodeIcon = 12;
+  int64 autoCloseCountdownSec = 13;
+  int64 adId = 14;
+}
+
+// Source: com/bapis/bilibili/tv/Button.java
+message Button {
+  int32 type = 1;
+  string btnText = 2;
+  string msg = 3;
+  string url = 4;
+}
+
+// Source: com/bapis/bilibili/tv/ButtonCovermark.java
+message ButtonCovermark {
+  string text = 1;
+  string internalLinkId = 2;
+}
+
+// Source: com/bapis/bilibili/tv/ButtonPic.java
+message ButtonPic {
+  string pic = 1;
+  string schema = 2;
+  string internalLinkId = 3;
+}
+
+// Source: com/bapis/bilibili/tv/BuyButton.java
+message BuyButton {
+  string cover = 1;
+  string focusCover = 2;
+  string text = 3;
+  string schema = 4;
+  int32 type = 5;
+  int32 infocId = 6;
+}
+
+// Source: com/bapis/bilibili/tv/CardViewPlayListResp.java
+message CardViewPlayListResp {
+  string listName = 1;
+  int64 listType = 2;
+  repeated CommonCardResp listCards = 3;
+  int32 groupId = 4;
+  string updateTime = 5;
+  int64 serialId = 6;
+  int64 listFollowed = 7;
+  repeated int32 epIds = 8;
+  SceneModule playSceneModule = 9;
+  string playSceneModuleStr = 10;
+  repeated OrderId orderIds = 11;
+  repeated VerticalRankCards rankCards = 12;
+}
+
+// Source: com/bapis/bilibili/tv/CardViewV2Reply.java
+message CardViewV2Reply {
+  int64 cardType = 1;
+  int64 cardFrom = 2;
+  int64 attribute = 3;
+  int64 cardId = 4;
+  string title = 5;
+  string hoverTitle = 6;
+  string subtitle = 7;
+  string subtitle2 = 8;
+  string hoverSubtitle = 9;
+  string horizontalUrl = 10;
+  string verticalUrl = 11;
+  string desc = 12;
+  WatchProgressV2 watchProgress = 13;
+  Catalog catalog = 14;
+  repeated Jumps jumps = 15;
+  Labels cornermark = 16;
+  repeated Labels labels = 17;
+  Uploader uploader = 18;
+  PaymentV2 payment = 19;
+  AutoPlay autoPlay = 20;
+  CheeseExt cheeseExt = 21;
+  PgcExt pgcExt = 22;
+  UgcExt ugcExt = 23;
+  LiveExt liveExt = 24;
+  AdExtra adExt = 25;
+  EsportExt esportExt = 26;
+  SerialExt serialExt = 27;
+  int64 multiplePageCount = 28;
+  string schema = 29;
+  SceneCard recommendSceneCard = 30;
+  int64 userProfileInternalTrackId = 31;
+  ViewToast toast = 32;
+  SearchExt searchExt = 33;
+  ShareExt shareExt = 34;
+  OgvCollection ogvCollection = 35;
+  PlayScenePageViewV2 playScenePage = 36;
+  SceneCard playSceneCard = 37;
+  repeated HLRange highLight = 38;
+  InfocExt infocExt = 39;
+  repeated PlaylistTab playlistTab = 40;
+  repeated CardViewPlayListResp playList = 41;
+  repeated Button endpageButton = 42;
+  ShopExt shopExt = 43;
+  ProjExt projExt = 44;
+  string recommendSceneCardStr = 45;
+  string playScenePageStr = 46;
+  string playSceneCardStr = 47;
+  JumpLine jumpLine = 48;
+  MediaExtra projExtra = 49;
+  AuthInfo projToken = 50;
+  ChargingExt chargingExt = 51;
+  ChannelExt channelExt = 52;
+  OperationExt operationExt = 53;
+  int64 upDownMode = 54;
+  Ogv186PlayControl ogv186PlayControl = 55;
+  repeated OgvBottomButton bottomButtons = 56;
+  ExtendedDesc extendedDesc = 57;
+}
+
+// Source: com/bapis/bilibili/tv/CardViewV2Req.java
+message CardViewV2Req {
+  int64 viewType = 1;
+  int64 cardType = 2;
+  int64 objectId = 3;
+  string fromSpmid = 4;
+  string spmid = 5;
+  string autoPlay = 6;
+  int64 searchTrace = 7;
+  string keyword = 8;
+  string term = 9;
+  string keywordFrom = 10;
+  string extra = 11;
+  string accessKey = 12;
+  string sugFrom = 13;
+  bool isAd = 14;
+  int64 videoId = 15;
+  int64 progress = 16;
+  int64 serialAid = 17;
+  int32 fourk = 18;
+  int32 eightk = 19;
+  int64 upMid = 20;
+  int64 playStyle = 21;
+  Device device = 22;
+  int32 comeFromOutside = 23;
+  int32 stay = 24;
+  int32 childLock = 25;
+  bool projNew = 26;
+  string mobiAccessKey = 27;
+  string projCode = 28;
+  string deviceId = 29;
+  string deviceName = 30;
+  int32 separate = 31;
+  string goodsCid = 32;
+  int32 needRecommend = 33;
+  int32 entryScene = 34;
+}
+
+// Source: com/bapis/bilibili/tv/Catalog.java
+message Catalog {
+  int64 catalogId = 1;
+  string catalogName = 2;
+  int64 catalogPid = 3;
+  string catalogPname = 4;
+}
+
+// Source: com/bapis/bilibili/tv/ChannelExt.java
+message ChannelExt {
+  int64 aid = 1;
+  int64 firstChannelId = 2;
+  string firstChannelName = 3;
+}
+
+// Source: com/bapis/bilibili/tv/ChargingEndPage.java
+message ChargingEndPage {
+  bool noList = 1;
+  string text = 2;
+}
+
+// Source: com/bapis/bilibili/tv/ChargingExt.java
+message ChargingExt {
+  repeated string hideButtons = 1;
+  repeated string hideMenus = 2;
+  ChargingEndPage endPage = 3;
+  bool isCharging = 4;
+}
+
+// Source: com/bapis/bilibili/tv/CheeseBuyButton.java
+message CheeseBuyButton {
+  string cover = 1;
+  string focusCover = 2;
+  string text = 3;
+  string textBuy = 4;
+  string schema = 5;
+  int32 type = 6;
+  string toast = 7;
+}
+
+// Source: com/bapis/bilibili/tv/CheeseExt.java
+message CheeseExt {
+  CheeseBuyButton buyButton = 1;
+  CheeseExtRight rights = 2;
+  bool isCharging = 3;
+}
+
+// Source: com/bapis/bilibili/tv/CheeseExtRight.java
+message CheeseExtRight {
+  int32 allowBuy = 1;
+  int32 allowIndex = 2;
+}
+
+// Source: com/bapis/bilibili/tv/Chronos.java
+message Chronos {
+  string md5 = 1;
+  string file = 2;
+  string sign = 3;
+}
+
+// Source: com/bapis/bilibili/tv/CidList.java
+message CidList {
+  int64 videoId = 1;
+  int64 videoType = 2;
+  string from = 3;
+  string title = 4;
+  string longTitle = 5;
+  string horizontalUrl = 6;
+  bool hidemark = 7;
+  string firsti = 8;
+  bool isPortrait = 9;
+  int64 page = 10;
+  bool needLogin = 11;
+  int64 watchRight = 12;
+  bool paid = 13;
+  PlayurlArgs playurlArgs = 14;
+  Labels cornermark = 15;
+  int64 copyright = 16;
+  bool allowDemand = 17;
+  int64 aid = 18;
+  int64 publishTime = 19;
+  string publishDate = 20;
+  int64 duration = 21;
+  int32 related = 22;
+  int64 tabType = 23;
+  string guideText = 24;
+  int64 guidePage = 25;
+  int64 internalLinkId = 26;
+  string firstiGau = 27;
+  int64 cardId = 28;
+  bool isRecommend = 29;
+  BuyButton buyButton = 30;
+  int32 sectionType = 31;
+  int32 feetype = 32;
+}
+
+// Source: com/bapis/bilibili/tv/Command.java
+message Command {
+  repeated CommandDm commandDms = 1;
+}
+
+// Source: com/bapis/bilibili/tv/CommandDm.java
+message CommandDm {
+  int64 id = 1;
+  int64 oid = 2;
+  int64 mid = 3;
+  string command = 4;
+  string content = 5;
+  int32 progress = 6;
+  string ctime = 7;
+  string mtime = 8;
+  string extra = 9;
+  string idstr = 10;
+  int64 display = 11;
+  int32 type = 12;
+  bool autocreate = 13;
+  int32 countdown = 14;
+  int32 attr = 15;
+}
+
+// Source: com/bapis/bilibili/tv/CommandDmOtt.java
+message CommandDmOtt {
+  int64 id = 1;
+  int64 oid = 2;
+  int64 mid = 3;
+  int32 type = 4;
+  string command = 5;
+  string content = 6;
+  int32 state = 7;
+  int32 progress = 8;
+  string ctime = 9;
+  string mtime = 10;
+  string extra = 11;
+  string idstr = 12;
+}
+
+// Source: com/bapis/bilibili/tv/CommandDmsOttReply.java
+message CommandDmsOttReply {
+  repeated bytes commanddmsott = 1;
+}
+
+// Source: com/bapis/bilibili/tv/CommandDmsOttReq.java
+message CommandDmsOttReq {
+  int64 aid = 1;
+  int64 cid = 2;
+  int64 mid = 3;
+}
+
+// Source: com/bapis/bilibili/tv/CommonCardResp.java
+message CommonCardResp {
+  int64 cardType = 1;
+  int64 cardFrom = 2;
+  int32 attribute = 3;
+  int64 cardId = 4;
+  string title = 5;
+  string hoverTitle = 6;
+  string subtitle = 7;
+  string subtitle2 = 8;
+  string hoverSubtitle = 9;
+  string horizontalUrl = 10;
+  string verticalUrl = 11;
+  string desc = 12;
+  WatchProgressV2 watchProgress = 13;
+  Catalog catalog = 14;
+  repeated Jumps jumps = 15;
+  Labels cornermark = 16;
+  repeated Labels labels = 17;
+  Uploader uploader = 18;
+  PaymentV2 payment = 19;
+  AutoPlay autoPlay = 20;
+  CheeseExt cheeseExt = 21;
+  PgcExt pgcExt = 22;
+  UgcExt ugcExt = 23;
+  LiveExt liveExt = 24;
+  AdExtra adExt = 25;
+  EsportExt esportExt = 26;
+  SerialExt serialExt = 27;
+  int64 multiplePageCount = 28;
+  string schema = 29;
+  SceneCard recommendSceneCard = 30;
+  int64 userProfileInternalTrackId = 31;
+  ViewToast toast = 32;
+  SearchExt searchExt = 33;
+  ShareExt shareExt = 34;
+  OgvCollection ogvCollection = 35;
+  PlayScenePageViewV2 playScenePage = 36;
+  SceneCard playSceneCard = 37;
+  repeated HLRange highLight = 38;
+  InfocExt infocExt = 39;
+  string recommendSceneCardStr = 40;
+  string playScenePageStr = 41;
+  string playSceneCardStr = 42;
+  MediaExtra projExtra = 43;
+  AuthInfo projToken = 44;
+  ChargingExt chargingExt = 45;
+  ChannelExt channelExt = 46;
+}
+
+// Source: com/bapis/bilibili/tv/CookieBean.java
+message CookieBean {
+  string name = 1;
+  string value = 2;
+  int32 httpOnly = 3;
+  int64 expires = 4;
+}
+
+// Source: com/bapis/bilibili/tv/CookieInfo.java
+message CookieInfo {
+  repeated CookieBean cookies = 1;
+  repeated string domains = 2;
+}
+
+// Source: com/bapis/bilibili/tv/DanmakuAIFlag.java
+message DanmakuAIFlag {
+  repeated DanmakuFlag dmFlags = 1;
+}
+
+// Source: com/bapis/bilibili/tv/DanmakuElem.java
+message DanmakuElem {
+  int64 id = 1;
+  int32 progress = 2;
+  int32 mode = 3;
+  int32 fontsize = 4;
+  uint32 color = 5;
+  string midHash = 6;
+  string content = 7;
+  int64 ctime = 8;
+  int32 weight = 9;
+  string action = 10;
+  int32 pool = 11;
+  string idStr = 12;
+  int32 attr = 13;
+  string animation = 22;
+  string extra = 23;
+  DmColorfulType colorful = 24;
+  int32 type = 25;
+  int64 oid = 26;
+  DmFromType dmFrom = 27;
+}
+
+// Source: com/bapis/bilibili/tv/DanmakuFlag.java
+message DanmakuFlag {
+  int64 dmid = 1;
+  uint32 flag = 2;
+}
+
+// Source: com/bapis/bilibili/tv/DanmakuFlagConfig.java
+message DanmakuFlagConfig {
+  int32 recFlag = 1;
+  string recText = 2;
+  int32 recSwitch = 3;
+}
+
+// Source: com/bapis/bilibili/tv/DanmuDefaultPlayerConfig.java
+message DanmuDefaultPlayerConfig {
+  bool playerDanmakuUseDefaultConfig = 1;
+  bool playerDanmakuAiRecommendedSwitch = 4;
+  int32 playerDanmakuAiRecommendedLevel = 5;
+  bool playerDanmakuBlocktop = 6;
+  bool playerDanmakuBlockscroll = 7;
+  bool playerDanmakuBlockbottom = 8;
+  bool playerDanmakuBlockcolorful = 9;
+  bool playerDanmakuBlockrepeat = 10;
+  bool playerDanmakuBlockspecial = 11;
+  float playerDanmakuOpacity = 12;
+  float playerDanmakuScalingfactor = 13;
+  float playerDanmakuDomain = 14;
+  int32 playerDanmakuSpeed = 15;
+  bool inlinePlayerDanmakuSwitch = 16;
+  int32 playerDanmukuTopDistance = 17;
+}
+
+// Source: com/bapis/bilibili/tv/DanmuPlayerConfig.java
+message DanmuPlayerConfig {
+  bool playerDanmakuSwitch = 1;
+  bool playerDanmakuSwitchSave = 2;
+  bool playerDanmakuUseDefaultConfig = 3;
+  bool playerDanmakuAiRecommendedSwitch = 4;
+  int32 playerDanmakuAiRecommendedLevel = 5;
+  bool playerDanmakuBlocktop = 6;
+  bool playerDanmakuBlockscroll = 7;
+  bool playerDanmakuBlockbottom = 8;
+  bool playerDanmakuBlockcolorful = 9;
+  bool playerDanmakuBlockrepeat = 10;
+  bool playerDanmakuBlockspecial = 11;
+  float playerDanmakuOpacity = 12;
+  float playerDanmakuScalingfactor = 13;
+  float playerDanmakuDomain = 14;
+  int32 playerDanmakuSpeed = 15;
+  bool playerDanmakuEnableblocklist = 16;
+  bool inlinePlayerDanmakuSwitch = 17;
+  int32 inlinePlayerDanmakuConfig = 18;
+  int32 playerDanmukuTopDistance = 19;
+  bool playerDanmakuAboveSubtitle = 20;
+  bool playerDanmakuEnableHerdDm = 21;
+}
+
+// Source: com/bapis/bilibili/tv/DanmuPlayerDynamicConfig.java
+message DanmuPlayerDynamicConfig {
+  int32 progress = 1;
+  float playerDanmakuDomain = 14;
+}
+
+// Source: com/bapis/bilibili/tv/DanmuPlayerViewConfig.java
+message DanmuPlayerViewConfig {
+  DanmuDefaultPlayerConfig danmukuDefaultPlayerConfig = 1;
+  DanmuPlayerConfig danmukuPlayerConfig = 2;
+  repeated DanmuPlayerDynamicConfig danmukuPlayerDynamicConfig = 3;
+}
+
+// Source: com/bapis/bilibili/tv/DanmuSettings.java
+message DanmuSettings {
+  AvoidObstruction avoidObstruction = 1;
+}
+
+// Source: com/bapis/bilibili/tv/Device.java
+message Device {
+  string buvid = 1;
+  int32 build = 2;
+  string platform = 3;
+  string mobiApp = 4;
+  int64 sysVer = 5;
+  string channel = 6;
+  string brand = 7;
+  string model = 8;
+  string brvd = 9;
+  string brr = 10;
+  int64 memory = 11;
+  string cpu = 12;
+  string mpiId = 13;
+  string mpiType = 14;
+  string mpiModel = 15;
+  int64 teenagerMode = 16;
+  string guestAccessKey = 17;
+  bool modeSwitch = 18;
+  int64 guestId = 19;
+  int64 buildSn = 20;
+  string fromOut = 21;
+  string accessKey = 22;
+  int32 childLock = 23;
+  int64 fourk = 24;
+  int32 topSpeed = 25;
+  string appKey = 26;
+  string statistics = 27;
+}
+
+// Source: com/bapis/bilibili/tv/DmColorful.java
+message DmColorful {
+  DmColorfulType type = 1;
+  string src = 2;
+}
+
+// Source: com/bapis/bilibili/tv/DmHerdView.java
+message DmHerdView {
+  int32 displayHerdDmNum = 1;
+  repeated ViewHerdDmElem herdDms = 2;
+}
+
+// Source: com/bapis/bilibili/tv/DmSegMobileReply.java
+message DmSegMobileReply {
+  repeated DanmakuElem elems = 1;
+  int32 state = 2;
+  DanmakuAIFlag aiFlag = 3;
+  repeated DmColorful colorfulSrc = 4;
+}
+
+// Source: com/bapis/bilibili/tv/DmSegMobileReq.java
+message DmSegMobileReq {
+  int64 pid = 1;
+  int64 oid = 2;
+  int32 type = 3;
+  int64 segmentIndex = 4;
+  int32 teenagersMode = 5;
+  int64 from = 6;
+  int32 memory = 7;
+  int32 benchmarkScore = 8;
+  string benchmarkDetail = 9;
+  string glEsVer = 10;
+  int32 danmakuType = 11;
+}
+
+// Source: com/bapis/bilibili/tv/DmViewReply.java
+message DmViewReply {
+  bool closed = 1;
+  VideoMask mask = 2;
+  VideoSubtitle subtitle = 3;
+  repeated string specialDms = 4;
+  DanmakuFlagConfig aiFlag = 5;
+  DanmuPlayerViewConfig playerConfig = 6;
+  int32 sendBoxStyle = 7;
+  bool allow = 8;
+  bool checkBox = 9;
+  string checkBoxShowMsg = 10;
+  string textPlaceholder = 11;
+  string inputPlaceholder = 12;
+  bool commandClose = 13;
+  repeated string activityMeta = 14;
+  DmHerdView dmHerd = 15;
+  Command command = 16;
+  string kv = 17;
+  QoeInfo qoe = 18;
+  LiveDmActivity liveDmActivity = 19;
+  LiveDmExtra liveDmExtra = 20;
+}
+
+// Source: com/bapis/bilibili/tv/DmViewReq.java
+message DmViewReq {
+  int64 pid = 1;
+  int64 oid = 2;
+  int32 type = 3;
+  string spmid = 4;
+  int32 isHardBoot = 5;
+  int64 from = 6;
+  bool danmakuWhiteUser = 7;
+  int32 teenagerMode = 8;
+  int32 memory = 9;
+  string guestAccessKey = 10;
+  int32 benchmarkScore = 11;
+  string benchmarkDetail = 12;
+  string glEsVer = 13;
+  int32 danmakuType = 14;
+}
+
+// Source: com/bapis/bilibili/tv/Entrance.java
+message Entrance {
+  string title = 1;
+  string subTitle = 2;
+  string score = 3;
+  string text = 4;
+  string img = 5;
+  string jumpUrl = 6;
+  repeated BuyButton buttons = 7;
+  int64 showDru = 8;
+  int64 showTime = 9;
+  int32 style = 10;
+}
+
+// Source: com/bapis/bilibili/tv/EsportExt.java
+message EsportExt {
+  Team homeTeam = 1;
+  Team awayTeam = 2;
+  int64 esportId = 3;
+  int64 roomId = 4;
+  string gameStage = 5;
+  int64 gameType = 6;
+  string message_ = 7;
+  int32 status = 8;
+  string liveKey = 9;
+  string subSessionKey = 10;
+}
+
+// Source: com/bapis/bilibili/tv/ExtendedDesc.java
+message ExtendedDesc {
+  string title = 1;
+  string icon = 2;
+  string score = 3;
+  string rankInfo = 4;
+  string award = 5;
+  string episodeInfo = 6;
+  repeated OgvIndexEntry pgcIndexEntry = 7;
+  string desc = 8;
+  string upAvatar = 9;
+  string upName = 10;
+  string tags = 11;
+  string updateTime = 12;
+}
+
+// Source: com/bapis/bilibili/tv/FeedAdExtraAdTagStyle.java
+message FeedAdExtraAdTagStyle {
+  int64 type = 1;
+  string text = 2;
+  string text4DetailPage = 3;
+  string textColor = 4;
+  string bgBorderColor = 5;
+  string bgColor = 6;
+  string borderColor = 7;
+}
+
+// Source: com/bapis/bilibili/tv/FeedAdExtraVideo.java
+message FeedAdExtraVideo {
+  int64 avid = 1;
+  int64 cid = 2;
+  int64 page = 3;
+  string from = 4;
+  int64 orientation = 5;
+  string url = 6;
+  string cover = 7;
+  int64 btnDycTime = 8;
+  bool autoPlay = 9;
+  bool btnDycColor = 10;
+  int64 bizId = 11;
+  repeated string process0Urls = 12;
+  repeated string play3sUrls = 13;
+  repeated string play5sUrls = 14;
+  int64 autoPlayValue = 15;
+  int64 seasonId = 16;
+  int64 epId = 17;
+  int32 contentType = 18;
+  int64 roomId = 19;
+  repeated string process4Urls = 20;
+  repeated string play7sUrls = 21;
+}
+
+// Source: com/bapis/bilibili/tv/HighLight.java
+message HighLight {
+  int64 startTime = 1;
+  int64 endTime = 2;
+}
+
+// Source: com/bapis/bilibili/tv/HLRange.java
+message HLRange {
+  int32 beginning = 1;
+  int32 ending = 2;
+}
+
+// Source: com/bapis/bilibili/tv/HotGuess.java
+message HotGuess {
+  string title = 1;
+  repeated Hotword list = 2;
+  int32 showSize = 3;
+}
+
+// Source: com/bapis/bilibili/tv/Hotword.java
+message Hotword {
+  string from = 1;
+  string keyword = 2;
+  string relateTp = 3;
+  int64 relateOid = 4;
+  string cornermarkTp = 5;
+  string cornermarkUrl = 6;
+  string image = 7;
+  string intervName = 8;
+  string serverInfoc = 9;
+  int64 stime = 10;
+  int64 etime = 11;
+  string action = 12;
+  string serverInfo = 13;
+  string query = 14;
+  string internalTrackId = 15;
+  string backgroundImage = 16;
+  HotwordExt ext = 17;
+}
+
+// Source: com/bapis/bilibili/tv/HotwordExt.java
+message HotwordExt {
+  int64 ipId = 1;
+  string ipName = 2;
+  string backgroundColor = 3;
+}
+
+// Source: com/bapis/bilibili/tv/InfocExt.java
+message InfocExt {
+  int32 viderType = 1;
+  int32 contentType = 2;
+  int64 aid = 3;
+  int64 cid = 4;
+  int64 sid = 5;
+  int64 epid = 6;
+  string viderTypeStr = 7;
+  string contentTypeStr = 8;
+  string aidStr = 9;
+  string cidStr = 10;
+  string sidStr = 11;
+  string epidStr = 12;
+}
+
+// Source: com/bapis/bilibili/tv/JumpLine.java
+message JumpLine {
+  string text = 1;
+  string url = 2;
+  string pic = 3;
+  bool dynamic = 4;
+}
+
+// Source: com/bapis/bilibili/tv/Jumps.java
+message Jumps {
+  int64 jumpType = 1;
+  int64 jumpId = 2;
+  int64 jumpEpId = 3;
+  string jumpText = 4;
+  string jumpSchema = 5;
+  int64 jumpProgress = 6;
+  int64 jumpCardId = 7;
+  string rankText = 8;
+  int64 rankId = 9;
+  string jumpTextAfter = 10;
+}
+
+// Source: com/bapis/bilibili/tv/Labels.java
+message Labels {
+  string text = 1;
+  string textColor = 2;
+  string bgColor = 3;
+  string borderColor = 4;
+  bool bold = 5;
+  string cover = 6;
+  int64 labelType = 7;
+  int64 style = 8;
+  string link = 9;
+  string seqCover = 10;
+  int32 line = 11;
+}
+
+// Source: com/bapis/bilibili/tv/LiveDanmuPlayerConfig.java
+message LiveDanmuPlayerConfig {
+  int32 screenOccupancy = 1;
+  int32 transparency = 2;
+  int32 duration = 3;
+  float scale = 4;
+  float strokeWidth = 5;
+  int32 verticalDirection = 6;
+  int32 density = 7;
+}
+
+// Source: com/bapis/bilibili/tv/LiveDmActivity.java
+message LiveDmActivity {
+  repeated ActivityInfo activityList = 1;
+  int64 ts = 2;
+}
+
+// Source: com/bapis/bilibili/tv/LiveDmExtra.java
+message LiveDmExtra {
+  bool screenSwitchOff = 1;
+  string chronosKv = 2;
+  LiveDanmuPlayerConfig danmuPlayerConfig = 3;
+  DanmuSettings danmuSettings = 4;
+}
+
+// Source: com/bapis/bilibili/tv/LiveExt.java
+message LiveExt {
+  LiveSkipResp liveSkip = 1;
+  int64 popularityCount = 2;
+  string message_ = 3;
+  int64 status = 4;
+  string liveKey = 5;
+  string subSessionKey = 6;
+  int64 liveType = 7;
+  string chatTitle = 8;
+  string popularityText = 9;
+  int32 endPageCountdown = 10;
+  int64 parentAreaId = 11;
+  int64 areaId = 12;
+  int32 feetype = 13;
+}
+
+// Source: com/bapis/bilibili/tv/LiveSkipResp.java
+message LiveSkipResp {
+  string etime = 1;
+  string curTime = 2;
+  int64 contentId = 3;
+  int32 type = 4;
+}
+
+// Source: com/bapis/bilibili/tv/MediaExtra.java
+message MediaExtra {
+  int64 type = 1;
+  int64 bizId = 2;
+  int64 otype = 3;
+  int64 oid = 4;
+  int64 cid = 5;
+  bool desc = 6;
+  string mobiApp = 7;
+  string bvId = 8;
+}
+
+// Source: com/bapis/bilibili/tv/MockMetaDataReply.java
+message MockMetaDataReply {
+}
+
+// Source: com/bapis/bilibili/tv/MockMetaDataReq.java
+message MockMetaDataReq {
+  string buvid = 1;
+}
+
+// Source: com/bapis/bilibili/tv/ModResource.java
+message ModResource {
+  string mobiPool = 1;
+  string mobiModule = 2;
+  int64 mobiModuleVersion = 3;
+}
+
+// Source: com/bapis/bilibili/tv/OfficialInfo.java
+message OfficialInfo {
+  int32 role = 1;
+  string title = 2;
+  string desc = 3;
+  int32 type = 4;
+}
+
+// Source: com/bapis/bilibili/tv/Ogv186PlayControl.java
+message Ogv186PlayControl {
+  bool autoShowControl = 1;
+  int64 autoShowDurationMs = 2;
+  bool defaultFocus = 3;
+}
+
+// Source: com/bapis/bilibili/tv/OgvBottomButton.java
+message OgvBottomButton {
+  int32 buttonType = 1;
+  string buttonText = 2;
+  string icon = 3;
+  string iconFocus = 4;
+  string uri = 5;
+}
+
+// Source: com/bapis/bilibili/tv/OgvCollection.java
+message OgvCollection {
+  string baseInfo = 1;
+  string subInfo = 2;
+  repeated string covers = 3;
+}
+
+// Source: com/bapis/bilibili/tv/OgvIndexEntry.java
+message OgvIndexEntry {
+  string title = 1;
+  OgvIndexGoto pgcGoto = 2;
+}
+
+// Source: com/bapis/bilibili/tv/OgvIndexGoto.java
+message OgvIndexGoto {
+  int32 category = 1;
+  string searchParams = 2;
+  int64 customLabelId = 3;
+}
+
+// Source: com/bapis/bilibili/tv/OperationExt.java
+message OperationExt {
+  TopBar topBar = 1;
+  ButtonPic buttonPic = 2;
+  ButtonCovermark buttonCovermark = 3;
+}
+
+// Source: com/bapis/bilibili/tv/OrderId.java
+message OrderId {
+  int32 type = 1;
+  string text = 2;
+  int32 selected = 3;
+  repeated int64 order = 4;
+}
+
+// Source: com/bapis/bilibili/tv/Page.java
+message Page {
+  int32 numResult = 1;
+  int32 total = 2;
+  int32 pages = 3;
+}
+
+// Source: com/bapis/bilibili/tv/Pageinfo.java
+message Pageinfo {
+  Page tvpgc = 1;
+  Page tvugc = 2;
+  Page tvuser = 3;
+  Page bTvugc = 4;
+  Page tvups = 5;
+  Page tvlive = 6;
+}
+
+// Source: com/bapis/bilibili/tv/PayCard.java
+message PayCard {
+  string title = 1;
+  string seasonTitle = 2;
+  string epShow = 3;
+  string price = 4;
+  string realPrice = 5;
+  string button = 6;
+  string buttonType = 7;
+}
+
+// Source: com/bapis/bilibili/tv/PaymentShowExt.java
+message PaymentShowExt {
+  string showDevice = 1;
+  string originalAmountName = 2;
+  string payAmountName = 3;
+  int64 showStyle = 4;
+  string loginPrefix = 5;
+  string guideBigMsg = 6;
+  string guideCornermarkMsg = 7;
+  string guideSmallMsg = 8;
+  string qrcodeMsg = 9;
+  string priceSuffix = 10;
+  string expireDesc = 11;
+  string showOriginalAmount = 12;
+  string showPayAmount = 13;
+  string coverCornerMsg = 14;
+}
+
+// Source: com/bapis/bilibili/tv/PaymentV2.java
+message PaymentV2 {
+  string originalAmount = 1;
+  string payAmount = 2;
+  string desc = 3;
+  map<string, PayCard> payCard = 4;
+  PaymentShowExt paymentShowExt = 5;
+}
+
+// Source: com/bapis/bilibili/tv/PgcExt.java
+message PgcExt {
+  Rights rights = 1;
+  Entrance entrance = 2;
+  repeated int32 demandNoPayEpids = 3;
+  string record = 4;
+  string showIndex = 5;
+  string archiveView = 6;
+  string style = 7;
+  int32 isFinish = 8;
+  WatchProgressV2 highlight = 9;
+  HighLight highlightV2 = 10;
+  float score = 11;
+  repeated string marqueeDesc = 12;
+  string buttonText = 13;
+  bool viewCloseUploader = 14;
+  string titleCover = 15;
+  BuyButton buyButton = 16;
+  string favorites = 17;
+  bool isFourk = 18;
+  int64 playlistEpid = 19;
+  int64 payTime = 20;
+  UserStatus userStatus = 21;
+  string scoreStr = 22;
+  string resourceFrom = 23;
+}
+
+// Source: com/bapis/bilibili/tv/PgcIndexEntry.java
+message PgcIndexEntry {
+  string title = 1;
+  string subtitle = 2;
+  string cover = 3;
+  string overlayImg = 4;
+  PgcIndexGoto pgcGoto = 5;
+  string focusCover = 6;
+}
+
+// Source: com/bapis/bilibili/tv/PgcIndexGoto.java
+message PgcIndexGoto {
+  int32 category = 1;
+  string searchParams = 2;
+  int64 customLabelId = 3;
+}
+
+// Source: com/bapis/bilibili/tv/PlaylistTab.java
+message PlaylistTab {
+  string title = 1;
+  int32 groupId = 2;
+  int64 listType = 3;
+}
+
+// Source: com/bapis/bilibili/tv/PlayScenePageViewV2.java
+message PlayScenePageViewV2 {
+  string pageType = 1;
+  string pageEntity = 2;
+  int64 pageEntityId = 3;
+  string pageEntityName = 4;
+  string traceId = 5;
+  int64 pageMainCardType = 6;
+  string pageMainCardEntity = 7;
+  int64 pageMainCardEntityId = 8;
+  string pageMainCardEntityName = 9;
+  string pageMainCardEntityParams = 10;
+}
+
+// Source: com/bapis/bilibili/tv/PlayurlArgs.java
+message PlayurlArgs {
+  int64 playurlType = 1;
+  int64 objectId = 2;
+  int64 cid = 3;
+  int64 highlight = 4;
+  string sectionId = 5;
+}
+
+// Source: com/bapis/bilibili/tv/ProjExt.java
+message ProjExt {
+  int32 endPageSwitch = 1;
+}
+
+// Source: com/bapis/bilibili/tv/QoeInfo.java
+message QoeInfo {
+  string info = 1;
+}
+
+// Source: com/bapis/bilibili/tv/RestrictionConfig.java
+message RestrictionConfig {
+  int64 blockDays = 1;
+  int64 closeThreshold = 2;
+  int64 daysWindow = 3;
+}
+
+// Source: com/bapis/bilibili/tv/Rights.java
+message Rights {
+  int32 allowBp = 1;
+  int32 allowDownload = 2;
+  int32 allowReview = 3;
+  int32 areaLimit = 4;
+  int32 banAreaShow = 5;
+  string copyright = 6;
+  int32 isPreview = 7;
+  int32 allowLike = 8;
+  int32 allowFollow = 9;
+  int32 allowBuy = 10;
+}
+
+// Source: com/bapis/bilibili/tv/SceneCard.java
+message SceneCard {
+  int32 cardType = 1;
+  string cardEntity = 2;
+  int64 cardEntityId = 3;
+  string cardEntityName = 4;
+  string cardEntityParams = 5;
+  int64 pos = 6;
+  int64 operaterType = 7;
+  string operater = 8;
+  string internalTrackId = 9;
+  int32 cardButtonType = 10;
+  string cardButtonTypeName = 11;
+  int64 modularId = 12;
+  string modularName = 13;
+  int64 roomId = 14;
+  string title = 15;
+  int64 cardFrom = 16;
+  int64 avid = 17;
+}
+
+// Source: com/bapis/bilibili/tv/SceneModule.java
+message SceneModule {
+  int64 moduleType = 1;
+  string moduleEntity = 2;
+  int64 moduleEntityId = 3;
+  string moduleEntityName = 4;
+  int32 moduleEntityPos = 5;
+}
+
+// Source: com/bapis/bilibili/tv/SearchExt.java
+message SearchExt {
+  string name = 1;
+  bool switch = 2;
+}
+
+// Source: com/bapis/bilibili/tv/SearchV2Operator.java
+message SearchV2Operator {
+  int64 id = 1;
+  string cover = 2;
+  SearchV2OperatorAdInfo adInfo = 3;
+  repeated SearchV2OperatorButton buttons = 4;
+  string internalTrackId = 5;
+}
+
+// Source: com/bapis/bilibili/tv/SearchV2OperatorAdInfo.java
+message SearchV2OperatorAdInfo {
+  bool isAd = 1;
+  string text = 2;
+  string cover = 3;
+}
+
+// Source: com/bapis/bilibili/tv/SearchV2OperatorButton.java
+message SearchV2OperatorButton {
+  int32 type = 1;
+  string text = 2;
+  string clickText = 3;
+  string schema = 4;
+  int64 orderId = 5;
+  int64 upMid = 6;
+  int64 sid = 7;
+}
+
+// Source: com/bapis/bilibili/tv/SearchV2Reply.java
+message SearchV2Reply {
+  int32 page = 1;
+  int32 pageSize = 2;
+  int32 numResults = 3;
+  int32 numPages = 4;
+  string seid = 5;
+  int64 searchTrace = 6;
+  repeated SeaResultV2 resultV2 = 7;
+  Pageinfo pageInfo = 8;
+  repeated TabInfo tabInfo = 9;
+  string recallSrc = 10;
+  string experiment = 11;
+  repeated int32 sortedModules = 12;
+  string internalTrackId = 13;
+  int32 searchResType = 14;
+  TokenSearchRes tokenSearchRes = 15;
+  PgcIndexEntry pgcIndexEntry = 16;
+  HotGuess hotGuess = 17;
+  int32 searchOgvCardsShowMore = 18;
+}
+
+// Source: com/bapis/bilibili/tv/SearchV2Req.java
+message SearchV2Req {
+  string searchType = 1;
+  string keyword = 2;
+  string order = 3;
+  int32 category = 4;
+  int32 page = 5;
+  int32 pagesize = 6;
+  int32 orderSort = 7;
+  int32 sugIndex = 8;
+  string keywordFrom = 9;
+  string term = 10;
+  int32 itemType = 11;
+  int64 itemId = 12;
+  string ugcOrder = 13;
+  Device device = 14;
+  int64 searchTrace = 15;
+}
+
+// Source: com/bapis/bilibili/tv/SeaResultV2.java
+message SeaResultV2 {
+  string moduleName = 1;
+  int32 moduleType = 2;
+  string background = 3;
+  SearchV2Operator operates = 4;
+  repeated CommonCardResp list = 5;
+  string jumpName = 6;
+  string jumpUrl = 7;
+  string pgcNullResultTopTips = 8;
+  string pgcNullResultHighlightTips = 9;
+}
+
+// Source: com/bapis/bilibili/tv/SerialExt.java
+message SerialExt {
+  bool showEpTitle = 1;
+  bool showEpIndex = 2;
+  SerialListSubtitle listSubtitle = 3;
+  SerialRights rights = 4;
+  SerialPlayingUgc playingUgc = 5;
+  UpExtInfo upExt = 6;
+  bool showNewStyle = 7;
+  string totalDesc = 8;
+}
+
+// Source: com/bapis/bilibili/tv/SerialListSubtitle.java
+message SerialListSubtitle {
+  string icon = 1;
+  string text = 2;
+}
+
+// Source: com/bapis/bilibili/tv/SerialPlayingUgc.java
+message SerialPlayingUgc {
+  int32 avid = 1;
+  string likes = 2;
+  string favorites = 3;
+}
+
+// Source: com/bapis/bilibili/tv/SerialRights.java
+message SerialRights {
+  int32 allowLike = 1;
+  int32 allowFollow = 2;
+  int32 allowBuy = 3;
+}
+
+// Source: com/bapis/bilibili/tv/ShareExt.java
+message ShareExt {
+  bool shareToPhone = 1;
+  string title = 2;
+  string loginTitle = 3;
+  string qrTitle = 4;
+  string qrUrl = 5;
+  string userName = 6;
+  string userFace = 7;
+  string qrImg = 8;
+  int32 shareStyle = 9;
+  string text = 10;
+}
+
+// Source: com/bapis/bilibili/tv/ShopExt.java
+message ShopExt {
+  int64 cartStatus = 1;
+  TrackShop trackShop = 2;
+}
+
+// Source: com/bapis/bilibili/tv/SubtitleItem.java
+message SubtitleItem {
+  int64 id = 1;
+  string idStr = 2;
+  string lan = 3;
+  string lanDoc = 4;
+  string subtitleUrl = 5;
+  UserInfo author = 6;
+  SubtitleType type = 7;
+  string lanDocBrief = 8;
+  SubtitleAiType aiType = 9;
+  SubtitleAiStatus aiStatus = 10;
+  SubtitleRole role = 11;
+}
+
+// Source: com/bapis/bilibili/tv/TabInfo.java
+message TabInfo {
+  string searchType = 1;
+  string name = 2;
+}
+
+// Source: com/bapis/bilibili/tv/Team.java
+message Team {
+  int64 tid = 1;
+  string title = 2;
+  string logo = 3;
+  int64 score = 4;
+}
+
+// Source: com/bapis/bilibili/tv/TokenSearchRes.java
+message TokenSearchRes {
+  int32 type = 1;
+  TokenSearchResPopup popup = 2;
+  TokenSearchResBanner activity = 3;
+}
+
+// Source: com/bapis/bilibili/tv/TokenSearchResBanner.java
+message TokenSearchResBanner {
+  int64 actId = 1;
+  string img = 2;
+  string jumpSchema = 3;
+}
+
+// Source: com/bapis/bilibili/tv/TokenSearchResPopup.java
+message TokenSearchResPopup {
+  int64 actId = 1;
+  string img = 2;
+  string textTop = 3;
+  string textBottom = 4;
+  repeated TokenSearchResPopupButton notifyBtnList = 5;
+}
+
+// Source: com/bapis/bilibili/tv/TokenSearchResPopupButton.java
+message TokenSearchResPopupButton {
+  string text = 1;
+  string url = 2;
+}
+
+// Source: com/bapis/bilibili/tv/TopBar.java
+message TopBar {
+  string pic = 1;
+  string focusPic = 2;
+  string schema = 3;
+  string internalLinkId = 4;
+  int32 iconType = 5;
+}
+
+// Source: com/bapis/bilibili/tv/TrackShop.java
+message TrackShop {
+  PlayScenePageViewV2 trackShopPage = 1;
+  SceneModule trackShopModule = 2;
+  SceneCard trackShopCard = 3;
+  string trackShopPageStr = 4;
+  string trackShopModuleStr = 5;
+  string trackShopCardStr = 6;
+}
+
+// Source: com/bapis/bilibili/tv/TvViewProgressReply.java
+message TvViewProgressReply {
+  VideoGuide videoGuide = 1;
+  Chronos chronos = 2;
+}
+
+// Source: com/bapis/bilibili/tv/TvViewProgressReq.java
+message TvViewProgressReq {
+  int64 aid = 1;
+  int64 cid = 2;
+  int64 upMid = 3;
+  string engineVersion = 4;
+  string messageProtocol = 5;
+  string serviceKey = 6;
+  int64 sid = 7;
+  int64 pid = 8;
+  int64 from = 9;
+  string guestAccessKey = 10;
+  int64 epid = 11;
+  string mobiAccessKey = 12;
+  string spmid = 13;
+  string fromSpmid = 14;
+  int64 childLock = 15;
+  int32 benchmarkScore = 16;
+  string benchmarkDetail = 17;
+  string glEsVer = 18;
+  int32 danmakuType = 19;
+}
+
+// Source: com/bapis/bilibili/tv/UgcCardAction.java
+message UgcCardAction {
+  string type = 1;
+  string icon = 2;
+  string text = 3;
+  string jumpTo = 4;
+}
+
+// Source: com/bapis/bilibili/tv/UGCCardSubtitle.java
+message UGCCardSubtitle {
+  string icon = 1;
+  string text = 2;
+  string jumpTo = 3;
+}
+
+// Source: com/bapis/bilibili/tv/UgcExt.java
+message UgcExt {
+  bool hasLike = 1;
+  string likes = 2;
+  string archiveView = 3;
+  string favorites = 4;
+  int64 duration = 5;
+  UGCCardSubtitle listSubtitle = 6;
+  repeated UGCCardSubtitle listSubtitles = 7;
+  repeated UGCCardSubtitle viewSubtitles = 8;
+  repeated UGCCardSubtitle searchSubtitles = 9;
+  repeated UgcCardAction actions = 10;
+  bool viewCloseUploader = 11;
+  UgcRights rights = 12;
+  UpExtInfo upExt = 13;
+  repeated UgcInteractionInfo ugcInteraction = 14;
+}
+
+// Source: com/bapis/bilibili/tv/UgcInteractionInfo.java
+message UgcInteractionInfo {
+  string type = 1;
+  string icon = 2;
+  string clickIcon = 3;
+  string text = 4;
+  string toast = 5;
+  int32 hide = 6;
+  string checkedText = 7;
+  string checkedIcon = 8;
+}
+
+// Source: com/bapis/bilibili/tv/UgcRights.java
+message UgcRights {
+  int32 allowLike = 1;
+  int32 allowFollow = 2;
+}
+
+// Source: com/bapis/bilibili/tv/UpExtInfo.java
+message UpExtInfo {
+  string upName = 1;
+  string ipLocation = 2;
+  string mcnName = 3;
+  string liveRoom = 4;
+}
+
+// Source: com/bapis/bilibili/tv/Uploader.java
+message Uploader {
+  string upName = 1;
+  int64 upMid = 2;
+  string upFace = 3;
+  bool hasFollow = 4;
+  bool canFollow = 5;
+  int64 fansCount = 6;
+  int32 archiveCount = 7;
+  string url = 8;
+  OfficialInfo officialInfo = 9;
+}
+
+// Source: com/bapis/bilibili/tv/UserInfo.java
+message UserInfo {
+  int64 mid = 1;
+  string name = 2;
+  string sex = 3;
+  string face = 4;
+  string sign = 5;
+  int32 rank = 6;
+}
+
+// Source: com/bapis/bilibili/tv/UserStatus.java
+message UserStatus {
+  int32 follow = 1;
+  int32 pay = 2;
+  bytes watchprogress = 3;
+  int32 booking = 4;
+}
+
+// Source: com/bapis/bilibili/tv/VerticalRankCards.java
+message VerticalRankCards {
+  int64 seasonId = 1;
+  string title = 2;
+  string verticalCover = 3;
+  string svipCornermark = 4;
+  string numberCornermark = 5;
+  VerticalRankMoreCard moreCard = 6;
+  SceneCard playSceneCard = 7;
+}
+
+// Source: com/bapis/bilibili/tv/VerticalRankMoreCard.java
+message VerticalRankMoreCard {
+  string icon = 1;
+  string iconFocus = 2;
+  string title = 3;
+  string subtitle = 4;
+  int64 jumpId = 5;
+  int64 rankId = 6;
+  int64 jumpCardId = 7;
+}
+
+// Source: com/bapis/bilibili/tv/VideoGuide.java
+message VideoGuide {
+  repeated bytes commanddms = 2;
+}
+
+// Source: com/bapis/bilibili/tv/VideoMask.java
+message VideoMask {
+  int64 cid = 1;
+  int32 plat = 2;
+  int32 fps = 3;
+  int64 time = 4;
+  string maskUrl = 5;
+}
+
+// Source: com/bapis/bilibili/tv/VideoSubtitle.java
+message VideoSubtitle {
+  string lan = 1;
+  string lanDoc = 2;
+  repeated SubtitleItem subtitles = 3;
+}
+
+// Source: com/bapis/bilibili/tv/ViewHerdDmElem.java
+message ViewHerdDmElem {
+  string herdMsg = 1;
+  int32 herdStartCnt = 2;
+  int32 herdEndCnt = 3;
+  string regexRule = 4;
+  int32 startProgress = 5;
+  int32 endProgress = 6;
+}
+
+// Source: com/bapis/bilibili/tv/ViewToast.java
+message ViewToast {
+  string homeToast = 1;
+  string homeIcon = 2;
+}
+
+// Source: com/bapis/bilibili/tv/WatchProgress.java
+message WatchProgress {
+  int32 lastEpId = 1;
+  int32 lastEpIndex = 2;
+  int64 lastTime = 3;
+}
+
+// Source: com/bapis/bilibili/tv/WatchProgressV2.java
+message WatchProgressV2 {
+  int64 videoId = 1;
+  int64 progress = 2;
+  int32 type = 3;
+  int64 progressEnd = 4;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/tv";

@@ -1,0 +1,212 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bcg.sunspot.ad.bce;
+
+// Source: com/bapis/bcg/sunspot/ad/bce/AdAutoPlayVideoDto.java
+message AdAutoPlayVideoDto {
+  int64 avid = 1;
+  int64 cid = 2;
+  int64 page = 3;
+  string from = 4;
+  string url = 5;
+  string cover = 6;
+  bool autoPlay = 7;
+  bool btnDycColor = 8;
+  int32 btnDycTime = 9;
+  int64 bizId = 10;
+  repeated string process0Urls = 11;
+  repeated string play3sUrls = 12;
+  repeated string play5sUrls = 13;
+  int32 orientation = 14;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/bce/AdBusinessMarkDto.java
+message AdBusinessMarkDto {
+  int32 type = 1;
+  string text = 2;
+  string textColor = 3;
+  string textColorNight = 4;
+  string bgColor = 5;
+  string bgColorNight = 6;
+  string borderColor = 7;
+  string borderColorNight = 8;
+  string imgUrl = 9;
+  int32 imgHeight = 10;
+  int32 imgWidth = 11;
+  string bgBorderColor = 12;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/bce/AdButtonDto.java
+message AdButtonDto {
+  int32 type = 1;
+  string text = 2;
+  string jumpUrl = 3;
+  repeated string reportUrls = 4;
+  string dlsucCallupUrl = 5;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/bce/AdCardDto.java
+message AdCardDto {
+  int32 cardType = 1;
+  string title = 2;
+  string desc = 3;
+  string extraDesc = 4;
+  string longDesc = 5;
+  string shortTitle = 6;
+  string danmuTitle = 7;
+  int32 danmuHeight = 8;
+  int32 danmuWidth = 9;
+  int32 danmuLife = 10;
+  int32 danmuBegin = 11;
+  string danmuColor = 12;
+  string danmuH5url = 13;
+  string danmuIcon = 14;
+  int32 foldTime = 15;
+  string adTag = 16;
+  repeated AdCoverDto covers = 17;
+  string jumpUrl = 18;
+  string imaxLandingPageJsonString = 19;
+  string callupUrl = 20;
+  string universalApp = 21;
+  string oriPrice = 22;
+  int32 curPrice = 23;
+  string priceDesc = 24;
+  string priceSymbol = 25;
+  string goodsCurPrice = 26;
+  string goodsOriPrice = 27;
+  AdGoodDto good = 28;
+  int32 rank = 29;
+  int32 hotScore = 30;
+  AdButtonDto button = 31;
+  string adverLogo = 32;
+  string adverName = 33;
+  string adverPageUrl = 34;
+  repeated string videoBarrage = 35;
+  AdBusinessMarkDto adTagStyle = 36;
+  AdAutoPlayVideoDto video = 37;
+  AdFeedbackPanelDto feedbackPanel = 38;
+  int64 adverMid = 39;
+  int64 adverAccountId = 40;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/bce/AdContentExtraDto.java
+message AdContentExtraDto {
+  string layout = 1;
+  repeated string showUrls = 2;
+  repeated string clickUrls = 3;
+  repeated string danmuListShowUrls = 4;
+  repeated string danmuListClickUrls = 5;
+  repeated string danmuDetailShowUrls = 6;
+  repeated string danmuTrolleyAddUrls = 7;
+  bool useAdWebV2 = 8;
+  repeated string openWhitelist = 9;
+  repeated AppPackageDto downloadWhitelist = 10;
+  AdCardDto card = 11;
+  int32 reportTime = 12;
+  int32 appstorePriority = 13;
+  int32 salesType = 14;
+  int32 preloadLandingpage = 15;
+  bool specialIndustry = 16;
+  string specialIndustryTips = 17;
+  bool enableDownloadDialog = 18;
+  bool enableShare = 19;
+  int32 upzoneEntranceType = 20;
+  int32 upzoneEntranceReportId = 21;
+  AdShareInfoDto shareInfo = 22;
+  string topviewPicUrl = 23;
+  string topviewVideoUrl = 24;
+  int32 clickArea = 25;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/bce/AdCoverDto.java
+message AdCoverDto {
+  string url = 1;
+  int32 loop = 2;
+  string jumpUrl = 3;
+  repeated string reportUrls = 4;
+  int32 imageHeight = 5;
+  int32 imageWidth = 6;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/bce/AdDto.java
+message AdDto {
+  int64 creativeId = 1;
+  string adCb = 2;
+  AdContentExtraDto extra = 3;
+  int32 cmMark = 4;
+  int64 topViewId = 5;
+  int32 creativeType = 6;
+  int32 cardType = 7;
+  int32 creativeStyle = 8;
+  bool isAd = 9;
+  CreativeDto creativeContent = 10;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/bce/AdFeedbackPanelDto.java
+message AdFeedbackPanelDto {
+  string panelTypeText = 1;
+  repeated AdFeedbackPanelModuleDto feedbackPanelDetail = 2;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/bce/AdFeedbackPanelModuleDto.java
+message AdFeedbackPanelModuleDto {
+  int32 moduleId = 1;
+  string iconUrl = 2;
+  int32 jumpType = 3;
+  string jumpUrl = 4;
+  string text = 5;
+  repeated AdSecondFeedbackPanelDto secondaryPanel = 6;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/bce/AdGoodDto.java
+message AdGoodDto {
+  int64 itemId = 1;
+  int64 skuId = 2;
+  int64 shopId = 3;
+  int64 skuNum = 4;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/bce/AdSecondFeedbackPanelDto.java
+message AdSecondFeedbackPanelDto {
+  int32 reasonId = 1;
+  string text = 2;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/bce/AdShareInfoDto.java
+message AdShareInfoDto {
+  string title = 1;
+  string subtitle = 2;
+  string imageUrl = 3;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/bce/AppPackageDto.java
+message AppPackageDto {
+  int64 size = 1;
+  string displayName = 2;
+  string apkName = 3;
+  string url = 4;
+  string biliUrl = 5;
+  string md5 = 6;
+  string icon = 7;
+}
+
+// Source: com/bapis/bcg/sunspot/ad/bce/CreativeDto.java
+message CreativeDto {
+  string title = 1;
+  string description = 2;
+  string imageUrl = 3;
+  string imageMd5 = 4;
+  string url = 5;
+  string clickUrl = 6;
+  string showUrl = 7;
+  int64 videoId = 8;
+  string thumbnailUrl = 9;
+  string thumbnailUrlMd5 = 10;
+  string logoUrl = 11;
+  string logoMd5 = 12;
+  string username = 13;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bcg/sunspot/ad/bce";

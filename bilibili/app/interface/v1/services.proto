@@ -1,0 +1,21 @@
+// Reconstructed from gRPC service descriptors.
+syntax = "proto3";
+
+package bilibili.app.interface.v1;
+
+import "bilibili/app/interfaces/v1/messages.proto";
+
+service History {
+  rpc Cursor(.com.bapis.bilibili.app.interfaces.v1.CursorReq) returns (.com.bapis.bilibili.app.interfaces.v1.CursorReply);
+  rpc Delete(.com.bapis.bilibili.app.interfaces.v1.DeleteReq) returns (.com.bapis.bilibili.app.interfaces.v1.NoReply);
+}
+
+service Search {
+  rpc Suggest3(.com.bapis.bilibili.app.interfaces.v1.SuggestionResult3Req) returns (.com.bapis.bilibili.app.interfaces.v1.SuggestionResult3Reply);
+}
+
+service SearchTest {
+  rpc NotExist(.com.bapis.bilibili.app.interfaces.v1.SuggestionResult3Req) returns (.com.bapis.bilibili.app.interfaces.v1.SuggestionResult3Reply);
+}
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/interface/v1";

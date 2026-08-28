@@ -3,6 +3,11 @@ syntax = "proto3";
 
 package com.bapis.bilibili.broadcast.message.tv;
 
+enum IconType {
+  ICON_TYPE_UNKNOWN = 0;
+  ICON_TYPE_PRELOAD = 1;
+}
+
 enum LiveSource {
   LiveSourceMLive = 0;
   LiveSourceBizTrigger = 1;
@@ -37,10 +42,22 @@ message DanmakuElem {
   int32 attr = 13;
 }
 
+// Source: com/bapis/bilibili/broadcast/message/tv/DMActivityOTT.java
+message DMActivityOTT {
+  int64 mode = 1;
+  int64 fontSize = 2;
+  int64 playerMode = 3;
+  string userHash = 4;
+  int64 bulgeDisplay = 5;
+  string animation = 6;
+  Icon icon = 7;
+}
+
 // Source: com/bapis/bilibili/broadcast/message/tv/DmActivityReply.java
 message DmActivityReply {
   int64 roomId = 1;
   repeated DmActivityReply_ActivityInfo activityList = 2;
+  int64 ts = 3;
 }
 
 // Source: com/bapis/bilibili/broadcast/message/tv/DmActivityReply.java
@@ -116,6 +133,9 @@ message DmLiveElem {
   int32 parentAreaId = 12;
   int32 dmType = 13;
   string idStr = 14;
+  map<string, Emoji> emots = 15;
+  Emoticons emoticons = 16;
+  DMActivityOTT dmActivity = 17;
 }
 
 // Source: com/bapis/bilibili/broadcast/message/tv/DmLiveReply.java
@@ -136,6 +156,28 @@ message DmSegLiveReply {
   int32 state = 2;
 }
 
+// Source: com/bapis/bilibili/broadcast/message/tv/Emoji.java
+message Emoji {
+  int64 emoticonId = 1;
+  string emoji = 2;
+  string descript = 3;
+  string url = 4;
+  int64 width = 5;
+  int64 height = 6;
+  string emoticonUnique = 7;
+  int64 count = 8;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/Emoticons.java
+message Emoticons {
+  string id = 1;
+  string text = 2;
+  string url = 3;
+  int64 inPlayerArea = 4;
+  int64 height = 5;
+  int64 width = 6;
+}
+
 // Source: com/bapis/bilibili/broadcast/message/tv/EsportsNotify.java
 message EsportsNotify {
   int64 cid = 1;
@@ -145,6 +187,11 @@ message EsportsNotify {
 message FeedClientSmartNotify {
   int64 mid = 1;
   string cards = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/Icon.java
+message Icon {
+  Prefix prefix = 1;
 }
 
 // Source: com/bapis/bilibili/broadcast/message/tv/LiveBottomConfNotify.java
@@ -200,6 +247,8 @@ message NotifyPop {
   string textBottom = 6;
   int32 expire = 7;
   repeated NotifyPopBtn notifyBtnList = 8;
+  string bottomText = 9;
+  int32 expireNew = 10;
 }
 
 // Source: com/bapis/bilibili/broadcast/message/tv/NotifyPopBtn.java
@@ -218,6 +267,12 @@ message NotifyPopReply {
 message OgvPayOrderReply {
   int64 mid = 1;
   int64 seasonId = 2;
+}
+
+// Source: com/bapis/bilibili/broadcast/message/tv/Prefix.java
+message Prefix {
+  IconType type = 1;
+  string resource = 2;
 }
 
 // Source: com/bapis/bilibili/broadcast/message/tv/ProjLiveEventNotify.java
@@ -240,6 +295,7 @@ message ProjReply {
   string extra = 9;
   int64 roomId = 10;
   string deviceInfo = 11;
+  string screencastEvent = 12;
 }
 
 // Source: com/bapis/bilibili/broadcast/message/tv/PublicityNotify.java
@@ -247,25 +303,6 @@ message PublicityNotify {
   int64 publicityId = 1;
   int64 roomId = 2;
   int64 status = 3;
-}
-
-// Source: com/bapis/bilibili/broadcast/message/tv/TVAssistantCommand.java
-message TVAssistantCommand {
-  string tvAssistantSessionId = 1;
-  string requestId = 2;
-  string cmd = 3;
-  int64 tvMid = 4;
-  string tvBuvid = 5;
-  int64 mobileMid = 6;
-  string mobileBuvid = 7;
-  int64 videoType = 8;
-  int64 aid = 9;
-  int64 cid = 10;
-  int64 seasonId = 11;
-  int64 epId = 12;
-  int64 roomId = 13;
-  string payload = 14;
-  int64 ts = 15;
 }
 
 

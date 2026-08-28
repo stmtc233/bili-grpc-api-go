@@ -1,0 +1,14 @@
+// Reconstructed from gRPC service descriptors.
+syntax = "proto3";
+
+package bilibili.tv.interface.v1.community;
+
+import "ott/community/messages.proto";
+
+service UserCommunity {
+  rpc GetHistoryRPC(.com.bapis.ott.community.GetHistoryReq) returns (.com.bapis.ott.community.GetHistoryReply);
+  rpc HasLike(.com.bapis.ott.community.HasLikeReq) returns (.com.bapis.ott.community.HasLikeReply);
+  rpc Like(.com.bapis.ott.community.LikeReq) returns (.com.bapis.ott.community.LikeReply);
+}
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/tv/interface/v1/community";

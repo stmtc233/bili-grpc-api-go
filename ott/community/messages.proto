@@ -1,0 +1,216 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.ott.community;
+
+enum State {
+  STATE_UNSPECIFIED = 0;
+  STATE_LIKE = 1;
+  STATE_DISLIKE = 2;
+}
+
+// Source: com/bapis/ott/community/BaseUpper.java
+message BaseUpper {
+  int64 mid = 1;
+  string face = 2;
+  string name = 3;
+  int32 attribute = 4;
+}
+
+// Source: com/bapis/ott/community/Catalog.java
+message Catalog {
+  int64 catalogId = 1;
+  string catalogName = 2;
+  int64 catalogPid = 3;
+  string catalogPname = 4;
+}
+
+// Source: com/bapis/ott/community/Device.java
+message Device {
+  string buvid = 1;
+  int32 build = 2;
+  string platform = 3;
+  string mobiApp = 4;
+  string clientIp = 5;
+  int64 sysVer = 6;
+  string channel = 7;
+  string brand = 8;
+  string model = 9;
+  int64 searchTrace = 10;
+  string brvd = 11;
+  string brr = 12;
+  int64 memory = 13;
+  string cpu = 14;
+  string mpiId = 15;
+  string mpiType = 16;
+  string mpiModel = 17;
+  int64 teenagerMode = 18;
+  string guestAccessKey = 19;
+  bool modeSwitch = 20;
+  int32 familyMode = 21;
+  string fromSpmid = 22;
+  string spmid = 23;
+  string accessKey = 24;
+  string reqScene = 25;
+  int64 fourk = 26;
+  int64 guestId = 27;
+  int64 buildSn = 28;
+  string ua = 29;
+  string fromOut = 30;
+  int32 loginGuideType = 31;
+}
+
+// Source: com/bapis/ott/community/GetHistoryReply.java
+message GetHistoryReply {
+  repeated HisRes hisRes = 1;
+  bytes loginwall = 2;
+}
+
+// Source: com/bapis/ott/community/GetHistoryReq.java
+message GetHistoryReq {
+  int64 mid = 1;
+  int64 guestId = 2;
+  Device device = 3;
+  string from = 4;
+  int32 fourk = 5;
+  int64 eightk = 6;
+  string business = 7;
+}
+
+// Source: com/bapis/ott/community/HasLikeReply.java
+message HasLikeReply {
+  map<int64, UserLikeState> states = 1;
+}
+
+// Source: com/bapis/ott/community/HasLikeReq.java
+message HasLikeReq {
+  int64 mid = 1;
+  repeated int64 aids = 2;
+  string channel = 3;
+}
+
+// Source: com/bapis/ott/community/HisCheese.java
+message HisCheese {
+  int64 epId = 1;
+  string cover = 2;
+  string title = 3;
+  string longTitle = 4;
+  int32 sectionType = 5;
+}
+
+// Source: com/bapis/ott/community/HisEP.java
+message HisEP {
+  int64 epId = 1;
+  string cover = 2;
+  string title = 3;
+  string longTitle = 4;
+  int32 sectionType = 5;
+  string resourceFrom = 6;
+}
+
+// Source: com/bapis/ott/community/HisLive.java
+message HisLive {
+  bool onLive = 1;
+  string areaName = 2;
+}
+
+// Source: com/bapis/ott/community/HisPage.java
+message HisPage {
+  int64 cid = 1;
+  string part = 2;
+  int32 page = 3;
+}
+
+// Source: com/bapis/ott/community/HisRes.java
+message HisRes {
+  int64 mid = 1;
+  int64 oid = 2;
+  int64 seasonId = 3;
+  int64 epid = 4;
+  int64 cid = 5;
+  string business = 6;
+  int32 dt = 7;
+  int64 pro = 8;
+  int64 duration = 9;
+  int64 viewAt = 10;
+  string viewAtStr = 11;
+  int32 type = 12;
+  string title = 13;
+  string cover = 14;
+  HisPage page = 15;
+  HisEP bangumi = 16;
+  HisLive live = 17;
+  SnVipCorner cornermark = 18;
+  HisCheese cheese = 19;
+  int64 kid = 20;
+  BaseUpper upper = 21;
+  Catalog catalog = 22;
+  HisUgcExt ugcExt = 23;
+  repeated UGCCardSubtitle subtitles = 24;
+  int64 serialId = 25;
+}
+
+// Source: com/bapis/ott/community/HisUgcExt.java
+message HisUgcExt {
+  int64 pubtime = 1;
+  int32 videos = 2;
+  repeated UGCCardSubtitle listSubtitles = 3;
+}
+
+// Source: com/bapis/ott/community/LikeReply.java
+message LikeReply {
+}
+
+// Source: com/bapis/ott/community/LikeReq.java
+message LikeReq {
+  int64 mid = 1;
+  int64 aid = 2;
+  int64 upMid = 3;
+  int32 action = 4;
+  string channel = 6;
+  string ip = 7;
+}
+
+// Source: com/bapis/ott/community/LoginWall.java
+message LoginWall {
+  string bgUrl = 1;
+  string title = 2;
+  string subtitle = 3;
+  string buttontext = 4;
+  string maskurl = 5;
+  int32 focus = 6;
+  string maskbuttontext = 7;
+}
+
+// Source: com/bapis/ott/community/NoReply.java
+message NoReply {
+}
+
+// Source: com/bapis/ott/community/SnVipCorner.java
+message SnVipCorner {
+  string title = 1;
+  string cover = 2;
+  int32 badgeType = 3;
+  string badgeColor = 4;
+  bool bold = 5;
+  int32 type = 6;
+  string link = 7;
+  string linkSquare = 8;
+}
+
+// Source: com/bapis/ott/community/UGCCardSubtitle.java
+message UGCCardSubtitle {
+  string icon = 1;
+  string text = 2;
+  string jumpTo = 3;
+}
+
+// Source: com/bapis/ott/community/UserLikeState.java
+message UserLikeState {
+  int64 mid = 1;
+  int64 time = 2;
+  State state = 3;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/ott/community";

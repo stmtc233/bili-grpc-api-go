@@ -3,11 +3,6 @@ syntax = "proto3";
 
 package com.bapis.bilibili.app.card.v1;
 
-enum TranslateStatus {
-  TRANSLATE_STATUS_DEFAULT = 0;
-  TRANSLATE_STATUS_SEE_ORIGINAL = 1;
-}
-
 // Source: com/bapis/bilibili/app/card/v1/AdInfo.java
 message AdInfo {
   int64 creativeId = 1;
@@ -26,8 +21,6 @@ message AdInfo {
   string clientIp = 14;
   bytes extra = 15;
   int32 creativeStyle = 16;
-  int64 natureAd = 17;
-  int32 contentFastAccess = 18;
 }
 
 // Source: com/bapis/bilibili/app/card/v1/Args.java
@@ -76,9 +69,6 @@ message Base {
   repeated ThreePointV3 threePointV3 = 16;
   Button descButton = 17;
   ThreePointV4 threePointV4 = 18;
-  UpArgs upArgs = 19;
-  string trackId = 20;
-  string translatedTitle = 21;
 }
 
 // Source: com/bapis/bilibili/app/card/v1/Bubble.java
@@ -113,8 +103,6 @@ message Card {
     LargeCoverV4 largeCoverV4 = 8;
     PopularTopEntrance popularTopEntrance = 9;
     RcmdOneItem rcmdOneItem = 10;
-    SmallCoverV5Ad smallCoverV5Ad = 11;
-    TopicList topicList = 12;
   }
   enum ItemCase {
     ITEM_NOT_SET = 0;
@@ -128,8 +116,6 @@ message Card {
     LARGE_COVER_V4 = 8;
     POPULAR_TOP_ENTRANCE = 9;
     RCMD_ONE_ITEM = 10;
-    SMALL_COVER_V5_AD = 11;
-    TOPIC_LIST = 12;
   }
 
 }
@@ -196,20 +182,6 @@ message EntranceItem {
   int32 entranceType = 8;
 }
 
-// Source: com/bapis/bilibili/app/card/v1/FunctionalButton.java
-message FunctionalButton {
-  int32 type = 1;
-  repeated FunctionalButtonMeta buttonMetas = 2;
-}
-
-// Source: com/bapis/bilibili/app/card/v1/FunctionalButtonMeta.java
-message FunctionalButtonMeta {
-  string icon = 1;
-  string text = 2;
-  string buttonStatus = 3;
-  string toast = 4;
-}
-
 // Source: com/bapis/bilibili/app/card/v1/HotTopic.java
 message HotTopic {
   Base base = 1;
@@ -231,14 +203,6 @@ message HotwordEntrance {
   string hotText = 2;
   string h5Url = 3;
   string icon = 4;
-}
-
-// Source: com/bapis/bilibili/app/card/v1/InlineProgressBar.java
-message InlineProgressBar {
-  string iconDrag = 1;
-  string iconDragHash = 2;
-  string iconStop = 3;
-  string iconStopHash = 4;
 }
 
 // Source: com/bapis/bilibili/app/card/v1/LargeCoverV1.java
@@ -382,14 +346,6 @@ message OnePicV3 {
   ReasonStyle rcmdReasonStyle = 8;
 }
 
-// Source: com/bapis/bilibili/app/card/v1/PanelMeta.java
-message PanelMeta {
-  int32 panelType = 1;
-  string shareOrigin = 2;
-  string shareId = 3;
-  repeated FunctionalButton functionalButtons = 4;
-}
-
 // Source: com/bapis/bilibili/app/card/v1/PlayerArgs.java
 message PlayerArgs {
   int32 isLive = 1;
@@ -434,7 +390,6 @@ message ReasonStyle {
   string event = 13;
   string eventV2 = 14;
   int32 rightIconType = 15;
-  string leftIconType = 16;
 }
 
 // Source: com/bapis/bilibili/app/card/v1/Relation.java
@@ -457,7 +412,6 @@ message SharePlane {
   int64 authorId = 9;
   string shortLink = 10;
   string playNumber = 11;
-  int64 firstCid = 12;
 }
 
 // Source: com/bapis/bilibili/app/card/v1/SmallChannelSpecial.java
@@ -494,10 +448,6 @@ message SmallCoverRcmdItem {
   string rightDesc1 = 7;
   string rightDesc2 = 8;
   string coverGif = 9;
-  int32 rightIcon1 = 10;
-  int32 rightIcon2 = 11;
-  string coverRightTextContentDescription = 12;
-  string rightDesc1ContentDescription = 13;
 }
 
 // Source: com/bapis/bilibili/app/card/v1/SmallCoverV2.java
@@ -557,29 +507,6 @@ message SmallCoverV5 {
   ReasonStyle rcmdReasonStyle = 7;
   HotwordEntrance hotwordEntrance = 8;
   ReasonStyle cornerMarkStyle = 9;
-  int32 rightIcon1 = 10;
-  int32 rightIcon2 = 11;
-  ReasonStyle leftCornerMarkStyle = 12;
-  string coverRightTextContentDescription = 13;
-  string rightDesc1ContentDescription = 14;
-}
-
-// Source: com/bapis/bilibili/app/card/v1/SmallCoverV5Ad.java
-message SmallCoverV5Ad {
-  Base base = 1;
-  string coverGif = 2;
-  Up up = 3;
-  string coverRightText1 = 4;
-  string rightDesc1 = 5;
-  string rightDesc2 = 6;
-  ReasonStyle rcmdReasonStyle = 7;
-  HotwordEntrance hotwordEntrance = 8;
-  ReasonStyle cornerMarkStyle = 9;
-  int32 rightIcon1 = 10;
-  int32 rightIcon2 = 11;
-  ReasonStyle leftCornerMarkStyle = 12;
-  string coverRightTextContentDescription = 13;
-  string rightDesc1ContentDescription = 14;
 }
 
 // Source: com/bapis/bilibili/app/card/v1/SmallCoverV7.java
@@ -722,39 +649,6 @@ message ThreePointV3 {
 message ThreePointV4 {
   SharePlane sharePlane = 1;
   WatchLater watchLater = 2;
-  TranslateButton translateButton = 3;
-}
-
-// Source: com/bapis/bilibili/app/card/v1/TopicButton.java
-message TopicButton {
-  string title = 1;
-  string jumpUri = 2;
-  bool redDot = 3;
-}
-
-// Source: com/bapis/bilibili/app/card/v1/TopicList.java
-message TopicList {
-  Base base = 1;
-  string title = 2;
-  string titleIcon = 3;
-  TopicButton moreButton = 4;
-  repeated TopicListItem topicListItem = 5;
-}
-
-// Source: com/bapis/bilibili/app/card/v1/TopicListItem.java
-message TopicListItem {
-  string icon = 1;
-  string iconTitle = 2;
-  int64 topicId = 3;
-  string topicName = 4;
-  string url = 5;
-  int64 upMid = 6;
-  int64 position = 7;
-}
-
-// Source: com/bapis/bilibili/app/card/v1/TranslateButton.java
-message TranslateButton {
-  TranslateStatus buttonStatus = 1;
 }
 
 // Source: com/bapis/bilibili/app/card/v1/TwoItemHV1Item.java
@@ -793,14 +687,6 @@ message Up {
   int32 officialIcon = 5;
   Button descButton = 6;
   string cooperation = 7;
-}
-
-// Source: com/bapis/bilibili/app/card/v1/UpArgs.java
-message UpArgs {
-  int64 upId = 1;
-  string upName = 2;
-  string upFace = 3;
-  int64 selected = 4;
 }
 
 // Source: com/bapis/bilibili/app/card/v1/WatchLater.java

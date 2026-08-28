@@ -1,0 +1,23 @@
+// Reconstructed from gRPC service descriptors.
+syntax = "proto3";
+
+package bilibili.app.show.v1;
+
+import "bilibili/app/show/popular/v1/messages.proto";
+import "bilibili/app/show/rank/v1/messages.proto";
+import "bilibili/app/show/region/v1/messages.proto";
+
+service Popular {
+  rpc Index(.com.bapis.bilibili.app.show.popular.v1.PopularResultReq) returns (.com.bapis.bilibili.app.show.popular.v1.PopularReply);
+}
+
+service Rank {
+  rpc RankAll(.com.bapis.bilibili.app.show.rank.v1.RankAllResultReq) returns (.com.bapis.bilibili.app.show.rank.v1.RankListReply);
+  rpc RankRegion(.com.bapis.bilibili.app.show.rank.v1.RankRegionResultReq) returns (.com.bapis.bilibili.app.show.rank.v1.RankListReply);
+}
+
+service Region {
+  rpc Region(.com.bapis.bilibili.app.show.region.v1.RegionReq) returns (.com.bapis.bilibili.app.show.region.v1.RegionReply);
+}
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/show/v1";

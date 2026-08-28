@@ -3,65 +3,13 @@ syntax = "proto3";
 
 package com.bapis.bilibili.api.probe.v1;
 
-enum Category {
-  CATEGORY_UNSPECIFIED = 0;
-  CATEGORY_ONE = 1;
-  CATEGORY_TWO = 2;
-  CATEGORY_THREE = 3;
-  CATEGORY_FOUR = 4;
-}
-
 // Source: com/bapis/bilibili/api/probe/v1/CodeReply.java
 message CodeReply {
-  string id = 1;
-  string id1 = 2;
-  int64 code = 3;
-  string messageS = 4;
 }
 
 // Source: com/bapis/bilibili/api/probe/v1/CodeReq.java
 message CodeReq {
   int64 code = 1;
-}
-
-// Source: com/bapis/bilibili/api/probe/v1/CreateTopic.java
-message CreateTopic {
-  int64 id = 1;
-}
-
-// Source: com/bapis/bilibili/api/probe/v1/CreatTask.java
-message CreatTask {
-  string name = 1;
-}
-
-// Source: com/bapis/bilibili/api/probe/v1/DynamicMessageUpdate.java
-message DynamicMessageUpdate {
-  SimpleMessage body = 1;
-}
-
-// Source: com/bapis/bilibili/api/probe/v1/Embedded.java
-message Embedded {
-  bool boolVal = 1;
-  int32 int32Val = 2;
-  int64 int64Val = 3;
-  float floatVal = 4;
-  double doubleVal = 5;
-  string stringVal = 6;
-  repeated bool repeatedBoolVal = 7;
-  repeated int32 repeatedInt32Val = 8;
-  repeated int64 repeatedInt64Val = 9;
-  repeated float repeatedFloatVal = 10;
-  repeated double repeatedDoubleVal = 11;
-  repeated string repeatedStringVal = 12;
-  map<string, string> mapStringVal = 13;
-  map<string, ErrorMessage> mapErrorVal = 14;
-}
-
-// Source: com/bapis/bilibili/api/probe/v1/ErrorMessage.java
-message ErrorMessage {
-  int64 code = 1;
-  string reason = 2;
-  string message_ = 3;
 }
 
 // Source: com/bapis/bilibili/api/probe/v1/ProbeReply.java
@@ -97,22 +45,6 @@ message ProbeSubReply {
 // Source: com/bapis/bilibili/api/probe/v1/ProbeSubReq.java
 message ProbeSubReq {
   string buvid = 1;
-}
-
-// Source: com/bapis/bilibili/api/probe/v1/SimpleMessage.java
-message SimpleMessage {
-  int32 id = 1;
-  int64 num = 2;
-  string lang = 3;
-  Category cate = 4;
-  Embedded embedded = 5;
-}
-
-// Source: com/bapis/bilibili/api/probe/v1/Task.java
-message Task {
-  string name = 1;
-  string author = 2;
-  bool cache = 3;
 }
 
 

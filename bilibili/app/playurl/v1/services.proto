@@ -1,16 +1,16 @@
-// Reconstructed from the checked-in gRPC service catalog.
+// Reconstructed from gRPC service descriptors.
 syntax = "proto3";
 
-package com.bapis.bilibili.app.playurl.v1;
+package bilibili.app.playurl.v1;
 
 import "bilibili/app/playurl/v1/messages.proto";
 
 service PlayURL {
-  rpc PlayConf(PlayConfReq) returns (PlayConfReply);
-  rpc PlayConfEdit(PlayConfEditReq) returns (PlayConfEditReply);
-  rpc PlayURL(PlayURLReq) returns (PlayURLReply);
-  rpc PlayView(PlayViewReq) returns (PlayViewReply);
-  rpc Project(ProjectReq) returns (ProjectReply);
+  rpc PlayConf(.com.bapis.bilibili.app.playurl.v1.PlayConfReq) returns (.com.bapis.bilibili.app.playurl.v1.PlayConfReply);
+  rpc PlayConfEdit(.com.bapis.bilibili.app.playurl.v1.PlayConfEditReq) returns (.com.bapis.bilibili.app.playurl.v1.PlayConfEditReply);
+  rpc PlayURL(.com.bapis.bilibili.app.playurl.v1.PlayURLReq) returns (.com.bapis.bilibili.app.playurl.v1.PlayURLReply);
+  rpc PlayView(.com.bapis.bilibili.app.playurl.v1.PlayViewReq) returns (.com.bapis.bilibili.app.playurl.v1.PlayViewReply);
+  rpc Project(.com.bapis.bilibili.app.playurl.v1.ProjectReq) returns (.com.bapis.bilibili.app.playurl.v1.ProjectReply);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/playurl/v1";

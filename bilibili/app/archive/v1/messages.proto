@@ -35,10 +35,6 @@ message Arc {
   repeated StaffInfo staffInfo = 28;
   int64 seasonId = 29;
   int64 attributeV2 = 30;
-  SeasonTheme seasonTheme = 31;
-  string shortLinkV2 = 40;
-  int32 upFromV2 = 41;
-  string firstFrame = 42;
 }
 
 // Source: com/bapis/bilibili/app/archive/v1/Author.java
@@ -66,7 +62,6 @@ message Page {
   string desc = 7;
   string weblink = 8;
   Dimension dimension = 9;
-  string firstFrame = 10;
 }
 
 // Source: com/bapis/bilibili/app/archive/v1/Rights.java
@@ -83,15 +78,6 @@ message Rights {
   int32 isCooperation = 10;
   int32 ugcPayPreview = 11;
   int32 noBackground = 12;
-  int32 arcPay = 13;
-  int32 payFreeWatch = 14;
-}
-
-// Source: com/bapis/bilibili/app/archive/v1/SeasonTheme.java
-message SeasonTheme {
-  string bgColor = 1;
-  string selectedBgColor = 2;
-  string textColor = 3;
 }
 
 // Source: com/bapis/bilibili/app/archive/v1/StaffInfo.java

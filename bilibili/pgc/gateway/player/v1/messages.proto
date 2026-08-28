@@ -12,11 +12,6 @@ message BusinessInfo {
   string marlinToken = 3;
 }
 
-// Source: com/bapis/bilibili/pgc/gateway/player/v1/Event.java
-message Event {
-  Shake shake = 1;
-}
-
 // Source: com/bapis/bilibili/pgc/gateway/player/v1/LivePlayInfo.java
 message LivePlayInfo {
   int32 currentQn = 1;
@@ -64,14 +59,6 @@ message PlayAbilityConf {
   bool selectionsDisable = 20;
   bool nextDisable = 21;
   bool editDmDisable = 22;
-  bool smallWindowDisable = 23;
-  bool shakeDisable = 24;
-  bool outerDmDisable = 25;
-  bool innerDmDisable = 26;
-  bool freyaEnterDisable = 27;
-  bool dolbyDisable = 28;
-  bool freyaFullDisable = 29;
-  bool skipOpedSwitchDisable = 30;
 }
 
 // Source: com/bapis/bilibili/pgc/gateway/player/v1/PlayViewReply.java
@@ -79,7 +66,6 @@ message PlayViewReply {
   com.bapis.bilibili.app.playurl.v1.VideoInfo videoInfo = 1;
   PlayAbilityConf playConf = 2;
   BusinessInfo business = 3;
-  Event event = 4;
 }
 
 // Source: com/bapis/bilibili/pgc/gateway/player/v1/PlayViewReq.java
@@ -97,7 +83,6 @@ message PlayViewReq {
   int32 teenagersMode = 11;
   com.bapis.bilibili.app.playurl.v1.CodeType preferCodecType = 12;
   bool isPreview = 13;
-  int64 roomId = 14;
 }
 
 // Source: com/bapis/bilibili/pgc/gateway/player/v1/ProjectReply.java
@@ -119,12 +104,6 @@ message ProjectReq {
   string fromSpmid = 10;
   int32 protocol = 11;
   int32 deviceType = 12;
-  bool useNewProjectCode = 13;
-  int64 aid = 14;
-  string sku = 15;
-  string remoteIp = 16;
-  string remotePort = 17;
-  string dyeid = 18;
 }
 
 // Source: com/bapis/bilibili/pgc/gateway/player/v1/QualityDescription.java
@@ -166,11 +145,6 @@ message RoomStatusInfo {
   int64 hiddenTime = 7;
   int64 liveType = 8;
   int64 roomShield = 9;
-}
-
-// Source: com/bapis/bilibili/pgc/gateway/player/v1/Shake.java
-message Shake {
-  string file = 1;
 }
 
 
