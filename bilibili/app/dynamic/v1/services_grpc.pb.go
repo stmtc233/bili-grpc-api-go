@@ -21,19 +21,19 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Dynamic_DynDetails_FullMethodName           = "/com.bapis.bilibili.app.dynamic.v1.Dynamic/DynDetails"
-	Dynamic_DynMixUpListSearch_FullMethodName   = "/com.bapis.bilibili.app.dynamic.v1.Dynamic/DynMixUpListSearch"
-	Dynamic_DynMixUpListViewMore_FullMethodName = "/com.bapis.bilibili.app.dynamic.v1.Dynamic/DynMixUpListViewMore"
-	Dynamic_DynOurCity_FullMethodName           = "/com.bapis.bilibili.app.dynamic.v1.Dynamic/DynOurCity"
-	Dynamic_DynOurCitySwitch_FullMethodName     = "/com.bapis.bilibili.app.dynamic.v1.Dynamic/DynOurCitySwitch"
-	Dynamic_DynRed_FullMethodName               = "/com.bapis.bilibili.app.dynamic.v1.Dynamic/DynRed"
-	Dynamic_DynTab_FullMethodName               = "/com.bapis.bilibili.app.dynamic.v1.Dynamic/DynTab"
-	Dynamic_DynUpdOffset_FullMethodName         = "/com.bapis.bilibili.app.dynamic.v1.Dynamic/DynUpdOffset"
-	Dynamic_DynVideo_FullMethodName             = "/com.bapis.bilibili.app.dynamic.v1.Dynamic/DynVideo"
-	Dynamic_DynVideoPersonal_FullMethodName     = "/com.bapis.bilibili.app.dynamic.v1.Dynamic/DynVideoPersonal"
-	Dynamic_GeoCoder_FullMethodName             = "/com.bapis.bilibili.app.dynamic.v1.Dynamic/GeoCoder"
-	Dynamic_OurCityClickReport_FullMethodName   = "/com.bapis.bilibili.app.dynamic.v1.Dynamic/OurCityClickReport"
-	Dynamic_SVideo_FullMethodName               = "/com.bapis.bilibili.app.dynamic.v1.Dynamic/SVideo"
+	Dynamic_DynDetails_FullMethodName           = "/bilibili.app.dynamic.v1.Dynamic/DynDetails"
+	Dynamic_DynMixUpListSearch_FullMethodName   = "/bilibili.app.dynamic.v1.Dynamic/DynMixUpListSearch"
+	Dynamic_DynMixUpListViewMore_FullMethodName = "/bilibili.app.dynamic.v1.Dynamic/DynMixUpListViewMore"
+	Dynamic_DynOurCity_FullMethodName           = "/bilibili.app.dynamic.v1.Dynamic/DynOurCity"
+	Dynamic_DynOurCitySwitch_FullMethodName     = "/bilibili.app.dynamic.v1.Dynamic/DynOurCitySwitch"
+	Dynamic_DynRed_FullMethodName               = "/bilibili.app.dynamic.v1.Dynamic/DynRed"
+	Dynamic_DynTab_FullMethodName               = "/bilibili.app.dynamic.v1.Dynamic/DynTab"
+	Dynamic_DynUpdOffset_FullMethodName         = "/bilibili.app.dynamic.v1.Dynamic/DynUpdOffset"
+	Dynamic_DynVideo_FullMethodName             = "/bilibili.app.dynamic.v1.Dynamic/DynVideo"
+	Dynamic_DynVideoPersonal_FullMethodName     = "/bilibili.app.dynamic.v1.Dynamic/DynVideoPersonal"
+	Dynamic_GeoCoder_FullMethodName             = "/bilibili.app.dynamic.v1.Dynamic/GeoCoder"
+	Dynamic_OurCityClickReport_FullMethodName   = "/bilibili.app.dynamic.v1.Dynamic/OurCityClickReport"
+	Dynamic_SVideo_FullMethodName               = "/bilibili.app.dynamic.v1.Dynamic/SVideo"
 )
 
 // DynamicClient is the client API for Dynamic service.
@@ -494,7 +494,7 @@ func _Dynamic_SVideo_Handler(srv interface{}, ctx context.Context, dec func(inte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Dynamic_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.app.dynamic.v1.Dynamic",
+	ServiceName: "bilibili.app.dynamic.v1.Dynamic",
 	HandlerType: (*DynamicServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

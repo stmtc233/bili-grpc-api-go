@@ -22,7 +22,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	BGroup_AppEventStream_FullMethodName = "/com.bapis.bilibili.broadcast.message.bgroup.BGroup/AppEventStream"
+	BGroup_AppEventStream_FullMethodName = "/bilibili.broadcast.message.bgroup.BGroup/AppEventStream"
 )
 
 // BGroupClient is the client API for BGroup service.
@@ -132,7 +132,7 @@ func (x *bGroupAppEventStreamServer) Recv() (*AppEventMessage, error) {
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var BGroup_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.broadcast.message.bgroup.BGroup",
+	ServiceName: "bilibili.broadcast.message.bgroup.BGroup",
 	HandlerType: (*BGroupServer)(nil),
 	Methods:     []grpc.MethodDesc{},
 	Streams: []grpc.StreamDesc{

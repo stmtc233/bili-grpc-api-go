@@ -21,14 +21,14 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	History_Clear_FullMethodName         = "/com.bapis.bilibili.app.interfaces.v1.History/Clear"
-	History_Cursor_FullMethodName        = "/com.bapis.bilibili.app.interfaces.v1.History/Cursor"
-	History_CursorV2_FullMethodName      = "/com.bapis.bilibili.app.interfaces.v1.History/CursorV2"
-	History_Delete_FullMethodName        = "/com.bapis.bilibili.app.interfaces.v1.History/Delete"
-	History_HistoryTab_FullMethodName    = "/com.bapis.bilibili.app.interfaces.v1.History/HistoryTab"
-	History_HistoryTabV2_FullMethodName  = "/com.bapis.bilibili.app.interfaces.v1.History/HistoryTabV2"
-	History_LatestHistory_FullMethodName = "/com.bapis.bilibili.app.interfaces.v1.History/LatestHistory"
-	History_Search_FullMethodName        = "/com.bapis.bilibili.app.interfaces.v1.History/Search"
+	History_Clear_FullMethodName         = "/bilibili.app.interfaces.v1.History/Clear"
+	History_Cursor_FullMethodName        = "/bilibili.app.interfaces.v1.History/Cursor"
+	History_CursorV2_FullMethodName      = "/bilibili.app.interfaces.v1.History/CursorV2"
+	History_Delete_FullMethodName        = "/bilibili.app.interfaces.v1.History/Delete"
+	History_HistoryTab_FullMethodName    = "/bilibili.app.interfaces.v1.History/HistoryTab"
+	History_HistoryTabV2_FullMethodName  = "/bilibili.app.interfaces.v1.History/HistoryTabV2"
+	History_LatestHistory_FullMethodName = "/bilibili.app.interfaces.v1.History/LatestHistory"
+	History_Search_FullMethodName        = "/bilibili.app.interfaces.v1.History/Search"
 )
 
 // HistoryClient is the client API for History service.
@@ -329,7 +329,7 @@ func _History_Search_Handler(srv interface{}, ctx context.Context, dec func(inte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var History_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.app.interfaces.v1.History",
+	ServiceName: "bilibili.app.interfaces.v1.History",
 	HandlerType: (*HistoryServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -370,12 +370,12 @@ var History_ServiceDesc = grpc.ServiceDesc{
 }
 
 const (
-	Media_MediaComment_FullMethodName  = "/com.bapis.bilibili.app.interfaces.v1.Media/MediaComment"
-	Media_MediaDetail_FullMethodName   = "/com.bapis.bilibili.app.interfaces.v1.Media/MediaDetail"
-	Media_MediaFollow_FullMethodName   = "/com.bapis.bilibili.app.interfaces.v1.Media/MediaFollow"
-	Media_MediaRelation_FullMethodName = "/com.bapis.bilibili.app.interfaces.v1.Media/MediaRelation"
-	Media_MediaTab_FullMethodName      = "/com.bapis.bilibili.app.interfaces.v1.Media/MediaTab"
-	Media_MediaVideo_FullMethodName    = "/com.bapis.bilibili.app.interfaces.v1.Media/MediaVideo"
+	Media_MediaComment_FullMethodName  = "/bilibili.app.interfaces.v1.Media/MediaComment"
+	Media_MediaDetail_FullMethodName   = "/bilibili.app.interfaces.v1.Media/MediaDetail"
+	Media_MediaFollow_FullMethodName   = "/bilibili.app.interfaces.v1.Media/MediaFollow"
+	Media_MediaRelation_FullMethodName = "/bilibili.app.interfaces.v1.Media/MediaRelation"
+	Media_MediaTab_FullMethodName      = "/bilibili.app.interfaces.v1.Media/MediaTab"
+	Media_MediaVideo_FullMethodName    = "/bilibili.app.interfaces.v1.Media/MediaVideo"
 )
 
 // MediaClient is the client API for Media service.
@@ -612,7 +612,7 @@ func _Media_MediaVideo_Handler(srv interface{}, ctx context.Context, dec func(in
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Media_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.app.interfaces.v1.Media",
+	ServiceName: "bilibili.app.interfaces.v1.Media",
 	HandlerType: (*MediaServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -645,8 +645,8 @@ var Media_ServiceDesc = grpc.ServiceDesc{
 }
 
 const (
-	Search_DefaultWords_FullMethodName = "/com.bapis.bilibili.app.interfaces.v1.Search/DefaultWords"
-	Search_Suggest3_FullMethodName     = "/com.bapis.bilibili.app.interfaces.v1.Search/Suggest3"
+	Search_DefaultWords_FullMethodName = "/bilibili.app.interfaces.v1.Search/DefaultWords"
+	Search_Suggest3_FullMethodName     = "/bilibili.app.interfaces.v1.Search/Suggest3"
 )
 
 // SearchClient is the client API for Search service.
@@ -755,7 +755,7 @@ func _Search_Suggest3_Handler(srv interface{}, ctx context.Context, dec func(int
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Search_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.app.interfaces.v1.Search",
+	ServiceName: "bilibili.app.interfaces.v1.Search",
 	HandlerType: (*SearchServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -772,7 +772,7 @@ var Search_ServiceDesc = grpc.ServiceDesc{
 }
 
 const (
-	SearchTest_NotExist_FullMethodName = "/com.bapis.bilibili.app.interfaces.v1.SearchTest/NotExist"
+	SearchTest_NotExist_FullMethodName = "/bilibili.app.interfaces.v1.SearchTest/NotExist"
 )
 
 // SearchTestClient is the client API for SearchTest service.
@@ -849,7 +849,7 @@ func _SearchTest_NotExist_Handler(srv interface{}, ctx context.Context, dec func
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var SearchTest_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.app.interfaces.v1.SearchTest",
+	ServiceName: "bilibili.app.interfaces.v1.SearchTest",
 	HandlerType: (*SearchTestServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -862,10 +862,10 @@ var SearchTest_ServiceDesc = grpc.ServiceDesc{
 }
 
 const (
-	Space_SearchArchive_FullMethodName          = "/com.bapis.bilibili.app.interfaces.v1.Space/SearchArchive"
-	Space_SearchDynamic_FullMethodName          = "/com.bapis.bilibili.app.interfaces.v1.Space/SearchDynamic"
-	Space_SearchTab_FullMethodName              = "/com.bapis.bilibili.app.interfaces.v1.Space/SearchTab"
-	Space_UpdateReserveStartTime_FullMethodName = "/com.bapis.bilibili.app.interfaces.v1.Space/UpdateReserveStartTime"
+	Space_SearchArchive_FullMethodName          = "/bilibili.app.interfaces.v1.Space/SearchArchive"
+	Space_SearchDynamic_FullMethodName          = "/bilibili.app.interfaces.v1.Space/SearchDynamic"
+	Space_SearchTab_FullMethodName              = "/bilibili.app.interfaces.v1.Space/SearchTab"
+	Space_UpdateReserveStartTime_FullMethodName = "/bilibili.app.interfaces.v1.Space/UpdateReserveStartTime"
 )
 
 // SpaceClient is the client API for Space service.
@@ -1038,7 +1038,7 @@ func _Space_UpdateReserveStartTime_Handler(srv interface{}, ctx context.Context,
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Space_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.app.interfaces.v1.Space",
+	ServiceName: "bilibili.app.interfaces.v1.Space",
 	HandlerType: (*SpaceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1063,12 +1063,12 @@ var Space_ServiceDesc = grpc.ServiceDesc{
 }
 
 const (
-	Teenagers_FacialRecognitionVerify_FullMethodName = "/com.bapis.bilibili.app.interfaces.v1.Teenagers/FacialRecognitionVerify"
-	Teenagers_ModeStatus_FullMethodName              = "/com.bapis.bilibili.app.interfaces.v1.Teenagers/ModeStatus"
-	Teenagers_ModifyPwd_FullMethodName               = "/com.bapis.bilibili.app.interfaces.v1.Teenagers/ModifyPwd"
-	Teenagers_SetTeenagersModelAge_FullMethodName    = "/com.bapis.bilibili.app.interfaces.v1.Teenagers/SetTeenagersModelAge"
-	Teenagers_UpdateStatus_FullMethodName            = "/com.bapis.bilibili.app.interfaces.v1.Teenagers/UpdateStatus"
-	Teenagers_VerifyPwd_FullMethodName               = "/com.bapis.bilibili.app.interfaces.v1.Teenagers/VerifyPwd"
+	Teenagers_FacialRecognitionVerify_FullMethodName = "/bilibili.app.interfaces.v1.Teenagers/FacialRecognitionVerify"
+	Teenagers_ModeStatus_FullMethodName              = "/bilibili.app.interfaces.v1.Teenagers/ModeStatus"
+	Teenagers_ModifyPwd_FullMethodName               = "/bilibili.app.interfaces.v1.Teenagers/ModifyPwd"
+	Teenagers_SetTeenagersModelAge_FullMethodName    = "/bilibili.app.interfaces.v1.Teenagers/SetTeenagersModelAge"
+	Teenagers_UpdateStatus_FullMethodName            = "/bilibili.app.interfaces.v1.Teenagers/UpdateStatus"
+	Teenagers_VerifyPwd_FullMethodName               = "/bilibili.app.interfaces.v1.Teenagers/VerifyPwd"
 )
 
 // TeenagersClient is the client API for Teenagers service.
@@ -1305,7 +1305,7 @@ func _Teenagers_VerifyPwd_Handler(srv interface{}, ctx context.Context, dec func
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Teenagers_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.app.interfaces.v1.Teenagers",
+	ServiceName: "bilibili.app.interfaces.v1.Teenagers",
 	HandlerType: (*TeenagersServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

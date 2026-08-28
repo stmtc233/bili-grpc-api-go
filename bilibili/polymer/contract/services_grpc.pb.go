@@ -22,9 +22,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Contract_AddContract_FullMethodName    = "/com.bapis.bilibili.polymer.contract.Contract/AddContract"
-	Contract_AddContractV2_FullMethodName  = "/com.bapis.bilibili.polymer.contract.Contract/AddContractV2"
-	Contract_ContractConfig_FullMethodName = "/com.bapis.bilibili.polymer.contract.Contract/ContractConfig"
+	Contract_AddContract_FullMethodName    = "/bilibili.polymer.contract.Contract/AddContract"
+	Contract_AddContractV2_FullMethodName  = "/bilibili.polymer.contract.Contract/AddContractV2"
+	Contract_ContractConfig_FullMethodName = "/bilibili.polymer.contract.Contract/ContractConfig"
 )
 
 // ContractClient is the client API for Contract service.
@@ -165,7 +165,7 @@ func _Contract_ContractConfig_Handler(srv interface{}, ctx context.Context, dec 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Contract_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.polymer.contract.Contract",
+	ServiceName: "bilibili.polymer.contract.Contract",
 	HandlerType: (*ContractServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

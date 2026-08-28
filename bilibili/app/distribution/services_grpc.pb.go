@@ -21,9 +21,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Distribution_GetUserPreference_FullMethodName = "/com.bapis.bilibili.app.distribution.Distribution/GetUserPreference"
-	Distribution_SetUserPreference_FullMethodName = "/com.bapis.bilibili.app.distribution.Distribution/SetUserPreference"
-	Distribution_UserPreference_FullMethodName    = "/com.bapis.bilibili.app.distribution.Distribution/UserPreference"
+	Distribution_GetUserPreference_FullMethodName = "/bilibili.app.distribution.Distribution/GetUserPreference"
+	Distribution_SetUserPreference_FullMethodName = "/bilibili.app.distribution.Distribution/SetUserPreference"
+	Distribution_UserPreference_FullMethodName    = "/bilibili.app.distribution.Distribution/UserPreference"
 )
 
 // DistributionClient is the client API for Distribution service.
@@ -164,7 +164,7 @@ func _Distribution_UserPreference_Handler(srv interface{}, ctx context.Context, 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Distribution_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.app.distribution.Distribution",
+	ServiceName: "bilibili.app.distribution.Distribution",
 	HandlerType: (*DistributionServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

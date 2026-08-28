@@ -22,7 +22,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Qoe_QoeReport_FullMethodName = "/com.bapis.bilibili.community.service.govern.v1.Qoe/QoeReport"
+	Qoe_QoeReport_FullMethodName = "/bilibili.community.service.govern.v1.Qoe/QoeReport"
 )
 
 // QoeClient is the client API for Qoe service.
@@ -99,7 +99,7 @@ func _Qoe_QoeReport_Handler(srv interface{}, ctx context.Context, dec func(inter
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Qoe_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.community.service.govern.v1.Qoe",
+	ServiceName: "bilibili.community.service.govern.v1.Qoe",
 	HandlerType: (*QoeServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

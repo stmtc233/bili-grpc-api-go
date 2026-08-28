@@ -21,22 +21,22 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Reply_AnswerQuestion_FullMethodName                      = "/com.bapis.bilibili.main.community.reply.v1.Reply/AnswerQuestion"
-	Reply_AtSearch_FullMethodName                            = "/com.bapis.bilibili.main.community.reply.v1.Reply/AtSearch"
-	Reply_DetailList_FullMethodName                          = "/com.bapis.bilibili.main.community.reply.v1.Reply/DetailList"
-	Reply_DialogList_FullMethodName                          = "/com.bapis.bilibili.main.community.reply.v1.Reply/DialogList"
-	Reply_DoVote_FullMethodName                              = "/com.bapis.bilibili.main.community.reply.v1.Reply/DoVote"
-	Reply_MainList_FullMethodName                            = "/com.bapis.bilibili.main.community.reply.v1.Reply/MainList"
-	Reply_PictureList_FullMethodName                         = "/com.bapis.bilibili.main.community.reply.v1.Reply/PictureList"
-	Reply_PreviewList_FullMethodName                         = "/com.bapis.bilibili.main.community.reply.v1.Reply/PreviewList"
-	Reply_ReplyInfo_FullMethodName                           = "/com.bapis.bilibili.main.community.reply.v1.Reply/ReplyInfo"
-	Reply_SearchItem_FullMethodName                          = "/com.bapis.bilibili.main.community.reply.v1.Reply/SearchItem"
-	Reply_SearchItemPreHook_FullMethodName                   = "/com.bapis.bilibili.main.community.reply.v1.Reply/SearchItemPreHook"
-	Reply_ShareRepliesInfo_FullMethodName                    = "/com.bapis.bilibili.main.community.reply.v1.Reply/ShareRepliesInfo"
-	Reply_ShareReplyMaterial_FullMethodName                  = "/com.bapis.bilibili.main.community.reply.v1.Reply/ShareReplyMaterial"
-	Reply_SuggestEmotes_FullMethodName                       = "/com.bapis.bilibili.main.community.reply.v1.Reply/SuggestEmotes"
-	Reply_UpdateSingleReplyNotificationConfig_FullMethodName = "/com.bapis.bilibili.main.community.reply.v1.Reply/UpdateSingleReplyNotificationConfig"
-	Reply_UserCallback_FullMethodName                        = "/com.bapis.bilibili.main.community.reply.v1.Reply/UserCallback"
+	Reply_AnswerQuestion_FullMethodName                      = "/bilibili.main.community.reply.v1.Reply/AnswerQuestion"
+	Reply_AtSearch_FullMethodName                            = "/bilibili.main.community.reply.v1.Reply/AtSearch"
+	Reply_DetailList_FullMethodName                          = "/bilibili.main.community.reply.v1.Reply/DetailList"
+	Reply_DialogList_FullMethodName                          = "/bilibili.main.community.reply.v1.Reply/DialogList"
+	Reply_DoVote_FullMethodName                              = "/bilibili.main.community.reply.v1.Reply/DoVote"
+	Reply_MainList_FullMethodName                            = "/bilibili.main.community.reply.v1.Reply/MainList"
+	Reply_PictureList_FullMethodName                         = "/bilibili.main.community.reply.v1.Reply/PictureList"
+	Reply_PreviewList_FullMethodName                         = "/bilibili.main.community.reply.v1.Reply/PreviewList"
+	Reply_ReplyInfo_FullMethodName                           = "/bilibili.main.community.reply.v1.Reply/ReplyInfo"
+	Reply_SearchItem_FullMethodName                          = "/bilibili.main.community.reply.v1.Reply/SearchItem"
+	Reply_SearchItemPreHook_FullMethodName                   = "/bilibili.main.community.reply.v1.Reply/SearchItemPreHook"
+	Reply_ShareRepliesInfo_FullMethodName                    = "/bilibili.main.community.reply.v1.Reply/ShareRepliesInfo"
+	Reply_ShareReplyMaterial_FullMethodName                  = "/bilibili.main.community.reply.v1.Reply/ShareReplyMaterial"
+	Reply_SuggestEmotes_FullMethodName                       = "/bilibili.main.community.reply.v1.Reply/SuggestEmotes"
+	Reply_UpdateSingleReplyNotificationConfig_FullMethodName = "/bilibili.main.community.reply.v1.Reply/UpdateSingleReplyNotificationConfig"
+	Reply_UserCallback_FullMethodName                        = "/bilibili.main.community.reply.v1.Reply/UserCallback"
 )
 
 // ReplyClient is the client API for Reply service.
@@ -593,7 +593,7 @@ func _Reply_UserCallback_Handler(srv interface{}, ctx context.Context, dec func(
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Reply_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.main.community.reply.v1.Reply",
+	ServiceName: "bilibili.main.community.reply.v1.Reply",
 	HandlerType: (*ReplyServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

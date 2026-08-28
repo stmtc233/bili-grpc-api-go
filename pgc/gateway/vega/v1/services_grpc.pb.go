@@ -22,7 +22,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Vega_CreateTunnel_FullMethodName = "/com.bapis.pgc.gateway.vega.v1.Vega/CreateTunnel"
+	Vega_CreateTunnel_FullMethodName = "/pgc.gateway.vega.v1.Vega/CreateTunnel"
 )
 
 // VegaClient is the client API for Vega service.
@@ -99,7 +99,7 @@ func _Vega_CreateTunnel_Handler(srv interface{}, ctx context.Context, dec func(i
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Vega_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.pgc.gateway.vega.v1.Vega",
+	ServiceName: "pgc.gateway.vega.v1.Vega",
 	HandlerType: (*VegaServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -112,10 +112,10 @@ var Vega_ServiceDesc = grpc.ServiceDesc{
 }
 
 const (
-	VegaFrameDoc_Auth_FullMethodName       = "/com.bapis.pgc.gateway.vega.v1.VegaFrameDoc/Auth"
-	VegaFrameDoc_Heartbeat_FullMethodName  = "/com.bapis.pgc.gateway.vega.v1.VegaFrameDoc/Heartbeat"
-	VegaFrameDoc_MessageAck_FullMethodName = "/com.bapis.pgc.gateway.vega.v1.VegaFrameDoc/MessageAck"
-	VegaFrameDoc_Subscribe_FullMethodName  = "/com.bapis.pgc.gateway.vega.v1.VegaFrameDoc/Subscribe"
+	VegaFrameDoc_Auth_FullMethodName       = "/pgc.gateway.vega.v1.VegaFrameDoc/Auth"
+	VegaFrameDoc_Heartbeat_FullMethodName  = "/pgc.gateway.vega.v1.VegaFrameDoc/Heartbeat"
+	VegaFrameDoc_MessageAck_FullMethodName = "/pgc.gateway.vega.v1.VegaFrameDoc/MessageAck"
+	VegaFrameDoc_Subscribe_FullMethodName  = "/pgc.gateway.vega.v1.VegaFrameDoc/Subscribe"
 )
 
 // VegaFrameDocClient is the client API for VegaFrameDoc service.
@@ -288,7 +288,7 @@ func _VegaFrameDoc_Subscribe_Handler(srv interface{}, ctx context.Context, dec f
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var VegaFrameDoc_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.pgc.gateway.vega.v1.VegaFrameDoc",
+	ServiceName: "pgc.gateway.vega.v1.VegaFrameDoc",
 	HandlerType: (*VegaFrameDocServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

@@ -22,10 +22,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	CosmoInterface_Ping_FullMethodName          = "/com.bapis.bilibili.community.interfacess.cosmoconn.v1.CosmoInterface/Ping"
-	CosmoInterface_SimpleAction_FullMethodName  = "/com.bapis.bilibili.community.interfacess.cosmoconn.v1.CosmoInterface/SimpleAction"
-	CosmoInterface_Subscribe_FullMethodName     = "/com.bapis.bilibili.community.interfacess.cosmoconn.v1.CosmoInterface/Subscribe"
-	CosmoInterface_SubscribeCard_FullMethodName = "/com.bapis.bilibili.community.interfacess.cosmoconn.v1.CosmoInterface/SubscribeCard"
+	CosmoInterface_Ping_FullMethodName          = "/bilibili.community.interfacess.cosmoconn.v1.CosmoInterface/Ping"
+	CosmoInterface_SimpleAction_FullMethodName  = "/bilibili.community.interfacess.cosmoconn.v1.CosmoInterface/SimpleAction"
+	CosmoInterface_Subscribe_FullMethodName     = "/bilibili.community.interfacess.cosmoconn.v1.CosmoInterface/Subscribe"
+	CosmoInterface_SubscribeCard_FullMethodName = "/bilibili.community.interfacess.cosmoconn.v1.CosmoInterface/SubscribeCard"
 )
 
 // CosmoInterfaceClient is the client API for CosmoInterface service.
@@ -198,7 +198,7 @@ func _CosmoInterface_SubscribeCard_Handler(srv interface{}, ctx context.Context,
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CosmoInterface_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.community.interfacess.cosmoconn.v1.CosmoInterface",
+	ServiceName: "bilibili.community.interfacess.cosmoconn.v1.CosmoInterface",
 	HandlerType: (*CosmoInterfaceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

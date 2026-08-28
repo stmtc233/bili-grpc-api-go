@@ -1,18 +1,18 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.app.show.mixture.v1;
+package bilibili.app.show.mixture.v1;
 
 import "bilibili/app/show/mixture/v1/messages.proto";
 
 service Mixture {
-  rpc ChannelRedirect(ChannelRedirectReq) returns (ChannelRedirectReply);
-  rpc Clarity(ClarityReq) returns (ClarityReply);
-  rpc RegionIndex(RegionIndexReq) returns (RegionIndexReply);
-  rpc RegionList(RegionListReq) returns (RegionListReply);
-  rpc RegionShortcut(RegionShortcutReq) returns (RegionShortcutReply);
-  rpc Widget(WidgetReq) returns (WidgetReply);
-  rpc WidgetGuide(WidgetGuideReq) returns (WidgetGuideReply);
+  rpc ChannelRedirect(.com.bapis.bilibili.app.show.mixture.v1.ChannelRedirectReq) returns (.com.bapis.bilibili.app.show.mixture.v1.ChannelRedirectReply);
+  rpc Clarity(.com.bapis.bilibili.app.show.mixture.v1.ClarityReq) returns (.com.bapis.bilibili.app.show.mixture.v1.ClarityReply);
+  rpc RegionIndex(.com.bapis.bilibili.app.show.mixture.v1.RegionIndexReq) returns (.com.bapis.bilibili.app.show.mixture.v1.RegionIndexReply);
+  rpc RegionList(.com.bapis.bilibili.app.show.mixture.v1.RegionListReq) returns (.com.bapis.bilibili.app.show.mixture.v1.RegionListReply);
+  rpc RegionShortcut(.com.bapis.bilibili.app.show.mixture.v1.RegionShortcutReq) returns (.com.bapis.bilibili.app.show.mixture.v1.RegionShortcutReply);
+  rpc Widget(.com.bapis.bilibili.app.show.mixture.v1.WidgetReq) returns (.com.bapis.bilibili.app.show.mixture.v1.WidgetReply);
+  rpc WidgetGuide(.com.bapis.bilibili.app.show.mixture.v1.WidgetGuideReq) returns (.com.bapis.bilibili.app.show.mixture.v1.WidgetGuideReply);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/show/mixture/v1";

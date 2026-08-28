@@ -1,16 +1,16 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.app.resource.v1;
+package bilibili.app.resource.v1;
 
 import "bilibili/app/resource/v1/messages.proto";
 
 service LegacyResource {
-  rpc Download(DownloadReq) returns (DownloadReply);
+  rpc Download(.com.bapis.bilibili.app.resource.v1.DownloadReq) returns (.com.bapis.bilibili.app.resource.v1.DownloadReply);
 }
 
 service Module {
-  rpc List(ListReq) returns (ListReply);
+  rpc List(.com.bapis.bilibili.app.resource.v1.ListReq) returns (.com.bapis.bilibili.app.resource.v1.ListReply);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/resource/v1";

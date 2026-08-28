@@ -22,7 +22,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	VideoUp_VideoData_FullMethodName = "/com.bapis.bilibili.broadcast.message.archive.VideoUp/VideoData"
+	VideoUp_VideoData_FullMethodName = "/bilibili.broadcast.message.archive.VideoUp/VideoData"
 )
 
 // VideoUpClient is the client API for VideoUp service.
@@ -125,7 +125,7 @@ func (x *videoUpVideoDataServer) Send(m *VideoDataReply) error {
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var VideoUp_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.broadcast.message.archive.VideoUp",
+	ServiceName: "bilibili.broadcast.message.archive.VideoUp",
 	HandlerType: (*VideoUpServer)(nil),
 	Methods:     []grpc.MethodDesc{},
 	Streams: []grpc.StreamDesc{

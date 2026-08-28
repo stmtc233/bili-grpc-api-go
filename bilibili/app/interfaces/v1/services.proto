@@ -1,53 +1,53 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.app.interfaces.v1;
+package bilibili.app.interfaces.v1;
 
 import "bilibili/app/interfaces/v1/messages.proto";
 
 service History {
-  rpc Clear(ClearReq) returns (NoReply);
-  rpc Cursor(CursorReq) returns (CursorReply);
-  rpc CursorV2(CursorV2Req) returns (CursorV2Reply);
-  rpc Delete(DeleteReq) returns (NoReply);
-  rpc HistoryTab(HistoryTabReq) returns (HistoryTabReply);
-  rpc HistoryTabV2(HistoryTabReq) returns (HistoryTabReply);
-  rpc LatestHistory(LatestHistoryReq) returns (LatestHistoryReply);
-  rpc Search(SearchReq) returns (SearchReply);
+  rpc Clear(.com.bapis.bilibili.app.interfaces.v1.ClearReq) returns (.com.bapis.bilibili.app.interfaces.v1.NoReply);
+  rpc Cursor(.com.bapis.bilibili.app.interfaces.v1.CursorReq) returns (.com.bapis.bilibili.app.interfaces.v1.CursorReply);
+  rpc CursorV2(.com.bapis.bilibili.app.interfaces.v1.CursorV2Req) returns (.com.bapis.bilibili.app.interfaces.v1.CursorV2Reply);
+  rpc Delete(.com.bapis.bilibili.app.interfaces.v1.DeleteReq) returns (.com.bapis.bilibili.app.interfaces.v1.NoReply);
+  rpc HistoryTab(.com.bapis.bilibili.app.interfaces.v1.HistoryTabReq) returns (.com.bapis.bilibili.app.interfaces.v1.HistoryTabReply);
+  rpc HistoryTabV2(.com.bapis.bilibili.app.interfaces.v1.HistoryTabReq) returns (.com.bapis.bilibili.app.interfaces.v1.HistoryTabReply);
+  rpc LatestHistory(.com.bapis.bilibili.app.interfaces.v1.LatestHistoryReq) returns (.com.bapis.bilibili.app.interfaces.v1.LatestHistoryReply);
+  rpc Search(.com.bapis.bilibili.app.interfaces.v1.SearchReq) returns (.com.bapis.bilibili.app.interfaces.v1.SearchReply);
 }
 
 service Media {
-  rpc MediaComment(MediaCommentReq) returns (MediaCommentReply);
-  rpc MediaDetail(MediaDetailReq) returns (MediaDetailReply);
-  rpc MediaFollow(MediaFollowReq) returns (MediaFollowReply);
-  rpc MediaRelation(MediaRelationReq) returns (MediaRelationReply);
-  rpc MediaTab(MediaTabReq) returns (MediaTabReply);
-  rpc MediaVideo(MediaVideoReq) returns (MediaVideoReply);
+  rpc MediaComment(.com.bapis.bilibili.app.interfaces.v1.MediaCommentReq) returns (.com.bapis.bilibili.app.interfaces.v1.MediaCommentReply);
+  rpc MediaDetail(.com.bapis.bilibili.app.interfaces.v1.MediaDetailReq) returns (.com.bapis.bilibili.app.interfaces.v1.MediaDetailReply);
+  rpc MediaFollow(.com.bapis.bilibili.app.interfaces.v1.MediaFollowReq) returns (.com.bapis.bilibili.app.interfaces.v1.MediaFollowReply);
+  rpc MediaRelation(.com.bapis.bilibili.app.interfaces.v1.MediaRelationReq) returns (.com.bapis.bilibili.app.interfaces.v1.MediaRelationReply);
+  rpc MediaTab(.com.bapis.bilibili.app.interfaces.v1.MediaTabReq) returns (.com.bapis.bilibili.app.interfaces.v1.MediaTabReply);
+  rpc MediaVideo(.com.bapis.bilibili.app.interfaces.v1.MediaVideoReq) returns (.com.bapis.bilibili.app.interfaces.v1.MediaVideoReply);
 }
 
 service Search {
-  rpc DefaultWords(DefaultWordsReq) returns (DefaultWordsReply);
-  rpc Suggest3(SuggestionResult3Req) returns (SuggestionResult3Reply);
+  rpc DefaultWords(.com.bapis.bilibili.app.interfaces.v1.DefaultWordsReq) returns (.com.bapis.bilibili.app.interfaces.v1.DefaultWordsReply);
+  rpc Suggest3(.com.bapis.bilibili.app.interfaces.v1.SuggestionResult3Req) returns (.com.bapis.bilibili.app.interfaces.v1.SuggestionResult3Reply);
 }
 
 service SearchTest {
-  rpc NotExist(SuggestionResult3Req) returns (SuggestionResult3Reply);
+  rpc NotExist(.com.bapis.bilibili.app.interfaces.v1.SuggestionResult3Req) returns (.com.bapis.bilibili.app.interfaces.v1.SuggestionResult3Reply);
 }
 
 service Space {
-  rpc SearchArchive(SearchArchiveReq) returns (SearchArchiveReply);
-  rpc SearchDynamic(SearchDynamicReq) returns (SearchDynamicReply);
-  rpc SearchTab(SearchTabReq) returns (SearchTabReply);
-  rpc UpdateReserveStartTime(UpdateReserveStartTimeReq) returns (UpdateReserveStartTimeReply);
+  rpc SearchArchive(.com.bapis.bilibili.app.interfaces.v1.SearchArchiveReq) returns (.com.bapis.bilibili.app.interfaces.v1.SearchArchiveReply);
+  rpc SearchDynamic(.com.bapis.bilibili.app.interfaces.v1.SearchDynamicReq) returns (.com.bapis.bilibili.app.interfaces.v1.SearchDynamicReply);
+  rpc SearchTab(.com.bapis.bilibili.app.interfaces.v1.SearchTabReq) returns (.com.bapis.bilibili.app.interfaces.v1.SearchTabReply);
+  rpc UpdateReserveStartTime(.com.bapis.bilibili.app.interfaces.v1.UpdateReserveStartTimeReq) returns (.com.bapis.bilibili.app.interfaces.v1.UpdateReserveStartTimeReply);
 }
 
 service Teenagers {
-  rpc FacialRecognitionVerify(FacialRecognitionVerifyReq) returns (FacialRecognitionVerifyReply);
-  rpc ModeStatus(ModeStatusReq) returns (ModeStatusReply);
-  rpc ModifyPwd(ModifyPwdReq) returns (ModifyPwdReply);
-  rpc SetTeenagersModelAge(SetTeenagersModelAgeReq) returns (SetTeenagersModelAgeReply);
-  rpc UpdateStatus(UpdateStatusReq) returns (UpdateStatusReply);
-  rpc VerifyPwd(VerifyPwdReq) returns (VerifyPwdReply);
+  rpc FacialRecognitionVerify(.com.bapis.bilibili.app.interfaces.v1.FacialRecognitionVerifyReq) returns (.com.bapis.bilibili.app.interfaces.v1.FacialRecognitionVerifyReply);
+  rpc ModeStatus(.com.bapis.bilibili.app.interfaces.v1.ModeStatusReq) returns (.com.bapis.bilibili.app.interfaces.v1.ModeStatusReply);
+  rpc ModifyPwd(.com.bapis.bilibili.app.interfaces.v1.ModifyPwdReq) returns (.com.bapis.bilibili.app.interfaces.v1.ModifyPwdReply);
+  rpc SetTeenagersModelAge(.com.bapis.bilibili.app.interfaces.v1.SetTeenagersModelAgeReq) returns (.com.bapis.bilibili.app.interfaces.v1.SetTeenagersModelAgeReply);
+  rpc UpdateStatus(.com.bapis.bilibili.app.interfaces.v1.UpdateStatusReq) returns (.com.bapis.bilibili.app.interfaces.v1.UpdateStatusReply);
+  rpc VerifyPwd(.com.bapis.bilibili.app.interfaces.v1.VerifyPwdReq) returns (.com.bapis.bilibili.app.interfaces.v1.VerifyPwdReply);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/interfaces/v1";

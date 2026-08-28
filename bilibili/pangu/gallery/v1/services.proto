@@ -1,22 +1,22 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.pangu.gallery.v1;
+package bilibili.pangu.gallery.v1;
 
 import "bilibili/pangu/gallery/v1/messages.proto";
 import "google/protobuf/empty.proto";
 
 service GalleryInterface {
-  rpc AgreePolicy(AgreePolicyReq) returns (AgreePolicyReply);
-  rpc BasicInfo(BasicInfoReq) returns (BasicInfoReply);
-  rpc GetBanners(GetBannersReq) returns (GetBannersReply);
-  rpc GetLastPolicy(GetLastPolicyReq) returns (GetLastPolicyReply);
-  rpc ListNFTByMid(ListNFTByMidReq) returns (ListNFTByMidReply);
-  rpc ListOrderByMid(ListOrderByMidReq) returns (ListOrderByMidReply);
-  rpc MinePage(MinePageReq) returns (MinePageReply);
+  rpc AgreePolicy(.com.bapis.bilibili.pangu.gallery.v1.AgreePolicyReq) returns (.com.bapis.bilibili.pangu.gallery.v1.AgreePolicyReply);
+  rpc BasicInfo(.com.bapis.bilibili.pangu.gallery.v1.BasicInfoReq) returns (.com.bapis.bilibili.pangu.gallery.v1.BasicInfoReply);
+  rpc GetBanners(.com.bapis.bilibili.pangu.gallery.v1.GetBannersReq) returns (.com.bapis.bilibili.pangu.gallery.v1.GetBannersReply);
+  rpc GetLastPolicy(.com.bapis.bilibili.pangu.gallery.v1.GetLastPolicyReq) returns (.com.bapis.bilibili.pangu.gallery.v1.GetLastPolicyReply);
+  rpc ListNFTByMid(.com.bapis.bilibili.pangu.gallery.v1.ListNFTByMidReq) returns (.com.bapis.bilibili.pangu.gallery.v1.ListNFTByMidReply);
+  rpc ListOrderByMid(.com.bapis.bilibili.pangu.gallery.v1.ListOrderByMidReq) returns (.com.bapis.bilibili.pangu.gallery.v1.ListOrderByMidReply);
+  rpc MinePage(.com.bapis.bilibili.pangu.gallery.v1.MinePageReq) returns (.com.bapis.bilibili.pangu.gallery.v1.MinePageReply);
   rpc Ping(.google.protobuf.Empty) returns (.google.protobuf.Empty);
-  rpc UserCheck(UserCheckReq) returns (UserCheckReply);
-  rpc UserInfo(GetUserInfoReq) returns (GetUserInfoReply);
+  rpc UserCheck(.com.bapis.bilibili.pangu.gallery.v1.UserCheckReq) returns (.com.bapis.bilibili.pangu.gallery.v1.UserCheckReply);
+  rpc UserInfo(.com.bapis.bilibili.pangu.gallery.v1.GetUserInfoReq) returns (.com.bapis.bilibili.pangu.gallery.v1.GetUserInfoReply);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/pangu/gallery/v1";

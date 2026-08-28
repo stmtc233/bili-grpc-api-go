@@ -1,12 +1,12 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.app.wall.v1;
+package bilibili.app.wall.v1;
 
 import "bilibili/app/wall/v1/messages.proto";
 
 service Wall {
-  rpc RuleInfo(RuleRequest) returns (RulesReply);
+  rpc RuleInfo(.com.bapis.bilibili.app.wall.v1.RuleRequest) returns (.com.bapis.bilibili.app.wall.v1.RulesReply);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/wall/v1";

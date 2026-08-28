@@ -21,14 +21,14 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Home_HomePopup_FullMethodName                 = "/com.bapis.bilibili.app.home.v1.Home/HomePopup"
-	Home_MineSelectionContent_FullMethodName      = "/com.bapis.bilibili.app.home.v1.Home/MineSelectionContent"
-	Home_MineSelectionOptionItems_FullMethodName  = "/com.bapis.bilibili.app.home.v1.Home/MineSelectionOptionItems"
-	Home_MineSelectionOptionUpdate_FullMethodName = "/com.bapis.bilibili.app.home.v1.Home/MineSelectionOptionUpdate"
-	Home_Recent_FullMethodName                    = "/com.bapis.bilibili.app.home.v1.Home/Recent"
-	Home_RemoveVideo_FullMethodName               = "/com.bapis.bilibili.app.home.v1.Home/RemoveVideo"
-	Home_TopLeftTab_FullMethodName                = "/com.bapis.bilibili.app.home.v1.Home/TopLeftTab"
-	Home_TopLeftTabUpdate_FullMethodName          = "/com.bapis.bilibili.app.home.v1.Home/TopLeftTabUpdate"
+	Home_HomePopup_FullMethodName                 = "/bilibili.app.home.v1.Home/HomePopup"
+	Home_MineSelectionContent_FullMethodName      = "/bilibili.app.home.v1.Home/MineSelectionContent"
+	Home_MineSelectionOptionItems_FullMethodName  = "/bilibili.app.home.v1.Home/MineSelectionOptionItems"
+	Home_MineSelectionOptionUpdate_FullMethodName = "/bilibili.app.home.v1.Home/MineSelectionOptionUpdate"
+	Home_Recent_FullMethodName                    = "/bilibili.app.home.v1.Home/Recent"
+	Home_RemoveVideo_FullMethodName               = "/bilibili.app.home.v1.Home/RemoveVideo"
+	Home_TopLeftTab_FullMethodName                = "/bilibili.app.home.v1.Home/TopLeftTab"
+	Home_TopLeftTabUpdate_FullMethodName          = "/bilibili.app.home.v1.Home/TopLeftTabUpdate"
 )
 
 // HomeClient is the client API for Home service.
@@ -329,7 +329,7 @@ func _Home_TopLeftTabUpdate_Handler(srv interface{}, ctx context.Context, dec fu
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Home_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.app.home.v1.Home",
+	ServiceName: "bilibili.app.home.v1.Home",
 	HandlerType: (*HomeServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

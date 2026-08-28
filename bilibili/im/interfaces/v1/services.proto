@@ -1,45 +1,45 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.im.interfaces.v1;
+package bilibili.im.interfaces.v1;
 
 import "bilibili/im/interfaces/v1/messages.proto";
 
 service ImInterface {
-  rpc AckAssisMsg(ReqAckAssisMsg) returns (DummyRsp);
-  rpc AckSessions(ReqAckSessions) returns (RspSessions);
-  rpc BatchGetMsgDetail(ReqGetMsg) returns (RspGetMsg);
-  rpc BatchRmDustbin(DummyReq) returns (DummyRsp);
-  rpc BatchRmSessions(ReqBatRmSess) returns (DummyRsp);
-  rpc BatchSessDetail(ReqSessionDetails) returns (RspSessionDetails);
-  rpc BatchUpdateDustbinAck(DummyReq) returns (DummyRsp);
-  rpc CloseClearUnreadUI(ReqCloseClearUnreadUI) returns (RspCloseClearUnreadUI);
-  rpc GetDiscussListInImPage(ReqGetDiscussListInImPage) returns (RspGetDiscussListInImPage);
-  rpc GetLiveInfo(ReqLiveInfo) returns (RspLiveInfo);
-  rpc GetSessions(ReqGetSessions) returns (RspSessions);
-  rpc GetSpecificSessions(ReqGetSpecificSessions) returns (RspSessions);
-  rpc GetTotalUnread(ReqTotalUnread) returns (RspTotalUnread);
-  rpc GetUserCosmoState(GetUserCosmoStateReq) returns (GetUserCosmoStateRsp);
-  rpc GroupAssisMsg(ReqGroupAssisMsg) returns (RspSessionMsg);
-  rpc LikeMsg(ReqLikeMsg) returns (DummyRsp);
-  rpc MsgHasLike(ReqMsgHasLike) returns (RspMsgHasLike);
-  rpc MyGroupUnread(DummyReq) returns (RspMyGroupUnread);
-  rpc NewSessions(ReqNewSessions) returns (RspSessions);
-  rpc RemoveSession(ReqRemoveSession) returns (DummyRsp);
-  rpc SendMsg(ReqSendMsg) returns (RspSendMsg);
-  rpc SetTop(ReqSetTop) returns (DummyRsp);
-  rpc ShareList(ReqShareList) returns (RspShareList);
-  rpc ShowClearUnreadUI(ReqShowClearUnreadUI) returns (RspShowClearUnreadUI);
-  rpc SingleUnread(ReqSingleUnread) returns (RspSingleUnread);
-  rpc SpecificSingleUnread(ReqSpecificSingleUnread) returns (RspSpecificSingleUnread);
-  rpc SyncAck(ReqSyncAck) returns (RspSyncAck);
-  rpc SyncFetchSessionMsgs(ReqSessionMsg) returns (RspSessionMsg);
-  rpc SyncRelation(ReqRelationSync) returns (RspRelationSync);
-  rpc UpdateAck(ReqUpdateAck) returns (DummyRsp);
-  rpc UpdateIntercept(ReqUpdateIntercept) returns (DummyRsp);
-  rpc UpdateTotalUnread(ReqUpdateTotalUnread) returns (RspUpdateTotalUnread);
-  rpc UpdateUnflwRead(DummyReq) returns (DummyRsp);
-  rpc UpdateUserCosmoState(UpdateUserCosmoStateReq) returns (UpdateUserCosmoStateRsp);
+  rpc AckAssisMsg(.com.bapis.bilibili.im.interfaces.v1.ReqAckAssisMsg) returns (.com.bapis.bilibili.im.interfaces.v1.DummyRsp);
+  rpc AckSessions(.com.bapis.bilibili.im.interfaces.v1.ReqAckSessions) returns (.com.bapis.bilibili.im.interfaces.v1.RspSessions);
+  rpc BatchGetMsgDetail(.com.bapis.bilibili.im.interfaces.v1.ReqGetMsg) returns (.com.bapis.bilibili.im.interfaces.v1.RspGetMsg);
+  rpc BatchRmDustbin(.com.bapis.bilibili.im.interfaces.v1.DummyReq) returns (.com.bapis.bilibili.im.interfaces.v1.DummyRsp);
+  rpc BatchRmSessions(.com.bapis.bilibili.im.interfaces.v1.ReqBatRmSess) returns (.com.bapis.bilibili.im.interfaces.v1.DummyRsp);
+  rpc BatchSessDetail(.com.bapis.bilibili.im.interfaces.v1.ReqSessionDetails) returns (.com.bapis.bilibili.im.interfaces.v1.RspSessionDetails);
+  rpc BatchUpdateDustbinAck(.com.bapis.bilibili.im.interfaces.v1.DummyReq) returns (.com.bapis.bilibili.im.interfaces.v1.DummyRsp);
+  rpc CloseClearUnreadUI(.com.bapis.bilibili.im.interfaces.v1.ReqCloseClearUnreadUI) returns (.com.bapis.bilibili.im.interfaces.v1.RspCloseClearUnreadUI);
+  rpc GetDiscussListInImPage(.com.bapis.bilibili.im.interfaces.v1.ReqGetDiscussListInImPage) returns (.com.bapis.bilibili.im.interfaces.v1.RspGetDiscussListInImPage);
+  rpc GetLiveInfo(.com.bapis.bilibili.im.interfaces.v1.ReqLiveInfo) returns (.com.bapis.bilibili.im.interfaces.v1.RspLiveInfo);
+  rpc GetSessions(.com.bapis.bilibili.im.interfaces.v1.ReqGetSessions) returns (.com.bapis.bilibili.im.interfaces.v1.RspSessions);
+  rpc GetSpecificSessions(.com.bapis.bilibili.im.interfaces.v1.ReqGetSpecificSessions) returns (.com.bapis.bilibili.im.interfaces.v1.RspSessions);
+  rpc GetTotalUnread(.com.bapis.bilibili.im.interfaces.v1.ReqTotalUnread) returns (.com.bapis.bilibili.im.interfaces.v1.RspTotalUnread);
+  rpc GetUserCosmoState(.com.bapis.bilibili.im.interfaces.v1.GetUserCosmoStateReq) returns (.com.bapis.bilibili.im.interfaces.v1.GetUserCosmoStateRsp);
+  rpc GroupAssisMsg(.com.bapis.bilibili.im.interfaces.v1.ReqGroupAssisMsg) returns (.com.bapis.bilibili.im.interfaces.v1.RspSessionMsg);
+  rpc LikeMsg(.com.bapis.bilibili.im.interfaces.v1.ReqLikeMsg) returns (.com.bapis.bilibili.im.interfaces.v1.DummyRsp);
+  rpc MsgHasLike(.com.bapis.bilibili.im.interfaces.v1.ReqMsgHasLike) returns (.com.bapis.bilibili.im.interfaces.v1.RspMsgHasLike);
+  rpc MyGroupUnread(.com.bapis.bilibili.im.interfaces.v1.DummyReq) returns (.com.bapis.bilibili.im.interfaces.v1.RspMyGroupUnread);
+  rpc NewSessions(.com.bapis.bilibili.im.interfaces.v1.ReqNewSessions) returns (.com.bapis.bilibili.im.interfaces.v1.RspSessions);
+  rpc RemoveSession(.com.bapis.bilibili.im.interfaces.v1.ReqRemoveSession) returns (.com.bapis.bilibili.im.interfaces.v1.DummyRsp);
+  rpc SendMsg(.com.bapis.bilibili.im.interfaces.v1.ReqSendMsg) returns (.com.bapis.bilibili.im.interfaces.v1.RspSendMsg);
+  rpc SetTop(.com.bapis.bilibili.im.interfaces.v1.ReqSetTop) returns (.com.bapis.bilibili.im.interfaces.v1.DummyRsp);
+  rpc ShareList(.com.bapis.bilibili.im.interfaces.v1.ReqShareList) returns (.com.bapis.bilibili.im.interfaces.v1.RspShareList);
+  rpc ShowClearUnreadUI(.com.bapis.bilibili.im.interfaces.v1.ReqShowClearUnreadUI) returns (.com.bapis.bilibili.im.interfaces.v1.RspShowClearUnreadUI);
+  rpc SingleUnread(.com.bapis.bilibili.im.interfaces.v1.ReqSingleUnread) returns (.com.bapis.bilibili.im.interfaces.v1.RspSingleUnread);
+  rpc SpecificSingleUnread(.com.bapis.bilibili.im.interfaces.v1.ReqSpecificSingleUnread) returns (.com.bapis.bilibili.im.interfaces.v1.RspSpecificSingleUnread);
+  rpc SyncAck(.com.bapis.bilibili.im.interfaces.v1.ReqSyncAck) returns (.com.bapis.bilibili.im.interfaces.v1.RspSyncAck);
+  rpc SyncFetchSessionMsgs(.com.bapis.bilibili.im.interfaces.v1.ReqSessionMsg) returns (.com.bapis.bilibili.im.interfaces.v1.RspSessionMsg);
+  rpc SyncRelation(.com.bapis.bilibili.im.interfaces.v1.ReqRelationSync) returns (.com.bapis.bilibili.im.interfaces.v1.RspRelationSync);
+  rpc UpdateAck(.com.bapis.bilibili.im.interfaces.v1.ReqUpdateAck) returns (.com.bapis.bilibili.im.interfaces.v1.DummyRsp);
+  rpc UpdateIntercept(.com.bapis.bilibili.im.interfaces.v1.ReqUpdateIntercept) returns (.com.bapis.bilibili.im.interfaces.v1.DummyRsp);
+  rpc UpdateTotalUnread(.com.bapis.bilibili.im.interfaces.v1.ReqUpdateTotalUnread) returns (.com.bapis.bilibili.im.interfaces.v1.RspUpdateTotalUnread);
+  rpc UpdateUnflwRead(.com.bapis.bilibili.im.interfaces.v1.DummyReq) returns (.com.bapis.bilibili.im.interfaces.v1.DummyRsp);
+  rpc UpdateUserCosmoState(.com.bapis.bilibili.im.interfaces.v1.UpdateUserCosmoStateReq) returns (.com.bapis.bilibili.im.interfaces.v1.UpdateUserCosmoStateRsp);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/im/interfaces/v1";

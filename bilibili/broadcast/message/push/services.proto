@@ -1,13 +1,13 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.broadcast.message.push;
+package bilibili.broadcast.message.push;
 
 import "bilibili/broadcast/message/push/messages.proto";
 import "google/protobuf/empty.proto";
 
 service PushUpStream {
-  rpc PushUpStream(stream UpStreamMessage) returns (.google.protobuf.Empty);
+  rpc PushUpStream(stream .com.bapis.bilibili.broadcast.message.push.UpStreamMessage) returns (.google.protobuf.Empty);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/message/push";

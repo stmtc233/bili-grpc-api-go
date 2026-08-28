@@ -22,16 +22,16 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	GalleryInterface_AgreePolicy_FullMethodName    = "/com.bapis.bilibili.pangu.gallery.v1.GalleryInterface/AgreePolicy"
-	GalleryInterface_BasicInfo_FullMethodName      = "/com.bapis.bilibili.pangu.gallery.v1.GalleryInterface/BasicInfo"
-	GalleryInterface_GetBanners_FullMethodName     = "/com.bapis.bilibili.pangu.gallery.v1.GalleryInterface/GetBanners"
-	GalleryInterface_GetLastPolicy_FullMethodName  = "/com.bapis.bilibili.pangu.gallery.v1.GalleryInterface/GetLastPolicy"
-	GalleryInterface_ListNFTByMid_FullMethodName   = "/com.bapis.bilibili.pangu.gallery.v1.GalleryInterface/ListNFTByMid"
-	GalleryInterface_ListOrderByMid_FullMethodName = "/com.bapis.bilibili.pangu.gallery.v1.GalleryInterface/ListOrderByMid"
-	GalleryInterface_MinePage_FullMethodName       = "/com.bapis.bilibili.pangu.gallery.v1.GalleryInterface/MinePage"
-	GalleryInterface_Ping_FullMethodName           = "/com.bapis.bilibili.pangu.gallery.v1.GalleryInterface/Ping"
-	GalleryInterface_UserCheck_FullMethodName      = "/com.bapis.bilibili.pangu.gallery.v1.GalleryInterface/UserCheck"
-	GalleryInterface_UserInfo_FullMethodName       = "/com.bapis.bilibili.pangu.gallery.v1.GalleryInterface/UserInfo"
+	GalleryInterface_AgreePolicy_FullMethodName    = "/bilibili.pangu.gallery.v1.GalleryInterface/AgreePolicy"
+	GalleryInterface_BasicInfo_FullMethodName      = "/bilibili.pangu.gallery.v1.GalleryInterface/BasicInfo"
+	GalleryInterface_GetBanners_FullMethodName     = "/bilibili.pangu.gallery.v1.GalleryInterface/GetBanners"
+	GalleryInterface_GetLastPolicy_FullMethodName  = "/bilibili.pangu.gallery.v1.GalleryInterface/GetLastPolicy"
+	GalleryInterface_ListNFTByMid_FullMethodName   = "/bilibili.pangu.gallery.v1.GalleryInterface/ListNFTByMid"
+	GalleryInterface_ListOrderByMid_FullMethodName = "/bilibili.pangu.gallery.v1.GalleryInterface/ListOrderByMid"
+	GalleryInterface_MinePage_FullMethodName       = "/bilibili.pangu.gallery.v1.GalleryInterface/MinePage"
+	GalleryInterface_Ping_FullMethodName           = "/bilibili.pangu.gallery.v1.GalleryInterface/Ping"
+	GalleryInterface_UserCheck_FullMethodName      = "/bilibili.pangu.gallery.v1.GalleryInterface/UserCheck"
+	GalleryInterface_UserInfo_FullMethodName       = "/bilibili.pangu.gallery.v1.GalleryInterface/UserInfo"
 )
 
 // GalleryInterfaceClient is the client API for GalleryInterface service.
@@ -396,7 +396,7 @@ func _GalleryInterface_UserInfo_Handler(srv interface{}, ctx context.Context, de
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var GalleryInterface_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.pangu.gallery.v1.GalleryInterface",
+	ServiceName: "bilibili.pangu.gallery.v1.GalleryInterface",
 	HandlerType: (*GalleryInterfaceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

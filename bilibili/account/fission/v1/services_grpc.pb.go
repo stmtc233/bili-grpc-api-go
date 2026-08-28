@@ -21,9 +21,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Fission_Entrance_FullMethodName = "/com.bapis.bilibili.account.fission.v1.Fission/Entrance"
-	Fission_Privacy_FullMethodName  = "/com.bapis.bilibili.account.fission.v1.Fission/Privacy"
-	Fission_Window_FullMethodName   = "/com.bapis.bilibili.account.fission.v1.Fission/Window"
+	Fission_Entrance_FullMethodName = "/bilibili.account.fission.v1.Fission/Entrance"
+	Fission_Privacy_FullMethodName  = "/bilibili.account.fission.v1.Fission/Privacy"
+	Fission_Window_FullMethodName   = "/bilibili.account.fission.v1.Fission/Window"
 )
 
 // FissionClient is the client API for Fission service.
@@ -164,7 +164,7 @@ func _Fission_Window_Handler(srv interface{}, ctx context.Context, dec func(inte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Fission_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.account.fission.v1.Fission",
+	ServiceName: "bilibili.account.fission.v1.Fission",
 	HandlerType: (*FissionServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

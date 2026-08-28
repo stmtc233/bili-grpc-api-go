@@ -22,7 +22,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	GameCenterPush_PushEvent_FullMethodName = "/com.bapis.bilibili.broadcast.message.gamecenter.GameCenterPush/PushEvent"
+	GameCenterPush_PushEvent_FullMethodName = "/bilibili.broadcast.message.gamecenter.GameCenterPush/PushEvent"
 )
 
 // GameCenterPushClient is the client API for GameCenterPush service.
@@ -125,7 +125,7 @@ func (x *gameCenterPushPushEventServer) Send(m *PushEventReply) error {
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var GameCenterPush_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.broadcast.message.gamecenter.GameCenterPush",
+	ServiceName: "bilibili.broadcast.message.gamecenter.GameCenterPush",
 	HandlerType: (*GameCenterPushServer)(nil),
 	Methods:     []grpc.MethodDesc{},
 	Streams: []grpc.StreamDesc{

@@ -21,7 +21,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Reply_SubjectDescription_FullMethodName = "/com.bapis.bilibili.main.community.reply.v2.Reply/SubjectDescription"
+	Reply_SubjectDescription_FullMethodName = "/bilibili.main.community.reply.v2.Reply/SubjectDescription"
 )
 
 // ReplyClient is the client API for Reply service.
@@ -98,7 +98,7 @@ func _Reply_SubjectDescription_Handler(srv interface{}, ctx context.Context, dec
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Reply_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.main.community.reply.v2.Reply",
+	ServiceName: "bilibili.main.community.reply.v2.Reply",
 	HandlerType: (*ReplyServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

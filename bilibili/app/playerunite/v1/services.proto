@@ -1,14 +1,14 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.app.playerunite.v1;
+package bilibili.app.playerunite.v1;
 
 import "bilibili/app/playerunite/v1/messages.proto";
 
 service Player {
-  rpc PlayAddition(PlayAdditionReq) returns (PlayAdditionReply);
-  rpc PlayHalfChannels(PlayHalfChannelsReq) returns (PlayHalfChannelsReply);
-  rpc PlayViewUnite(PlayViewUniteReq) returns (PlayViewUniteReply);
+  rpc PlayAddition(.com.bapis.bilibili.app.playerunite.v1.PlayAdditionReq) returns (.com.bapis.bilibili.app.playerunite.v1.PlayAdditionReply);
+  rpc PlayHalfChannels(.com.bapis.bilibili.app.playerunite.v1.PlayHalfChannelsReq) returns (.com.bapis.bilibili.app.playerunite.v1.PlayHalfChannelsReply);
+  rpc PlayViewUnite(.com.bapis.bilibili.app.playerunite.v1.PlayViewUniteReq) returns (.com.bapis.bilibili.app.playerunite.v1.PlayViewUniteReply);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/playerunite/v1";

@@ -1,29 +1,29 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.im.customer.interfaces;
+package bilibili.im.customer.interfaces;
 
 import "bilibili/im/customer/interfaces/messages.proto";
 
 service CustomerInterface {
-  rpc CustomerPreEvaluate(PreEvaluateReq) returns (PreEvaluateRsp);
-  rpc CustomerUpdateAck(UpdateAckReq) returns (Empty);
-  rpc CustomerWindowOptions(WindowOptionsReq) returns (WindowOptionsRsp);
-  rpc FinishParagraphsRender(FinishParagraphsRenderReq) returns (FinishParagraphsRenderRsp);
-  rpc GetCustomerSessDetail(GetSessDetailReq) returns (GetSessDetailRsp);
-  rpc GetCustomerSessions(GetSessionsReq) returns (SessionsRsp);
-  rpc GetNewCustomerSessions(GetNewSessionsReq) returns (SessionsRsp);
-  rpc GetShopCfg(ShopCfgReq) returns (ShopCfgRsp);
-  rpc GetShopInfo(ShopInfoReq) returns (ShopInfoRsp);
-  rpc GetUserSettings(GetUserSettingsReq) returns (GetUserSettingsRsp);
-  rpc HeartBeat(SendHeartBeatReq) returns (Empty);
-  rpc OutCustomerQueue(OutCustomerQueueReq) returns (Empty);
-  rpc PopResultUpdate(PopResultUpdateReq) returns (PopResultUpdateRsp);
-  rpc RemoveSession(RemoveSessionReq) returns (Empty);
-  rpc SendCustomerMsg(SendMsgReq) returns (SendMsgRsp);
-  rpc SetTop(SetTopReq) returns (Empty);
-  rpc SetUserSettings(SetUserSettingsReq) returns (SetUserSettingsRsp);
-  rpc SyncFetchCustomerSessionMsgs(SessionMsgReq) returns (SessionMsgRsp);
+  rpc CustomerPreEvaluate(.com.bapis.bilibili.im.customer.interfaces.PreEvaluateReq) returns (.com.bapis.bilibili.im.customer.interfaces.PreEvaluateRsp);
+  rpc CustomerUpdateAck(.com.bapis.bilibili.im.customer.interfaces.UpdateAckReq) returns (.com.bapis.bilibili.im.customer.interfaces.Empty);
+  rpc CustomerWindowOptions(.com.bapis.bilibili.im.customer.interfaces.WindowOptionsReq) returns (.com.bapis.bilibili.im.customer.interfaces.WindowOptionsRsp);
+  rpc FinishParagraphsRender(.com.bapis.bilibili.im.customer.interfaces.FinishParagraphsRenderReq) returns (.com.bapis.bilibili.im.customer.interfaces.FinishParagraphsRenderRsp);
+  rpc GetCustomerSessDetail(.com.bapis.bilibili.im.customer.interfaces.GetSessDetailReq) returns (.com.bapis.bilibili.im.customer.interfaces.GetSessDetailRsp);
+  rpc GetCustomerSessions(.com.bapis.bilibili.im.customer.interfaces.GetSessionsReq) returns (.com.bapis.bilibili.im.customer.interfaces.SessionsRsp);
+  rpc GetNewCustomerSessions(.com.bapis.bilibili.im.customer.interfaces.GetNewSessionsReq) returns (.com.bapis.bilibili.im.customer.interfaces.SessionsRsp);
+  rpc GetShopCfg(.com.bapis.bilibili.im.customer.interfaces.ShopCfgReq) returns (.com.bapis.bilibili.im.customer.interfaces.ShopCfgRsp);
+  rpc GetShopInfo(.com.bapis.bilibili.im.customer.interfaces.ShopInfoReq) returns (.com.bapis.bilibili.im.customer.interfaces.ShopInfoRsp);
+  rpc GetUserSettings(.com.bapis.bilibili.im.customer.interfaces.GetUserSettingsReq) returns (.com.bapis.bilibili.im.customer.interfaces.GetUserSettingsRsp);
+  rpc HeartBeat(.com.bapis.bilibili.im.customer.interfaces.SendHeartBeatReq) returns (.com.bapis.bilibili.im.customer.interfaces.Empty);
+  rpc OutCustomerQueue(.com.bapis.bilibili.im.customer.interfaces.OutCustomerQueueReq) returns (.com.bapis.bilibili.im.customer.interfaces.Empty);
+  rpc PopResultUpdate(.com.bapis.bilibili.im.customer.interfaces.PopResultUpdateReq) returns (.com.bapis.bilibili.im.customer.interfaces.PopResultUpdateRsp);
+  rpc RemoveSession(.com.bapis.bilibili.im.customer.interfaces.RemoveSessionReq) returns (.com.bapis.bilibili.im.customer.interfaces.Empty);
+  rpc SendCustomerMsg(.com.bapis.bilibili.im.customer.interfaces.SendMsgReq) returns (.com.bapis.bilibili.im.customer.interfaces.SendMsgRsp);
+  rpc SetTop(.com.bapis.bilibili.im.customer.interfaces.SetTopReq) returns (.com.bapis.bilibili.im.customer.interfaces.Empty);
+  rpc SetUserSettings(.com.bapis.bilibili.im.customer.interfaces.SetUserSettingsReq) returns (.com.bapis.bilibili.im.customer.interfaces.SetUserSettingsRsp);
+  rpc SyncFetchCustomerSessionMsgs(.com.bapis.bilibili.im.customer.interfaces.SessionMsgReq) returns (.com.bapis.bilibili.im.customer.interfaces.SessionMsgRsp);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/im/customer/interfaces";

@@ -21,10 +21,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Story_AIAudio_FullMethodName       = "/com.bapis.bilibili.app.story.v1.Story/AIAudio"
-	Story_ArchiveStatus_FullMethodName = "/com.bapis.bilibili.app.story.v1.Story/ArchiveStatus"
-	Story_BgmPlay_FullMethodName       = "/com.bapis.bilibili.app.story.v1.Story/BgmPlay"
-	Story_Rerank_FullMethodName        = "/com.bapis.bilibili.app.story.v1.Story/Rerank"
+	Story_AIAudio_FullMethodName       = "/bilibili.app.story.v1.Story/AIAudio"
+	Story_ArchiveStatus_FullMethodName = "/bilibili.app.story.v1.Story/ArchiveStatus"
+	Story_BgmPlay_FullMethodName       = "/bilibili.app.story.v1.Story/BgmPlay"
+	Story_Rerank_FullMethodName        = "/bilibili.app.story.v1.Story/Rerank"
 )
 
 // StoryClient is the client API for Story service.
@@ -197,7 +197,7 @@ func _Story_Rerank_Handler(srv interface{}, ctx context.Context, dec func(interf
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Story_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.app.story.v1.Story",
+	ServiceName: "bilibili.app.story.v1.Story",
 	HandlerType: (*StoryServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

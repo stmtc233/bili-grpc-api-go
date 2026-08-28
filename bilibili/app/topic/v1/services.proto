@@ -1,20 +1,20 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.app.topic.v1;
+package bilibili.app.topic.v1;
 
 import "bilibili/app/topic/v1/messages.proto";
 import "google/protobuf/empty.proto";
 
 service Topic {
-  rpc ReportUserCloseFeedCard(ReportUserCloseFeedCardReq) returns (.google.protobuf.Empty);
-  rpc ReportUserRatingFeedCardChoice(ReportUserRatingFeedCardChoiceReq) returns (.google.protobuf.Empty);
-  rpc SetTopTopicRes(SetTopTopicResReq) returns (SetTopTopicResReply);
-  rpc TopicDetailsAll(TopicDetailsAllReq) returns (TopicDetailsAllReply);
-  rpc TopicDetailsFold(TopicDetailsFoldReq) returns (TopicDetailsFoldReply);
-  rpc TopicMergedResource(TopicMergedResourceReq) returns (TopicMergedResourceReply);
-  rpc TopicReserveButtonClick(TopicReserveButtonClickReq) returns (TopicReserveButtonClickReply);
-  rpc TopicSetDetails(TopicSetDetailsReq) returns (TopicSetDetailsReply);
+  rpc ReportUserCloseFeedCard(.com.bapis.bilibili.app.topic.v1.ReportUserCloseFeedCardReq) returns (.google.protobuf.Empty);
+  rpc ReportUserRatingFeedCardChoice(.com.bapis.bilibili.app.topic.v1.ReportUserRatingFeedCardChoiceReq) returns (.google.protobuf.Empty);
+  rpc SetTopTopicRes(.com.bapis.bilibili.app.topic.v1.SetTopTopicResReq) returns (.com.bapis.bilibili.app.topic.v1.SetTopTopicResReply);
+  rpc TopicDetailsAll(.com.bapis.bilibili.app.topic.v1.TopicDetailsAllReq) returns (.com.bapis.bilibili.app.topic.v1.TopicDetailsAllReply);
+  rpc TopicDetailsFold(.com.bapis.bilibili.app.topic.v1.TopicDetailsFoldReq) returns (.com.bapis.bilibili.app.topic.v1.TopicDetailsFoldReply);
+  rpc TopicMergedResource(.com.bapis.bilibili.app.topic.v1.TopicMergedResourceReq) returns (.com.bapis.bilibili.app.topic.v1.TopicMergedResourceReply);
+  rpc TopicReserveButtonClick(.com.bapis.bilibili.app.topic.v1.TopicReserveButtonClickReq) returns (.com.bapis.bilibili.app.topic.v1.TopicReserveButtonClickReply);
+  rpc TopicSetDetails(.com.bapis.bilibili.app.topic.v1.TopicSetDetailsReq) returns (.com.bapis.bilibili.app.topic.v1.TopicSetDetailsReply);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/topic/v1";

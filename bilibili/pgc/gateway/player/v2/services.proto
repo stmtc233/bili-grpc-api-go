@@ -1,13 +1,13 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.pgc.gateway.player.v2;
+package bilibili.pgc.gateway.player.v2;
 
 import "bilibili/pgc/gateway/player/v2/messages.proto";
 
 service PlayURL {
-  rpc PlayView(PlayViewReq) returns (PlayViewReply);
-  rpc PlayViewComic(PlayViewReq) returns (PlayViewReply);
+  rpc PlayView(.com.bapis.bilibili.pgc.gateway.player.v2.PlayViewReq) returns (.com.bapis.bilibili.pgc.gateway.player.v2.PlayViewReply);
+  rpc PlayViewComic(.com.bapis.bilibili.pgc.gateway.player.v2.PlayViewReq) returns (.com.bapis.bilibili.pgc.gateway.player.v2.PlayViewReply);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/pgc/gateway/player/v2";

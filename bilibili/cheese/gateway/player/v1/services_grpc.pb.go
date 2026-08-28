@@ -21,8 +21,8 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	PlayURL_PlayView_FullMethodName = "/com.bapis.bilibili.cheese.gateway.player.v1.PlayURL/PlayView"
-	PlayURL_Project_FullMethodName  = "/com.bapis.bilibili.cheese.gateway.player.v1.PlayURL/Project"
+	PlayURL_PlayView_FullMethodName = "/bilibili.cheese.gateway.player.v1.PlayURL/PlayView"
+	PlayURL_Project_FullMethodName  = "/bilibili.cheese.gateway.player.v1.PlayURL/Project"
 )
 
 // PlayURLClient is the client API for PlayURL service.
@@ -131,7 +131,7 @@ func _PlayURL_Project_Handler(srv interface{}, ctx context.Context, dec func(int
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var PlayURL_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.cheese.gateway.player.v1.PlayURL",
+	ServiceName: "bilibili.cheese.gateway.player.v1.PlayURL",
 	HandlerType: (*PlayURLServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

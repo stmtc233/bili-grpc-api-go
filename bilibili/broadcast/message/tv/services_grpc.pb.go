@@ -22,22 +22,22 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Tv_Account_FullMethodName         = "/com.bapis.bilibili.broadcast.message.tv.Tv/Account"
-	Tv_CommonPush_FullMethodName      = "/com.bapis.bilibili.broadcast.message.tv.Tv/CommonPush"
-	Tv_Esports_FullMethodName         = "/com.bapis.bilibili.broadcast.message.tv.Tv/Esports"
-	Tv_FeedClientSmart_FullMethodName = "/com.bapis.bilibili.broadcast.message.tv.Tv/FeedClientSmart"
-	Tv_LiveBottom_FullMethodName      = "/com.bapis.bilibili.broadcast.message.tv.Tv/LiveBottom"
-	Tv_LiveCommonMsg_FullMethodName   = "/com.bapis.bilibili.broadcast.message.tv.Tv/LiveCommonMsg"
-	Tv_LiveSkip_FullMethodName        = "/com.bapis.bilibili.broadcast.message.tv.Tv/LiveSkip"
-	Tv_LiveStatus_FullMethodName      = "/com.bapis.bilibili.broadcast.message.tv.Tv/LiveStatus"
-	Tv_MainRedDot_FullMethodName      = "/com.bapis.bilibili.broadcast.message.tv.Tv/MainRedDot"
-	Tv_NotifyPop_FullMethodName       = "/com.bapis.bilibili.broadcast.message.tv.Tv/NotifyPop"
-	Tv_OgvPayOrder_FullMethodName     = "/com.bapis.bilibili.broadcast.message.tv.Tv/OgvPayOrder"
-	Tv_Proj_FullMethodName            = "/com.bapis.bilibili.broadcast.message.tv.Tv/Proj"
-	Tv_ProjCore_FullMethodName        = "/com.bapis.bilibili.broadcast.message.tv.Tv/ProjCore"
-	Tv_ProjLiveEvent_FullMethodName   = "/com.bapis.bilibili.broadcast.message.tv.Tv/ProjLiveEvent"
-	Tv_Publicity_FullMethodName       = "/com.bapis.bilibili.broadcast.message.tv.Tv/Publicity"
-	Tv_ViewerNumMsg_FullMethodName    = "/com.bapis.bilibili.broadcast.message.tv.Tv/ViewerNumMsg"
+	Tv_Account_FullMethodName         = "/bilibili.broadcast.message.tv.Tv/Account"
+	Tv_CommonPush_FullMethodName      = "/bilibili.broadcast.message.tv.Tv/CommonPush"
+	Tv_Esports_FullMethodName         = "/bilibili.broadcast.message.tv.Tv/Esports"
+	Tv_FeedClientSmart_FullMethodName = "/bilibili.broadcast.message.tv.Tv/FeedClientSmart"
+	Tv_LiveBottom_FullMethodName      = "/bilibili.broadcast.message.tv.Tv/LiveBottom"
+	Tv_LiveCommonMsg_FullMethodName   = "/bilibili.broadcast.message.tv.Tv/LiveCommonMsg"
+	Tv_LiveSkip_FullMethodName        = "/bilibili.broadcast.message.tv.Tv/LiveSkip"
+	Tv_LiveStatus_FullMethodName      = "/bilibili.broadcast.message.tv.Tv/LiveStatus"
+	Tv_MainRedDot_FullMethodName      = "/bilibili.broadcast.message.tv.Tv/MainRedDot"
+	Tv_NotifyPop_FullMethodName       = "/bilibili.broadcast.message.tv.Tv/NotifyPop"
+	Tv_OgvPayOrder_FullMethodName     = "/bilibili.broadcast.message.tv.Tv/OgvPayOrder"
+	Tv_Proj_FullMethodName            = "/bilibili.broadcast.message.tv.Tv/Proj"
+	Tv_ProjCore_FullMethodName        = "/bilibili.broadcast.message.tv.Tv/ProjCore"
+	Tv_ProjLiveEvent_FullMethodName   = "/bilibili.broadcast.message.tv.Tv/ProjLiveEvent"
+	Tv_Publicity_FullMethodName       = "/bilibili.broadcast.message.tv.Tv/Publicity"
+	Tv_ViewerNumMsg_FullMethodName    = "/bilibili.broadcast.message.tv.Tv/ViewerNumMsg"
 )
 
 // TvClient is the client API for Tv service.
@@ -1010,7 +1010,7 @@ func (x *tvViewerNumMsgServer) Send(m *LiveViewerMsgNotify) error {
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Tv_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.broadcast.message.tv.Tv",
+	ServiceName: "bilibili.broadcast.message.tv.Tv",
 	HandlerType: (*TvServer)(nil),
 	Methods:     []grpc.MethodDesc{},
 	Streams: []grpc.StreamDesc{

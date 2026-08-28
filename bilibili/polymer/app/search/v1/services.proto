@@ -1,17 +1,17 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.polymer.app.search.v1;
+package bilibili.polymer.app.search.v1;
 
 import "bilibili/polymer/app/search/v1/messages.proto";
 
 service Search {
-  rpc SearchAll(SearchAllRequest) returns (SearchAllResponse);
-  rpc SearchByType(SearchByTypeRequest) returns (SearchByTypeResponse);
-  rpc SearchComic(SearchComicRequest) returns (SearchComicResponse);
-  rpc SearchOGV(SearchOGVReq) returns (SearchOGVReply);
-  rpc SearchReserve(SearchReserveRequest) returns (SearchReserveResponse);
-  rpc SearchReserveCancel(SearchReserveRequest) returns (SearchReserveResponse);
+  rpc SearchAll(.com.bapis.bilibili.polymer.app.search.v1.SearchAllRequest) returns (.com.bapis.bilibili.polymer.app.search.v1.SearchAllResponse);
+  rpc SearchByType(.com.bapis.bilibili.polymer.app.search.v1.SearchByTypeRequest) returns (.com.bapis.bilibili.polymer.app.search.v1.SearchByTypeResponse);
+  rpc SearchComic(.com.bapis.bilibili.polymer.app.search.v1.SearchComicRequest) returns (.com.bapis.bilibili.polymer.app.search.v1.SearchComicResponse);
+  rpc SearchOGV(.com.bapis.bilibili.polymer.app.search.v1.SearchOGVReq) returns (.com.bapis.bilibili.polymer.app.search.v1.SearchOGVReply);
+  rpc SearchReserve(.com.bapis.bilibili.polymer.app.search.v1.SearchReserveRequest) returns (.com.bapis.bilibili.polymer.app.search.v1.SearchReserveResponse);
+  rpc SearchReserveCancel(.com.bapis.bilibili.polymer.app.search.v1.SearchReserveRequest) returns (.com.bapis.bilibili.polymer.app.search.v1.SearchReserveResponse);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/polymer/app/search/v1";

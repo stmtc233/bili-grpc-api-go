@@ -21,12 +21,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Search_SearchAll_FullMethodName           = "/com.bapis.bilibili.polymer.app.search.v1.Search/SearchAll"
-	Search_SearchByType_FullMethodName        = "/com.bapis.bilibili.polymer.app.search.v1.Search/SearchByType"
-	Search_SearchComic_FullMethodName         = "/com.bapis.bilibili.polymer.app.search.v1.Search/SearchComic"
-	Search_SearchOGV_FullMethodName           = "/com.bapis.bilibili.polymer.app.search.v1.Search/SearchOGV"
-	Search_SearchReserve_FullMethodName       = "/com.bapis.bilibili.polymer.app.search.v1.Search/SearchReserve"
-	Search_SearchReserveCancel_FullMethodName = "/com.bapis.bilibili.polymer.app.search.v1.Search/SearchReserveCancel"
+	Search_SearchAll_FullMethodName           = "/bilibili.polymer.app.search.v1.Search/SearchAll"
+	Search_SearchByType_FullMethodName        = "/bilibili.polymer.app.search.v1.Search/SearchByType"
+	Search_SearchComic_FullMethodName         = "/bilibili.polymer.app.search.v1.Search/SearchComic"
+	Search_SearchOGV_FullMethodName           = "/bilibili.polymer.app.search.v1.Search/SearchOGV"
+	Search_SearchReserve_FullMethodName       = "/bilibili.polymer.app.search.v1.Search/SearchReserve"
+	Search_SearchReserveCancel_FullMethodName = "/bilibili.polymer.app.search.v1.Search/SearchReserveCancel"
 )
 
 // SearchClient is the client API for Search service.
@@ -263,7 +263,7 @@ func _Search_SearchReserveCancel_Handler(srv interface{}, ctx context.Context, d
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Search_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.polymer.app.search.v1.Search",
+	ServiceName: "bilibili.polymer.app.search.v1.Search",
 	HandlerType: (*SearchServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

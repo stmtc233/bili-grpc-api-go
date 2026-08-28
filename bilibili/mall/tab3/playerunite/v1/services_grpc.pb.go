@@ -21,7 +21,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Player_PlayViewUnite_FullMethodName = "/com.bapis.bilibili.mall.tab3.playerunite.v1.Player/PlayViewUnite"
+	Player_PlayViewUnite_FullMethodName = "/bilibili.mall.tab3.playerunite.v1.Player/PlayViewUnite"
 )
 
 // PlayerClient is the client API for Player service.
@@ -98,7 +98,7 @@ func _Player_PlayViewUnite_Handler(srv interface{}, ctx context.Context, dec fun
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Player_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.mall.tab3.playerunite.v1.Player",
+	ServiceName: "bilibili.mall.tab3.playerunite.v1.Player",
 	HandlerType: (*PlayerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

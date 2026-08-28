@@ -1,27 +1,27 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.main.community.reply.v1;
+package bilibili.main.community.reply.v1;
 
 import "bilibili/main/community/reply/v1/messages.proto";
 
 service Reply {
-  rpc AnswerQuestion(AnswerQuestionReq) returns (AnswerQuestionResp);
-  rpc AtSearch(AtSearchReq) returns (AtSearchReply);
-  rpc DetailList(DetailListReq) returns (DetailListReply);
-  rpc DialogList(DialogListReq) returns (DialogListReply);
-  rpc DoVote(DoVoteReq) returns (DoVoteResp);
-  rpc MainList(MainListReq) returns (MainListReply);
-  rpc PictureList(PictureListReq) returns (PictureListResp);
-  rpc PreviewList(PreviewListReq) returns (PreviewListReply);
-  rpc ReplyInfo(ReplyInfoReq) returns (ReplyInfoReply);
-  rpc SearchItem(SearchItemReq) returns (SearchItemReply);
-  rpc SearchItemPreHook(SearchItemPreHookReq) returns (SearchItemPreHookReply);
-  rpc ShareRepliesInfo(ShareRepliesInfoReq) returns (ShareRepliesInfoResp);
-  rpc ShareReplyMaterial(ShareReplyMaterialReq) returns (ShareReplyMaterialResp);
-  rpc SuggestEmotes(SuggestEmotesReq) returns (SuggestEmotesResp);
-  rpc UpdateSingleReplyNotificationConfig(UpdateSingleReplyNotificationConfigReq) returns (UpdateSingleReplyNotificationConfigResp);
-  rpc UserCallback(UserCallbackReq) returns (UserCallbackReply);
+  rpc AnswerQuestion(.com.bapis.bilibili.main.community.reply.v1.AnswerQuestionReq) returns (.com.bapis.bilibili.main.community.reply.v1.AnswerQuestionResp);
+  rpc AtSearch(.com.bapis.bilibili.main.community.reply.v1.AtSearchReq) returns (.com.bapis.bilibili.main.community.reply.v1.AtSearchReply);
+  rpc DetailList(.com.bapis.bilibili.main.community.reply.v1.DetailListReq) returns (.com.bapis.bilibili.main.community.reply.v1.DetailListReply);
+  rpc DialogList(.com.bapis.bilibili.main.community.reply.v1.DialogListReq) returns (.com.bapis.bilibili.main.community.reply.v1.DialogListReply);
+  rpc DoVote(.com.bapis.bilibili.main.community.reply.v1.DoVoteReq) returns (.com.bapis.bilibili.main.community.reply.v1.DoVoteResp);
+  rpc MainList(.com.bapis.bilibili.main.community.reply.v1.MainListReq) returns (.com.bapis.bilibili.main.community.reply.v1.MainListReply);
+  rpc PictureList(.com.bapis.bilibili.main.community.reply.v1.PictureListReq) returns (.com.bapis.bilibili.main.community.reply.v1.PictureListResp);
+  rpc PreviewList(.com.bapis.bilibili.main.community.reply.v1.PreviewListReq) returns (.com.bapis.bilibili.main.community.reply.v1.PreviewListReply);
+  rpc ReplyInfo(.com.bapis.bilibili.main.community.reply.v1.ReplyInfoReq) returns (.com.bapis.bilibili.main.community.reply.v1.ReplyInfoReply);
+  rpc SearchItem(.com.bapis.bilibili.main.community.reply.v1.SearchItemReq) returns (.com.bapis.bilibili.main.community.reply.v1.SearchItemReply);
+  rpc SearchItemPreHook(.com.bapis.bilibili.main.community.reply.v1.SearchItemPreHookReq) returns (.com.bapis.bilibili.main.community.reply.v1.SearchItemPreHookReply);
+  rpc ShareRepliesInfo(.com.bapis.bilibili.main.community.reply.v1.ShareRepliesInfoReq) returns (.com.bapis.bilibili.main.community.reply.v1.ShareRepliesInfoResp);
+  rpc ShareReplyMaterial(.com.bapis.bilibili.main.community.reply.v1.ShareReplyMaterialReq) returns (.com.bapis.bilibili.main.community.reply.v1.ShareReplyMaterialResp);
+  rpc SuggestEmotes(.com.bapis.bilibili.main.community.reply.v1.SuggestEmotesReq) returns (.com.bapis.bilibili.main.community.reply.v1.SuggestEmotesResp);
+  rpc UpdateSingleReplyNotificationConfig(.com.bapis.bilibili.main.community.reply.v1.UpdateSingleReplyNotificationConfigReq) returns (.com.bapis.bilibili.main.community.reply.v1.UpdateSingleReplyNotificationConfigResp);
+  rpc UserCallback(.com.bapis.bilibili.main.community.reply.v1.UserCallbackReq) returns (.com.bapis.bilibili.main.community.reply.v1.UserCallbackReply);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/main/community/reply/v1";

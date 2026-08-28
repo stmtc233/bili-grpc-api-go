@@ -1,39 +1,39 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.app.view.v1;
+package bilibili.app.view.v1;
 
 import "bilibili/app/view/v1/messages.proto";
 
 service LegacyView {
-  rpc Like(LikeReq) returns (LikeReply);
+  rpc Like(.com.bapis.bilibili.app.view.v1.LikeReq) returns (.com.bapis.bilibili.app.view.v1.LikeReply);
 }
 
 service View {
-  rpc AddContract(AddContractReq) returns (NoReply);
-  rpc CacheView(CacheViewReq) returns (CacheViewReply);
-  rpc ChronosPkg(ChronosPkgReq) returns (Chronos);
-  rpc ClickActivitySeason(ClickActivitySeasonReq) returns (NoReply);
-  rpc ClickPlayerCard(ClickPlayerCardReq) returns (NoReply);
-  rpc ClickPlayerCardV2(ClickPlayerCardReq) returns (ClickPlayerCardReply);
-  rpc ContinuousPlay(ContinuousPlayReq) returns (ContinuousPlayReply);
-  rpc ExposePlayerCard(ExposePlayerCardReq) returns (NoReply);
-  rpc FeedView(FeedViewReq) returns (FeedViewReply);
-  rpc GetArcsPlayer(GetArcsPlayerReq) returns (GetArcsPlayerReply);
-  rpc GetUser(GetUserReq) returns (GetUserReply);
-  rpc PlayerRelates(PlayerRelatesReq) returns (PlayerRelatesReply);
-  rpc PremiereArchive(PremiereArchiveReq) returns (PremiereArchiveReply);
-  rpc RelatesFeed(RelatesFeedReq) returns (RelatesFeedReply);
-  rpc Reserve(ReserveReq) returns (ReserveReply);
-  rpc Season(SeasonReq) returns (SeasonReply);
-  rpc SeasonActivityRecord(SeasonActivityRecordReq) returns (SeasonActivityRecordReply);
-  rpc SeasonWidgetExpose(SeasonWidgetExposeReq) returns (SeasonWidgetExposeReply);
-  rpc ShortFormVideoDownload(ShortFormVideoDownloadReq) returns (ShortFormVideoDownloadReply);
-  rpc TFInfo(TFInfoReq) returns (TFInfoReply);
-  rpc View(ViewReq) returns (ViewReply);
-  rpc ViewMaterial(ViewMaterialReq) returns (ViewMaterialReply);
-  rpc ViewProgress(ViewProgressReq) returns (ViewProgressReply);
-  rpc ViewTag(ViewTagReq) returns (ViewTagReply);
+  rpc AddContract(.com.bapis.bilibili.app.view.v1.AddContractReq) returns (.com.bapis.bilibili.app.view.v1.NoReply);
+  rpc CacheView(.com.bapis.bilibili.app.view.v1.CacheViewReq) returns (.com.bapis.bilibili.app.view.v1.CacheViewReply);
+  rpc ChronosPkg(.com.bapis.bilibili.app.view.v1.ChronosPkgReq) returns (.com.bapis.bilibili.app.view.v1.Chronos);
+  rpc ClickActivitySeason(.com.bapis.bilibili.app.view.v1.ClickActivitySeasonReq) returns (.com.bapis.bilibili.app.view.v1.NoReply);
+  rpc ClickPlayerCard(.com.bapis.bilibili.app.view.v1.ClickPlayerCardReq) returns (.com.bapis.bilibili.app.view.v1.NoReply);
+  rpc ClickPlayerCardV2(.com.bapis.bilibili.app.view.v1.ClickPlayerCardReq) returns (.com.bapis.bilibili.app.view.v1.ClickPlayerCardReply);
+  rpc ContinuousPlay(.com.bapis.bilibili.app.view.v1.ContinuousPlayReq) returns (.com.bapis.bilibili.app.view.v1.ContinuousPlayReply);
+  rpc ExposePlayerCard(.com.bapis.bilibili.app.view.v1.ExposePlayerCardReq) returns (.com.bapis.bilibili.app.view.v1.NoReply);
+  rpc FeedView(.com.bapis.bilibili.app.view.v1.FeedViewReq) returns (.com.bapis.bilibili.app.view.v1.FeedViewReply);
+  rpc GetArcsPlayer(.com.bapis.bilibili.app.view.v1.GetArcsPlayerReq) returns (.com.bapis.bilibili.app.view.v1.GetArcsPlayerReply);
+  rpc GetUser(.com.bapis.bilibili.app.view.v1.GetUserReq) returns (.com.bapis.bilibili.app.view.v1.GetUserReply);
+  rpc PlayerRelates(.com.bapis.bilibili.app.view.v1.PlayerRelatesReq) returns (.com.bapis.bilibili.app.view.v1.PlayerRelatesReply);
+  rpc PremiereArchive(.com.bapis.bilibili.app.view.v1.PremiereArchiveReq) returns (.com.bapis.bilibili.app.view.v1.PremiereArchiveReply);
+  rpc RelatesFeed(.com.bapis.bilibili.app.view.v1.RelatesFeedReq) returns (.com.bapis.bilibili.app.view.v1.RelatesFeedReply);
+  rpc Reserve(.com.bapis.bilibili.app.view.v1.ReserveReq) returns (.com.bapis.bilibili.app.view.v1.ReserveReply);
+  rpc Season(.com.bapis.bilibili.app.view.v1.SeasonReq) returns (.com.bapis.bilibili.app.view.v1.SeasonReply);
+  rpc SeasonActivityRecord(.com.bapis.bilibili.app.view.v1.SeasonActivityRecordReq) returns (.com.bapis.bilibili.app.view.v1.SeasonActivityRecordReply);
+  rpc SeasonWidgetExpose(.com.bapis.bilibili.app.view.v1.SeasonWidgetExposeReq) returns (.com.bapis.bilibili.app.view.v1.SeasonWidgetExposeReply);
+  rpc ShortFormVideoDownload(.com.bapis.bilibili.app.view.v1.ShortFormVideoDownloadReq) returns (.com.bapis.bilibili.app.view.v1.ShortFormVideoDownloadReply);
+  rpc TFInfo(.com.bapis.bilibili.app.view.v1.TFInfoReq) returns (.com.bapis.bilibili.app.view.v1.TFInfoReply);
+  rpc View(.com.bapis.bilibili.app.view.v1.ViewReq) returns (.com.bapis.bilibili.app.view.v1.ViewReply);
+  rpc ViewMaterial(.com.bapis.bilibili.app.view.v1.ViewMaterialReq) returns (.com.bapis.bilibili.app.view.v1.ViewMaterialReply);
+  rpc ViewProgress(.com.bapis.bilibili.app.view.v1.ViewProgressReq) returns (.com.bapis.bilibili.app.view.v1.ViewProgressReply);
+  rpc ViewTag(.com.bapis.bilibili.app.view.v1.ViewTagReq) returns (.com.bapis.bilibili.app.view.v1.ViewTagReply);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/view/v1";

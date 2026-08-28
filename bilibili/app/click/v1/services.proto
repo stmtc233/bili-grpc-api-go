@@ -1,12 +1,12 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.app.click.v1;
+package bilibili.app.click.v1;
 
 import "bilibili/app/click/v1/messages.proto";
 
 service Click {
-  rpc HeartBeat(HeartBeatReq) returns (HeartBeatReply);
+  rpc HeartBeat(.com.bapis.bilibili.app.click.v1.HeartBeatReq) returns (.com.bapis.bilibili.app.click.v1.HeartBeatReply);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/click/v1";

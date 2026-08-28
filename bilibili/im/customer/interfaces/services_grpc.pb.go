@@ -21,24 +21,24 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	CustomerInterface_CustomerPreEvaluate_FullMethodName          = "/com.bapis.bilibili.im.customer.interfaces.CustomerInterface/CustomerPreEvaluate"
-	CustomerInterface_CustomerUpdateAck_FullMethodName            = "/com.bapis.bilibili.im.customer.interfaces.CustomerInterface/CustomerUpdateAck"
-	CustomerInterface_CustomerWindowOptions_FullMethodName        = "/com.bapis.bilibili.im.customer.interfaces.CustomerInterface/CustomerWindowOptions"
-	CustomerInterface_FinishParagraphsRender_FullMethodName       = "/com.bapis.bilibili.im.customer.interfaces.CustomerInterface/FinishParagraphsRender"
-	CustomerInterface_GetCustomerSessDetail_FullMethodName        = "/com.bapis.bilibili.im.customer.interfaces.CustomerInterface/GetCustomerSessDetail"
-	CustomerInterface_GetCustomerSessions_FullMethodName          = "/com.bapis.bilibili.im.customer.interfaces.CustomerInterface/GetCustomerSessions"
-	CustomerInterface_GetNewCustomerSessions_FullMethodName       = "/com.bapis.bilibili.im.customer.interfaces.CustomerInterface/GetNewCustomerSessions"
-	CustomerInterface_GetShopCfg_FullMethodName                   = "/com.bapis.bilibili.im.customer.interfaces.CustomerInterface/GetShopCfg"
-	CustomerInterface_GetShopInfo_FullMethodName                  = "/com.bapis.bilibili.im.customer.interfaces.CustomerInterface/GetShopInfo"
-	CustomerInterface_GetUserSettings_FullMethodName              = "/com.bapis.bilibili.im.customer.interfaces.CustomerInterface/GetUserSettings"
-	CustomerInterface_HeartBeat_FullMethodName                    = "/com.bapis.bilibili.im.customer.interfaces.CustomerInterface/HeartBeat"
-	CustomerInterface_OutCustomerQueue_FullMethodName             = "/com.bapis.bilibili.im.customer.interfaces.CustomerInterface/OutCustomerQueue"
-	CustomerInterface_PopResultUpdate_FullMethodName              = "/com.bapis.bilibili.im.customer.interfaces.CustomerInterface/PopResultUpdate"
-	CustomerInterface_RemoveSession_FullMethodName                = "/com.bapis.bilibili.im.customer.interfaces.CustomerInterface/RemoveSession"
-	CustomerInterface_SendCustomerMsg_FullMethodName              = "/com.bapis.bilibili.im.customer.interfaces.CustomerInterface/SendCustomerMsg"
-	CustomerInterface_SetTop_FullMethodName                       = "/com.bapis.bilibili.im.customer.interfaces.CustomerInterface/SetTop"
-	CustomerInterface_SetUserSettings_FullMethodName              = "/com.bapis.bilibili.im.customer.interfaces.CustomerInterface/SetUserSettings"
-	CustomerInterface_SyncFetchCustomerSessionMsgs_FullMethodName = "/com.bapis.bilibili.im.customer.interfaces.CustomerInterface/SyncFetchCustomerSessionMsgs"
+	CustomerInterface_CustomerPreEvaluate_FullMethodName          = "/bilibili.im.customer.interfaces.CustomerInterface/CustomerPreEvaluate"
+	CustomerInterface_CustomerUpdateAck_FullMethodName            = "/bilibili.im.customer.interfaces.CustomerInterface/CustomerUpdateAck"
+	CustomerInterface_CustomerWindowOptions_FullMethodName        = "/bilibili.im.customer.interfaces.CustomerInterface/CustomerWindowOptions"
+	CustomerInterface_FinishParagraphsRender_FullMethodName       = "/bilibili.im.customer.interfaces.CustomerInterface/FinishParagraphsRender"
+	CustomerInterface_GetCustomerSessDetail_FullMethodName        = "/bilibili.im.customer.interfaces.CustomerInterface/GetCustomerSessDetail"
+	CustomerInterface_GetCustomerSessions_FullMethodName          = "/bilibili.im.customer.interfaces.CustomerInterface/GetCustomerSessions"
+	CustomerInterface_GetNewCustomerSessions_FullMethodName       = "/bilibili.im.customer.interfaces.CustomerInterface/GetNewCustomerSessions"
+	CustomerInterface_GetShopCfg_FullMethodName                   = "/bilibili.im.customer.interfaces.CustomerInterface/GetShopCfg"
+	CustomerInterface_GetShopInfo_FullMethodName                  = "/bilibili.im.customer.interfaces.CustomerInterface/GetShopInfo"
+	CustomerInterface_GetUserSettings_FullMethodName              = "/bilibili.im.customer.interfaces.CustomerInterface/GetUserSettings"
+	CustomerInterface_HeartBeat_FullMethodName                    = "/bilibili.im.customer.interfaces.CustomerInterface/HeartBeat"
+	CustomerInterface_OutCustomerQueue_FullMethodName             = "/bilibili.im.customer.interfaces.CustomerInterface/OutCustomerQueue"
+	CustomerInterface_PopResultUpdate_FullMethodName              = "/bilibili.im.customer.interfaces.CustomerInterface/PopResultUpdate"
+	CustomerInterface_RemoveSession_FullMethodName                = "/bilibili.im.customer.interfaces.CustomerInterface/RemoveSession"
+	CustomerInterface_SendCustomerMsg_FullMethodName              = "/bilibili.im.customer.interfaces.CustomerInterface/SendCustomerMsg"
+	CustomerInterface_SetTop_FullMethodName                       = "/bilibili.im.customer.interfaces.CustomerInterface/SetTop"
+	CustomerInterface_SetUserSettings_FullMethodName              = "/bilibili.im.customer.interfaces.CustomerInterface/SetUserSettings"
+	CustomerInterface_SyncFetchCustomerSessionMsgs_FullMethodName = "/bilibili.im.customer.interfaces.CustomerInterface/SyncFetchCustomerSessionMsgs"
 )
 
 // CustomerInterfaceClient is the client API for CustomerInterface service.
@@ -659,7 +659,7 @@ func _CustomerInterface_SyncFetchCustomerSessionMsgs_Handler(srv interface{}, ct
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CustomerInterface_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.im.customer.interfaces.CustomerInterface",
+	ServiceName: "bilibili.im.customer.interfaces.CustomerInterface",
 	HandlerType: (*CustomerInterfaceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

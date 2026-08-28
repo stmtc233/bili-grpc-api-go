@@ -1,23 +1,23 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.api.probe.v1;
+package bilibili.api.probe.v1;
 
 import "bilibili/api/probe/v1/messages.proto";
 
 service Probe {
-  rpc TestCode(CodeReq) returns (CodeReply);
-  rpc TestReq(ProbeReq) returns (ProbeReply);
-  rpc TestStream(stream ProbeStreamReq) returns (stream ProbeStreamReply);
-  rpc TestSub(ProbeSubReq) returns (stream ProbeSubReply);
+  rpc TestCode(.com.bapis.bilibili.api.probe.v1.CodeReq) returns (.com.bapis.bilibili.api.probe.v1.CodeReply);
+  rpc TestReq(.com.bapis.bilibili.api.probe.v1.ProbeReq) returns (.com.bapis.bilibili.api.probe.v1.ProbeReply);
+  rpc TestStream(stream .com.bapis.bilibili.api.probe.v1.ProbeStreamReq) returns (stream .com.bapis.bilibili.api.probe.v1.ProbeStreamReply);
+  rpc TestSub(.com.bapis.bilibili.api.probe.v1.ProbeSubReq) returns (stream .com.bapis.bilibili.api.probe.v1.ProbeSubReply);
 }
 
 service ProbeService {
-  rpc Echo(SimpleMessage) returns (SimpleMessage);
-  rpc EchoBody(SimpleMessage) returns (SimpleMessage);
-  rpc EchoDelete(SimpleMessage) returns (SimpleMessage);
-  rpc EchoError(ErrorMessage) returns (ErrorMessage);
-  rpc EchoPatch(DynamicMessageUpdate) returns (DynamicMessageUpdate);
+  rpc Echo(.com.bapis.bilibili.api.probe.v1.SimpleMessage) returns (.com.bapis.bilibili.api.probe.v1.SimpleMessage);
+  rpc EchoBody(.com.bapis.bilibili.api.probe.v1.SimpleMessage) returns (.com.bapis.bilibili.api.probe.v1.SimpleMessage);
+  rpc EchoDelete(.com.bapis.bilibili.api.probe.v1.SimpleMessage) returns (.com.bapis.bilibili.api.probe.v1.SimpleMessage);
+  rpc EchoError(.com.bapis.bilibili.api.probe.v1.ErrorMessage) returns (.com.bapis.bilibili.api.probe.v1.ErrorMessage);
+  rpc EchoPatch(.com.bapis.bilibili.api.probe.v1.DynamicMessageUpdate) returns (.com.bapis.bilibili.api.probe.v1.DynamicMessageUpdate);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/api/probe/v1";

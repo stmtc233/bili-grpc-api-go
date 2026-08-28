@@ -21,8 +21,8 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Privacy_PrivacyConfig_FullMethodName    = "/com.bapis.bilibili.app.resource.privacy.v1.Privacy/PrivacyConfig"
-	Privacy_SetPrivacyConfig_FullMethodName = "/com.bapis.bilibili.app.resource.privacy.v1.Privacy/SetPrivacyConfig"
+	Privacy_PrivacyConfig_FullMethodName    = "/bilibili.app.resource.privacy.v1.Privacy/PrivacyConfig"
+	Privacy_SetPrivacyConfig_FullMethodName = "/bilibili.app.resource.privacy.v1.Privacy/SetPrivacyConfig"
 )
 
 // PrivacyClient is the client API for Privacy service.
@@ -131,7 +131,7 @@ func _Privacy_SetPrivacyConfig_Handler(srv interface{}, ctx context.Context, dec
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Privacy_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.app.resource.privacy.v1.Privacy",
+	ServiceName: "bilibili.app.resource.privacy.v1.Privacy",
 	HandlerType: (*PrivacyServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

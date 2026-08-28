@@ -21,7 +21,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	VegaDenebRPC_MessagePulls_FullMethodName = "/com.bapis.bilibili.vega.deneb.v1.VegaDenebRPC/MessagePulls"
+	VegaDenebRPC_MessagePulls_FullMethodName = "/bilibili.vega.deneb.v1.VegaDenebRPC/MessagePulls"
 )
 
 // VegaDenebRPCClient is the client API for VegaDenebRPC service.
@@ -98,7 +98,7 @@ func _VegaDenebRPC_MessagePulls_Handler(srv interface{}, ctx context.Context, de
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var VegaDenebRPC_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.vega.deneb.v1.VegaDenebRPC",
+	ServiceName: "bilibili.vega.deneb.v1.VegaDenebRPC",
 	HandlerType: (*VegaDenebRPCServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

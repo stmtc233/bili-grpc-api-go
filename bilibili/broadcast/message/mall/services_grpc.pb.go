@@ -22,7 +22,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	MerchantNotify_MessageNotify_FullMethodName = "/com.bapis.bilibili.broadcast.message.mall.MerchantNotify/MessageNotify"
+	MerchantNotify_MessageNotify_FullMethodName = "/bilibili.broadcast.message.mall.MerchantNotify/MessageNotify"
 )
 
 // MerchantNotifyClient is the client API for MerchantNotify service.
@@ -125,7 +125,7 @@ func (x *merchantNotifyMessageNotifyServer) Send(m *NotifyReq) error {
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var MerchantNotify_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.broadcast.message.mall.MerchantNotify",
+	ServiceName: "bilibili.broadcast.message.mall.MerchantNotify",
 	HandlerType: (*MerchantNotifyServer)(nil),
 	Methods:     []grpc.MethodDesc{},
 	Streams: []grpc.StreamDesc{

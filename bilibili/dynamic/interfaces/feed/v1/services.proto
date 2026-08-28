@@ -1,45 +1,45 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.dynamic.interfaces.feed.v1;
+package bilibili.dynamic.interfaces.feed.v1;
 
 import "bilibili/dynamic/common/messages.proto";
 import "bilibili/dynamic/interfaces/feed/v1/messages.proto";
 
 service Feed {
-  rpc AddDynamicReport(AddDynamicReportReq) returns (AddDynamicReportRsp);
-  rpc ArticleHomePageCategories(ArticleHomePageCategoriesReq) returns (ArticleHomePageCategoriesRsp);
+  rpc AddDynamicReport(.com.bapis.bilibili.dynamic.interfaces.feed.v1.AddDynamicReportReq) returns (.com.bapis.bilibili.dynamic.interfaces.feed.v1.AddDynamicReportRsp);
+  rpc ArticleHomePageCategories(.com.bapis.bilibili.dynamic.interfaces.feed.v1.ArticleHomePageCategoriesReq) returns (.com.bapis.bilibili.dynamic.interfaces.feed.v1.ArticleHomePageCategoriesRsp);
   rpc AtList(.com.bapis.bilibili.dynamic.common.AtListReq) returns (.com.bapis.bilibili.dynamic.common.AtListRsp);
   rpc AtSearch(.com.bapis.bilibili.dynamic.common.AtSearchReq) returns (.com.bapis.bilibili.dynamic.common.AtListRsp);
-  rpc AttachCardButton(AttachCardButtonReq) returns (AttachCardButtonRsp);
-  rpc Config(ConfigReq) returns (ConfigRsp);
-  rpc CreateDyn(CreateDynReq) returns (.com.bapis.bilibili.dynamic.common.CreateResp);
-  rpc CreateInitCheck(CreateInitCheckReq) returns (.com.bapis.bilibili.dynamic.common.CreateCheckResp);
-  rpc CreatePageInfos(CreatePageInfosReq) returns (CreatePageInfosRsp);
-  rpc CreatePermissionButtonClick(CreatePermissionButtonClickReq) returns (CreatePermissionButtonClickRsp);
-  rpc CreatePlusButtonClick(CreatePlusButtonClickReq) returns (CreatePlusButtonClickRsp);
-  rpc DynamicButtonClick(DynamicButtonClickReq) returns (DynamicButtonClickRsp);
-  rpc DynamicRepost(DynamicRepostReq) returns (.com.bapis.bilibili.dynamic.common.CreateResp);
-  rpc DynamicThumb(DynamicThumbReq) returns (DynamicThumbRsp);
-  rpc DynMetricsActiveReport(DynMetricsActiveReportReq) returns (DynMetricsActiveReportRsp);
-  rpc DynPrivatePubSetting(DynPrivatePubSettingReq) returns (DynPrivatePubSettingRsp);
-  rpc EditDyn(EditDynReq) returns (EditDynRsp);
-  rpc GetEditDynInfo(GetEditDynInfoReq) returns (GetEditDynInfoRsp);
-  rpc GetEditDynInfoWeb(GetEditDynInfoWebReq) returns (GetEditDynInfoWebRsp);
+  rpc AttachCardButton(.com.bapis.bilibili.dynamic.interfaces.feed.v1.AttachCardButtonReq) returns (.com.bapis.bilibili.dynamic.interfaces.feed.v1.AttachCardButtonRsp);
+  rpc Config(.com.bapis.bilibili.dynamic.interfaces.feed.v1.ConfigReq) returns (.com.bapis.bilibili.dynamic.interfaces.feed.v1.ConfigRsp);
+  rpc CreateDyn(.com.bapis.bilibili.dynamic.interfaces.feed.v1.CreateDynReq) returns (.com.bapis.bilibili.dynamic.common.CreateResp);
+  rpc CreateInitCheck(.com.bapis.bilibili.dynamic.interfaces.feed.v1.CreateInitCheckReq) returns (.com.bapis.bilibili.dynamic.common.CreateCheckResp);
+  rpc CreatePageInfos(.com.bapis.bilibili.dynamic.interfaces.feed.v1.CreatePageInfosReq) returns (.com.bapis.bilibili.dynamic.interfaces.feed.v1.CreatePageInfosRsp);
+  rpc CreatePermissionButtonClick(.com.bapis.bilibili.dynamic.interfaces.feed.v1.CreatePermissionButtonClickReq) returns (.com.bapis.bilibili.dynamic.interfaces.feed.v1.CreatePermissionButtonClickRsp);
+  rpc CreatePlusButtonClick(.com.bapis.bilibili.dynamic.interfaces.feed.v1.CreatePlusButtonClickReq) returns (.com.bapis.bilibili.dynamic.interfaces.feed.v1.CreatePlusButtonClickRsp);
+  rpc DynamicButtonClick(.com.bapis.bilibili.dynamic.interfaces.feed.v1.DynamicButtonClickReq) returns (.com.bapis.bilibili.dynamic.interfaces.feed.v1.DynamicButtonClickRsp);
+  rpc DynamicRepost(.com.bapis.bilibili.dynamic.interfaces.feed.v1.DynamicRepostReq) returns (.com.bapis.bilibili.dynamic.common.CreateResp);
+  rpc DynamicThumb(.com.bapis.bilibili.dynamic.interfaces.feed.v1.DynamicThumbReq) returns (.com.bapis.bilibili.dynamic.interfaces.feed.v1.DynamicThumbRsp);
+  rpc DynMetricsActiveReport(.com.bapis.bilibili.dynamic.interfaces.feed.v1.DynMetricsActiveReportReq) returns (.com.bapis.bilibili.dynamic.interfaces.feed.v1.DynMetricsActiveReportRsp);
+  rpc DynPrivatePubSetting(.com.bapis.bilibili.dynamic.interfaces.feed.v1.DynPrivatePubSettingReq) returns (.com.bapis.bilibili.dynamic.interfaces.feed.v1.DynPrivatePubSettingRsp);
+  rpc EditDyn(.com.bapis.bilibili.dynamic.interfaces.feed.v1.EditDynReq) returns (.com.bapis.bilibili.dynamic.interfaces.feed.v1.EditDynRsp);
+  rpc GetEditDynInfo(.com.bapis.bilibili.dynamic.interfaces.feed.v1.GetEditDynInfoReq) returns (.com.bapis.bilibili.dynamic.interfaces.feed.v1.GetEditDynInfoRsp);
+  rpc GetEditDynInfoWeb(.com.bapis.bilibili.dynamic.interfaces.feed.v1.GetEditDynInfoWebReq) returns (.com.bapis.bilibili.dynamic.interfaces.feed.v1.GetEditDynInfoWebRsp);
   rpc GetUidByName(.com.bapis.bilibili.dynamic.common.GetUidByNameReq) returns (.com.bapis.bilibili.dynamic.common.GetUidByNameRsp);
-  rpc GoodsAttachCardPreview(GoodsAttachCardPreviewReq) returns (GoodsAttachCardPreviewRsp);
-  rpc HomeBubbleReport(HomeBubbleReportReq) returns (HomeBubbleReportRsp);
-  rpc HotSearch(HotSearchReq) returns (HotSearchRsp);
-  rpc ICreateGoodsReplySync(ICreateGoodsReplySyncReq) returns (ICreateResp);
-  rpc NearbyPoiList(NearbyPoiListReq) returns (NearbyPoiListRsp);
-  rpc RecommendPoi(RecommendPoiReq) returns (RecommendPoiRsp);
-  rpc ReserveButtonClick(ReserveButtonClickReq) returns (ReserveButtonClickResp);
-  rpc RmDyn(RmDynReq) returns (RmDynRsp);
-  rpc RmSpaceTop(RmSpaceTopReq) returns (RmSpaceTopRsp);
-  rpc SearchPoiList(SearchPoiListReq) returns (SearchPoiListRsp);
-  rpc SetSpaceTop(SetSpaceTopReq) returns (SetSpaceTopRsp);
-  rpc SubmitCheck(SubmitCheckReq) returns (SubmitCheckRsp);
-  rpc Suggest(SuggestReq) returns (SuggestRsp);
+  rpc GoodsAttachCardPreview(.com.bapis.bilibili.dynamic.interfaces.feed.v1.GoodsAttachCardPreviewReq) returns (.com.bapis.bilibili.dynamic.interfaces.feed.v1.GoodsAttachCardPreviewRsp);
+  rpc HomeBubbleReport(.com.bapis.bilibili.dynamic.interfaces.feed.v1.HomeBubbleReportReq) returns (.com.bapis.bilibili.dynamic.interfaces.feed.v1.HomeBubbleReportRsp);
+  rpc HotSearch(.com.bapis.bilibili.dynamic.interfaces.feed.v1.HotSearchReq) returns (.com.bapis.bilibili.dynamic.interfaces.feed.v1.HotSearchRsp);
+  rpc ICreateGoodsReplySync(.com.bapis.bilibili.dynamic.interfaces.feed.v1.ICreateGoodsReplySyncReq) returns (.com.bapis.bilibili.dynamic.interfaces.feed.v1.ICreateResp);
+  rpc NearbyPoiList(.com.bapis.bilibili.dynamic.interfaces.feed.v1.NearbyPoiListReq) returns (.com.bapis.bilibili.dynamic.interfaces.feed.v1.NearbyPoiListRsp);
+  rpc RecommendPoi(.com.bapis.bilibili.dynamic.interfaces.feed.v1.RecommendPoiReq) returns (.com.bapis.bilibili.dynamic.interfaces.feed.v1.RecommendPoiRsp);
+  rpc ReserveButtonClick(.com.bapis.bilibili.dynamic.interfaces.feed.v1.ReserveButtonClickReq) returns (.com.bapis.bilibili.dynamic.interfaces.feed.v1.ReserveButtonClickResp);
+  rpc RmDyn(.com.bapis.bilibili.dynamic.interfaces.feed.v1.RmDynReq) returns (.com.bapis.bilibili.dynamic.interfaces.feed.v1.RmDynRsp);
+  rpc RmSpaceTop(.com.bapis.bilibili.dynamic.interfaces.feed.v1.RmSpaceTopReq) returns (.com.bapis.bilibili.dynamic.interfaces.feed.v1.RmSpaceTopRsp);
+  rpc SearchPoiList(.com.bapis.bilibili.dynamic.interfaces.feed.v1.SearchPoiListReq) returns (.com.bapis.bilibili.dynamic.interfaces.feed.v1.SearchPoiListRsp);
+  rpc SetSpaceTop(.com.bapis.bilibili.dynamic.interfaces.feed.v1.SetSpaceTopReq) returns (.com.bapis.bilibili.dynamic.interfaces.feed.v1.SetSpaceTopRsp);
+  rpc SubmitCheck(.com.bapis.bilibili.dynamic.interfaces.feed.v1.SubmitCheckReq) returns (.com.bapis.bilibili.dynamic.interfaces.feed.v1.SubmitCheckRsp);
+  rpc Suggest(.com.bapis.bilibili.dynamic.interfaces.feed.v1.SuggestReq) returns (.com.bapis.bilibili.dynamic.interfaces.feed.v1.SuggestRsp);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/dynamic/interfaces/feed/v1";

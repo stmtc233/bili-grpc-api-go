@@ -21,8 +21,8 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	FieldCert_FieldCertPopAction_FullMethodName = "/com.bapis.bilibili.community.service.cert.v1.FieldCert/FieldCertPopAction"
-	FieldCert_FieldCertPopRecord_FullMethodName = "/com.bapis.bilibili.community.service.cert.v1.FieldCert/FieldCertPopRecord"
+	FieldCert_FieldCertPopAction_FullMethodName = "/bilibili.community.service.cert.v1.FieldCert/FieldCertPopAction"
+	FieldCert_FieldCertPopRecord_FullMethodName = "/bilibili.community.service.cert.v1.FieldCert/FieldCertPopRecord"
 )
 
 // FieldCertClient is the client API for FieldCert service.
@@ -131,7 +131,7 @@ func _FieldCert_FieldCertPopRecord_Handler(srv interface{}, ctx context.Context,
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var FieldCert_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.community.service.cert.v1.FieldCert",
+	ServiceName: "bilibili.community.service.cert.v1.FieldCert",
 	HandlerType: (*FieldCertServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

@@ -21,8 +21,8 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	List_CheckAccount_FullMethodName = "/com.bapis.bilibili.polymer.list.List/CheckAccount"
-	List_FavoriteTab_FullMethodName  = "/com.bapis.bilibili.polymer.list.List/FavoriteTab"
+	List_CheckAccount_FullMethodName = "/bilibili.polymer.list.List/CheckAccount"
+	List_FavoriteTab_FullMethodName  = "/bilibili.polymer.list.List/FavoriteTab"
 )
 
 // ListClient is the client API for List service.
@@ -131,7 +131,7 @@ func _List_FavoriteTab_Handler(srv interface{}, ctx context.Context, dec func(in
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var List_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.polymer.list.List",
+	ServiceName: "bilibili.polymer.list.List",
 	HandlerType: (*ListServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

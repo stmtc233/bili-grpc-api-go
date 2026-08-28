@@ -22,7 +22,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	PushUpStream_PushUpStream_FullMethodName = "/com.bapis.bilibili.broadcast.message.push.PushUpStream/PushUpStream"
+	PushUpStream_PushUpStream_FullMethodName = "/bilibili.broadcast.message.push.PushUpStream/PushUpStream"
 )
 
 // PushUpStreamClient is the client API for PushUpStream service.
@@ -132,7 +132,7 @@ func (x *pushUpStreamPushUpStreamServer) Recv() (*UpStreamMessage, error) {
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var PushUpStream_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.broadcast.message.push.PushUpStream",
+	ServiceName: "bilibili.broadcast.message.push.PushUpStream",
 	HandlerType: (*PushUpStreamServer)(nil),
 	Methods:     []grpc.MethodDesc{},
 	Streams: []grpc.StreamDesc{

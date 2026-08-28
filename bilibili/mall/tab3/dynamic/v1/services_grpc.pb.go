@@ -21,7 +21,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Opus_OpusDetail_FullMethodName = "/com.bapis.bilibili.mall.tab3.dynamic.v1.Opus/OpusDetail"
+	Opus_OpusDetail_FullMethodName = "/bilibili.mall.tab3.dynamic.v1.Opus/OpusDetail"
 )
 
 // OpusClient is the client API for Opus service.
@@ -98,7 +98,7 @@ func _Opus_OpusDetail_Handler(srv interface{}, ctx context.Context, dec func(int
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Opus_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.mall.tab3.dynamic.v1.Opus",
+	ServiceName: "bilibili.mall.tab3.dynamic.v1.Opus",
 	HandlerType: (*OpusServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

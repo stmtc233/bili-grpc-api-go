@@ -21,8 +21,8 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Ticket_GenWebTicket_FullMethodName = "/com.bapis.bilibili.api.ticket.v1.Ticket/GenWebTicket"
-	Ticket_GetTicket_FullMethodName    = "/com.bapis.bilibili.api.ticket.v1.Ticket/GetTicket"
+	Ticket_GenWebTicket_FullMethodName = "/bilibili.api.ticket.v1.Ticket/GenWebTicket"
+	Ticket_GetTicket_FullMethodName    = "/bilibili.api.ticket.v1.Ticket/GetTicket"
 )
 
 // TicketClient is the client API for Ticket service.
@@ -131,7 +131,7 @@ func _Ticket_GetTicket_Handler(srv interface{}, ctx context.Context, dec func(in
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Ticket_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.api.ticket.v1.Ticket",
+	ServiceName: "bilibili.api.ticket.v1.Ticket",
 	HandlerType: (*TicketServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

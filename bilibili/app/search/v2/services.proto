@@ -1,23 +1,23 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.app.search.v2;
+package bilibili.app.search.v2;
 
 import "bilibili/app/search/v2/messages.proto";
 import "bilibili/broadcast/message/main/messages.proto";
 
 service Search {
-  rpc CancelChatTask(CancelChatTaskReq) returns (CancelChatTaskReply);
-  rpc GetChatAuth(GetChatAuthReq) returns (GetChatAuthReply);
-  rpc GetChatResult(GetChatResultReq) returns (.com.bapis.bilibili.broadcast.message.main.ChatResult);
-  rpc QueryRecAfterClick(QueryRecAfterClickReq) returns (QueryRecAfterClickReply);
-  rpc QueryRecComment(QueryRecAfterClickReq) returns (QueryRecAfterClickReply);
-  rpc SearchDelFollow(SearchDelFollowRequest) returns (SearchDelFollowResponse);
-  rpc SearchEgg(SearchEggReq) returns (SearchEggReply);
-  rpc SearchFollow(SearchFollowRequest) returns (SearchFollowResponse);
-  rpc SearchLike(SearchLikeReq) returns (SearchLikeReply);
-  rpc SearchShortUrl(SearchShortUrlReq) returns (SearchShortUrlReply);
-  rpc SubmitChatTask(SubmitChatTaskReq) returns (SubmitChatTaskReply);
+  rpc CancelChatTask(.com.bapis.bilibili.app.search.v2.CancelChatTaskReq) returns (.com.bapis.bilibili.app.search.v2.CancelChatTaskReply);
+  rpc GetChatAuth(.com.bapis.bilibili.app.search.v2.GetChatAuthReq) returns (.com.bapis.bilibili.app.search.v2.GetChatAuthReply);
+  rpc GetChatResult(.com.bapis.bilibili.app.search.v2.GetChatResultReq) returns (.com.bapis.bilibili.broadcast.message.main.ChatResult);
+  rpc QueryRecAfterClick(.com.bapis.bilibili.app.search.v2.QueryRecAfterClickReq) returns (.com.bapis.bilibili.app.search.v2.QueryRecAfterClickReply);
+  rpc QueryRecComment(.com.bapis.bilibili.app.search.v2.QueryRecAfterClickReq) returns (.com.bapis.bilibili.app.search.v2.QueryRecAfterClickReply);
+  rpc SearchDelFollow(.com.bapis.bilibili.app.search.v2.SearchDelFollowRequest) returns (.com.bapis.bilibili.app.search.v2.SearchDelFollowResponse);
+  rpc SearchEgg(.com.bapis.bilibili.app.search.v2.SearchEggReq) returns (.com.bapis.bilibili.app.search.v2.SearchEggReply);
+  rpc SearchFollow(.com.bapis.bilibili.app.search.v2.SearchFollowRequest) returns (.com.bapis.bilibili.app.search.v2.SearchFollowResponse);
+  rpc SearchLike(.com.bapis.bilibili.app.search.v2.SearchLikeReq) returns (.com.bapis.bilibili.app.search.v2.SearchLikeReply);
+  rpc SearchShortUrl(.com.bapis.bilibili.app.search.v2.SearchShortUrlReq) returns (.com.bapis.bilibili.app.search.v2.SearchShortUrlReply);
+  rpc SubmitChatTask(.com.bapis.bilibili.app.search.v2.SubmitChatTaskReq) returns (.com.bapis.bilibili.app.search.v2.SubmitChatTaskReply);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/search/v2";

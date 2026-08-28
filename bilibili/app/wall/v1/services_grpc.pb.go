@@ -21,7 +21,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Wall_RuleInfo_FullMethodName = "/com.bapis.bilibili.app.wall.v1.Wall/RuleInfo"
+	Wall_RuleInfo_FullMethodName = "/bilibili.app.wall.v1.Wall/RuleInfo"
 )
 
 // WallClient is the client API for Wall service.
@@ -98,7 +98,7 @@ func _Wall_RuleInfo_Handler(srv interface{}, ctx context.Context, dec func(inter
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Wall_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.app.wall.v1.Wall",
+	ServiceName: "bilibili.app.wall.v1.Wall",
 	HandlerType: (*WallServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

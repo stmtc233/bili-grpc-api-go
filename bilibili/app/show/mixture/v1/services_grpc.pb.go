@@ -21,13 +21,13 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Mixture_ChannelRedirect_FullMethodName = "/com.bapis.bilibili.app.show.mixture.v1.Mixture/ChannelRedirect"
-	Mixture_Clarity_FullMethodName         = "/com.bapis.bilibili.app.show.mixture.v1.Mixture/Clarity"
-	Mixture_RegionIndex_FullMethodName     = "/com.bapis.bilibili.app.show.mixture.v1.Mixture/RegionIndex"
-	Mixture_RegionList_FullMethodName      = "/com.bapis.bilibili.app.show.mixture.v1.Mixture/RegionList"
-	Mixture_RegionShortcut_FullMethodName  = "/com.bapis.bilibili.app.show.mixture.v1.Mixture/RegionShortcut"
-	Mixture_Widget_FullMethodName          = "/com.bapis.bilibili.app.show.mixture.v1.Mixture/Widget"
-	Mixture_WidgetGuide_FullMethodName     = "/com.bapis.bilibili.app.show.mixture.v1.Mixture/WidgetGuide"
+	Mixture_ChannelRedirect_FullMethodName = "/bilibili.app.show.mixture.v1.Mixture/ChannelRedirect"
+	Mixture_Clarity_FullMethodName         = "/bilibili.app.show.mixture.v1.Mixture/Clarity"
+	Mixture_RegionIndex_FullMethodName     = "/bilibili.app.show.mixture.v1.Mixture/RegionIndex"
+	Mixture_RegionList_FullMethodName      = "/bilibili.app.show.mixture.v1.Mixture/RegionList"
+	Mixture_RegionShortcut_FullMethodName  = "/bilibili.app.show.mixture.v1.Mixture/RegionShortcut"
+	Mixture_Widget_FullMethodName          = "/bilibili.app.show.mixture.v1.Mixture/Widget"
+	Mixture_WidgetGuide_FullMethodName     = "/bilibili.app.show.mixture.v1.Mixture/WidgetGuide"
 )
 
 // MixtureClient is the client API for Mixture service.
@@ -296,7 +296,7 @@ func _Mixture_WidgetGuide_Handler(srv interface{}, ctx context.Context, dec func
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Mixture_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.app.show.mixture.v1.Mixture",
+	ServiceName: "bilibili.app.show.mixture.v1.Mixture",
 	HandlerType: (*MixtureServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

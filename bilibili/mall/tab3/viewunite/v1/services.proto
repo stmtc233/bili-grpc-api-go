@@ -1,15 +1,15 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.mall.tab3.viewunite.v1;
+package bilibili.mall.tab3.viewunite.v1;
 
 import "bilibili/mall/tab3/viewunite/v1/messages.proto";
 
 service View {
-  rpc ArcRefresh(ArcRefreshReq) returns (ArcRefreshReply);
-  rpc RelatesFeed(RelatesFeedReq) returns (RelatesFeedReply);
-  rpc View(ViewReq) returns (ViewReply);
-  rpc ViewProgress(ViewProgressReq) returns (ViewProgressReply);
+  rpc ArcRefresh(.com.bapis.bilibili.mall.tab3.viewunite.v1.ArcRefreshReq) returns (.com.bapis.bilibili.mall.tab3.viewunite.v1.ArcRefreshReply);
+  rpc RelatesFeed(.com.bapis.bilibili.mall.tab3.viewunite.v1.RelatesFeedReq) returns (.com.bapis.bilibili.mall.tab3.viewunite.v1.RelatesFeedReply);
+  rpc View(.com.bapis.bilibili.mall.tab3.viewunite.v1.ViewReq) returns (.com.bapis.bilibili.mall.tab3.viewunite.v1.ViewReply);
+  rpc ViewProgress(.com.bapis.bilibili.mall.tab3.viewunite.v1.ViewProgressReq) returns (.com.bapis.bilibili.mall.tab3.viewunite.v1.ViewProgressReply);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/mall/tab3/viewunite/v1";

@@ -1,24 +1,24 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.app.dynamic.v1;
+package bilibili.app.dynamic.v1;
 
 import "bilibili/app/dynamic/v1/messages.proto";
 
 service Dynamic {
-  rpc DynDetails(DynDetailsReq) returns (DynDetailsReply);
-  rpc DynMixUpListSearch(DynMixUpListSearchReq) returns (DynMixUpListSearchReply);
-  rpc DynMixUpListViewMore(NoReq) returns (DynMixUpListViewMoreReply);
-  rpc DynOurCity(DynOurCityReq) returns (DynOurCityReply);
-  rpc DynOurCitySwitch(DynOurCitySwitchReq) returns (NoReply);
-  rpc DynRed(DynRedReq) returns (DynRedReply);
-  rpc DynTab(DynTabReq) returns (DynTabReply);
-  rpc DynUpdOffset(DynUpdOffsetReq) returns (NoReply);
-  rpc DynVideo(DynVideoReq) returns (DynVideoReqReply);
-  rpc DynVideoPersonal(DynVideoPersonalReq) returns (DynVideoPersonalReply);
-  rpc GeoCoder(GeoCoderReq) returns (GeoCoderReply);
-  rpc OurCityClickReport(OurCityClickReportReq) returns (OurCityClickReportReply);
-  rpc SVideo(SVideoReq) returns (SVideoReply);
+  rpc DynDetails(.com.bapis.bilibili.app.dynamic.v1.DynDetailsReq) returns (.com.bapis.bilibili.app.dynamic.v1.DynDetailsReply);
+  rpc DynMixUpListSearch(.com.bapis.bilibili.app.dynamic.v1.DynMixUpListSearchReq) returns (.com.bapis.bilibili.app.dynamic.v1.DynMixUpListSearchReply);
+  rpc DynMixUpListViewMore(.com.bapis.bilibili.app.dynamic.v1.NoReq) returns (.com.bapis.bilibili.app.dynamic.v1.DynMixUpListViewMoreReply);
+  rpc DynOurCity(.com.bapis.bilibili.app.dynamic.v1.DynOurCityReq) returns (.com.bapis.bilibili.app.dynamic.v1.DynOurCityReply);
+  rpc DynOurCitySwitch(.com.bapis.bilibili.app.dynamic.v1.DynOurCitySwitchReq) returns (.com.bapis.bilibili.app.dynamic.v1.NoReply);
+  rpc DynRed(.com.bapis.bilibili.app.dynamic.v1.DynRedReq) returns (.com.bapis.bilibili.app.dynamic.v1.DynRedReply);
+  rpc DynTab(.com.bapis.bilibili.app.dynamic.v1.DynTabReq) returns (.com.bapis.bilibili.app.dynamic.v1.DynTabReply);
+  rpc DynUpdOffset(.com.bapis.bilibili.app.dynamic.v1.DynUpdOffsetReq) returns (.com.bapis.bilibili.app.dynamic.v1.NoReply);
+  rpc DynVideo(.com.bapis.bilibili.app.dynamic.v1.DynVideoReq) returns (.com.bapis.bilibili.app.dynamic.v1.DynVideoReqReply);
+  rpc DynVideoPersonal(.com.bapis.bilibili.app.dynamic.v1.DynVideoPersonalReq) returns (.com.bapis.bilibili.app.dynamic.v1.DynVideoPersonalReply);
+  rpc GeoCoder(.com.bapis.bilibili.app.dynamic.v1.GeoCoderReq) returns (.com.bapis.bilibili.app.dynamic.v1.GeoCoderReply);
+  rpc OurCityClickReport(.com.bapis.bilibili.app.dynamic.v1.OurCityClickReportReq) returns (.com.bapis.bilibili.app.dynamic.v1.OurCityClickReportReply);
+  rpc SVideo(.com.bapis.bilibili.app.dynamic.v1.SVideoReq) returns (.com.bapis.bilibili.app.dynamic.v1.SVideoReply);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/dynamic/v1";

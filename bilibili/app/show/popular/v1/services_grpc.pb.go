@@ -21,7 +21,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Popular_Index_FullMethodName = "/com.bapis.bilibili.app.show.popular.v1.Popular/Index"
+	Popular_Index_FullMethodName = "/bilibili.app.show.popular.v1.Popular/Index"
 )
 
 // PopularClient is the client API for Popular service.
@@ -98,7 +98,7 @@ func _Popular_Index_Handler(srv interface{}, ctx context.Context, dec func(inter
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Popular_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.app.show.popular.v1.Popular",
+	ServiceName: "bilibili.app.show.popular.v1.Popular",
 	HandlerType: (*PopularServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

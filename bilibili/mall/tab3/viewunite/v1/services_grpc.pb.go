@@ -21,10 +21,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	View_ArcRefresh_FullMethodName   = "/com.bapis.bilibili.mall.tab3.viewunite.v1.View/ArcRefresh"
-	View_RelatesFeed_FullMethodName  = "/com.bapis.bilibili.mall.tab3.viewunite.v1.View/RelatesFeed"
-	View_View_FullMethodName         = "/com.bapis.bilibili.mall.tab3.viewunite.v1.View/View"
-	View_ViewProgress_FullMethodName = "/com.bapis.bilibili.mall.tab3.viewunite.v1.View/ViewProgress"
+	View_ArcRefresh_FullMethodName   = "/bilibili.mall.tab3.viewunite.v1.View/ArcRefresh"
+	View_RelatesFeed_FullMethodName  = "/bilibili.mall.tab3.viewunite.v1.View/RelatesFeed"
+	View_View_FullMethodName         = "/bilibili.mall.tab3.viewunite.v1.View/View"
+	View_ViewProgress_FullMethodName = "/bilibili.mall.tab3.viewunite.v1.View/ViewProgress"
 )
 
 // ViewClient is the client API for View service.
@@ -197,7 +197,7 @@ func _View_ViewProgress_Handler(srv interface{}, ctx context.Context, dec func(i
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var View_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.mall.tab3.viewunite.v1.View",
+	ServiceName: "bilibili.mall.tab3.viewunite.v1.View",
 	HandlerType: (*ViewServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

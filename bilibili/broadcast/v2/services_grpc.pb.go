@@ -22,7 +22,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Laser_WatchEvent_FullMethodName = "/com.bapis.bilibili.broadcast.v2.Laser/WatchEvent"
+	Laser_WatchEvent_FullMethodName = "/bilibili.broadcast.v2.Laser/WatchEvent"
 )
 
 // LaserClient is the client API for Laser service.
@@ -125,7 +125,7 @@ func (x *laserWatchEventServer) Send(m *LaserEventResp) error {
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Laser_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.broadcast.v2.Laser",
+	ServiceName: "bilibili.broadcast.v2.Laser",
 	HandlerType: (*LaserServer)(nil),
 	Methods:     []grpc.MethodDesc{},
 	Streams: []grpc.StreamDesc{

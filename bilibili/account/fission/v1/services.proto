@@ -1,14 +1,14 @@
 // Reconstructed from the checked-in gRPC service catalog.
 syntax = "proto3";
 
-package com.bapis.bilibili.account.fission.v1;
+package bilibili.account.fission.v1;
 
 import "bilibili/account/fission/v1/messages.proto";
 
 service Fission {
-  rpc Entrance(EntranceReq) returns (EntranceReply);
-  rpc Privacy(PrivacyReq) returns (PrivacyReply);
-  rpc Window(WindowReq) returns (WindowReply);
+  rpc Entrance(.com.bapis.bilibili.account.fission.v1.EntranceReq) returns (.com.bapis.bilibili.account.fission.v1.EntranceReply);
+  rpc Privacy(.com.bapis.bilibili.account.fission.v1.PrivacyReq) returns (.com.bapis.bilibili.account.fission.v1.PrivacyReply);
+  rpc Window(.com.bapis.bilibili.account.fission.v1.WindowReq) returns (.com.bapis.bilibili.account.fission.v1.WindowReply);
 }
 
 option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/account/fission/v1";

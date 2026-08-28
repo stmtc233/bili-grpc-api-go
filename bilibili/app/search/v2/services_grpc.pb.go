@@ -22,17 +22,17 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Search_CancelChatTask_FullMethodName     = "/com.bapis.bilibili.app.search.v2.Search/CancelChatTask"
-	Search_GetChatAuth_FullMethodName        = "/com.bapis.bilibili.app.search.v2.Search/GetChatAuth"
-	Search_GetChatResult_FullMethodName      = "/com.bapis.bilibili.app.search.v2.Search/GetChatResult"
-	Search_QueryRecAfterClick_FullMethodName = "/com.bapis.bilibili.app.search.v2.Search/QueryRecAfterClick"
-	Search_QueryRecComment_FullMethodName    = "/com.bapis.bilibili.app.search.v2.Search/QueryRecComment"
-	Search_SearchDelFollow_FullMethodName    = "/com.bapis.bilibili.app.search.v2.Search/SearchDelFollow"
-	Search_SearchEgg_FullMethodName          = "/com.bapis.bilibili.app.search.v2.Search/SearchEgg"
-	Search_SearchFollow_FullMethodName       = "/com.bapis.bilibili.app.search.v2.Search/SearchFollow"
-	Search_SearchLike_FullMethodName         = "/com.bapis.bilibili.app.search.v2.Search/SearchLike"
-	Search_SearchShortUrl_FullMethodName     = "/com.bapis.bilibili.app.search.v2.Search/SearchShortUrl"
-	Search_SubmitChatTask_FullMethodName     = "/com.bapis.bilibili.app.search.v2.Search/SubmitChatTask"
+	Search_CancelChatTask_FullMethodName     = "/bilibili.app.search.v2.Search/CancelChatTask"
+	Search_GetChatAuth_FullMethodName        = "/bilibili.app.search.v2.Search/GetChatAuth"
+	Search_GetChatResult_FullMethodName      = "/bilibili.app.search.v2.Search/GetChatResult"
+	Search_QueryRecAfterClick_FullMethodName = "/bilibili.app.search.v2.Search/QueryRecAfterClick"
+	Search_QueryRecComment_FullMethodName    = "/bilibili.app.search.v2.Search/QueryRecComment"
+	Search_SearchDelFollow_FullMethodName    = "/bilibili.app.search.v2.Search/SearchDelFollow"
+	Search_SearchEgg_FullMethodName          = "/bilibili.app.search.v2.Search/SearchEgg"
+	Search_SearchFollow_FullMethodName       = "/bilibili.app.search.v2.Search/SearchFollow"
+	Search_SearchLike_FullMethodName         = "/bilibili.app.search.v2.Search/SearchLike"
+	Search_SearchShortUrl_FullMethodName     = "/bilibili.app.search.v2.Search/SearchShortUrl"
+	Search_SubmitChatTask_FullMethodName     = "/bilibili.app.search.v2.Search/SubmitChatTask"
 )
 
 // SearchClient is the client API for Search service.
@@ -429,7 +429,7 @@ func _Search_SubmitChatTask_Handler(srv interface{}, ctx context.Context, dec fu
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Search_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.app.search.v2.Search",
+	ServiceName: "bilibili.app.search.v2.Search",
 	HandlerType: (*SearchServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

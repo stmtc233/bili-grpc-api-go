@@ -21,8 +21,8 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	PlayURL_PlayView_FullMethodName      = "/com.bapis.bilibili.pgc.gateway.player.v2.PlayURL/PlayView"
-	PlayURL_PlayViewComic_FullMethodName = "/com.bapis.bilibili.pgc.gateway.player.v2.PlayURL/PlayViewComic"
+	PlayURL_PlayView_FullMethodName      = "/bilibili.pgc.gateway.player.v2.PlayURL/PlayView"
+	PlayURL_PlayViewComic_FullMethodName = "/bilibili.pgc.gateway.player.v2.PlayURL/PlayViewComic"
 )
 
 // PlayURLClient is the client API for PlayURL service.
@@ -131,7 +131,7 @@ func _PlayURL_PlayViewComic_Handler(srv interface{}, ctx context.Context, dec fu
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var PlayURL_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.pgc.gateway.player.v2.PlayURL",
+	ServiceName: "bilibili.pgc.gateway.player.v2.PlayURL",
 	HandlerType: (*PlayURLServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

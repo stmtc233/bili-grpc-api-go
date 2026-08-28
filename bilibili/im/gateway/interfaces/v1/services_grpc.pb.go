@@ -22,25 +22,25 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	ImGatewayApi_ClearBubbleMsg_FullMethodName     = "/com.bapis.bilibili.im.gateway.interfaces.v1.ImGatewayApi/ClearBubbleMsg"
-	ImGatewayApi_ClearMessageToast_FullMethodName  = "/com.bapis.bilibili.im.gateway.interfaces.v1.ImGatewayApi/ClearMessageToast"
-	ImGatewayApi_DelMsg_FullMethodName             = "/com.bapis.bilibili.im.gateway.interfaces.v1.ImGatewayApi/DelMsg"
-	ImGatewayApi_DelMsgCard_FullMethodName         = "/com.bapis.bilibili.im.gateway.interfaces.v1.ImGatewayApi/DelMsgCard"
-	ImGatewayApi_GetAIInfo_FullMethodName          = "/com.bapis.bilibili.im.gateway.interfaces.v1.ImGatewayApi/GetAIInfo"
-	ImGatewayApi_GetBubbleMsg_FullMethodName       = "/com.bapis.bilibili.im.gateway.interfaces.v1.ImGatewayApi/GetBubbleMsg"
-	ImGatewayApi_GetSystemNotice_FullMethodName    = "/com.bapis.bilibili.im.gateway.interfaces.v1.ImGatewayApi/GetSystemNotice"
-	ImGatewayApi_GetTotalUnread_FullMethodName     = "/com.bapis.bilibili.im.gateway.interfaces.v1.ImGatewayApi/GetTotalUnread"
-	ImGatewayApi_HarmonyTotalUnread_FullMethodName = "/com.bapis.bilibili.im.gateway.interfaces.v1.ImGatewayApi/HarmonyTotalUnread"
-	ImGatewayApi_MessageToast_FullMethodName       = "/com.bapis.bilibili.im.gateway.interfaces.v1.ImGatewayApi/MessageToast"
-	ImGatewayApi_MsgFeedAction_FullMethodName      = "/com.bapis.bilibili.im.gateway.interfaces.v1.ImGatewayApi/MsgFeedAction"
-	ImGatewayApi_MsgFeedMsgList_FullMethodName     = "/com.bapis.bilibili.im.gateway.interfaces.v1.ImGatewayApi/MsgFeedMsgList"
-	ImGatewayApi_Prompt_FullMethodName             = "/com.bapis.bilibili.im.gateway.interfaces.v1.ImGatewayApi/Prompt"
-	ImGatewayApi_QuickLink_FullMethodName          = "/com.bapis.bilibili.im.gateway.interfaces.v1.ImGatewayApi/QuickLink"
-	ImGatewayApi_RemoveSession_FullMethodName      = "/com.bapis.bilibili.im.gateway.interfaces.v1.ImGatewayApi/RemoveSession"
-	ImGatewayApi_SetMsgFeedNotice_FullMethodName   = "/com.bapis.bilibili.im.gateway.interfaces.v1.ImGatewayApi/SetMsgFeedNotice"
-	ImGatewayApi_SetTop_FullMethodName             = "/com.bapis.bilibili.im.gateway.interfaces.v1.ImGatewayApi/SetTop"
-	ImGatewayApi_SingleInbox_FullMethodName        = "/com.bapis.bilibili.im.gateway.interfaces.v1.ImGatewayApi/SingleInbox"
-	ImGatewayApi_UpdateTotalUnread_FullMethodName  = "/com.bapis.bilibili.im.gateway.interfaces.v1.ImGatewayApi/UpdateTotalUnread"
+	ImGatewayApi_ClearBubbleMsg_FullMethodName     = "/bilibili.im.gateway.interfaces.v1.ImGatewayApi/ClearBubbleMsg"
+	ImGatewayApi_ClearMessageToast_FullMethodName  = "/bilibili.im.gateway.interfaces.v1.ImGatewayApi/ClearMessageToast"
+	ImGatewayApi_DelMsg_FullMethodName             = "/bilibili.im.gateway.interfaces.v1.ImGatewayApi/DelMsg"
+	ImGatewayApi_DelMsgCard_FullMethodName         = "/bilibili.im.gateway.interfaces.v1.ImGatewayApi/DelMsgCard"
+	ImGatewayApi_GetAIInfo_FullMethodName          = "/bilibili.im.gateway.interfaces.v1.ImGatewayApi/GetAIInfo"
+	ImGatewayApi_GetBubbleMsg_FullMethodName       = "/bilibili.im.gateway.interfaces.v1.ImGatewayApi/GetBubbleMsg"
+	ImGatewayApi_GetSystemNotice_FullMethodName    = "/bilibili.im.gateway.interfaces.v1.ImGatewayApi/GetSystemNotice"
+	ImGatewayApi_GetTotalUnread_FullMethodName     = "/bilibili.im.gateway.interfaces.v1.ImGatewayApi/GetTotalUnread"
+	ImGatewayApi_HarmonyTotalUnread_FullMethodName = "/bilibili.im.gateway.interfaces.v1.ImGatewayApi/HarmonyTotalUnread"
+	ImGatewayApi_MessageToast_FullMethodName       = "/bilibili.im.gateway.interfaces.v1.ImGatewayApi/MessageToast"
+	ImGatewayApi_MsgFeedAction_FullMethodName      = "/bilibili.im.gateway.interfaces.v1.ImGatewayApi/MsgFeedAction"
+	ImGatewayApi_MsgFeedMsgList_FullMethodName     = "/bilibili.im.gateway.interfaces.v1.ImGatewayApi/MsgFeedMsgList"
+	ImGatewayApi_Prompt_FullMethodName             = "/bilibili.im.gateway.interfaces.v1.ImGatewayApi/Prompt"
+	ImGatewayApi_QuickLink_FullMethodName          = "/bilibili.im.gateway.interfaces.v1.ImGatewayApi/QuickLink"
+	ImGatewayApi_RemoveSession_FullMethodName      = "/bilibili.im.gateway.interfaces.v1.ImGatewayApi/RemoveSession"
+	ImGatewayApi_SetMsgFeedNotice_FullMethodName   = "/bilibili.im.gateway.interfaces.v1.ImGatewayApi/SetMsgFeedNotice"
+	ImGatewayApi_SetTop_FullMethodName             = "/bilibili.im.gateway.interfaces.v1.ImGatewayApi/SetTop"
+	ImGatewayApi_SingleInbox_FullMethodName        = "/bilibili.im.gateway.interfaces.v1.ImGatewayApi/SingleInbox"
+	ImGatewayApi_UpdateTotalUnread_FullMethodName  = "/bilibili.im.gateway.interfaces.v1.ImGatewayApi/UpdateTotalUnread"
 )
 
 // ImGatewayApiClient is the client API for ImGatewayApi service.
@@ -693,7 +693,7 @@ func _ImGatewayApi_UpdateTotalUnread_Handler(srv interface{}, ctx context.Contex
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ImGatewayApi_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.im.gateway.interfaces.v1.ImGatewayApi",
+	ServiceName: "bilibili.im.gateway.interfaces.v1.ImGatewayApi",
 	HandlerType: (*ImGatewayApiServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

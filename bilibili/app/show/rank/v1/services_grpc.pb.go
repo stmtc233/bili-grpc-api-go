@@ -21,9 +21,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Rank_RankAll_FullMethodName        = "/com.bapis.bilibili.app.show.rank.v1.Rank/RankAll"
-	Rank_RankRegion_FullMethodName     = "/com.bapis.bilibili.app.show.rank.v1.Rank/RankRegion"
-	Rank_RankRegionList_FullMethodName = "/com.bapis.bilibili.app.show.rank.v1.Rank/RankRegionList"
+	Rank_RankAll_FullMethodName        = "/bilibili.app.show.rank.v1.Rank/RankAll"
+	Rank_RankRegion_FullMethodName     = "/bilibili.app.show.rank.v1.Rank/RankRegion"
+	Rank_RankRegionList_FullMethodName = "/bilibili.app.show.rank.v1.Rank/RankRegionList"
 )
 
 // RankClient is the client API for Rank service.
@@ -164,7 +164,7 @@ func _Rank_RankRegionList_Handler(srv interface{}, ctx context.Context, dec func
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Rank_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.app.show.rank.v1.Rank",
+	ServiceName: "bilibili.app.show.rank.v1.Rank",
 	HandlerType: (*RankServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

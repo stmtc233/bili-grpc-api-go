@@ -21,8 +21,8 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	AntiHarassmentService_LoadAntiHarassmentSettings_FullMethodName  = "/com.bapis.bilibili.polymer.community.govern.v1.AntiHarassmentService/LoadAntiHarassmentSettings"
-	AntiHarassmentService_StoreAntiHarassmentSettings_FullMethodName = "/com.bapis.bilibili.polymer.community.govern.v1.AntiHarassmentService/StoreAntiHarassmentSettings"
+	AntiHarassmentService_LoadAntiHarassmentSettings_FullMethodName  = "/bilibili.polymer.community.govern.v1.AntiHarassmentService/LoadAntiHarassmentSettings"
+	AntiHarassmentService_StoreAntiHarassmentSettings_FullMethodName = "/bilibili.polymer.community.govern.v1.AntiHarassmentService/StoreAntiHarassmentSettings"
 )
 
 // AntiHarassmentServiceClient is the client API for AntiHarassmentService service.
@@ -131,7 +131,7 @@ func _AntiHarassmentService_StoreAntiHarassmentSettings_Handler(srv interface{},
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AntiHarassmentService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.polymer.community.govern.v1.AntiHarassmentService",
+	ServiceName: "bilibili.polymer.community.govern.v1.AntiHarassmentService",
 	HandlerType: (*AntiHarassmentServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

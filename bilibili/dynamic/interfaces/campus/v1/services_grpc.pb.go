@@ -21,7 +21,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Campus_ActionReport_FullMethodName = "/com.bapis.bilibili.dynamic.interfaces.campus.v1.Campus/ActionReport"
+	Campus_ActionReport_FullMethodName = "/bilibili.dynamic.interfaces.campus.v1.Campus/ActionReport"
 )
 
 // CampusClient is the client API for Campus service.
@@ -98,7 +98,7 @@ func _Campus_ActionReport_Handler(srv interface{}, ctx context.Context, dec func
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Campus_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.dynamic.interfaces.campus.v1.Campus",
+	ServiceName: "bilibili.dynamic.interfaces.campus.v1.Campus",
 	HandlerType: (*CampusServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

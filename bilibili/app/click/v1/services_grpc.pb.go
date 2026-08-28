@@ -21,7 +21,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Click_HeartBeat_FullMethodName = "/com.bapis.bilibili.app.click.v1.Click/HeartBeat"
+	Click_HeartBeat_FullMethodName = "/bilibili.app.click.v1.Click/HeartBeat"
 )
 
 // ClickClient is the client API for Click service.
@@ -98,7 +98,7 @@ func _Click_HeartBeat_Handler(srv interface{}, ctx context.Context, dec func(int
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Click_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.app.click.v1.Click",
+	ServiceName: "bilibili.app.click.v1.Click",
 	HandlerType: (*ClickServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

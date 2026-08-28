@@ -22,8 +22,8 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Mine_DisplayReport_FullMethodName = "/com.bapis.bilibili.app.mine.v1.Mine/DisplayReport"
-	Mine_PubModule_FullMethodName     = "/com.bapis.bilibili.app.mine.v1.Mine/PubModule"
+	Mine_DisplayReport_FullMethodName = "/bilibili.app.mine.v1.Mine/DisplayReport"
+	Mine_PubModule_FullMethodName     = "/bilibili.app.mine.v1.Mine/PubModule"
 )
 
 // MineClient is the client API for Mine service.
@@ -132,7 +132,7 @@ func _Mine_PubModule_Handler(srv interface{}, ctx context.Context, dec func(inte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Mine_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.app.mine.v1.Mine",
+	ServiceName: "bilibili.app.mine.v1.Mine",
 	HandlerType: (*MineServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

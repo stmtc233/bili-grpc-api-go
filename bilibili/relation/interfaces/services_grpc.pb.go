@@ -21,8 +21,8 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	RelationInterface_AtSearch_FullMethodName       = "/com.bapis.bilibili.relation.interfaces.RelationInterface/AtSearch"
-	RelationInterface_ModifyRelation_FullMethodName = "/com.bapis.bilibili.relation.interfaces.RelationInterface/ModifyRelation"
+	RelationInterface_AtSearch_FullMethodName       = "/bilibili.relation.interfaces.RelationInterface/AtSearch"
+	RelationInterface_ModifyRelation_FullMethodName = "/bilibili.relation.interfaces.RelationInterface/ModifyRelation"
 )
 
 // RelationInterfaceClient is the client API for RelationInterface service.
@@ -131,7 +131,7 @@ func _RelationInterface_ModifyRelation_Handler(srv interface{}, ctx context.Cont
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var RelationInterface_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "com.bapis.bilibili.relation.interfaces.RelationInterface",
+	ServiceName: "bilibili.relation.interfaces.RelationInterface",
 	HandlerType: (*RelationInterfaceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
