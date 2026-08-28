@@ -1,47 +1,89 @@
-name: Sync Upstream Proto
+name: Sync Upstream Proto And Release
 
 on:
+  schedule:
+    - cron: '17 3 * * *'
   workflow_dispatch:
     inputs:
-      upstream_ref:
-        description: BAPIS proto branch, tag, or commit
-        required: false
-        default: ''
-        type: string
-  schedule:
-    - cron: '0 3 * * 1'
+      variant:
+        description: Version to synchronize
+        required: true
+        default: all
+        type: choice
+        options:
+          - all
+          - main
+          - international
+          - tv
 
 permissions:
   contents: write
-  pull-requests: write
 
 concurrency:
-  group: sync-upstream-proto
+  group: sync-upstream-proto-and-release
   cancel-in-progress: false
 
 jobs:
-  sync:
+  update:
+    if: github.event_name != 'workflow_dispatch' || inputs.variant == 'all' || inputs.variant == matrix.variant
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - variant: main
+            target_branch: main
+            upstream_ref: main
+            tag_prefix: v
+          - variant: international
+            target_branch: international
+            upstream_ref: international
+            tag_prefix: international-v
+          - variant: tv
+            target_branch: tv
+            upstream_ref: tv
+            tag_prefix: tv-v
+    env:
+      VARIANT: ${{ matrix.variant }}
+      TARGET_BRANCH: ${{ matrix.target_branch }}
+      UPSTREAM_REF: ${{ matrix.upstream_ref }}
+      TAG_PREFIX: ${{ matrix.tag_prefix }}
     steps:
-      - name: Checkout current repository
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: main
 
-      - name: Checkout upstream repository (selected ref)
-        if: github.event_name == 'workflow_dispatch' && github.event.inputs.upstream_ref != ''
+      - name: Checkout upstream repository
         uses: actions/checkout@v4
         with:
           repository: stmtc233/bapis-proto
-          ref: ${{ github.event.inputs.upstream_ref }}
+          ref: ${{ env.UPSTREAM_REF }}
           path: upstream
 
-      - name: Checkout upstream repository (default branch)
-        if: github.event_name != 'workflow_dispatch' || github.event.inputs.upstream_ref == ''
-        uses: actions/checkout@v4
-        with:
-          repository: stmtc233/bapis-proto
-          path: upstream
+      - name: Select target branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin --tags '+refs/heads/*:refs/remotes/origin/*'
+          if git show-ref --verify --quiet "refs/remotes/origin/${TARGET_BRANCH}"; then
+            git switch --force-create "${TARGET_BRANCH}" "origin/${TARGET_BRANCH}"
+          else
+            git switch --force-create "${TARGET_BRANCH}" origin/main
+          fi
+
+      - name: Capture upstream revision
+        id: upstream
+        shell: bash
+        run: |
+          set -euo pipefail
+          source_file=upstream/extracted_proto/SOURCE.json
+          test -f "${source_file}"
+          echo "sha=$(git -C upstream rev-parse --short HEAD)" >> "${GITHUB_OUTPUT}"
+          echo "full_sha=$(git -C upstream rev-parse HEAD)" >> "${GITHUB_OUTPUT}"
+          echo "version_name=$(jq -er '.version_name' "${source_file}")" >> "${GITHUB_OUTPUT}"
+          echo "version_code=$(jq -er '.version_code' "${source_file}")" >> "${GITHUB_OUTPUT}"
 
       - name: Sync proto files
         run: bash scripts/sync_upstream_proto.sh upstream/extracted_proto/com/bapis .
@@ -49,36 +91,80 @@ jobs:
       - name: Normalize go_package
         run: bash scripts/ensure_go_package.sh
 
-      - name: Capture upstream revision
-        id: upstream
-        run: |
-          echo "sha=$(git -C upstream rev-parse --short HEAD)" >> "${GITHUB_OUTPUT}"
-          echo "full_sha=$(git -C upstream rev-parse HEAD)" >> "${GITHUB_OUTPUT}"
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
 
-      - name: Remove upstream checkout
-        run: rm -rf upstream
+      - name: Set up protoc
+        uses: arduino/setup-protoc@v3
+        with:
+          version: '25.1'
+
+      - name: Install protoc plugins
+        run: |
+          go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.31.0
+          go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.3.0
+
+      - name: Generate Go package files
+        run: bash scripts/generate_go.sh
+
+      - name: Test Go package
+        run: go test ./...
 
       - name: Detect changes
         id: changes
+        shell: bash
         run: |
+          set -euo pipefail
+          rm -rf -- upstream
           if [[ -n "$(git status --porcelain)" ]]; then
             echo "changed=true" >> "${GITHUB_OUTPUT}"
           else
             echo "changed=false" >> "${GITHUB_OUTPUT}"
           fi
 
-      - name: Create pull request
+      - name: Determine release tag
         if: steps.changes.outputs.changed == 'true'
-        uses: peter-evans/create-pull-request@v6
+        id: tag
+        shell: bash
+        run: |
+          set -euo pipefail
+          tag_name="$(bash scripts/next_tag.sh '' "${TAG_PREFIX}")"
+          if git rev-parse --verify --quiet "refs/tags/${tag_name}"; then
+            echo "tag already exists: ${tag_name}" >&2
+            exit 1
+          fi
+          echo "name=${tag_name}" >> "${GITHUB_OUTPUT}"
+
+      - name: Commit and push synchronized package
+        if: steps.changes.outputs.changed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m "chore(${VARIANT}): sync proto from upstream ${{ steps.upstream.outputs.sha }} [skip ci]"
+          git push origin "HEAD:${TARGET_BRANCH}"
+
+      - name: Create and push release tag
+        if: steps.changes.outputs.changed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git tag "${{ steps.tag.outputs.name }}"
+          git push origin "${{ steps.tag.outputs.name }}"
+
+      - name: Publish GitHub Release
+        if: steps.changes.outputs.changed == 'true'
+        uses: softprops/action-gh-release@v2
         with:
-          commit-message: "chore: sync proto from upstream (${{ steps.upstream.outputs.sha }})"
-          branch: chore/sync-upstream-proto
-          delete-branch: true
-          title: "chore: sync proto from upstream (${{ steps.upstream.outputs.sha }})"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag_name: ${{ steps.tag.outputs.name }}
+          name: ${{ steps.tag.outputs.name }}
+          generate_release_notes: true
           body: |
-            Synced proto files from `stmtc233/bapis-proto`.
-
-            - Upstream ref: `${{ github.event_name == 'workflow_dispatch' && github.event.inputs.upstream_ref || 'default branch' }}`
-            - Upstream commit: `${{ steps.upstream.outputs.full_sha }}`
-
-            Merge this PR and then the release workflow can generate `.pb.go` files and publish a new tag.
+            Variant: `${{ matrix.variant }}`
+            Upstream commit: `${{ steps.upstream.outputs.full_sha }}`
+            Upstream app version: `${{ steps.upstream.outputs.version_name }}` (`${{ steps.upstream.outputs.version_code }}`)

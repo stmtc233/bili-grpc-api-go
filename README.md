@@ -57,26 +57,22 @@ go run ./cmd/grpc-debugger -listen :9000
 
 ## GitHub Actions
 
-仓库现在可以把“同步 proto”和“生成发布”拆开处理：
+`Sync Upstream Proto And Release` 每天自动检查
+[`stmtc233/bapis-proto`](https://github.com/stmtc233/bapis-proto) 的三个分支：
 
-1. `Sync Upstream Proto`
-   从 `mikufans-project/bilibili-API-collect` 的 `grpc_api` 目录同步 `.proto` 文件，并自动创建一个同步 PR。
-   默认每周一运行一次，也可以手动触发并指定上游分支或 commit。
+- `main`：大陆版
+- `international`：国际版
+- `tv`：TV 版
 
-2. `Generate Go Package And Release`
-   基于当前仓库里的 `.proto` 重新生成 `.pb.go` / `_grpc.pb.go`，然后自动创建新 tag 并发布 GitHub Release。
-   这个 workflow 会在 `main` 分支的 `.proto` 发生变更后自动运行，也支持手动指定 tag。
-   如果你要基于同步分支或自定义分支发布，可以在手动触发时填写 `source_ref`。
+每个版本使用独立分支。首次运行会自动创建缺失的分支；上游有变化时，workflow
+同步 `.proto`、重新生成 `.pb.go` 和 `_grpc.pb.go`、运行 `go test ./...`，然后直接提交、推送并创建 GitHub Release。
+没有变化时不会产生空提交或空 Release。Release tag 使用 `v*`、`international-v*`
+和 `tv-v*` 前缀，避免三个版本互相覆盖。
 
-### 建议流程
-
-1. 先运行或等待 `Sync Upstream Proto` 创建同步 PR。
-2. 在 PR 里按需保留你的自定义改动。
-3. 合并到 `main` 后，`Generate Go Package And Release` 会自动生成并发布。
-4. 如果还没合并，也可以手动运行 `Generate Go Package And Release`，并把 `source_ref` 指到同步分支或你的自定义分支。
+workflow 也支持手动选择单个版本进行补发，但正常更新不需要人工合并 PR。
 
 ### 注意
 
 - 如果仓库开启了严格的分支保护，需要允许 GitHub Actions 推送生成后的提交和 tag。
 - 自动发布 tag 默认按现有最新 tag 的补丁版本递增，例如 `v1.0.4 -> v1.0.5`。
-- `.proto-sync-manifest` 只记录上游同步过的文件，后续同步会按这个清理上游已删除的 proto，尽量不误删你的自定义 proto。
+- `.proto-sync-manifest` 只记录当前版本从上游同步过的文件，后续同步会按这个清理上游已删除的 proto。
