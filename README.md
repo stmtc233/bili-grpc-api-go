@@ -9,6 +9,34 @@
 go get -u github.com/stmtc233/bili-grpc-api-go
 ```
 
+## 切换版本
+
+大陆版、国际版和 TV 版使用相同的 Go module 路径和包导入路径。调用代码不需要改动，
+只需要在 `go get` 时选择对应的分支或 Release；切换后运行 `go mod tidy`。
+
+```bash
+# 大陆版
+go get github.com/stmtc233/bili-grpc-api-go@main
+
+# 国际版
+go get github.com/stmtc233/bili-grpc-api-go@international
+
+# TV 版
+go get github.com/stmtc233/bili-grpc-api-go@tv
+```
+
+也可以固定到已发布版本：
+
+```bash
+go get github.com/stmtc233/bili-grpc-api-go@v1.0.12
+go get github.com/stmtc233/bili-grpc-api-go@international-v1.0.1
+go get github.com/stmtc233/bili-grpc-api-go@tv-v1.0.1
+go mod tidy
+```
+
+例如 `bilibili/app/view/v1` 在三个版本中的导入路径都不变；Go module 依赖版本决定实际使用的
+接口定义。一个 Go module 不能同时引入这三个同路径版本，需要同时对比时请使用不同工作目录。
+
 ## 可视化 gRPC 调试工具
 
 仓库内置了一个本地 Web 调试页，可以用来快速选择接口、填写参数并查看 protobuf 解析后的返回值。
