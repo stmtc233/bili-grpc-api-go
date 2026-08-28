@@ -79,6 +79,12 @@ jobs:
       - name: Generate Go package files
         run: bash scripts/generate_go.sh
 
+      - name: Generate debugger descriptor registry
+        run: bash scripts/generate_debugger_registry.sh
+
+      - name: Build gRPC debugger
+        run: go build -o "${RUNNER_TEMP}/grpc-debugger" ./cmd/grpc-debugger
+
       - name: Test Go package
         run: go test ./...
 

@@ -128,6 +128,14 @@ jobs:
         if: steps.selection.outputs.enabled == 'true'
         run: bash scripts/generate_go.sh
 
+      - name: Generate debugger descriptor registry
+        if: steps.selection.outputs.enabled == 'true'
+        run: bash scripts/generate_debugger_registry.sh
+
+      - name: Build gRPC debugger
+        if: steps.selection.outputs.enabled == 'true'
+        run: go build -o "${RUNNER_TEMP}/grpc-debugger" ./cmd/grpc-debugger
+
       - name: Test Go package
         if: steps.selection.outputs.enabled == 'true'
         run: go test ./...
