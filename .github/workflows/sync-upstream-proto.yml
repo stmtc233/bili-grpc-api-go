@@ -25,7 +25,6 @@ concurrency:
 
 jobs:
   update:
-    if: github.event_name != 'workflow_dispatch' || inputs.variant == 'all' || inputs.variant == matrix.variant
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -48,6 +47,7 @@ jobs:
       TARGET_BRANCH: ${{ matrix.target_branch }}
       UPSTREAM_REF: ${{ matrix.upstream_ref }}
       TAG_PREFIX: ${{ matrix.tag_prefix }}
+      SELECTED_VARIANT: ${{ inputs.variant || 'all' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -55,7 +55,18 @@ jobs:
           fetch-depth: 0
           ref: main
 
+      - name: Check selected variant
+        id: selection
+        shell: bash
+        run: |
+          if [[ "${SELECTED_VARIANT}" == 'all' || "${SELECTED_VARIANT}" == "${VARIANT}" ]]; then
+            echo "enabled=true" >> "${GITHUB_OUTPUT}"
+          else
+            echo "enabled=false" >> "${GITHUB_OUTPUT}"
+          fi
+
       - name: Checkout upstream repository
+        if: steps.selection.outputs.enabled == 'true'
         uses: actions/checkout@v4
         with:
           repository: stmtc233/bapis-proto
@@ -63,6 +74,7 @@ jobs:
           path: upstream
 
       - name: Select target branch
+        if: steps.selection.outputs.enabled == 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -74,6 +86,7 @@ jobs:
           fi
 
       - name: Capture upstream revision
+        if: steps.selection.outputs.enabled == 'true'
         id: upstream
         shell: bash
         run: |
@@ -86,33 +99,41 @@ jobs:
           echo "version_code=$(jq -er '.version_code' "${source_file}")" >> "${GITHUB_OUTPUT}"
 
       - name: Sync proto files
+        if: steps.selection.outputs.enabled == 'true'
         run: bash scripts/sync_upstream_proto.sh upstream/extracted_proto/com/bapis .
 
       - name: Normalize go_package
+        if: steps.selection.outputs.enabled == 'true'
         run: bash scripts/ensure_go_package.sh
 
       - name: Set up Go
+        if: steps.selection.outputs.enabled == 'true'
         uses: actions/setup-go@v5
         with:
           go-version-file: go.mod
 
       - name: Set up protoc
+        if: steps.selection.outputs.enabled == 'true'
         uses: arduino/setup-protoc@v3
         with:
           version: '25.1'
 
       - name: Install protoc plugins
+        if: steps.selection.outputs.enabled == 'true'
         run: |
           go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.31.0
           go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.3.0
 
       - name: Generate Go package files
+        if: steps.selection.outputs.enabled == 'true'
         run: bash scripts/generate_go.sh
 
       - name: Test Go package
+        if: steps.selection.outputs.enabled == 'true'
         run: go test ./...
 
       - name: Detect changes
+        if: steps.selection.outputs.enabled == 'true'
         id: changes
         shell: bash
         run: |
