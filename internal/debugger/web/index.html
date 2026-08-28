@@ -122,7 +122,14 @@
           let value = input.type === 'checkbox' ? input.checked : input.value;
           if (value === '' || (input.type !== 'checkbox' && value === '未设置')) return;
           const path = input.dataset.field.split('.'); let target = output;
-          path.forEach((part, index) => { if (index === path.length - 1) target[part] = value; else target = target[part] || {}; });
+          path.forEach((part, index) => {
+            if (index === path.length - 1) {
+              target[part] = value;
+              return;
+            }
+            target[part] = target[part] || {};
+            target = target[part];
+          });
         });
         $('request').value = JSON.stringify(output, null, 2);
       }
