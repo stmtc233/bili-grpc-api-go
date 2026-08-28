@@ -97,6 +97,10 @@ go run ./cmd/grpc-debugger -listen :9000
 没有变化时不会产生空提交或空 Release。Release tag 使用 `v*`、`international-v*`
 和 `tv-v*` 前缀，避免三个版本互相覆盖。
 
+同步完成后 workflow 还会运行 `scripts/generate_debugger_registry.sh`。它只导入当前分支实际存在的
+`services_grpc.pb.go` 包，再构建 `cmd/grpc-debugger`；因此三个版本可以拥有不同的 service 集合，
+而不会因为调试器引用了另一个分支的包而失败。
+
 workflow 也支持手动选择单个版本进行补发，但正常更新不需要人工合并 PR。
 
 ### 注意
