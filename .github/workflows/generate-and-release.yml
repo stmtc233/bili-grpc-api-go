@@ -18,6 +18,11 @@ on:
         required: false
         default: ''
         type: string
+      tag_prefix:
+        description: Tag prefix for the selected source branch, for example international-v
+        required: false
+        default: v
+        type: string
 permissions:
   contents: write
 
@@ -32,6 +37,7 @@ jobs:
       SOURCE_REF: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_ref || github.ref_name }}
       REQUESTED_TAG: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.tag_name || '' }}
       REQUESTED_RELEASE_NAME: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.release_name || '' }}
+      TAG_PREFIX: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.tag_prefix || 'v' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -60,7 +66,7 @@ jobs:
       - name: Determine release tag
         id: tag
         run: |
-          tag_name="$(bash scripts/next_tag.sh "${REQUESTED_TAG}")"
+          tag_name="$(bash scripts/next_tag.sh "${REQUESTED_TAG}" "${TAG_PREFIX}")"
           if git rev-parse "${tag_name}" >/dev/null 2>&1; then
             echo "tag already exists: ${tag_name}" >&2
             exit 1
