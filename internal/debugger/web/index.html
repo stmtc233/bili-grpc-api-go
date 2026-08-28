@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>gRPC Debugger</title>
+  <style>
+    :root { color-scheme: light; font: 14px/1.45 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #172033; background: #f5f7fb; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 24px; color: #fff; background: #172b4d; }
+    header h1 { margin: 0; font-size: 20px; letter-spacing: .02em; }
+    header span { opacity: .78; font-size: 12px; }
+    main { display: grid; grid-template-columns: 310px minmax(0, 1fr); min-height: calc(100vh - 65px); }
+    aside { padding: 16px; border-right: 1px solid #dfe4ee; background: #fff; overflow: auto; }
+    section { min-width: 0; padding: 20px; }
+    label { display: block; margin: 0 0 6px; color: #536078; font-size: 12px; font-weight: 600; }
+    input, textarea, select, button { width: 100%; border: 1px solid #cbd3e1; border-radius: 5px; font: inherit; }
+    input, select { height: 36px; padding: 0 9px; background: #fff; }
+    textarea { min-height: 170px; padding: 10px; resize: vertical; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+    button { width: auto; min-height: 36px; padding: 0 15px; color: #fff; background: #1769e0; border-color: #1769e0; cursor: pointer; font-weight: 600; }
+    button.secondary { color: #31415d; background: #fff; border-color: #cbd3e1; }
+    button:disabled { opacity: .55; cursor: wait; }
+    .field { margin-bottom: 14px; }
+    .toolbar { display: flex; align-items: end; gap: 10px; margin-bottom: 18px; }
+    .toolbar .field { flex: 1; margin: 0; }
+    .toolbar .field.small { flex: 0 0 130px; }
+    .toolbar button { flex: 0 0 auto; }
+    .service-search { margin-bottom: 12px; }
+    .service { margin: 0 -4px 8px; }
+    .service-name { padding: 7px 8px; color: #31415d; font-weight: 700; word-break: break-all; }
+    .method { display: block; width: 100%; padding: 6px 8px 6px 18px; color: #3d4c66; background: transparent; border: 0; text-align: left; cursor: pointer; word-break: break-all; }
+    .method:hover, .method.active { color: #1769e0; background: #edf4ff; }
+    .method.stream::after { content: " stream"; color: #a46b00; font-size: 11px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .check { display: flex; align-items: center; gap: 7px; height: 36px; color: #536078; }
+    .check input { width: 16px; height: 16px; }
+    .mode { display: flex; gap: 0; margin: 18px 0 10px; }
+    .mode button { border-radius: 0; color: #536078; background: #fff; border-color: #cbd3e1; }
+    .mode button:first-child { border-radius: 5px 0 0 5px; }
+    .mode button:last-child { border-radius: 0 5px 5px 0; border-left: 0; }
+    .mode button.active { color: #fff; background: #1769e0; border-color: #1769e0; }
+    .form-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; padding: 10px 0 2px; }
+    .form-fields .field { margin: 0; }
+    .form-fields input, .form-fields select { width: 100%; }
+    .result { margin-top: 18px; }
+    pre { min-height: 120px; max-height: 520px; margin: 0; padding: 14px; overflow: auto; border: 1px solid #dfe4ee; border-radius: 5px; background: #fff; white-space: pre-wrap; word-break: break-word; font: 12px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .hint { color: #71809a; font-size: 12px; }
+    @media (max-width: 800px) { main { display: block; } aside { max-height: 38vh; border-right: 0; border-bottom: 1px solid #dfe4ee; } section { padding: 14px; } .grid, .form-fields { grid-template-columns: 1fr; } .toolbar { flex-wrap: wrap; } .toolbar .field, .toolbar .field.small { flex: 1 1 180px; } }
+  </style>
+</head>
+<body>
+  <header><h1>gRPC Debugger</h1><span id="status">正在加载 protobuf service...</span></header>
+  <main>
+    <aside>
+      <input class="service-search" id="serviceSearch" placeholder="搜索 service 或 method" autocomplete="off">
+      <div id="services"></div>
+    </aside>
+    <section>
+      <div class="toolbar">
+        <div class="field"><label for="target">目标地址</label><input id="target" value="127.0.0.1:9000" placeholder="host:port"></div>
+        <div class="field small"><label for="timeout">超时 (ms)</label><input id="timeout" type="number" min="1" value="15000"></div>
+        <button id="invoke" disabled>调用接口</button>
+      </div>
+      <div class="grid">
+        <div class="field"><label for="authority">Authority (可选)</label><input id="authority" placeholder="例如 api.example.com"></div>
+        <div class="field"><label for="serverName">TLS Server Name (可选)</label><input id="serverName" placeholder="证书中的 DNS 名称"></div>
+        <label class="check"><input id="tls" type="checkbox"> 使用 TLS</label>
+        <div class="field"><label for="metadata">Metadata JSON (可选)</label><input id="metadata" value="{}" placeholder='{"authorization":"Bearer ..."}'></div>
+      </div>
+      <p class="hint" id="selection">请从左侧选择一个 service method。</p>
+      <div class="mode"><button id="formMode" class="active" type="button">表单模式</button><button id="jsonMode" type="button">JSON 模式</button></div>
+      <div id="formFields" class="form-fields"></div>
+      <textarea id="request" hidden spellcheck="false">{}</textarea>
+      <div class="result"><label>调用结果</label><pre id="result">尚未调用</pre></div>
+    </section>
+  </main>
+  <script>
+    (() => {
+      const state = { services: [], service: null, method: null, schema: null, mode: 'form' };
+      const $ = id => document.getElementById(id);
+      const status = text => $('status').textContent = text;
+      const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+      function renderServices() {
+        const query = $('serviceSearch').value.toLowerCase();
+        $('services').innerHTML = state.services.map(service => {
+          const methods = service.methods.filter(method => !query || service.name.toLowerCase().includes(query) || method.name.toLowerCase().includes(query));
+          if (!methods.length) return '';
+          return `<div class="service"><div class="service-name">${esc(service.name)}</div>${methods.map(method => `<button class="method ${method.clientStream || method.serverStream ? 'stream' : ''} ${state.service === service.name && state.method === method.name ? 'active' : ''}" data-service="${esc(service.name)}" data-method="${esc(method.name)}">${esc(method.name)}</button>`).join('')}</div>`;
+        }).join('');
+        document.querySelectorAll('.method').forEach(button => button.addEventListener('click', () => selectMethod(button.dataset.service, button.dataset.method)));
+      }
+      async function selectMethod(service, method) {
+        state.service = service; state.method = method;
+        renderServices();
+        $('selection').textContent = `/${service}/${method}`;
+        $('invoke').disabled = false;
+        try {
+          const response = await fetch(`/api/describe?service=${encodeURIComponent(service)}&method=${encodeURIComponent(method)}`);
+          if (!response.ok) throw new Error((await response.json()).error || response.statusText);
+          state.schema = await response.json();
+          renderForm();
+        } catch (error) { $('result').textContent = error.message; }
+      }
+      function renderForm() {
+        const fields = state.schema.input.fields || [];
+        $('formFields').innerHTML = fields.length ? fields.map(field => renderField(field, field.jsonName)).join('') : '<span class="hint">此请求没有字段，请直接调用。</span>';
+        $('formFields').querySelectorAll('[data-field]').forEach(input => input.addEventListener('input', updateJSONFromForm));
+        updateJSONFromForm();
+      }
+      function renderField(field, path) {
+        if (field.fields && field.fields.length && !field.recursive) return `<div class="field"><label>${esc(path)} (${esc(field.kind)})</label>${field.fields.map(child => renderField(child, `${path}.${child.jsonName}`)).join('')}</div>`;
+        const type = field.enum ? 'select' : (field.kind === 'bool' ? 'checkbox' : 'text');
+        const repeated = field.cardinality === 'repeated';
+        const control = type === 'select' ? `<select data-field="${esc(path)}"><option value="">未设置</option>${field.enum.map(value => `<option>${esc(value)}</option>`).join('')}</select>` : type === 'checkbox' ? `<input data-field="${esc(path)}" type="checkbox">` : `<input data-field="${esc(path)}" placeholder="${esc(repeated ? '使用 JSON 数组格式' : field.kind)}">`;
+        return `<div class="field"><label>${esc(path)}${repeated ? ' []' : ''} <span class="hint">${esc(field.kind)}</span></label>${control}</div>`;
+      }
+      function updateJSONFromForm() {
+        if (state.mode !== 'form') return;
+        const output = {};
+        $('formFields').querySelectorAll('[data-field]').forEach(input => {
+          let value = input.type === 'checkbox' ? input.checked : input.value;
+          if (value === '' || (input.type !== 'checkbox' && value === '未设置')) return;
+          const path = input.dataset.field.split('.'); let target = output;
+          path.forEach((part, index) => { if (index === path.length - 1) target[part] = value; else target = target[part] || {}; });
+        });
+        $('request').value = JSON.stringify(output, null, 2);
+      }
+      $('serviceSearch').addEventListener('input', renderServices);
+      $('formMode').addEventListener('click', () => { state.mode = 'form'; $('formMode').classList.add('active'); $('jsonMode').classList.remove('active'); $('request').hidden = true; $('formFields').hidden = false; });
+      $('jsonMode').addEventListener('click', () => { state.mode = 'json'; $('jsonMode').classList.add('active'); $('formMode').classList.remove('active'); $('request').hidden = false; $('formFields').hidden = true; });
+      $('invoke').addEventListener('click', async () => {
+        if (!state.service || !state.method) return;
+        let request; try { request = JSON.parse($('request').value || '{}'); } catch (error) { $('result').textContent = `请求 JSON 无效: ${error.message}`; return; }
+        let metadata; try { metadata = JSON.parse($('metadata').value || '{}'); } catch (error) { $('result').textContent = `Metadata JSON 无效: ${error.message}`; return; }
+        $('invoke').disabled = true; $('result').textContent = '调用中...';
+        try {
+          const response = await fetch('/api/invoke', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({target: $('target').value, service: state.service, method: state.method, request, tls: $('tls').checked, authority: $('authority').value, serverName: $('serverName').value, metadata, timeoutMs: Number($('timeout').value) || 15000}) });
+          const body = await response.json(); $('result').textContent = JSON.stringify(body, null, 2);
+        } catch (error) { $('result').textContent = error.message; }
+        finally { $('invoke').disabled = false; }
+      });
+      fetch('/api/services').then(response => response.json()).then(services => { state.services = services; renderServices(); status(`${services.length} 个 service 已加载`); }).catch(error => status(`加载失败: ${error.message}`));
+    })();
+  </script>
+</body>
+</html>
