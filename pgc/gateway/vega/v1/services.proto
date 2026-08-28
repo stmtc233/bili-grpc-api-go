@@ -1,0 +1,20 @@
+// Reconstructed from the checked-in gRPC service catalog.
+syntax = "proto3";
+
+package com.bapis.pgc.gateway.vega.v1;
+
+import "google/protobuf/empty.proto";
+import "pgc/gateway/vega/v1/messages.proto";
+
+service Vega {
+  rpc CreateTunnel(VegaFrame) returns (VegaFrame);
+}
+
+service VegaFrameDoc {
+  rpc Auth(AuthReq) returns (AuthResp);
+  rpc Heartbeat(HeartbeatReq) returns (HeartbeatResp);
+  rpc MessageAck(MessageAckReq) returns (.google.protobuf.Empty);
+  rpc Subscribe(SubscribeReq) returns (.google.protobuf.Empty);
+}
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/pgc/gateway/vega/v1";

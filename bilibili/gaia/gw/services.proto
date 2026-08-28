@@ -1,0 +1,16 @@
+// Reconstructed from the checked-in gRPC service catalog.
+syntax = "proto3";
+
+package com.bapis.bilibili.gaia.gw;
+
+import "bilibili/gaia/gw/messages.proto";
+import "google/protobuf/empty.proto";
+
+service Gaia {
+  rpc ExClimbAppleTrees(GaiaEncryptMsgReq) returns (UploadAppListReply);
+  rpc ExFetchPublicKey(.google.protobuf.Empty) returns (FetchPublicKeyReply);
+  rpc ExGetAxe(.google.protobuf.Empty) returns (FetchPublicKeyReply);
+  rpc ExUploadAppList(GaiaEncryptMsgReq) returns (UploadAppListReply);
+}
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/gaia/gw";

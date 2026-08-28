@@ -1,0 +1,12 @@
+// Reconstructed from the checked-in gRPC service catalog.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.show.gateway.v1;
+
+import "bilibili/app/show/gateway/v1/messages.proto";
+
+service AppShow {
+  rpc GetActProgress(GetActProgressReq) returns (GetActProgressReply);
+}
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/show/gateway/v1";

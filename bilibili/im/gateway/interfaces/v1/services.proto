@@ -1,0 +1,31 @@
+// Reconstructed from the checked-in gRPC service catalog.
+syntax = "proto3";
+
+package com.bapis.bilibili.im.gateway.interfaces.v1;
+
+import "bilibili/im/gateway/interfaces/v1/messages.proto";
+import "google/protobuf/empty.proto";
+
+service ImGatewayApi {
+  rpc ClearBubbleMsg(ClearBubbleMsgReq) returns (ClearBubbleMsgRsp);
+  rpc ClearMessageToast(ClearMessageToastReq) returns (.google.protobuf.Empty);
+  rpc DelMsg(DelMsgReq) returns (DelMsgRsp);
+  rpc DelMsgCard(DelMsgCardReq) returns (.google.protobuf.Empty);
+  rpc GetAIInfo(ReqGetAIInfo) returns (RspGetAIInfo);
+  rpc GetBubbleMsg(GetBubbleMsgReq) returns (GetBubbleMsgRsp);
+  rpc GetSystemNotice(ReqGetSystemNotice) returns (RspGetSystemNotice);
+  rpc GetTotalUnread(GetTotalUnreadReq) returns (GetTotalUnreadRsp);
+  rpc HarmonyTotalUnread(GetTotalUnreadReq) returns (HarmonyTotalUnreadRsp);
+  rpc MessageToast(MessageToastReq) returns (MessageToastRsp);
+  rpc MsgFeedAction(MsgFeedActionReq) returns (MsgFeedActionRsp);
+  rpc MsgFeedMsgList(MsgListReq) returns (MsgListRsp);
+  rpc Prompt(PromptReq) returns (PromptRsp);
+  rpc QuickLink(QuickLinkReq) returns (QuickLinkRsp);
+  rpc RemoveSession(ReqRemoveSession) returns (DummyRsp);
+  rpc SetMsgFeedNotice(SetMsgFeedNoticeReq) returns (.google.protobuf.Empty);
+  rpc SetTop(ReqSetTop) returns (DummyRsp);
+  rpc SingleInbox(ReqSingleInbox) returns (RspSingleInbox);
+  rpc UpdateTotalUnread(.google.protobuf.Empty) returns (.google.protobuf.Empty);
+}
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/im/gateway/interfaces/v1";

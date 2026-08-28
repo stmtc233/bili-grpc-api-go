@@ -1,0 +1,13 @@
+// Reconstructed from the checked-in gRPC service catalog.
+syntax = "proto3";
+
+package com.bapis.bilibili.broadcast.message.gamecenter;
+
+import "bilibili/broadcast/message/gamecenter/messages.proto";
+import "google/protobuf/empty.proto";
+
+service GameCenterPush {
+  rpc PushEvent(.google.protobuf.Empty) returns (stream PushEventReply);
+}
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/message/gamecenter";

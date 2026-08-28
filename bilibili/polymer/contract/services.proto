@@ -1,0 +1,15 @@
+// Reconstructed from the checked-in gRPC service catalog.
+syntax = "proto3";
+
+package com.bapis.bilibili.polymer.contract;
+
+import "bilibili/polymer/contract/messages.proto";
+import "google/protobuf/empty.proto";
+
+service Contract {
+  rpc AddContract(AddContractReq) returns (.google.protobuf.Empty);
+  rpc AddContractV2(AddContractReq) returns (AddContractReply);
+  rpc ContractConfig(ContractConfigReq) returns (ContractConfigReply);
+}
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/polymer/contract";

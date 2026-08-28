@@ -1,0 +1,24 @@
+// Reconstructed from the checked-in gRPC service catalog.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.dynamic.v1;
+
+import "bilibili/app/dynamic/v1/messages.proto";
+
+service Dynamic {
+  rpc DynDetails(DynDetailsReq) returns (DynDetailsReply);
+  rpc DynMixUpListSearch(DynMixUpListSearchReq) returns (DynMixUpListSearchReply);
+  rpc DynMixUpListViewMore(NoReq) returns (DynMixUpListViewMoreReply);
+  rpc DynOurCity(DynOurCityReq) returns (DynOurCityReply);
+  rpc DynOurCitySwitch(DynOurCitySwitchReq) returns (NoReply);
+  rpc DynRed(DynRedReq) returns (DynRedReply);
+  rpc DynTab(DynTabReq) returns (DynTabReply);
+  rpc DynUpdOffset(DynUpdOffsetReq) returns (NoReply);
+  rpc DynVideo(DynVideoReq) returns (DynVideoReqReply);
+  rpc DynVideoPersonal(DynVideoPersonalReq) returns (DynVideoPersonalReply);
+  rpc GeoCoder(GeoCoderReq) returns (GeoCoderReply);
+  rpc OurCityClickReport(OurCityClickReportReq) returns (OurCityClickReportReply);
+  rpc SVideo(SVideoReq) returns (SVideoReply);
+}
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/dynamic/v1";

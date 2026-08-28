@@ -1,0 +1,27 @@
+// Reconstructed from the checked-in gRPC service catalog.
+syntax = "proto3";
+
+package com.bapis.bilibili.main.community.reply.v1;
+
+import "bilibili/main/community/reply/v1/messages.proto";
+
+service Reply {
+  rpc AnswerQuestion(AnswerQuestionReq) returns (AnswerQuestionResp);
+  rpc AtSearch(AtSearchReq) returns (AtSearchReply);
+  rpc DetailList(DetailListReq) returns (DetailListReply);
+  rpc DialogList(DialogListReq) returns (DialogListReply);
+  rpc DoVote(DoVoteReq) returns (DoVoteResp);
+  rpc MainList(MainListReq) returns (MainListReply);
+  rpc PictureList(PictureListReq) returns (PictureListResp);
+  rpc PreviewList(PreviewListReq) returns (PreviewListReply);
+  rpc ReplyInfo(ReplyInfoReq) returns (ReplyInfoReply);
+  rpc SearchItem(SearchItemReq) returns (SearchItemReply);
+  rpc SearchItemPreHook(SearchItemPreHookReq) returns (SearchItemPreHookReply);
+  rpc ShareRepliesInfo(ShareRepliesInfoReq) returns (ShareRepliesInfoResp);
+  rpc ShareReplyMaterial(ShareReplyMaterialReq) returns (ShareReplyMaterialResp);
+  rpc SuggestEmotes(SuggestEmotesReq) returns (SuggestEmotesResp);
+  rpc UpdateSingleReplyNotificationConfig(UpdateSingleReplyNotificationConfigReq) returns (UpdateSingleReplyNotificationConfigResp);
+  rpc UserCallback(UserCallbackReq) returns (UserCallbackReply);
+}
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/main/community/reply/v1";

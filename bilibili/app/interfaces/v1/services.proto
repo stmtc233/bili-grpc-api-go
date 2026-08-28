@@ -1,0 +1,53 @@
+// Reconstructed from the checked-in gRPC service catalog.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.interfaces.v1;
+
+import "bilibili/app/interfaces/v1/messages.proto";
+
+service History {
+  rpc Clear(ClearReq) returns (NoReply);
+  rpc Cursor(CursorReq) returns (CursorReply);
+  rpc CursorV2(CursorV2Req) returns (CursorV2Reply);
+  rpc Delete(DeleteReq) returns (NoReply);
+  rpc HistoryTab(HistoryTabReq) returns (HistoryTabReply);
+  rpc HistoryTabV2(HistoryTabReq) returns (HistoryTabReply);
+  rpc LatestHistory(LatestHistoryReq) returns (LatestHistoryReply);
+  rpc Search(SearchReq) returns (SearchReply);
+}
+
+service Media {
+  rpc MediaComment(MediaCommentReq) returns (MediaCommentReply);
+  rpc MediaDetail(MediaDetailReq) returns (MediaDetailReply);
+  rpc MediaFollow(MediaFollowReq) returns (MediaFollowReply);
+  rpc MediaRelation(MediaRelationReq) returns (MediaRelationReply);
+  rpc MediaTab(MediaTabReq) returns (MediaTabReply);
+  rpc MediaVideo(MediaVideoReq) returns (MediaVideoReply);
+}
+
+service Search {
+  rpc DefaultWords(DefaultWordsReq) returns (DefaultWordsReply);
+  rpc Suggest3(SuggestionResult3Req) returns (SuggestionResult3Reply);
+}
+
+service SearchTest {
+  rpc NotExist(SuggestionResult3Req) returns (SuggestionResult3Reply);
+}
+
+service Space {
+  rpc SearchArchive(SearchArchiveReq) returns (SearchArchiveReply);
+  rpc SearchDynamic(SearchDynamicReq) returns (SearchDynamicReply);
+  rpc SearchTab(SearchTabReq) returns (SearchTabReply);
+  rpc UpdateReserveStartTime(UpdateReserveStartTimeReq) returns (UpdateReserveStartTimeReply);
+}
+
+service Teenagers {
+  rpc FacialRecognitionVerify(FacialRecognitionVerifyReq) returns (FacialRecognitionVerifyReply);
+  rpc ModeStatus(ModeStatusReq) returns (ModeStatusReply);
+  rpc ModifyPwd(ModifyPwdReq) returns (ModifyPwdReply);
+  rpc SetTeenagersModelAge(SetTeenagersModelAgeReq) returns (SetTeenagersModelAgeReply);
+  rpc UpdateStatus(UpdateStatusReq) returns (UpdateStatusReply);
+  rpc VerifyPwd(VerifyPwdReq) returns (VerifyPwdReply);
+}
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/interfaces/v1";

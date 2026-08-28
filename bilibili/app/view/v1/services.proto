@@ -1,0 +1,39 @@
+// Reconstructed from the checked-in gRPC service catalog.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.view.v1;
+
+import "bilibili/app/view/v1/messages.proto";
+
+service LegacyView {
+  rpc Like(LikeReq) returns (LikeReply);
+}
+
+service View {
+  rpc AddContract(AddContractReq) returns (NoReply);
+  rpc CacheView(CacheViewReq) returns (CacheViewReply);
+  rpc ChronosPkg(ChronosPkgReq) returns (Chronos);
+  rpc ClickActivitySeason(ClickActivitySeasonReq) returns (NoReply);
+  rpc ClickPlayerCard(ClickPlayerCardReq) returns (NoReply);
+  rpc ClickPlayerCardV2(ClickPlayerCardReq) returns (ClickPlayerCardReply);
+  rpc ContinuousPlay(ContinuousPlayReq) returns (ContinuousPlayReply);
+  rpc ExposePlayerCard(ExposePlayerCardReq) returns (NoReply);
+  rpc FeedView(FeedViewReq) returns (FeedViewReply);
+  rpc GetArcsPlayer(GetArcsPlayerReq) returns (GetArcsPlayerReply);
+  rpc GetUser(GetUserReq) returns (GetUserReply);
+  rpc PlayerRelates(PlayerRelatesReq) returns (PlayerRelatesReply);
+  rpc PremiereArchive(PremiereArchiveReq) returns (PremiereArchiveReply);
+  rpc RelatesFeed(RelatesFeedReq) returns (RelatesFeedReply);
+  rpc Reserve(ReserveReq) returns (ReserveReply);
+  rpc Season(SeasonReq) returns (SeasonReply);
+  rpc SeasonActivityRecord(SeasonActivityRecordReq) returns (SeasonActivityRecordReply);
+  rpc SeasonWidgetExpose(SeasonWidgetExposeReq) returns (SeasonWidgetExposeReply);
+  rpc ShortFormVideoDownload(ShortFormVideoDownloadReq) returns (ShortFormVideoDownloadReply);
+  rpc TFInfo(TFInfoReq) returns (TFInfoReply);
+  rpc View(ViewReq) returns (ViewReply);
+  rpc ViewMaterial(ViewMaterialReq) returns (ViewMaterialReply);
+  rpc ViewProgress(ViewProgressReq) returns (ViewProgressReply);
+  rpc ViewTag(ViewTagReq) returns (ViewTagReply);
+}
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/view/v1";

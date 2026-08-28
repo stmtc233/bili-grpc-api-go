@@ -1,0 +1,14 @@
+// Reconstructed from the checked-in gRPC service catalog.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.mine.v1;
+
+import "bilibili/app/mine/v1/messages.proto";
+import "google/protobuf/empty.proto";
+
+service Mine {
+  rpc DisplayReport(DisplayReportReq) returns (.google.protobuf.Empty);
+  rpc PubModule(PubModuleReq) returns (PubModuleResp);
+}
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/mine/v1";

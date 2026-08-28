@@ -1,0 +1,18 @@
+// Reconstructed from the checked-in gRPC service catalog.
+syntax = "proto3";
+
+package com.bapis.bilibili.community.service.dm.v1;
+
+import "bilibili/community/service/dm/v1/messages.proto";
+
+service DM {
+  rpc DmExpoReport(DmExpoReportReq) returns (DmExpoReportRes);
+  rpc DmPlayerConfig(DmPlayerConfigReq) returns (Response);
+  rpc DmSegCache(DmSegCacheReq) returns (DmSegMobileReply);
+  rpc DmSegMobile(DmSegMobileReq) returns (DmSegMobileReply);
+  rpc DmSegOtt(DmSegOttReq) returns (DmSegOttReply);
+  rpc DmSegSDK(DmSegSDKReq) returns (DmSegSDKReply);
+  rpc DmView(DmViewReq) returns (DmViewReply);
+}
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/community/service/dm/v1";
