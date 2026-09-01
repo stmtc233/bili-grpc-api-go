@@ -4263,7 +4263,7 @@ message NavigationEntryJoinedOtherTribee {
 message NavigationEntryVisaCard {
   int64 visaFreeCount = 1;
   TribeeUserProfile profile = 2;
-  TribeeVisaTheme visaTheme = 3;
+  TribeeTheme visaTheme = 3;
   string guideTitle = 4;
   string guideButton = 5;
   string visaTitle = 6;
@@ -5748,6 +5748,9 @@ message TribeeBaseInfo {
   bool isNewCodeRedDot = 4;
   string newCodePopupText = 5;
   TribeeSearchBar searchBar = 6;
+  TribeeTheme tribeeTheme = 7;
+  TribeeStats stats = 8;
+  string rulesUrl = 9;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeCategory.java
@@ -5799,6 +5802,7 @@ message TribeeDyn {
   DynReplyIcon replyIcon = 9;
   TribeeEntryApplyStatus entryApplyStatus = 10;
   TribeeDynPrimaryTribee primaryTribee = 11;
+  TribeeDynCover cover = 12;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeDynAllReq.java
@@ -5821,6 +5825,13 @@ message TribeeDynAllResp {
   TribeeContent content = 4;
   TribeeCategoryInfo category = 5;
   TribeeSortInfo sortInfo = 6;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeDynCover.java
+message TribeeDynCover {
+  string url = 1;
+  double height = 2;
+  double aspectRatio = 3;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeDynPrimaryTribee.java
@@ -6170,6 +6181,12 @@ message TribeeSortItem {
   string text = 2;
 }
 
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeStats.java
+message TribeeStats {
+  string memberCount = 1;
+  string dynCount = 2;
+}
+
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeSteamGameAchievementReq.java
 message TribeeSteamGameAchievementReq {
   int64 mid = 1;
@@ -6387,6 +6404,13 @@ message TribeeSteamHomeUserInfo {
   bool isVip = 5;
 }
 
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeTheme.java
+message TribeeTheme {
+  string themeColor = 1;
+  string themeTextColor = 2;
+  string themeDarkTextColor = 3;
+}
+
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeUserIdentity.java
 message TribeeUserIdentity {
   int32 type = 1;
@@ -6410,7 +6434,7 @@ message TribeeVisaCard {
   string userName = 2;
   string faceUrl = 3;
   TribeeUserProfile profile = 4;
-  TribeeVisaTheme visaTheme = 5;
+  TribeeTheme visaTheme = 5;
   string otherMemberCount = 6;
 }
 
@@ -6442,13 +6466,6 @@ message TribeeVisaFreeListResp {
   com.bapis.bilibili.pagination.PaginationReply nextPage = 2;
   int64 total = 3;
   repeated int64 redDotTribeeIds = 4;
-}
-
-// Source: com/bapis/bilibili/app/dynamic/v2/TribeeVisaTheme.java
-message TribeeVisaTheme {
-  string themeColor = 1;
-  string themeTextColor = 2;
-  string themeDarkTextColor = 3;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/Unfollow.java

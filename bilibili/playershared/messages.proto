@@ -40,6 +40,7 @@ enum ButtonAction {
   RELOAD = 19;
   ADUNLOCK = 20;
   SWITCH_QN = 21;
+  VIP_DIRECTLY = 22;
 }
 
 enum CanWatchQnReason {
@@ -261,6 +262,9 @@ enum SettingItemType {
   SETTING_AI_AUDIO_EXCHANGE = 36;
   SETTING_TRANSLATE = 37;
   SETTING_DM_SWITCH = 38;
+  SETTING_UP_DISLIKE = 39;
+  SETTING_IP_DISLIKE = 40;
+  SETTING_VIDEO_DISLIKE = 41;
 }
 
 enum SettingJumpType {
@@ -537,6 +541,11 @@ message Dimension {
   int64 height = 2;
   int64 rotate = 3;
   int64 variable = 4;
+}
+
+// Source: com/bapis/bilibili/playershared/DislikeItem.java
+message DislikeItem {
+  int64 reasonId = 1;
 }
 
 // Source: com/bapis/bilibili/playershared/DolbyItem.java
@@ -968,6 +977,14 @@ message SettingItem {
     SettingVertical vertical = 4;
     SettingSwitch switch = 5;
   }
+  oneof oneof_1 {
+    DislikeItem dislikeItem = 6;
+  }
+  enum DataCase {
+    DATA_NOT_SET = 0;
+    DISLIKE_ITEM = 6;
+  }
+
   enum ValueCase {
     VALUE_NOT_SET = 0;
     MORE = 3;
