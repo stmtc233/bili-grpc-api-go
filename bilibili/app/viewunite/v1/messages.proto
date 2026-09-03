@@ -540,6 +540,7 @@ message PauseAdsAV {
   com.bapis.bilibili.app.viewunite.common.Stat stat = 2;
   string cover = 3;
   string title = 4;
+  int64 duration = 5;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/v1/PauseBar.java
@@ -780,6 +781,20 @@ message StoryActualCardWrapper {
 
 }
 
+// Source: com/bapis/bilibili/app/viewunite/v1/StoryAdInfo.java
+message StoryAdInfo {
+  int64 creativeId = 1;
+  string adCb = 2;
+  int64 resource = 3;
+  int32 source = 4;
+  string requestId = 5;
+  bool isAd = 6;
+  bool isAdLoc = 7;
+  string clientIp = 8;
+  string extra = 9;
+  int32 advertiseType = 10;
+}
+
 // Source: com/bapis/bilibili/app/viewunite/v1/StoryEntrance.java
 message StoryEntrance {
   bool arcPlayStory = 1;
@@ -807,6 +822,8 @@ message StoryReq {
   string from = 7;
   string spmid = 8;
   string fromSpmid = 9;
+  string adExtra = 10;
+  bool foldable = 11;
   enum ParamCase {
     PARAM_NOT_SET = 0;
     STORY_REQ_PARAM = 4;
@@ -833,6 +850,7 @@ message StoryVideoCard {
   string trackId = 5;
   string goto = 6;
   PGCInfo pgcInfo = 7;
+  StoryAdInfo adInfo = 8;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/v1/Tab.java
@@ -928,6 +946,7 @@ message VideoMentionsReq {
   string fromTrackid = 5;
   string fromScene = 6;
   string bizExtra = 7;
+  map<string, string> extraContent = 8;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/v1/VideoPlayData.java

@@ -150,6 +150,7 @@ enum ModuleType {
   PUGV_SEASON_COMBINE = 62;
   VIDEO_MENTIONS = 63;
   OGV_RESERVE_REMINDER = 64;
+  SEARCH_QUERY = 65;
 }
 
 enum OccupationType {
@@ -1051,6 +1052,14 @@ message NewEp {
   string indexShow = 7;
 }
 
+// Source: com/bapis/bilibili/app/viewunite/common/Nf.java
+message Nf {
+  string dislikeInfo = 1;
+  int64 id = 2;
+  string goto = 3;
+  int64 from = 4;
+}
+
 // Source: com/bapis/bilibili/app/viewunite/common/OfficialVerify.java
 message OfficialVerify {
   int32 type = 1;
@@ -1669,6 +1678,7 @@ message RelateCard {
   RelateThreePoint threePoint = 10;
   google.protobuf.Any cmStock = 11;
   CardBasicInfo basicInfo = 12;
+  RelateThreePointNf threePointNf = 18;
   enum CardCase {
     CARD_NOT_SET = 0;
     AV = 2;
@@ -1822,6 +1832,11 @@ message RelateThreePoint {
   bool watchLater = 3;
   string dislikeReportData = 4;
   TranslateButton translateButton = 5;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/common/RelateThreePointNf.java
+message RelateThreePointNf {
+  Nf nf = 1;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/common/ReserveButton.java

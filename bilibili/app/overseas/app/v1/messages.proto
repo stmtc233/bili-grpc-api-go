@@ -1,0 +1,19 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.app.overseas.app.v1;
+
+enum BannerEventType {
+  EVENT_TYPE_UNSPECIFIED = 0;
+  EVENT_TYPE_CLICK = 1;
+  EVENT_TYPE_EXPOSURE = 2;
+}
+
+// Source: com/bapis/bilibili/app/overseas/app/v1/ReportBannerEventReq.java
+message ReportBannerEventReq {
+  string bannerId = 1;
+  BannerEventType eventType = 2;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/app/overseas/app/v1";

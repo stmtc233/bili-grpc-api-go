@@ -103,6 +103,7 @@ message PremiereText {
 // Source: com/bapis/bilibili/app/viewunite/ugcanymodel/RelateUgcAny.java
 message RelateUgcAny {
   AiExtra aiExtra = 1;
+  com.bapis.bilibili.app.viewunite.common.Nf nf = 12;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/ugcanymodel/ShareGuide.java
@@ -158,6 +159,7 @@ message ViewUgcAny {
   AiExtra aiExtra = 8;
   Experiment experiment = 9;
   com.bapis.bilibili.app.viewunite.common.RelateAsync relateAsync = 10;
+  com.bapis.bilibili.app.viewunite.common.Nf nf = 11;
 }
 
 

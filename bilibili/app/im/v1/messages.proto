@@ -26,12 +26,29 @@ enum AlertToastType {
   ALERT_TOAST_TYPE_REPORT = 2;
 }
 
+enum AppointmentNotifyBizType {
+  APPOINTMENT_NOTIFY_BIZ_TYPE_UNKNOWN = 0;
+  APPOINTMENT_NOTIFY_BIZ_TYPE_ARCHIVE = 1;
+  APPOINTMENT_NOTIFY_BIZ_TYPE_LIVE = 2;
+  APPOINTMENT_NOTIFY_BIZ_TYPE_ESPORTS = 3;
+  APPOINTMENT_NOTIFY_BIZ_TYPE_ECOMMERCE = 4;
+  APPOINTMENT_NOTIFY_BIZ_TYPE_GAME = 7;
+  APPOINTMENT_NOTIFY_BIZ_TYPE_ACTIVITY = 8;
+}
+
+enum AppointmentNotifyStatusType {
+  APPOINTMENT_NOTIFY_STATUS_TYPE_NONE = 0;
+  APPOINTMENT_NOTIFY_STATUS_TYPE_LIVING = 1;
+  APPOINTMENT_NOTIFY_STATUS_TYPE_LIVE_END = 2;
+}
+
 enum AssistantType {
   ASSISTANT_TYPE_UNKNOWN = 0;
   ASSISTANT_TYPE_LIVE = 1;
   ASSISTANT_TYPE_UP = 2;
   ASSISTANT_TYPE_PAY = 3;
   ASSISTANT_TYPE_REPORT = 4;
+  ASSISTANT_TYPE_APPOINTMENT = 5;
 }
 
 enum BubbleStyle {
@@ -209,6 +226,7 @@ enum ThreeDotItemType {
   THREE_DOT_ITEM_TYPE_CLEAR_LIST = 9;
   THREE_DOT_ITEM_TYPE_ANTI_HARASSMENT = 10;
   THREE_DOT_ITEM_TYPE_REPORT_HELPER = 11;
+  THREE_DOT_ITEM_TYPE_APPOINTMENT_NOTIFY = 12;
 }
 
 enum TipsType {
@@ -278,6 +296,52 @@ message AirDropToImReply {
 // Source: com/bapis/bilibili/app/im/v1/AirDropToImReq.java
 message AirDropToImReq {
   AirDropFrom adf = 1;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/AppointmentNotifyModule.java
+message AppointmentNotifyModule {
+  AppointmentNotifyBizType bizType = 1;
+  string notifyCode = 2;
+  int64 msgKey = 3;
+  string sid = 4;
+  string bizId = 5;
+  string bizSubId = 6;
+  AppointmentNotifySubject subject = 7;
+  string title = 8;
+  string subtitle = 9;
+  PictureModule coverImg = 10;
+  string url = 11;
+  AppointmentNotifyStatus status = 12;
+  string duration = 13;
+  string progress = 14;
+  repeated AppointmentNotifyStat stats = 15;
+  bool disabled = 16;
+  NotifyDetailModule detailModule = 17;
+  repeated NotifyInteractiveModule interactiveModule = 18;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/AppointmentNotifyStat.java
+message AppointmentNotifyStat {
+  string icon = 1;
+  string text = 2;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/AppointmentNotifyStatus.java
+message AppointmentNotifyStatus {
+  AppointmentNotifyStatusType type = 1;
+  string badgeText = 2;
+  string maskText = 3;
+  string badgeIcon = 4;
+  int32 iconW = 5;
+  int32 iconH = 6;
+}
+
+// Source: com/bapis/bilibili/app/im/v1/AppointmentNotifySubject.java
+message AppointmentNotifySubject {
+  string avatar = 1;
+  string name = 2;
+  string url = 3;
+  int64 uid = 4;
 }
 
 // Source: com/bapis/bilibili/app/im/v1/AssistantId.java
@@ -807,6 +871,11 @@ message MsgId {
   int64 subSequenceNumber = 3;
 }
 
+// Source: com/bapis/bilibili/app/im/v1/MsgMenuAddWatchLater.java
+message MsgMenuAddWatchLater {
+  int64 aid = 1;
+}
+
 // Source: com/bapis/bilibili/app/im/v1/MsgMenuCancelTranslate.java
 message MsgMenuCancelTranslate {
 }
@@ -821,6 +890,7 @@ message MsgMenuContent {
     MsgMenuSaveSticker saveSticker = 5;
     MsgMenuTranslate translate = 6;
     MsgMenuCancelTranslate cancelTranslation = 7;
+    MsgMenuAddWatchLater addWatchLater = 8;
   }
   enum ItemCase {
     ITEM_NOT_SET = 0;
@@ -831,6 +901,7 @@ message MsgMenuContent {
     SAVE_STICKER = 5;
     TRANSLATE = 6;
     CANCEL_TRANSLATION = 7;
+    ADD_WATCH_LATER = 8;
   }
 
 }
@@ -848,6 +919,7 @@ message MsgMenuDelete {
 message MsgMenuItem {
   string name = 1;
   MsgMenuContent content = 2;
+  string icon = 3;
 }
 
 // Source: com/bapis/bilibili/app/im/v1/MsgMenuRecall.java
@@ -895,6 +967,7 @@ message MsgModule {
     AiIntroduceModule aiIntroduceModule = 22;
     InvalidResourceModule invalidResourceModule = 23;
     QOEModule qoeModule = 24;
+    AppointmentNotifyModule appointmentNotifyModule = 25;
   }
   enum ModuleCase {
     MODULE_NOT_SET = 0;
@@ -922,6 +995,7 @@ message MsgModule {
     AI_INTRODUCE_MODULE = 22;
     INVALID_RESOURCE_MODULE = 23;
     QOE_MODULE = 24;
+    APPOINTMENT_NOTIFY_MODULE = 25;
   }
 
 }

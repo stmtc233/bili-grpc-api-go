@@ -71,7 +71,7 @@ message PlayViewUniteReply {
   com.bapis.bilibili.playershared.FragmentVideo fragmentVideo = 10;
   com.bapis.bilibili.playershared.VideoCtrl videoCtrl = 11;
   com.bapis.bilibili.playershared.Language language = 12;
-  com.bapis.bilibili.app.overseas.ad.v1.OverseasAdInfo adInfo = 13;
+  com.bapis.bilibili.app.overseas.ad.v1.OverseasAdInfo overseasAdInfo = 13;
 }
 
 // Source: com/bapis/bilibili/app/playerunite/v1/PlayViewUniteReq.java
