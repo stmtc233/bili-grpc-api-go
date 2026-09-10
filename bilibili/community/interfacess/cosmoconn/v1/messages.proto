@@ -70,6 +70,121 @@ message AddTribeeQuizQuestionRsp {
   int64 questionId = 1;
 }
 
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminAddTribeeAdminReq.java
+message AdminAddTribeeAdminReq {
+  int64 tribeeId = 1;
+  int64 targetUid = 2;
+  string targetUidStr = 3;
+  int64 roleId = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminAddTribeeAdminRsp.java
+message AdminAddTribeeAdminRsp {
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminCancelTribeeTopThreadReq.java
+message AdminCancelTribeeTopThreadReq {
+  int64 dynId = 1;
+  string dynIdStr = 2;
+  int64 tribeeId = 3;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminCancelTribeeTopThreadRsp.java
+message AdminCancelTribeeTopThreadRsp {
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminCreateTribeeCategoryReq.java
+message AdminCreateTribeeCategoryReq {
+  int64 tribeeId = 1;
+  string name = 2;
+  bool allowOutsiderPub = 3;
+  bool hiddenInFeed = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminCreateTribeeCategoryRsp.java
+message AdminCreateTribeeCategoryRsp {
+  int64 categoryId = 1;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminDeleteTribeeAdminReq.java
+message AdminDeleteTribeeAdminReq {
+  int64 tribeeId = 1;
+  int64 targetUid = 2;
+  string targetUidStr = 3;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminDeleteTribeeAdminRsp.java
+message AdminDeleteTribeeAdminRsp {
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminDeleteTribeeCategoryReq.java
+message AdminDeleteTribeeCategoryReq {
+  int64 tribeeId = 1;
+  int64 categoryId = 2;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminDeleteTribeeCategoryRsp.java
+message AdminDeleteTribeeCategoryRsp {
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminSetTribeeTopThreadReq.java
+message AdminSetTribeeTopThreadReq {
+  int64 dynId = 1;
+  string dynIdStr = 2;
+  int64 tribeeId = 3;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminSetTribeeTopThreadRsp.java
+message AdminSetTribeeTopThreadRsp {
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminSortTribeeCategoriesReq.java
+message AdminSortTribeeCategoriesReq {
+  int64 tribeeId = 1;
+  repeated int64 categoryIds = 2;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminSortTribeeCategoriesRsp.java
+message AdminSortTribeeCategoriesRsp {
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminUpdateTribeeAdminReq.java
+message AdminUpdateTribeeAdminReq {
+  int64 tribeeId = 1;
+  int64 targetUid = 2;
+  string targetUidStr = 3;
+  int64 roleId = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminUpdateTribeeAdminRsp.java
+message AdminUpdateTribeeAdminRsp {
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminUpdateTribeeCategoryReq.java
+message AdminUpdateTribeeCategoryReq {
+  int64 tribeeId = 1;
+  int64 categoryId = 2;
+  string name = 3;
+  bool allowOutsiderPub = 4;
+  bool hiddenInFeed = 5;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminUpdateTribeeCategoryRsp.java
+message AdminUpdateTribeeCategoryRsp {
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminUpdateTribeeInfoReq.java
+message AdminUpdateTribeeInfoReq {
+  int64 tribeeId = 1;
+  string name = 2;
+  string summary = 3;
+  string faceUrl = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminUpdateTribeeInfoRsp.java
+message AdminUpdateTribeeInfoRsp {
+}
+
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/BatchAddTribeeQuizQuestionReq.java
 message BatchAddTribeeQuizQuestionReq {
   int64 tribeeId = 1;
@@ -569,6 +684,7 @@ message UpdateTribeeQuizQuestionReq {
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/UpdateTribeeQuizQuestionRsp.java
 message UpdateTribeeQuizQuestionRsp {
+  int32 switchStatus = 1;
 }
 
 

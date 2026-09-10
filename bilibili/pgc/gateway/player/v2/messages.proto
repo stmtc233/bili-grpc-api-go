@@ -98,6 +98,12 @@ enum SecurityLevel {
   LEVEL_L3 = 3;
 }
 
+enum TranslationStatus {
+  TRANSLATION_STATUS_UNNEEDED = 0;
+  TRANSLATION_STATUS_TRANSLATED = 1;
+  TRANSLATION_STATUS_UNTRANSLATED = 2;
+}
+
 // Source: com/bapis/bilibili/pgc/gateway/player/v2/Animation.java
 message Animation {
   map<string, string> qnSvgaAnimationMap = 1;
@@ -337,6 +343,7 @@ message EpisodeInfo {
   string title = 7;
   Interaction interaction = 8;
   string longTitle = 9;
+  TranslationInfo translationInfo = 10;
 }
 
 // Source: com/bapis/bilibili/pgc/gateway/player/v2/EpPreVideo.java
@@ -736,6 +743,7 @@ message SeasonInfo {
   int32 mode = 7;
   string horizontalCover169 = 8;
   string horizontalCover1610 = 9;
+  TranslationInfo translationInfo = 10;
 }
 
 // Source: com/bapis/bilibili/pgc/gateway/player/v2/SegmentVideo.java
@@ -823,6 +831,12 @@ message Toast {
   TextInfo toastText = 5;
   Report report = 6;
   map<string, string> orderReportParams = 7;
+}
+
+// Source: com/bapis/bilibili/pgc/gateway/player/v2/TranslationInfo.java
+message TranslationInfo {
+  TranslationStatus status = 1;
+  map<string, string> translatedFields = 2;
 }
 
 // Source: com/bapis/bilibili/pgc/gateway/player/v2/UserStatus.java
