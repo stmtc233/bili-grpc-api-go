@@ -47,6 +47,12 @@ enum Style {
   bikan = 1;
 }
 
+enum TranslationStatus {
+  TRANSLATION_STATUS_UNNEEDED = 0;
+  TRANSLATION_STATUS_TRANSLATED = 1;
+  TRANSLATION_STATUS_UNTRANSLATED = 2;
+}
+
 enum TribeeCoverStyle {
   TRIBEE_COVER_STYLE_BLUR_SQUARE = 0;
   TRIBEE_COVER_STYLE_CROP_16_9 = 1;
@@ -347,6 +353,7 @@ message DisplayOption {
   int32 feedbackExp = 18;
   int32 cardStyleExp = 19;
   int32 ugcPicRevampExpGroup = 20;
+  int32 gameLiveRevampExpGroup = 21;
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/DoubleOpusItem.java
@@ -1287,6 +1294,8 @@ message SearchBangumiCard {
   repeated ReasonStyle qualityTags = 40;
   Feedback feedback = 41;
   string moduleTitle = 42;
+  string seriesTitle = 43;
+  TranslationInfo translationInfo = 44;
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/SearchBannerCard.java
@@ -1519,6 +1528,15 @@ message SearchGameCard {
   string noticeContentName = 16;
   CardLayout cardLayout = 17;
   int32 gameStyle = 18;
+  int32 buttonStyle = 19;
+  string buttonTextColor = 20;
+  string buttonTextColorNight = 21;
+  string buttonBgColor = 22;
+  string buttonBgColorNight = 23;
+  string buttonBorderColor = 24;
+  string buttonBorderColorNight = 25;
+  string moduleTitle = 26;
+  Feedback feedback = 27;
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/SearchGiantCard.java
@@ -2483,6 +2501,12 @@ message TrafficConfig {
 message TrafficConfigOption {
   int32 id = 1;
   string text = 2;
+}
+
+// Source: com/bapis/bilibili/polymer/app/search/v1/TranslationInfo.java
+message TranslationInfo {
+  TranslationStatus status = 1;
+  map<string, string> translatedFields = 2;
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/TribeePostItem.java

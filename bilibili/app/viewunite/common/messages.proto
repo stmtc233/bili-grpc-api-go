@@ -251,6 +251,12 @@ enum ToolType {
   UP_VIDEO_MENTIONS = 4;
 }
 
+enum TranslationStatus {
+  TRANSLATION_STATUS_UNNEEDED = 0;
+  TRANSLATION_STATUS_TRANSLATED = 1;
+  TRANSLATION_STATUS_UNTRANSLATED = 2;
+}
+
 // Source: com/bapis/bilibili/app/viewunite/common/ActBannerItem.java
 message ActBannerItem {
   string url = 1;
@@ -498,6 +504,7 @@ message CardBasicInfo {
   CoverDimension dimension = 17;
   string translatedTitle = 18;
   map<string, string> report = 19;
+  TranslationInfo translationInfo = 20;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/common/CardStyle.java
@@ -1075,6 +1082,12 @@ message OgvIntroduction {
   string scoreNightColor = 5;
   string textColor = 6;
   string textNightColor = 7;
+  string seasonTypeName = 8;
+  string areas = 9;
+  string styles = 10;
+  string alias = 11;
+  string overview = 12;
+  TranslationInfo translationInfo = 13;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/common/OgvLiveReserve.java
@@ -1134,6 +1147,7 @@ message OgvTitle {
   string titleImg = 8;
   string titleImgNight = 9;
   int32 webpDynamicPicTitleCycleNum = 10;
+  TranslationInfo translationInfo = 11;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/common/OperateAction.java
@@ -1913,6 +1927,7 @@ message SectionData {
   int32 type = 13;
   map<string, string> report = 14;
   EpBgInfo bgInfo = 15;
+  TranslationInfo translationInfo = 16;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/common/SerialSeason.java
@@ -2114,6 +2129,12 @@ message ToolMention {
 message TranslateButton {
   string buttonStatus = 1;
   repeated ButtonMeta buttonMetas = 2;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/common/TranslationInfo.java
+message TranslationInfo {
+  TranslationStatus status = 1;
+  map<string, string> translatedFields = 2;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/common/UgcEpisode.java
@@ -2398,6 +2419,7 @@ message ViewEpisode {
   int32 sectionType = 43;
   string showTitle = 44;
   string bottomRightBadge = 45;
+  TranslationInfo translationInfo = 46;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/common/ViewMaterial.java

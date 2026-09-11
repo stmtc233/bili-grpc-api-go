@@ -55,6 +55,18 @@ message GetChatResultReq {
   string cardType = 5;
 }
 
+// Source: com/bapis/bilibili/app/search/v2/GetSearchLikeReply.java
+message GetSearchLikeReply {
+  int64 likeNumber = 1;
+  int32 likeState = 2;
+}
+
+// Source: com/bapis/bilibili/app/search/v2/GetSearchLikeReq.java
+message GetSearchLikeReq {
+  string business = 1;
+  int64 messageId = 2;
+}
+
 // Source: com/bapis/bilibili/app/search/v2/QueryRecAfterClickItem.java
 message QueryRecAfterClickItem {
   string showName = 1;

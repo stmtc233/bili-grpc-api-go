@@ -2864,6 +2864,8 @@ message JoinGuide {
   repeated JoinMethod methods = 2;
   string titleIconLight = 3;
   string titleIconDark = 4;
+  string subtitle = 5;
+  repeated JoinMethodGroup methodGroups = 6;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/JoinMethod.java
@@ -2875,13 +2877,21 @@ message JoinMethod {
   string jumpUri = 5;
   InviteCodeSheet inviteCodeSheet = 6;
   JoinMethodType type = 7;
+  VisaJoinInfo visaJoinInfo = 8;
   enum JoinMethodType {
     UNKNOWN = 0;
     INVITE_CODE = 1;
     POST = 2;
     QUIZ = 3;
+    VISA_FREE_JOIN = 4;
   }
 
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/JoinMethodGroup.java
+message JoinMethodGroup {
+  string name = 1;
+  repeated JoinMethod.JoinMethodType joinMethodTypes = 2;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/LbsPoiDetail.java
@@ -6629,6 +6639,11 @@ message VisaGuideBubble {
   string title = 1;
   string subtitle = 2;
   int32 autoDismissMs = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/VisaJoinInfo.java
+message VisaJoinInfo {
+  string sourceTribeeName = 1;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/WaterFlowRcmdReq.java

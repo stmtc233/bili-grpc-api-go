@@ -862,6 +862,7 @@ message Tab {
 message TranslateInfo {
   TranslateStatus translationStatus = 1;
   string translatedTitle = 2;
+  map<string, string> translatedFields = 3;
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/UpdateReserveStartTimeReply.java

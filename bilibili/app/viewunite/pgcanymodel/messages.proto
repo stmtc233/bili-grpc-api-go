@@ -75,6 +75,7 @@ message OgvData {
   Skin skin = 28;
   map<string, CacheAuthConfig> cacheAuthConfig = 29;
   map<int32, SectionPagination> sectionPagination = 30;
+  com.bapis.bilibili.app.viewunite.common.TranslationInfo translationInfo = 31;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/pgcanymodel/OgvSwitch.java
