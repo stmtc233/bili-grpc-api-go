@@ -750,6 +750,13 @@ enum TribeeGameStatsStatus {
   TRIBEE_GAME_STATS_BINDED = 2;
 }
 
+enum TribeeIdentityType {
+  TRIBEE_IDENTITY_TYPE_UNSPECIFIED = 0;
+  TRIBEE_IDENTITY_TYPE_MEMBER = 1;
+  TRIBEE_IDENTITY_TYPE_STAFF = 2;
+  TRIBEE_IDENTITY_TYPE_CREATOR = 3;
+}
+
 enum TribeeSearchOrder {
   TribeeSearchOrder_DEFAULT = 0;
   TribeeSearchOrder_DESC = 1;
@@ -1711,6 +1718,17 @@ message CodeParagraph {
   string btnText = 6;
 }
 
+// Source: com/bapis/bilibili/app/dynamic/v2/CoinInfo.java
+message CoinInfo {
+  int64 count = 1;
+  bool isCoin = 2;
+  int64 userCoinCount = 3;
+  bool hidden = 4;
+  bool disabled = 5;
+  string coinBusiness = 6;
+  int64 oid = 7;
+}
+
 // Source: com/bapis/bilibili/app/dynamic/v2/Color.java
 message Color {
   string light = 1;
@@ -1774,6 +1792,15 @@ message Config {
   bool storyVerticalExp = 1;
   uint64 detailViewBits = 2;
   map<string, string> extraRouterKvs = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/ConfirmTribeeCreatorIdentityPopupReq.java
+message ConfirmTribeeCreatorIdentityPopupReq {
+  int64 tribeeId = 1;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/ConfirmTribeeCreatorIdentityPopupResp.java
+message ConfirmTribeeCreatorIdentityPopupResp {
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/ContentCommentCard.java
@@ -3679,6 +3706,8 @@ message ModuleAuthor {
   OnlyFans onlyFans = 16;
   AuthorBadge authorBadge = 17;
   OneLineText handlePtimeText = 18;
+  repeated TribeeIdentityBadge identityBadges = 19;
+  map<string, string> report = 20;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/ModuleAuthorBadgeButton.java
@@ -3783,6 +3812,7 @@ message ModuleButtom {
     ICON_COMMENT = 2;
     ICON_FAVORITE = 3;
     ICON_LIKE = 4;
+    ICON_COIN = 5;
   }
 
 }
@@ -4117,6 +4147,7 @@ message ModuleStat {
   bool isFavorite = 11;
   bool noLike = 12;
   string noLikeText = 13;
+  CoinInfo coin = 14;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/ModuleStory.java
@@ -5761,6 +5792,7 @@ message TribeeBaseInfo {
   TribeeTheme tribeeTheme = 7;
   TribeeStats stats = 8;
   string rulesUrl = 9;
+  TribeeCreatorIdentityPopup creatorIdentityPopup = 10;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeCategory.java
@@ -5787,6 +5819,25 @@ message TribeeContent {
   com.bapis.bilibili.pagination.PaginationReply nextPage = 2;
   repeated TribeeMemberWatchingItem memberWatchingList = 3;
   string memberWatchingTopBvid = 4;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeCreatorIdentityBadge.java
+message TribeeCreatorIdentityBadge {
+  string title = 1;
+  string subtitle = 2;
+  string description = 3;
+  string bottomText = 4;
+  string userAvatarUrl = 5;
+  string userName = 6;
+  string leftIcon = 7;
+  string rightIcon = 8;
+  int32 settlementCycle = 9;
+  string periodId = 10;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeCreatorIdentityPopup.java
+message TribeeCreatorIdentityPopup {
+  TribeeIdentityBadge identityBadge = 2;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeDesc.java
@@ -5885,6 +5936,32 @@ message TribeeHeadInfo {
   bool isPrimary = 5;
   string categoryName = 6;
   string categoryUri = 7;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeIdentityBadge.java
+message TribeeIdentityBadge {
+  TribeeIdentityType type = 1;
+  bool visible = 2;
+  string text = 3;
+  string iconUrl = 4;
+  TribeeIdentityBadge_Color themeColor = 5;
+  TribeeIdentityBadge_Color textColor = 6;
+  TribeeIdentityBadge_Color iconColor = 7;
+  oneof oneof_0 {
+    TribeeCreatorIdentityBadge creator = 8;
+  }
+  map<string, string> report = 9;
+  enum DetailCase {
+    DETAIL_NOT_SET = 0;
+    CREATOR = 8;
+  }
+
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeIdentityBadge.java
+message TribeeIdentityBadge_Color {
+  string light = 1;
+  string dark = 2;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeInteraction.java
@@ -6436,6 +6513,7 @@ message TribeeUserProfile {
   string joinDate = 5;
   int64 joinedDays = 6;
   TribeeUserIdentity userIdentity = 7;
+  repeated TribeeIdentityBadge identityBadges = 8;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeVisaCard.java

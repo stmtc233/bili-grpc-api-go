@@ -3,6 +3,7 @@ syntax = "proto3";
 
 package com.bapis.bilibili.ad.v1;
 
+import "bilibili/app/viewunite/v1/messages.proto";
 import "google/protobuf/any.proto";
 import "google/protobuf/wrappers.proto";
 
@@ -254,6 +255,10 @@ message AdContentExtraDto {
   string pausePageType = 57;
   BrandPausePageDto brandPausePage = 58;
   PausedDynamicPage dynamicPage = 59;
+  PauseAdLandingPage endPageAdLandingpage = 60;
+  com.bapis.bilibili.app.viewunite.v1.PauseBar endPageBar = 61;
+  string endPagePausePageType = 62;
+  PausedDynamicPage endPageDynamicPage = 63;
 }
 
 // Source: com/bapis/bilibili/ad/v1/AdCoverDto.java

@@ -82,6 +82,7 @@ enum MentionType {
   MENTION_TYPE_OGV = 5;
   MENTION_TYPE_COURSE = 6;
   MENTION_TYPE_LOTTERY = 7;
+  MENTION_TYPE_TOY = 8;
 }
 
 enum ModuleType {
@@ -850,6 +851,7 @@ message MentionCard {
     VideoSeason ogv = 6;
     VideoCourse course = 7;
     VideoLottery lottery = 8;
+    Toy toy = 9;
   }
   enum DataCase {
     DATA_NOT_SET = 0;
@@ -860,6 +862,7 @@ message MentionCard {
     OGV = 6;
     COURSE = 7;
     LOTTERY = 8;
+    TOY = 9;
   }
 
 }
@@ -1133,6 +1136,7 @@ message OgvSeasons {
   string title = 1;
   repeated SerialSeason serialSeason = 2;
   SerialSeasonCoverStyle style = 3;
+  TranslationInfo translationInfo = 4;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/common/OgvTitle.java
@@ -1944,6 +1948,7 @@ message SerialSeason {
   string resource = 10;
   NewEp newEp = 11;
   map<string, string> report = 12;
+  TranslationInfo translationInfo = 13;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/common/SkipRange.java
@@ -2123,6 +2128,17 @@ message TitleDeliveryButton {
 // Source: com/bapis/bilibili/app/viewunite/common/ToolMention.java
 message ToolMention {
   string videoReq = 1;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/common/Toy.java
+message Toy {
+  string title = 1;
+  string cover = 2;
+  string upName = 3;
+  string cardLink = 4;
+  string button = 5;
+  string content = 6;
+  string subTitle = 7;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/common/TranslateButton.java

@@ -185,6 +185,19 @@ message AdminUpdateTribeeInfoReq {
 message AdminUpdateTribeeInfoRsp {
 }
 
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/ApproveTribeeCreatorCandidatesReq.java
+message ApproveTribeeCreatorCandidatesReq {
+  int64 tribeeId = 1;
+  string periodId = 2;
+  repeated int64 uids = 3;
+  string reason = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/ApproveTribeeCreatorCandidatesRsp.java
+message ApproveTribeeCreatorCandidatesRsp {
+  int64 approvedCount = 1;
+}
+
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/BatchAddTribeeQuizQuestionReq.java
 message BatchAddTribeeQuizQuestionReq {
   int64 tribeeId = 1;
@@ -303,6 +316,19 @@ message Entity {
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/EntityType.java
 message EntityType {
   EntityBiz biz = 1;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/ExcludeTribeeCreatorCandidatesReq.java
+message ExcludeTribeeCreatorCandidatesReq {
+  int64 tribeeId = 1;
+  string periodId = 2;
+  repeated int64 uids = 3;
+  string reason = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/ExcludeTribeeCreatorCandidatesRsp.java
+message ExcludeTribeeCreatorCandidatesRsp {
+  int64 excludedCount = 1;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/FinishTribeeQuizReq.java
@@ -518,6 +544,41 @@ message ToggleTribeeRsp {
   TribeeMemberInfo memberInfo = 1;
 }
 
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeCreatorIdentityBadgeConfig.java
+message TribeeCreatorIdentityBadgeConfig {
+  string text = 1;
+  string iconUrl = 2;
+  string subline = 3;
+  string description = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeCreatorIdentityConfig.java
+message TribeeCreatorIdentityConfig {
+  int64 tribeeId = 1;
+  bool enabled = 2;
+  int32 settlementCycle = 3;
+  int32 statisticsWindowDays = 4;
+  int64 firstPeriodStartAt = 5;
+  int64 candidateReadyBeforeStartSeconds = 6;
+  int64 reviewDeadlineBeforeStartSeconds = 7;
+  string timezone = 8;
+  TribeeCreatorIdentityBadgeConfig baseBadge = 9;
+  TribeeCreatorIdentityBadgeConfig creatorBadge = 10;
+  bool modBadgeEnabled = 11;
+  TribeeCreatorIdentityBadgeConfig modBadge = 12;
+  bool creatorBadgeEnabled = 13;
+  TribeeIdentityBadgeDisplayRule detailAuthorBadgeRule = 14;
+  TribeeIdentityBadgeDisplayRule commentBadgeRule = 15;
+  TribeeIdentityBadgeDisplayRule visaBadgeRule = 16;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeCreatorIdentityGlobalConfig.java
+message TribeeCreatorIdentityGlobalConfig {
+  TribeeIdentityBadgeDisplayRule detailAuthorBadgeRule = 1;
+  TribeeIdentityBadgeDisplayRule commentBadgeRule = 2;
+  TribeeIdentityBadgeDisplayRule visaBadgeRule = 3;
+}
+
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeDraftListItem.java
 message TribeeDraftListItem {
   int64 draftId = 1;
@@ -577,6 +638,11 @@ message TribeeDynClickReq {
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeDynClickRsp.java
 message TribeeDynClickRsp {
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeIdentityBadgeDisplayRule.java
+message TribeeIdentityBadgeDisplayRule {
+  repeated int32 allowedTypes = 1;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeInviteCodeNotificationsFeedbackReq.java
@@ -685,6 +751,28 @@ message UpdateTribeeQuizQuestionReq {
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/UpdateTribeeQuizQuestionRsp.java
 message UpdateTribeeQuizQuestionRsp {
   int32 switchStatus = 1;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/UpsertTribeeCreatorIdentityConfigReq.java
+message UpsertTribeeCreatorIdentityConfigReq {
+  TribeeCreatorIdentityConfig config = 1;
+  string reason = 2;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/UpsertTribeeCreatorIdentityConfigRsp.java
+message UpsertTribeeCreatorIdentityConfigRsp {
+  TribeeCreatorIdentityConfig config = 1;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/UpsertTribeeCreatorIdentityGlobalConfigReq.java
+message UpsertTribeeCreatorIdentityGlobalConfigReq {
+  TribeeCreatorIdentityGlobalConfig config = 1;
+  string reason = 2;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/UpsertTribeeCreatorIdentityGlobalConfigRsp.java
+message UpsertTribeeCreatorIdentityGlobalConfigRsp {
+  TribeeCreatorIdentityGlobalConfig config = 1;
 }
 
 

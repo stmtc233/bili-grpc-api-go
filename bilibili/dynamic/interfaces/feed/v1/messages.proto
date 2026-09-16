@@ -183,6 +183,38 @@ message ArticleInCollectionSortReq {
 message ArticleInCollectionSortRsp {
 }
 
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ArticleRecommendsPlusReq.java
+message ArticleRecommendsPlusReq {
+  repeated int64 aids = 1;
+  int64 cid = 2;
+  int32 sort = 3;
+  int64 pn = 4;
+  int64 ps = 5;
+  int32 from = 6;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ArticleRecommendsPlusRsp.java
+message ArticleRecommendsPlusRsp {
+  int64 aidsLen = 1;
+  RecommendPlus data = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ArticleRecommendsReq.java
+message ArticleRecommendsReq {
+  repeated int64 aids = 1;
+  int64 cid = 2;
+  int32 sort = 3;
+  int64 pn = 4;
+  int64 ps = 5;
+  int32 from = 6;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ArticleRecommendsRsp.java
+message ArticleRecommendsRsp {
+  int64 aidsLen = 1;
+  repeated RecommendArtWithLike data = 2;
+}
+
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/AttachCardButtonReq.java
 message AttachCardButtonReq {
   int32 curBtnStatus = 1;
@@ -202,6 +234,38 @@ message AttachCardButtonRsp {
   string toast = 2;
   string descUpdate = 3;
   int64 reserveUpdate = 4;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/AuthenMark.java
+message AuthenMark {
+  bool showAuthenMark = 1;
+  string markText = 2;
+  string markUrl = 3;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/Author.java
+message Author {
+  int64 mid = 1;
+  string name = 2;
+  string face = 3;
+  Pendant pendant = 4;
+  OfficialVerify officialVerify = 5;
+  Nameplate nameplate = 6;
+  VipInfo vip = 7;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/Banner.java
+message Banner {
+  int32 id = 1;
+  int32 index = 2;
+  string title = 3;
+  string image = 4;
+  string url = 5;
+  int32 resourceId = 6;
+  int32 serverType = 7;
+  int32 cmMark = 8;
+  bool isAd = 9;
+  string requestId = 10;
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/Category.java
@@ -393,6 +457,12 @@ message DelArticleDraftReq {
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DelArticleDraftRsp.java
 message DelArticleDraftRsp {
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/Dispute.java
+message Dispute {
+  string dispute = 1;
+  string disputeUrl = 2;
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/DynamicButtonClickReq.java
@@ -621,6 +691,23 @@ message HotSearchRsp_Item {
   string words = 1;
 }
 
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/Hotspot.java
+message Hotspot {
+  int64 id = 1;
+  string tag = 2;
+  string title = 3;
+  repeated int64 topArticles = 4;
+  bool icon = 5;
+  HotspotStats stats = 6;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/HotspotStats.java
+message HotspotStats {
+  int64 read = 1;
+  int64 reply = 2;
+  int64 count = 3;
+}
+
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/ICreateGoodsReplySyncReq.java
 message ICreateGoodsReplySyncReq {
   int64 uid = 1;
@@ -643,10 +730,95 @@ message InitCheckTribeeReq {
   int64 tribeeId = 2;
 }
 
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/Label.java
+message Label {
+  string path = 1;
+  string text = 2;
+  string labelTheme = 3;
+}
+
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/LbsLocation.java
 message LbsLocation {
   double lat = 1;
   double lng = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/List.java
+message List {
+  int64 id = 1;
+  int64 mid = 2;
+  string name = 3;
+  string imageUrl = 4;
+  int64 updateTime = 5;
+  int64 ctime = 6;
+  int64 publishTime = 7;
+  string summary = 8;
+  int64 words = 9;
+  int64 read = 10;
+  int64 articlesCount = 11;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/Media.java
+message Media {
+  int32 score = 1;
+  int64 mediaId = 2;
+  string title = 3;
+  string cover = 4;
+  string area = 5;
+  int32 typeId = 6;
+  string typeName = 7;
+  int32 spoiler = 8;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/Meta.java
+message Meta {
+  int64 id = 1;
+  Category category = 2;
+  repeated Category categories = 3;
+  string title = 4;
+  string summary = 5;
+  string bannerUrl = 6;
+  int32 templateId = 7;
+  int32 state = 8;
+  Author author = 9;
+  int32 reprint = 10;
+  repeated string imageUrls = 11;
+  int64 publishTime = 12;
+  int64 ctime = 13;
+  int64 mtime = 14;
+  Stats stats = 15;
+  repeated Tag tags = 16;
+  int32 attributes = 17;
+  string reason = 18;
+  int64 words = 19;
+  string dynamic = 20;
+  repeated string originImageUrls = 21;
+  List list = 22;
+  bool isLike = 23;
+  Media media = 24;
+  string applyTime = 25;
+  string checkTime = 26;
+  int32 original = 27;
+  int64 actId = 28;
+  Dispute dispute = 29;
+  AuthenMark authenMark = 30;
+  int64 coverAvid = 31;
+  TopVideoInfo topVideoInfo = 32;
+  int32 type = 33;
+  int32 checkState = 34;
+  int32 originTemplateId = 35;
+  int32 privatePub = 36;
+  repeated string contentPicList = 37;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/Nameplate.java
+message Nameplate {
+  int32 nid = 1;
+  string name = 2;
+  string image = 3;
+  string imageSmall = 4;
+  string level = 5;
+  string condition = 6;
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/NearbyPoiDetail.java
@@ -681,6 +853,12 @@ message NearbyPoiListReq {
 message NearbyPoiListRsp {
   bool hasMore = 1;
   repeated NearbyPoiListItem pois = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/OfficialVerify.java
+message OfficialVerify {
+  int64 type = 1;
+  string desc = 2;
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/OpusArticleDraftListReq.java
@@ -768,6 +946,14 @@ message OpusPublishTopTips {
   string closeText = 3;
 }
 
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/Pendant.java
+message Pendant {
+  int32 pid = 1;
+  string name = 2;
+  string image = 3;
+  int32 expire = 4;
+}
+
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/PoiDetail.java
 message PoiDetail {
   LbsLocation location = 1;
@@ -792,6 +978,33 @@ message PoiId {
 message PoiListItem {
   PoiDetail poiInfo = 1;
   int32 userCount = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/RankMeta.java
+message RankMeta {
+  Meta meta = 1;
+  bool attention = 2;
+  int64 score = 3;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/RecommendArtWithLike.java
+message RecommendArtWithLike {
+  Meta meta = 1;
+  int64 articleId = 2;
+  bool rec = 3;
+  bool recFlag = 4;
+  string recText = 5;
+  string recImageUrl = 6;
+  string viewUrl = 7;
+  int32 likeState = 8;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/RecommendPlus.java
+message RecommendPlus {
+  repeated Banner banners = 1;
+  repeated RecommendArtWithLike articles = 2;
+  repeated RankMeta ranks = 3;
+  repeated Hotspot hotspots = 4;
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/RecommendPoiReq.java
@@ -899,6 +1112,18 @@ message SetSpaceTopReq {
 message SetSpaceTopRsp {
 }
 
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/Stats.java
+message Stats {
+  int64 view = 1;
+  int64 favorite = 2;
+  int64 like = 3;
+  int64 dislike = 4;
+  int64 reply = 5;
+  int64 share = 6;
+  int64 coin = 7;
+  int64 dynamic = 8;
+}
+
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/SubmitCheckReq.java
 message SubmitCheckReq {
   com.bapis.bilibili.dynamic.common.CreateContent content = 1;
@@ -925,6 +1150,20 @@ message SuggestRsp {
   repeated string list = 1;
   string trackId = 2;
   string version = 3;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/Tag.java
+message Tag {
+  int64 tid = 1;
+  string name = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/TopVideoInfo.java
+message TopVideoInfo {
+  string bvid = 1;
+  string pic = 2;
+  string title = 3;
+  int64 cid = 4;
 }
 
 // Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/TribeePublishConfig.java
@@ -965,6 +1204,18 @@ message TribeeVisaInfo {
   string faceUrl = 4;
   string summary = 5;
   string bannerUrl = 6;
+}
+
+// Source: com/bapis/bilibili/dynamic/interfaces/feed/v1/VipInfo.java
+message VipInfo {
+  int32 type = 1;
+  int32 status = 2;
+  int64 dueDate = 3;
+  int32 vipPayType = 4;
+  int32 themeType = 5;
+  Label label = 6;
+  int32 avatarSubscript = 7;
+  string nicknameColor = 8;
 }
 
 
