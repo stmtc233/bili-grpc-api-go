@@ -210,6 +210,7 @@ message Content {
   RichText richText = 8;
   repeated Picture pictures = 9;
   double pictureScale = 10;
+  GoodsCardInfo cardInfo = 11;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/CursorReply.java
@@ -381,6 +382,30 @@ message FoldListResp {
 message Form {
   int32 type = 1;
   repeated QoeOption options = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/GoodsCardInfo.java
+message GoodsCardInfo {
+  string name = 1;
+  string jumpLink = 2;
+  string schemaUrl = 3;
+  int32 cardType = 4;
+  repeated string tradeDescs = 5;
+  string fromPlatform = 6;
+  repeated string descTags = 7;
+  string currentPrice = 8;
+  string oriPrice = 9;
+  string priceSymbol = 10;
+  string pricePrefix = 11;
+  string priceSuffix = 12;
+  repeated string purchaseBehaviorLabel = 13;
+  string sourceShop = 14;
+  string button = 15;
+  repeated string imageList = 16;
+  string cache = 17;
+  string goodsShowReport = 18;
+  string goodsClickReport = 19;
+  repeated string openWhiteList = 20;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/GoodsSearchItem.java
@@ -867,6 +892,7 @@ message Picture {
   string topRightIcon = 5;
   bool playGifThumbnail = 6;
   PictureBadge pictureBadge = 7;
+  string itemId = 8;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/PictureBadge.java

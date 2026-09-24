@@ -259,6 +259,8 @@ message AdContentExtraDto {
   com.bapis.bilibili.app.viewunite.v1.PauseBar endPageBar = 61;
   string endPagePausePageType = 62;
   PausedDynamicPage endPageDynamicPage = 63;
+  bool enableOpenDanmuku = 64;
+  bool miniappVideoCoexist = 65;
 }
 
 // Source: com/bapis/bilibili/ad/v1/AdCoverDto.java
@@ -605,6 +607,16 @@ message GiftCardInfo {
   repeated string iconUrls = 2;
 }
 
+// Source: com/bapis/bilibili/ad/v1/HeaderVideoComponent.java
+message HeaderVideoComponent {
+  AdAutoPlayVideoDto video = 1;
+  int32 autoPlayDelay = 2;
+  string jumpUrl = 3;
+  string callupUrl = 4;
+  WxProgramInfo wxProgramInfo = 5;
+  SubCardModule subcard = 6;
+}
+
 // Source: com/bapis/bilibili/ad/v1/IosGamePageRes.java
 message IosGamePageRes {
   string logo = 1;
@@ -909,6 +921,8 @@ message PauseAdLandingPageModule {
   PauseAdHeaderPictureComponent headerPictureComponent = 8;
   PauseAdCommentComponent commentComponent = 9;
   PauseAdQualityInfoComponent qualityInfoComponent = 10;
+  HeaderVideoComponent headerVideoComponent = 11;
+  SummaryComponent summaryComponent = 12;
 }
 
 // Source: com/bapis/bilibili/ad/v1/PauseAdProductComponent.java
@@ -1066,6 +1080,13 @@ message SubCardModule {
   repeated PauseAdDecisionInfo decisionInfos = 32;
   repeated string clickUrls = 33;
   repeated string showUrls = 34;
+}
+
+// Source: com/bapis/bilibili/ad/v1/SummaryComponent.java
+message SummaryComponent {
+  string title = 1;
+  string desc = 2;
+  string highlightText = 3;
 }
 
 // Source: com/bapis/bilibili/ad/v1/Tab2ExtraDto.java

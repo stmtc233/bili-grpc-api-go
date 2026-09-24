@@ -58,6 +58,11 @@ enum AdditionalType {
   additional_type_content_up = 15;
 }
 
+enum AdditionEsport_ItemCase {
+  ITEM_NOT_SET = 0;
+  ADDITION_ESPORT_MOBA = 2;
+}
+
 enum AdditionVoteState {
   addition_vote_state_none = 0;
   addition_vote_state_open = 1;
@@ -915,11 +920,6 @@ message AdditionEsport {
   }
   string type = 3;
   string cardType = 4;
-  enum ItemCase {
-    ITEM_NOT_SET = 0;
-    ADDITION_ESPORT_MOBA = 2;
-  }
-
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/AdditionEsportMoba.java
@@ -2209,6 +2209,7 @@ message DynMixUpListViewMoreReply {
   repeated SortType sortTypes = 3;
   bool showMoreSortTypes = 4;
   int32 defaultSortType = 5;
+  bool bstarTransferState = 6;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/DynMixUpListViewMoreReq.java

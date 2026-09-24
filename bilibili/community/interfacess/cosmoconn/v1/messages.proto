@@ -148,6 +148,16 @@ message AdminSortTribeeCategoriesReq {
 message AdminSortTribeeCategoriesRsp {
 }
 
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminSortTribeeTopThreadsReq.java
+message AdminSortTribeeTopThreadsReq {
+  repeated string dynIdStrs = 1;
+  int64 tribeeId = 2;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminSortTribeeTopThreadsRsp.java
+message AdminSortTribeeTopThreadsRsp {
+}
+
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminUpdateTribeeAdminReq.java
 message AdminUpdateTribeeAdminReq {
   int64 tribeeId = 1;
@@ -562,21 +572,8 @@ message TribeeCreatorIdentityConfig {
   int64 candidateReadyBeforeStartSeconds = 6;
   int64 reviewDeadlineBeforeStartSeconds = 7;
   string timezone = 8;
-  TribeeCreatorIdentityBadgeConfig baseBadge = 9;
   TribeeCreatorIdentityBadgeConfig creatorBadge = 10;
-  bool modBadgeEnabled = 11;
-  TribeeCreatorIdentityBadgeConfig modBadge = 12;
   bool creatorBadgeEnabled = 13;
-  TribeeIdentityBadgeDisplayRule detailAuthorBadgeRule = 14;
-  TribeeIdentityBadgeDisplayRule commentBadgeRule = 15;
-  TribeeIdentityBadgeDisplayRule visaBadgeRule = 16;
-}
-
-// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeCreatorIdentityGlobalConfig.java
-message TribeeCreatorIdentityGlobalConfig {
-  TribeeIdentityBadgeDisplayRule detailAuthorBadgeRule = 1;
-  TribeeIdentityBadgeDisplayRule commentBadgeRule = 2;
-  TribeeIdentityBadgeDisplayRule visaBadgeRule = 3;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeDraftListItem.java
@@ -638,6 +635,16 @@ message TribeeDynClickReq {
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeDynClickRsp.java
 message TribeeDynClickRsp {
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeIdentityBadgeConfig.java
+message TribeeIdentityBadgeConfig {
+  TribeeCreatorIdentityBadgeConfig baseBadge = 1;
+  bool modBadgeEnabled = 2;
+  TribeeCreatorIdentityBadgeConfig modBadge = 3;
+  TribeeIdentityBadgeDisplayRule detailAuthorBadgeRule = 5;
+  TribeeIdentityBadgeDisplayRule commentBadgeRule = 6;
+  TribeeIdentityBadgeDisplayRule visaBadgeRule = 7;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeIdentityBadgeDisplayRule.java
@@ -764,15 +771,15 @@ message UpsertTribeeCreatorIdentityConfigRsp {
   TribeeCreatorIdentityConfig config = 1;
 }
 
-// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/UpsertTribeeCreatorIdentityGlobalConfigReq.java
-message UpsertTribeeCreatorIdentityGlobalConfigReq {
-  TribeeCreatorIdentityGlobalConfig config = 1;
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/UpsertTribeeIdentityBadgeConfigReq.java
+message UpsertTribeeIdentityBadgeConfigReq {
+  TribeeIdentityBadgeConfig config = 1;
   string reason = 2;
 }
 
-// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/UpsertTribeeCreatorIdentityGlobalConfigRsp.java
-message UpsertTribeeCreatorIdentityGlobalConfigRsp {
-  TribeeCreatorIdentityGlobalConfig config = 1;
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/UpsertTribeeIdentityBadgeConfigRsp.java
+message UpsertTribeeIdentityBadgeConfigRsp {
+  TribeeIdentityBadgeConfig config = 1;
 }
 
 
