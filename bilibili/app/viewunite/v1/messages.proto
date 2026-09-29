@@ -38,6 +38,11 @@ enum ECode {
   CODE_TEENAGER = 78301;
 }
 
+enum EndCmType {
+  END_CM_DEFAULT = 0;
+  END_CM_HALF = 1;
+}
+
 enum JumpShowType {
   JST_DEFAULT = 0;
   JST_FULLSCREEN = 1;
@@ -997,6 +1002,19 @@ message ViewBase {
   Translation translation = 6;
 }
 
+// Source: com/bapis/bilibili/app/viewunite/v1/ViewEndHalf.java
+message ViewEndHalf {
+  PauseType type = 1;
+  oneof oneof_0 {
+    PauseAds ads = 2;
+  }
+  enum DataCase {
+    DATA_NOT_SET = 0;
+    ADS = 2;
+  }
+
+}
+
 // Source: com/bapis/bilibili/app/viewunite/v1/ViewEndPageCard.java
 message ViewEndPageCard {
   com.bapis.bilibili.app.viewunite.common.RelateCard relate = 1;
@@ -1006,6 +1024,8 @@ message ViewEndPageCard {
 // Source: com/bapis/bilibili/app/viewunite/v1/ViewEndPageReply.java
 message ViewEndPageReply {
   repeated ViewEndPageCard relates = 1;
+  ViewEndHalf half = 2;
+  EndCmType type = 3;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/v1/ViewEndPageReq.java

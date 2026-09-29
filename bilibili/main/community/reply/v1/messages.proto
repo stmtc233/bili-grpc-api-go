@@ -210,6 +210,7 @@ message Content {
   RichText richText = 8;
   repeated Picture pictures = 9;
   double pictureScale = 10;
+  GoodsCardInfo cardInfo = 11;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/CursorReply.java
@@ -381,6 +382,30 @@ message FoldListResp {
 message Form {
   int32 type = 1;
   repeated QoeOption options = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/GoodsCardInfo.java
+message GoodsCardInfo {
+  string name = 1;
+  string jumpLink = 2;
+  string schemaUrl = 3;
+  int32 cardType = 4;
+  repeated string tradeDescs = 5;
+  string fromPlatform = 6;
+  repeated string descTags = 7;
+  string currentPrice = 8;
+  string oriPrice = 9;
+  string priceSymbol = 10;
+  string pricePrefix = 11;
+  string priceSuffix = 12;
+  repeated string purchaseBehaviorLabel = 13;
+  string sourceShop = 14;
+  string button = 15;
+  repeated string imageList = 16;
+  string cache = 17;
+  string goodsShowReport = 18;
+  string goodsClickReport = 19;
+  repeated string openWhiteList = 20;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/GoodsSearchItem.java
@@ -587,6 +612,7 @@ message MemberV2 {
   MemberV2_Senior senior = 7;
   MemberV2_Contractor contractor = 8;
   com.bapis.bilibili.vas.garb.model.UserSailing userSailing = 9;
+  MemberV2_Tribee tribee = 10;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/MemberV2.java
@@ -693,6 +719,34 @@ message MemberV2_Senior {
     Expired = 4;
   }
 
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/MemberV2.java
+message MemberV2_Tribee {
+  MemberV2_Tribee_Base base = 1;
+  MemberV2_Tribee_Creator creator = 2;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/MemberV2.java
+message MemberV2_Tribee_Base {
+  string icon = 1;
+  string text = 2;
+  ThemeColor backgroundColor = 3;
+  ThemeColor textColor = 4;
+  ThemeColor iconTintColor = 5;
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/MemberV2.java
+message MemberV2_Tribee_Creator {
+  string icon = 1;
+  string title = 2;
+  string subtitle = 3;
+  string userAvatarUrl = 4;
+  string userName = 5;
+  string description = 6;
+  string bottomText = 7;
+  string leftIcon = 8;
+  string rightIcon = 9;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/MemberV2.java
@@ -838,6 +892,7 @@ message Picture {
   string topRightIcon = 5;
   bool playGifThumbnail = 6;
   PictureBadge pictureBadge = 7;
+  string itemId = 8;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/PictureBadge.java
@@ -1562,6 +1617,12 @@ message TextStyle {
     BOLD = 1;
   }
 
+}
+
+// Source: com/bapis/bilibili/main/community/reply/v1/ThemeColor.java
+message ThemeColor {
+  string light = 1;
+  string dark = 2;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/Topic.java

@@ -148,6 +148,16 @@ message AdminSortTribeeCategoriesReq {
 message AdminSortTribeeCategoriesRsp {
 }
 
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminSortTribeeTopThreadsReq.java
+message AdminSortTribeeTopThreadsReq {
+  repeated string dynIdStrs = 1;
+  int64 tribeeId = 2;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminSortTribeeTopThreadsRsp.java
+message AdminSortTribeeTopThreadsRsp {
+}
+
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminUpdateTribeeAdminReq.java
 message AdminUpdateTribeeAdminReq {
   int64 tribeeId = 1;
@@ -183,6 +193,19 @@ message AdminUpdateTribeeInfoReq {
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminUpdateTribeeInfoRsp.java
 message AdminUpdateTribeeInfoRsp {
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/ApproveTribeeCreatorCandidatesReq.java
+message ApproveTribeeCreatorCandidatesReq {
+  int64 tribeeId = 1;
+  string periodId = 2;
+  repeated int64 uids = 3;
+  string reason = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/ApproveTribeeCreatorCandidatesRsp.java
+message ApproveTribeeCreatorCandidatesRsp {
+  int64 approvedCount = 1;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/BatchAddTribeeQuizQuestionReq.java
@@ -303,6 +326,19 @@ message Entity {
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/EntityType.java
 message EntityType {
   EntityBiz biz = 1;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/ExcludeTribeeCreatorCandidatesReq.java
+message ExcludeTribeeCreatorCandidatesReq {
+  int64 tribeeId = 1;
+  string periodId = 2;
+  repeated int64 uids = 3;
+  string reason = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/ExcludeTribeeCreatorCandidatesRsp.java
+message ExcludeTribeeCreatorCandidatesRsp {
+  int64 excludedCount = 1;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/FinishTribeeQuizReq.java
@@ -518,6 +554,28 @@ message ToggleTribeeRsp {
   TribeeMemberInfo memberInfo = 1;
 }
 
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeCreatorIdentityBadgeConfig.java
+message TribeeCreatorIdentityBadgeConfig {
+  string text = 1;
+  string iconUrl = 2;
+  string subline = 3;
+  string description = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeCreatorIdentityConfig.java
+message TribeeCreatorIdentityConfig {
+  int64 tribeeId = 1;
+  bool enabled = 2;
+  int32 settlementCycle = 3;
+  int32 statisticsWindowDays = 4;
+  int64 firstPeriodStartAt = 5;
+  int64 candidateReadyBeforeStartSeconds = 6;
+  int64 reviewDeadlineBeforeStartSeconds = 7;
+  string timezone = 8;
+  TribeeCreatorIdentityBadgeConfig creatorBadge = 10;
+  bool creatorBadgeEnabled = 13;
+}
+
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeDraftListItem.java
 message TribeeDraftListItem {
   int64 draftId = 1;
@@ -577,6 +635,21 @@ message TribeeDynClickReq {
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeDynClickRsp.java
 message TribeeDynClickRsp {
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeIdentityBadgeConfig.java
+message TribeeIdentityBadgeConfig {
+  TribeeCreatorIdentityBadgeConfig baseBadge = 1;
+  bool modBadgeEnabled = 2;
+  TribeeCreatorIdentityBadgeConfig modBadge = 3;
+  TribeeIdentityBadgeDisplayRule detailAuthorBadgeRule = 5;
+  TribeeIdentityBadgeDisplayRule commentBadgeRule = 6;
+  TribeeIdentityBadgeDisplayRule visaBadgeRule = 7;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeIdentityBadgeDisplayRule.java
+message TribeeIdentityBadgeDisplayRule {
+  repeated int32 allowedTypes = 1;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeInviteCodeNotificationsFeedbackReq.java
@@ -685,6 +758,28 @@ message UpdateTribeeQuizQuestionReq {
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/UpdateTribeeQuizQuestionRsp.java
 message UpdateTribeeQuizQuestionRsp {
   int32 switchStatus = 1;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/UpsertTribeeCreatorIdentityConfigReq.java
+message UpsertTribeeCreatorIdentityConfigReq {
+  TribeeCreatorIdentityConfig config = 1;
+  string reason = 2;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/UpsertTribeeCreatorIdentityConfigRsp.java
+message UpsertTribeeCreatorIdentityConfigRsp {
+  TribeeCreatorIdentityConfig config = 1;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/UpsertTribeeIdentityBadgeConfigReq.java
+message UpsertTribeeIdentityBadgeConfigReq {
+  TribeeIdentityBadgeConfig config = 1;
+  string reason = 2;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/UpsertTribeeIdentityBadgeConfigRsp.java
+message UpsertTribeeIdentityBadgeConfigRsp {
+  TribeeIdentityBadgeConfig config = 1;
 }
 
 
