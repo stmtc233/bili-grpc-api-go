@@ -20,6 +20,11 @@ enum LiveSource {
   LiveSourceBizTrigger = 1;
 }
 
+enum PlaylistPlayType {
+  PLAYLIST_PLAY_TYPE_UNKNOWN = 0;
+  PLAYLIST_PLAY_TYPE_SINGLE = 1;
+}
+
 enum SubtitleAiStatus {
   None = 0;
   Exposure = 1;
@@ -281,6 +286,7 @@ message CardViewV2Reply {
   Ogv186PlayControl ogv186PlayControl = 55;
   repeated OgvBottomButton bottomButtons = 56;
   ExtendedDesc extendedDesc = 57;
+  ContinueWatch continueWatch = 58;
 }
 
 // Source: com/bapis/bilibili/tv/CardViewV2Req.java
@@ -319,6 +325,7 @@ message CardViewV2Req {
   string goodsCid = 32;
   int32 needRecommend = 33;
   int32 entryScene = 34;
+  PlaylistPlayType playlistPlayType = 35;
 }
 
 // Source: com/bapis/bilibili/tv/Catalog.java
@@ -517,6 +524,19 @@ message CommonCardResp {
   AuthInfo projToken = 44;
   ChargingExt chargingExt = 45;
   ChannelExt channelExt = 46;
+}
+
+// Source: com/bapis/bilibili/tv/ContinueWatch.java
+message ContinueWatch {
+  int64 videoId = 1;
+  int64 progress = 2;
+  string title = 3;
+  string longTitle = 4;
+  string message_ = 5;
+  string buttonText = 6;
+  int64 durationMs = 7;
+  PlayurlArgs playurlArgs = 8;
+  int64 aid = 9;
 }
 
 // Source: com/bapis/bilibili/tv/CookieBean.java

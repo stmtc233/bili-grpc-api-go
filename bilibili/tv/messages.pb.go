@@ -166,6 +166,52 @@ func (LiveSource) EnumDescriptor() ([]byte, []int) {
 	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{2}
 }
 
+type PlaylistPlayType int32
+
+const (
+	PlaylistPlayType_PLAYLIST_PLAY_TYPE_UNKNOWN PlaylistPlayType = 0
+	PlaylistPlayType_PLAYLIST_PLAY_TYPE_SINGLE  PlaylistPlayType = 1
+)
+
+// Enum value maps for PlaylistPlayType.
+var (
+	PlaylistPlayType_name = map[int32]string{
+		0: "PLAYLIST_PLAY_TYPE_UNKNOWN",
+		1: "PLAYLIST_PLAY_TYPE_SINGLE",
+	}
+	PlaylistPlayType_value = map[string]int32{
+		"PLAYLIST_PLAY_TYPE_UNKNOWN": 0,
+		"PLAYLIST_PLAY_TYPE_SINGLE":  1,
+	}
+)
+
+func (x PlaylistPlayType) Enum() *PlaylistPlayType {
+	p := new(PlaylistPlayType)
+	*p = x
+	return p
+}
+
+func (x PlaylistPlayType) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (PlaylistPlayType) Descriptor() protoreflect.EnumDescriptor {
+	return file_bilibili_tv_messages_proto_enumTypes[3].Descriptor()
+}
+
+func (PlaylistPlayType) Type() protoreflect.EnumType {
+	return &file_bilibili_tv_messages_proto_enumTypes[3]
+}
+
+func (x PlaylistPlayType) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use PlaylistPlayType.Descriptor instead.
+func (PlaylistPlayType) EnumDescriptor() ([]byte, []int) {
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{3}
+}
+
 type SubtitleAiStatus int32
 
 const (
@@ -199,11 +245,11 @@ func (x SubtitleAiStatus) String() string {
 }
 
 func (SubtitleAiStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_bilibili_tv_messages_proto_enumTypes[3].Descriptor()
+	return file_bilibili_tv_messages_proto_enumTypes[4].Descriptor()
 }
 
 func (SubtitleAiStatus) Type() protoreflect.EnumType {
-	return &file_bilibili_tv_messages_proto_enumTypes[3]
+	return &file_bilibili_tv_messages_proto_enumTypes[4]
 }
 
 func (x SubtitleAiStatus) Number() protoreflect.EnumNumber {
@@ -212,7 +258,7 @@ func (x SubtitleAiStatus) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use SubtitleAiStatus.Descriptor instead.
 func (SubtitleAiStatus) EnumDescriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{3}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{4}
 }
 
 type SubtitleAiType int32
@@ -245,11 +291,11 @@ func (x SubtitleAiType) String() string {
 }
 
 func (SubtitleAiType) Descriptor() protoreflect.EnumDescriptor {
-	return file_bilibili_tv_messages_proto_enumTypes[4].Descriptor()
+	return file_bilibili_tv_messages_proto_enumTypes[5].Descriptor()
 }
 
 func (SubtitleAiType) Type() protoreflect.EnumType {
-	return &file_bilibili_tv_messages_proto_enumTypes[4]
+	return &file_bilibili_tv_messages_proto_enumTypes[5]
 }
 
 func (x SubtitleAiType) Number() protoreflect.EnumNumber {
@@ -258,7 +304,7 @@ func (x SubtitleAiType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use SubtitleAiType.Descriptor instead.
 func (SubtitleAiType) EnumDescriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{4}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{5}
 }
 
 type SubtitleRole int32
@@ -294,11 +340,11 @@ func (x SubtitleRole) String() string {
 }
 
 func (SubtitleRole) Descriptor() protoreflect.EnumDescriptor {
-	return file_bilibili_tv_messages_proto_enumTypes[5].Descriptor()
+	return file_bilibili_tv_messages_proto_enumTypes[6].Descriptor()
 }
 
 func (SubtitleRole) Type() protoreflect.EnumType {
-	return &file_bilibili_tv_messages_proto_enumTypes[5]
+	return &file_bilibili_tv_messages_proto_enumTypes[6]
 }
 
 func (x SubtitleRole) Number() protoreflect.EnumNumber {
@@ -307,7 +353,7 @@ func (x SubtitleRole) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use SubtitleRole.Descriptor instead.
 func (SubtitleRole) EnumDescriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{5}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{6}
 }
 
 type SubtitleType int32
@@ -340,11 +386,11 @@ func (x SubtitleType) String() string {
 }
 
 func (SubtitleType) Descriptor() protoreflect.EnumDescriptor {
-	return file_bilibili_tv_messages_proto_enumTypes[6].Descriptor()
+	return file_bilibili_tv_messages_proto_enumTypes[7].Descriptor()
 }
 
 func (SubtitleType) Type() protoreflect.EnumType {
-	return &file_bilibili_tv_messages_proto_enumTypes[6]
+	return &file_bilibili_tv_messages_proto_enumTypes[7]
 }
 
 func (x SubtitleType) Number() protoreflect.EnumNumber {
@@ -353,7 +399,7 @@ func (x SubtitleType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use SubtitleType.Descriptor instead.
 func (SubtitleType) EnumDescriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{6}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{7}
 }
 
 // Source: com/bapis/bilibili/tv/AccessToken.java
@@ -1987,6 +2033,7 @@ type CardViewV2Reply struct {
 	Ogv186PlayControl          *Ogv186PlayControl      `protobuf:"bytes,55,opt,name=ogv186PlayControl,proto3" json:"ogv186PlayControl,omitempty"`
 	BottomButtons              []*OgvBottomButton      `protobuf:"bytes,56,rep,name=bottomButtons,proto3" json:"bottomButtons,omitempty"`
 	ExtendedDesc               *ExtendedDesc           `protobuf:"bytes,57,opt,name=extendedDesc,proto3" json:"extendedDesc,omitempty"`
+	ContinueWatch              *ContinueWatch          `protobuf:"bytes,58,opt,name=continueWatch,proto3" json:"continueWatch,omitempty"`
 }
 
 func (x *CardViewV2Reply) Reset() {
@@ -2420,46 +2467,54 @@ func (x *CardViewV2Reply) GetExtendedDesc() *ExtendedDesc {
 	return nil
 }
 
+func (x *CardViewV2Reply) GetContinueWatch() *ContinueWatch {
+	if x != nil {
+		return x.ContinueWatch
+	}
+	return nil
+}
+
 // Source: com/bapis/bilibili/tv/CardViewV2Req.java
 type CardViewV2Req struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ViewType        int64   `protobuf:"varint,1,opt,name=viewType,proto3" json:"viewType,omitempty"`
-	CardType        int64   `protobuf:"varint,2,opt,name=cardType,proto3" json:"cardType,omitempty"`
-	ObjectId        int64   `protobuf:"varint,3,opt,name=objectId,proto3" json:"objectId,omitempty"`
-	FromSpmid       string  `protobuf:"bytes,4,opt,name=fromSpmid,proto3" json:"fromSpmid,omitempty"`
-	Spmid           string  `protobuf:"bytes,5,opt,name=spmid,proto3" json:"spmid,omitempty"`
-	AutoPlay        string  `protobuf:"bytes,6,opt,name=autoPlay,proto3" json:"autoPlay,omitempty"`
-	SearchTrace     int64   `protobuf:"varint,7,opt,name=searchTrace,proto3" json:"searchTrace,omitempty"`
-	Keyword         string  `protobuf:"bytes,8,opt,name=keyword,proto3" json:"keyword,omitempty"`
-	Term            string  `protobuf:"bytes,9,opt,name=term,proto3" json:"term,omitempty"`
-	KeywordFrom     string  `protobuf:"bytes,10,opt,name=keywordFrom,proto3" json:"keywordFrom,omitempty"`
-	Extra           string  `protobuf:"bytes,11,opt,name=extra,proto3" json:"extra,omitempty"`
-	AccessKey       string  `protobuf:"bytes,12,opt,name=accessKey,proto3" json:"accessKey,omitempty"`
-	SugFrom         string  `protobuf:"bytes,13,opt,name=sugFrom,proto3" json:"sugFrom,omitempty"`
-	IsAd            bool    `protobuf:"varint,14,opt,name=isAd,proto3" json:"isAd,omitempty"`
-	VideoId         int64   `protobuf:"varint,15,opt,name=videoId,proto3" json:"videoId,omitempty"`
-	Progress        int64   `protobuf:"varint,16,opt,name=progress,proto3" json:"progress,omitempty"`
-	SerialAid       int64   `protobuf:"varint,17,opt,name=serialAid,proto3" json:"serialAid,omitempty"`
-	Fourk           int32   `protobuf:"varint,18,opt,name=fourk,proto3" json:"fourk,omitempty"`
-	Eightk          int32   `protobuf:"varint,19,opt,name=eightk,proto3" json:"eightk,omitempty"`
-	UpMid           int64   `protobuf:"varint,20,opt,name=upMid,proto3" json:"upMid,omitempty"`
-	PlayStyle       int64   `protobuf:"varint,21,opt,name=playStyle,proto3" json:"playStyle,omitempty"`
-	Device          *Device `protobuf:"bytes,22,opt,name=device,proto3" json:"device,omitempty"`
-	ComeFromOutside int32   `protobuf:"varint,23,opt,name=comeFromOutside,proto3" json:"comeFromOutside,omitempty"`
-	Stay            int32   `protobuf:"varint,24,opt,name=stay,proto3" json:"stay,omitempty"`
-	ChildLock       int32   `protobuf:"varint,25,opt,name=childLock,proto3" json:"childLock,omitempty"`
-	ProjNew         bool    `protobuf:"varint,26,opt,name=projNew,proto3" json:"projNew,omitempty"`
-	MobiAccessKey   string  `protobuf:"bytes,27,opt,name=mobiAccessKey,proto3" json:"mobiAccessKey,omitempty"`
-	ProjCode        string  `protobuf:"bytes,28,opt,name=projCode,proto3" json:"projCode,omitempty"`
-	DeviceId        string  `protobuf:"bytes,29,opt,name=deviceId,proto3" json:"deviceId,omitempty"`
-	DeviceName      string  `protobuf:"bytes,30,opt,name=deviceName,proto3" json:"deviceName,omitempty"`
-	Separate        int32   `protobuf:"varint,31,opt,name=separate,proto3" json:"separate,omitempty"`
-	GoodsCid        string  `protobuf:"bytes,32,opt,name=goodsCid,proto3" json:"goodsCid,omitempty"`
-	NeedRecommend   int32   `protobuf:"varint,33,opt,name=needRecommend,proto3" json:"needRecommend,omitempty"`
-	EntryScene      int32   `protobuf:"varint,34,opt,name=entryScene,proto3" json:"entryScene,omitempty"`
+	ViewType         int64            `protobuf:"varint,1,opt,name=viewType,proto3" json:"viewType,omitempty"`
+	CardType         int64            `protobuf:"varint,2,opt,name=cardType,proto3" json:"cardType,omitempty"`
+	ObjectId         int64            `protobuf:"varint,3,opt,name=objectId,proto3" json:"objectId,omitempty"`
+	FromSpmid        string           `protobuf:"bytes,4,opt,name=fromSpmid,proto3" json:"fromSpmid,omitempty"`
+	Spmid            string           `protobuf:"bytes,5,opt,name=spmid,proto3" json:"spmid,omitempty"`
+	AutoPlay         string           `protobuf:"bytes,6,opt,name=autoPlay,proto3" json:"autoPlay,omitempty"`
+	SearchTrace      int64            `protobuf:"varint,7,opt,name=searchTrace,proto3" json:"searchTrace,omitempty"`
+	Keyword          string           `protobuf:"bytes,8,opt,name=keyword,proto3" json:"keyword,omitempty"`
+	Term             string           `protobuf:"bytes,9,opt,name=term,proto3" json:"term,omitempty"`
+	KeywordFrom      string           `protobuf:"bytes,10,opt,name=keywordFrom,proto3" json:"keywordFrom,omitempty"`
+	Extra            string           `protobuf:"bytes,11,opt,name=extra,proto3" json:"extra,omitempty"`
+	AccessKey        string           `protobuf:"bytes,12,opt,name=accessKey,proto3" json:"accessKey,omitempty"`
+	SugFrom          string           `protobuf:"bytes,13,opt,name=sugFrom,proto3" json:"sugFrom,omitempty"`
+	IsAd             bool             `protobuf:"varint,14,opt,name=isAd,proto3" json:"isAd,omitempty"`
+	VideoId          int64            `protobuf:"varint,15,opt,name=videoId,proto3" json:"videoId,omitempty"`
+	Progress         int64            `protobuf:"varint,16,opt,name=progress,proto3" json:"progress,omitempty"`
+	SerialAid        int64            `protobuf:"varint,17,opt,name=serialAid,proto3" json:"serialAid,omitempty"`
+	Fourk            int32            `protobuf:"varint,18,opt,name=fourk,proto3" json:"fourk,omitempty"`
+	Eightk           int32            `protobuf:"varint,19,opt,name=eightk,proto3" json:"eightk,omitempty"`
+	UpMid            int64            `protobuf:"varint,20,opt,name=upMid,proto3" json:"upMid,omitempty"`
+	PlayStyle        int64            `protobuf:"varint,21,opt,name=playStyle,proto3" json:"playStyle,omitempty"`
+	Device           *Device          `protobuf:"bytes,22,opt,name=device,proto3" json:"device,omitempty"`
+	ComeFromOutside  int32            `protobuf:"varint,23,opt,name=comeFromOutside,proto3" json:"comeFromOutside,omitempty"`
+	Stay             int32            `protobuf:"varint,24,opt,name=stay,proto3" json:"stay,omitempty"`
+	ChildLock        int32            `protobuf:"varint,25,opt,name=childLock,proto3" json:"childLock,omitempty"`
+	ProjNew          bool             `protobuf:"varint,26,opt,name=projNew,proto3" json:"projNew,omitempty"`
+	MobiAccessKey    string           `protobuf:"bytes,27,opt,name=mobiAccessKey,proto3" json:"mobiAccessKey,omitempty"`
+	ProjCode         string           `protobuf:"bytes,28,opt,name=projCode,proto3" json:"projCode,omitempty"`
+	DeviceId         string           `protobuf:"bytes,29,opt,name=deviceId,proto3" json:"deviceId,omitempty"`
+	DeviceName       string           `protobuf:"bytes,30,opt,name=deviceName,proto3" json:"deviceName,omitempty"`
+	Separate         int32            `protobuf:"varint,31,opt,name=separate,proto3" json:"separate,omitempty"`
+	GoodsCid         string           `protobuf:"bytes,32,opt,name=goodsCid,proto3" json:"goodsCid,omitempty"`
+	NeedRecommend    int32            `protobuf:"varint,33,opt,name=needRecommend,proto3" json:"needRecommend,omitempty"`
+	EntryScene       int32            `protobuf:"varint,34,opt,name=entryScene,proto3" json:"entryScene,omitempty"`
+	PlaylistPlayType PlaylistPlayType `protobuf:"varint,35,opt,name=playlistPlayType,proto3,enum=com.bapis.bilibili.tv.PlaylistPlayType" json:"playlistPlayType,omitempty"`
 }
 
 func (x *CardViewV2Req) Reset() {
@@ -2730,6 +2785,13 @@ func (x *CardViewV2Req) GetEntryScene() int32 {
 		return x.EntryScene
 	}
 	return 0
+}
+
+func (x *CardViewV2Req) GetPlaylistPlayType() PlaylistPlayType {
+	if x != nil {
+		return x.PlaylistPlayType
+	}
+	return PlaylistPlayType_PLAYLIST_PLAY_TYPE_UNKNOWN
 }
 
 // Source: com/bapis/bilibili/tv/Catalog.java
@@ -4436,6 +4498,118 @@ func (x *CommonCardResp) GetChannelExt() *ChannelExt {
 	return nil
 }
 
+// Source: com/bapis/bilibili/tv/ContinueWatch.java
+type ContinueWatch struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	VideoId     int64        `protobuf:"varint,1,opt,name=videoId,proto3" json:"videoId,omitempty"`
+	Progress    int64        `protobuf:"varint,2,opt,name=progress,proto3" json:"progress,omitempty"`
+	Title       string       `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	LongTitle   string       `protobuf:"bytes,4,opt,name=longTitle,proto3" json:"longTitle,omitempty"`
+	Message_    string       `protobuf:"bytes,5,opt,name=message_,json=message,proto3" json:"message_,omitempty"`
+	ButtonText  string       `protobuf:"bytes,6,opt,name=buttonText,proto3" json:"buttonText,omitempty"`
+	DurationMs  int64        `protobuf:"varint,7,opt,name=durationMs,proto3" json:"durationMs,omitempty"`
+	PlayurlArgs *PlayurlArgs `protobuf:"bytes,8,opt,name=playurlArgs,proto3" json:"playurlArgs,omitempty"`
+	Aid         int64        `protobuf:"varint,9,opt,name=aid,proto3" json:"aid,omitempty"`
+}
+
+func (x *ContinueWatch) Reset() {
+	*x = ContinueWatch{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_bilibili_tv_messages_proto_msgTypes[33]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ContinueWatch) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ContinueWatch) ProtoMessage() {}
+
+func (x *ContinueWatch) ProtoReflect() protoreflect.Message {
+	mi := &file_bilibili_tv_messages_proto_msgTypes[33]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ContinueWatch.ProtoReflect.Descriptor instead.
+func (*ContinueWatch) Descriptor() ([]byte, []int) {
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{33}
+}
+
+func (x *ContinueWatch) GetVideoId() int64 {
+	if x != nil {
+		return x.VideoId
+	}
+	return 0
+}
+
+func (x *ContinueWatch) GetProgress() int64 {
+	if x != nil {
+		return x.Progress
+	}
+	return 0
+}
+
+func (x *ContinueWatch) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *ContinueWatch) GetLongTitle() string {
+	if x != nil {
+		return x.LongTitle
+	}
+	return ""
+}
+
+func (x *ContinueWatch) GetMessage_() string {
+	if x != nil {
+		return x.Message_
+	}
+	return ""
+}
+
+func (x *ContinueWatch) GetButtonText() string {
+	if x != nil {
+		return x.ButtonText
+	}
+	return ""
+}
+
+func (x *ContinueWatch) GetDurationMs() int64 {
+	if x != nil {
+		return x.DurationMs
+	}
+	return 0
+}
+
+func (x *ContinueWatch) GetPlayurlArgs() *PlayurlArgs {
+	if x != nil {
+		return x.PlayurlArgs
+	}
+	return nil
+}
+
+func (x *ContinueWatch) GetAid() int64 {
+	if x != nil {
+		return x.Aid
+	}
+	return 0
+}
+
 // Source: com/bapis/bilibili/tv/CookieBean.java
 type CookieBean struct {
 	state         protoimpl.MessageState
@@ -4451,7 +4625,7 @@ type CookieBean struct {
 func (x *CookieBean) Reset() {
 	*x = CookieBean{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[33]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[34]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4464,7 +4638,7 @@ func (x *CookieBean) String() string {
 func (*CookieBean) ProtoMessage() {}
 
 func (x *CookieBean) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[33]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[34]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4477,7 +4651,7 @@ func (x *CookieBean) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CookieBean.ProtoReflect.Descriptor instead.
 func (*CookieBean) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{33}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{34}
 }
 
 func (x *CookieBean) GetName() string {
@@ -4521,7 +4695,7 @@ type CookieInfo struct {
 func (x *CookieInfo) Reset() {
 	*x = CookieInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[34]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[35]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4534,7 +4708,7 @@ func (x *CookieInfo) String() string {
 func (*CookieInfo) ProtoMessage() {}
 
 func (x *CookieInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[34]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[35]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4547,7 +4721,7 @@ func (x *CookieInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CookieInfo.ProtoReflect.Descriptor instead.
 func (*CookieInfo) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{34}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{35}
 }
 
 func (x *CookieInfo) GetCookies() []*CookieBean {
@@ -4576,7 +4750,7 @@ type DanmakuAIFlag struct {
 func (x *DanmakuAIFlag) Reset() {
 	*x = DanmakuAIFlag{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[35]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[36]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4589,7 +4763,7 @@ func (x *DanmakuAIFlag) String() string {
 func (*DanmakuAIFlag) ProtoMessage() {}
 
 func (x *DanmakuAIFlag) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[35]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[36]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4602,7 +4776,7 @@ func (x *DanmakuAIFlag) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DanmakuAIFlag.ProtoReflect.Descriptor instead.
 func (*DanmakuAIFlag) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{35}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{36}
 }
 
 func (x *DanmakuAIFlag) GetDmFlags() []*DanmakuFlag {
@@ -4642,7 +4816,7 @@ type DanmakuElem struct {
 func (x *DanmakuElem) Reset() {
 	*x = DanmakuElem{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[36]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[37]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4655,7 +4829,7 @@ func (x *DanmakuElem) String() string {
 func (*DanmakuElem) ProtoMessage() {}
 
 func (x *DanmakuElem) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[36]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[37]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4668,7 +4842,7 @@ func (x *DanmakuElem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DanmakuElem.ProtoReflect.Descriptor instead.
 func (*DanmakuElem) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{36}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{37}
 }
 
 func (x *DanmakuElem) GetId() int64 {
@@ -4817,7 +4991,7 @@ type DanmakuFlag struct {
 func (x *DanmakuFlag) Reset() {
 	*x = DanmakuFlag{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[37]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[38]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4830,7 +5004,7 @@ func (x *DanmakuFlag) String() string {
 func (*DanmakuFlag) ProtoMessage() {}
 
 func (x *DanmakuFlag) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[37]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[38]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4843,7 +5017,7 @@ func (x *DanmakuFlag) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DanmakuFlag.ProtoReflect.Descriptor instead.
 func (*DanmakuFlag) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{37}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{38}
 }
 
 func (x *DanmakuFlag) GetDmid() int64 {
@@ -4874,7 +5048,7 @@ type DanmakuFlagConfig struct {
 func (x *DanmakuFlagConfig) Reset() {
 	*x = DanmakuFlagConfig{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[38]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[39]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4887,7 +5061,7 @@ func (x *DanmakuFlagConfig) String() string {
 func (*DanmakuFlagConfig) ProtoMessage() {}
 
 func (x *DanmakuFlagConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[38]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[39]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4900,7 +5074,7 @@ func (x *DanmakuFlagConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DanmakuFlagConfig.ProtoReflect.Descriptor instead.
 func (*DanmakuFlagConfig) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{38}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{39}
 }
 
 func (x *DanmakuFlagConfig) GetRecFlag() int32 {
@@ -4950,7 +5124,7 @@ type DanmuDefaultPlayerConfig struct {
 func (x *DanmuDefaultPlayerConfig) Reset() {
 	*x = DanmuDefaultPlayerConfig{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[39]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[40]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4963,7 +5137,7 @@ func (x *DanmuDefaultPlayerConfig) String() string {
 func (*DanmuDefaultPlayerConfig) ProtoMessage() {}
 
 func (x *DanmuDefaultPlayerConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[39]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[40]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4976,7 +5150,7 @@ func (x *DanmuDefaultPlayerConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DanmuDefaultPlayerConfig.ProtoReflect.Descriptor instead.
 func (*DanmuDefaultPlayerConfig) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{39}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{40}
 }
 
 func (x *DanmuDefaultPlayerConfig) GetPlayerDanmakuUseDefaultConfig() bool {
@@ -5116,7 +5290,7 @@ type DanmuPlayerConfig struct {
 func (x *DanmuPlayerConfig) Reset() {
 	*x = DanmuPlayerConfig{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[40]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[41]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5129,7 +5303,7 @@ func (x *DanmuPlayerConfig) String() string {
 func (*DanmuPlayerConfig) ProtoMessage() {}
 
 func (x *DanmuPlayerConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[40]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[41]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5142,7 +5316,7 @@ func (x *DanmuPlayerConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DanmuPlayerConfig.ProtoReflect.Descriptor instead.
 func (*DanmuPlayerConfig) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{40}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{41}
 }
 
 func (x *DanmuPlayerConfig) GetPlayerDanmakuSwitch() bool {
@@ -5305,7 +5479,7 @@ type DanmuPlayerDynamicConfig struct {
 func (x *DanmuPlayerDynamicConfig) Reset() {
 	*x = DanmuPlayerDynamicConfig{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[41]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[42]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5318,7 +5492,7 @@ func (x *DanmuPlayerDynamicConfig) String() string {
 func (*DanmuPlayerDynamicConfig) ProtoMessage() {}
 
 func (x *DanmuPlayerDynamicConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[41]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[42]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5331,7 +5505,7 @@ func (x *DanmuPlayerDynamicConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DanmuPlayerDynamicConfig.ProtoReflect.Descriptor instead.
 func (*DanmuPlayerDynamicConfig) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{41}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{42}
 }
 
 func (x *DanmuPlayerDynamicConfig) GetProgress() int32 {
@@ -5362,7 +5536,7 @@ type DanmuPlayerViewConfig struct {
 func (x *DanmuPlayerViewConfig) Reset() {
 	*x = DanmuPlayerViewConfig{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[42]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[43]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5375,7 +5549,7 @@ func (x *DanmuPlayerViewConfig) String() string {
 func (*DanmuPlayerViewConfig) ProtoMessage() {}
 
 func (x *DanmuPlayerViewConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[42]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[43]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5388,7 +5562,7 @@ func (x *DanmuPlayerViewConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DanmuPlayerViewConfig.ProtoReflect.Descriptor instead.
 func (*DanmuPlayerViewConfig) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{42}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{43}
 }
 
 func (x *DanmuPlayerViewConfig) GetDanmukuDefaultPlayerConfig() *DanmuDefaultPlayerConfig {
@@ -5424,7 +5598,7 @@ type DanmuSettings struct {
 func (x *DanmuSettings) Reset() {
 	*x = DanmuSettings{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[43]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[44]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5437,7 +5611,7 @@ func (x *DanmuSettings) String() string {
 func (*DanmuSettings) ProtoMessage() {}
 
 func (x *DanmuSettings) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[43]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[44]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5450,7 +5624,7 @@ func (x *DanmuSettings) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DanmuSettings.ProtoReflect.Descriptor instead.
 func (*DanmuSettings) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{43}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{44}
 }
 
 func (x *DanmuSettings) GetAvoidObstruction() *AvoidObstruction {
@@ -5498,7 +5672,7 @@ type Device struct {
 func (x *Device) Reset() {
 	*x = Device{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[44]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[45]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5511,7 +5685,7 @@ func (x *Device) String() string {
 func (*Device) ProtoMessage() {}
 
 func (x *Device) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[44]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[45]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5524,7 +5698,7 @@ func (x *Device) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Device.ProtoReflect.Descriptor instead.
 func (*Device) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{44}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{45}
 }
 
 func (x *Device) GetBuvid() string {
@@ -5729,7 +5903,7 @@ type DmColorful struct {
 func (x *DmColorful) Reset() {
 	*x = DmColorful{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[45]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[46]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5742,7 +5916,7 @@ func (x *DmColorful) String() string {
 func (*DmColorful) ProtoMessage() {}
 
 func (x *DmColorful) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[45]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[46]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5755,7 +5929,7 @@ func (x *DmColorful) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DmColorful.ProtoReflect.Descriptor instead.
 func (*DmColorful) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{45}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{46}
 }
 
 func (x *DmColorful) GetType() DmColorfulType {
@@ -5785,7 +5959,7 @@ type DmHerdView struct {
 func (x *DmHerdView) Reset() {
 	*x = DmHerdView{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[46]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[47]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5798,7 +5972,7 @@ func (x *DmHerdView) String() string {
 func (*DmHerdView) ProtoMessage() {}
 
 func (x *DmHerdView) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[46]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[47]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5811,7 +5985,7 @@ func (x *DmHerdView) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DmHerdView.ProtoReflect.Descriptor instead.
 func (*DmHerdView) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{46}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{47}
 }
 
 func (x *DmHerdView) GetDisplayHerdDmNum() int32 {
@@ -5843,7 +6017,7 @@ type DmSegMobileReply struct {
 func (x *DmSegMobileReply) Reset() {
 	*x = DmSegMobileReply{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[47]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[48]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5856,7 +6030,7 @@ func (x *DmSegMobileReply) String() string {
 func (*DmSegMobileReply) ProtoMessage() {}
 
 func (x *DmSegMobileReply) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[47]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[48]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5869,7 +6043,7 @@ func (x *DmSegMobileReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DmSegMobileReply.ProtoReflect.Descriptor instead.
 func (*DmSegMobileReply) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{47}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{48}
 }
 
 func (x *DmSegMobileReply) GetElems() []*DanmakuElem {
@@ -5922,7 +6096,7 @@ type DmSegMobileReq struct {
 func (x *DmSegMobileReq) Reset() {
 	*x = DmSegMobileReq{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[48]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[49]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5935,7 +6109,7 @@ func (x *DmSegMobileReq) String() string {
 func (*DmSegMobileReq) ProtoMessage() {}
 
 func (x *DmSegMobileReq) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[48]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[49]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5948,7 +6122,7 @@ func (x *DmSegMobileReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DmSegMobileReq.ProtoReflect.Descriptor instead.
 func (*DmSegMobileReq) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{48}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{49}
 }
 
 func (x *DmSegMobileReq) GetPid() int64 {
@@ -6059,7 +6233,7 @@ type DmViewReply struct {
 func (x *DmViewReply) Reset() {
 	*x = DmViewReply{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[49]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[50]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6072,7 +6246,7 @@ func (x *DmViewReply) String() string {
 func (*DmViewReply) ProtoMessage() {}
 
 func (x *DmViewReply) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[49]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[50]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6085,7 +6259,7 @@ func (x *DmViewReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DmViewReply.ProtoReflect.Descriptor instead.
 func (*DmViewReply) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{49}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{50}
 }
 
 func (x *DmViewReply) GetClosed() bool {
@@ -6253,7 +6427,7 @@ type DmViewReq struct {
 func (x *DmViewReq) Reset() {
 	*x = DmViewReq{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[50]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[51]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6266,7 +6440,7 @@ func (x *DmViewReq) String() string {
 func (*DmViewReq) ProtoMessage() {}
 
 func (x *DmViewReq) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[50]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[51]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6279,7 +6453,7 @@ func (x *DmViewReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DmViewReq.ProtoReflect.Descriptor instead.
 func (*DmViewReq) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{50}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{51}
 }
 
 func (x *DmViewReq) GetPid() int64 {
@@ -6401,7 +6575,7 @@ type Entrance struct {
 func (x *Entrance) Reset() {
 	*x = Entrance{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[51]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[52]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6414,7 +6588,7 @@ func (x *Entrance) String() string {
 func (*Entrance) ProtoMessage() {}
 
 func (x *Entrance) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[51]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[52]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6427,7 +6601,7 @@ func (x *Entrance) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Entrance.ProtoReflect.Descriptor instead.
 func (*Entrance) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{51}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{52}
 }
 
 func (x *Entrance) GetTitle() string {
@@ -6521,7 +6695,7 @@ type EsportExt struct {
 func (x *EsportExt) Reset() {
 	*x = EsportExt{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[52]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[53]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6534,7 +6708,7 @@ func (x *EsportExt) String() string {
 func (*EsportExt) ProtoMessage() {}
 
 func (x *EsportExt) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[52]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[53]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6547,7 +6721,7 @@ func (x *EsportExt) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EsportExt.ProtoReflect.Descriptor instead.
 func (*EsportExt) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{52}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{53}
 }
 
 func (x *EsportExt) GetHomeTeam() *Team {
@@ -6643,7 +6817,7 @@ type ExtendedDesc struct {
 func (x *ExtendedDesc) Reset() {
 	*x = ExtendedDesc{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[53]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[54]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6656,7 +6830,7 @@ func (x *ExtendedDesc) String() string {
 func (*ExtendedDesc) ProtoMessage() {}
 
 func (x *ExtendedDesc) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[53]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[54]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6669,7 +6843,7 @@ func (x *ExtendedDesc) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExtendedDesc.ProtoReflect.Descriptor instead.
 func (*ExtendedDesc) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{53}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{54}
 }
 
 func (x *ExtendedDesc) GetTitle() string {
@@ -6774,7 +6948,7 @@ type FeedAdExtraAdTagStyle struct {
 func (x *FeedAdExtraAdTagStyle) Reset() {
 	*x = FeedAdExtraAdTagStyle{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[54]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[55]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6787,7 +6961,7 @@ func (x *FeedAdExtraAdTagStyle) String() string {
 func (*FeedAdExtraAdTagStyle) ProtoMessage() {}
 
 func (x *FeedAdExtraAdTagStyle) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[54]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[55]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6800,7 +6974,7 @@ func (x *FeedAdExtraAdTagStyle) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FeedAdExtraAdTagStyle.ProtoReflect.Descriptor instead.
 func (*FeedAdExtraAdTagStyle) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{54}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{55}
 }
 
 func (x *FeedAdExtraAdTagStyle) GetType() int64 {
@@ -6884,7 +7058,7 @@ type FeedAdExtraVideo struct {
 func (x *FeedAdExtraVideo) Reset() {
 	*x = FeedAdExtraVideo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[55]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[56]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6897,7 +7071,7 @@ func (x *FeedAdExtraVideo) String() string {
 func (*FeedAdExtraVideo) ProtoMessage() {}
 
 func (x *FeedAdExtraVideo) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[55]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[56]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6910,7 +7084,7 @@ func (x *FeedAdExtraVideo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FeedAdExtraVideo.ProtoReflect.Descriptor instead.
 func (*FeedAdExtraVideo) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{55}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{56}
 }
 
 func (x *FeedAdExtraVideo) GetAvid() int64 {
@@ -7073,7 +7247,7 @@ type HighLight struct {
 func (x *HighLight) Reset() {
 	*x = HighLight{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[56]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[57]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7086,7 +7260,7 @@ func (x *HighLight) String() string {
 func (*HighLight) ProtoMessage() {}
 
 func (x *HighLight) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[56]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[57]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7099,7 +7273,7 @@ func (x *HighLight) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HighLight.ProtoReflect.Descriptor instead.
 func (*HighLight) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{56}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{57}
 }
 
 func (x *HighLight) GetStartTime() int64 {
@@ -7129,7 +7303,7 @@ type HLRange struct {
 func (x *HLRange) Reset() {
 	*x = HLRange{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[57]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[58]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7142,7 +7316,7 @@ func (x *HLRange) String() string {
 func (*HLRange) ProtoMessage() {}
 
 func (x *HLRange) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[57]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[58]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7155,7 +7329,7 @@ func (x *HLRange) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HLRange.ProtoReflect.Descriptor instead.
 func (*HLRange) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{57}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{58}
 }
 
 func (x *HLRange) GetBeginning() int32 {
@@ -7186,7 +7360,7 @@ type HotGuess struct {
 func (x *HotGuess) Reset() {
 	*x = HotGuess{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[58]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[59]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7199,7 +7373,7 @@ func (x *HotGuess) String() string {
 func (*HotGuess) ProtoMessage() {}
 
 func (x *HotGuess) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[58]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[59]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7212,7 +7386,7 @@ func (x *HotGuess) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HotGuess.ProtoReflect.Descriptor instead.
 func (*HotGuess) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{58}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{59}
 }
 
 func (x *HotGuess) GetTitle() string {
@@ -7264,7 +7438,7 @@ type Hotword struct {
 func (x *Hotword) Reset() {
 	*x = Hotword{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[59]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[60]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7277,7 +7451,7 @@ func (x *Hotword) String() string {
 func (*Hotword) ProtoMessage() {}
 
 func (x *Hotword) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[59]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[60]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7290,7 +7464,7 @@ func (x *Hotword) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Hotword.ProtoReflect.Descriptor instead.
 func (*Hotword) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{59}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{60}
 }
 
 func (x *Hotword) GetFrom() string {
@@ -7426,7 +7600,7 @@ type HotwordExt struct {
 func (x *HotwordExt) Reset() {
 	*x = HotwordExt{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[60]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[61]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7439,7 +7613,7 @@ func (x *HotwordExt) String() string {
 func (*HotwordExt) ProtoMessage() {}
 
 func (x *HotwordExt) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[60]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[61]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7452,7 +7626,7 @@ func (x *HotwordExt) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HotwordExt.ProtoReflect.Descriptor instead.
 func (*HotwordExt) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{60}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{61}
 }
 
 func (x *HotwordExt) GetIpId() int64 {
@@ -7499,7 +7673,7 @@ type InfocExt struct {
 func (x *InfocExt) Reset() {
 	*x = InfocExt{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[61]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[62]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7512,7 +7686,7 @@ func (x *InfocExt) String() string {
 func (*InfocExt) ProtoMessage() {}
 
 func (x *InfocExt) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[61]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[62]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7525,7 +7699,7 @@ func (x *InfocExt) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InfocExt.ProtoReflect.Descriptor instead.
 func (*InfocExt) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{61}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{62}
 }
 
 func (x *InfocExt) GetViderType() int32 {
@@ -7627,7 +7801,7 @@ type JumpLine struct {
 func (x *JumpLine) Reset() {
 	*x = JumpLine{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[62]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[63]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7640,7 +7814,7 @@ func (x *JumpLine) String() string {
 func (*JumpLine) ProtoMessage() {}
 
 func (x *JumpLine) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[62]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[63]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7653,7 +7827,7 @@ func (x *JumpLine) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use JumpLine.ProtoReflect.Descriptor instead.
 func (*JumpLine) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{62}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{63}
 }
 
 func (x *JumpLine) GetText() string {
@@ -7705,7 +7879,7 @@ type Jumps struct {
 func (x *Jumps) Reset() {
 	*x = Jumps{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[63]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[64]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7718,7 +7892,7 @@ func (x *Jumps) String() string {
 func (*Jumps) ProtoMessage() {}
 
 func (x *Jumps) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[63]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[64]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7731,7 +7905,7 @@ func (x *Jumps) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Jumps.ProtoReflect.Descriptor instead.
 func (*Jumps) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{63}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{64}
 }
 
 func (x *Jumps) GetJumpType() int64 {
@@ -7826,7 +8000,7 @@ type Labels struct {
 func (x *Labels) Reset() {
 	*x = Labels{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[64]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[65]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7839,7 +8013,7 @@ func (x *Labels) String() string {
 func (*Labels) ProtoMessage() {}
 
 func (x *Labels) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[64]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[65]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7852,7 +8026,7 @@ func (x *Labels) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Labels.ProtoReflect.Descriptor instead.
 func (*Labels) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{64}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{65}
 }
 
 func (x *Labels) GetText() string {
@@ -7950,7 +8124,7 @@ type LiveDanmuPlayerConfig struct {
 func (x *LiveDanmuPlayerConfig) Reset() {
 	*x = LiveDanmuPlayerConfig{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[65]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[66]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -7963,7 +8137,7 @@ func (x *LiveDanmuPlayerConfig) String() string {
 func (*LiveDanmuPlayerConfig) ProtoMessage() {}
 
 func (x *LiveDanmuPlayerConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[65]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[66]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7976,7 +8150,7 @@ func (x *LiveDanmuPlayerConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LiveDanmuPlayerConfig.ProtoReflect.Descriptor instead.
 func (*LiveDanmuPlayerConfig) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{65}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{66}
 }
 
 func (x *LiveDanmuPlayerConfig) GetScreenOccupancy() int32 {
@@ -8041,7 +8215,7 @@ type LiveDmActivity struct {
 func (x *LiveDmActivity) Reset() {
 	*x = LiveDmActivity{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[66]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[67]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8054,7 +8228,7 @@ func (x *LiveDmActivity) String() string {
 func (*LiveDmActivity) ProtoMessage() {}
 
 func (x *LiveDmActivity) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[66]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[67]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8067,7 +8241,7 @@ func (x *LiveDmActivity) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LiveDmActivity.ProtoReflect.Descriptor instead.
 func (*LiveDmActivity) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{66}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{67}
 }
 
 func (x *LiveDmActivity) GetActivityList() []*ActivityInfo {
@@ -8099,7 +8273,7 @@ type LiveDmExtra struct {
 func (x *LiveDmExtra) Reset() {
 	*x = LiveDmExtra{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[67]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[68]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8112,7 +8286,7 @@ func (x *LiveDmExtra) String() string {
 func (*LiveDmExtra) ProtoMessage() {}
 
 func (x *LiveDmExtra) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[67]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[68]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8125,7 +8299,7 @@ func (x *LiveDmExtra) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LiveDmExtra.ProtoReflect.Descriptor instead.
 func (*LiveDmExtra) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{67}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{68}
 }
 
 func (x *LiveDmExtra) GetScreenSwitchOff() bool {
@@ -8180,7 +8354,7 @@ type LiveExt struct {
 func (x *LiveExt) Reset() {
 	*x = LiveExt{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[68]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[69]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8193,7 +8367,7 @@ func (x *LiveExt) String() string {
 func (*LiveExt) ProtoMessage() {}
 
 func (x *LiveExt) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[68]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[69]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8206,7 +8380,7 @@ func (x *LiveExt) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LiveExt.ProtoReflect.Descriptor instead.
 func (*LiveExt) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{68}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{69}
 }
 
 func (x *LiveExt) GetLiveSkip() *LiveSkipResp {
@@ -8315,7 +8489,7 @@ type LiveSkipResp struct {
 func (x *LiveSkipResp) Reset() {
 	*x = LiveSkipResp{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[69]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[70]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8328,7 +8502,7 @@ func (x *LiveSkipResp) String() string {
 func (*LiveSkipResp) ProtoMessage() {}
 
 func (x *LiveSkipResp) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[69]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[70]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8341,7 +8515,7 @@ func (x *LiveSkipResp) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LiveSkipResp.ProtoReflect.Descriptor instead.
 func (*LiveSkipResp) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{69}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{70}
 }
 
 func (x *LiveSkipResp) GetEtime() string {
@@ -8391,7 +8565,7 @@ type MediaExtra struct {
 func (x *MediaExtra) Reset() {
 	*x = MediaExtra{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[70]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[71]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8404,7 +8578,7 @@ func (x *MediaExtra) String() string {
 func (*MediaExtra) ProtoMessage() {}
 
 func (x *MediaExtra) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[70]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[71]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8417,7 +8591,7 @@ func (x *MediaExtra) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MediaExtra.ProtoReflect.Descriptor instead.
 func (*MediaExtra) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{70}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{71}
 }
 
 func (x *MediaExtra) GetType() int64 {
@@ -8486,7 +8660,7 @@ type MockMetaDataReply struct {
 func (x *MockMetaDataReply) Reset() {
 	*x = MockMetaDataReply{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[71]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[72]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8499,7 +8673,7 @@ func (x *MockMetaDataReply) String() string {
 func (*MockMetaDataReply) ProtoMessage() {}
 
 func (x *MockMetaDataReply) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[71]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[72]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8512,7 +8686,7 @@ func (x *MockMetaDataReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MockMetaDataReply.ProtoReflect.Descriptor instead.
 func (*MockMetaDataReply) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{71}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{72}
 }
 
 // Source: com/bapis/bilibili/tv/MockMetaDataReq.java
@@ -8527,7 +8701,7 @@ type MockMetaDataReq struct {
 func (x *MockMetaDataReq) Reset() {
 	*x = MockMetaDataReq{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[72]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[73]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8540,7 +8714,7 @@ func (x *MockMetaDataReq) String() string {
 func (*MockMetaDataReq) ProtoMessage() {}
 
 func (x *MockMetaDataReq) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[72]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[73]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8553,7 +8727,7 @@ func (x *MockMetaDataReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MockMetaDataReq.ProtoReflect.Descriptor instead.
 func (*MockMetaDataReq) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{72}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{73}
 }
 
 func (x *MockMetaDataReq) GetBuvid() string {
@@ -8577,7 +8751,7 @@ type ModResource struct {
 func (x *ModResource) Reset() {
 	*x = ModResource{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[73]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[74]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8590,7 +8764,7 @@ func (x *ModResource) String() string {
 func (*ModResource) ProtoMessage() {}
 
 func (x *ModResource) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[73]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[74]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8603,7 +8777,7 @@ func (x *ModResource) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ModResource.ProtoReflect.Descriptor instead.
 func (*ModResource) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{73}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{74}
 }
 
 func (x *ModResource) GetMobiPool() string {
@@ -8642,7 +8816,7 @@ type OfficialInfo struct {
 func (x *OfficialInfo) Reset() {
 	*x = OfficialInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[74]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[75]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8655,7 +8829,7 @@ func (x *OfficialInfo) String() string {
 func (*OfficialInfo) ProtoMessage() {}
 
 func (x *OfficialInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[74]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[75]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8668,7 +8842,7 @@ func (x *OfficialInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OfficialInfo.ProtoReflect.Descriptor instead.
 func (*OfficialInfo) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{74}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{75}
 }
 
 func (x *OfficialInfo) GetRole() int32 {
@@ -8713,7 +8887,7 @@ type Ogv186PlayControl struct {
 func (x *Ogv186PlayControl) Reset() {
 	*x = Ogv186PlayControl{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[75]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[76]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8726,7 +8900,7 @@ func (x *Ogv186PlayControl) String() string {
 func (*Ogv186PlayControl) ProtoMessage() {}
 
 func (x *Ogv186PlayControl) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[75]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[76]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8739,7 +8913,7 @@ func (x *Ogv186PlayControl) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Ogv186PlayControl.ProtoReflect.Descriptor instead.
 func (*Ogv186PlayControl) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{75}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{76}
 }
 
 func (x *Ogv186PlayControl) GetAutoShowControl() bool {
@@ -8779,7 +8953,7 @@ type OgvBottomButton struct {
 func (x *OgvBottomButton) Reset() {
 	*x = OgvBottomButton{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[76]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[77]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8792,7 +8966,7 @@ func (x *OgvBottomButton) String() string {
 func (*OgvBottomButton) ProtoMessage() {}
 
 func (x *OgvBottomButton) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[76]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[77]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8805,7 +8979,7 @@ func (x *OgvBottomButton) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OgvBottomButton.ProtoReflect.Descriptor instead.
 func (*OgvBottomButton) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{76}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{77}
 }
 
 func (x *OgvBottomButton) GetButtonType() int32 {
@@ -8857,7 +9031,7 @@ type OgvCollection struct {
 func (x *OgvCollection) Reset() {
 	*x = OgvCollection{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[77]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[78]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8870,7 +9044,7 @@ func (x *OgvCollection) String() string {
 func (*OgvCollection) ProtoMessage() {}
 
 func (x *OgvCollection) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[77]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[78]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8883,7 +9057,7 @@ func (x *OgvCollection) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OgvCollection.ProtoReflect.Descriptor instead.
 func (*OgvCollection) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{77}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{78}
 }
 
 func (x *OgvCollection) GetBaseInfo() string {
@@ -8920,7 +9094,7 @@ type OgvIndexEntry struct {
 func (x *OgvIndexEntry) Reset() {
 	*x = OgvIndexEntry{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[78]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[79]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8933,7 +9107,7 @@ func (x *OgvIndexEntry) String() string {
 func (*OgvIndexEntry) ProtoMessage() {}
 
 func (x *OgvIndexEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[78]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[79]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8946,7 +9120,7 @@ func (x *OgvIndexEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OgvIndexEntry.ProtoReflect.Descriptor instead.
 func (*OgvIndexEntry) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{78}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{79}
 }
 
 func (x *OgvIndexEntry) GetTitle() string {
@@ -8977,7 +9151,7 @@ type OgvIndexGoto struct {
 func (x *OgvIndexGoto) Reset() {
 	*x = OgvIndexGoto{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[79]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[80]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8990,7 +9164,7 @@ func (x *OgvIndexGoto) String() string {
 func (*OgvIndexGoto) ProtoMessage() {}
 
 func (x *OgvIndexGoto) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[79]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[80]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9003,7 +9177,7 @@ func (x *OgvIndexGoto) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OgvIndexGoto.ProtoReflect.Descriptor instead.
 func (*OgvIndexGoto) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{79}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{80}
 }
 
 func (x *OgvIndexGoto) GetCategory() int32 {
@@ -9041,7 +9215,7 @@ type OperationExt struct {
 func (x *OperationExt) Reset() {
 	*x = OperationExt{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[80]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[81]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9054,7 +9228,7 @@ func (x *OperationExt) String() string {
 func (*OperationExt) ProtoMessage() {}
 
 func (x *OperationExt) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[80]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[81]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9067,7 +9241,7 @@ func (x *OperationExt) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OperationExt.ProtoReflect.Descriptor instead.
 func (*OperationExt) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{80}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{81}
 }
 
 func (x *OperationExt) GetTopBar() *TopBar {
@@ -9106,7 +9280,7 @@ type OrderId struct {
 func (x *OrderId) Reset() {
 	*x = OrderId{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[81]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[82]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9119,7 +9293,7 @@ func (x *OrderId) String() string {
 func (*OrderId) ProtoMessage() {}
 
 func (x *OrderId) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[81]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[82]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9132,7 +9306,7 @@ func (x *OrderId) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OrderId.ProtoReflect.Descriptor instead.
 func (*OrderId) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{81}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{82}
 }
 
 func (x *OrderId) GetType() int32 {
@@ -9177,7 +9351,7 @@ type Page struct {
 func (x *Page) Reset() {
 	*x = Page{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[82]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[83]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9190,7 +9364,7 @@ func (x *Page) String() string {
 func (*Page) ProtoMessage() {}
 
 func (x *Page) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[82]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[83]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9203,7 +9377,7 @@ func (x *Page) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Page.ProtoReflect.Descriptor instead.
 func (*Page) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{82}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{83}
 }
 
 func (x *Page) GetNumResult() int32 {
@@ -9244,7 +9418,7 @@ type Pageinfo struct {
 func (x *Pageinfo) Reset() {
 	*x = Pageinfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[83]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[84]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9257,7 +9431,7 @@ func (x *Pageinfo) String() string {
 func (*Pageinfo) ProtoMessage() {}
 
 func (x *Pageinfo) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[83]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[84]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9270,7 +9444,7 @@ func (x *Pageinfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Pageinfo.ProtoReflect.Descriptor instead.
 func (*Pageinfo) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{83}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{84}
 }
 
 func (x *Pageinfo) GetTvpgc() *Page {
@@ -9333,7 +9507,7 @@ type PayCard struct {
 func (x *PayCard) Reset() {
 	*x = PayCard{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[84]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[85]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9346,7 +9520,7 @@ func (x *PayCard) String() string {
 func (*PayCard) ProtoMessage() {}
 
 func (x *PayCard) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[84]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[85]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9359,7 +9533,7 @@ func (x *PayCard) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PayCard.ProtoReflect.Descriptor instead.
 func (*PayCard) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{84}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{85}
 }
 
 func (x *PayCard) GetTitle() string {
@@ -9436,7 +9610,7 @@ type PaymentShowExt struct {
 func (x *PaymentShowExt) Reset() {
 	*x = PaymentShowExt{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[85]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[86]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9449,7 +9623,7 @@ func (x *PaymentShowExt) String() string {
 func (*PaymentShowExt) ProtoMessage() {}
 
 func (x *PaymentShowExt) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[85]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[86]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9462,7 +9636,7 @@ func (x *PaymentShowExt) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PaymentShowExt.ProtoReflect.Descriptor instead.
 func (*PaymentShowExt) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{85}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{86}
 }
 
 func (x *PaymentShowExt) GetShowDevice() string {
@@ -9579,7 +9753,7 @@ type PaymentV2 struct {
 func (x *PaymentV2) Reset() {
 	*x = PaymentV2{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[86]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[87]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9592,7 +9766,7 @@ func (x *PaymentV2) String() string {
 func (*PaymentV2) ProtoMessage() {}
 
 func (x *PaymentV2) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[86]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[87]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9605,7 +9779,7 @@ func (x *PaymentV2) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PaymentV2.ProtoReflect.Descriptor instead.
 func (*PaymentV2) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{86}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{87}
 }
 
 func (x *PaymentV2) GetOriginalAmount() string {
@@ -9677,7 +9851,7 @@ type PgcExt struct {
 func (x *PgcExt) Reset() {
 	*x = PgcExt{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[87]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[88]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9690,7 +9864,7 @@ func (x *PgcExt) String() string {
 func (*PgcExt) ProtoMessage() {}
 
 func (x *PgcExt) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[87]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[88]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9703,7 +9877,7 @@ func (x *PgcExt) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PgcExt.ProtoReflect.Descriptor instead.
 func (*PgcExt) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{87}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{88}
 }
 
 func (x *PgcExt) GetRights() *Rights {
@@ -9884,7 +10058,7 @@ type PgcIndexEntry struct {
 func (x *PgcIndexEntry) Reset() {
 	*x = PgcIndexEntry{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[88]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[89]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9897,7 +10071,7 @@ func (x *PgcIndexEntry) String() string {
 func (*PgcIndexEntry) ProtoMessage() {}
 
 func (x *PgcIndexEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[88]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[89]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9910,7 +10084,7 @@ func (x *PgcIndexEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PgcIndexEntry.ProtoReflect.Descriptor instead.
 func (*PgcIndexEntry) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{88}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{89}
 }
 
 func (x *PgcIndexEntry) GetTitle() string {
@@ -9969,7 +10143,7 @@ type PgcIndexGoto struct {
 func (x *PgcIndexGoto) Reset() {
 	*x = PgcIndexGoto{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[89]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[90]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9982,7 +10156,7 @@ func (x *PgcIndexGoto) String() string {
 func (*PgcIndexGoto) ProtoMessage() {}
 
 func (x *PgcIndexGoto) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[89]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[90]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9995,7 +10169,7 @@ func (x *PgcIndexGoto) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PgcIndexGoto.ProtoReflect.Descriptor instead.
 func (*PgcIndexGoto) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{89}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{90}
 }
 
 func (x *PgcIndexGoto) GetCategory() int32 {
@@ -10033,7 +10207,7 @@ type PlaylistTab struct {
 func (x *PlaylistTab) Reset() {
 	*x = PlaylistTab{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[90]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[91]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10046,7 +10220,7 @@ func (x *PlaylistTab) String() string {
 func (*PlaylistTab) ProtoMessage() {}
 
 func (x *PlaylistTab) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[90]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[91]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10059,7 +10233,7 @@ func (x *PlaylistTab) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PlaylistTab.ProtoReflect.Descriptor instead.
 func (*PlaylistTab) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{90}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{91}
 }
 
 func (x *PlaylistTab) GetTitle() string {
@@ -10104,7 +10278,7 @@ type PlayScenePageViewV2 struct {
 func (x *PlayScenePageViewV2) Reset() {
 	*x = PlayScenePageViewV2{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[91]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[92]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10117,7 +10291,7 @@ func (x *PlayScenePageViewV2) String() string {
 func (*PlayScenePageViewV2) ProtoMessage() {}
 
 func (x *PlayScenePageViewV2) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[91]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[92]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10130,7 +10304,7 @@ func (x *PlayScenePageViewV2) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PlayScenePageViewV2.ProtoReflect.Descriptor instead.
 func (*PlayScenePageViewV2) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{91}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{92}
 }
 
 func (x *PlayScenePageViewV2) GetPageType() string {
@@ -10219,7 +10393,7 @@ type PlayurlArgs struct {
 func (x *PlayurlArgs) Reset() {
 	*x = PlayurlArgs{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[92]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[93]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10232,7 +10406,7 @@ func (x *PlayurlArgs) String() string {
 func (*PlayurlArgs) ProtoMessage() {}
 
 func (x *PlayurlArgs) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[92]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[93]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10245,7 +10419,7 @@ func (x *PlayurlArgs) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PlayurlArgs.ProtoReflect.Descriptor instead.
 func (*PlayurlArgs) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{92}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{93}
 }
 
 func (x *PlayurlArgs) GetPlayurlType() int64 {
@@ -10295,7 +10469,7 @@ type ProjExt struct {
 func (x *ProjExt) Reset() {
 	*x = ProjExt{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[93]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[94]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10308,7 +10482,7 @@ func (x *ProjExt) String() string {
 func (*ProjExt) ProtoMessage() {}
 
 func (x *ProjExt) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[93]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[94]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10321,7 +10495,7 @@ func (x *ProjExt) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProjExt.ProtoReflect.Descriptor instead.
 func (*ProjExt) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{93}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{94}
 }
 
 func (x *ProjExt) GetEndPageSwitch() int32 {
@@ -10343,7 +10517,7 @@ type QoeInfo struct {
 func (x *QoeInfo) Reset() {
 	*x = QoeInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[94]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[95]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10356,7 +10530,7 @@ func (x *QoeInfo) String() string {
 func (*QoeInfo) ProtoMessage() {}
 
 func (x *QoeInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[94]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[95]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10369,7 +10543,7 @@ func (x *QoeInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use QoeInfo.ProtoReflect.Descriptor instead.
 func (*QoeInfo) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{94}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{95}
 }
 
 func (x *QoeInfo) GetInfo() string {
@@ -10393,7 +10567,7 @@ type RestrictionConfig struct {
 func (x *RestrictionConfig) Reset() {
 	*x = RestrictionConfig{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[95]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[96]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10406,7 +10580,7 @@ func (x *RestrictionConfig) String() string {
 func (*RestrictionConfig) ProtoMessage() {}
 
 func (x *RestrictionConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[95]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[96]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10419,7 +10593,7 @@ func (x *RestrictionConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RestrictionConfig.ProtoReflect.Descriptor instead.
 func (*RestrictionConfig) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{95}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{96}
 }
 
 func (x *RestrictionConfig) GetBlockDays() int64 {
@@ -10464,7 +10638,7 @@ type Rights struct {
 func (x *Rights) Reset() {
 	*x = Rights{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[96]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[97]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10477,7 +10651,7 @@ func (x *Rights) String() string {
 func (*Rights) ProtoMessage() {}
 
 func (x *Rights) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[96]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[97]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10490,7 +10664,7 @@ func (x *Rights) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Rights.ProtoReflect.Descriptor instead.
 func (*Rights) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{96}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{97}
 }
 
 func (x *Rights) GetAllowBp() int32 {
@@ -10591,7 +10765,7 @@ type SceneCard struct {
 func (x *SceneCard) Reset() {
 	*x = SceneCard{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[97]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[98]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10604,7 +10778,7 @@ func (x *SceneCard) String() string {
 func (*SceneCard) ProtoMessage() {}
 
 func (x *SceneCard) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[97]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[98]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10617,7 +10791,7 @@ func (x *SceneCard) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SceneCard.ProtoReflect.Descriptor instead.
 func (*SceneCard) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{97}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{98}
 }
 
 func (x *SceneCard) GetCardType() int32 {
@@ -10755,7 +10929,7 @@ type SceneModule struct {
 func (x *SceneModule) Reset() {
 	*x = SceneModule{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[98]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[99]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10768,7 +10942,7 @@ func (x *SceneModule) String() string {
 func (*SceneModule) ProtoMessage() {}
 
 func (x *SceneModule) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[98]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[99]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10781,7 +10955,7 @@ func (x *SceneModule) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SceneModule.ProtoReflect.Descriptor instead.
 func (*SceneModule) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{98}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{99}
 }
 
 func (x *SceneModule) GetModuleType() int64 {
@@ -10832,7 +11006,7 @@ type SearchExt struct {
 func (x *SearchExt) Reset() {
 	*x = SearchExt{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[99]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[100]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10845,7 +11019,7 @@ func (x *SearchExt) String() string {
 func (*SearchExt) ProtoMessage() {}
 
 func (x *SearchExt) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[99]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[100]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10858,7 +11032,7 @@ func (x *SearchExt) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SearchExt.ProtoReflect.Descriptor instead.
 func (*SearchExt) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{99}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{100}
 }
 
 func (x *SearchExt) GetName() string {
@@ -10891,7 +11065,7 @@ type SearchV2Operator struct {
 func (x *SearchV2Operator) Reset() {
 	*x = SearchV2Operator{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[100]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[101]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10904,7 +11078,7 @@ func (x *SearchV2Operator) String() string {
 func (*SearchV2Operator) ProtoMessage() {}
 
 func (x *SearchV2Operator) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[100]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[101]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10917,7 +11091,7 @@ func (x *SearchV2Operator) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SearchV2Operator.ProtoReflect.Descriptor instead.
 func (*SearchV2Operator) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{100}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{101}
 }
 
 func (x *SearchV2Operator) GetId() int64 {
@@ -10969,7 +11143,7 @@ type SearchV2OperatorAdInfo struct {
 func (x *SearchV2OperatorAdInfo) Reset() {
 	*x = SearchV2OperatorAdInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[101]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[102]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10982,7 +11156,7 @@ func (x *SearchV2OperatorAdInfo) String() string {
 func (*SearchV2OperatorAdInfo) ProtoMessage() {}
 
 func (x *SearchV2OperatorAdInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[101]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[102]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10995,7 +11169,7 @@ func (x *SearchV2OperatorAdInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SearchV2OperatorAdInfo.ProtoReflect.Descriptor instead.
 func (*SearchV2OperatorAdInfo) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{101}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{102}
 }
 
 func (x *SearchV2OperatorAdInfo) GetIsAd() bool {
@@ -11037,7 +11211,7 @@ type SearchV2OperatorButton struct {
 func (x *SearchV2OperatorButton) Reset() {
 	*x = SearchV2OperatorButton{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[102]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[103]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -11050,7 +11224,7 @@ func (x *SearchV2OperatorButton) String() string {
 func (*SearchV2OperatorButton) ProtoMessage() {}
 
 func (x *SearchV2OperatorButton) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[102]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[103]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11063,7 +11237,7 @@ func (x *SearchV2OperatorButton) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SearchV2OperatorButton.ProtoReflect.Descriptor instead.
 func (*SearchV2OperatorButton) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{102}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{103}
 }
 
 func (x *SearchV2OperatorButton) GetType() int32 {
@@ -11144,7 +11318,7 @@ type SearchV2Reply struct {
 func (x *SearchV2Reply) Reset() {
 	*x = SearchV2Reply{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[103]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[104]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -11157,7 +11331,7 @@ func (x *SearchV2Reply) String() string {
 func (*SearchV2Reply) ProtoMessage() {}
 
 func (x *SearchV2Reply) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[103]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[104]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11170,7 +11344,7 @@ func (x *SearchV2Reply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SearchV2Reply.ProtoReflect.Descriptor instead.
 func (*SearchV2Reply) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{103}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{104}
 }
 
 func (x *SearchV2Reply) GetPage() int32 {
@@ -11325,7 +11499,7 @@ type SearchV2Req struct {
 func (x *SearchV2Req) Reset() {
 	*x = SearchV2Req{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[104]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[105]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -11338,7 +11512,7 @@ func (x *SearchV2Req) String() string {
 func (*SearchV2Req) ProtoMessage() {}
 
 func (x *SearchV2Req) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[104]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[105]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11351,7 +11525,7 @@ func (x *SearchV2Req) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SearchV2Req.ProtoReflect.Descriptor instead.
 func (*SearchV2Req) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{104}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{105}
 }
 
 func (x *SearchV2Req) GetSearchType() string {
@@ -11479,7 +11653,7 @@ type SeaResultV2 struct {
 func (x *SeaResultV2) Reset() {
 	*x = SeaResultV2{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[105]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[106]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -11492,7 +11666,7 @@ func (x *SeaResultV2) String() string {
 func (*SeaResultV2) ProtoMessage() {}
 
 func (x *SeaResultV2) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[105]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[106]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11505,7 +11679,7 @@ func (x *SeaResultV2) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SeaResultV2.ProtoReflect.Descriptor instead.
 func (*SeaResultV2) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{105}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{106}
 }
 
 func (x *SeaResultV2) GetModuleName() string {
@@ -11590,7 +11764,7 @@ type SerialExt struct {
 func (x *SerialExt) Reset() {
 	*x = SerialExt{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[106]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[107]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -11603,7 +11777,7 @@ func (x *SerialExt) String() string {
 func (*SerialExt) ProtoMessage() {}
 
 func (x *SerialExt) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[106]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[107]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11616,7 +11790,7 @@ func (x *SerialExt) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SerialExt.ProtoReflect.Descriptor instead.
 func (*SerialExt) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{106}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{107}
 }
 
 func (x *SerialExt) GetShowEpTitle() bool {
@@ -11688,7 +11862,7 @@ type SerialListSubtitle struct {
 func (x *SerialListSubtitle) Reset() {
 	*x = SerialListSubtitle{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[107]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[108]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -11701,7 +11875,7 @@ func (x *SerialListSubtitle) String() string {
 func (*SerialListSubtitle) ProtoMessage() {}
 
 func (x *SerialListSubtitle) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[107]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[108]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11714,7 +11888,7 @@ func (x *SerialListSubtitle) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SerialListSubtitle.ProtoReflect.Descriptor instead.
 func (*SerialListSubtitle) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{107}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{108}
 }
 
 func (x *SerialListSubtitle) GetIcon() string {
@@ -11745,7 +11919,7 @@ type SerialPlayingUgc struct {
 func (x *SerialPlayingUgc) Reset() {
 	*x = SerialPlayingUgc{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[108]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[109]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -11758,7 +11932,7 @@ func (x *SerialPlayingUgc) String() string {
 func (*SerialPlayingUgc) ProtoMessage() {}
 
 func (x *SerialPlayingUgc) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[108]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[109]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11771,7 +11945,7 @@ func (x *SerialPlayingUgc) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SerialPlayingUgc.ProtoReflect.Descriptor instead.
 func (*SerialPlayingUgc) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{108}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{109}
 }
 
 func (x *SerialPlayingUgc) GetAvid() int32 {
@@ -11809,7 +11983,7 @@ type SerialRights struct {
 func (x *SerialRights) Reset() {
 	*x = SerialRights{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[109]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[110]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -11822,7 +11996,7 @@ func (x *SerialRights) String() string {
 func (*SerialRights) ProtoMessage() {}
 
 func (x *SerialRights) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[109]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[110]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11835,7 +12009,7 @@ func (x *SerialRights) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SerialRights.ProtoReflect.Descriptor instead.
 func (*SerialRights) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{109}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{110}
 }
 
 func (x *SerialRights) GetAllowLike() int32 {
@@ -11880,7 +12054,7 @@ type ShareExt struct {
 func (x *ShareExt) Reset() {
 	*x = ShareExt{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[110]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[111]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -11893,7 +12067,7 @@ func (x *ShareExt) String() string {
 func (*ShareExt) ProtoMessage() {}
 
 func (x *ShareExt) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[110]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[111]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11906,7 +12080,7 @@ func (x *ShareExt) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ShareExt.ProtoReflect.Descriptor instead.
 func (*ShareExt) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{110}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{111}
 }
 
 func (x *ShareExt) GetShareToPhone() bool {
@@ -11992,7 +12166,7 @@ type ShopExt struct {
 func (x *ShopExt) Reset() {
 	*x = ShopExt{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[111]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[112]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12005,7 +12179,7 @@ func (x *ShopExt) String() string {
 func (*ShopExt) ProtoMessage() {}
 
 func (x *ShopExt) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[111]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[112]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12018,7 +12192,7 @@ func (x *ShopExt) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ShopExt.ProtoReflect.Descriptor instead.
 func (*ShopExt) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{111}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{112}
 }
 
 func (x *ShopExt) GetCartStatus() int64 {
@@ -12057,7 +12231,7 @@ type SubtitleItem struct {
 func (x *SubtitleItem) Reset() {
 	*x = SubtitleItem{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[112]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[113]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12070,7 +12244,7 @@ func (x *SubtitleItem) String() string {
 func (*SubtitleItem) ProtoMessage() {}
 
 func (x *SubtitleItem) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[112]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[113]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12083,7 +12257,7 @@ func (x *SubtitleItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SubtitleItem.ProtoReflect.Descriptor instead.
 func (*SubtitleItem) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{112}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{113}
 }
 
 func (x *SubtitleItem) GetId() int64 {
@@ -12176,7 +12350,7 @@ type TabInfo struct {
 func (x *TabInfo) Reset() {
 	*x = TabInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[113]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[114]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12189,7 +12363,7 @@ func (x *TabInfo) String() string {
 func (*TabInfo) ProtoMessage() {}
 
 func (x *TabInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[113]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[114]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12202,7 +12376,7 @@ func (x *TabInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TabInfo.ProtoReflect.Descriptor instead.
 func (*TabInfo) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{113}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{114}
 }
 
 func (x *TabInfo) GetSearchType() string {
@@ -12234,7 +12408,7 @@ type Team struct {
 func (x *Team) Reset() {
 	*x = Team{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[114]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[115]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12247,7 +12421,7 @@ func (x *Team) String() string {
 func (*Team) ProtoMessage() {}
 
 func (x *Team) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[114]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[115]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12260,7 +12434,7 @@ func (x *Team) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Team.ProtoReflect.Descriptor instead.
 func (*Team) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{114}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{115}
 }
 
 func (x *Team) GetTid() int64 {
@@ -12305,7 +12479,7 @@ type TokenSearchRes struct {
 func (x *TokenSearchRes) Reset() {
 	*x = TokenSearchRes{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[115]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[116]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12318,7 +12492,7 @@ func (x *TokenSearchRes) String() string {
 func (*TokenSearchRes) ProtoMessage() {}
 
 func (x *TokenSearchRes) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[115]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[116]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12331,7 +12505,7 @@ func (x *TokenSearchRes) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TokenSearchRes.ProtoReflect.Descriptor instead.
 func (*TokenSearchRes) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{115}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{116}
 }
 
 func (x *TokenSearchRes) GetType() int32 {
@@ -12369,7 +12543,7 @@ type TokenSearchResBanner struct {
 func (x *TokenSearchResBanner) Reset() {
 	*x = TokenSearchResBanner{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[116]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[117]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12382,7 +12556,7 @@ func (x *TokenSearchResBanner) String() string {
 func (*TokenSearchResBanner) ProtoMessage() {}
 
 func (x *TokenSearchResBanner) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[116]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[117]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12395,7 +12569,7 @@ func (x *TokenSearchResBanner) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TokenSearchResBanner.ProtoReflect.Descriptor instead.
 func (*TokenSearchResBanner) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{116}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{117}
 }
 
 func (x *TokenSearchResBanner) GetActId() int64 {
@@ -12435,7 +12609,7 @@ type TokenSearchResPopup struct {
 func (x *TokenSearchResPopup) Reset() {
 	*x = TokenSearchResPopup{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[117]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[118]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12448,7 +12622,7 @@ func (x *TokenSearchResPopup) String() string {
 func (*TokenSearchResPopup) ProtoMessage() {}
 
 func (x *TokenSearchResPopup) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[117]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[118]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12461,7 +12635,7 @@ func (x *TokenSearchResPopup) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TokenSearchResPopup.ProtoReflect.Descriptor instead.
 func (*TokenSearchResPopup) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{117}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{118}
 }
 
 func (x *TokenSearchResPopup) GetActId() int64 {
@@ -12512,7 +12686,7 @@ type TokenSearchResPopupButton struct {
 func (x *TokenSearchResPopupButton) Reset() {
 	*x = TokenSearchResPopupButton{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[118]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[119]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12525,7 +12699,7 @@ func (x *TokenSearchResPopupButton) String() string {
 func (*TokenSearchResPopupButton) ProtoMessage() {}
 
 func (x *TokenSearchResPopupButton) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[118]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[119]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12538,7 +12712,7 @@ func (x *TokenSearchResPopupButton) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TokenSearchResPopupButton.ProtoReflect.Descriptor instead.
 func (*TokenSearchResPopupButton) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{118}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{119}
 }
 
 func (x *TokenSearchResPopupButton) GetText() string {
@@ -12571,7 +12745,7 @@ type TopBar struct {
 func (x *TopBar) Reset() {
 	*x = TopBar{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[119]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[120]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12584,7 +12758,7 @@ func (x *TopBar) String() string {
 func (*TopBar) ProtoMessage() {}
 
 func (x *TopBar) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[119]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[120]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12597,7 +12771,7 @@ func (x *TopBar) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TopBar.ProtoReflect.Descriptor instead.
 func (*TopBar) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{119}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{120}
 }
 
 func (x *TopBar) GetPic() string {
@@ -12652,7 +12826,7 @@ type TrackShop struct {
 func (x *TrackShop) Reset() {
 	*x = TrackShop{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[120]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[121]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12665,7 +12839,7 @@ func (x *TrackShop) String() string {
 func (*TrackShop) ProtoMessage() {}
 
 func (x *TrackShop) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[120]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[121]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12678,7 +12852,7 @@ func (x *TrackShop) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TrackShop.ProtoReflect.Descriptor instead.
 func (*TrackShop) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{120}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{121}
 }
 
 func (x *TrackShop) GetTrackShopPage() *PlayScenePageViewV2 {
@@ -12736,7 +12910,7 @@ type TvViewProgressReply struct {
 func (x *TvViewProgressReply) Reset() {
 	*x = TvViewProgressReply{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[121]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[122]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12749,7 +12923,7 @@ func (x *TvViewProgressReply) String() string {
 func (*TvViewProgressReply) ProtoMessage() {}
 
 func (x *TvViewProgressReply) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[121]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[122]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12762,7 +12936,7 @@ func (x *TvViewProgressReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TvViewProgressReply.ProtoReflect.Descriptor instead.
 func (*TvViewProgressReply) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{121}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{122}
 }
 
 func (x *TvViewProgressReply) GetVideoGuide() *VideoGuide {
@@ -12809,7 +12983,7 @@ type TvViewProgressReq struct {
 func (x *TvViewProgressReq) Reset() {
 	*x = TvViewProgressReq{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[122]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[123]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12822,7 +12996,7 @@ func (x *TvViewProgressReq) String() string {
 func (*TvViewProgressReq) ProtoMessage() {}
 
 func (x *TvViewProgressReq) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[122]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[123]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12835,7 +13009,7 @@ func (x *TvViewProgressReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TvViewProgressReq.ProtoReflect.Descriptor instead.
 func (*TvViewProgressReq) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{122}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{123}
 }
 
 func (x *TvViewProgressReq) GetAid() int64 {
@@ -12986,7 +13160,7 @@ type UgcCardAction struct {
 func (x *UgcCardAction) Reset() {
 	*x = UgcCardAction{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[123]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[124]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -12999,7 +13173,7 @@ func (x *UgcCardAction) String() string {
 func (*UgcCardAction) ProtoMessage() {}
 
 func (x *UgcCardAction) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[123]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[124]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13012,7 +13186,7 @@ func (x *UgcCardAction) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UgcCardAction.ProtoReflect.Descriptor instead.
 func (*UgcCardAction) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{123}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{124}
 }
 
 func (x *UgcCardAction) GetType() string {
@@ -13057,7 +13231,7 @@ type UGCCardSubtitle struct {
 func (x *UGCCardSubtitle) Reset() {
 	*x = UGCCardSubtitle{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[124]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[125]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -13070,7 +13244,7 @@ func (x *UGCCardSubtitle) String() string {
 func (*UGCCardSubtitle) ProtoMessage() {}
 
 func (x *UGCCardSubtitle) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[124]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[125]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13083,7 +13257,7 @@ func (x *UGCCardSubtitle) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UGCCardSubtitle.ProtoReflect.Descriptor instead.
 func (*UGCCardSubtitle) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{124}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{125}
 }
 
 func (x *UGCCardSubtitle) GetIcon() string {
@@ -13132,7 +13306,7 @@ type UgcExt struct {
 func (x *UgcExt) Reset() {
 	*x = UgcExt{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[125]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[126]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -13145,7 +13319,7 @@ func (x *UgcExt) String() string {
 func (*UgcExt) ProtoMessage() {}
 
 func (x *UgcExt) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[125]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[126]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13158,7 +13332,7 @@ func (x *UgcExt) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UgcExt.ProtoReflect.Descriptor instead.
 func (*UgcExt) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{125}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{126}
 }
 
 func (x *UgcExt) GetHasLike() bool {
@@ -13278,7 +13452,7 @@ type UgcInteractionInfo struct {
 func (x *UgcInteractionInfo) Reset() {
 	*x = UgcInteractionInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[126]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[127]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -13291,7 +13465,7 @@ func (x *UgcInteractionInfo) String() string {
 func (*UgcInteractionInfo) ProtoMessage() {}
 
 func (x *UgcInteractionInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[126]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[127]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13304,7 +13478,7 @@ func (x *UgcInteractionInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UgcInteractionInfo.ProtoReflect.Descriptor instead.
 func (*UgcInteractionInfo) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{126}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{127}
 }
 
 func (x *UgcInteractionInfo) GetType() string {
@@ -13376,7 +13550,7 @@ type UgcRights struct {
 func (x *UgcRights) Reset() {
 	*x = UgcRights{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[127]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[128]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -13389,7 +13563,7 @@ func (x *UgcRights) String() string {
 func (*UgcRights) ProtoMessage() {}
 
 func (x *UgcRights) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[127]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[128]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13402,7 +13576,7 @@ func (x *UgcRights) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UgcRights.ProtoReflect.Descriptor instead.
 func (*UgcRights) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{127}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{128}
 }
 
 func (x *UgcRights) GetAllowLike() int32 {
@@ -13434,7 +13608,7 @@ type UpExtInfo struct {
 func (x *UpExtInfo) Reset() {
 	*x = UpExtInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[128]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[129]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -13447,7 +13621,7 @@ func (x *UpExtInfo) String() string {
 func (*UpExtInfo) ProtoMessage() {}
 
 func (x *UpExtInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[128]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[129]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13460,7 +13634,7 @@ func (x *UpExtInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpExtInfo.ProtoReflect.Descriptor instead.
 func (*UpExtInfo) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{128}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{129}
 }
 
 func (x *UpExtInfo) GetUpName() string {
@@ -13511,7 +13685,7 @@ type Uploader struct {
 func (x *Uploader) Reset() {
 	*x = Uploader{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[129]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[130]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -13524,7 +13698,7 @@ func (x *Uploader) String() string {
 func (*Uploader) ProtoMessage() {}
 
 func (x *Uploader) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[129]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[130]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13537,7 +13711,7 @@ func (x *Uploader) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Uploader.ProtoReflect.Descriptor instead.
 func (*Uploader) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{129}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{130}
 }
 
 func (x *Uploader) GetUpName() string {
@@ -13620,7 +13794,7 @@ type UserInfo struct {
 func (x *UserInfo) Reset() {
 	*x = UserInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[130]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[131]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -13633,7 +13807,7 @@ func (x *UserInfo) String() string {
 func (*UserInfo) ProtoMessage() {}
 
 func (x *UserInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[130]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[131]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13646,7 +13820,7 @@ func (x *UserInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserInfo.ProtoReflect.Descriptor instead.
 func (*UserInfo) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{130}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{131}
 }
 
 func (x *UserInfo) GetMid() int64 {
@@ -13706,7 +13880,7 @@ type UserStatus struct {
 func (x *UserStatus) Reset() {
 	*x = UserStatus{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[131]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[132]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -13719,7 +13893,7 @@ func (x *UserStatus) String() string {
 func (*UserStatus) ProtoMessage() {}
 
 func (x *UserStatus) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[131]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[132]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13732,7 +13906,7 @@ func (x *UserStatus) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserStatus.ProtoReflect.Descriptor instead.
 func (*UserStatus) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{131}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{132}
 }
 
 func (x *UserStatus) GetFollow() int32 {
@@ -13781,7 +13955,7 @@ type VerticalRankCards struct {
 func (x *VerticalRankCards) Reset() {
 	*x = VerticalRankCards{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[132]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[133]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -13794,7 +13968,7 @@ func (x *VerticalRankCards) String() string {
 func (*VerticalRankCards) ProtoMessage() {}
 
 func (x *VerticalRankCards) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[132]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[133]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13807,7 +13981,7 @@ func (x *VerticalRankCards) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VerticalRankCards.ProtoReflect.Descriptor instead.
 func (*VerticalRankCards) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{132}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{133}
 }
 
 func (x *VerticalRankCards) GetSeasonId() int64 {
@@ -13877,7 +14051,7 @@ type VerticalRankMoreCard struct {
 func (x *VerticalRankMoreCard) Reset() {
 	*x = VerticalRankMoreCard{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[133]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[134]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -13890,7 +14064,7 @@ func (x *VerticalRankMoreCard) String() string {
 func (*VerticalRankMoreCard) ProtoMessage() {}
 
 func (x *VerticalRankMoreCard) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[133]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[134]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13903,7 +14077,7 @@ func (x *VerticalRankMoreCard) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VerticalRankMoreCard.ProtoReflect.Descriptor instead.
 func (*VerticalRankMoreCard) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{133}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{134}
 }
 
 func (x *VerticalRankMoreCard) GetIcon() string {
@@ -13967,7 +14141,7 @@ type VideoGuide struct {
 func (x *VideoGuide) Reset() {
 	*x = VideoGuide{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[134]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[135]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -13980,7 +14154,7 @@ func (x *VideoGuide) String() string {
 func (*VideoGuide) ProtoMessage() {}
 
 func (x *VideoGuide) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[134]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[135]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13993,7 +14167,7 @@ func (x *VideoGuide) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VideoGuide.ProtoReflect.Descriptor instead.
 func (*VideoGuide) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{134}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{135}
 }
 
 func (x *VideoGuide) GetCommanddms() [][]byte {
@@ -14019,7 +14193,7 @@ type VideoMask struct {
 func (x *VideoMask) Reset() {
 	*x = VideoMask{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[135]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[136]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -14032,7 +14206,7 @@ func (x *VideoMask) String() string {
 func (*VideoMask) ProtoMessage() {}
 
 func (x *VideoMask) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[135]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[136]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14045,7 +14219,7 @@ func (x *VideoMask) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VideoMask.ProtoReflect.Descriptor instead.
 func (*VideoMask) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{135}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{136}
 }
 
 func (x *VideoMask) GetCid() int64 {
@@ -14097,7 +14271,7 @@ type VideoSubtitle struct {
 func (x *VideoSubtitle) Reset() {
 	*x = VideoSubtitle{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[136]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[137]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -14110,7 +14284,7 @@ func (x *VideoSubtitle) String() string {
 func (*VideoSubtitle) ProtoMessage() {}
 
 func (x *VideoSubtitle) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[136]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[137]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14123,7 +14297,7 @@ func (x *VideoSubtitle) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VideoSubtitle.ProtoReflect.Descriptor instead.
 func (*VideoSubtitle) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{136}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{137}
 }
 
 func (x *VideoSubtitle) GetLan() string {
@@ -14164,7 +14338,7 @@ type ViewHerdDmElem struct {
 func (x *ViewHerdDmElem) Reset() {
 	*x = ViewHerdDmElem{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[137]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[138]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -14177,7 +14351,7 @@ func (x *ViewHerdDmElem) String() string {
 func (*ViewHerdDmElem) ProtoMessage() {}
 
 func (x *ViewHerdDmElem) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[137]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[138]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14190,7 +14364,7 @@ func (x *ViewHerdDmElem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ViewHerdDmElem.ProtoReflect.Descriptor instead.
 func (*ViewHerdDmElem) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{137}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{138}
 }
 
 func (x *ViewHerdDmElem) GetHerdMsg() string {
@@ -14248,7 +14422,7 @@ type ViewToast struct {
 func (x *ViewToast) Reset() {
 	*x = ViewToast{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[138]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[139]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -14261,7 +14435,7 @@ func (x *ViewToast) String() string {
 func (*ViewToast) ProtoMessage() {}
 
 func (x *ViewToast) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[138]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[139]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14274,7 +14448,7 @@ func (x *ViewToast) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ViewToast.ProtoReflect.Descriptor instead.
 func (*ViewToast) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{138}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{139}
 }
 
 func (x *ViewToast) GetHomeToast() string {
@@ -14305,7 +14479,7 @@ type WatchProgress struct {
 func (x *WatchProgress) Reset() {
 	*x = WatchProgress{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[139]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[140]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -14318,7 +14492,7 @@ func (x *WatchProgress) String() string {
 func (*WatchProgress) ProtoMessage() {}
 
 func (x *WatchProgress) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[139]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[140]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14331,7 +14505,7 @@ func (x *WatchProgress) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WatchProgress.ProtoReflect.Descriptor instead.
 func (*WatchProgress) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{139}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{140}
 }
 
 func (x *WatchProgress) GetLastEpId() int32 {
@@ -14370,7 +14544,7 @@ type WatchProgressV2 struct {
 func (x *WatchProgressV2) Reset() {
 	*x = WatchProgressV2{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_tv_messages_proto_msgTypes[140]
+		mi := &file_bilibili_tv_messages_proto_msgTypes[141]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -14383,7 +14557,7 @@ func (x *WatchProgressV2) String() string {
 func (*WatchProgressV2) ProtoMessage() {}
 
 func (x *WatchProgressV2) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_tv_messages_proto_msgTypes[140]
+	mi := &file_bilibili_tv_messages_proto_msgTypes[141]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14396,7 +14570,7 @@ func (x *WatchProgressV2) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WatchProgressV2.ProtoReflect.Descriptor instead.
 func (*WatchProgressV2) Descriptor() ([]byte, []int) {
-	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{140}
+	return file_bilibili_tv_messages_proto_rawDescGZIP(), []int{141}
 }
 
 func (x *WatchProgressV2) GetVideoId() int64 {
@@ -14728,7 +14902,7 @@ var file_bilibili_tv_messages_proto_rawDesc = []byte{
 	0x20, 0x03, 0x28, 0x0b, 0x32, 0x28, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73,
 	0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x56, 0x65, 0x72,
 	0x74, 0x69, 0x63, 0x61, 0x6c, 0x52, 0x61, 0x6e, 0x6b, 0x43, 0x61, 0x72, 0x64, 0x73, 0x52, 0x09,
-	0x72, 0x61, 0x6e, 0x6b, 0x43, 0x61, 0x72, 0x64, 0x73, 0x22, 0xd9, 0x18, 0x0a, 0x0f, 0x43, 0x61,
+	0x72, 0x61, 0x6e, 0x6b, 0x43, 0x61, 0x72, 0x64, 0x73, 0x22, 0xa5, 0x19, 0x0a, 0x0f, 0x43, 0x61,
 	0x72, 0x64, 0x56, 0x69, 0x65, 0x77, 0x56, 0x32, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x12, 0x1a, 0x0a,
 	0x08, 0x63, 0x61, 0x72, 0x64, 0x54, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52,
 	0x08, 0x63, 0x61, 0x72, 0x64, 0x54, 0x79, 0x70, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x63, 0x61, 0x72,
@@ -14926,403 +15100,432 @@ var file_bilibili_tv_messages_proto_rawDesc = []byte{
 	0x28, 0x0b, 0x32, 0x23, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62,
 	0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x45, 0x78, 0x74, 0x65, 0x6e,
 	0x64, 0x65, 0x64, 0x44, 0x65, 0x73, 0x63, 0x52, 0x0c, 0x65, 0x78, 0x74, 0x65, 0x6e, 0x64, 0x65,
-	0x64, 0x44, 0x65, 0x73, 0x63, 0x22, 0xe6, 0x07, 0x0a, 0x0d, 0x43, 0x61, 0x72, 0x64, 0x56, 0x69,
-	0x65, 0x77, 0x56, 0x32, 0x52, 0x65, 0x71, 0x12, 0x1a, 0x0a, 0x08, 0x76, 0x69, 0x65, 0x77, 0x54,
-	0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x08, 0x76, 0x69, 0x65, 0x77, 0x54,
-	0x79, 0x70, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x63, 0x61, 0x72, 0x64, 0x54, 0x79, 0x70, 0x65, 0x18,
-	0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x08, 0x63, 0x61, 0x72, 0x64, 0x54, 0x79, 0x70, 0x65, 0x12,
-	0x1a, 0x0a, 0x08, 0x6f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x49, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28,
-	0x03, 0x52, 0x08, 0x6f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x49, 0x64, 0x12, 0x1c, 0x0a, 0x09, 0x66,
-	0x72, 0x6f, 0x6d, 0x53, 0x70, 0x6d, 0x69, 0x64, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09,
-	0x66, 0x72, 0x6f, 0x6d, 0x53, 0x70, 0x6d, 0x69, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x73, 0x70, 0x6d,
-	0x69, 0x64, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x73, 0x70, 0x6d, 0x69, 0x64, 0x12,
-	0x1a, 0x0a, 0x08, 0x61, 0x75, 0x74, 0x6f, 0x50, 0x6c, 0x61, 0x79, 0x18, 0x06, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x08, 0x61, 0x75, 0x74, 0x6f, 0x50, 0x6c, 0x61, 0x79, 0x12, 0x20, 0x0a, 0x0b, 0x73,
-	0x65, 0x61, 0x72, 0x63, 0x68, 0x54, 0x72, 0x61, 0x63, 0x65, 0x18, 0x07, 0x20, 0x01, 0x28, 0x03,
-	0x52, 0x0b, 0x73, 0x65, 0x61, 0x72, 0x63, 0x68, 0x54, 0x72, 0x61, 0x63, 0x65, 0x12, 0x18, 0x0a,
-	0x07, 0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x18, 0x08, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07,
-	0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x74, 0x65, 0x72, 0x6d, 0x18,
-	0x09, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x74, 0x65, 0x72, 0x6d, 0x12, 0x20, 0x0a, 0x0b, 0x6b,
-	0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x46, 0x72, 0x6f, 0x6d, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x0b, 0x6b, 0x65, 0x79, 0x77, 0x6f, 0x72, 0x64, 0x46, 0x72, 0x6f, 0x6d, 0x12, 0x14, 0x0a,
-	0x05, 0x65, 0x78, 0x74, 0x72, 0x61, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x65, 0x78,
-	0x74, 0x72, 0x61, 0x12, 0x1c, 0x0a, 0x09, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x4b, 0x65, 0x79,
-	0x18, 0x0c, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x4b, 0x65,
-	0x79, 0x12, 0x18, 0x0a, 0x07, 0x73, 0x75, 0x67, 0x46, 0x72, 0x6f, 0x6d, 0x18, 0x0d, 0x20, 0x01,
-	0x28, 0x09, 0x52, 0x07, 0x73, 0x75, 0x67, 0x46, 0x72, 0x6f, 0x6d, 0x12, 0x12, 0x0a, 0x04, 0x69,
-	0x73, 0x41, 0x64, 0x18, 0x0e, 0x20, 0x01, 0x28, 0x08, 0x52, 0x04, 0x69, 0x73, 0x41, 0x64, 0x12,
-	0x18, 0x0a, 0x07, 0x76, 0x69, 0x64, 0x65, 0x6f, 0x49, 0x64, 0x18, 0x0f, 0x20, 0x01, 0x28, 0x03,
-	0x52, 0x07, 0x76, 0x69, 0x64, 0x65, 0x6f, 0x49, 0x64, 0x12, 0x1a, 0x0a, 0x08, 0x70, 0x72, 0x6f,
-	0x67, 0x72, 0x65, 0x73, 0x73, 0x18, 0x10, 0x20, 0x01, 0x28, 0x03, 0x52, 0x08, 0x70, 0x72, 0x6f,
-	0x67, 0x72, 0x65, 0x73, 0x73, 0x12, 0x1c, 0x0a, 0x09, 0x73, 0x65, 0x72, 0x69, 0x61, 0x6c, 0x41,
-	0x69, 0x64, 0x18, 0x11, 0x20, 0x01, 0x28, 0x03, 0x52, 0x09, 0x73, 0x65, 0x72, 0x69, 0x61, 0x6c,
-	0x41, 0x69, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x66, 0x6f, 0x75, 0x72, 0x6b, 0x18, 0x12, 0x20, 0x01,
-	0x28, 0x05, 0x52, 0x05, 0x66, 0x6f, 0x75, 0x72, 0x6b, 0x12, 0x16, 0x0a, 0x06, 0x65, 0x69, 0x67,
-	0x68, 0x74, 0x6b, 0x18, 0x13, 0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x65, 0x69, 0x67, 0x68, 0x74,
-	0x6b, 0x12, 0x14, 0x0a, 0x05, 0x75, 0x70, 0x4d, 0x69, 0x64, 0x18, 0x14, 0x20, 0x01, 0x28, 0x03,
-	0x52, 0x05, 0x75, 0x70, 0x4d, 0x69, 0x64, 0x12, 0x1c, 0x0a, 0x09, 0x70, 0x6c, 0x61, 0x79, 0x53,
-	0x74, 0x79, 0x6c, 0x65, 0x18, 0x15, 0x20, 0x01, 0x28, 0x03, 0x52, 0x09, 0x70, 0x6c, 0x61, 0x79,
-	0x53, 0x74, 0x79, 0x6c, 0x65, 0x12, 0x35, 0x0a, 0x06, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x18,
-	0x16, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69,
-	0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x44, 0x65,
-	0x76, 0x69, 0x63, 0x65, 0x52, 0x06, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x12, 0x28, 0x0a, 0x0f,
-	0x63, 0x6f, 0x6d, 0x65, 0x46, 0x72, 0x6f, 0x6d, 0x4f, 0x75, 0x74, 0x73, 0x69, 0x64, 0x65, 0x18,
-	0x17, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0f, 0x63, 0x6f, 0x6d, 0x65, 0x46, 0x72, 0x6f, 0x6d, 0x4f,
-	0x75, 0x74, 0x73, 0x69, 0x64, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x73, 0x74, 0x61, 0x79, 0x18, 0x18,
-	0x20, 0x01, 0x28, 0x05, 0x52, 0x04, 0x73, 0x74, 0x61, 0x79, 0x12, 0x1c, 0x0a, 0x09, 0x63, 0x68,
-	0x69, 0x6c, 0x64, 0x4c, 0x6f, 0x63, 0x6b, 0x18, 0x19, 0x20, 0x01, 0x28, 0x05, 0x52, 0x09, 0x63,
-	0x68, 0x69, 0x6c, 0x64, 0x4c, 0x6f, 0x63, 0x6b, 0x12, 0x18, 0x0a, 0x07, 0x70, 0x72, 0x6f, 0x6a,
-	0x4e, 0x65, 0x77, 0x18, 0x1a, 0x20, 0x01, 0x28, 0x08, 0x52, 0x07, 0x70, 0x72, 0x6f, 0x6a, 0x4e,
-	0x65, 0x77, 0x12, 0x24, 0x0a, 0x0d, 0x6d, 0x6f, 0x62, 0x69, 0x41, 0x63, 0x63, 0x65, 0x73, 0x73,
-	0x4b, 0x65, 0x79, 0x18, 0x1b, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x6d, 0x6f, 0x62, 0x69, 0x41,
-	0x63, 0x63, 0x65, 0x73, 0x73, 0x4b, 0x65, 0x79, 0x12, 0x1a, 0x0a, 0x08, 0x70, 0x72, 0x6f, 0x6a,
-	0x43, 0x6f, 0x64, 0x65, 0x18, 0x1c, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x70, 0x72, 0x6f, 0x6a,
-	0x43, 0x6f, 0x64, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x49, 0x64,
-	0x18, 0x1d, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x49, 0x64,
-	0x12, 0x1e, 0x0a, 0x0a, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x1e,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x4e, 0x61, 0x6d, 0x65,
-	0x12, 0x1a, 0x0a, 0x08, 0x73, 0x65, 0x70, 0x61, 0x72, 0x61, 0x74, 0x65, 0x18, 0x1f, 0x20, 0x01,
-	0x28, 0x05, 0x52, 0x08, 0x73, 0x65, 0x70, 0x61, 0x72, 0x61, 0x74, 0x65, 0x12, 0x1a, 0x0a, 0x08,
-	0x67, 0x6f, 0x6f, 0x64, 0x73, 0x43, 0x69, 0x64, 0x18, 0x20, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08,
-	0x67, 0x6f, 0x6f, 0x64, 0x73, 0x43, 0x69, 0x64, 0x12, 0x24, 0x0a, 0x0d, 0x6e, 0x65, 0x65, 0x64,
-	0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x18, 0x21, 0x20, 0x01, 0x28, 0x05, 0x52,
-	0x0d, 0x6e, 0x65, 0x65, 0x64, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x12, 0x1e,
-	0x0a, 0x0a, 0x65, 0x6e, 0x74, 0x72, 0x79, 0x53, 0x63, 0x65, 0x6e, 0x65, 0x18, 0x22, 0x20, 0x01,
-	0x28, 0x05, 0x52, 0x0a, 0x65, 0x6e, 0x74, 0x72, 0x79, 0x53, 0x63, 0x65, 0x6e, 0x65, 0x22, 0x8d,
-	0x01, 0x0a, 0x07, 0x43, 0x61, 0x74, 0x61, 0x6c, 0x6f, 0x67, 0x12, 0x1c, 0x0a, 0x09, 0x63, 0x61,
-	0x74, 0x61, 0x6c, 0x6f, 0x67, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x09, 0x63,
-	0x61, 0x74, 0x61, 0x6c, 0x6f, 0x67, 0x49, 0x64, 0x12, 0x20, 0x0a, 0x0b, 0x63, 0x61, 0x74, 0x61,
-	0x6c, 0x6f, 0x67, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x63,
-	0x61, 0x74, 0x61, 0x6c, 0x6f, 0x67, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x1e, 0x0a, 0x0a, 0x63, 0x61,
-	0x74, 0x61, 0x6c, 0x6f, 0x67, 0x50, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0a,
-	0x63, 0x61, 0x74, 0x61, 0x6c, 0x6f, 0x67, 0x50, 0x69, 0x64, 0x12, 0x22, 0x0a, 0x0c, 0x63, 0x61,
-	0x74, 0x61, 0x6c, 0x6f, 0x67, 0x50, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x0c, 0x63, 0x61, 0x74, 0x61, 0x6c, 0x6f, 0x67, 0x50, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x72,
-	0x0a, 0x0a, 0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x45, 0x78, 0x74, 0x12, 0x10, 0x0a, 0x03,
-	0x61, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x03, 0x61, 0x69, 0x64, 0x12, 0x26,
-	0x0a, 0x0e, 0x66, 0x69, 0x72, 0x73, 0x74, 0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x49, 0x64,
-	0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0e, 0x66, 0x69, 0x72, 0x73, 0x74, 0x43, 0x68, 0x61,
-	0x6e, 0x6e, 0x65, 0x6c, 0x49, 0x64, 0x12, 0x2a, 0x0a, 0x10, 0x66, 0x69, 0x72, 0x73, 0x74, 0x43,
-	0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x10, 0x66, 0x69, 0x72, 0x73, 0x74, 0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x4e, 0x61,
-	0x6d, 0x65, 0x22, 0x3d, 0x0a, 0x0f, 0x43, 0x68, 0x61, 0x72, 0x67, 0x69, 0x6e, 0x67, 0x45, 0x6e,
-	0x64, 0x50, 0x61, 0x67, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x6e, 0x6f, 0x4c, 0x69, 0x73, 0x74, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x6e, 0x6f, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x12, 0x0a,
-	0x04, 0x74, 0x65, 0x78, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x74, 0x65, 0x78,
-	0x74, 0x22, 0xaf, 0x01, 0x0a, 0x0b, 0x43, 0x68, 0x61, 0x72, 0x67, 0x69, 0x6e, 0x67, 0x45, 0x78,
-	0x74, 0x12, 0x20, 0x0a, 0x0b, 0x68, 0x69, 0x64, 0x65, 0x42, 0x75, 0x74, 0x74, 0x6f, 0x6e, 0x73,
-	0x18, 0x01, 0x20, 0x03, 0x28, 0x09, 0x52, 0x0b, 0x68, 0x69, 0x64, 0x65, 0x42, 0x75, 0x74, 0x74,
-	0x6f, 0x6e, 0x73, 0x12, 0x1c, 0x0a, 0x09, 0x68, 0x69, 0x64, 0x65, 0x4d, 0x65, 0x6e, 0x75, 0x73,
-	0x18, 0x02, 0x20, 0x03, 0x28, 0x09, 0x52, 0x09, 0x68, 0x69, 0x64, 0x65, 0x4d, 0x65, 0x6e, 0x75,
-	0x73, 0x12, 0x40, 0x0a, 0x07, 0x65, 0x6e, 0x64, 0x50, 0x61, 0x67, 0x65, 0x18, 0x03, 0x20, 0x01,
-	0x28, 0x0b, 0x32, 0x26, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62,
-	0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x43, 0x68, 0x61, 0x72, 0x67,
-	0x69, 0x6e, 0x67, 0x45, 0x6e, 0x64, 0x50, 0x61, 0x67, 0x65, 0x52, 0x07, 0x65, 0x6e, 0x64, 0x50,
-	0x61, 0x67, 0x65, 0x12, 0x1e, 0x0a, 0x0a, 0x69, 0x73, 0x43, 0x68, 0x61, 0x72, 0x67, 0x69, 0x6e,
-	0x67, 0x18, 0x04, 0x20, 0x01, 0x28, 0x08, 0x52, 0x0a, 0x69, 0x73, 0x43, 0x68, 0x61, 0x72, 0x67,
-	0x69, 0x6e, 0x67, 0x22, 0xb7, 0x01, 0x0a, 0x0f, 0x43, 0x68, 0x65, 0x65, 0x73, 0x65, 0x42, 0x75,
-	0x79, 0x42, 0x75, 0x74, 0x74, 0x6f, 0x6e, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x6f, 0x76, 0x65, 0x72,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x12, 0x1e, 0x0a,
-	0x0a, 0x66, 0x6f, 0x63, 0x75, 0x73, 0x43, 0x6f, 0x76, 0x65, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x0a, 0x66, 0x6f, 0x63, 0x75, 0x73, 0x43, 0x6f, 0x76, 0x65, 0x72, 0x12, 0x12, 0x0a,
-	0x04, 0x74, 0x65, 0x78, 0x74, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x74, 0x65, 0x78,
-	0x74, 0x12, 0x18, 0x0a, 0x07, 0x74, 0x65, 0x78, 0x74, 0x42, 0x75, 0x79, 0x18, 0x04, 0x20, 0x01,
-	0x28, 0x09, 0x52, 0x07, 0x74, 0x65, 0x78, 0x74, 0x42, 0x75, 0x79, 0x12, 0x16, 0x0a, 0x06, 0x73,
-	0x63, 0x68, 0x65, 0x6d, 0x61, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x73, 0x63, 0x68,
-	0x65, 0x6d, 0x61, 0x12, 0x12, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28,
-	0x05, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x61, 0x73, 0x74,
-	0x18, 0x07, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x6f, 0x61, 0x73, 0x74, 0x22, 0xb0, 0x01,
-	0x0a, 0x09, 0x43, 0x68, 0x65, 0x65, 0x73, 0x65, 0x45, 0x78, 0x74, 0x12, 0x44, 0x0a, 0x09, 0x62,
-	0x75, 0x79, 0x42, 0x75, 0x74, 0x74, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x26,
-	0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62,
-	0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x43, 0x68, 0x65, 0x65, 0x73, 0x65, 0x42, 0x75, 0x79,
-	0x42, 0x75, 0x74, 0x74, 0x6f, 0x6e, 0x52, 0x09, 0x62, 0x75, 0x79, 0x42, 0x75, 0x74, 0x74, 0x6f,
-	0x6e, 0x12, 0x3d, 0x0a, 0x06, 0x72, 0x69, 0x67, 0x68, 0x74, 0x73, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x0b, 0x32, 0x25, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69,
-	0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x43, 0x68, 0x65, 0x65, 0x73, 0x65,
-	0x45, 0x78, 0x74, 0x52, 0x69, 0x67, 0x68, 0x74, 0x52, 0x06, 0x72, 0x69, 0x67, 0x68, 0x74, 0x73,
-	0x12, 0x1e, 0x0a, 0x0a, 0x69, 0x73, 0x43, 0x68, 0x61, 0x72, 0x67, 0x69, 0x6e, 0x67, 0x18, 0x03,
-	0x20, 0x01, 0x28, 0x08, 0x52, 0x0a, 0x69, 0x73, 0x43, 0x68, 0x61, 0x72, 0x67, 0x69, 0x6e, 0x67,
-	0x22, 0x4c, 0x0a, 0x0e, 0x43, 0x68, 0x65, 0x65, 0x73, 0x65, 0x45, 0x78, 0x74, 0x52, 0x69, 0x67,
-	0x68, 0x74, 0x12, 0x1a, 0x0a, 0x08, 0x61, 0x6c, 0x6c, 0x6f, 0x77, 0x42, 0x75, 0x79, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x05, 0x52, 0x08, 0x61, 0x6c, 0x6c, 0x6f, 0x77, 0x42, 0x75, 0x79, 0x12, 0x1e,
-	0x0a, 0x0a, 0x61, 0x6c, 0x6c, 0x6f, 0x77, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x18, 0x02, 0x20, 0x01,
-	0x28, 0x05, 0x52, 0x0a, 0x61, 0x6c, 0x6c, 0x6f, 0x77, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x22, 0x43,
-	0x0a, 0x07, 0x43, 0x68, 0x72, 0x6f, 0x6e, 0x6f, 0x73, 0x12, 0x10, 0x0a, 0x03, 0x6d, 0x64, 0x35,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6d, 0x64, 0x35, 0x12, 0x12, 0x0a, 0x04, 0x66,
-	0x69, 0x6c, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x66, 0x69, 0x6c, 0x65, 0x12,
-	0x12, 0x0a, 0x04, 0x73, 0x69, 0x67, 0x6e, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x73,
-	0x69, 0x67, 0x6e, 0x22, 0x8c, 0x08, 0x0a, 0x07, 0x43, 0x69, 0x64, 0x4c, 0x69, 0x73, 0x74, 0x12,
-	0x18, 0x0a, 0x07, 0x76, 0x69, 0x64, 0x65, 0x6f, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03,
-	0x52, 0x07, 0x76, 0x69, 0x64, 0x65, 0x6f, 0x49, 0x64, 0x12, 0x1c, 0x0a, 0x09, 0x76, 0x69, 0x64,
-	0x65, 0x6f, 0x54, 0x79, 0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x09, 0x76, 0x69,
-	0x64, 0x65, 0x6f, 0x54, 0x79, 0x70, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x66, 0x72, 0x6f, 0x6d, 0x18,
-	0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x66, 0x72, 0x6f, 0x6d, 0x12, 0x14, 0x0a, 0x05, 0x74,
-	0x69, 0x74, 0x6c, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x69, 0x74, 0x6c,
-	0x65, 0x12, 0x1c, 0x0a, 0x09, 0x6c, 0x6f, 0x6e, 0x67, 0x54, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x05,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x6c, 0x6f, 0x6e, 0x67, 0x54, 0x69, 0x74, 0x6c, 0x65, 0x12,
-	0x24, 0x0a, 0x0d, 0x68, 0x6f, 0x72, 0x69, 0x7a, 0x6f, 0x6e, 0x74, 0x61, 0x6c, 0x55, 0x72, 0x6c,
-	0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x68, 0x6f, 0x72, 0x69, 0x7a, 0x6f, 0x6e, 0x74,
-	0x61, 0x6c, 0x55, 0x72, 0x6c, 0x12, 0x1a, 0x0a, 0x08, 0x68, 0x69, 0x64, 0x65, 0x6d, 0x61, 0x72,
-	0x6b, 0x18, 0x07, 0x20, 0x01, 0x28, 0x08, 0x52, 0x08, 0x68, 0x69, 0x64, 0x65, 0x6d, 0x61, 0x72,
-	0x6b, 0x12, 0x16, 0x0a, 0x06, 0x66, 0x69, 0x72, 0x73, 0x74, 0x69, 0x18, 0x08, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x06, 0x66, 0x69, 0x72, 0x73, 0x74, 0x69, 0x12, 0x1e, 0x0a, 0x0a, 0x69, 0x73, 0x50,
-	0x6f, 0x72, 0x74, 0x72, 0x61, 0x69, 0x74, 0x18, 0x09, 0x20, 0x01, 0x28, 0x08, 0x52, 0x0a, 0x69,
-	0x73, 0x50, 0x6f, 0x72, 0x74, 0x72, 0x61, 0x69, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x70, 0x61, 0x67,
-	0x65, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x03, 0x52, 0x04, 0x70, 0x61, 0x67, 0x65, 0x12, 0x1c, 0x0a,
-	0x09, 0x6e, 0x65, 0x65, 0x64, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x08,
-	0x52, 0x09, 0x6e, 0x65, 0x65, 0x64, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x12, 0x1e, 0x0a, 0x0a, 0x77,
-	0x61, 0x74, 0x63, 0x68, 0x52, 0x69, 0x67, 0x68, 0x74, 0x18, 0x0c, 0x20, 0x01, 0x28, 0x03, 0x52,
-	0x0a, 0x77, 0x61, 0x74, 0x63, 0x68, 0x52, 0x69, 0x67, 0x68, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x70,
-	0x61, 0x69, 0x64, 0x18, 0x0d, 0x20, 0x01, 0x28, 0x08, 0x52, 0x04, 0x70, 0x61, 0x69, 0x64, 0x12,
-	0x44, 0x0a, 0x0b, 0x70, 0x6c, 0x61, 0x79, 0x75, 0x72, 0x6c, 0x41, 0x72, 0x67, 0x73, 0x18, 0x0e,
-	0x20, 0x01, 0x28, 0x0b, 0x32, 0x22, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73,
-	0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x50, 0x6c, 0x61,
-	0x79, 0x75, 0x72, 0x6c, 0x41, 0x72, 0x67, 0x73, 0x52, 0x0b, 0x70, 0x6c, 0x61, 0x79, 0x75, 0x72,
-	0x6c, 0x41, 0x72, 0x67, 0x73, 0x12, 0x3d, 0x0a, 0x0a, 0x63, 0x6f, 0x72, 0x6e, 0x65, 0x72, 0x6d,
-	0x61, 0x72, 0x6b, 0x18, 0x0f, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x63, 0x6f, 0x6d, 0x2e,
-	0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74,
-	0x76, 0x2e, 0x4c, 0x61, 0x62, 0x65, 0x6c, 0x73, 0x52, 0x0a, 0x63, 0x6f, 0x72, 0x6e, 0x65, 0x72,
-	0x6d, 0x61, 0x72, 0x6b, 0x12, 0x1c, 0x0a, 0x09, 0x63, 0x6f, 0x70, 0x79, 0x72, 0x69, 0x67, 0x68,
-	0x74, 0x18, 0x10, 0x20, 0x01, 0x28, 0x03, 0x52, 0x09, 0x63, 0x6f, 0x70, 0x79, 0x72, 0x69, 0x67,
-	0x68, 0x74, 0x12, 0x20, 0x0a, 0x0b, 0x61, 0x6c, 0x6c, 0x6f, 0x77, 0x44, 0x65, 0x6d, 0x61, 0x6e,
-	0x64, 0x18, 0x11, 0x20, 0x01, 0x28, 0x08, 0x52, 0x0b, 0x61, 0x6c, 0x6c, 0x6f, 0x77, 0x44, 0x65,
-	0x6d, 0x61, 0x6e, 0x64, 0x12, 0x10, 0x0a, 0x03, 0x61, 0x69, 0x64, 0x18, 0x12, 0x20, 0x01, 0x28,
-	0x03, 0x52, 0x03, 0x61, 0x69, 0x64, 0x12, 0x20, 0x0a, 0x0b, 0x70, 0x75, 0x62, 0x6c, 0x69, 0x73,
-	0x68, 0x54, 0x69, 0x6d, 0x65, 0x18, 0x13, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0b, 0x70, 0x75, 0x62,
-	0x6c, 0x69, 0x73, 0x68, 0x54, 0x69, 0x6d, 0x65, 0x12, 0x20, 0x0a, 0x0b, 0x70, 0x75, 0x62, 0x6c,
-	0x69, 0x73, 0x68, 0x44, 0x61, 0x74, 0x65, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x70,
-	0x75, 0x62, 0x6c, 0x69, 0x73, 0x68, 0x44, 0x61, 0x74, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x64, 0x75,
-	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x15, 0x20, 0x01, 0x28, 0x03, 0x52, 0x08, 0x64, 0x75,
-	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x18, 0x0a, 0x07, 0x72, 0x65, 0x6c, 0x61, 0x74, 0x65,
-	0x64, 0x18, 0x16, 0x20, 0x01, 0x28, 0x05, 0x52, 0x07, 0x72, 0x65, 0x6c, 0x61, 0x74, 0x65, 0x64,
-	0x12, 0x18, 0x0a, 0x07, 0x74, 0x61, 0x62, 0x54, 0x79, 0x70, 0x65, 0x18, 0x17, 0x20, 0x01, 0x28,
-	0x03, 0x52, 0x07, 0x74, 0x61, 0x62, 0x54, 0x79, 0x70, 0x65, 0x12, 0x1c, 0x0a, 0x09, 0x67, 0x75,
-	0x69, 0x64, 0x65, 0x54, 0x65, 0x78, 0x74, 0x18, 0x18, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x67,
-	0x75, 0x69, 0x64, 0x65, 0x54, 0x65, 0x78, 0x74, 0x12, 0x1c, 0x0a, 0x09, 0x67, 0x75, 0x69, 0x64,
-	0x65, 0x50, 0x61, 0x67, 0x65, 0x18, 0x19, 0x20, 0x01, 0x28, 0x03, 0x52, 0x09, 0x67, 0x75, 0x69,
-	0x64, 0x65, 0x50, 0x61, 0x67, 0x65, 0x12, 0x26, 0x0a, 0x0e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e,
-	0x61, 0x6c, 0x4c, 0x69, 0x6e, 0x6b, 0x49, 0x64, 0x18, 0x1a, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0e,
-	0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x4c, 0x69, 0x6e, 0x6b, 0x49, 0x64, 0x12, 0x1c,
-	0x0a, 0x09, 0x66, 0x69, 0x72, 0x73, 0x74, 0x69, 0x47, 0x61, 0x75, 0x18, 0x1b, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x09, 0x66, 0x69, 0x72, 0x73, 0x74, 0x69, 0x47, 0x61, 0x75, 0x12, 0x16, 0x0a, 0x06,
-	0x63, 0x61, 0x72, 0x64, 0x49, 0x64, 0x18, 0x1c, 0x20, 0x01, 0x28, 0x03, 0x52, 0x06, 0x63, 0x61,
-	0x72, 0x64, 0x49, 0x64, 0x12, 0x20, 0x0a, 0x0b, 0x69, 0x73, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d,
-	0x65, 0x6e, 0x64, 0x18, 0x1d, 0x20, 0x01, 0x28, 0x08, 0x52, 0x0b, 0x69, 0x73, 0x52, 0x65, 0x63,
-	0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x12, 0x3e, 0x0a, 0x09, 0x62, 0x75, 0x79, 0x42, 0x75, 0x74,
-	0x74, 0x6f, 0x6e, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x63, 0x6f, 0x6d, 0x2e,
-	0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74,
-	0x76, 0x2e, 0x42, 0x75, 0x79, 0x42, 0x75, 0x74, 0x74, 0x6f, 0x6e, 0x52, 0x09, 0x62, 0x75, 0x79,
-	0x42, 0x75, 0x74, 0x74, 0x6f, 0x6e, 0x12, 0x20, 0x0a, 0x0b, 0x73, 0x65, 0x63, 0x74, 0x69, 0x6f,
-	0x6e, 0x54, 0x79, 0x70, 0x65, 0x18, 0x1f, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0b, 0x73, 0x65, 0x63,
-	0x74, 0x69, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x66, 0x65, 0x65, 0x74,
-	0x79, 0x70, 0x65, 0x18, 0x20, 0x20, 0x01, 0x28, 0x05, 0x52, 0x07, 0x66, 0x65, 0x65, 0x74, 0x79,
-	0x70, 0x65, 0x22, 0x4b, 0x0a, 0x07, 0x43, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x12, 0x40, 0x0a,
-	0x0a, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x44, 0x6d, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28,
-	0x0b, 0x32, 0x20, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69,
-	0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x61, 0x6e,
-	0x64, 0x44, 0x6d, 0x52, 0x0a, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x44, 0x6d, 0x73, 0x22,
-	0xe7, 0x02, 0x0a, 0x09, 0x43, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x44, 0x6d, 0x12, 0x0e, 0x0a,
-	0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x12, 0x10, 0x0a,
-	0x03, 0x6f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x03, 0x6f, 0x69, 0x64, 0x12,
-	0x10, 0x0a, 0x03, 0x6d, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x03, 0x6d, 0x69,
-	0x64, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x18, 0x04, 0x20, 0x01,
-	0x28, 0x09, 0x52, 0x07, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x12, 0x18, 0x0a, 0x07, 0x63,
-	0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x63, 0x6f,
-	0x6e, 0x74, 0x65, 0x6e, 0x74, 0x12, 0x1a, 0x0a, 0x08, 0x70, 0x72, 0x6f, 0x67, 0x72, 0x65, 0x73,
-	0x73, 0x18, 0x06, 0x20, 0x01, 0x28, 0x05, 0x52, 0x08, 0x70, 0x72, 0x6f, 0x67, 0x72, 0x65, 0x73,
-	0x73, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x07, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x05, 0x63, 0x74, 0x69, 0x6d, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x6d, 0x74, 0x69, 0x6d, 0x65,
-	0x18, 0x08, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x6d, 0x74, 0x69, 0x6d, 0x65, 0x12, 0x14, 0x0a,
-	0x05, 0x65, 0x78, 0x74, 0x72, 0x61, 0x18, 0x09, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x65, 0x78,
-	0x74, 0x72, 0x61, 0x12, 0x14, 0x0a, 0x05, 0x69, 0x64, 0x73, 0x74, 0x72, 0x18, 0x0a, 0x20, 0x01,
-	0x28, 0x09, 0x52, 0x05, 0x69, 0x64, 0x73, 0x74, 0x72, 0x12, 0x18, 0x0a, 0x07, 0x64, 0x69, 0x73,
-	0x70, 0x6c, 0x61, 0x79, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x03, 0x52, 0x07, 0x64, 0x69, 0x73, 0x70,
-	0x6c, 0x61, 0x79, 0x12, 0x12, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x0c, 0x20, 0x01, 0x28,
-	0x05, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x12, 0x1e, 0x0a, 0x0a, 0x61, 0x75, 0x74, 0x6f, 0x63,
-	0x72, 0x65, 0x61, 0x74, 0x65, 0x18, 0x0d, 0x20, 0x01, 0x28, 0x08, 0x52, 0x0a, 0x61, 0x75, 0x74,
-	0x6f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x12, 0x1c, 0x0a, 0x09, 0x63, 0x6f, 0x75, 0x6e, 0x74,
-	0x64, 0x6f, 0x77, 0x6e, 0x18, 0x0e, 0x20, 0x01, 0x28, 0x05, 0x52, 0x09, 0x63, 0x6f, 0x75, 0x6e,
-	0x74, 0x64, 0x6f, 0x77, 0x6e, 0x12, 0x12, 0x0a, 0x04, 0x61, 0x74, 0x74, 0x72, 0x18, 0x0f, 0x20,
-	0x01, 0x28, 0x05, 0x52, 0x04, 0x61, 0x74, 0x74, 0x72, 0x22, 0x94, 0x02, 0x0a, 0x0c, 0x43, 0x6f,
-	0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x44, 0x6d, 0x4f, 0x74, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x12, 0x10, 0x0a, 0x03, 0x6f, 0x69,
-	0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x03, 0x6f, 0x69, 0x64, 0x12, 0x10, 0x0a, 0x03,
-	0x6d, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x03, 0x6d, 0x69, 0x64, 0x12, 0x12,
-	0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x05, 0x52, 0x04, 0x74, 0x79,
-	0x70, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x18, 0x05, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x07, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x12, 0x18, 0x0a, 0x07,
-	0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x63,
-	0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x73, 0x74, 0x61, 0x74, 0x65, 0x18,
-	0x07, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x73, 0x74, 0x61, 0x74, 0x65, 0x12, 0x1a, 0x0a, 0x08,
-	0x70, 0x72, 0x6f, 0x67, 0x72, 0x65, 0x73, 0x73, 0x18, 0x08, 0x20, 0x01, 0x28, 0x05, 0x52, 0x08,
-	0x70, 0x72, 0x6f, 0x67, 0x72, 0x65, 0x73, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x74, 0x69, 0x6d,
-	0x65, 0x18, 0x09, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x63, 0x74, 0x69, 0x6d, 0x65, 0x12, 0x14,
-	0x0a, 0x05, 0x6d, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x6d,
-	0x74, 0x69, 0x6d, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x65, 0x78, 0x74, 0x72, 0x61, 0x18, 0x0b, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x05, 0x65, 0x78, 0x74, 0x72, 0x61, 0x12, 0x14, 0x0a, 0x05, 0x69, 0x64,
-	0x73, 0x74, 0x72, 0x18, 0x0c, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x69, 0x64, 0x73, 0x74, 0x72,
-	0x22, 0x3a, 0x0a, 0x12, 0x43, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x44, 0x6d, 0x73, 0x4f, 0x74,
-	0x74, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x12, 0x24, 0x0a, 0x0d, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e,
-	0x64, 0x64, 0x6d, 0x73, 0x6f, 0x74, 0x74, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0c, 0x52, 0x0d, 0x63,
-	0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x64, 0x6d, 0x73, 0x6f, 0x74, 0x74, 0x22, 0x48, 0x0a, 0x10,
-	0x43, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x44, 0x6d, 0x73, 0x4f, 0x74, 0x74, 0x52, 0x65, 0x71,
-	0x12, 0x10, 0x0a, 0x03, 0x61, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x03, 0x61,
-	0x69, 0x64, 0x12, 0x10, 0x0a, 0x03, 0x63, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52,
-	0x03, 0x63, 0x69, 0x64, 0x12, 0x10, 0x0a, 0x03, 0x6d, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28,
-	0x03, 0x52, 0x03, 0x6d, 0x69, 0x64, 0x22, 0xfb, 0x12, 0x0a, 0x0e, 0x43, 0x6f, 0x6d, 0x6d, 0x6f,
-	0x6e, 0x43, 0x61, 0x72, 0x64, 0x52, 0x65, 0x73, 0x70, 0x12, 0x1a, 0x0a, 0x08, 0x63, 0x61, 0x72,
-	0x64, 0x54, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x08, 0x63, 0x61, 0x72,
-	0x64, 0x54, 0x79, 0x70, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x63, 0x61, 0x72, 0x64, 0x46, 0x72, 0x6f,
-	0x6d, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x08, 0x63, 0x61, 0x72, 0x64, 0x46, 0x72, 0x6f,
-	0x6d, 0x12, 0x1c, 0x0a, 0x09, 0x61, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x18, 0x03,
-	0x20, 0x01, 0x28, 0x05, 0x52, 0x09, 0x61, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x12,
-	0x16, 0x0a, 0x06, 0x63, 0x61, 0x72, 0x64, 0x49, 0x64, 0x18, 0x04, 0x20, 0x01, 0x28, 0x03, 0x52,
-	0x06, 0x63, 0x61, 0x72, 0x64, 0x49, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65,
-	0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x1e, 0x0a,
-	0x0a, 0x68, 0x6f, 0x76, 0x65, 0x72, 0x54, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x0a, 0x68, 0x6f, 0x76, 0x65, 0x72, 0x54, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x1a, 0x0a,
-	0x08, 0x73, 0x75, 0x62, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x07, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x08, 0x73, 0x75, 0x62, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x1c, 0x0a, 0x09, 0x73, 0x75, 0x62,
-	0x74, 0x69, 0x74, 0x6c, 0x65, 0x32, 0x18, 0x08, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x73, 0x75,
-	0x62, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x32, 0x12, 0x24, 0x0a, 0x0d, 0x68, 0x6f, 0x76, 0x65, 0x72,
-	0x53, 0x75, 0x62, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x09, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d,
-	0x68, 0x6f, 0x76, 0x65, 0x72, 0x53, 0x75, 0x62, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x24, 0x0a,
-	0x0d, 0x68, 0x6f, 0x72, 0x69, 0x7a, 0x6f, 0x6e, 0x74, 0x61, 0x6c, 0x55, 0x72, 0x6c, 0x18, 0x0a,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x68, 0x6f, 0x72, 0x69, 0x7a, 0x6f, 0x6e, 0x74, 0x61, 0x6c,
-	0x55, 0x72, 0x6c, 0x12, 0x20, 0x0a, 0x0b, 0x76, 0x65, 0x72, 0x74, 0x69, 0x63, 0x61, 0x6c, 0x55,
-	0x72, 0x6c, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x76, 0x65, 0x72, 0x74, 0x69, 0x63,
-	0x61, 0x6c, 0x55, 0x72, 0x6c, 0x12, 0x12, 0x0a, 0x04, 0x64, 0x65, 0x73, 0x63, 0x18, 0x0c, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x04, 0x64, 0x65, 0x73, 0x63, 0x12, 0x4c, 0x0a, 0x0d, 0x77, 0x61, 0x74,
-	0x63, 0x68, 0x50, 0x72, 0x6f, 0x67, 0x72, 0x65, 0x73, 0x73, 0x18, 0x0d, 0x20, 0x01, 0x28, 0x0b,
-	0x32, 0x26, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c,
-	0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x57, 0x61, 0x74, 0x63, 0x68, 0x50, 0x72,
-	0x6f, 0x67, 0x72, 0x65, 0x73, 0x73, 0x56, 0x32, 0x52, 0x0d, 0x77, 0x61, 0x74, 0x63, 0x68, 0x50,
-	0x72, 0x6f, 0x67, 0x72, 0x65, 0x73, 0x73, 0x12, 0x38, 0x0a, 0x07, 0x63, 0x61, 0x74, 0x61, 0x6c,
-	0x6f, 0x67, 0x18, 0x0e, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1e, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62,
-	0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76,
-	0x2e, 0x43, 0x61, 0x74, 0x61, 0x6c, 0x6f, 0x67, 0x52, 0x07, 0x63, 0x61, 0x74, 0x61, 0x6c, 0x6f,
-	0x67, 0x12, 0x32, 0x0a, 0x05, 0x6a, 0x75, 0x6d, 0x70, 0x73, 0x18, 0x0f, 0x20, 0x03, 0x28, 0x0b,
-	0x32, 0x1c, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c,
-	0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x4a, 0x75, 0x6d, 0x70, 0x73, 0x52, 0x05,
-	0x6a, 0x75, 0x6d, 0x70, 0x73, 0x12, 0x3d, 0x0a, 0x0a, 0x63, 0x6f, 0x72, 0x6e, 0x65, 0x72, 0x6d,
-	0x61, 0x72, 0x6b, 0x18, 0x10, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x63, 0x6f, 0x6d, 0x2e,
-	0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74,
-	0x76, 0x2e, 0x4c, 0x61, 0x62, 0x65, 0x6c, 0x73, 0x52, 0x0a, 0x63, 0x6f, 0x72, 0x6e, 0x65, 0x72,
-	0x6d, 0x61, 0x72, 0x6b, 0x12, 0x35, 0x0a, 0x06, 0x6c, 0x61, 0x62, 0x65, 0x6c, 0x73, 0x18, 0x11,
-	0x20, 0x03, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73,
-	0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x4c, 0x61, 0x62,
-	0x65, 0x6c, 0x73, 0x52, 0x06, 0x6c, 0x61, 0x62, 0x65, 0x6c, 0x73, 0x12, 0x3b, 0x0a, 0x08, 0x75,
-	0x70, 0x6c, 0x6f, 0x61, 0x64, 0x65, 0x72, 0x18, 0x12, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e,
-	0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69,
-	0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x55, 0x70, 0x6c, 0x6f, 0x61, 0x64, 0x65, 0x72, 0x52, 0x08,
-	0x75, 0x70, 0x6c, 0x6f, 0x61, 0x64, 0x65, 0x72, 0x12, 0x3a, 0x0a, 0x07, 0x70, 0x61, 0x79, 0x6d,
-	0x65, 0x6e, 0x74, 0x18, 0x13, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x63, 0x6f, 0x6d, 0x2e,
-	0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74,
-	0x76, 0x2e, 0x50, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x56, 0x32, 0x52, 0x07, 0x70, 0x61, 0x79,
-	0x6d, 0x65, 0x6e, 0x74, 0x12, 0x3b, 0x0a, 0x08, 0x61, 0x75, 0x74, 0x6f, 0x50, 0x6c, 0x61, 0x79,
-	0x18, 0x14, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70,
-	0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x41,
-	0x75, 0x74, 0x6f, 0x50, 0x6c, 0x61, 0x79, 0x52, 0x08, 0x61, 0x75, 0x74, 0x6f, 0x50, 0x6c, 0x61,
-	0x79, 0x12, 0x3e, 0x0a, 0x09, 0x63, 0x68, 0x65, 0x65, 0x73, 0x65, 0x45, 0x78, 0x74, 0x18, 0x15,
-	0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73,
-	0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x43, 0x68, 0x65,
-	0x65, 0x73, 0x65, 0x45, 0x78, 0x74, 0x52, 0x09, 0x63, 0x68, 0x65, 0x65, 0x73, 0x65, 0x45, 0x78,
-	0x74, 0x12, 0x35, 0x0a, 0x06, 0x70, 0x67, 0x63, 0x45, 0x78, 0x74, 0x18, 0x16, 0x20, 0x01, 0x28,
+	0x64, 0x44, 0x65, 0x73, 0x63, 0x12, 0x4a, 0x0a, 0x0d, 0x63, 0x6f, 0x6e, 0x74, 0x69, 0x6e, 0x75,
+	0x65, 0x57, 0x61, 0x74, 0x63, 0x68, 0x18, 0x3a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x24, 0x2e, 0x63,
+	0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c,
+	0x69, 0x2e, 0x74, 0x76, 0x2e, 0x43, 0x6f, 0x6e, 0x74, 0x69, 0x6e, 0x75, 0x65, 0x57, 0x61, 0x74,
+	0x63, 0x68, 0x52, 0x0d, 0x63, 0x6f, 0x6e, 0x74, 0x69, 0x6e, 0x75, 0x65, 0x57, 0x61, 0x74, 0x63,
+	0x68, 0x22, 0xbb, 0x08, 0x0a, 0x0d, 0x43, 0x61, 0x72, 0x64, 0x56, 0x69, 0x65, 0x77, 0x56, 0x32,
+	0x52, 0x65, 0x71, 0x12, 0x1a, 0x0a, 0x08, 0x76, 0x69, 0x65, 0x77, 0x54, 0x79, 0x70, 0x65, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x08, 0x76, 0x69, 0x65, 0x77, 0x54, 0x79, 0x70, 0x65, 0x12,
+	0x1a, 0x0a, 0x08, 0x63, 0x61, 0x72, 0x64, 0x54, 0x79, 0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28,
+	0x03, 0x52, 0x08, 0x63, 0x61, 0x72, 0x64, 0x54, 0x79, 0x70, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x6f,
+	0x62, 0x6a, 0x65, 0x63, 0x74, 0x49, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x08, 0x6f,
+	0x62, 0x6a, 0x65, 0x63, 0x74, 0x49, 0x64, 0x12, 0x1c, 0x0a, 0x09, 0x66, 0x72, 0x6f, 0x6d, 0x53,
+	0x70, 0x6d, 0x69, 0x64, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x66, 0x72, 0x6f, 0x6d,
+	0x53, 0x70, 0x6d, 0x69, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x73, 0x70, 0x6d, 0x69, 0x64, 0x18, 0x05,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x73, 0x70, 0x6d, 0x69, 0x64, 0x12, 0x1a, 0x0a, 0x08, 0x61,
+	0x75, 0x74, 0x6f, 0x50, 0x6c, 0x61, 0x79, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x61,
+	0x75, 0x74, 0x6f, 0x50, 0x6c, 0x61, 0x79, 0x12, 0x20, 0x0a, 0x0b, 0x73, 0x65, 0x61, 0x72, 0x63,
+	0x68, 0x54, 0x72, 0x61, 0x63, 0x65, 0x18, 0x07, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0b, 0x73, 0x65,
+	0x61, 0x72, 0x63, 0x68, 0x54, 0x72, 0x61, 0x63, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x6b, 0x65, 0x79,
+	0x77, 0x6f, 0x72, 0x64, 0x18, 0x08, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x6b, 0x65, 0x79, 0x77,
+	0x6f, 0x72, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x74, 0x65, 0x72, 0x6d, 0x18, 0x09, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x04, 0x74, 0x65, 0x72, 0x6d, 0x12, 0x20, 0x0a, 0x0b, 0x6b, 0x65, 0x79, 0x77, 0x6f,
+	0x72, 0x64, 0x46, 0x72, 0x6f, 0x6d, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x6b, 0x65,
+	0x79, 0x77, 0x6f, 0x72, 0x64, 0x46, 0x72, 0x6f, 0x6d, 0x12, 0x14, 0x0a, 0x05, 0x65, 0x78, 0x74,
+	0x72, 0x61, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x65, 0x78, 0x74, 0x72, 0x61, 0x12,
+	0x1c, 0x0a, 0x09, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x4b, 0x65, 0x79, 0x18, 0x0c, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x09, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x4b, 0x65, 0x79, 0x12, 0x18, 0x0a,
+	0x07, 0x73, 0x75, 0x67, 0x46, 0x72, 0x6f, 0x6d, 0x18, 0x0d, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07,
+	0x73, 0x75, 0x67, 0x46, 0x72, 0x6f, 0x6d, 0x12, 0x12, 0x0a, 0x04, 0x69, 0x73, 0x41, 0x64, 0x18,
+	0x0e, 0x20, 0x01, 0x28, 0x08, 0x52, 0x04, 0x69, 0x73, 0x41, 0x64, 0x12, 0x18, 0x0a, 0x07, 0x76,
+	0x69, 0x64, 0x65, 0x6f, 0x49, 0x64, 0x18, 0x0f, 0x20, 0x01, 0x28, 0x03, 0x52, 0x07, 0x76, 0x69,
+	0x64, 0x65, 0x6f, 0x49, 0x64, 0x12, 0x1a, 0x0a, 0x08, 0x70, 0x72, 0x6f, 0x67, 0x72, 0x65, 0x73,
+	0x73, 0x18, 0x10, 0x20, 0x01, 0x28, 0x03, 0x52, 0x08, 0x70, 0x72, 0x6f, 0x67, 0x72, 0x65, 0x73,
+	0x73, 0x12, 0x1c, 0x0a, 0x09, 0x73, 0x65, 0x72, 0x69, 0x61, 0x6c, 0x41, 0x69, 0x64, 0x18, 0x11,
+	0x20, 0x01, 0x28, 0x03, 0x52, 0x09, 0x73, 0x65, 0x72, 0x69, 0x61, 0x6c, 0x41, 0x69, 0x64, 0x12,
+	0x14, 0x0a, 0x05, 0x66, 0x6f, 0x75, 0x72, 0x6b, 0x18, 0x12, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05,
+	0x66, 0x6f, 0x75, 0x72, 0x6b, 0x12, 0x16, 0x0a, 0x06, 0x65, 0x69, 0x67, 0x68, 0x74, 0x6b, 0x18,
+	0x13, 0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x65, 0x69, 0x67, 0x68, 0x74, 0x6b, 0x12, 0x14, 0x0a,
+	0x05, 0x75, 0x70, 0x4d, 0x69, 0x64, 0x18, 0x14, 0x20, 0x01, 0x28, 0x03, 0x52, 0x05, 0x75, 0x70,
+	0x4d, 0x69, 0x64, 0x12, 0x1c, 0x0a, 0x09, 0x70, 0x6c, 0x61, 0x79, 0x53, 0x74, 0x79, 0x6c, 0x65,
+	0x18, 0x15, 0x20, 0x01, 0x28, 0x03, 0x52, 0x09, 0x70, 0x6c, 0x61, 0x79, 0x53, 0x74, 0x79, 0x6c,
+	0x65, 0x12, 0x35, 0x0a, 0x06, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x18, 0x16, 0x20, 0x01, 0x28,
 	0x0b, 0x32, 0x1d, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69,
-	0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x50, 0x67, 0x63, 0x45, 0x78, 0x74,
-	0x52, 0x06, 0x70, 0x67, 0x63, 0x45, 0x78, 0x74, 0x12, 0x35, 0x0a, 0x06, 0x75, 0x67, 0x63, 0x45,
-	0x78, 0x74, 0x18, 0x17, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62,
-	0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76,
-	0x2e, 0x55, 0x67, 0x63, 0x45, 0x78, 0x74, 0x52, 0x06, 0x75, 0x67, 0x63, 0x45, 0x78, 0x74, 0x12,
-	0x38, 0x0a, 0x07, 0x6c, 0x69, 0x76, 0x65, 0x45, 0x78, 0x74, 0x18, 0x18, 0x20, 0x01, 0x28, 0x0b,
-	0x32, 0x1e, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c,
-	0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x4c, 0x69, 0x76, 0x65, 0x45, 0x78, 0x74,
-	0x52, 0x07, 0x6c, 0x69, 0x76, 0x65, 0x45, 0x78, 0x74, 0x12, 0x34, 0x0a, 0x05, 0x61, 0x64, 0x45,
-	0x78, 0x74, 0x18, 0x19, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1e, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62,
-	0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76,
-	0x2e, 0x41, 0x64, 0x45, 0x78, 0x74, 0x72, 0x61, 0x52, 0x05, 0x61, 0x64, 0x45, 0x78, 0x74, 0x12,
-	0x3e, 0x0a, 0x09, 0x65, 0x73, 0x70, 0x6f, 0x72, 0x74, 0x45, 0x78, 0x74, 0x18, 0x1a, 0x20, 0x01,
+	0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65,
+	0x52, 0x06, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x12, 0x28, 0x0a, 0x0f, 0x63, 0x6f, 0x6d, 0x65,
+	0x46, 0x72, 0x6f, 0x6d, 0x4f, 0x75, 0x74, 0x73, 0x69, 0x64, 0x65, 0x18, 0x17, 0x20, 0x01, 0x28,
+	0x05, 0x52, 0x0f, 0x63, 0x6f, 0x6d, 0x65, 0x46, 0x72, 0x6f, 0x6d, 0x4f, 0x75, 0x74, 0x73, 0x69,
+	0x64, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x73, 0x74, 0x61, 0x79, 0x18, 0x18, 0x20, 0x01, 0x28, 0x05,
+	0x52, 0x04, 0x73, 0x74, 0x61, 0x79, 0x12, 0x1c, 0x0a, 0x09, 0x63, 0x68, 0x69, 0x6c, 0x64, 0x4c,
+	0x6f, 0x63, 0x6b, 0x18, 0x19, 0x20, 0x01, 0x28, 0x05, 0x52, 0x09, 0x63, 0x68, 0x69, 0x6c, 0x64,
+	0x4c, 0x6f, 0x63, 0x6b, 0x12, 0x18, 0x0a, 0x07, 0x70, 0x72, 0x6f, 0x6a, 0x4e, 0x65, 0x77, 0x18,
+	0x1a, 0x20, 0x01, 0x28, 0x08, 0x52, 0x07, 0x70, 0x72, 0x6f, 0x6a, 0x4e, 0x65, 0x77, 0x12, 0x24,
+	0x0a, 0x0d, 0x6d, 0x6f, 0x62, 0x69, 0x41, 0x63, 0x63, 0x65, 0x73, 0x73, 0x4b, 0x65, 0x79, 0x18,
+	0x1b, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x6d, 0x6f, 0x62, 0x69, 0x41, 0x63, 0x63, 0x65, 0x73,
+	0x73, 0x4b, 0x65, 0x79, 0x12, 0x1a, 0x0a, 0x08, 0x70, 0x72, 0x6f, 0x6a, 0x43, 0x6f, 0x64, 0x65,
+	0x18, 0x1c, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x70, 0x72, 0x6f, 0x6a, 0x43, 0x6f, 0x64, 0x65,
+	0x12, 0x1a, 0x0a, 0x08, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x49, 0x64, 0x18, 0x1d, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x08, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x49, 0x64, 0x12, 0x1e, 0x0a, 0x0a,
+	0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x0a, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x1a, 0x0a, 0x08,
+	0x73, 0x65, 0x70, 0x61, 0x72, 0x61, 0x74, 0x65, 0x18, 0x1f, 0x20, 0x01, 0x28, 0x05, 0x52, 0x08,
+	0x73, 0x65, 0x70, 0x61, 0x72, 0x61, 0x74, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x67, 0x6f, 0x6f, 0x64,
+	0x73, 0x43, 0x69, 0x64, 0x18, 0x20, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x67, 0x6f, 0x6f, 0x64,
+	0x73, 0x43, 0x69, 0x64, 0x12, 0x24, 0x0a, 0x0d, 0x6e, 0x65, 0x65, 0x64, 0x52, 0x65, 0x63, 0x6f,
+	0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x18, 0x21, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0d, 0x6e, 0x65, 0x65,
+	0x64, 0x52, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x12, 0x1e, 0x0a, 0x0a, 0x65, 0x6e,
+	0x74, 0x72, 0x79, 0x53, 0x63, 0x65, 0x6e, 0x65, 0x18, 0x22, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0a,
+	0x65, 0x6e, 0x74, 0x72, 0x79, 0x53, 0x63, 0x65, 0x6e, 0x65, 0x12, 0x53, 0x0a, 0x10, 0x70, 0x6c,
+	0x61, 0x79, 0x6c, 0x69, 0x73, 0x74, 0x50, 0x6c, 0x61, 0x79, 0x54, 0x79, 0x70, 0x65, 0x18, 0x23,
+	0x20, 0x01, 0x28, 0x0e, 0x32, 0x27, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73,
+	0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x50, 0x6c, 0x61,
+	0x79, 0x6c, 0x69, 0x73, 0x74, 0x50, 0x6c, 0x61, 0x79, 0x54, 0x79, 0x70, 0x65, 0x52, 0x10, 0x70,
+	0x6c, 0x61, 0x79, 0x6c, 0x69, 0x73, 0x74, 0x50, 0x6c, 0x61, 0x79, 0x54, 0x79, 0x70, 0x65, 0x22,
+	0x8d, 0x01, 0x0a, 0x07, 0x43, 0x61, 0x74, 0x61, 0x6c, 0x6f, 0x67, 0x12, 0x1c, 0x0a, 0x09, 0x63,
+	0x61, 0x74, 0x61, 0x6c, 0x6f, 0x67, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x09,
+	0x63, 0x61, 0x74, 0x61, 0x6c, 0x6f, 0x67, 0x49, 0x64, 0x12, 0x20, 0x0a, 0x0b, 0x63, 0x61, 0x74,
+	0x61, 0x6c, 0x6f, 0x67, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b,
+	0x63, 0x61, 0x74, 0x61, 0x6c, 0x6f, 0x67, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x1e, 0x0a, 0x0a, 0x63,
+	0x61, 0x74, 0x61, 0x6c, 0x6f, 0x67, 0x50, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52,
+	0x0a, 0x63, 0x61, 0x74, 0x61, 0x6c, 0x6f, 0x67, 0x50, 0x69, 0x64, 0x12, 0x22, 0x0a, 0x0c, 0x63,
+	0x61, 0x74, 0x61, 0x6c, 0x6f, 0x67, 0x50, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x0c, 0x63, 0x61, 0x74, 0x61, 0x6c, 0x6f, 0x67, 0x50, 0x6e, 0x61, 0x6d, 0x65, 0x22,
+	0x72, 0x0a, 0x0a, 0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x45, 0x78, 0x74, 0x12, 0x10, 0x0a,
+	0x03, 0x61, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x03, 0x61, 0x69, 0x64, 0x12,
+	0x26, 0x0a, 0x0e, 0x66, 0x69, 0x72, 0x73, 0x74, 0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x49,
+	0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0e, 0x66, 0x69, 0x72, 0x73, 0x74, 0x43, 0x68,
+	0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x49, 0x64, 0x12, 0x2a, 0x0a, 0x10, 0x66, 0x69, 0x72, 0x73, 0x74,
+	0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x10, 0x66, 0x69, 0x72, 0x73, 0x74, 0x43, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x4e,
+	0x61, 0x6d, 0x65, 0x22, 0x3d, 0x0a, 0x0f, 0x43, 0x68, 0x61, 0x72, 0x67, 0x69, 0x6e, 0x67, 0x45,
+	0x6e, 0x64, 0x50, 0x61, 0x67, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x6e, 0x6f, 0x4c, 0x69, 0x73, 0x74,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x6e, 0x6f, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x12,
+	0x0a, 0x04, 0x74, 0x65, 0x78, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x74, 0x65,
+	0x78, 0x74, 0x22, 0xaf, 0x01, 0x0a, 0x0b, 0x43, 0x68, 0x61, 0x72, 0x67, 0x69, 0x6e, 0x67, 0x45,
+	0x78, 0x74, 0x12, 0x20, 0x0a, 0x0b, 0x68, 0x69, 0x64, 0x65, 0x42, 0x75, 0x74, 0x74, 0x6f, 0x6e,
+	0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x09, 0x52, 0x0b, 0x68, 0x69, 0x64, 0x65, 0x42, 0x75, 0x74,
+	0x74, 0x6f, 0x6e, 0x73, 0x12, 0x1c, 0x0a, 0x09, 0x68, 0x69, 0x64, 0x65, 0x4d, 0x65, 0x6e, 0x75,
+	0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x09, 0x52, 0x09, 0x68, 0x69, 0x64, 0x65, 0x4d, 0x65, 0x6e,
+	0x75, 0x73, 0x12, 0x40, 0x0a, 0x07, 0x65, 0x6e, 0x64, 0x50, 0x61, 0x67, 0x65, 0x18, 0x03, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e,
+	0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x43, 0x68, 0x61, 0x72,
+	0x67, 0x69, 0x6e, 0x67, 0x45, 0x6e, 0x64, 0x50, 0x61, 0x67, 0x65, 0x52, 0x07, 0x65, 0x6e, 0x64,
+	0x50, 0x61, 0x67, 0x65, 0x12, 0x1e, 0x0a, 0x0a, 0x69, 0x73, 0x43, 0x68, 0x61, 0x72, 0x67, 0x69,
+	0x6e, 0x67, 0x18, 0x04, 0x20, 0x01, 0x28, 0x08, 0x52, 0x0a, 0x69, 0x73, 0x43, 0x68, 0x61, 0x72,
+	0x67, 0x69, 0x6e, 0x67, 0x22, 0xb7, 0x01, 0x0a, 0x0f, 0x43, 0x68, 0x65, 0x65, 0x73, 0x65, 0x42,
+	0x75, 0x79, 0x42, 0x75, 0x74, 0x74, 0x6f, 0x6e, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x6f, 0x76, 0x65,
+	0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x12, 0x1e,
+	0x0a, 0x0a, 0x66, 0x6f, 0x63, 0x75, 0x73, 0x43, 0x6f, 0x76, 0x65, 0x72, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x0a, 0x66, 0x6f, 0x63, 0x75, 0x73, 0x43, 0x6f, 0x76, 0x65, 0x72, 0x12, 0x12,
+	0x0a, 0x04, 0x74, 0x65, 0x78, 0x74, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x74, 0x65,
+	0x78, 0x74, 0x12, 0x18, 0x0a, 0x07, 0x74, 0x65, 0x78, 0x74, 0x42, 0x75, 0x79, 0x18, 0x04, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x07, 0x74, 0x65, 0x78, 0x74, 0x42, 0x75, 0x79, 0x12, 0x16, 0x0a, 0x06,
+	0x73, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x73, 0x63,
+	0x68, 0x65, 0x6d, 0x61, 0x12, 0x12, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x06, 0x20, 0x01,
+	0x28, 0x05, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x61, 0x73,
+	0x74, 0x18, 0x07, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x6f, 0x61, 0x73, 0x74, 0x22, 0xb0,
+	0x01, 0x0a, 0x09, 0x43, 0x68, 0x65, 0x65, 0x73, 0x65, 0x45, 0x78, 0x74, 0x12, 0x44, 0x0a, 0x09,
+	0x62, 0x75, 0x79, 0x42, 0x75, 0x74, 0x74, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x26, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69,
+	0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x43, 0x68, 0x65, 0x65, 0x73, 0x65, 0x42, 0x75,
+	0x79, 0x42, 0x75, 0x74, 0x74, 0x6f, 0x6e, 0x52, 0x09, 0x62, 0x75, 0x79, 0x42, 0x75, 0x74, 0x74,
+	0x6f, 0x6e, 0x12, 0x3d, 0x0a, 0x06, 0x72, 0x69, 0x67, 0x68, 0x74, 0x73, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x25, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62,
+	0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x43, 0x68, 0x65, 0x65, 0x73,
+	0x65, 0x45, 0x78, 0x74, 0x52, 0x69, 0x67, 0x68, 0x74, 0x52, 0x06, 0x72, 0x69, 0x67, 0x68, 0x74,
+	0x73, 0x12, 0x1e, 0x0a, 0x0a, 0x69, 0x73, 0x43, 0x68, 0x61, 0x72, 0x67, 0x69, 0x6e, 0x67, 0x18,
+	0x03, 0x20, 0x01, 0x28, 0x08, 0x52, 0x0a, 0x69, 0x73, 0x43, 0x68, 0x61, 0x72, 0x67, 0x69, 0x6e,
+	0x67, 0x22, 0x4c, 0x0a, 0x0e, 0x43, 0x68, 0x65, 0x65, 0x73, 0x65, 0x45, 0x78, 0x74, 0x52, 0x69,
+	0x67, 0x68, 0x74, 0x12, 0x1a, 0x0a, 0x08, 0x61, 0x6c, 0x6c, 0x6f, 0x77, 0x42, 0x75, 0x79, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x08, 0x61, 0x6c, 0x6c, 0x6f, 0x77, 0x42, 0x75, 0x79, 0x12,
+	0x1e, 0x0a, 0x0a, 0x61, 0x6c, 0x6c, 0x6f, 0x77, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x05, 0x52, 0x0a, 0x61, 0x6c, 0x6c, 0x6f, 0x77, 0x49, 0x6e, 0x64, 0x65, 0x78, 0x22,
+	0x43, 0x0a, 0x07, 0x43, 0x68, 0x72, 0x6f, 0x6e, 0x6f, 0x73, 0x12, 0x10, 0x0a, 0x03, 0x6d, 0x64,
+	0x35, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6d, 0x64, 0x35, 0x12, 0x12, 0x0a, 0x04,
+	0x66, 0x69, 0x6c, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x66, 0x69, 0x6c, 0x65,
+	0x12, 0x12, 0x0a, 0x04, 0x73, 0x69, 0x67, 0x6e, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04,
+	0x73, 0x69, 0x67, 0x6e, 0x22, 0x8c, 0x08, 0x0a, 0x07, 0x43, 0x69, 0x64, 0x4c, 0x69, 0x73, 0x74,
+	0x12, 0x18, 0x0a, 0x07, 0x76, 0x69, 0x64, 0x65, 0x6f, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x03, 0x52, 0x07, 0x76, 0x69, 0x64, 0x65, 0x6f, 0x49, 0x64, 0x12, 0x1c, 0x0a, 0x09, 0x76, 0x69,
+	0x64, 0x65, 0x6f, 0x54, 0x79, 0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x09, 0x76,
+	0x69, 0x64, 0x65, 0x6f, 0x54, 0x79, 0x70, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x66, 0x72, 0x6f, 0x6d,
+	0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x66, 0x72, 0x6f, 0x6d, 0x12, 0x14, 0x0a, 0x05,
+	0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x69, 0x74,
+	0x6c, 0x65, 0x12, 0x1c, 0x0a, 0x09, 0x6c, 0x6f, 0x6e, 0x67, 0x54, 0x69, 0x74, 0x6c, 0x65, 0x18,
+	0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x6c, 0x6f, 0x6e, 0x67, 0x54, 0x69, 0x74, 0x6c, 0x65,
+	0x12, 0x24, 0x0a, 0x0d, 0x68, 0x6f, 0x72, 0x69, 0x7a, 0x6f, 0x6e, 0x74, 0x61, 0x6c, 0x55, 0x72,
+	0x6c, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x68, 0x6f, 0x72, 0x69, 0x7a, 0x6f, 0x6e,
+	0x74, 0x61, 0x6c, 0x55, 0x72, 0x6c, 0x12, 0x1a, 0x0a, 0x08, 0x68, 0x69, 0x64, 0x65, 0x6d, 0x61,
+	0x72, 0x6b, 0x18, 0x07, 0x20, 0x01, 0x28, 0x08, 0x52, 0x08, 0x68, 0x69, 0x64, 0x65, 0x6d, 0x61,
+	0x72, 0x6b, 0x12, 0x16, 0x0a, 0x06, 0x66, 0x69, 0x72, 0x73, 0x74, 0x69, 0x18, 0x08, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x06, 0x66, 0x69, 0x72, 0x73, 0x74, 0x69, 0x12, 0x1e, 0x0a, 0x0a, 0x69, 0x73,
+	0x50, 0x6f, 0x72, 0x74, 0x72, 0x61, 0x69, 0x74, 0x18, 0x09, 0x20, 0x01, 0x28, 0x08, 0x52, 0x0a,
+	0x69, 0x73, 0x50, 0x6f, 0x72, 0x74, 0x72, 0x61, 0x69, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x70, 0x61,
+	0x67, 0x65, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x03, 0x52, 0x04, 0x70, 0x61, 0x67, 0x65, 0x12, 0x1c,
+	0x0a, 0x09, 0x6e, 0x65, 0x65, 0x64, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x18, 0x0b, 0x20, 0x01, 0x28,
+	0x08, 0x52, 0x09, 0x6e, 0x65, 0x65, 0x64, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x12, 0x1e, 0x0a, 0x0a,
+	0x77, 0x61, 0x74, 0x63, 0x68, 0x52, 0x69, 0x67, 0x68, 0x74, 0x18, 0x0c, 0x20, 0x01, 0x28, 0x03,
+	0x52, 0x0a, 0x77, 0x61, 0x74, 0x63, 0x68, 0x52, 0x69, 0x67, 0x68, 0x74, 0x12, 0x12, 0x0a, 0x04,
+	0x70, 0x61, 0x69, 0x64, 0x18, 0x0d, 0x20, 0x01, 0x28, 0x08, 0x52, 0x04, 0x70, 0x61, 0x69, 0x64,
+	0x12, 0x44, 0x0a, 0x0b, 0x70, 0x6c, 0x61, 0x79, 0x75, 0x72, 0x6c, 0x41, 0x72, 0x67, 0x73, 0x18,
+	0x0e, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x22, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69,
+	0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x50, 0x6c,
+	0x61, 0x79, 0x75, 0x72, 0x6c, 0x41, 0x72, 0x67, 0x73, 0x52, 0x0b, 0x70, 0x6c, 0x61, 0x79, 0x75,
+	0x72, 0x6c, 0x41, 0x72, 0x67, 0x73, 0x12, 0x3d, 0x0a, 0x0a, 0x63, 0x6f, 0x72, 0x6e, 0x65, 0x72,
+	0x6d, 0x61, 0x72, 0x6b, 0x18, 0x0f, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x63, 0x6f, 0x6d,
+	0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e,
+	0x74, 0x76, 0x2e, 0x4c, 0x61, 0x62, 0x65, 0x6c, 0x73, 0x52, 0x0a, 0x63, 0x6f, 0x72, 0x6e, 0x65,
+	0x72, 0x6d, 0x61, 0x72, 0x6b, 0x12, 0x1c, 0x0a, 0x09, 0x63, 0x6f, 0x70, 0x79, 0x72, 0x69, 0x67,
+	0x68, 0x74, 0x18, 0x10, 0x20, 0x01, 0x28, 0x03, 0x52, 0x09, 0x63, 0x6f, 0x70, 0x79, 0x72, 0x69,
+	0x67, 0x68, 0x74, 0x12, 0x20, 0x0a, 0x0b, 0x61, 0x6c, 0x6c, 0x6f, 0x77, 0x44, 0x65, 0x6d, 0x61,
+	0x6e, 0x64, 0x18, 0x11, 0x20, 0x01, 0x28, 0x08, 0x52, 0x0b, 0x61, 0x6c, 0x6c, 0x6f, 0x77, 0x44,
+	0x65, 0x6d, 0x61, 0x6e, 0x64, 0x12, 0x10, 0x0a, 0x03, 0x61, 0x69, 0x64, 0x18, 0x12, 0x20, 0x01,
+	0x28, 0x03, 0x52, 0x03, 0x61, 0x69, 0x64, 0x12, 0x20, 0x0a, 0x0b, 0x70, 0x75, 0x62, 0x6c, 0x69,
+	0x73, 0x68, 0x54, 0x69, 0x6d, 0x65, 0x18, 0x13, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0b, 0x70, 0x75,
+	0x62, 0x6c, 0x69, 0x73, 0x68, 0x54, 0x69, 0x6d, 0x65, 0x12, 0x20, 0x0a, 0x0b, 0x70, 0x75, 0x62,
+	0x6c, 0x69, 0x73, 0x68, 0x44, 0x61, 0x74, 0x65, 0x18, 0x14, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b,
+	0x70, 0x75, 0x62, 0x6c, 0x69, 0x73, 0x68, 0x44, 0x61, 0x74, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x64,
+	0x75, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x15, 0x20, 0x01, 0x28, 0x03, 0x52, 0x08, 0x64,
+	0x75, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x18, 0x0a, 0x07, 0x72, 0x65, 0x6c, 0x61, 0x74,
+	0x65, 0x64, 0x18, 0x16, 0x20, 0x01, 0x28, 0x05, 0x52, 0x07, 0x72, 0x65, 0x6c, 0x61, 0x74, 0x65,
+	0x64, 0x12, 0x18, 0x0a, 0x07, 0x74, 0x61, 0x62, 0x54, 0x79, 0x70, 0x65, 0x18, 0x17, 0x20, 0x01,
+	0x28, 0x03, 0x52, 0x07, 0x74, 0x61, 0x62, 0x54, 0x79, 0x70, 0x65, 0x12, 0x1c, 0x0a, 0x09, 0x67,
+	0x75, 0x69, 0x64, 0x65, 0x54, 0x65, 0x78, 0x74, 0x18, 0x18, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09,
+	0x67, 0x75, 0x69, 0x64, 0x65, 0x54, 0x65, 0x78, 0x74, 0x12, 0x1c, 0x0a, 0x09, 0x67, 0x75, 0x69,
+	0x64, 0x65, 0x50, 0x61, 0x67, 0x65, 0x18, 0x19, 0x20, 0x01, 0x28, 0x03, 0x52, 0x09, 0x67, 0x75,
+	0x69, 0x64, 0x65, 0x50, 0x61, 0x67, 0x65, 0x12, 0x26, 0x0a, 0x0e, 0x69, 0x6e, 0x74, 0x65, 0x72,
+	0x6e, 0x61, 0x6c, 0x4c, 0x69, 0x6e, 0x6b, 0x49, 0x64, 0x18, 0x1a, 0x20, 0x01, 0x28, 0x03, 0x52,
+	0x0e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x4c, 0x69, 0x6e, 0x6b, 0x49, 0x64, 0x12,
+	0x1c, 0x0a, 0x09, 0x66, 0x69, 0x72, 0x73, 0x74, 0x69, 0x47, 0x61, 0x75, 0x18, 0x1b, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x09, 0x66, 0x69, 0x72, 0x73, 0x74, 0x69, 0x47, 0x61, 0x75, 0x12, 0x16, 0x0a,
+	0x06, 0x63, 0x61, 0x72, 0x64, 0x49, 0x64, 0x18, 0x1c, 0x20, 0x01, 0x28, 0x03, 0x52, 0x06, 0x63,
+	0x61, 0x72, 0x64, 0x49, 0x64, 0x12, 0x20, 0x0a, 0x0b, 0x69, 0x73, 0x52, 0x65, 0x63, 0x6f, 0x6d,
+	0x6d, 0x65, 0x6e, 0x64, 0x18, 0x1d, 0x20, 0x01, 0x28, 0x08, 0x52, 0x0b, 0x69, 0x73, 0x52, 0x65,
+	0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x12, 0x3e, 0x0a, 0x09, 0x62, 0x75, 0x79, 0x42, 0x75,
+	0x74, 0x74, 0x6f, 0x6e, 0x18, 0x1e, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x63, 0x6f, 0x6d,
+	0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e,
+	0x74, 0x76, 0x2e, 0x42, 0x75, 0x79, 0x42, 0x75, 0x74, 0x74, 0x6f, 0x6e, 0x52, 0x09, 0x62, 0x75,
+	0x79, 0x42, 0x75, 0x74, 0x74, 0x6f, 0x6e, 0x12, 0x20, 0x0a, 0x0b, 0x73, 0x65, 0x63, 0x74, 0x69,
+	0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x18, 0x1f, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0b, 0x73, 0x65,
+	0x63, 0x74, 0x69, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x66, 0x65, 0x65,
+	0x74, 0x79, 0x70, 0x65, 0x18, 0x20, 0x20, 0x01, 0x28, 0x05, 0x52, 0x07, 0x66, 0x65, 0x65, 0x74,
+	0x79, 0x70, 0x65, 0x22, 0x4b, 0x0a, 0x07, 0x43, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x12, 0x40,
+	0x0a, 0x0a, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x44, 0x6d, 0x73, 0x18, 0x01, 0x20, 0x03,
 	0x28, 0x0b, 0x32, 0x20, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62,
-	0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x45, 0x73, 0x70, 0x6f, 0x72,
-	0x74, 0x45, 0x78, 0x74, 0x52, 0x09, 0x65, 0x73, 0x70, 0x6f, 0x72, 0x74, 0x45, 0x78, 0x74, 0x12,
-	0x3e, 0x0a, 0x09, 0x73, 0x65, 0x72, 0x69, 0x61, 0x6c, 0x45, 0x78, 0x74, 0x18, 0x1b, 0x20, 0x01,
-	0x28, 0x0b, 0x32, 0x20, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62,
-	0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x53, 0x65, 0x72, 0x69, 0x61,
-	0x6c, 0x45, 0x78, 0x74, 0x52, 0x09, 0x73, 0x65, 0x72, 0x69, 0x61, 0x6c, 0x45, 0x78, 0x74, 0x12,
-	0x2c, 0x0a, 0x11, 0x6d, 0x75, 0x6c, 0x74, 0x69, 0x70, 0x6c, 0x65, 0x50, 0x61, 0x67, 0x65, 0x43,
-	0x6f, 0x75, 0x6e, 0x74, 0x18, 0x1c, 0x20, 0x01, 0x28, 0x03, 0x52, 0x11, 0x6d, 0x75, 0x6c, 0x74,
-	0x69, 0x70, 0x6c, 0x65, 0x50, 0x61, 0x67, 0x65, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x16, 0x0a,
-	0x06, 0x73, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x18, 0x1d, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x73,
-	0x63, 0x68, 0x65, 0x6d, 0x61, 0x12, 0x50, 0x0a, 0x12, 0x72, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65,
-	0x6e, 0x64, 0x53, 0x63, 0x65, 0x6e, 0x65, 0x43, 0x61, 0x72, 0x64, 0x18, 0x1e, 0x20, 0x01, 0x28,
-	0x0b, 0x32, 0x20, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69,
-	0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x53, 0x63, 0x65, 0x6e, 0x65, 0x43,
-	0x61, 0x72, 0x64, 0x52, 0x12, 0x72, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x53, 0x63,
-	0x65, 0x6e, 0x65, 0x43, 0x61, 0x72, 0x64, 0x12, 0x3e, 0x0a, 0x1a, 0x75, 0x73, 0x65, 0x72, 0x50,
-	0x72, 0x6f, 0x66, 0x69, 0x6c, 0x65, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x54, 0x72,
-	0x61, 0x63, 0x6b, 0x49, 0x64, 0x18, 0x1f, 0x20, 0x01, 0x28, 0x03, 0x52, 0x1a, 0x75, 0x73, 0x65,
-	0x72, 0x50, 0x72, 0x6f, 0x66, 0x69, 0x6c, 0x65, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c,
-	0x54, 0x72, 0x61, 0x63, 0x6b, 0x49, 0x64, 0x12, 0x36, 0x0a, 0x05, 0x74, 0x6f, 0x61, 0x73, 0x74,
-	0x18, 0x20, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70,
-	0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x56,
-	0x69, 0x65, 0x77, 0x54, 0x6f, 0x61, 0x73, 0x74, 0x52, 0x05, 0x74, 0x6f, 0x61, 0x73, 0x74, 0x12,
-	0x3e, 0x0a, 0x09, 0x73, 0x65, 0x61, 0x72, 0x63, 0x68, 0x45, 0x78, 0x74, 0x18, 0x21, 0x20, 0x01,
-	0x28, 0x0b, 0x32, 0x20, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62,
-	0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x53, 0x65, 0x61, 0x72, 0x63,
-	0x68, 0x45, 0x78, 0x74, 0x52, 0x09, 0x73, 0x65, 0x61, 0x72, 0x63, 0x68, 0x45, 0x78, 0x74, 0x12,
-	0x3b, 0x0a, 0x08, 0x73, 0x68, 0x61, 0x72, 0x65, 0x45, 0x78, 0x74, 0x18, 0x22, 0x20, 0x01, 0x28,
-	0x0b, 0x32, 0x1f, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69,
-	0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x53, 0x68, 0x61, 0x72, 0x65, 0x45,
-	0x78, 0x74, 0x52, 0x08, 0x73, 0x68, 0x61, 0x72, 0x65, 0x45, 0x78, 0x74, 0x12, 0x4a, 0x0a, 0x0d,
-	0x6f, 0x67, 0x76, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x23, 0x20,
-	0x01, 0x28, 0x0b, 0x32, 0x24, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e,
-	0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x4f, 0x67, 0x76, 0x43,
-	0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0d, 0x6f, 0x67, 0x76, 0x43, 0x6f,
-	0x6c, 0x6c, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x50, 0x0a, 0x0d, 0x70, 0x6c, 0x61, 0x79,
-	0x53, 0x63, 0x65, 0x6e, 0x65, 0x50, 0x61, 0x67, 0x65, 0x18, 0x24, 0x20, 0x01, 0x28, 0x0b, 0x32,
-	0x2a, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69,
-	0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x50, 0x6c, 0x61, 0x79, 0x53, 0x63, 0x65, 0x6e,
-	0x65, 0x50, 0x61, 0x67, 0x65, 0x56, 0x69, 0x65, 0x77, 0x56, 0x32, 0x52, 0x0d, 0x70, 0x6c, 0x61,
-	0x79, 0x53, 0x63, 0x65, 0x6e, 0x65, 0x50, 0x61, 0x67, 0x65, 0x12, 0x46, 0x0a, 0x0d, 0x70, 0x6c,
-	0x61, 0x79, 0x53, 0x63, 0x65, 0x6e, 0x65, 0x43, 0x61, 0x72, 0x64, 0x18, 0x25, 0x20, 0x01, 0x28,
-	0x0b, 0x32, 0x20, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69,
-	0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x53, 0x63, 0x65, 0x6e, 0x65, 0x43,
-	0x61, 0x72, 0x64, 0x52, 0x0d, 0x70, 0x6c, 0x61, 0x79, 0x53, 0x63, 0x65, 0x6e, 0x65, 0x43, 0x61,
-	0x72, 0x64, 0x12, 0x3c, 0x0a, 0x09, 0x68, 0x69, 0x67, 0x68, 0x4c, 0x69, 0x67, 0x68, 0x74, 0x18,
-	0x26, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1e, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69,
-	0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x48, 0x4c,
-	0x52, 0x61, 0x6e, 0x67, 0x65, 0x52, 0x09, 0x68, 0x69, 0x67, 0x68, 0x4c, 0x69, 0x67, 0x68, 0x74,
-	0x12, 0x3b, 0x0a, 0x08, 0x69, 0x6e, 0x66, 0x6f, 0x63, 0x45, 0x78, 0x74, 0x18, 0x27, 0x20, 0x01,
-	0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62,
-	0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x49, 0x6e, 0x66, 0x6f, 0x63,
-	0x45, 0x78, 0x74, 0x52, 0x08, 0x69, 0x6e, 0x66, 0x6f, 0x63, 0x45, 0x78, 0x74, 0x12, 0x34, 0x0a,
-	0x15, 0x72, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x53, 0x63, 0x65, 0x6e, 0x65, 0x43,
-	0x61, 0x72, 0x64, 0x53, 0x74, 0x72, 0x18, 0x28, 0x20, 0x01, 0x28, 0x09, 0x52, 0x15, 0x72, 0x65,
-	0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x53, 0x63, 0x65, 0x6e, 0x65, 0x43, 0x61, 0x72, 0x64,
-	0x53, 0x74, 0x72, 0x12, 0x2a, 0x0a, 0x10, 0x70, 0x6c, 0x61, 0x79, 0x53, 0x63, 0x65, 0x6e, 0x65,
-	0x50, 0x61, 0x67, 0x65, 0x53, 0x74, 0x72, 0x18, 0x29, 0x20, 0x01, 0x28, 0x09, 0x52, 0x10, 0x70,
-	0x6c, 0x61, 0x79, 0x53, 0x63, 0x65, 0x6e, 0x65, 0x50, 0x61, 0x67, 0x65, 0x53, 0x74, 0x72, 0x12,
-	0x2a, 0x0a, 0x10, 0x70, 0x6c, 0x61, 0x79, 0x53, 0x63, 0x65, 0x6e, 0x65, 0x43, 0x61, 0x72, 0x64,
-	0x53, 0x74, 0x72, 0x18, 0x2a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x10, 0x70, 0x6c, 0x61, 0x79, 0x53,
-	0x63, 0x65, 0x6e, 0x65, 0x43, 0x61, 0x72, 0x64, 0x53, 0x74, 0x72, 0x12, 0x3f, 0x0a, 0x09, 0x70,
-	0x72, 0x6f, 0x6a, 0x45, 0x78, 0x74, 0x72, 0x61, 0x18, 0x2b, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x21,
+	0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x61,
+	0x6e, 0x64, 0x44, 0x6d, 0x52, 0x0a, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x44, 0x6d, 0x73,
+	0x22, 0xe7, 0x02, 0x0a, 0x09, 0x43, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x44, 0x6d, 0x12, 0x0e,
+	0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x12, 0x10,
+	0x0a, 0x03, 0x6f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x03, 0x6f, 0x69, 0x64,
+	0x12, 0x10, 0x0a, 0x03, 0x6d, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x03, 0x6d,
+	0x69, 0x64, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x18, 0x04, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x07, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x12, 0x18, 0x0a, 0x07,
+	0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x63,
+	0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x12, 0x1a, 0x0a, 0x08, 0x70, 0x72, 0x6f, 0x67, 0x72, 0x65,
+	0x73, 0x73, 0x18, 0x06, 0x20, 0x01, 0x28, 0x05, 0x52, 0x08, 0x70, 0x72, 0x6f, 0x67, 0x72, 0x65,
+	0x73, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x07, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x05, 0x63, 0x74, 0x69, 0x6d, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x6d, 0x74, 0x69, 0x6d,
+	0x65, 0x18, 0x08, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x6d, 0x74, 0x69, 0x6d, 0x65, 0x12, 0x14,
+	0x0a, 0x05, 0x65, 0x78, 0x74, 0x72, 0x61, 0x18, 0x09, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x65,
+	0x78, 0x74, 0x72, 0x61, 0x12, 0x14, 0x0a, 0x05, 0x69, 0x64, 0x73, 0x74, 0x72, 0x18, 0x0a, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x05, 0x69, 0x64, 0x73, 0x74, 0x72, 0x12, 0x18, 0x0a, 0x07, 0x64, 0x69,
+	0x73, 0x70, 0x6c, 0x61, 0x79, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x03, 0x52, 0x07, 0x64, 0x69, 0x73,
+	0x70, 0x6c, 0x61, 0x79, 0x12, 0x12, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x0c, 0x20, 0x01,
+	0x28, 0x05, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x12, 0x1e, 0x0a, 0x0a, 0x61, 0x75, 0x74, 0x6f,
+	0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x18, 0x0d, 0x20, 0x01, 0x28, 0x08, 0x52, 0x0a, 0x61, 0x75,
+	0x74, 0x6f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x12, 0x1c, 0x0a, 0x09, 0x63, 0x6f, 0x75, 0x6e,
+	0x74, 0x64, 0x6f, 0x77, 0x6e, 0x18, 0x0e, 0x20, 0x01, 0x28, 0x05, 0x52, 0x09, 0x63, 0x6f, 0x75,
+	0x6e, 0x74, 0x64, 0x6f, 0x77, 0x6e, 0x12, 0x12, 0x0a, 0x04, 0x61, 0x74, 0x74, 0x72, 0x18, 0x0f,
+	0x20, 0x01, 0x28, 0x05, 0x52, 0x04, 0x61, 0x74, 0x74, 0x72, 0x22, 0x94, 0x02, 0x0a, 0x0c, 0x43,
+	0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x44, 0x6d, 0x4f, 0x74, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x69,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x12, 0x10, 0x0a, 0x03, 0x6f,
+	0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x03, 0x6f, 0x69, 0x64, 0x12, 0x10, 0x0a,
+	0x03, 0x6d, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x03, 0x6d, 0x69, 0x64, 0x12,
+	0x12, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x05, 0x52, 0x04, 0x74,
+	0x79, 0x70, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x18, 0x05,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x12, 0x18, 0x0a,
+	0x07, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07,
+	0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x73, 0x74, 0x61, 0x74, 0x65,
+	0x18, 0x07, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x73, 0x74, 0x61, 0x74, 0x65, 0x12, 0x1a, 0x0a,
+	0x08, 0x70, 0x72, 0x6f, 0x67, 0x72, 0x65, 0x73, 0x73, 0x18, 0x08, 0x20, 0x01, 0x28, 0x05, 0x52,
+	0x08, 0x70, 0x72, 0x6f, 0x67, 0x72, 0x65, 0x73, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x74, 0x69,
+	0x6d, 0x65, 0x18, 0x09, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x63, 0x74, 0x69, 0x6d, 0x65, 0x12,
+	0x14, 0x0a, 0x05, 0x6d, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05,
+	0x6d, 0x74, 0x69, 0x6d, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x65, 0x78, 0x74, 0x72, 0x61, 0x18, 0x0b,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x65, 0x78, 0x74, 0x72, 0x61, 0x12, 0x14, 0x0a, 0x05, 0x69,
+	0x64, 0x73, 0x74, 0x72, 0x18, 0x0c, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x69, 0x64, 0x73, 0x74,
+	0x72, 0x22, 0x3a, 0x0a, 0x12, 0x43, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x44, 0x6d, 0x73, 0x4f,
+	0x74, 0x74, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x12, 0x24, 0x0a, 0x0d, 0x63, 0x6f, 0x6d, 0x6d, 0x61,
+	0x6e, 0x64, 0x64, 0x6d, 0x73, 0x6f, 0x74, 0x74, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0c, 0x52, 0x0d,
+	0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x64, 0x6d, 0x73, 0x6f, 0x74, 0x74, 0x22, 0x48, 0x0a,
+	0x10, 0x43, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x44, 0x6d, 0x73, 0x4f, 0x74, 0x74, 0x52, 0x65,
+	0x71, 0x12, 0x10, 0x0a, 0x03, 0x61, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x03,
+	0x61, 0x69, 0x64, 0x12, 0x10, 0x0a, 0x03, 0x63, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03,
+	0x52, 0x03, 0x63, 0x69, 0x64, 0x12, 0x10, 0x0a, 0x03, 0x6d, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01,
+	0x28, 0x03, 0x52, 0x03, 0x6d, 0x69, 0x64, 0x22, 0xfb, 0x12, 0x0a, 0x0e, 0x43, 0x6f, 0x6d, 0x6d,
+	0x6f, 0x6e, 0x43, 0x61, 0x72, 0x64, 0x52, 0x65, 0x73, 0x70, 0x12, 0x1a, 0x0a, 0x08, 0x63, 0x61,
+	0x72, 0x64, 0x54, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x08, 0x63, 0x61,
+	0x72, 0x64, 0x54, 0x79, 0x70, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x63, 0x61, 0x72, 0x64, 0x46, 0x72,
+	0x6f, 0x6d, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x08, 0x63, 0x61, 0x72, 0x64, 0x46, 0x72,
+	0x6f, 0x6d, 0x12, 0x1c, 0x0a, 0x09, 0x61, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x18,
+	0x03, 0x20, 0x01, 0x28, 0x05, 0x52, 0x09, 0x61, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65,
+	0x12, 0x16, 0x0a, 0x06, 0x63, 0x61, 0x72, 0x64, 0x49, 0x64, 0x18, 0x04, 0x20, 0x01, 0x28, 0x03,
+	0x52, 0x06, 0x63, 0x61, 0x72, 0x64, 0x49, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x69, 0x74, 0x6c,
+	0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x1e,
+	0x0a, 0x0a, 0x68, 0x6f, 0x76, 0x65, 0x72, 0x54, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x06, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x0a, 0x68, 0x6f, 0x76, 0x65, 0x72, 0x54, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x1a,
+	0x0a, 0x08, 0x73, 0x75, 0x62, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x07, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x08, 0x73, 0x75, 0x62, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x1c, 0x0a, 0x09, 0x73, 0x75,
+	0x62, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x32, 0x18, 0x08, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x73,
+	0x75, 0x62, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x32, 0x12, 0x24, 0x0a, 0x0d, 0x68, 0x6f, 0x76, 0x65,
+	0x72, 0x53, 0x75, 0x62, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x09, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x0d, 0x68, 0x6f, 0x76, 0x65, 0x72, 0x53, 0x75, 0x62, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x24,
+	0x0a, 0x0d, 0x68, 0x6f, 0x72, 0x69, 0x7a, 0x6f, 0x6e, 0x74, 0x61, 0x6c, 0x55, 0x72, 0x6c, 0x18,
+	0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x68, 0x6f, 0x72, 0x69, 0x7a, 0x6f, 0x6e, 0x74, 0x61,
+	0x6c, 0x55, 0x72, 0x6c, 0x12, 0x20, 0x0a, 0x0b, 0x76, 0x65, 0x72, 0x74, 0x69, 0x63, 0x61, 0x6c,
+	0x55, 0x72, 0x6c, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x76, 0x65, 0x72, 0x74, 0x69,
+	0x63, 0x61, 0x6c, 0x55, 0x72, 0x6c, 0x12, 0x12, 0x0a, 0x04, 0x64, 0x65, 0x73, 0x63, 0x18, 0x0c,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x64, 0x65, 0x73, 0x63, 0x12, 0x4c, 0x0a, 0x0d, 0x77, 0x61,
+	0x74, 0x63, 0x68, 0x50, 0x72, 0x6f, 0x67, 0x72, 0x65, 0x73, 0x73, 0x18, 0x0d, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x26, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69,
+	0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x57, 0x61, 0x74, 0x63, 0x68, 0x50,
+	0x72, 0x6f, 0x67, 0x72, 0x65, 0x73, 0x73, 0x56, 0x32, 0x52, 0x0d, 0x77, 0x61, 0x74, 0x63, 0x68,
+	0x50, 0x72, 0x6f, 0x67, 0x72, 0x65, 0x73, 0x73, 0x12, 0x38, 0x0a, 0x07, 0x63, 0x61, 0x74, 0x61,
+	0x6c, 0x6f, 0x67, 0x18, 0x0e, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1e, 0x2e, 0x63, 0x6f, 0x6d, 0x2e,
+	0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74,
+	0x76, 0x2e, 0x43, 0x61, 0x74, 0x61, 0x6c, 0x6f, 0x67, 0x52, 0x07, 0x63, 0x61, 0x74, 0x61, 0x6c,
+	0x6f, 0x67, 0x12, 0x32, 0x0a, 0x05, 0x6a, 0x75, 0x6d, 0x70, 0x73, 0x18, 0x0f, 0x20, 0x03, 0x28,
+	0x0b, 0x32, 0x1c, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69,
+	0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x4a, 0x75, 0x6d, 0x70, 0x73, 0x52,
+	0x05, 0x6a, 0x75, 0x6d, 0x70, 0x73, 0x12, 0x3d, 0x0a, 0x0a, 0x63, 0x6f, 0x72, 0x6e, 0x65, 0x72,
+	0x6d, 0x61, 0x72, 0x6b, 0x18, 0x10, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x63, 0x6f, 0x6d,
+	0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e,
+	0x74, 0x76, 0x2e, 0x4c, 0x61, 0x62, 0x65, 0x6c, 0x73, 0x52, 0x0a, 0x63, 0x6f, 0x72, 0x6e, 0x65,
+	0x72, 0x6d, 0x61, 0x72, 0x6b, 0x12, 0x35, 0x0a, 0x06, 0x6c, 0x61, 0x62, 0x65, 0x6c, 0x73, 0x18,
+	0x11, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69,
+	0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x4c, 0x61,
+	0x62, 0x65, 0x6c, 0x73, 0x52, 0x06, 0x6c, 0x61, 0x62, 0x65, 0x6c, 0x73, 0x12, 0x3b, 0x0a, 0x08,
+	0x75, 0x70, 0x6c, 0x6f, 0x61, 0x64, 0x65, 0x72, 0x18, 0x12, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f,
 	0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62,
-	0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x4d, 0x65, 0x64, 0x69, 0x61, 0x45, 0x78, 0x74, 0x72,
-	0x61, 0x52, 0x09, 0x70, 0x72, 0x6f, 0x6a, 0x45, 0x78, 0x74, 0x72, 0x61, 0x12, 0x3d, 0x0a, 0x09,
-	0x70, 0x72, 0x6f, 0x6a, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x2c, 0x20, 0x01, 0x28, 0x0b, 0x32,
-	0x1f, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69,
-	0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x41, 0x75, 0x74, 0x68, 0x49, 0x6e, 0x66, 0x6f,
-	0x52, 0x09, 0x70, 0x72, 0x6f, 0x6a, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x12, 0x44, 0x0a, 0x0b, 0x63,
-	0x68, 0x61, 0x72, 0x67, 0x69, 0x6e, 0x67, 0x45, 0x78, 0x74, 0x18, 0x2d, 0x20, 0x01, 0x28, 0x0b,
-	0x32, 0x22, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c,
-	0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x43, 0x68, 0x61, 0x72, 0x67, 0x69, 0x6e,
-	0x67, 0x45, 0x78, 0x74, 0x52, 0x0b, 0x63, 0x68, 0x61, 0x72, 0x67, 0x69, 0x6e, 0x67, 0x45, 0x78,
-	0x74, 0x12, 0x41, 0x0a, 0x0a, 0x63, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x45, 0x78, 0x74, 0x18,
-	0x2e, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69,
+	0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x55, 0x70, 0x6c, 0x6f, 0x61, 0x64, 0x65, 0x72, 0x52,
+	0x08, 0x75, 0x70, 0x6c, 0x6f, 0x61, 0x64, 0x65, 0x72, 0x12, 0x3a, 0x0a, 0x07, 0x70, 0x61, 0x79,
+	0x6d, 0x65, 0x6e, 0x74, 0x18, 0x13, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x63, 0x6f, 0x6d,
+	0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e,
+	0x74, 0x76, 0x2e, 0x50, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x56, 0x32, 0x52, 0x07, 0x70, 0x61,
+	0x79, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x3b, 0x0a, 0x08, 0x61, 0x75, 0x74, 0x6f, 0x50, 0x6c, 0x61,
+	0x79, 0x18, 0x14, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61,
+	0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e,
+	0x41, 0x75, 0x74, 0x6f, 0x50, 0x6c, 0x61, 0x79, 0x52, 0x08, 0x61, 0x75, 0x74, 0x6f, 0x50, 0x6c,
+	0x61, 0x79, 0x12, 0x3e, 0x0a, 0x09, 0x63, 0x68, 0x65, 0x65, 0x73, 0x65, 0x45, 0x78, 0x74, 0x18,
+	0x15, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69,
 	0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x43, 0x68,
-	0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x45, 0x78, 0x74, 0x52, 0x0a, 0x63, 0x68, 0x61, 0x6e, 0x6e, 0x65,
-	0x6c, 0x45, 0x78, 0x74, 0x22, 0x6c, 0x0a, 0x0a, 0x43, 0x6f, 0x6f, 0x6b, 0x69, 0x65, 0x42, 0x65,
+	0x65, 0x65, 0x73, 0x65, 0x45, 0x78, 0x74, 0x52, 0x09, 0x63, 0x68, 0x65, 0x65, 0x73, 0x65, 0x45,
+	0x78, 0x74, 0x12, 0x35, 0x0a, 0x06, 0x70, 0x67, 0x63, 0x45, 0x78, 0x74, 0x18, 0x16, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62,
+	0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x50, 0x67, 0x63, 0x45, 0x78,
+	0x74, 0x52, 0x06, 0x70, 0x67, 0x63, 0x45, 0x78, 0x74, 0x12, 0x35, 0x0a, 0x06, 0x75, 0x67, 0x63,
+	0x45, 0x78, 0x74, 0x18, 0x17, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x63, 0x6f, 0x6d, 0x2e,
+	0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74,
+	0x76, 0x2e, 0x55, 0x67, 0x63, 0x45, 0x78, 0x74, 0x52, 0x06, 0x75, 0x67, 0x63, 0x45, 0x78, 0x74,
+	0x12, 0x38, 0x0a, 0x07, 0x6c, 0x69, 0x76, 0x65, 0x45, 0x78, 0x74, 0x18, 0x18, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x1e, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69,
+	0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x4c, 0x69, 0x76, 0x65, 0x45, 0x78,
+	0x74, 0x52, 0x07, 0x6c, 0x69, 0x76, 0x65, 0x45, 0x78, 0x74, 0x12, 0x34, 0x0a, 0x05, 0x61, 0x64,
+	0x45, 0x78, 0x74, 0x18, 0x19, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1e, 0x2e, 0x63, 0x6f, 0x6d, 0x2e,
+	0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74,
+	0x76, 0x2e, 0x41, 0x64, 0x45, 0x78, 0x74, 0x72, 0x61, 0x52, 0x05, 0x61, 0x64, 0x45, 0x78, 0x74,
+	0x12, 0x3e, 0x0a, 0x09, 0x65, 0x73, 0x70, 0x6f, 0x72, 0x74, 0x45, 0x78, 0x74, 0x18, 0x1a, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e,
+	0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x45, 0x73, 0x70, 0x6f,
+	0x72, 0x74, 0x45, 0x78, 0x74, 0x52, 0x09, 0x65, 0x73, 0x70, 0x6f, 0x72, 0x74, 0x45, 0x78, 0x74,
+	0x12, 0x3e, 0x0a, 0x09, 0x73, 0x65, 0x72, 0x69, 0x61, 0x6c, 0x45, 0x78, 0x74, 0x18, 0x1b, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e,
+	0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x53, 0x65, 0x72, 0x69,
+	0x61, 0x6c, 0x45, 0x78, 0x74, 0x52, 0x09, 0x73, 0x65, 0x72, 0x69, 0x61, 0x6c, 0x45, 0x78, 0x74,
+	0x12, 0x2c, 0x0a, 0x11, 0x6d, 0x75, 0x6c, 0x74, 0x69, 0x70, 0x6c, 0x65, 0x50, 0x61, 0x67, 0x65,
+	0x43, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x1c, 0x20, 0x01, 0x28, 0x03, 0x52, 0x11, 0x6d, 0x75, 0x6c,
+	0x74, 0x69, 0x70, 0x6c, 0x65, 0x50, 0x61, 0x67, 0x65, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x16,
+	0x0a, 0x06, 0x73, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x18, 0x1d, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06,
+	0x73, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x12, 0x50, 0x0a, 0x12, 0x72, 0x65, 0x63, 0x6f, 0x6d, 0x6d,
+	0x65, 0x6e, 0x64, 0x53, 0x63, 0x65, 0x6e, 0x65, 0x43, 0x61, 0x72, 0x64, 0x18, 0x1e, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x20, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62,
+	0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x53, 0x63, 0x65, 0x6e, 0x65,
+	0x43, 0x61, 0x72, 0x64, 0x52, 0x12, 0x72, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x53,
+	0x63, 0x65, 0x6e, 0x65, 0x43, 0x61, 0x72, 0x64, 0x12, 0x3e, 0x0a, 0x1a, 0x75, 0x73, 0x65, 0x72,
+	0x50, 0x72, 0x6f, 0x66, 0x69, 0x6c, 0x65, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x54,
+	0x72, 0x61, 0x63, 0x6b, 0x49, 0x64, 0x18, 0x1f, 0x20, 0x01, 0x28, 0x03, 0x52, 0x1a, 0x75, 0x73,
+	0x65, 0x72, 0x50, 0x72, 0x6f, 0x66, 0x69, 0x6c, 0x65, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61,
+	0x6c, 0x54, 0x72, 0x61, 0x63, 0x6b, 0x49, 0x64, 0x12, 0x36, 0x0a, 0x05, 0x74, 0x6f, 0x61, 0x73,
+	0x74, 0x18, 0x20, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61,
+	0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e,
+	0x56, 0x69, 0x65, 0x77, 0x54, 0x6f, 0x61, 0x73, 0x74, 0x52, 0x05, 0x74, 0x6f, 0x61, 0x73, 0x74,
+	0x12, 0x3e, 0x0a, 0x09, 0x73, 0x65, 0x61, 0x72, 0x63, 0x68, 0x45, 0x78, 0x74, 0x18, 0x21, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e,
+	0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x53, 0x65, 0x61, 0x72,
+	0x63, 0x68, 0x45, 0x78, 0x74, 0x52, 0x09, 0x73, 0x65, 0x61, 0x72, 0x63, 0x68, 0x45, 0x78, 0x74,
+	0x12, 0x3b, 0x0a, 0x08, 0x73, 0x68, 0x61, 0x72, 0x65, 0x45, 0x78, 0x74, 0x18, 0x22, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62,
+	0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x53, 0x68, 0x61, 0x72, 0x65,
+	0x45, 0x78, 0x74, 0x52, 0x08, 0x73, 0x68, 0x61, 0x72, 0x65, 0x45, 0x78, 0x74, 0x12, 0x4a, 0x0a,
+	0x0d, 0x6f, 0x67, 0x76, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x23,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x24, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73,
+	0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x4f, 0x67, 0x76,
+	0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0d, 0x6f, 0x67, 0x76, 0x43,
+	0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x50, 0x0a, 0x0d, 0x70, 0x6c, 0x61,
+	0x79, 0x53, 0x63, 0x65, 0x6e, 0x65, 0x50, 0x61, 0x67, 0x65, 0x18, 0x24, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x2a, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c,
+	0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x50, 0x6c, 0x61, 0x79, 0x53, 0x63, 0x65,
+	0x6e, 0x65, 0x50, 0x61, 0x67, 0x65, 0x56, 0x69, 0x65, 0x77, 0x56, 0x32, 0x52, 0x0d, 0x70, 0x6c,
+	0x61, 0x79, 0x53, 0x63, 0x65, 0x6e, 0x65, 0x50, 0x61, 0x67, 0x65, 0x12, 0x46, 0x0a, 0x0d, 0x70,
+	0x6c, 0x61, 0x79, 0x53, 0x63, 0x65, 0x6e, 0x65, 0x43, 0x61, 0x72, 0x64, 0x18, 0x25, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x20, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62,
+	0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x53, 0x63, 0x65, 0x6e, 0x65,
+	0x43, 0x61, 0x72, 0x64, 0x52, 0x0d, 0x70, 0x6c, 0x61, 0x79, 0x53, 0x63, 0x65, 0x6e, 0x65, 0x43,
+	0x61, 0x72, 0x64, 0x12, 0x3c, 0x0a, 0x09, 0x68, 0x69, 0x67, 0x68, 0x4c, 0x69, 0x67, 0x68, 0x74,
+	0x18, 0x26, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1e, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70,
+	0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x48,
+	0x4c, 0x52, 0x61, 0x6e, 0x67, 0x65, 0x52, 0x09, 0x68, 0x69, 0x67, 0x68, 0x4c, 0x69, 0x67, 0x68,
+	0x74, 0x12, 0x3b, 0x0a, 0x08, 0x69, 0x6e, 0x66, 0x6f, 0x63, 0x45, 0x78, 0x74, 0x18, 0x27, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e,
+	0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x49, 0x6e, 0x66, 0x6f,
+	0x63, 0x45, 0x78, 0x74, 0x52, 0x08, 0x69, 0x6e, 0x66, 0x6f, 0x63, 0x45, 0x78, 0x74, 0x12, 0x34,
+	0x0a, 0x15, 0x72, 0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x53, 0x63, 0x65, 0x6e, 0x65,
+	0x43, 0x61, 0x72, 0x64, 0x53, 0x74, 0x72, 0x18, 0x28, 0x20, 0x01, 0x28, 0x09, 0x52, 0x15, 0x72,
+	0x65, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x64, 0x53, 0x63, 0x65, 0x6e, 0x65, 0x43, 0x61, 0x72,
+	0x64, 0x53, 0x74, 0x72, 0x12, 0x2a, 0x0a, 0x10, 0x70, 0x6c, 0x61, 0x79, 0x53, 0x63, 0x65, 0x6e,
+	0x65, 0x50, 0x61, 0x67, 0x65, 0x53, 0x74, 0x72, 0x18, 0x29, 0x20, 0x01, 0x28, 0x09, 0x52, 0x10,
+	0x70, 0x6c, 0x61, 0x79, 0x53, 0x63, 0x65, 0x6e, 0x65, 0x50, 0x61, 0x67, 0x65, 0x53, 0x74, 0x72,
+	0x12, 0x2a, 0x0a, 0x10, 0x70, 0x6c, 0x61, 0x79, 0x53, 0x63, 0x65, 0x6e, 0x65, 0x43, 0x61, 0x72,
+	0x64, 0x53, 0x74, 0x72, 0x18, 0x2a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x10, 0x70, 0x6c, 0x61, 0x79,
+	0x53, 0x63, 0x65, 0x6e, 0x65, 0x43, 0x61, 0x72, 0x64, 0x53, 0x74, 0x72, 0x12, 0x3f, 0x0a, 0x09,
+	0x70, 0x72, 0x6f, 0x6a, 0x45, 0x78, 0x74, 0x72, 0x61, 0x18, 0x2b, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x21, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69,
+	0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x4d, 0x65, 0x64, 0x69, 0x61, 0x45, 0x78, 0x74,
+	0x72, 0x61, 0x52, 0x09, 0x70, 0x72, 0x6f, 0x6a, 0x45, 0x78, 0x74, 0x72, 0x61, 0x12, 0x3d, 0x0a,
+	0x09, 0x70, 0x72, 0x6f, 0x6a, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x2c, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x1f, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c,
+	0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x41, 0x75, 0x74, 0x68, 0x49, 0x6e, 0x66,
+	0x6f, 0x52, 0x09, 0x70, 0x72, 0x6f, 0x6a, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x12, 0x44, 0x0a, 0x0b,
+	0x63, 0x68, 0x61, 0x72, 0x67, 0x69, 0x6e, 0x67, 0x45, 0x78, 0x74, 0x18, 0x2d, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x22, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69,
+	0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x43, 0x68, 0x61, 0x72, 0x67, 0x69,
+	0x6e, 0x67, 0x45, 0x78, 0x74, 0x52, 0x0b, 0x63, 0x68, 0x61, 0x72, 0x67, 0x69, 0x6e, 0x67, 0x45,
+	0x78, 0x74, 0x12, 0x41, 0x0a, 0x0a, 0x63, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x45, 0x78, 0x74,
+	0x18, 0x2e, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70,
+	0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x43,
+	0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x45, 0x78, 0x74, 0x52, 0x0a, 0x63, 0x68, 0x61, 0x6e, 0x6e,
+	0x65, 0x6c, 0x45, 0x78, 0x74, 0x22, 0xac, 0x02, 0x0a, 0x0d, 0x43, 0x6f, 0x6e, 0x74, 0x69, 0x6e,
+	0x75, 0x65, 0x57, 0x61, 0x74, 0x63, 0x68, 0x12, 0x18, 0x0a, 0x07, 0x76, 0x69, 0x64, 0x65, 0x6f,
+	0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x07, 0x76, 0x69, 0x64, 0x65, 0x6f, 0x49,
+	0x64, 0x12, 0x1a, 0x0a, 0x08, 0x70, 0x72, 0x6f, 0x67, 0x72, 0x65, 0x73, 0x73, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x03, 0x52, 0x08, 0x70, 0x72, 0x6f, 0x67, 0x72, 0x65, 0x73, 0x73, 0x12, 0x14, 0x0a,
+	0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x69,
+	0x74, 0x6c, 0x65, 0x12, 0x1c, 0x0a, 0x09, 0x6c, 0x6f, 0x6e, 0x67, 0x54, 0x69, 0x74, 0x6c, 0x65,
+	0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x6c, 0x6f, 0x6e, 0x67, 0x54, 0x69, 0x74, 0x6c,
+	0x65, 0x12, 0x19, 0x0a, 0x08, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x5f, 0x18, 0x05, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x12, 0x1e, 0x0a, 0x0a,
+	0x62, 0x75, 0x74, 0x74, 0x6f, 0x6e, 0x54, 0x65, 0x78, 0x74, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x0a, 0x62, 0x75, 0x74, 0x74, 0x6f, 0x6e, 0x54, 0x65, 0x78, 0x74, 0x12, 0x1e, 0x0a, 0x0a,
+	0x64, 0x75, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4d, 0x73, 0x18, 0x07, 0x20, 0x01, 0x28, 0x03,
+	0x52, 0x0a, 0x64, 0x75, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4d, 0x73, 0x12, 0x44, 0x0a, 0x0b,
+	0x70, 0x6c, 0x61, 0x79, 0x75, 0x72, 0x6c, 0x41, 0x72, 0x67, 0x73, 0x18, 0x08, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x22, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69,
+	0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x74, 0x76, 0x2e, 0x50, 0x6c, 0x61, 0x79, 0x75, 0x72,
+	0x6c, 0x41, 0x72, 0x67, 0x73, 0x52, 0x0b, 0x70, 0x6c, 0x61, 0x79, 0x75, 0x72, 0x6c, 0x41, 0x72,
+	0x67, 0x73, 0x12, 0x10, 0x0a, 0x03, 0x61, 0x69, 0x64, 0x18, 0x09, 0x20, 0x01, 0x28, 0x03, 0x52,
+	0x03, 0x61, 0x69, 0x64, 0x22, 0x6c, 0x0a, 0x0a, 0x43, 0x6f, 0x6f, 0x6b, 0x69, 0x65, 0x42, 0x65,
 	0x61, 0x6e, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
 	0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18,
 	0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x12, 0x1a, 0x0a, 0x08,
@@ -17007,22 +17210,27 @@ var file_bilibili_tv_messages_proto_rawDesc = []byte{
 	0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x12, 0x13, 0x0a, 0x0f, 0x4c, 0x69, 0x76, 0x65, 0x53, 0x6f,
 	0x75, 0x72, 0x63, 0x65, 0x4d, 0x4c, 0x69, 0x76, 0x65, 0x10, 0x00, 0x12, 0x18, 0x0a, 0x14, 0x4c,
 	0x69, 0x76, 0x65, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x42, 0x69, 0x7a, 0x54, 0x72, 0x69, 0x67,
-	0x67, 0x65, 0x72, 0x10, 0x01, 0x2a, 0x36, 0x0a, 0x10, 0x53, 0x75, 0x62, 0x74, 0x69, 0x74, 0x6c,
-	0x65, 0x41, 0x69, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x08, 0x0a, 0x04, 0x4e, 0x6f, 0x6e,
-	0x65, 0x10, 0x00, 0x12, 0x0c, 0x0a, 0x08, 0x45, 0x78, 0x70, 0x6f, 0x73, 0x75, 0x72, 0x65, 0x10,
-	0x01, 0x12, 0x0a, 0x0a, 0x06, 0x41, 0x73, 0x73, 0x69, 0x73, 0x74, 0x10, 0x02, 0x2a, 0x2b, 0x0a,
-	0x0e, 0x53, 0x75, 0x62, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x41, 0x69, 0x54, 0x79, 0x70, 0x65, 0x12,
-	0x0a, 0x0a, 0x06, 0x4e, 0x6f, 0x72, 0x6d, 0x61, 0x6c, 0x10, 0x00, 0x12, 0x0d, 0x0a, 0x09, 0x54,
-	0x72, 0x61, 0x6e, 0x73, 0x6c, 0x61, 0x74, 0x65, 0x10, 0x01, 0x2a, 0x34, 0x0a, 0x0c, 0x53, 0x75,
-	0x62, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x52, 0x6f, 0x6c, 0x65, 0x12, 0x0b, 0x0a, 0x07, 0x44, 0x65,
-	0x66, 0x61, 0x75, 0x6c, 0x74, 0x10, 0x00, 0x12, 0x08, 0x0a, 0x04, 0x4d, 0x61, 0x69, 0x6e, 0x10,
-	0x01, 0x12, 0x0d, 0x0a, 0x09, 0x53, 0x65, 0x63, 0x6f, 0x6e, 0x64, 0x61, 0x72, 0x79, 0x10, 0x02,
-	0x2a, 0x1e, 0x0a, 0x0c, 0x53, 0x75, 0x62, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x54, 0x79, 0x70, 0x65,
-	0x12, 0x06, 0x0a, 0x02, 0x43, 0x43, 0x10, 0x00, 0x12, 0x06, 0x0a, 0x02, 0x41, 0x49, 0x10, 0x01,
-	0x42, 0x32, 0x5a, 0x30, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x73,
-	0x74, 0x6d, 0x74, 0x63, 0x32, 0x33, 0x33, 0x2f, 0x62, 0x69, 0x6c, 0x69, 0x2d, 0x67, 0x72, 0x70,
-	0x63, 0x2d, 0x61, 0x70, 0x69, 0x2d, 0x67, 0x6f, 0x2f, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c,
-	0x69, 0x2f, 0x74, 0x76, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x67, 0x65, 0x72, 0x10, 0x01, 0x2a, 0x51, 0x0a, 0x10, 0x50, 0x6c, 0x61, 0x79, 0x6c, 0x69, 0x73,
+	0x74, 0x50, 0x6c, 0x61, 0x79, 0x54, 0x79, 0x70, 0x65, 0x12, 0x1e, 0x0a, 0x1a, 0x50, 0x4c, 0x41,
+	0x59, 0x4c, 0x49, 0x53, 0x54, 0x5f, 0x50, 0x4c, 0x41, 0x59, 0x5f, 0x54, 0x59, 0x50, 0x45, 0x5f,
+	0x55, 0x4e, 0x4b, 0x4e, 0x4f, 0x57, 0x4e, 0x10, 0x00, 0x12, 0x1d, 0x0a, 0x19, 0x50, 0x4c, 0x41,
+	0x59, 0x4c, 0x49, 0x53, 0x54, 0x5f, 0x50, 0x4c, 0x41, 0x59, 0x5f, 0x54, 0x59, 0x50, 0x45, 0x5f,
+	0x53, 0x49, 0x4e, 0x47, 0x4c, 0x45, 0x10, 0x01, 0x2a, 0x36, 0x0a, 0x10, 0x53, 0x75, 0x62, 0x74,
+	0x69, 0x74, 0x6c, 0x65, 0x41, 0x69, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x08, 0x0a, 0x04,
+	0x4e, 0x6f, 0x6e, 0x65, 0x10, 0x00, 0x12, 0x0c, 0x0a, 0x08, 0x45, 0x78, 0x70, 0x6f, 0x73, 0x75,
+	0x72, 0x65, 0x10, 0x01, 0x12, 0x0a, 0x0a, 0x06, 0x41, 0x73, 0x73, 0x69, 0x73, 0x74, 0x10, 0x02,
+	0x2a, 0x2b, 0x0a, 0x0e, 0x53, 0x75, 0x62, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x41, 0x69, 0x54, 0x79,
+	0x70, 0x65, 0x12, 0x0a, 0x0a, 0x06, 0x4e, 0x6f, 0x72, 0x6d, 0x61, 0x6c, 0x10, 0x00, 0x12, 0x0d,
+	0x0a, 0x09, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x6c, 0x61, 0x74, 0x65, 0x10, 0x01, 0x2a, 0x34, 0x0a,
+	0x0c, 0x53, 0x75, 0x62, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x52, 0x6f, 0x6c, 0x65, 0x12, 0x0b, 0x0a,
+	0x07, 0x44, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x10, 0x00, 0x12, 0x08, 0x0a, 0x04, 0x4d, 0x61,
+	0x69, 0x6e, 0x10, 0x01, 0x12, 0x0d, 0x0a, 0x09, 0x53, 0x65, 0x63, 0x6f, 0x6e, 0x64, 0x61, 0x72,
+	0x79, 0x10, 0x02, 0x2a, 0x1e, 0x0a, 0x0c, 0x53, 0x75, 0x62, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x54,
+	0x79, 0x70, 0x65, 0x12, 0x06, 0x0a, 0x02, 0x43, 0x43, 0x10, 0x00, 0x12, 0x06, 0x0a, 0x02, 0x41,
+	0x49, 0x10, 0x01, 0x42, 0x32, 0x5a, 0x30, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
+	0x6d, 0x2f, 0x73, 0x74, 0x6d, 0x74, 0x63, 0x32, 0x33, 0x33, 0x2f, 0x62, 0x69, 0x6c, 0x69, 0x2d,
+	0x67, 0x72, 0x70, 0x63, 0x2d, 0x61, 0x70, 0x69, 0x2d, 0x67, 0x6f, 0x2f, 0x62, 0x69, 0x6c, 0x69,
+	0x62, 0x69, 0x6c, 0x69, 0x2f, 0x74, 0x76, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -17037,349 +17245,354 @@ func file_bilibili_tv_messages_proto_rawDescGZIP() []byte {
 	return file_bilibili_tv_messages_proto_rawDescData
 }
 
-var file_bilibili_tv_messages_proto_enumTypes = make([]protoimpl.EnumInfo, 7)
-var file_bilibili_tv_messages_proto_msgTypes = make([]protoimpl.MessageInfo, 142)
+var file_bilibili_tv_messages_proto_enumTypes = make([]protoimpl.EnumInfo, 8)
+var file_bilibili_tv_messages_proto_msgTypes = make([]protoimpl.MessageInfo, 143)
 var file_bilibili_tv_messages_proto_goTypes = []interface{}{
 	(DmColorfulType)(0),               // 0: com.bapis.bilibili.tv.DmColorfulType
 	(DmFromType)(0),                   // 1: com.bapis.bilibili.tv.DmFromType
 	(LiveSource)(0),                   // 2: com.bapis.bilibili.tv.LiveSource
-	(SubtitleAiStatus)(0),             // 3: com.bapis.bilibili.tv.SubtitleAiStatus
-	(SubtitleAiType)(0),               // 4: com.bapis.bilibili.tv.SubtitleAiType
-	(SubtitleRole)(0),                 // 5: com.bapis.bilibili.tv.SubtitleRole
-	(SubtitleType)(0),                 // 6: com.bapis.bilibili.tv.SubtitleType
-	(*AccessToken)(nil),               // 7: com.bapis.bilibili.tv.AccessToken
-	(*ActivityInfo)(nil),              // 8: com.bapis.bilibili.tv.ActivityInfo
-	(*ActivityInfo_MaterialConf)(nil), // 9: com.bapis.bilibili.tv.ActivityInfo_MaterialConf
-	(*ActivityInfo_MaterialConf_MaterialMobiConf)(nil),      // 10: com.bapis.bilibili.tv.ActivityInfo_MaterialConf_MaterialMobiConf
-	(*ActivityInfo_MaterialConf_SpecialDmMaterialMobi)(nil), // 11: com.bapis.bilibili.tv.ActivityInfo_MaterialConf_SpecialDmMaterialMobi
-	(*ActivityInfo_MockOption)(nil),                         // 12: com.bapis.bilibili.tv.ActivityInfo_MockOption
-	(*AdExtra)(nil),                                         // 13: com.bapis.bilibili.tv.AdExtra
-	(*AuthInfo)(nil),                                        // 14: com.bapis.bilibili.tv.AuthInfo
-	(*AutoPlay)(nil),                                        // 15: com.bapis.bilibili.tv.AutoPlay
-	(*AvoidObstruction)(nil),                                // 16: com.bapis.bilibili.tv.AvoidObstruction
-	(*BlueLinkAd)(nil),                                      // 17: com.bapis.bilibili.tv.BlueLinkAd
-	(*Button)(nil),                                          // 18: com.bapis.bilibili.tv.Button
-	(*ButtonCovermark)(nil),                                 // 19: com.bapis.bilibili.tv.ButtonCovermark
-	(*ButtonPic)(nil),                                       // 20: com.bapis.bilibili.tv.ButtonPic
-	(*BuyButton)(nil),                                       // 21: com.bapis.bilibili.tv.BuyButton
-	(*CardViewPlayListResp)(nil),                            // 22: com.bapis.bilibili.tv.CardViewPlayListResp
-	(*CardViewV2Reply)(nil),                                 // 23: com.bapis.bilibili.tv.CardViewV2Reply
-	(*CardViewV2Req)(nil),                                   // 24: com.bapis.bilibili.tv.CardViewV2Req
-	(*Catalog)(nil),                                         // 25: com.bapis.bilibili.tv.Catalog
-	(*ChannelExt)(nil),                                      // 26: com.bapis.bilibili.tv.ChannelExt
-	(*ChargingEndPage)(nil),                                 // 27: com.bapis.bilibili.tv.ChargingEndPage
-	(*ChargingExt)(nil),                                     // 28: com.bapis.bilibili.tv.ChargingExt
-	(*CheeseBuyButton)(nil),                                 // 29: com.bapis.bilibili.tv.CheeseBuyButton
-	(*CheeseExt)(nil),                                       // 30: com.bapis.bilibili.tv.CheeseExt
-	(*CheeseExtRight)(nil),                                  // 31: com.bapis.bilibili.tv.CheeseExtRight
-	(*Chronos)(nil),                                         // 32: com.bapis.bilibili.tv.Chronos
-	(*CidList)(nil),                                         // 33: com.bapis.bilibili.tv.CidList
-	(*Command)(nil),                                         // 34: com.bapis.bilibili.tv.Command
-	(*CommandDm)(nil),                                       // 35: com.bapis.bilibili.tv.CommandDm
-	(*CommandDmOtt)(nil),                                    // 36: com.bapis.bilibili.tv.CommandDmOtt
-	(*CommandDmsOttReply)(nil),                              // 37: com.bapis.bilibili.tv.CommandDmsOttReply
-	(*CommandDmsOttReq)(nil),                                // 38: com.bapis.bilibili.tv.CommandDmsOttReq
-	(*CommonCardResp)(nil),                                  // 39: com.bapis.bilibili.tv.CommonCardResp
-	(*CookieBean)(nil),                                      // 40: com.bapis.bilibili.tv.CookieBean
-	(*CookieInfo)(nil),                                      // 41: com.bapis.bilibili.tv.CookieInfo
-	(*DanmakuAIFlag)(nil),                                   // 42: com.bapis.bilibili.tv.DanmakuAIFlag
-	(*DanmakuElem)(nil),                                     // 43: com.bapis.bilibili.tv.DanmakuElem
-	(*DanmakuFlag)(nil),                                     // 44: com.bapis.bilibili.tv.DanmakuFlag
-	(*DanmakuFlagConfig)(nil),                               // 45: com.bapis.bilibili.tv.DanmakuFlagConfig
-	(*DanmuDefaultPlayerConfig)(nil),                        // 46: com.bapis.bilibili.tv.DanmuDefaultPlayerConfig
-	(*DanmuPlayerConfig)(nil),                               // 47: com.bapis.bilibili.tv.DanmuPlayerConfig
-	(*DanmuPlayerDynamicConfig)(nil),                        // 48: com.bapis.bilibili.tv.DanmuPlayerDynamicConfig
-	(*DanmuPlayerViewConfig)(nil),                           // 49: com.bapis.bilibili.tv.DanmuPlayerViewConfig
-	(*DanmuSettings)(nil),                                   // 50: com.bapis.bilibili.tv.DanmuSettings
-	(*Device)(nil),                                          // 51: com.bapis.bilibili.tv.Device
-	(*DmColorful)(nil),                                      // 52: com.bapis.bilibili.tv.DmColorful
-	(*DmHerdView)(nil),                                      // 53: com.bapis.bilibili.tv.DmHerdView
-	(*DmSegMobileReply)(nil),                                // 54: com.bapis.bilibili.tv.DmSegMobileReply
-	(*DmSegMobileReq)(nil),                                  // 55: com.bapis.bilibili.tv.DmSegMobileReq
-	(*DmViewReply)(nil),                                     // 56: com.bapis.bilibili.tv.DmViewReply
-	(*DmViewReq)(nil),                                       // 57: com.bapis.bilibili.tv.DmViewReq
-	(*Entrance)(nil),                                        // 58: com.bapis.bilibili.tv.Entrance
-	(*EsportExt)(nil),                                       // 59: com.bapis.bilibili.tv.EsportExt
-	(*ExtendedDesc)(nil),                                    // 60: com.bapis.bilibili.tv.ExtendedDesc
-	(*FeedAdExtraAdTagStyle)(nil),                           // 61: com.bapis.bilibili.tv.FeedAdExtraAdTagStyle
-	(*FeedAdExtraVideo)(nil),                                // 62: com.bapis.bilibili.tv.FeedAdExtraVideo
-	(*HighLight)(nil),                                       // 63: com.bapis.bilibili.tv.HighLight
-	(*HLRange)(nil),                                         // 64: com.bapis.bilibili.tv.HLRange
-	(*HotGuess)(nil),                                        // 65: com.bapis.bilibili.tv.HotGuess
-	(*Hotword)(nil),                                         // 66: com.bapis.bilibili.tv.Hotword
-	(*HotwordExt)(nil),                                      // 67: com.bapis.bilibili.tv.HotwordExt
-	(*InfocExt)(nil),                                        // 68: com.bapis.bilibili.tv.InfocExt
-	(*JumpLine)(nil),                                        // 69: com.bapis.bilibili.tv.JumpLine
-	(*Jumps)(nil),                                           // 70: com.bapis.bilibili.tv.Jumps
-	(*Labels)(nil),                                          // 71: com.bapis.bilibili.tv.Labels
-	(*LiveDanmuPlayerConfig)(nil),                           // 72: com.bapis.bilibili.tv.LiveDanmuPlayerConfig
-	(*LiveDmActivity)(nil),                                  // 73: com.bapis.bilibili.tv.LiveDmActivity
-	(*LiveDmExtra)(nil),                                     // 74: com.bapis.bilibili.tv.LiveDmExtra
-	(*LiveExt)(nil),                                         // 75: com.bapis.bilibili.tv.LiveExt
-	(*LiveSkipResp)(nil),                                    // 76: com.bapis.bilibili.tv.LiveSkipResp
-	(*MediaExtra)(nil),                                      // 77: com.bapis.bilibili.tv.MediaExtra
-	(*MockMetaDataReply)(nil),                               // 78: com.bapis.bilibili.tv.MockMetaDataReply
-	(*MockMetaDataReq)(nil),                                 // 79: com.bapis.bilibili.tv.MockMetaDataReq
-	(*ModResource)(nil),                                     // 80: com.bapis.bilibili.tv.ModResource
-	(*OfficialInfo)(nil),                                    // 81: com.bapis.bilibili.tv.OfficialInfo
-	(*Ogv186PlayControl)(nil),                               // 82: com.bapis.bilibili.tv.Ogv186PlayControl
-	(*OgvBottomButton)(nil),                                 // 83: com.bapis.bilibili.tv.OgvBottomButton
-	(*OgvCollection)(nil),                                   // 84: com.bapis.bilibili.tv.OgvCollection
-	(*OgvIndexEntry)(nil),                                   // 85: com.bapis.bilibili.tv.OgvIndexEntry
-	(*OgvIndexGoto)(nil),                                    // 86: com.bapis.bilibili.tv.OgvIndexGoto
-	(*OperationExt)(nil),                                    // 87: com.bapis.bilibili.tv.OperationExt
-	(*OrderId)(nil),                                         // 88: com.bapis.bilibili.tv.OrderId
-	(*Page)(nil),                                            // 89: com.bapis.bilibili.tv.Page
-	(*Pageinfo)(nil),                                        // 90: com.bapis.bilibili.tv.Pageinfo
-	(*PayCard)(nil),                                         // 91: com.bapis.bilibili.tv.PayCard
-	(*PaymentShowExt)(nil),                                  // 92: com.bapis.bilibili.tv.PaymentShowExt
-	(*PaymentV2)(nil),                                       // 93: com.bapis.bilibili.tv.PaymentV2
-	(*PgcExt)(nil),                                          // 94: com.bapis.bilibili.tv.PgcExt
-	(*PgcIndexEntry)(nil),                                   // 95: com.bapis.bilibili.tv.PgcIndexEntry
-	(*PgcIndexGoto)(nil),                                    // 96: com.bapis.bilibili.tv.PgcIndexGoto
-	(*PlaylistTab)(nil),                                     // 97: com.bapis.bilibili.tv.PlaylistTab
-	(*PlayScenePageViewV2)(nil),                             // 98: com.bapis.bilibili.tv.PlayScenePageViewV2
-	(*PlayurlArgs)(nil),                                     // 99: com.bapis.bilibili.tv.PlayurlArgs
-	(*ProjExt)(nil),                                         // 100: com.bapis.bilibili.tv.ProjExt
-	(*QoeInfo)(nil),                                         // 101: com.bapis.bilibili.tv.QoeInfo
-	(*RestrictionConfig)(nil),                               // 102: com.bapis.bilibili.tv.RestrictionConfig
-	(*Rights)(nil),                                          // 103: com.bapis.bilibili.tv.Rights
-	(*SceneCard)(nil),                                       // 104: com.bapis.bilibili.tv.SceneCard
-	(*SceneModule)(nil),                                     // 105: com.bapis.bilibili.tv.SceneModule
-	(*SearchExt)(nil),                                       // 106: com.bapis.bilibili.tv.SearchExt
-	(*SearchV2Operator)(nil),                                // 107: com.bapis.bilibili.tv.SearchV2Operator
-	(*SearchV2OperatorAdInfo)(nil),                          // 108: com.bapis.bilibili.tv.SearchV2OperatorAdInfo
-	(*SearchV2OperatorButton)(nil),                          // 109: com.bapis.bilibili.tv.SearchV2OperatorButton
-	(*SearchV2Reply)(nil),                                   // 110: com.bapis.bilibili.tv.SearchV2Reply
-	(*SearchV2Req)(nil),                                     // 111: com.bapis.bilibili.tv.SearchV2Req
-	(*SeaResultV2)(nil),                                     // 112: com.bapis.bilibili.tv.SeaResultV2
-	(*SerialExt)(nil),                                       // 113: com.bapis.bilibili.tv.SerialExt
-	(*SerialListSubtitle)(nil),                              // 114: com.bapis.bilibili.tv.SerialListSubtitle
-	(*SerialPlayingUgc)(nil),                                // 115: com.bapis.bilibili.tv.SerialPlayingUgc
-	(*SerialRights)(nil),                                    // 116: com.bapis.bilibili.tv.SerialRights
-	(*ShareExt)(nil),                                        // 117: com.bapis.bilibili.tv.ShareExt
-	(*ShopExt)(nil),                                         // 118: com.bapis.bilibili.tv.ShopExt
-	(*SubtitleItem)(nil),                                    // 119: com.bapis.bilibili.tv.SubtitleItem
-	(*TabInfo)(nil),                                         // 120: com.bapis.bilibili.tv.TabInfo
-	(*Team)(nil),                                            // 121: com.bapis.bilibili.tv.Team
-	(*TokenSearchRes)(nil),                                  // 122: com.bapis.bilibili.tv.TokenSearchRes
-	(*TokenSearchResBanner)(nil),                            // 123: com.bapis.bilibili.tv.TokenSearchResBanner
-	(*TokenSearchResPopup)(nil),                             // 124: com.bapis.bilibili.tv.TokenSearchResPopup
-	(*TokenSearchResPopupButton)(nil),                       // 125: com.bapis.bilibili.tv.TokenSearchResPopupButton
-	(*TopBar)(nil),                                          // 126: com.bapis.bilibili.tv.TopBar
-	(*TrackShop)(nil),                                       // 127: com.bapis.bilibili.tv.TrackShop
-	(*TvViewProgressReply)(nil),                             // 128: com.bapis.bilibili.tv.TvViewProgressReply
-	(*TvViewProgressReq)(nil),                               // 129: com.bapis.bilibili.tv.TvViewProgressReq
-	(*UgcCardAction)(nil),                                   // 130: com.bapis.bilibili.tv.UgcCardAction
-	(*UGCCardSubtitle)(nil),                                 // 131: com.bapis.bilibili.tv.UGCCardSubtitle
-	(*UgcExt)(nil),                                          // 132: com.bapis.bilibili.tv.UgcExt
-	(*UgcInteractionInfo)(nil),                              // 133: com.bapis.bilibili.tv.UgcInteractionInfo
-	(*UgcRights)(nil),                                       // 134: com.bapis.bilibili.tv.UgcRights
-	(*UpExtInfo)(nil),                                       // 135: com.bapis.bilibili.tv.UpExtInfo
-	(*Uploader)(nil),                                        // 136: com.bapis.bilibili.tv.Uploader
-	(*UserInfo)(nil),                                        // 137: com.bapis.bilibili.tv.UserInfo
-	(*UserStatus)(nil),                                      // 138: com.bapis.bilibili.tv.UserStatus
-	(*VerticalRankCards)(nil),                               // 139: com.bapis.bilibili.tv.VerticalRankCards
-	(*VerticalRankMoreCard)(nil),                            // 140: com.bapis.bilibili.tv.VerticalRankMoreCard
-	(*VideoGuide)(nil),                                      // 141: com.bapis.bilibili.tv.VideoGuide
-	(*VideoMask)(nil),                                       // 142: com.bapis.bilibili.tv.VideoMask
-	(*VideoSubtitle)(nil),                                   // 143: com.bapis.bilibili.tv.VideoSubtitle
-	(*ViewHerdDmElem)(nil),                                  // 144: com.bapis.bilibili.tv.ViewHerdDmElem
-	(*ViewToast)(nil),                                       // 145: com.bapis.bilibili.tv.ViewToast
-	(*WatchProgress)(nil),                                   // 146: com.bapis.bilibili.tv.WatchProgress
-	(*WatchProgressV2)(nil),                                 // 147: com.bapis.bilibili.tv.WatchProgressV2
-	nil,                                                     // 148: com.bapis.bilibili.tv.PaymentV2.PayCardEntry
+	(PlaylistPlayType)(0),             // 3: com.bapis.bilibili.tv.PlaylistPlayType
+	(SubtitleAiStatus)(0),             // 4: com.bapis.bilibili.tv.SubtitleAiStatus
+	(SubtitleAiType)(0),               // 5: com.bapis.bilibili.tv.SubtitleAiType
+	(SubtitleRole)(0),                 // 6: com.bapis.bilibili.tv.SubtitleRole
+	(SubtitleType)(0),                 // 7: com.bapis.bilibili.tv.SubtitleType
+	(*AccessToken)(nil),               // 8: com.bapis.bilibili.tv.AccessToken
+	(*ActivityInfo)(nil),              // 9: com.bapis.bilibili.tv.ActivityInfo
+	(*ActivityInfo_MaterialConf)(nil), // 10: com.bapis.bilibili.tv.ActivityInfo_MaterialConf
+	(*ActivityInfo_MaterialConf_MaterialMobiConf)(nil),      // 11: com.bapis.bilibili.tv.ActivityInfo_MaterialConf_MaterialMobiConf
+	(*ActivityInfo_MaterialConf_SpecialDmMaterialMobi)(nil), // 12: com.bapis.bilibili.tv.ActivityInfo_MaterialConf_SpecialDmMaterialMobi
+	(*ActivityInfo_MockOption)(nil),                         // 13: com.bapis.bilibili.tv.ActivityInfo_MockOption
+	(*AdExtra)(nil),                                         // 14: com.bapis.bilibili.tv.AdExtra
+	(*AuthInfo)(nil),                                        // 15: com.bapis.bilibili.tv.AuthInfo
+	(*AutoPlay)(nil),                                        // 16: com.bapis.bilibili.tv.AutoPlay
+	(*AvoidObstruction)(nil),                                // 17: com.bapis.bilibili.tv.AvoidObstruction
+	(*BlueLinkAd)(nil),                                      // 18: com.bapis.bilibili.tv.BlueLinkAd
+	(*Button)(nil),                                          // 19: com.bapis.bilibili.tv.Button
+	(*ButtonCovermark)(nil),                                 // 20: com.bapis.bilibili.tv.ButtonCovermark
+	(*ButtonPic)(nil),                                       // 21: com.bapis.bilibili.tv.ButtonPic
+	(*BuyButton)(nil),                                       // 22: com.bapis.bilibili.tv.BuyButton
+	(*CardViewPlayListResp)(nil),                            // 23: com.bapis.bilibili.tv.CardViewPlayListResp
+	(*CardViewV2Reply)(nil),                                 // 24: com.bapis.bilibili.tv.CardViewV2Reply
+	(*CardViewV2Req)(nil),                                   // 25: com.bapis.bilibili.tv.CardViewV2Req
+	(*Catalog)(nil),                                         // 26: com.bapis.bilibili.tv.Catalog
+	(*ChannelExt)(nil),                                      // 27: com.bapis.bilibili.tv.ChannelExt
+	(*ChargingEndPage)(nil),                                 // 28: com.bapis.bilibili.tv.ChargingEndPage
+	(*ChargingExt)(nil),                                     // 29: com.bapis.bilibili.tv.ChargingExt
+	(*CheeseBuyButton)(nil),                                 // 30: com.bapis.bilibili.tv.CheeseBuyButton
+	(*CheeseExt)(nil),                                       // 31: com.bapis.bilibili.tv.CheeseExt
+	(*CheeseExtRight)(nil),                                  // 32: com.bapis.bilibili.tv.CheeseExtRight
+	(*Chronos)(nil),                                         // 33: com.bapis.bilibili.tv.Chronos
+	(*CidList)(nil),                                         // 34: com.bapis.bilibili.tv.CidList
+	(*Command)(nil),                                         // 35: com.bapis.bilibili.tv.Command
+	(*CommandDm)(nil),                                       // 36: com.bapis.bilibili.tv.CommandDm
+	(*CommandDmOtt)(nil),                                    // 37: com.bapis.bilibili.tv.CommandDmOtt
+	(*CommandDmsOttReply)(nil),                              // 38: com.bapis.bilibili.tv.CommandDmsOttReply
+	(*CommandDmsOttReq)(nil),                                // 39: com.bapis.bilibili.tv.CommandDmsOttReq
+	(*CommonCardResp)(nil),                                  // 40: com.bapis.bilibili.tv.CommonCardResp
+	(*ContinueWatch)(nil),                                   // 41: com.bapis.bilibili.tv.ContinueWatch
+	(*CookieBean)(nil),                                      // 42: com.bapis.bilibili.tv.CookieBean
+	(*CookieInfo)(nil),                                      // 43: com.bapis.bilibili.tv.CookieInfo
+	(*DanmakuAIFlag)(nil),                                   // 44: com.bapis.bilibili.tv.DanmakuAIFlag
+	(*DanmakuElem)(nil),                                     // 45: com.bapis.bilibili.tv.DanmakuElem
+	(*DanmakuFlag)(nil),                                     // 46: com.bapis.bilibili.tv.DanmakuFlag
+	(*DanmakuFlagConfig)(nil),                               // 47: com.bapis.bilibili.tv.DanmakuFlagConfig
+	(*DanmuDefaultPlayerConfig)(nil),                        // 48: com.bapis.bilibili.tv.DanmuDefaultPlayerConfig
+	(*DanmuPlayerConfig)(nil),                               // 49: com.bapis.bilibili.tv.DanmuPlayerConfig
+	(*DanmuPlayerDynamicConfig)(nil),                        // 50: com.bapis.bilibili.tv.DanmuPlayerDynamicConfig
+	(*DanmuPlayerViewConfig)(nil),                           // 51: com.bapis.bilibili.tv.DanmuPlayerViewConfig
+	(*DanmuSettings)(nil),                                   // 52: com.bapis.bilibili.tv.DanmuSettings
+	(*Device)(nil),                                          // 53: com.bapis.bilibili.tv.Device
+	(*DmColorful)(nil),                                      // 54: com.bapis.bilibili.tv.DmColorful
+	(*DmHerdView)(nil),                                      // 55: com.bapis.bilibili.tv.DmHerdView
+	(*DmSegMobileReply)(nil),                                // 56: com.bapis.bilibili.tv.DmSegMobileReply
+	(*DmSegMobileReq)(nil),                                  // 57: com.bapis.bilibili.tv.DmSegMobileReq
+	(*DmViewReply)(nil),                                     // 58: com.bapis.bilibili.tv.DmViewReply
+	(*DmViewReq)(nil),                                       // 59: com.bapis.bilibili.tv.DmViewReq
+	(*Entrance)(nil),                                        // 60: com.bapis.bilibili.tv.Entrance
+	(*EsportExt)(nil),                                       // 61: com.bapis.bilibili.tv.EsportExt
+	(*ExtendedDesc)(nil),                                    // 62: com.bapis.bilibili.tv.ExtendedDesc
+	(*FeedAdExtraAdTagStyle)(nil),                           // 63: com.bapis.bilibili.tv.FeedAdExtraAdTagStyle
+	(*FeedAdExtraVideo)(nil),                                // 64: com.bapis.bilibili.tv.FeedAdExtraVideo
+	(*HighLight)(nil),                                       // 65: com.bapis.bilibili.tv.HighLight
+	(*HLRange)(nil),                                         // 66: com.bapis.bilibili.tv.HLRange
+	(*HotGuess)(nil),                                        // 67: com.bapis.bilibili.tv.HotGuess
+	(*Hotword)(nil),                                         // 68: com.bapis.bilibili.tv.Hotword
+	(*HotwordExt)(nil),                                      // 69: com.bapis.bilibili.tv.HotwordExt
+	(*InfocExt)(nil),                                        // 70: com.bapis.bilibili.tv.InfocExt
+	(*JumpLine)(nil),                                        // 71: com.bapis.bilibili.tv.JumpLine
+	(*Jumps)(nil),                                           // 72: com.bapis.bilibili.tv.Jumps
+	(*Labels)(nil),                                          // 73: com.bapis.bilibili.tv.Labels
+	(*LiveDanmuPlayerConfig)(nil),                           // 74: com.bapis.bilibili.tv.LiveDanmuPlayerConfig
+	(*LiveDmActivity)(nil),                                  // 75: com.bapis.bilibili.tv.LiveDmActivity
+	(*LiveDmExtra)(nil),                                     // 76: com.bapis.bilibili.tv.LiveDmExtra
+	(*LiveExt)(nil),                                         // 77: com.bapis.bilibili.tv.LiveExt
+	(*LiveSkipResp)(nil),                                    // 78: com.bapis.bilibili.tv.LiveSkipResp
+	(*MediaExtra)(nil),                                      // 79: com.bapis.bilibili.tv.MediaExtra
+	(*MockMetaDataReply)(nil),                               // 80: com.bapis.bilibili.tv.MockMetaDataReply
+	(*MockMetaDataReq)(nil),                                 // 81: com.bapis.bilibili.tv.MockMetaDataReq
+	(*ModResource)(nil),                                     // 82: com.bapis.bilibili.tv.ModResource
+	(*OfficialInfo)(nil),                                    // 83: com.bapis.bilibili.tv.OfficialInfo
+	(*Ogv186PlayControl)(nil),                               // 84: com.bapis.bilibili.tv.Ogv186PlayControl
+	(*OgvBottomButton)(nil),                                 // 85: com.bapis.bilibili.tv.OgvBottomButton
+	(*OgvCollection)(nil),                                   // 86: com.bapis.bilibili.tv.OgvCollection
+	(*OgvIndexEntry)(nil),                                   // 87: com.bapis.bilibili.tv.OgvIndexEntry
+	(*OgvIndexGoto)(nil),                                    // 88: com.bapis.bilibili.tv.OgvIndexGoto
+	(*OperationExt)(nil),                                    // 89: com.bapis.bilibili.tv.OperationExt
+	(*OrderId)(nil),                                         // 90: com.bapis.bilibili.tv.OrderId
+	(*Page)(nil),                                            // 91: com.bapis.bilibili.tv.Page
+	(*Pageinfo)(nil),                                        // 92: com.bapis.bilibili.tv.Pageinfo
+	(*PayCard)(nil),                                         // 93: com.bapis.bilibili.tv.PayCard
+	(*PaymentShowExt)(nil),                                  // 94: com.bapis.bilibili.tv.PaymentShowExt
+	(*PaymentV2)(nil),                                       // 95: com.bapis.bilibili.tv.PaymentV2
+	(*PgcExt)(nil),                                          // 96: com.bapis.bilibili.tv.PgcExt
+	(*PgcIndexEntry)(nil),                                   // 97: com.bapis.bilibili.tv.PgcIndexEntry
+	(*PgcIndexGoto)(nil),                                    // 98: com.bapis.bilibili.tv.PgcIndexGoto
+	(*PlaylistTab)(nil),                                     // 99: com.bapis.bilibili.tv.PlaylistTab
+	(*PlayScenePageViewV2)(nil),                             // 100: com.bapis.bilibili.tv.PlayScenePageViewV2
+	(*PlayurlArgs)(nil),                                     // 101: com.bapis.bilibili.tv.PlayurlArgs
+	(*ProjExt)(nil),                                         // 102: com.bapis.bilibili.tv.ProjExt
+	(*QoeInfo)(nil),                                         // 103: com.bapis.bilibili.tv.QoeInfo
+	(*RestrictionConfig)(nil),                               // 104: com.bapis.bilibili.tv.RestrictionConfig
+	(*Rights)(nil),                                          // 105: com.bapis.bilibili.tv.Rights
+	(*SceneCard)(nil),                                       // 106: com.bapis.bilibili.tv.SceneCard
+	(*SceneModule)(nil),                                     // 107: com.bapis.bilibili.tv.SceneModule
+	(*SearchExt)(nil),                                       // 108: com.bapis.bilibili.tv.SearchExt
+	(*SearchV2Operator)(nil),                                // 109: com.bapis.bilibili.tv.SearchV2Operator
+	(*SearchV2OperatorAdInfo)(nil),                          // 110: com.bapis.bilibili.tv.SearchV2OperatorAdInfo
+	(*SearchV2OperatorButton)(nil),                          // 111: com.bapis.bilibili.tv.SearchV2OperatorButton
+	(*SearchV2Reply)(nil),                                   // 112: com.bapis.bilibili.tv.SearchV2Reply
+	(*SearchV2Req)(nil),                                     // 113: com.bapis.bilibili.tv.SearchV2Req
+	(*SeaResultV2)(nil),                                     // 114: com.bapis.bilibili.tv.SeaResultV2
+	(*SerialExt)(nil),                                       // 115: com.bapis.bilibili.tv.SerialExt
+	(*SerialListSubtitle)(nil),                              // 116: com.bapis.bilibili.tv.SerialListSubtitle
+	(*SerialPlayingUgc)(nil),                                // 117: com.bapis.bilibili.tv.SerialPlayingUgc
+	(*SerialRights)(nil),                                    // 118: com.bapis.bilibili.tv.SerialRights
+	(*ShareExt)(nil),                                        // 119: com.bapis.bilibili.tv.ShareExt
+	(*ShopExt)(nil),                                         // 120: com.bapis.bilibili.tv.ShopExt
+	(*SubtitleItem)(nil),                                    // 121: com.bapis.bilibili.tv.SubtitleItem
+	(*TabInfo)(nil),                                         // 122: com.bapis.bilibili.tv.TabInfo
+	(*Team)(nil),                                            // 123: com.bapis.bilibili.tv.Team
+	(*TokenSearchRes)(nil),                                  // 124: com.bapis.bilibili.tv.TokenSearchRes
+	(*TokenSearchResBanner)(nil),                            // 125: com.bapis.bilibili.tv.TokenSearchResBanner
+	(*TokenSearchResPopup)(nil),                             // 126: com.bapis.bilibili.tv.TokenSearchResPopup
+	(*TokenSearchResPopupButton)(nil),                       // 127: com.bapis.bilibili.tv.TokenSearchResPopupButton
+	(*TopBar)(nil),                                          // 128: com.bapis.bilibili.tv.TopBar
+	(*TrackShop)(nil),                                       // 129: com.bapis.bilibili.tv.TrackShop
+	(*TvViewProgressReply)(nil),                             // 130: com.bapis.bilibili.tv.TvViewProgressReply
+	(*TvViewProgressReq)(nil),                               // 131: com.bapis.bilibili.tv.TvViewProgressReq
+	(*UgcCardAction)(nil),                                   // 132: com.bapis.bilibili.tv.UgcCardAction
+	(*UGCCardSubtitle)(nil),                                 // 133: com.bapis.bilibili.tv.UGCCardSubtitle
+	(*UgcExt)(nil),                                          // 134: com.bapis.bilibili.tv.UgcExt
+	(*UgcInteractionInfo)(nil),                              // 135: com.bapis.bilibili.tv.UgcInteractionInfo
+	(*UgcRights)(nil),                                       // 136: com.bapis.bilibili.tv.UgcRights
+	(*UpExtInfo)(nil),                                       // 137: com.bapis.bilibili.tv.UpExtInfo
+	(*Uploader)(nil),                                        // 138: com.bapis.bilibili.tv.Uploader
+	(*UserInfo)(nil),                                        // 139: com.bapis.bilibili.tv.UserInfo
+	(*UserStatus)(nil),                                      // 140: com.bapis.bilibili.tv.UserStatus
+	(*VerticalRankCards)(nil),                               // 141: com.bapis.bilibili.tv.VerticalRankCards
+	(*VerticalRankMoreCard)(nil),                            // 142: com.bapis.bilibili.tv.VerticalRankMoreCard
+	(*VideoGuide)(nil),                                      // 143: com.bapis.bilibili.tv.VideoGuide
+	(*VideoMask)(nil),                                       // 144: com.bapis.bilibili.tv.VideoMask
+	(*VideoSubtitle)(nil),                                   // 145: com.bapis.bilibili.tv.VideoSubtitle
+	(*ViewHerdDmElem)(nil),                                  // 146: com.bapis.bilibili.tv.ViewHerdDmElem
+	(*ViewToast)(nil),                                       // 147: com.bapis.bilibili.tv.ViewToast
+	(*WatchProgress)(nil),                                   // 148: com.bapis.bilibili.tv.WatchProgress
+	(*WatchProgressV2)(nil),                                 // 149: com.bapis.bilibili.tv.WatchProgressV2
+	nil,                                                     // 150: com.bapis.bilibili.tv.PaymentV2.PayCardEntry
 }
 var file_bilibili_tv_messages_proto_depIdxs = []int32{
-	9,   // 0: com.bapis.bilibili.tv.ActivityInfo.materialConf:type_name -> com.bapis.bilibili.tv.ActivityInfo_MaterialConf
-	12,  // 1: com.bapis.bilibili.tv.ActivityInfo.mockOptions:type_name -> com.bapis.bilibili.tv.ActivityInfo_MockOption
+	10,  // 0: com.bapis.bilibili.tv.ActivityInfo.materialConf:type_name -> com.bapis.bilibili.tv.ActivityInfo_MaterialConf
+	13,  // 1: com.bapis.bilibili.tv.ActivityInfo.mockOptions:type_name -> com.bapis.bilibili.tv.ActivityInfo_MockOption
 	2,   // 2: com.bapis.bilibili.tv.ActivityInfo.source:type_name -> com.bapis.bilibili.tv.LiveSource
-	11,  // 3: com.bapis.bilibili.tv.ActivityInfo_MaterialConf.materialMode:type_name -> com.bapis.bilibili.tv.ActivityInfo_MaterialConf_SpecialDmMaterialMobi
-	80,  // 4: com.bapis.bilibili.tv.ActivityInfo_MaterialConf.modResource:type_name -> com.bapis.bilibili.tv.ModResource
-	10,  // 5: com.bapis.bilibili.tv.ActivityInfo_MaterialConf_SpecialDmMaterialMobi.mobiMaterial:type_name -> com.bapis.bilibili.tv.ActivityInfo_MaterialConf_MaterialMobiConf
-	61,  // 6: com.bapis.bilibili.tv.AdExtra.adTagStyle:type_name -> com.bapis.bilibili.tv.FeedAdExtraAdTagStyle
-	62,  // 7: com.bapis.bilibili.tv.AdExtra.video:type_name -> com.bapis.bilibili.tv.FeedAdExtraVideo
-	17,  // 8: com.bapis.bilibili.tv.AdExtra.blueLinkAd:type_name -> com.bapis.bilibili.tv.BlueLinkAd
-	102, // 9: com.bapis.bilibili.tv.AdExtra.restrictionConfig:type_name -> com.bapis.bilibili.tv.RestrictionConfig
-	7,   // 10: com.bapis.bilibili.tv.AuthInfo.tokenInfo:type_name -> com.bapis.bilibili.tv.AccessToken
-	41,  // 11: com.bapis.bilibili.tv.AuthInfo.cookieInfo:type_name -> com.bapis.bilibili.tv.CookieInfo
-	33,  // 12: com.bapis.bilibili.tv.AutoPlay.cidList:type_name -> com.bapis.bilibili.tv.CidList
-	39,  // 13: com.bapis.bilibili.tv.CardViewPlayListResp.listCards:type_name -> com.bapis.bilibili.tv.CommonCardResp
-	105, // 14: com.bapis.bilibili.tv.CardViewPlayListResp.playSceneModule:type_name -> com.bapis.bilibili.tv.SceneModule
-	88,  // 15: com.bapis.bilibili.tv.CardViewPlayListResp.orderIds:type_name -> com.bapis.bilibili.tv.OrderId
-	139, // 16: com.bapis.bilibili.tv.CardViewPlayListResp.rankCards:type_name -> com.bapis.bilibili.tv.VerticalRankCards
-	147, // 17: com.bapis.bilibili.tv.CardViewV2Reply.watchProgress:type_name -> com.bapis.bilibili.tv.WatchProgressV2
-	25,  // 18: com.bapis.bilibili.tv.CardViewV2Reply.catalog:type_name -> com.bapis.bilibili.tv.Catalog
-	70,  // 19: com.bapis.bilibili.tv.CardViewV2Reply.jumps:type_name -> com.bapis.bilibili.tv.Jumps
-	71,  // 20: com.bapis.bilibili.tv.CardViewV2Reply.cornermark:type_name -> com.bapis.bilibili.tv.Labels
-	71,  // 21: com.bapis.bilibili.tv.CardViewV2Reply.labels:type_name -> com.bapis.bilibili.tv.Labels
-	136, // 22: com.bapis.bilibili.tv.CardViewV2Reply.uploader:type_name -> com.bapis.bilibili.tv.Uploader
-	93,  // 23: com.bapis.bilibili.tv.CardViewV2Reply.payment:type_name -> com.bapis.bilibili.tv.PaymentV2
-	15,  // 24: com.bapis.bilibili.tv.CardViewV2Reply.autoPlay:type_name -> com.bapis.bilibili.tv.AutoPlay
-	30,  // 25: com.bapis.bilibili.tv.CardViewV2Reply.cheeseExt:type_name -> com.bapis.bilibili.tv.CheeseExt
-	94,  // 26: com.bapis.bilibili.tv.CardViewV2Reply.pgcExt:type_name -> com.bapis.bilibili.tv.PgcExt
-	132, // 27: com.bapis.bilibili.tv.CardViewV2Reply.ugcExt:type_name -> com.bapis.bilibili.tv.UgcExt
-	75,  // 28: com.bapis.bilibili.tv.CardViewV2Reply.liveExt:type_name -> com.bapis.bilibili.tv.LiveExt
-	13,  // 29: com.bapis.bilibili.tv.CardViewV2Reply.adExt:type_name -> com.bapis.bilibili.tv.AdExtra
-	59,  // 30: com.bapis.bilibili.tv.CardViewV2Reply.esportExt:type_name -> com.bapis.bilibili.tv.EsportExt
-	113, // 31: com.bapis.bilibili.tv.CardViewV2Reply.serialExt:type_name -> com.bapis.bilibili.tv.SerialExt
-	104, // 32: com.bapis.bilibili.tv.CardViewV2Reply.recommendSceneCard:type_name -> com.bapis.bilibili.tv.SceneCard
-	145, // 33: com.bapis.bilibili.tv.CardViewV2Reply.toast:type_name -> com.bapis.bilibili.tv.ViewToast
-	106, // 34: com.bapis.bilibili.tv.CardViewV2Reply.searchExt:type_name -> com.bapis.bilibili.tv.SearchExt
-	117, // 35: com.bapis.bilibili.tv.CardViewV2Reply.shareExt:type_name -> com.bapis.bilibili.tv.ShareExt
-	84,  // 36: com.bapis.bilibili.tv.CardViewV2Reply.ogvCollection:type_name -> com.bapis.bilibili.tv.OgvCollection
-	98,  // 37: com.bapis.bilibili.tv.CardViewV2Reply.playScenePage:type_name -> com.bapis.bilibili.tv.PlayScenePageViewV2
-	104, // 38: com.bapis.bilibili.tv.CardViewV2Reply.playSceneCard:type_name -> com.bapis.bilibili.tv.SceneCard
-	64,  // 39: com.bapis.bilibili.tv.CardViewV2Reply.highLight:type_name -> com.bapis.bilibili.tv.HLRange
-	68,  // 40: com.bapis.bilibili.tv.CardViewV2Reply.infocExt:type_name -> com.bapis.bilibili.tv.InfocExt
-	97,  // 41: com.bapis.bilibili.tv.CardViewV2Reply.playlistTab:type_name -> com.bapis.bilibili.tv.PlaylistTab
-	22,  // 42: com.bapis.bilibili.tv.CardViewV2Reply.playList:type_name -> com.bapis.bilibili.tv.CardViewPlayListResp
-	18,  // 43: com.bapis.bilibili.tv.CardViewV2Reply.endpageButton:type_name -> com.bapis.bilibili.tv.Button
-	118, // 44: com.bapis.bilibili.tv.CardViewV2Reply.shopExt:type_name -> com.bapis.bilibili.tv.ShopExt
-	100, // 45: com.bapis.bilibili.tv.CardViewV2Reply.projExt:type_name -> com.bapis.bilibili.tv.ProjExt
-	69,  // 46: com.bapis.bilibili.tv.CardViewV2Reply.jumpLine:type_name -> com.bapis.bilibili.tv.JumpLine
-	77,  // 47: com.bapis.bilibili.tv.CardViewV2Reply.projExtra:type_name -> com.bapis.bilibili.tv.MediaExtra
-	14,  // 48: com.bapis.bilibili.tv.CardViewV2Reply.projToken:type_name -> com.bapis.bilibili.tv.AuthInfo
-	28,  // 49: com.bapis.bilibili.tv.CardViewV2Reply.chargingExt:type_name -> com.bapis.bilibili.tv.ChargingExt
-	26,  // 50: com.bapis.bilibili.tv.CardViewV2Reply.channelExt:type_name -> com.bapis.bilibili.tv.ChannelExt
-	87,  // 51: com.bapis.bilibili.tv.CardViewV2Reply.operationExt:type_name -> com.bapis.bilibili.tv.OperationExt
-	82,  // 52: com.bapis.bilibili.tv.CardViewV2Reply.ogv186PlayControl:type_name -> com.bapis.bilibili.tv.Ogv186PlayControl
-	83,  // 53: com.bapis.bilibili.tv.CardViewV2Reply.bottomButtons:type_name -> com.bapis.bilibili.tv.OgvBottomButton
-	60,  // 54: com.bapis.bilibili.tv.CardViewV2Reply.extendedDesc:type_name -> com.bapis.bilibili.tv.ExtendedDesc
-	51,  // 55: com.bapis.bilibili.tv.CardViewV2Req.device:type_name -> com.bapis.bilibili.tv.Device
-	27,  // 56: com.bapis.bilibili.tv.ChargingExt.endPage:type_name -> com.bapis.bilibili.tv.ChargingEndPage
-	29,  // 57: com.bapis.bilibili.tv.CheeseExt.buyButton:type_name -> com.bapis.bilibili.tv.CheeseBuyButton
-	31,  // 58: com.bapis.bilibili.tv.CheeseExt.rights:type_name -> com.bapis.bilibili.tv.CheeseExtRight
-	99,  // 59: com.bapis.bilibili.tv.CidList.playurlArgs:type_name -> com.bapis.bilibili.tv.PlayurlArgs
-	71,  // 60: com.bapis.bilibili.tv.CidList.cornermark:type_name -> com.bapis.bilibili.tv.Labels
-	21,  // 61: com.bapis.bilibili.tv.CidList.buyButton:type_name -> com.bapis.bilibili.tv.BuyButton
-	35,  // 62: com.bapis.bilibili.tv.Command.commandDms:type_name -> com.bapis.bilibili.tv.CommandDm
-	147, // 63: com.bapis.bilibili.tv.CommonCardResp.watchProgress:type_name -> com.bapis.bilibili.tv.WatchProgressV2
-	25,  // 64: com.bapis.bilibili.tv.CommonCardResp.catalog:type_name -> com.bapis.bilibili.tv.Catalog
-	70,  // 65: com.bapis.bilibili.tv.CommonCardResp.jumps:type_name -> com.bapis.bilibili.tv.Jumps
-	71,  // 66: com.bapis.bilibili.tv.CommonCardResp.cornermark:type_name -> com.bapis.bilibili.tv.Labels
-	71,  // 67: com.bapis.bilibili.tv.CommonCardResp.labels:type_name -> com.bapis.bilibili.tv.Labels
-	136, // 68: com.bapis.bilibili.tv.CommonCardResp.uploader:type_name -> com.bapis.bilibili.tv.Uploader
-	93,  // 69: com.bapis.bilibili.tv.CommonCardResp.payment:type_name -> com.bapis.bilibili.tv.PaymentV2
-	15,  // 70: com.bapis.bilibili.tv.CommonCardResp.autoPlay:type_name -> com.bapis.bilibili.tv.AutoPlay
-	30,  // 71: com.bapis.bilibili.tv.CommonCardResp.cheeseExt:type_name -> com.bapis.bilibili.tv.CheeseExt
-	94,  // 72: com.bapis.bilibili.tv.CommonCardResp.pgcExt:type_name -> com.bapis.bilibili.tv.PgcExt
-	132, // 73: com.bapis.bilibili.tv.CommonCardResp.ugcExt:type_name -> com.bapis.bilibili.tv.UgcExt
-	75,  // 74: com.bapis.bilibili.tv.CommonCardResp.liveExt:type_name -> com.bapis.bilibili.tv.LiveExt
-	13,  // 75: com.bapis.bilibili.tv.CommonCardResp.adExt:type_name -> com.bapis.bilibili.tv.AdExtra
-	59,  // 76: com.bapis.bilibili.tv.CommonCardResp.esportExt:type_name -> com.bapis.bilibili.tv.EsportExt
-	113, // 77: com.bapis.bilibili.tv.CommonCardResp.serialExt:type_name -> com.bapis.bilibili.tv.SerialExt
-	104, // 78: com.bapis.bilibili.tv.CommonCardResp.recommendSceneCard:type_name -> com.bapis.bilibili.tv.SceneCard
-	145, // 79: com.bapis.bilibili.tv.CommonCardResp.toast:type_name -> com.bapis.bilibili.tv.ViewToast
-	106, // 80: com.bapis.bilibili.tv.CommonCardResp.searchExt:type_name -> com.bapis.bilibili.tv.SearchExt
-	117, // 81: com.bapis.bilibili.tv.CommonCardResp.shareExt:type_name -> com.bapis.bilibili.tv.ShareExt
-	84,  // 82: com.bapis.bilibili.tv.CommonCardResp.ogvCollection:type_name -> com.bapis.bilibili.tv.OgvCollection
-	98,  // 83: com.bapis.bilibili.tv.CommonCardResp.playScenePage:type_name -> com.bapis.bilibili.tv.PlayScenePageViewV2
-	104, // 84: com.bapis.bilibili.tv.CommonCardResp.playSceneCard:type_name -> com.bapis.bilibili.tv.SceneCard
-	64,  // 85: com.bapis.bilibili.tv.CommonCardResp.highLight:type_name -> com.bapis.bilibili.tv.HLRange
-	68,  // 86: com.bapis.bilibili.tv.CommonCardResp.infocExt:type_name -> com.bapis.bilibili.tv.InfocExt
-	77,  // 87: com.bapis.bilibili.tv.CommonCardResp.projExtra:type_name -> com.bapis.bilibili.tv.MediaExtra
-	14,  // 88: com.bapis.bilibili.tv.CommonCardResp.projToken:type_name -> com.bapis.bilibili.tv.AuthInfo
-	28,  // 89: com.bapis.bilibili.tv.CommonCardResp.chargingExt:type_name -> com.bapis.bilibili.tv.ChargingExt
-	26,  // 90: com.bapis.bilibili.tv.CommonCardResp.channelExt:type_name -> com.bapis.bilibili.tv.ChannelExt
-	40,  // 91: com.bapis.bilibili.tv.CookieInfo.cookies:type_name -> com.bapis.bilibili.tv.CookieBean
-	44,  // 92: com.bapis.bilibili.tv.DanmakuAIFlag.dmFlags:type_name -> com.bapis.bilibili.tv.DanmakuFlag
-	0,   // 93: com.bapis.bilibili.tv.DanmakuElem.colorful:type_name -> com.bapis.bilibili.tv.DmColorfulType
-	1,   // 94: com.bapis.bilibili.tv.DanmakuElem.dmFrom:type_name -> com.bapis.bilibili.tv.DmFromType
-	46,  // 95: com.bapis.bilibili.tv.DanmuPlayerViewConfig.danmukuDefaultPlayerConfig:type_name -> com.bapis.bilibili.tv.DanmuDefaultPlayerConfig
-	47,  // 96: com.bapis.bilibili.tv.DanmuPlayerViewConfig.danmukuPlayerConfig:type_name -> com.bapis.bilibili.tv.DanmuPlayerConfig
-	48,  // 97: com.bapis.bilibili.tv.DanmuPlayerViewConfig.danmukuPlayerDynamicConfig:type_name -> com.bapis.bilibili.tv.DanmuPlayerDynamicConfig
-	16,  // 98: com.bapis.bilibili.tv.DanmuSettings.avoidObstruction:type_name -> com.bapis.bilibili.tv.AvoidObstruction
-	0,   // 99: com.bapis.bilibili.tv.DmColorful.type:type_name -> com.bapis.bilibili.tv.DmColorfulType
-	144, // 100: com.bapis.bilibili.tv.DmHerdView.herdDms:type_name -> com.bapis.bilibili.tv.ViewHerdDmElem
-	43,  // 101: com.bapis.bilibili.tv.DmSegMobileReply.elems:type_name -> com.bapis.bilibili.tv.DanmakuElem
-	42,  // 102: com.bapis.bilibili.tv.DmSegMobileReply.aiFlag:type_name -> com.bapis.bilibili.tv.DanmakuAIFlag
-	52,  // 103: com.bapis.bilibili.tv.DmSegMobileReply.colorfulSrc:type_name -> com.bapis.bilibili.tv.DmColorful
-	142, // 104: com.bapis.bilibili.tv.DmViewReply.mask:type_name -> com.bapis.bilibili.tv.VideoMask
-	143, // 105: com.bapis.bilibili.tv.DmViewReply.subtitle:type_name -> com.bapis.bilibili.tv.VideoSubtitle
-	45,  // 106: com.bapis.bilibili.tv.DmViewReply.aiFlag:type_name -> com.bapis.bilibili.tv.DanmakuFlagConfig
-	49,  // 107: com.bapis.bilibili.tv.DmViewReply.playerConfig:type_name -> com.bapis.bilibili.tv.DanmuPlayerViewConfig
-	53,  // 108: com.bapis.bilibili.tv.DmViewReply.dmHerd:type_name -> com.bapis.bilibili.tv.DmHerdView
-	34,  // 109: com.bapis.bilibili.tv.DmViewReply.command:type_name -> com.bapis.bilibili.tv.Command
-	101, // 110: com.bapis.bilibili.tv.DmViewReply.qoe:type_name -> com.bapis.bilibili.tv.QoeInfo
-	73,  // 111: com.bapis.bilibili.tv.DmViewReply.liveDmActivity:type_name -> com.bapis.bilibili.tv.LiveDmActivity
-	74,  // 112: com.bapis.bilibili.tv.DmViewReply.liveDmExtra:type_name -> com.bapis.bilibili.tv.LiveDmExtra
-	21,  // 113: com.bapis.bilibili.tv.Entrance.buttons:type_name -> com.bapis.bilibili.tv.BuyButton
-	121, // 114: com.bapis.bilibili.tv.EsportExt.homeTeam:type_name -> com.bapis.bilibili.tv.Team
-	121, // 115: com.bapis.bilibili.tv.EsportExt.awayTeam:type_name -> com.bapis.bilibili.tv.Team
-	85,  // 116: com.bapis.bilibili.tv.ExtendedDesc.pgcIndexEntry:type_name -> com.bapis.bilibili.tv.OgvIndexEntry
-	66,  // 117: com.bapis.bilibili.tv.HotGuess.list:type_name -> com.bapis.bilibili.tv.Hotword
-	67,  // 118: com.bapis.bilibili.tv.Hotword.ext:type_name -> com.bapis.bilibili.tv.HotwordExt
-	8,   // 119: com.bapis.bilibili.tv.LiveDmActivity.activityList:type_name -> com.bapis.bilibili.tv.ActivityInfo
-	72,  // 120: com.bapis.bilibili.tv.LiveDmExtra.danmuPlayerConfig:type_name -> com.bapis.bilibili.tv.LiveDanmuPlayerConfig
-	50,  // 121: com.bapis.bilibili.tv.LiveDmExtra.danmuSettings:type_name -> com.bapis.bilibili.tv.DanmuSettings
-	76,  // 122: com.bapis.bilibili.tv.LiveExt.liveSkip:type_name -> com.bapis.bilibili.tv.LiveSkipResp
-	86,  // 123: com.bapis.bilibili.tv.OgvIndexEntry.pgcGoto:type_name -> com.bapis.bilibili.tv.OgvIndexGoto
-	126, // 124: com.bapis.bilibili.tv.OperationExt.topBar:type_name -> com.bapis.bilibili.tv.TopBar
-	20,  // 125: com.bapis.bilibili.tv.OperationExt.buttonPic:type_name -> com.bapis.bilibili.tv.ButtonPic
-	19,  // 126: com.bapis.bilibili.tv.OperationExt.buttonCovermark:type_name -> com.bapis.bilibili.tv.ButtonCovermark
-	89,  // 127: com.bapis.bilibili.tv.Pageinfo.tvpgc:type_name -> com.bapis.bilibili.tv.Page
-	89,  // 128: com.bapis.bilibili.tv.Pageinfo.tvugc:type_name -> com.bapis.bilibili.tv.Page
-	89,  // 129: com.bapis.bilibili.tv.Pageinfo.tvuser:type_name -> com.bapis.bilibili.tv.Page
-	89,  // 130: com.bapis.bilibili.tv.Pageinfo.bTvugc:type_name -> com.bapis.bilibili.tv.Page
-	89,  // 131: com.bapis.bilibili.tv.Pageinfo.tvups:type_name -> com.bapis.bilibili.tv.Page
-	89,  // 132: com.bapis.bilibili.tv.Pageinfo.tvlive:type_name -> com.bapis.bilibili.tv.Page
-	148, // 133: com.bapis.bilibili.tv.PaymentV2.payCard:type_name -> com.bapis.bilibili.tv.PaymentV2.PayCardEntry
-	92,  // 134: com.bapis.bilibili.tv.PaymentV2.paymentShowExt:type_name -> com.bapis.bilibili.tv.PaymentShowExt
-	103, // 135: com.bapis.bilibili.tv.PgcExt.rights:type_name -> com.bapis.bilibili.tv.Rights
-	58,  // 136: com.bapis.bilibili.tv.PgcExt.entrance:type_name -> com.bapis.bilibili.tv.Entrance
-	147, // 137: com.bapis.bilibili.tv.PgcExt.highlight:type_name -> com.bapis.bilibili.tv.WatchProgressV2
-	63,  // 138: com.bapis.bilibili.tv.PgcExt.highlightV2:type_name -> com.bapis.bilibili.tv.HighLight
-	21,  // 139: com.bapis.bilibili.tv.PgcExt.buyButton:type_name -> com.bapis.bilibili.tv.BuyButton
-	138, // 140: com.bapis.bilibili.tv.PgcExt.userStatus:type_name -> com.bapis.bilibili.tv.UserStatus
-	96,  // 141: com.bapis.bilibili.tv.PgcIndexEntry.pgcGoto:type_name -> com.bapis.bilibili.tv.PgcIndexGoto
-	108, // 142: com.bapis.bilibili.tv.SearchV2Operator.adInfo:type_name -> com.bapis.bilibili.tv.SearchV2OperatorAdInfo
-	109, // 143: com.bapis.bilibili.tv.SearchV2Operator.buttons:type_name -> com.bapis.bilibili.tv.SearchV2OperatorButton
-	112, // 144: com.bapis.bilibili.tv.SearchV2Reply.resultV2:type_name -> com.bapis.bilibili.tv.SeaResultV2
-	90,  // 145: com.bapis.bilibili.tv.SearchV2Reply.pageInfo:type_name -> com.bapis.bilibili.tv.Pageinfo
-	120, // 146: com.bapis.bilibili.tv.SearchV2Reply.tabInfo:type_name -> com.bapis.bilibili.tv.TabInfo
-	122, // 147: com.bapis.bilibili.tv.SearchV2Reply.tokenSearchRes:type_name -> com.bapis.bilibili.tv.TokenSearchRes
-	95,  // 148: com.bapis.bilibili.tv.SearchV2Reply.pgcIndexEntry:type_name -> com.bapis.bilibili.tv.PgcIndexEntry
-	65,  // 149: com.bapis.bilibili.tv.SearchV2Reply.hotGuess:type_name -> com.bapis.bilibili.tv.HotGuess
-	51,  // 150: com.bapis.bilibili.tv.SearchV2Req.device:type_name -> com.bapis.bilibili.tv.Device
-	107, // 151: com.bapis.bilibili.tv.SeaResultV2.operates:type_name -> com.bapis.bilibili.tv.SearchV2Operator
-	39,  // 152: com.bapis.bilibili.tv.SeaResultV2.list:type_name -> com.bapis.bilibili.tv.CommonCardResp
-	114, // 153: com.bapis.bilibili.tv.SerialExt.listSubtitle:type_name -> com.bapis.bilibili.tv.SerialListSubtitle
-	116, // 154: com.bapis.bilibili.tv.SerialExt.rights:type_name -> com.bapis.bilibili.tv.SerialRights
-	115, // 155: com.bapis.bilibili.tv.SerialExt.playingUgc:type_name -> com.bapis.bilibili.tv.SerialPlayingUgc
-	135, // 156: com.bapis.bilibili.tv.SerialExt.upExt:type_name -> com.bapis.bilibili.tv.UpExtInfo
-	127, // 157: com.bapis.bilibili.tv.ShopExt.trackShop:type_name -> com.bapis.bilibili.tv.TrackShop
-	137, // 158: com.bapis.bilibili.tv.SubtitleItem.author:type_name -> com.bapis.bilibili.tv.UserInfo
-	6,   // 159: com.bapis.bilibili.tv.SubtitleItem.type:type_name -> com.bapis.bilibili.tv.SubtitleType
-	4,   // 160: com.bapis.bilibili.tv.SubtitleItem.aiType:type_name -> com.bapis.bilibili.tv.SubtitleAiType
-	3,   // 161: com.bapis.bilibili.tv.SubtitleItem.aiStatus:type_name -> com.bapis.bilibili.tv.SubtitleAiStatus
-	5,   // 162: com.bapis.bilibili.tv.SubtitleItem.role:type_name -> com.bapis.bilibili.tv.SubtitleRole
-	124, // 163: com.bapis.bilibili.tv.TokenSearchRes.popup:type_name -> com.bapis.bilibili.tv.TokenSearchResPopup
-	123, // 164: com.bapis.bilibili.tv.TokenSearchRes.activity:type_name -> com.bapis.bilibili.tv.TokenSearchResBanner
-	125, // 165: com.bapis.bilibili.tv.TokenSearchResPopup.notifyBtnList:type_name -> com.bapis.bilibili.tv.TokenSearchResPopupButton
-	98,  // 166: com.bapis.bilibili.tv.TrackShop.trackShopPage:type_name -> com.bapis.bilibili.tv.PlayScenePageViewV2
-	105, // 167: com.bapis.bilibili.tv.TrackShop.trackShopModule:type_name -> com.bapis.bilibili.tv.SceneModule
-	104, // 168: com.bapis.bilibili.tv.TrackShop.trackShopCard:type_name -> com.bapis.bilibili.tv.SceneCard
-	141, // 169: com.bapis.bilibili.tv.TvViewProgressReply.videoGuide:type_name -> com.bapis.bilibili.tv.VideoGuide
-	32,  // 170: com.bapis.bilibili.tv.TvViewProgressReply.chronos:type_name -> com.bapis.bilibili.tv.Chronos
-	131, // 171: com.bapis.bilibili.tv.UgcExt.listSubtitle:type_name -> com.bapis.bilibili.tv.UGCCardSubtitle
-	131, // 172: com.bapis.bilibili.tv.UgcExt.listSubtitles:type_name -> com.bapis.bilibili.tv.UGCCardSubtitle
-	131, // 173: com.bapis.bilibili.tv.UgcExt.viewSubtitles:type_name -> com.bapis.bilibili.tv.UGCCardSubtitle
-	131, // 174: com.bapis.bilibili.tv.UgcExt.searchSubtitles:type_name -> com.bapis.bilibili.tv.UGCCardSubtitle
-	130, // 175: com.bapis.bilibili.tv.UgcExt.actions:type_name -> com.bapis.bilibili.tv.UgcCardAction
-	134, // 176: com.bapis.bilibili.tv.UgcExt.rights:type_name -> com.bapis.bilibili.tv.UgcRights
-	135, // 177: com.bapis.bilibili.tv.UgcExt.upExt:type_name -> com.bapis.bilibili.tv.UpExtInfo
-	133, // 178: com.bapis.bilibili.tv.UgcExt.ugcInteraction:type_name -> com.bapis.bilibili.tv.UgcInteractionInfo
-	81,  // 179: com.bapis.bilibili.tv.Uploader.officialInfo:type_name -> com.bapis.bilibili.tv.OfficialInfo
-	140, // 180: com.bapis.bilibili.tv.VerticalRankCards.moreCard:type_name -> com.bapis.bilibili.tv.VerticalRankMoreCard
-	104, // 181: com.bapis.bilibili.tv.VerticalRankCards.playSceneCard:type_name -> com.bapis.bilibili.tv.SceneCard
-	119, // 182: com.bapis.bilibili.tv.VideoSubtitle.subtitles:type_name -> com.bapis.bilibili.tv.SubtitleItem
-	91,  // 183: com.bapis.bilibili.tv.PaymentV2.PayCardEntry.value:type_name -> com.bapis.bilibili.tv.PayCard
-	184, // [184:184] is the sub-list for method output_type
-	184, // [184:184] is the sub-list for method input_type
-	184, // [184:184] is the sub-list for extension type_name
-	184, // [184:184] is the sub-list for extension extendee
-	0,   // [0:184] is the sub-list for field type_name
+	12,  // 3: com.bapis.bilibili.tv.ActivityInfo_MaterialConf.materialMode:type_name -> com.bapis.bilibili.tv.ActivityInfo_MaterialConf_SpecialDmMaterialMobi
+	82,  // 4: com.bapis.bilibili.tv.ActivityInfo_MaterialConf.modResource:type_name -> com.bapis.bilibili.tv.ModResource
+	11,  // 5: com.bapis.bilibili.tv.ActivityInfo_MaterialConf_SpecialDmMaterialMobi.mobiMaterial:type_name -> com.bapis.bilibili.tv.ActivityInfo_MaterialConf_MaterialMobiConf
+	63,  // 6: com.bapis.bilibili.tv.AdExtra.adTagStyle:type_name -> com.bapis.bilibili.tv.FeedAdExtraAdTagStyle
+	64,  // 7: com.bapis.bilibili.tv.AdExtra.video:type_name -> com.bapis.bilibili.tv.FeedAdExtraVideo
+	18,  // 8: com.bapis.bilibili.tv.AdExtra.blueLinkAd:type_name -> com.bapis.bilibili.tv.BlueLinkAd
+	104, // 9: com.bapis.bilibili.tv.AdExtra.restrictionConfig:type_name -> com.bapis.bilibili.tv.RestrictionConfig
+	8,   // 10: com.bapis.bilibili.tv.AuthInfo.tokenInfo:type_name -> com.bapis.bilibili.tv.AccessToken
+	43,  // 11: com.bapis.bilibili.tv.AuthInfo.cookieInfo:type_name -> com.bapis.bilibili.tv.CookieInfo
+	34,  // 12: com.bapis.bilibili.tv.AutoPlay.cidList:type_name -> com.bapis.bilibili.tv.CidList
+	40,  // 13: com.bapis.bilibili.tv.CardViewPlayListResp.listCards:type_name -> com.bapis.bilibili.tv.CommonCardResp
+	107, // 14: com.bapis.bilibili.tv.CardViewPlayListResp.playSceneModule:type_name -> com.bapis.bilibili.tv.SceneModule
+	90,  // 15: com.bapis.bilibili.tv.CardViewPlayListResp.orderIds:type_name -> com.bapis.bilibili.tv.OrderId
+	141, // 16: com.bapis.bilibili.tv.CardViewPlayListResp.rankCards:type_name -> com.bapis.bilibili.tv.VerticalRankCards
+	149, // 17: com.bapis.bilibili.tv.CardViewV2Reply.watchProgress:type_name -> com.bapis.bilibili.tv.WatchProgressV2
+	26,  // 18: com.bapis.bilibili.tv.CardViewV2Reply.catalog:type_name -> com.bapis.bilibili.tv.Catalog
+	72,  // 19: com.bapis.bilibili.tv.CardViewV2Reply.jumps:type_name -> com.bapis.bilibili.tv.Jumps
+	73,  // 20: com.bapis.bilibili.tv.CardViewV2Reply.cornermark:type_name -> com.bapis.bilibili.tv.Labels
+	73,  // 21: com.bapis.bilibili.tv.CardViewV2Reply.labels:type_name -> com.bapis.bilibili.tv.Labels
+	138, // 22: com.bapis.bilibili.tv.CardViewV2Reply.uploader:type_name -> com.bapis.bilibili.tv.Uploader
+	95,  // 23: com.bapis.bilibili.tv.CardViewV2Reply.payment:type_name -> com.bapis.bilibili.tv.PaymentV2
+	16,  // 24: com.bapis.bilibili.tv.CardViewV2Reply.autoPlay:type_name -> com.bapis.bilibili.tv.AutoPlay
+	31,  // 25: com.bapis.bilibili.tv.CardViewV2Reply.cheeseExt:type_name -> com.bapis.bilibili.tv.CheeseExt
+	96,  // 26: com.bapis.bilibili.tv.CardViewV2Reply.pgcExt:type_name -> com.bapis.bilibili.tv.PgcExt
+	134, // 27: com.bapis.bilibili.tv.CardViewV2Reply.ugcExt:type_name -> com.bapis.bilibili.tv.UgcExt
+	77,  // 28: com.bapis.bilibili.tv.CardViewV2Reply.liveExt:type_name -> com.bapis.bilibili.tv.LiveExt
+	14,  // 29: com.bapis.bilibili.tv.CardViewV2Reply.adExt:type_name -> com.bapis.bilibili.tv.AdExtra
+	61,  // 30: com.bapis.bilibili.tv.CardViewV2Reply.esportExt:type_name -> com.bapis.bilibili.tv.EsportExt
+	115, // 31: com.bapis.bilibili.tv.CardViewV2Reply.serialExt:type_name -> com.bapis.bilibili.tv.SerialExt
+	106, // 32: com.bapis.bilibili.tv.CardViewV2Reply.recommendSceneCard:type_name -> com.bapis.bilibili.tv.SceneCard
+	147, // 33: com.bapis.bilibili.tv.CardViewV2Reply.toast:type_name -> com.bapis.bilibili.tv.ViewToast
+	108, // 34: com.bapis.bilibili.tv.CardViewV2Reply.searchExt:type_name -> com.bapis.bilibili.tv.SearchExt
+	119, // 35: com.bapis.bilibili.tv.CardViewV2Reply.shareExt:type_name -> com.bapis.bilibili.tv.ShareExt
+	86,  // 36: com.bapis.bilibili.tv.CardViewV2Reply.ogvCollection:type_name -> com.bapis.bilibili.tv.OgvCollection
+	100, // 37: com.bapis.bilibili.tv.CardViewV2Reply.playScenePage:type_name -> com.bapis.bilibili.tv.PlayScenePageViewV2
+	106, // 38: com.bapis.bilibili.tv.CardViewV2Reply.playSceneCard:type_name -> com.bapis.bilibili.tv.SceneCard
+	66,  // 39: com.bapis.bilibili.tv.CardViewV2Reply.highLight:type_name -> com.bapis.bilibili.tv.HLRange
+	70,  // 40: com.bapis.bilibili.tv.CardViewV2Reply.infocExt:type_name -> com.bapis.bilibili.tv.InfocExt
+	99,  // 41: com.bapis.bilibili.tv.CardViewV2Reply.playlistTab:type_name -> com.bapis.bilibili.tv.PlaylistTab
+	23,  // 42: com.bapis.bilibili.tv.CardViewV2Reply.playList:type_name -> com.bapis.bilibili.tv.CardViewPlayListResp
+	19,  // 43: com.bapis.bilibili.tv.CardViewV2Reply.endpageButton:type_name -> com.bapis.bilibili.tv.Button
+	120, // 44: com.bapis.bilibili.tv.CardViewV2Reply.shopExt:type_name -> com.bapis.bilibili.tv.ShopExt
+	102, // 45: com.bapis.bilibili.tv.CardViewV2Reply.projExt:type_name -> com.bapis.bilibili.tv.ProjExt
+	71,  // 46: com.bapis.bilibili.tv.CardViewV2Reply.jumpLine:type_name -> com.bapis.bilibili.tv.JumpLine
+	79,  // 47: com.bapis.bilibili.tv.CardViewV2Reply.projExtra:type_name -> com.bapis.bilibili.tv.MediaExtra
+	15,  // 48: com.bapis.bilibili.tv.CardViewV2Reply.projToken:type_name -> com.bapis.bilibili.tv.AuthInfo
+	29,  // 49: com.bapis.bilibili.tv.CardViewV2Reply.chargingExt:type_name -> com.bapis.bilibili.tv.ChargingExt
+	27,  // 50: com.bapis.bilibili.tv.CardViewV2Reply.channelExt:type_name -> com.bapis.bilibili.tv.ChannelExt
+	89,  // 51: com.bapis.bilibili.tv.CardViewV2Reply.operationExt:type_name -> com.bapis.bilibili.tv.OperationExt
+	84,  // 52: com.bapis.bilibili.tv.CardViewV2Reply.ogv186PlayControl:type_name -> com.bapis.bilibili.tv.Ogv186PlayControl
+	85,  // 53: com.bapis.bilibili.tv.CardViewV2Reply.bottomButtons:type_name -> com.bapis.bilibili.tv.OgvBottomButton
+	62,  // 54: com.bapis.bilibili.tv.CardViewV2Reply.extendedDesc:type_name -> com.bapis.bilibili.tv.ExtendedDesc
+	41,  // 55: com.bapis.bilibili.tv.CardViewV2Reply.continueWatch:type_name -> com.bapis.bilibili.tv.ContinueWatch
+	53,  // 56: com.bapis.bilibili.tv.CardViewV2Req.device:type_name -> com.bapis.bilibili.tv.Device
+	3,   // 57: com.bapis.bilibili.tv.CardViewV2Req.playlistPlayType:type_name -> com.bapis.bilibili.tv.PlaylistPlayType
+	28,  // 58: com.bapis.bilibili.tv.ChargingExt.endPage:type_name -> com.bapis.bilibili.tv.ChargingEndPage
+	30,  // 59: com.bapis.bilibili.tv.CheeseExt.buyButton:type_name -> com.bapis.bilibili.tv.CheeseBuyButton
+	32,  // 60: com.bapis.bilibili.tv.CheeseExt.rights:type_name -> com.bapis.bilibili.tv.CheeseExtRight
+	101, // 61: com.bapis.bilibili.tv.CidList.playurlArgs:type_name -> com.bapis.bilibili.tv.PlayurlArgs
+	73,  // 62: com.bapis.bilibili.tv.CidList.cornermark:type_name -> com.bapis.bilibili.tv.Labels
+	22,  // 63: com.bapis.bilibili.tv.CidList.buyButton:type_name -> com.bapis.bilibili.tv.BuyButton
+	36,  // 64: com.bapis.bilibili.tv.Command.commandDms:type_name -> com.bapis.bilibili.tv.CommandDm
+	149, // 65: com.bapis.bilibili.tv.CommonCardResp.watchProgress:type_name -> com.bapis.bilibili.tv.WatchProgressV2
+	26,  // 66: com.bapis.bilibili.tv.CommonCardResp.catalog:type_name -> com.bapis.bilibili.tv.Catalog
+	72,  // 67: com.bapis.bilibili.tv.CommonCardResp.jumps:type_name -> com.bapis.bilibili.tv.Jumps
+	73,  // 68: com.bapis.bilibili.tv.CommonCardResp.cornermark:type_name -> com.bapis.bilibili.tv.Labels
+	73,  // 69: com.bapis.bilibili.tv.CommonCardResp.labels:type_name -> com.bapis.bilibili.tv.Labels
+	138, // 70: com.bapis.bilibili.tv.CommonCardResp.uploader:type_name -> com.bapis.bilibili.tv.Uploader
+	95,  // 71: com.bapis.bilibili.tv.CommonCardResp.payment:type_name -> com.bapis.bilibili.tv.PaymentV2
+	16,  // 72: com.bapis.bilibili.tv.CommonCardResp.autoPlay:type_name -> com.bapis.bilibili.tv.AutoPlay
+	31,  // 73: com.bapis.bilibili.tv.CommonCardResp.cheeseExt:type_name -> com.bapis.bilibili.tv.CheeseExt
+	96,  // 74: com.bapis.bilibili.tv.CommonCardResp.pgcExt:type_name -> com.bapis.bilibili.tv.PgcExt
+	134, // 75: com.bapis.bilibili.tv.CommonCardResp.ugcExt:type_name -> com.bapis.bilibili.tv.UgcExt
+	77,  // 76: com.bapis.bilibili.tv.CommonCardResp.liveExt:type_name -> com.bapis.bilibili.tv.LiveExt
+	14,  // 77: com.bapis.bilibili.tv.CommonCardResp.adExt:type_name -> com.bapis.bilibili.tv.AdExtra
+	61,  // 78: com.bapis.bilibili.tv.CommonCardResp.esportExt:type_name -> com.bapis.bilibili.tv.EsportExt
+	115, // 79: com.bapis.bilibili.tv.CommonCardResp.serialExt:type_name -> com.bapis.bilibili.tv.SerialExt
+	106, // 80: com.bapis.bilibili.tv.CommonCardResp.recommendSceneCard:type_name -> com.bapis.bilibili.tv.SceneCard
+	147, // 81: com.bapis.bilibili.tv.CommonCardResp.toast:type_name -> com.bapis.bilibili.tv.ViewToast
+	108, // 82: com.bapis.bilibili.tv.CommonCardResp.searchExt:type_name -> com.bapis.bilibili.tv.SearchExt
+	119, // 83: com.bapis.bilibili.tv.CommonCardResp.shareExt:type_name -> com.bapis.bilibili.tv.ShareExt
+	86,  // 84: com.bapis.bilibili.tv.CommonCardResp.ogvCollection:type_name -> com.bapis.bilibili.tv.OgvCollection
+	100, // 85: com.bapis.bilibili.tv.CommonCardResp.playScenePage:type_name -> com.bapis.bilibili.tv.PlayScenePageViewV2
+	106, // 86: com.bapis.bilibili.tv.CommonCardResp.playSceneCard:type_name -> com.bapis.bilibili.tv.SceneCard
+	66,  // 87: com.bapis.bilibili.tv.CommonCardResp.highLight:type_name -> com.bapis.bilibili.tv.HLRange
+	70,  // 88: com.bapis.bilibili.tv.CommonCardResp.infocExt:type_name -> com.bapis.bilibili.tv.InfocExt
+	79,  // 89: com.bapis.bilibili.tv.CommonCardResp.projExtra:type_name -> com.bapis.bilibili.tv.MediaExtra
+	15,  // 90: com.bapis.bilibili.tv.CommonCardResp.projToken:type_name -> com.bapis.bilibili.tv.AuthInfo
+	29,  // 91: com.bapis.bilibili.tv.CommonCardResp.chargingExt:type_name -> com.bapis.bilibili.tv.ChargingExt
+	27,  // 92: com.bapis.bilibili.tv.CommonCardResp.channelExt:type_name -> com.bapis.bilibili.tv.ChannelExt
+	101, // 93: com.bapis.bilibili.tv.ContinueWatch.playurlArgs:type_name -> com.bapis.bilibili.tv.PlayurlArgs
+	42,  // 94: com.bapis.bilibili.tv.CookieInfo.cookies:type_name -> com.bapis.bilibili.tv.CookieBean
+	46,  // 95: com.bapis.bilibili.tv.DanmakuAIFlag.dmFlags:type_name -> com.bapis.bilibili.tv.DanmakuFlag
+	0,   // 96: com.bapis.bilibili.tv.DanmakuElem.colorful:type_name -> com.bapis.bilibili.tv.DmColorfulType
+	1,   // 97: com.bapis.bilibili.tv.DanmakuElem.dmFrom:type_name -> com.bapis.bilibili.tv.DmFromType
+	48,  // 98: com.bapis.bilibili.tv.DanmuPlayerViewConfig.danmukuDefaultPlayerConfig:type_name -> com.bapis.bilibili.tv.DanmuDefaultPlayerConfig
+	49,  // 99: com.bapis.bilibili.tv.DanmuPlayerViewConfig.danmukuPlayerConfig:type_name -> com.bapis.bilibili.tv.DanmuPlayerConfig
+	50,  // 100: com.bapis.bilibili.tv.DanmuPlayerViewConfig.danmukuPlayerDynamicConfig:type_name -> com.bapis.bilibili.tv.DanmuPlayerDynamicConfig
+	17,  // 101: com.bapis.bilibili.tv.DanmuSettings.avoidObstruction:type_name -> com.bapis.bilibili.tv.AvoidObstruction
+	0,   // 102: com.bapis.bilibili.tv.DmColorful.type:type_name -> com.bapis.bilibili.tv.DmColorfulType
+	146, // 103: com.bapis.bilibili.tv.DmHerdView.herdDms:type_name -> com.bapis.bilibili.tv.ViewHerdDmElem
+	45,  // 104: com.bapis.bilibili.tv.DmSegMobileReply.elems:type_name -> com.bapis.bilibili.tv.DanmakuElem
+	44,  // 105: com.bapis.bilibili.tv.DmSegMobileReply.aiFlag:type_name -> com.bapis.bilibili.tv.DanmakuAIFlag
+	54,  // 106: com.bapis.bilibili.tv.DmSegMobileReply.colorfulSrc:type_name -> com.bapis.bilibili.tv.DmColorful
+	144, // 107: com.bapis.bilibili.tv.DmViewReply.mask:type_name -> com.bapis.bilibili.tv.VideoMask
+	145, // 108: com.bapis.bilibili.tv.DmViewReply.subtitle:type_name -> com.bapis.bilibili.tv.VideoSubtitle
+	47,  // 109: com.bapis.bilibili.tv.DmViewReply.aiFlag:type_name -> com.bapis.bilibili.tv.DanmakuFlagConfig
+	51,  // 110: com.bapis.bilibili.tv.DmViewReply.playerConfig:type_name -> com.bapis.bilibili.tv.DanmuPlayerViewConfig
+	55,  // 111: com.bapis.bilibili.tv.DmViewReply.dmHerd:type_name -> com.bapis.bilibili.tv.DmHerdView
+	35,  // 112: com.bapis.bilibili.tv.DmViewReply.command:type_name -> com.bapis.bilibili.tv.Command
+	103, // 113: com.bapis.bilibili.tv.DmViewReply.qoe:type_name -> com.bapis.bilibili.tv.QoeInfo
+	75,  // 114: com.bapis.bilibili.tv.DmViewReply.liveDmActivity:type_name -> com.bapis.bilibili.tv.LiveDmActivity
+	76,  // 115: com.bapis.bilibili.tv.DmViewReply.liveDmExtra:type_name -> com.bapis.bilibili.tv.LiveDmExtra
+	22,  // 116: com.bapis.bilibili.tv.Entrance.buttons:type_name -> com.bapis.bilibili.tv.BuyButton
+	123, // 117: com.bapis.bilibili.tv.EsportExt.homeTeam:type_name -> com.bapis.bilibili.tv.Team
+	123, // 118: com.bapis.bilibili.tv.EsportExt.awayTeam:type_name -> com.bapis.bilibili.tv.Team
+	87,  // 119: com.bapis.bilibili.tv.ExtendedDesc.pgcIndexEntry:type_name -> com.bapis.bilibili.tv.OgvIndexEntry
+	68,  // 120: com.bapis.bilibili.tv.HotGuess.list:type_name -> com.bapis.bilibili.tv.Hotword
+	69,  // 121: com.bapis.bilibili.tv.Hotword.ext:type_name -> com.bapis.bilibili.tv.HotwordExt
+	9,   // 122: com.bapis.bilibili.tv.LiveDmActivity.activityList:type_name -> com.bapis.bilibili.tv.ActivityInfo
+	74,  // 123: com.bapis.bilibili.tv.LiveDmExtra.danmuPlayerConfig:type_name -> com.bapis.bilibili.tv.LiveDanmuPlayerConfig
+	52,  // 124: com.bapis.bilibili.tv.LiveDmExtra.danmuSettings:type_name -> com.bapis.bilibili.tv.DanmuSettings
+	78,  // 125: com.bapis.bilibili.tv.LiveExt.liveSkip:type_name -> com.bapis.bilibili.tv.LiveSkipResp
+	88,  // 126: com.bapis.bilibili.tv.OgvIndexEntry.pgcGoto:type_name -> com.bapis.bilibili.tv.OgvIndexGoto
+	128, // 127: com.bapis.bilibili.tv.OperationExt.topBar:type_name -> com.bapis.bilibili.tv.TopBar
+	21,  // 128: com.bapis.bilibili.tv.OperationExt.buttonPic:type_name -> com.bapis.bilibili.tv.ButtonPic
+	20,  // 129: com.bapis.bilibili.tv.OperationExt.buttonCovermark:type_name -> com.bapis.bilibili.tv.ButtonCovermark
+	91,  // 130: com.bapis.bilibili.tv.Pageinfo.tvpgc:type_name -> com.bapis.bilibili.tv.Page
+	91,  // 131: com.bapis.bilibili.tv.Pageinfo.tvugc:type_name -> com.bapis.bilibili.tv.Page
+	91,  // 132: com.bapis.bilibili.tv.Pageinfo.tvuser:type_name -> com.bapis.bilibili.tv.Page
+	91,  // 133: com.bapis.bilibili.tv.Pageinfo.bTvugc:type_name -> com.bapis.bilibili.tv.Page
+	91,  // 134: com.bapis.bilibili.tv.Pageinfo.tvups:type_name -> com.bapis.bilibili.tv.Page
+	91,  // 135: com.bapis.bilibili.tv.Pageinfo.tvlive:type_name -> com.bapis.bilibili.tv.Page
+	150, // 136: com.bapis.bilibili.tv.PaymentV2.payCard:type_name -> com.bapis.bilibili.tv.PaymentV2.PayCardEntry
+	94,  // 137: com.bapis.bilibili.tv.PaymentV2.paymentShowExt:type_name -> com.bapis.bilibili.tv.PaymentShowExt
+	105, // 138: com.bapis.bilibili.tv.PgcExt.rights:type_name -> com.bapis.bilibili.tv.Rights
+	60,  // 139: com.bapis.bilibili.tv.PgcExt.entrance:type_name -> com.bapis.bilibili.tv.Entrance
+	149, // 140: com.bapis.bilibili.tv.PgcExt.highlight:type_name -> com.bapis.bilibili.tv.WatchProgressV2
+	65,  // 141: com.bapis.bilibili.tv.PgcExt.highlightV2:type_name -> com.bapis.bilibili.tv.HighLight
+	22,  // 142: com.bapis.bilibili.tv.PgcExt.buyButton:type_name -> com.bapis.bilibili.tv.BuyButton
+	140, // 143: com.bapis.bilibili.tv.PgcExt.userStatus:type_name -> com.bapis.bilibili.tv.UserStatus
+	98,  // 144: com.bapis.bilibili.tv.PgcIndexEntry.pgcGoto:type_name -> com.bapis.bilibili.tv.PgcIndexGoto
+	110, // 145: com.bapis.bilibili.tv.SearchV2Operator.adInfo:type_name -> com.bapis.bilibili.tv.SearchV2OperatorAdInfo
+	111, // 146: com.bapis.bilibili.tv.SearchV2Operator.buttons:type_name -> com.bapis.bilibili.tv.SearchV2OperatorButton
+	114, // 147: com.bapis.bilibili.tv.SearchV2Reply.resultV2:type_name -> com.bapis.bilibili.tv.SeaResultV2
+	92,  // 148: com.bapis.bilibili.tv.SearchV2Reply.pageInfo:type_name -> com.bapis.bilibili.tv.Pageinfo
+	122, // 149: com.bapis.bilibili.tv.SearchV2Reply.tabInfo:type_name -> com.bapis.bilibili.tv.TabInfo
+	124, // 150: com.bapis.bilibili.tv.SearchV2Reply.tokenSearchRes:type_name -> com.bapis.bilibili.tv.TokenSearchRes
+	97,  // 151: com.bapis.bilibili.tv.SearchV2Reply.pgcIndexEntry:type_name -> com.bapis.bilibili.tv.PgcIndexEntry
+	67,  // 152: com.bapis.bilibili.tv.SearchV2Reply.hotGuess:type_name -> com.bapis.bilibili.tv.HotGuess
+	53,  // 153: com.bapis.bilibili.tv.SearchV2Req.device:type_name -> com.bapis.bilibili.tv.Device
+	109, // 154: com.bapis.bilibili.tv.SeaResultV2.operates:type_name -> com.bapis.bilibili.tv.SearchV2Operator
+	40,  // 155: com.bapis.bilibili.tv.SeaResultV2.list:type_name -> com.bapis.bilibili.tv.CommonCardResp
+	116, // 156: com.bapis.bilibili.tv.SerialExt.listSubtitle:type_name -> com.bapis.bilibili.tv.SerialListSubtitle
+	118, // 157: com.bapis.bilibili.tv.SerialExt.rights:type_name -> com.bapis.bilibili.tv.SerialRights
+	117, // 158: com.bapis.bilibili.tv.SerialExt.playingUgc:type_name -> com.bapis.bilibili.tv.SerialPlayingUgc
+	137, // 159: com.bapis.bilibili.tv.SerialExt.upExt:type_name -> com.bapis.bilibili.tv.UpExtInfo
+	129, // 160: com.bapis.bilibili.tv.ShopExt.trackShop:type_name -> com.bapis.bilibili.tv.TrackShop
+	139, // 161: com.bapis.bilibili.tv.SubtitleItem.author:type_name -> com.bapis.bilibili.tv.UserInfo
+	7,   // 162: com.bapis.bilibili.tv.SubtitleItem.type:type_name -> com.bapis.bilibili.tv.SubtitleType
+	5,   // 163: com.bapis.bilibili.tv.SubtitleItem.aiType:type_name -> com.bapis.bilibili.tv.SubtitleAiType
+	4,   // 164: com.bapis.bilibili.tv.SubtitleItem.aiStatus:type_name -> com.bapis.bilibili.tv.SubtitleAiStatus
+	6,   // 165: com.bapis.bilibili.tv.SubtitleItem.role:type_name -> com.bapis.bilibili.tv.SubtitleRole
+	126, // 166: com.bapis.bilibili.tv.TokenSearchRes.popup:type_name -> com.bapis.bilibili.tv.TokenSearchResPopup
+	125, // 167: com.bapis.bilibili.tv.TokenSearchRes.activity:type_name -> com.bapis.bilibili.tv.TokenSearchResBanner
+	127, // 168: com.bapis.bilibili.tv.TokenSearchResPopup.notifyBtnList:type_name -> com.bapis.bilibili.tv.TokenSearchResPopupButton
+	100, // 169: com.bapis.bilibili.tv.TrackShop.trackShopPage:type_name -> com.bapis.bilibili.tv.PlayScenePageViewV2
+	107, // 170: com.bapis.bilibili.tv.TrackShop.trackShopModule:type_name -> com.bapis.bilibili.tv.SceneModule
+	106, // 171: com.bapis.bilibili.tv.TrackShop.trackShopCard:type_name -> com.bapis.bilibili.tv.SceneCard
+	143, // 172: com.bapis.bilibili.tv.TvViewProgressReply.videoGuide:type_name -> com.bapis.bilibili.tv.VideoGuide
+	33,  // 173: com.bapis.bilibili.tv.TvViewProgressReply.chronos:type_name -> com.bapis.bilibili.tv.Chronos
+	133, // 174: com.bapis.bilibili.tv.UgcExt.listSubtitle:type_name -> com.bapis.bilibili.tv.UGCCardSubtitle
+	133, // 175: com.bapis.bilibili.tv.UgcExt.listSubtitles:type_name -> com.bapis.bilibili.tv.UGCCardSubtitle
+	133, // 176: com.bapis.bilibili.tv.UgcExt.viewSubtitles:type_name -> com.bapis.bilibili.tv.UGCCardSubtitle
+	133, // 177: com.bapis.bilibili.tv.UgcExt.searchSubtitles:type_name -> com.bapis.bilibili.tv.UGCCardSubtitle
+	132, // 178: com.bapis.bilibili.tv.UgcExt.actions:type_name -> com.bapis.bilibili.tv.UgcCardAction
+	136, // 179: com.bapis.bilibili.tv.UgcExt.rights:type_name -> com.bapis.bilibili.tv.UgcRights
+	137, // 180: com.bapis.bilibili.tv.UgcExt.upExt:type_name -> com.bapis.bilibili.tv.UpExtInfo
+	135, // 181: com.bapis.bilibili.tv.UgcExt.ugcInteraction:type_name -> com.bapis.bilibili.tv.UgcInteractionInfo
+	83,  // 182: com.bapis.bilibili.tv.Uploader.officialInfo:type_name -> com.bapis.bilibili.tv.OfficialInfo
+	142, // 183: com.bapis.bilibili.tv.VerticalRankCards.moreCard:type_name -> com.bapis.bilibili.tv.VerticalRankMoreCard
+	106, // 184: com.bapis.bilibili.tv.VerticalRankCards.playSceneCard:type_name -> com.bapis.bilibili.tv.SceneCard
+	121, // 185: com.bapis.bilibili.tv.VideoSubtitle.subtitles:type_name -> com.bapis.bilibili.tv.SubtitleItem
+	93,  // 186: com.bapis.bilibili.tv.PaymentV2.PayCardEntry.value:type_name -> com.bapis.bilibili.tv.PayCard
+	187, // [187:187] is the sub-list for method output_type
+	187, // [187:187] is the sub-list for method input_type
+	187, // [187:187] is the sub-list for extension type_name
+	187, // [187:187] is the sub-list for extension extendee
+	0,   // [0:187] is the sub-list for field type_name
 }
 
 func init() { file_bilibili_tv_messages_proto_init() }
@@ -17785,7 +17998,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CookieBean); i {
+			switch v := v.(*ContinueWatch); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -17797,7 +18010,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CookieInfo); i {
+			switch v := v.(*CookieBean); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -17809,7 +18022,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DanmakuAIFlag); i {
+			switch v := v.(*CookieInfo); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -17821,7 +18034,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DanmakuElem); i {
+			switch v := v.(*DanmakuAIFlag); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -17833,7 +18046,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[37].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DanmakuFlag); i {
+			switch v := v.(*DanmakuElem); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -17845,7 +18058,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[38].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DanmakuFlagConfig); i {
+			switch v := v.(*DanmakuFlag); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -17857,7 +18070,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[39].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DanmuDefaultPlayerConfig); i {
+			switch v := v.(*DanmakuFlagConfig); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -17869,7 +18082,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[40].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DanmuPlayerConfig); i {
+			switch v := v.(*DanmuDefaultPlayerConfig); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -17881,7 +18094,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[41].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DanmuPlayerDynamicConfig); i {
+			switch v := v.(*DanmuPlayerConfig); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -17893,7 +18106,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[42].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DanmuPlayerViewConfig); i {
+			switch v := v.(*DanmuPlayerDynamicConfig); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -17905,7 +18118,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[43].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DanmuSettings); i {
+			switch v := v.(*DanmuPlayerViewConfig); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -17917,7 +18130,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[44].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Device); i {
+			switch v := v.(*DanmuSettings); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -17929,7 +18142,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[45].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DmColorful); i {
+			switch v := v.(*Device); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -17941,7 +18154,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[46].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DmHerdView); i {
+			switch v := v.(*DmColorful); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -17953,7 +18166,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[47].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DmSegMobileReply); i {
+			switch v := v.(*DmHerdView); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -17965,7 +18178,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[48].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DmSegMobileReq); i {
+			switch v := v.(*DmSegMobileReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -17977,7 +18190,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[49].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DmViewReply); i {
+			switch v := v.(*DmSegMobileReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -17989,7 +18202,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[50].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DmViewReq); i {
+			switch v := v.(*DmViewReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18001,7 +18214,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[51].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Entrance); i {
+			switch v := v.(*DmViewReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18013,7 +18226,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[52].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*EsportExt); i {
+			switch v := v.(*Entrance); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18025,7 +18238,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[53].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExtendedDesc); i {
+			switch v := v.(*EsportExt); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18037,7 +18250,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[54].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FeedAdExtraAdTagStyle); i {
+			switch v := v.(*ExtendedDesc); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18049,7 +18262,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[55].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FeedAdExtraVideo); i {
+			switch v := v.(*FeedAdExtraAdTagStyle); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18061,7 +18274,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[56].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*HighLight); i {
+			switch v := v.(*FeedAdExtraVideo); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18073,7 +18286,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[57].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*HLRange); i {
+			switch v := v.(*HighLight); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18085,7 +18298,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[58].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*HotGuess); i {
+			switch v := v.(*HLRange); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18097,7 +18310,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[59].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Hotword); i {
+			switch v := v.(*HotGuess); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18109,7 +18322,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[60].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*HotwordExt); i {
+			switch v := v.(*Hotword); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18121,7 +18334,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[61].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*InfocExt); i {
+			switch v := v.(*HotwordExt); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18133,7 +18346,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[62].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*JumpLine); i {
+			switch v := v.(*InfocExt); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18145,7 +18358,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[63].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Jumps); i {
+			switch v := v.(*JumpLine); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18157,7 +18370,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[64].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Labels); i {
+			switch v := v.(*Jumps); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18169,7 +18382,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[65].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LiveDanmuPlayerConfig); i {
+			switch v := v.(*Labels); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18181,7 +18394,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[66].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LiveDmActivity); i {
+			switch v := v.(*LiveDanmuPlayerConfig); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18193,7 +18406,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[67].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LiveDmExtra); i {
+			switch v := v.(*LiveDmActivity); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18205,7 +18418,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[68].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LiveExt); i {
+			switch v := v.(*LiveDmExtra); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18217,7 +18430,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[69].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LiveSkipResp); i {
+			switch v := v.(*LiveExt); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18229,7 +18442,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[70].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MediaExtra); i {
+			switch v := v.(*LiveSkipResp); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18241,7 +18454,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[71].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MockMetaDataReply); i {
+			switch v := v.(*MediaExtra); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18253,7 +18466,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[72].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MockMetaDataReq); i {
+			switch v := v.(*MockMetaDataReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18265,7 +18478,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[73].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ModResource); i {
+			switch v := v.(*MockMetaDataReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18277,7 +18490,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[74].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*OfficialInfo); i {
+			switch v := v.(*ModResource); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18289,7 +18502,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[75].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Ogv186PlayControl); i {
+			switch v := v.(*OfficialInfo); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18301,7 +18514,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[76].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*OgvBottomButton); i {
+			switch v := v.(*Ogv186PlayControl); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18313,7 +18526,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[77].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*OgvCollection); i {
+			switch v := v.(*OgvBottomButton); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18325,7 +18538,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[78].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*OgvIndexEntry); i {
+			switch v := v.(*OgvCollection); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18337,7 +18550,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[79].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*OgvIndexGoto); i {
+			switch v := v.(*OgvIndexEntry); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18349,7 +18562,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[80].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*OperationExt); i {
+			switch v := v.(*OgvIndexGoto); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18361,7 +18574,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[81].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*OrderId); i {
+			switch v := v.(*OperationExt); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18373,7 +18586,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[82].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Page); i {
+			switch v := v.(*OrderId); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18385,7 +18598,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[83].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Pageinfo); i {
+			switch v := v.(*Page); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18397,7 +18610,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[84].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PayCard); i {
+			switch v := v.(*Pageinfo); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18409,7 +18622,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[85].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PaymentShowExt); i {
+			switch v := v.(*PayCard); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18421,7 +18634,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[86].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PaymentV2); i {
+			switch v := v.(*PaymentShowExt); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18433,7 +18646,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[87].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PgcExt); i {
+			switch v := v.(*PaymentV2); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18445,7 +18658,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[88].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PgcIndexEntry); i {
+			switch v := v.(*PgcExt); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18457,7 +18670,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[89].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PgcIndexGoto); i {
+			switch v := v.(*PgcIndexEntry); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18469,7 +18682,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[90].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PlaylistTab); i {
+			switch v := v.(*PgcIndexGoto); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18481,7 +18694,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[91].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PlayScenePageViewV2); i {
+			switch v := v.(*PlaylistTab); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18493,7 +18706,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[92].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PlayurlArgs); i {
+			switch v := v.(*PlayScenePageViewV2); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18505,7 +18718,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[93].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProjExt); i {
+			switch v := v.(*PlayurlArgs); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18517,7 +18730,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[94].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QoeInfo); i {
+			switch v := v.(*ProjExt); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18529,7 +18742,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[95].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RestrictionConfig); i {
+			switch v := v.(*QoeInfo); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18541,7 +18754,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[96].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Rights); i {
+			switch v := v.(*RestrictionConfig); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18553,7 +18766,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[97].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SceneCard); i {
+			switch v := v.(*Rights); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18565,7 +18778,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[98].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SceneModule); i {
+			switch v := v.(*SceneCard); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18577,7 +18790,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[99].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SearchExt); i {
+			switch v := v.(*SceneModule); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18589,7 +18802,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[100].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SearchV2Operator); i {
+			switch v := v.(*SearchExt); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18601,7 +18814,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[101].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SearchV2OperatorAdInfo); i {
+			switch v := v.(*SearchV2Operator); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18613,7 +18826,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[102].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SearchV2OperatorButton); i {
+			switch v := v.(*SearchV2OperatorAdInfo); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18625,7 +18838,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[103].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SearchV2Reply); i {
+			switch v := v.(*SearchV2OperatorButton); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18637,7 +18850,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[104].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SearchV2Req); i {
+			switch v := v.(*SearchV2Reply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18649,7 +18862,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[105].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SeaResultV2); i {
+			switch v := v.(*SearchV2Req); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18661,7 +18874,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[106].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SerialExt); i {
+			switch v := v.(*SeaResultV2); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18673,7 +18886,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[107].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SerialListSubtitle); i {
+			switch v := v.(*SerialExt); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18685,7 +18898,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[108].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SerialPlayingUgc); i {
+			switch v := v.(*SerialListSubtitle); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18697,7 +18910,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[109].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SerialRights); i {
+			switch v := v.(*SerialPlayingUgc); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18709,7 +18922,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[110].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ShareExt); i {
+			switch v := v.(*SerialRights); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18721,7 +18934,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[111].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ShopExt); i {
+			switch v := v.(*ShareExt); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18733,7 +18946,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[112].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SubtitleItem); i {
+			switch v := v.(*ShopExt); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18745,7 +18958,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[113].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TabInfo); i {
+			switch v := v.(*SubtitleItem); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18757,7 +18970,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[114].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Team); i {
+			switch v := v.(*TabInfo); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18769,7 +18982,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[115].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TokenSearchRes); i {
+			switch v := v.(*Team); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18781,7 +18994,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[116].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TokenSearchResBanner); i {
+			switch v := v.(*TokenSearchRes); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18793,7 +19006,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[117].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TokenSearchResPopup); i {
+			switch v := v.(*TokenSearchResBanner); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18805,7 +19018,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[118].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TokenSearchResPopupButton); i {
+			switch v := v.(*TokenSearchResPopup); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18817,7 +19030,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[119].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TopBar); i {
+			switch v := v.(*TokenSearchResPopupButton); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18829,7 +19042,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[120].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TrackShop); i {
+			switch v := v.(*TopBar); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18841,7 +19054,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[121].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TvViewProgressReply); i {
+			switch v := v.(*TrackShop); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18853,7 +19066,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[122].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TvViewProgressReq); i {
+			switch v := v.(*TvViewProgressReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18865,7 +19078,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[123].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UgcCardAction); i {
+			switch v := v.(*TvViewProgressReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18877,7 +19090,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[124].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UGCCardSubtitle); i {
+			switch v := v.(*UgcCardAction); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18889,7 +19102,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[125].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UgcExt); i {
+			switch v := v.(*UGCCardSubtitle); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18901,7 +19114,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[126].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UgcInteractionInfo); i {
+			switch v := v.(*UgcExt); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18913,7 +19126,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[127].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UgcRights); i {
+			switch v := v.(*UgcInteractionInfo); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18925,7 +19138,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[128].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpExtInfo); i {
+			switch v := v.(*UgcRights); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18937,7 +19150,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[129].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Uploader); i {
+			switch v := v.(*UpExtInfo); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18949,7 +19162,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[130].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UserInfo); i {
+			switch v := v.(*Uploader); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18961,7 +19174,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[131].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UserStatus); i {
+			switch v := v.(*UserInfo); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18973,7 +19186,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[132].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*VerticalRankCards); i {
+			switch v := v.(*UserStatus); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18985,7 +19198,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[133].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*VerticalRankMoreCard); i {
+			switch v := v.(*VerticalRankCards); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -18997,7 +19210,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[134].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*VideoGuide); i {
+			switch v := v.(*VerticalRankMoreCard); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -19009,7 +19222,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[135].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*VideoMask); i {
+			switch v := v.(*VideoGuide); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -19021,7 +19234,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[136].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*VideoSubtitle); i {
+			switch v := v.(*VideoMask); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -19033,7 +19246,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[137].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ViewHerdDmElem); i {
+			switch v := v.(*VideoSubtitle); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -19045,7 +19258,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[138].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ViewToast); i {
+			switch v := v.(*ViewHerdDmElem); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -19057,7 +19270,7 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[139].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*WatchProgress); i {
+			switch v := v.(*ViewToast); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -19069,6 +19282,18 @@ func file_bilibili_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_tv_messages_proto_msgTypes[140].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*WatchProgress); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_bilibili_tv_messages_proto_msgTypes[141].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*WatchProgressV2); i {
 			case 0:
 				return &v.state
@@ -19086,8 +19311,8 @@ func file_bilibili_tv_messages_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_bilibili_tv_messages_proto_rawDesc,
-			NumEnums:      7,
-			NumMessages:   142,
+			NumEnums:      8,
+			NumMessages:   143,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

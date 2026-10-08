@@ -22,6 +22,251 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
+	Assistant_PushMobile_FullMethodName     = "/bilibili.broadcast.message.tv.Assistant/PushMobile"
+	Assistant_PushMobileCore_FullMethodName = "/bilibili.broadcast.message.tv.Assistant/PushMobileCore"
+	Assistant_PushTV_FullMethodName         = "/bilibili.broadcast.message.tv.Assistant/PushTV"
+)
+
+// AssistantClient is the client API for Assistant service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+type AssistantClient interface {
+	PushMobile(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (Assistant_PushMobileClient, error)
+	PushMobileCore(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (Assistant_PushMobileCoreClient, error)
+	PushTV(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (Assistant_PushTVClient, error)
+}
+
+type assistantClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewAssistantClient(cc grpc.ClientConnInterface) AssistantClient {
+	return &assistantClient{cc}
+}
+
+func (c *assistantClient) PushMobile(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (Assistant_PushMobileClient, error) {
+	stream, err := c.cc.NewStream(ctx, &Assistant_ServiceDesc.Streams[0], Assistant_PushMobile_FullMethodName, opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &assistantPushMobileClient{stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+type Assistant_PushMobileClient interface {
+	Recv() (*TVAssistantCommand, error)
+	grpc.ClientStream
+}
+
+type assistantPushMobileClient struct {
+	grpc.ClientStream
+}
+
+func (x *assistantPushMobileClient) Recv() (*TVAssistantCommand, error) {
+	m := new(TVAssistantCommand)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
+func (c *assistantClient) PushMobileCore(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (Assistant_PushMobileCoreClient, error) {
+	stream, err := c.cc.NewStream(ctx, &Assistant_ServiceDesc.Streams[1], Assistant_PushMobileCore_FullMethodName, opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &assistantPushMobileCoreClient{stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+type Assistant_PushMobileCoreClient interface {
+	Recv() (*TVAssistantCommand, error)
+	grpc.ClientStream
+}
+
+type assistantPushMobileCoreClient struct {
+	grpc.ClientStream
+}
+
+func (x *assistantPushMobileCoreClient) Recv() (*TVAssistantCommand, error) {
+	m := new(TVAssistantCommand)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
+func (c *assistantClient) PushTV(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (Assistant_PushTVClient, error) {
+	stream, err := c.cc.NewStream(ctx, &Assistant_ServiceDesc.Streams[2], Assistant_PushTV_FullMethodName, opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &assistantPushTVClient{stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+type Assistant_PushTVClient interface {
+	Recv() (*TVAssistantCommand, error)
+	grpc.ClientStream
+}
+
+type assistantPushTVClient struct {
+	grpc.ClientStream
+}
+
+func (x *assistantPushTVClient) Recv() (*TVAssistantCommand, error) {
+	m := new(TVAssistantCommand)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
+// AssistantServer is the server API for Assistant service.
+// All implementations must embed UnimplementedAssistantServer
+// for forward compatibility
+type AssistantServer interface {
+	PushMobile(*emptypb.Empty, Assistant_PushMobileServer) error
+	PushMobileCore(*emptypb.Empty, Assistant_PushMobileCoreServer) error
+	PushTV(*emptypb.Empty, Assistant_PushTVServer) error
+	mustEmbedUnimplementedAssistantServer()
+}
+
+// UnimplementedAssistantServer must be embedded to have forward compatible implementations.
+type UnimplementedAssistantServer struct {
+}
+
+func (UnimplementedAssistantServer) PushMobile(*emptypb.Empty, Assistant_PushMobileServer) error {
+	return status.Errorf(codes.Unimplemented, "method PushMobile not implemented")
+}
+func (UnimplementedAssistantServer) PushMobileCore(*emptypb.Empty, Assistant_PushMobileCoreServer) error {
+	return status.Errorf(codes.Unimplemented, "method PushMobileCore not implemented")
+}
+func (UnimplementedAssistantServer) PushTV(*emptypb.Empty, Assistant_PushTVServer) error {
+	return status.Errorf(codes.Unimplemented, "method PushTV not implemented")
+}
+func (UnimplementedAssistantServer) mustEmbedUnimplementedAssistantServer() {}
+
+// UnsafeAssistantServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to AssistantServer will
+// result in compilation errors.
+type UnsafeAssistantServer interface {
+	mustEmbedUnimplementedAssistantServer()
+}
+
+func RegisterAssistantServer(s grpc.ServiceRegistrar, srv AssistantServer) {
+	s.RegisterService(&Assistant_ServiceDesc, srv)
+}
+
+func _Assistant_PushMobile_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(emptypb.Empty)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(AssistantServer).PushMobile(m, &assistantPushMobileServer{stream})
+}
+
+type Assistant_PushMobileServer interface {
+	Send(*TVAssistantCommand) error
+	grpc.ServerStream
+}
+
+type assistantPushMobileServer struct {
+	grpc.ServerStream
+}
+
+func (x *assistantPushMobileServer) Send(m *TVAssistantCommand) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func _Assistant_PushMobileCore_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(emptypb.Empty)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(AssistantServer).PushMobileCore(m, &assistantPushMobileCoreServer{stream})
+}
+
+type Assistant_PushMobileCoreServer interface {
+	Send(*TVAssistantCommand) error
+	grpc.ServerStream
+}
+
+type assistantPushMobileCoreServer struct {
+	grpc.ServerStream
+}
+
+func (x *assistantPushMobileCoreServer) Send(m *TVAssistantCommand) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func _Assistant_PushTV_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(emptypb.Empty)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(AssistantServer).PushTV(m, &assistantPushTVServer{stream})
+}
+
+type Assistant_PushTVServer interface {
+	Send(*TVAssistantCommand) error
+	grpc.ServerStream
+}
+
+type assistantPushTVServer struct {
+	grpc.ServerStream
+}
+
+func (x *assistantPushTVServer) Send(m *TVAssistantCommand) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+// Assistant_ServiceDesc is the grpc.ServiceDesc for Assistant service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var Assistant_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "bilibili.broadcast.message.tv.Assistant",
+	HandlerType: (*AssistantServer)(nil),
+	Methods:     []grpc.MethodDesc{},
+	Streams: []grpc.StreamDesc{
+		{
+			StreamName:    "PushMobile",
+			Handler:       _Assistant_PushMobile_Handler,
+			ServerStreams: true,
+		},
+		{
+			StreamName:    "PushMobileCore",
+			Handler:       _Assistant_PushMobileCore_Handler,
+			ServerStreams: true,
+		},
+		{
+			StreamName:    "PushTV",
+			Handler:       _Assistant_PushTV_Handler,
+			ServerStreams: true,
+		},
+	},
+	Metadata: "bilibili/broadcast/message/tv/services.proto",
+}
+
+const (
 	LiveDm_DmActivity_FullMethodName         = "/bilibili.broadcast.message.tv.LiveDm/DmActivity"
 	LiveDm_DmLiveMsg_FullMethodName          = "/bilibili.broadcast.message.tv.LiveDm/DmLiveMsg"
 	LiveDm_DmLiveMsgDelay_FullMethodName     = "/bilibili.broadcast.message.tv.LiveDm/DmLiveMsgDelay"

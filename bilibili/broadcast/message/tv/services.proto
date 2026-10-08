@@ -6,6 +6,12 @@ package bilibili.broadcast.message.tv;
 import "bilibili/broadcast/message/tv/messages.proto";
 import "google/protobuf/empty.proto";
 
+service Assistant {
+  rpc PushMobile(.google.protobuf.Empty) returns (stream .com.bapis.bilibili.broadcast.message.tv.TVAssistantCommand);
+  rpc PushMobileCore(.google.protobuf.Empty) returns (stream .com.bapis.bilibili.broadcast.message.tv.TVAssistantCommand);
+  rpc PushTV(.google.protobuf.Empty) returns (stream .com.bapis.bilibili.broadcast.message.tv.TVAssistantCommand);
+}
+
 service LiveDm {
   rpc DmActivity(.google.protobuf.Empty) returns (stream .com.bapis.bilibili.broadcast.message.tv.DmActivityReply);
   rpc DmLiveMsg(.google.protobuf.Empty) returns (stream .com.bapis.bilibili.broadcast.message.tv.DmLiveReply);
