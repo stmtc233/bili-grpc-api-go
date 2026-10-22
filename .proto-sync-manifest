@@ -104,6 +104,7 @@ bilibili/broadcast/message/main/services.proto
 bilibili/broadcast/message/push/messages.proto
 bilibili/broadcast/message/push/services.proto
 bilibili/broadcast/message/reply/messages.proto
+bilibili/broadcast/message/search/messages.proto
 bilibili/broadcast/message/topic/messages.proto
 bilibili/broadcast/message/tv/messages.proto
 bilibili/broadcast/message/tv/services.proto

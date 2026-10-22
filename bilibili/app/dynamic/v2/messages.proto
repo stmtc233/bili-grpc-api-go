@@ -56,6 +56,7 @@ enum AdditionalType {
   additional_type_content_video = 13;
   additional_type_content_comment = 14;
   additional_type_content_up = 15;
+  additional_type_toy = 16;
 }
 
 enum AdditionVoteState {
@@ -439,6 +440,7 @@ enum LinkNodeType {
   REFERENCE_COMMENT = 45;
   MULTIPLE_RESOURCES = 46;
   REFERENCE = 47;
+  TOY = 48;
 }
 
 enum LiveState {
@@ -550,6 +552,7 @@ enum NavigationType {
   DISPLAY_APP_MINE = 6;
   VISA_CARD = 7;
   DATA_CENTER = 8;
+  ADD_TO_DESKTOP = 9;
 }
 
 enum NetworkType {
@@ -982,6 +985,21 @@ message AdditionMusic {
   string cardType = 2;
   CoverIconWithText descTextUpper = 3;
   string badge = 4;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/AdditionToy.java
+message AdditionToy {
+  int64 toyId = 1;
+  string title = 2;
+  string poster = 3;
+  int32 posterWidth = 4;
+  int32 posterHeight = 5;
+  string tagText = 6;
+  BasicUserInfoV2 up = 7;
+  string jumpUri = 8;
+  string btnText = 9;
+  string statText = 10;
+  string cardType = 11;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/AdditionUgc.java
@@ -1851,6 +1869,20 @@ message ContentOpusCard {
 // Source: com/bapis/bilibili/app/dynamic/v2/ContentOpusCard.java
 message ContentOpusCard_CardBadge {
   IconBadge iconBadge = 1;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/ContentToyCard.java
+message ContentToyCard {
+  int64 toyId = 1;
+  string title = 2;
+  string url = 3;
+  string poster = 4;
+  int32 posterWidth = 5;
+  int32 posterHeight = 6;
+  string tagText = 7;
+  BasicUserInfoV2 up = 8;
+  string btnText = 9;
+  string statText = 10;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/ContentUpCard.java
@@ -3662,6 +3694,7 @@ message ModuleAdditional {
     ContentCommentCard comment = 17;
     bytes contentup = 18;
     MultipleResourcesCard multipleResources = 19;
+    AdditionToy toy = 20;
   }
   int64 rid = 7;
   bool needWriteCalender = 11;
@@ -3683,6 +3716,7 @@ message ModuleAdditional {
     COMMENT = 17;
     CONTENTUP = 18;
     MULTIPLE_RESOURCES = 19;
+    TOY = 20;
   }
 
 }
@@ -4254,6 +4288,7 @@ message NavigationEntry {
     NavigationEntryGameStats gameStats = 5;
     NavigationEntryDisplayAppMine displayAppMine = 6;
     NavigationEntryVisaCard visaCard = 7;
+    NavigationEntryAddToDesktop addToDesktop = 8;
   }
   enum DataCase {
     DATA_NOT_SET = 0;
@@ -4262,8 +4297,17 @@ message NavigationEntry {
     GAME_STATS = 5;
     DISPLAY_APP_MINE = 6;
     VISA_CARD = 7;
+    ADD_TO_DESKTOP = 8;
   }
 
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/NavigationEntryAddToDesktop.java
+message NavigationEntryAddToDesktop {
+  string iosGuideUri = 1;
+  int64 tribeeId = 2;
+  string tribeeTitle = 3;
+  string tribeeFaceUrl = 4;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/NavigationEntryBasicInfo.java
@@ -5221,6 +5265,7 @@ message SunflowerParsedItem {
     EmoteItem emote = 8;
     ContentCommentCard comment = 9;
     ContentUpCard up = 11;
+    ContentToyCard toy = 13;
   }
   string linkIcon = 10;
   string linkText = 12;
@@ -5233,6 +5278,7 @@ message SunflowerParsedItem {
     CONTENT_CASE_EMOTE = 8;
     CONTENT_CASE_COMMENT = 9;
     CONTENT_CASE_UP = 11;
+    CONTENT_CASE_TOY = 13;
   }
 
   enum ParsedType {
@@ -5243,6 +5289,7 @@ message SunflowerParsedItem {
     PARSED_TYPE_EMOTE = 4;
     PARSED_TYPE_COMMENT = 5;
     PARSED_TYPE_UP = 6;
+    PARSED_TYPE_TOY = 7;
   }
 
 }
@@ -5782,6 +5829,25 @@ message TraceParam {
   int64 moduleId = 2;
 }
 
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeAdminItem.java
+message TribeeAdminItem {
+  int64 mid = 1;
+  string name = 2;
+  string face = 3;
+  string serialNo = 4;
+  string grantTimeText = 5;
+  int32 relation = 6;
+  string jumpUri = 7;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeAdminSection.java
+message TribeeAdminSection {
+  repeated TribeeAdminItem list = 1;
+  int32 rowDisplayCount = 2;
+  string introText = 3;
+  string conventionUri = 4;
+}
+
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeBaseInfo.java
 message TribeeBaseInfo {
   TribeeDesc tribeeInfo = 1;
@@ -5794,6 +5860,7 @@ message TribeeBaseInfo {
   TribeeStats stats = 8;
   string rulesUrl = 9;
   TribeeCreatorIdentityPopup creatorIdentityPopup = 10;
+  TribeeProfileEntry profileEntry = 11;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeCategory.java
@@ -6077,6 +6144,31 @@ message TribeeNotificationBar {
   Color buttonBgColor = 10;
   Color buttonTextColor = 11;
   bool showClose = 12;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeProfileEntry.java
+message TribeeProfileEntry {
+  bool isShow = 1;
+  string text = 2;
+  string jumpUri = 3;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeProfileReq.java
+message TribeeProfileReq {
+  int64 tribeeId = 1;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeProfileResp.java
+message TribeeProfileResp {
+  TribeeDesc tribeeInfo = 1;
+  string memberCount = 2;
+  string summary = 3;
+  string ruleText = 4;
+  TribeeAdminSection admins = 5;
+  repeated TribeeVisaFreeItem visaFree = 6;
+  string visaJumpUri = 7;
+  ShareConfig share = 8;
+  TribeeTheme tribeeTheme = 9;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeSearchAllReq.java

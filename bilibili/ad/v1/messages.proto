@@ -451,10 +451,12 @@ message BrandPauseLoopImageItemDto {
 message BrandPausePageDto {
   oneof oneof_0 {
     BrandPauseLoopCardDto loopCard = 1;
+    BrandPauseVerticalLoopDto verticalLoop = 2;
   }
   enum CardCase {
     CARD_NOT_SET = 0;
     LOOP_CARD = 1;
+    VERTICAL_LOOP = 2;
   }
 
 }
@@ -464,6 +466,33 @@ message BrandPausePanInteractDto {
   int32 startAngle = 1;
   int32 endAngle = 2;
   int32 distance = 3;
+}
+
+// Source: com/bapis/bilibili/ad/v1/BrandPauseVerticalLoopButtonDto.java
+message BrandPauseVerticalLoopButtonDto {
+  string image = 1;
+  string title = 2;
+  string guideText = 3;
+}
+
+// Source: com/bapis/bilibili/ad/v1/BrandPauseVerticalLoopDto.java
+message BrandPauseVerticalLoopDto {
+  string logoImage = 1;
+  string bgImage = 2;
+  string guideImage = 3;
+  BrandPauseVerticalLoopImageDto loopImage = 4;
+  BrandPauseVerticalLoopButtonDto button = 5;
+}
+
+// Source: com/bapis/bilibili/ad/v1/BrandPauseVerticalLoopImageDto.java
+message BrandPauseVerticalLoopImageDto {
+  repeated BrandPauseVerticalLoopItemDto images = 1;
+  int32 loopInterval = 2;
+}
+
+// Source: com/bapis/bilibili/ad/v1/BrandPauseVerticalLoopItemDto.java
+message BrandPauseVerticalLoopItemDto {
+  string url = 1;
 }
 
 // Source: com/bapis/bilibili/ad/v1/BrandTrending.java
@@ -907,6 +936,7 @@ message PauseAdLandingPage {
   CustomShowUrlInfo customShowUrls = 5;
   repeated string reportableAreas = 6;
   bool enableSlideReport = 7;
+  string universalApp = 8;
 }
 
 // Source: com/bapis/bilibili/ad/v1/PauseAdLandingPageModule.java

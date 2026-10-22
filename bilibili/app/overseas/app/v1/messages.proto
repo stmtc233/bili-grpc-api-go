@@ -9,10 +9,88 @@ enum BannerEventType {
   EVENT_TYPE_EXPOSURE = 2;
 }
 
+enum SplashElementType {
+  SPLASH_ELEMENT_TYPE_BLANK = 0;
+  SPLASH_ELEMENT_TYPE_TEXT = 1;
+}
+
+enum SplashEventType {
+  SPLASH_EVENT_TYPE_UNSPECIFIED = 0;
+  SPLASH_EVENT_TYPE_OPERATIONAL = 1;
+}
+
+enum SplashInteractStyle {
+  SPLASH_INTERACT_STYLE_NONE = 0;
+  SPLASH_INTERACT_STYLE_CLICK = 1;
+}
+
+enum SplashResourceType {
+  SPLASH_RESOURCE_TYPE_IMAGE = 0;
+}
+
+// Source: com/bapis/bilibili/app/overseas/app/v1/EventListReq.java
+message EventListReq {
+  int32 screenWidth = 1;
+  int32 screenHeight = 2;
+}
+
+// Source: com/bapis/bilibili/app/overseas/app/v1/EventListResp.java
+message EventListResp {
+  SplashGlobalConfig globalConfig = 1;
+  repeated SplashEvent eventList = 2;
+}
+
 // Source: com/bapis/bilibili/app/overseas/app/v1/ReportBannerEventReq.java
 message ReportBannerEventReq {
   string bannerId = 1;
   BannerEventType eventType = 2;
+}
+
+// Source: com/bapis/bilibili/app/overseas/app/v1/SplashAction.java
+message SplashAction {
+  string jumpUrl = 1;
+}
+
+// Source: com/bapis/bilibili/app/overseas/app/v1/SplashElement.java
+message SplashElement {
+  int64 id = 1;
+  SplashElementType elementType = 2;
+  SplashInteractStyle interactStyle = 3;
+  string text = 4;
+  SplashAction action = 5;
+}
+
+// Source: com/bapis/bilibili/app/overseas/app/v1/SplashEvent.java
+message SplashEvent {
+  int64 id = 1;
+  SplashEventType eventType = 2;
+  int64 beginTime = 3;
+  int64 endTime = 4;
+  string locale = 5;
+  repeated SplashResource resources = 6;
+  repeated SplashElement elements = 7;
+  int32 showTimes = 8;
+  int32 dailyLimit = 9;
+  int32 showSkip = 10;
+  int64 duration = 11;
+  int32 showCountdown = 12;
+}
+
+// Source: com/bapis/bilibili/app/overseas/app/v1/SplashGlobalConfig.java
+message SplashGlobalConfig {
+  int64 strategyId = 1;
+  int64 minIntervalSec = 2;
+  int32 dailyLimit = 3;
+}
+
+// Source: com/bapis/bilibili/app/overseas/app/v1/SplashResource.java
+message SplashResource {
+  int64 id = 1;
+  SplashResourceType resourceType = 2;
+  string resourceUrl = 3;
+  string resourceHash = 4;
+  int32 width = 5;
+  int32 height = 6;
 }
 
 

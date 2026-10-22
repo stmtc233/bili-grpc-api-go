@@ -1,0 +1,32 @@
+// Reconstructed from protobuf-lite metadata in the APK.
+syntax = "proto3";
+
+package com.bapis.bilibili.broadcast.message.search;
+
+import "bilibili/polymer/app/search/v1/messages.proto";
+
+// Source: com/bapis/bilibili/broadcast/message/search/SearchGeneratorCard.java
+message SearchGeneratorCard {
+  string uri = 1;
+  string param = 2;
+  string goto = 3;
+  oneof oneof_0 {
+    com.bapis.bilibili.polymer.app.search.v1.SearchVideoCard video = 4;
+  }
+  enum CardCase {
+    CARD_NOT_SET = 0;
+    VIDEO = 4;
+  }
+
+}
+
+// Source: com/bapis/bilibili/broadcast/message/search/SearchGeneratorResult.java
+message SearchGeneratorResult {
+  string qvid = 1;
+  int32 position = 2;
+  repeated SearchGeneratorCard cards = 3;
+  int32 insertType = 4;
+}
+
+
+option go_package = "github.com/stmtc233/bili-grpc-api-go/bilibili/broadcast/message/search";

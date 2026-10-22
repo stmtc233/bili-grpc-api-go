@@ -130,6 +130,7 @@ enum OpusBizType {
   CONTENT_VIDEO = 41;
   CONTENT_COMMENT = 42;
   CONTENT_UP = 44;
+  TOY = 48;
 }
 
 enum OpusSource {
@@ -301,6 +302,7 @@ message Colors {
 message ContentCardInfo {
   ContentVideo contentVideo = 1;
   ContentComment contentComment = 2;
+  ContentToy contentToy = 3;
 }
 
 // Source: com/bapis/bilibili/dynamic/common/ContentComment.java
@@ -314,6 +316,11 @@ message ContentComment {
 message ContentLinkCard {
   int32 cardStyle = 1;
   ContentCardInfo cardInfo = 2;
+}
+
+// Source: com/bapis/bilibili/dynamic/common/ContentToy.java
+message ContentToy {
+  int64 toyId = 1;
 }
 
 // Source: com/bapis/bilibili/dynamic/common/ContentVideo.java

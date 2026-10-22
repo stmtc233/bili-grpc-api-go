@@ -20,6 +20,7 @@ enum BizType {
 message GetSdkAdConfigReply {
   bool showAd = 1;
   map<string, SlotAdConfigs> slots = 2;
+  string requestId = 3;
 }
 
 // Source: com/bapis/bilibili/app/overseas/ad/v1/GetSdkAdConfigReq.java
@@ -29,6 +30,7 @@ message GetSdkAdConfigReq {
 // Source: com/bapis/bilibili/app/overseas/ad/v1/OverseasAdInfo.java
 message OverseasAdInfo {
   map<string, UnitAdConfigs> slots = 1;
+  string requestId = 2;
 }
 
 // Source: com/bapis/bilibili/app/overseas/ad/v1/SlotAdConfigs.java
