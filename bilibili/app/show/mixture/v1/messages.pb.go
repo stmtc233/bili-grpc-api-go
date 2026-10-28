@@ -256,7 +256,247 @@ func (x RegionCard_ItemCase) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use RegionCard_ItemCase.Descriptor instead.
 func (RegionCard_ItemCase) EnumDescriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{11, 0}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{15, 0}
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/BceArc.java
+type BceArc struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Aid      int64  `protobuf:"varint,1,opt,name=aid,proto3" json:"aid,omitempty"`
+	Stat     *Stat  `protobuf:"bytes,4,opt,name=stat,proto3" json:"stat,omitempty"`
+	JumpUrl  string `protobuf:"bytes,5,opt,name=jumpUrl,proto3" json:"jumpUrl,omitempty"`
+	Title    string `protobuf:"bytes,6,opt,name=title,proto3" json:"title,omitempty"`
+	Cover    string `protobuf:"bytes,7,opt,name=cover,proto3" json:"cover,omitempty"`
+	Duration int64  `protobuf:"varint,8,opt,name=duration,proto3" json:"duration,omitempty"`
+}
+
+func (x *BceArc) Reset() {
+	*x = BceArc{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[0]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *BceArc) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*BceArc) ProtoMessage() {}
+
+func (x *BceArc) ProtoReflect() protoreflect.Message {
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[0]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use BceArc.ProtoReflect.Descriptor instead.
+func (*BceArc) Descriptor() ([]byte, []int) {
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *BceArc) GetAid() int64 {
+	if x != nil {
+		return x.Aid
+	}
+	return 0
+}
+
+func (x *BceArc) GetStat() *Stat {
+	if x != nil {
+		return x.Stat
+	}
+	return nil
+}
+
+func (x *BceArc) GetJumpUrl() string {
+	if x != nil {
+		return x.JumpUrl
+	}
+	return ""
+}
+
+func (x *BceArc) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *BceArc) GetCover() string {
+	if x != nil {
+		return x.Cover
+	}
+	return ""
+}
+
+func (x *BceArc) GetDuration() int64 {
+	if x != nil {
+		return x.Duration
+	}
+	return 0
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/BceCreativeReply.java
+type BceCreativeReply struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Data *BceData `protobuf:"bytes,1,opt,name=data,proto3" json:"data,omitempty"`
+}
+
+func (x *BceCreativeReply) Reset() {
+	*x = BceCreativeReply{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[1]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *BceCreativeReply) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*BceCreativeReply) ProtoMessage() {}
+
+func (x *BceCreativeReply) ProtoReflect() protoreflect.Message {
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[1]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use BceCreativeReply.ProtoReflect.Descriptor instead.
+func (*BceCreativeReply) Descriptor() ([]byte, []int) {
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *BceCreativeReply) GetData() *BceData {
+	if x != nil {
+		return x.Data
+	}
+	return nil
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/BceCreativeReq.java
+type BceCreativeReq struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	AdExtra string `protobuf:"bytes,1,opt,name=adExtra,proto3" json:"adExtra,omitempty"`
+}
+
+func (x *BceCreativeReq) Reset() {
+	*x = BceCreativeReq{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *BceCreativeReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*BceCreativeReq) ProtoMessage() {}
+
+func (x *BceCreativeReq) ProtoReflect() protoreflect.Message {
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use BceCreativeReq.ProtoReflect.Descriptor instead.
+func (*BceCreativeReq) Descriptor() ([]byte, []int) {
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *BceCreativeReq) GetAdExtra() string {
+	if x != nil {
+		return x.AdExtra
+	}
+	return ""
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/BceData.java
+type BceData struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Content string            `protobuf:"bytes,1,opt,name=content,proto3" json:"content,omitempty"`
+	Arc     map[int64]*BceArc `protobuf:"bytes,2,rep,name=arc,proto3" json:"arc,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+}
+
+func (x *BceData) Reset() {
+	*x = BceData{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *BceData) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*BceData) ProtoMessage() {}
+
+func (x *BceData) ProtoReflect() protoreflect.Message {
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use BceData.ProtoReflect.Descriptor instead.
+func (*BceData) Descriptor() ([]byte, []int) {
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *BceData) GetContent() string {
+	if x != nil {
+		return x.Content
+	}
+	return ""
+}
+
+func (x *BceData) GetArc() map[int64]*BceArc {
+	if x != nil {
+		return x.Arc
+	}
+	return nil
 }
 
 // Source: com/bapis/bilibili/app/show/mixture/v1/ChannelRedirectReply.java
@@ -272,7 +512,7 @@ type ChannelRedirectReply struct {
 func (x *ChannelRedirectReply) Reset() {
 	*x = ChannelRedirectReply{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[0]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -285,7 +525,7 @@ func (x *ChannelRedirectReply) String() string {
 func (*ChannelRedirectReply) ProtoMessage() {}
 
 func (x *ChannelRedirectReply) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[0]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -298,7 +538,7 @@ func (x *ChannelRedirectReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChannelRedirectReply.ProtoReflect.Descriptor instead.
 func (*ChannelRedirectReply) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{0}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *ChannelRedirectReply) GetCode() int64 {
@@ -327,7 +567,7 @@ type ChannelRedirectReq struct {
 func (x *ChannelRedirectReq) Reset() {
 	*x = ChannelRedirectReq{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[1]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -340,7 +580,7 @@ func (x *ChannelRedirectReq) String() string {
 func (*ChannelRedirectReq) ProtoMessage() {}
 
 func (x *ChannelRedirectReq) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[1]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -353,7 +593,7 @@ func (x *ChannelRedirectReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChannelRedirectReq.ProtoReflect.Descriptor instead.
 func (*ChannelRedirectReq) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{1}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *ChannelRedirectReq) GetId() int64 {
@@ -377,7 +617,7 @@ type ClarityReply struct {
 func (x *ClarityReply) Reset() {
 	*x = ClarityReply{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[2]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -390,7 +630,7 @@ func (x *ClarityReply) String() string {
 func (*ClarityReply) ProtoMessage() {}
 
 func (x *ClarityReply) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[2]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -403,7 +643,7 @@ func (x *ClarityReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ClarityReply.ProtoReflect.Descriptor instead.
 func (*ClarityReply) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{2}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *ClarityReply) GetIsPlayStory() bool {
@@ -437,7 +677,7 @@ type ClarityReq struct {
 func (x *ClarityReq) Reset() {
 	*x = ClarityReq{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[3]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -450,7 +690,7 @@ func (x *ClarityReq) String() string {
 func (*ClarityReq) ProtoMessage() {}
 
 func (x *ClarityReq) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[3]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -463,7 +703,7 @@ func (x *ClarityReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ClarityReq.ProtoReflect.Descriptor instead.
 func (*ClarityReq) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{3}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{7}
 }
 
 // Source: com/bapis/bilibili/app/show/mixture/v1/EmptyReply.java
@@ -476,7 +716,7 @@ type EmptyReply struct {
 func (x *EmptyReply) Reset() {
 	*x = EmptyReply{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[4]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -489,7 +729,7 @@ func (x *EmptyReply) String() string {
 func (*EmptyReply) ProtoMessage() {}
 
 func (x *EmptyReply) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[4]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -502,7 +742,7 @@ func (x *EmptyReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EmptyReply.ProtoReflect.Descriptor instead.
 func (*EmptyReply) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{4}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{8}
 }
 
 // Source: com/bapis/bilibili/app/show/mixture/v1/GuideCard.java
@@ -518,7 +758,7 @@ type GuideCard struct {
 func (x *GuideCard) Reset() {
 	*x = GuideCard{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[5]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -531,7 +771,7 @@ func (x *GuideCard) String() string {
 func (*GuideCard) ProtoMessage() {}
 
 func (x *GuideCard) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[5]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -544,7 +784,7 @@ func (x *GuideCard) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GuideCard.ProtoReflect.Descriptor instead.
 func (*GuideCard) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{5}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GuideCard) GetImage() string {
@@ -574,7 +814,7 @@ type GuideItem struct {
 func (x *GuideItem) Reset() {
 	*x = GuideItem{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[6]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -587,7 +827,7 @@ func (x *GuideItem) String() string {
 func (*GuideItem) ProtoMessage() {}
 
 func (x *GuideItem) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[6]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -600,7 +840,7 @@ func (x *GuideItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GuideItem.ProtoReflect.Descriptor instead.
 func (*GuideItem) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{6}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GuideItem) GetCard() []*GuideCard {
@@ -633,7 +873,7 @@ type GuideTip struct {
 func (x *GuideTip) Reset() {
 	*x = GuideTip{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[7]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -646,7 +886,7 @@ func (x *GuideTip) String() string {
 func (*GuideTip) ProtoMessage() {}
 
 func (x *GuideTip) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[7]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -659,7 +899,7 @@ func (x *GuideTip) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GuideTip.ProtoReflect.Descriptor instead.
 func (*GuideTip) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{7}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *GuideTip) GetImage() string {
@@ -710,7 +950,7 @@ type RcmdReason struct {
 func (x *RcmdReason) Reset() {
 	*x = RcmdReason{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[8]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -723,7 +963,7 @@ func (x *RcmdReason) String() string {
 func (*RcmdReason) ProtoMessage() {}
 
 func (x *RcmdReason) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[8]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -736,7 +976,7 @@ func (x *RcmdReason) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RcmdReason.ProtoReflect.Descriptor instead.
 func (*RcmdReason) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{8}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *RcmdReason) GetContent() string {
@@ -773,7 +1013,7 @@ type RegionAv struct {
 func (x *RegionAv) Reset() {
 	*x = RegionAv{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[9]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -786,7 +1026,7 @@ func (x *RegionAv) String() string {
 func (*RegionAv) ProtoMessage() {}
 
 func (x *RegionAv) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[9]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -799,7 +1039,7 @@ func (x *RegionAv) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegionAv.ProtoReflect.Descriptor instead.
 func (*RegionAv) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{9}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *RegionAv) GetCover() string {
@@ -882,7 +1122,7 @@ type RegionBanner struct {
 func (x *RegionBanner) Reset() {
 	*x = RegionBanner{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[10]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -895,7 +1135,7 @@ func (x *RegionBanner) String() string {
 func (*RegionBanner) ProtoMessage() {}
 
 func (x *RegionBanner) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[10]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -908,7 +1148,7 @@ func (x *RegionBanner) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegionBanner.ProtoReflect.Descriptor instead.
 func (*RegionBanner) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{10}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *RegionBanner) GetTitle() string {
@@ -970,7 +1210,7 @@ type RegionCard struct {
 func (x *RegionCard) Reset() {
 	*x = RegionCard{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[11]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -983,7 +1223,7 @@ func (x *RegionCard) String() string {
 func (*RegionCard) ProtoMessage() {}
 
 func (x *RegionCard) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[11]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -996,7 +1236,7 @@ func (x *RegionCard) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegionCard.ProtoReflect.Descriptor instead.
 func (*RegionCard) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{11}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *RegionCard) GetType() RegionCardType {
@@ -1050,7 +1290,7 @@ type RegionContent struct {
 func (x *RegionContent) Reset() {
 	*x = RegionContent{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[12]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1063,7 +1303,7 @@ func (x *RegionContent) String() string {
 func (*RegionContent) ProtoMessage() {}
 
 func (x *RegionContent) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[12]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1076,7 +1316,7 @@ func (x *RegionContent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegionContent.ProtoReflect.Descriptor instead.
 func (*RegionContent) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{12}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *RegionContent) GetTitle() string {
@@ -1109,7 +1349,7 @@ type RegionIcon struct {
 func (x *RegionIcon) Reset() {
 	*x = RegionIcon{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[13]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1122,7 +1362,7 @@ func (x *RegionIcon) String() string {
 func (*RegionIcon) ProtoMessage() {}
 
 func (x *RegionIcon) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[13]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1135,7 +1375,7 @@ func (x *RegionIcon) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegionIcon.ProtoReflect.Descriptor instead.
 func (*RegionIcon) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{13}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *RegionIcon) GetImg() string {
@@ -1188,7 +1428,7 @@ type RegionIndexReply struct {
 func (x *RegionIndexReply) Reset() {
 	*x = RegionIndexReply{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[14]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1201,7 +1441,7 @@ func (x *RegionIndexReply) String() string {
 func (*RegionIndexReply) ProtoMessage() {}
 
 func (x *RegionIndexReply) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[14]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1214,7 +1454,7 @@ func (x *RegionIndexReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegionIndexReply.ProtoReflect.Descriptor instead.
 func (*RegionIndexReply) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{14}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *RegionIndexReply) GetBanner() []*RegionBanner {
@@ -1261,7 +1501,7 @@ type RegionIndexReq struct {
 func (x *RegionIndexReq) Reset() {
 	*x = RegionIndexReq{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[15]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1274,7 +1514,7 @@ func (x *RegionIndexReq) String() string {
 func (*RegionIndexReq) ProtoMessage() {}
 
 func (x *RegionIndexReq) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[15]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1287,7 +1527,7 @@ func (x *RegionIndexReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegionIndexReq.ProtoReflect.Descriptor instead.
 func (*RegionIndexReq) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{15}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *RegionIndexReq) GetRid() int64 {
@@ -1338,7 +1578,7 @@ type RegionLimit struct {
 func (x *RegionLimit) Reset() {
 	*x = RegionLimit{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[16]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1351,7 +1591,7 @@ func (x *RegionLimit) String() string {
 func (*RegionLimit) ProtoMessage() {}
 
 func (x *RegionLimit) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[16]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1364,7 +1604,7 @@ func (x *RegionLimit) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegionLimit.ProtoReflect.Descriptor instead.
 func (*RegionLimit) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{16}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *RegionLimit) GetCode() RegionLimitCode {
@@ -1394,7 +1634,7 @@ type RegionListReply struct {
 func (x *RegionListReply) Reset() {
 	*x = RegionListReply{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[17]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1407,7 +1647,7 @@ func (x *RegionListReply) String() string {
 func (*RegionListReply) ProtoMessage() {}
 
 func (x *RegionListReply) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[17]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1420,7 +1660,7 @@ func (x *RegionListReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegionListReply.ProtoReflect.Descriptor instead.
 func (*RegionListReply) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{17}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *RegionListReply) GetShortcut() *RegionContent {
@@ -1447,7 +1687,7 @@ type RegionListReq struct {
 func (x *RegionListReq) Reset() {
 	*x = RegionListReq{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[18]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1460,7 +1700,7 @@ func (x *RegionListReq) String() string {
 func (*RegionListReq) ProtoMessage() {}
 
 func (x *RegionListReq) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[18]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1473,7 +1713,7 @@ func (x *RegionListReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegionListReq.ProtoReflect.Descriptor instead.
 func (*RegionListReq) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{18}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{22}
 }
 
 // Source: com/bapis/bilibili/app/show/mixture/v1/RegionShortcutReply.java
@@ -1488,7 +1728,7 @@ type RegionShortcutReply struct {
 func (x *RegionShortcutReply) Reset() {
 	*x = RegionShortcutReply{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[19]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[23]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1501,7 +1741,7 @@ func (x *RegionShortcutReply) String() string {
 func (*RegionShortcutReply) ProtoMessage() {}
 
 func (x *RegionShortcutReply) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[19]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[23]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1514,7 +1754,7 @@ func (x *RegionShortcutReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegionShortcutReply.ProtoReflect.Descriptor instead.
 func (*RegionShortcutReply) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{19}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *RegionShortcutReply) GetLimit() *RegionLimit {
@@ -1536,7 +1776,7 @@ type RegionShortcutReq struct {
 func (x *RegionShortcutReq) Reset() {
 	*x = RegionShortcutReq{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[20]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[24]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1549,7 +1789,7 @@ func (x *RegionShortcutReq) String() string {
 func (*RegionShortcutReq) ProtoMessage() {}
 
 func (x *RegionShortcutReq) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[20]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[24]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1562,7 +1802,7 @@ func (x *RegionShortcutReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegionShortcutReq.ProtoReflect.Descriptor instead.
 func (*RegionShortcutReq) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{20}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *RegionShortcutReq) GetUniqueId() []int64 {
@@ -1570,6 +1810,182 @@ func (x *RegionShortcutReq) GetUniqueId() []int64 {
 		return x.UniqueId
 	}
 	return nil
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/Stat.java
+type Stat struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Vt      *StatInfo `protobuf:"bytes,1,opt,name=vt,proto3" json:"vt,omitempty"`
+	Danmaku *StatInfo `protobuf:"bytes,2,opt,name=danmaku,proto3" json:"danmaku,omitempty"`
+	Reply   int64     `protobuf:"varint,3,opt,name=reply,proto3" json:"reply,omitempty"`
+	Fav     int64     `protobuf:"varint,4,opt,name=fav,proto3" json:"fav,omitempty"`
+	Coin    int64     `protobuf:"varint,5,opt,name=coin,proto3" json:"coin,omitempty"`
+	Share   int64     `protobuf:"varint,6,opt,name=share,proto3" json:"share,omitempty"`
+	Like    int64     `protobuf:"varint,7,opt,name=like,proto3" json:"like,omitempty"`
+	Follow  int64     `protobuf:"varint,8,opt,name=follow,proto3" json:"follow,omitempty"`
+}
+
+func (x *Stat) Reset() {
+	*x = Stat{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[25]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Stat) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Stat) ProtoMessage() {}
+
+func (x *Stat) ProtoReflect() protoreflect.Message {
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[25]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Stat.ProtoReflect.Descriptor instead.
+func (*Stat) Descriptor() ([]byte, []int) {
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{25}
+}
+
+func (x *Stat) GetVt() *StatInfo {
+	if x != nil {
+		return x.Vt
+	}
+	return nil
+}
+
+func (x *Stat) GetDanmaku() *StatInfo {
+	if x != nil {
+		return x.Danmaku
+	}
+	return nil
+}
+
+func (x *Stat) GetReply() int64 {
+	if x != nil {
+		return x.Reply
+	}
+	return 0
+}
+
+func (x *Stat) GetFav() int64 {
+	if x != nil {
+		return x.Fav
+	}
+	return 0
+}
+
+func (x *Stat) GetCoin() int64 {
+	if x != nil {
+		return x.Coin
+	}
+	return 0
+}
+
+func (x *Stat) GetShare() int64 {
+	if x != nil {
+		return x.Share
+	}
+	return 0
+}
+
+func (x *Stat) GetLike() int64 {
+	if x != nil {
+		return x.Like
+	}
+	return 0
+}
+
+func (x *Stat) GetFollow() int64 {
+	if x != nil {
+		return x.Follow
+	}
+	return 0
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/StatInfo.java
+type StatInfo struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Value    int64  `protobuf:"varint,1,opt,name=value,proto3" json:"value,omitempty"`
+	Text     string `protobuf:"bytes,2,opt,name=text,proto3" json:"text,omitempty"`
+	PureText string `protobuf:"bytes,3,opt,name=pureText,proto3" json:"pureText,omitempty"`
+	Icon     string `protobuf:"bytes,4,opt,name=icon,proto3" json:"icon,omitempty"`
+}
+
+func (x *StatInfo) Reset() {
+	*x = StatInfo{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[26]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *StatInfo) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StatInfo) ProtoMessage() {}
+
+func (x *StatInfo) ProtoReflect() protoreflect.Message {
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[26]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StatInfo.ProtoReflect.Descriptor instead.
+func (*StatInfo) Descriptor() ([]byte, []int) {
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{26}
+}
+
+func (x *StatInfo) GetValue() int64 {
+	if x != nil {
+		return x.Value
+	}
+	return 0
+}
+
+func (x *StatInfo) GetText() string {
+	if x != nil {
+		return x.Text
+	}
+	return ""
+}
+
+func (x *StatInfo) GetPureText() string {
+	if x != nil {
+		return x.PureText
+	}
+	return ""
+}
+
+func (x *StatInfo) GetIcon() string {
+	if x != nil {
+		return x.Icon
+	}
+	return ""
 }
 
 // Source: com/bapis/bilibili/app/show/mixture/v1/ThreePoint.java
@@ -1584,7 +2000,7 @@ type ThreePoint struct {
 func (x *ThreePoint) Reset() {
 	*x = ThreePoint{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[21]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[27]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1597,7 +2013,7 @@ func (x *ThreePoint) String() string {
 func (*ThreePoint) ProtoMessage() {}
 
 func (x *ThreePoint) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[21]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[27]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1610,7 +2026,7 @@ func (x *ThreePoint) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ThreePoint.ProtoReflect.Descriptor instead.
 func (*ThreePoint) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{21}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *ThreePoint) GetWatchLater() bool {
@@ -1632,7 +2048,7 @@ type UpItem struct {
 func (x *UpItem) Reset() {
 	*x = UpItem{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[22]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[28]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1645,7 +2061,7 @@ func (x *UpItem) String() string {
 func (*UpItem) ProtoMessage() {}
 
 func (x *UpItem) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[22]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[28]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1658,7 +2074,7 @@ func (x *UpItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpItem.ProtoReflect.Descriptor instead.
 func (*UpItem) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{22}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *UpItem) GetIcon() string {
@@ -1682,7 +2098,7 @@ type WidgetGuideReply struct {
 func (x *WidgetGuideReply) Reset() {
 	*x = WidgetGuideReply{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[23]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[29]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1695,7 +2111,7 @@ func (x *WidgetGuideReply) String() string {
 func (*WidgetGuideReply) ProtoMessage() {}
 
 func (x *WidgetGuideReply) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[23]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[29]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1708,7 +2124,7 @@ func (x *WidgetGuideReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WidgetGuideReply.ProtoReflect.Descriptor instead.
 func (*WidgetGuideReply) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{23}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *WidgetGuideReply) GetCode() int32 {
@@ -1749,7 +2165,7 @@ type WidgetGuideReq struct {
 func (x *WidgetGuideReq) Reset() {
 	*x = WidgetGuideReq{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[24]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[30]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1762,7 +2178,7 @@ func (x *WidgetGuideReq) String() string {
 func (*WidgetGuideReq) ProtoMessage() {}
 
 func (x *WidgetGuideReq) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[24]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[30]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1775,7 +2191,7 @@ func (x *WidgetGuideReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WidgetGuideReq.ProtoReflect.Descriptor instead.
 func (*WidgetGuideReq) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{24}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *WidgetGuideReq) GetFromSpmid() string {
@@ -1833,7 +2249,7 @@ type WidgetGuideUpdateReq struct {
 func (x *WidgetGuideUpdateReq) Reset() {
 	*x = WidgetGuideUpdateReq{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[25]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[31]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1846,7 +2262,7 @@ func (x *WidgetGuideUpdateReq) String() string {
 func (*WidgetGuideUpdateReq) ProtoMessage() {}
 
 func (x *WidgetGuideUpdateReq) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[25]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[31]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1859,7 +2275,7 @@ func (x *WidgetGuideUpdateReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WidgetGuideUpdateReq.ProtoReflect.Descriptor instead.
 func (*WidgetGuideUpdateReq) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{25}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{31}
 }
 
 func (x *WidgetGuideUpdateReq) GetFromSpmid() string {
@@ -1896,7 +2312,7 @@ type WidgetItem struct {
 func (x *WidgetItem) Reset() {
 	*x = WidgetItem{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[26]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[32]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1909,7 +2325,7 @@ func (x *WidgetItem) String() string {
 func (*WidgetItem) ProtoMessage() {}
 
 func (x *WidgetItem) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[26]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[32]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1922,7 +2338,7 @@ func (x *WidgetItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WidgetItem.ProtoReflect.Descriptor instead.
 func (*WidgetItem) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{26}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{32}
 }
 
 func (x *WidgetItem) GetCover() string {
@@ -2000,7 +2416,7 @@ type WidgetReply struct {
 func (x *WidgetReply) Reset() {
 	*x = WidgetReply{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[27]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[33]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2013,7 +2429,7 @@ func (x *WidgetReply) String() string {
 func (*WidgetReply) ProtoMessage() {}
 
 func (x *WidgetReply) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[27]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[33]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2026,7 +2442,7 @@ func (x *WidgetReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WidgetReply.ProtoReflect.Descriptor instead.
 func (*WidgetReply) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{27}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{33}
 }
 
 func (x *WidgetReply) GetItem() []*WidgetItem {
@@ -2049,7 +2465,7 @@ type WidgetReq struct {
 func (x *WidgetReq) Reset() {
 	*x = WidgetReq{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[28]
+		mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[34]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2062,7 +2478,7 @@ func (x *WidgetReq) String() string {
 func (*WidgetReq) ProtoMessage() {}
 
 func (x *WidgetReq) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[28]
+	mi := &file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[34]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2075,7 +2491,7 @@ func (x *WidgetReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WidgetReq.ProtoReflect.Descriptor instead.
 func (*WidgetReq) Descriptor() ([]byte, []int) {
-	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{28}
+	return file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP(), []int{34}
 }
 
 func (x *WidgetReq) GetFromSpmid() string {
@@ -2103,7 +2519,41 @@ var file_bilibili_app_show_mixture_v1_messages_proto_rawDesc = []byte{
 	0x72, 0x65, 0x2e, 0x76, 0x31, 0x1a, 0x31, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2f,
 	0x61, 0x70, 0x70, 0x2f, 0x61, 0x72, 0x63, 0x68, 0x69, 0x76, 0x65, 0x2f, 0x6d, 0x69, 0x64, 0x64,
 	0x6c, 0x65, 0x77, 0x61, 0x72, 0x65, 0x2f, 0x76, 0x31, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67,
-	0x65, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x3c, 0x0a, 0x14, 0x43, 0x68, 0x61, 0x6e,
+	0x65, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xbe, 0x01, 0x0a, 0x06, 0x42, 0x63, 0x65,
+	0x41, 0x72, 0x63, 0x12, 0x10, 0x0a, 0x03, 0x61, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03,
+	0x52, 0x03, 0x61, 0x69, 0x64, 0x12, 0x40, 0x0a, 0x04, 0x73, 0x74, 0x61, 0x74, 0x18, 0x04, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x2c, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e,
+	0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x73, 0x68, 0x6f,
+	0x77, 0x2e, 0x6d, 0x69, 0x78, 0x74, 0x75, 0x72, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x61,
+	0x74, 0x52, 0x04, 0x73, 0x74, 0x61, 0x74, 0x12, 0x18, 0x0a, 0x07, 0x6a, 0x75, 0x6d, 0x70, 0x55,
+	0x72, 0x6c, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x6a, 0x75, 0x6d, 0x70, 0x55, 0x72,
+	0x6c, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x6f, 0x76, 0x65, 0x72,
+	0x18, 0x07, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x12, 0x1a, 0x0a,
+	0x08, 0x64, 0x75, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x08, 0x20, 0x01, 0x28, 0x03, 0x52,
+	0x08, 0x64, 0x75, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x57, 0x0a, 0x10, 0x42, 0x63, 0x65,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x69, 0x76, 0x65, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x12, 0x43, 0x0a,
+	0x04, 0x64, 0x61, 0x74, 0x61, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2f, 0x2e, 0x63, 0x6f,
+	0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69,
+	0x2e, 0x61, 0x70, 0x70, 0x2e, 0x73, 0x68, 0x6f, 0x77, 0x2e, 0x6d, 0x69, 0x78, 0x74, 0x75, 0x72,
+	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x42, 0x63, 0x65, 0x44, 0x61, 0x74, 0x61, 0x52, 0x04, 0x64, 0x61,
+	0x74, 0x61, 0x22, 0x2a, 0x0a, 0x0e, 0x42, 0x63, 0x65, 0x43, 0x72, 0x65, 0x61, 0x74, 0x69, 0x76,
+	0x65, 0x52, 0x65, 0x71, 0x12, 0x18, 0x0a, 0x07, 0x61, 0x64, 0x45, 0x78, 0x74, 0x72, 0x61, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x61, 0x64, 0x45, 0x78, 0x74, 0x72, 0x61, 0x22, 0xd7,
+	0x01, 0x0a, 0x07, 0x42, 0x63, 0x65, 0x44, 0x61, 0x74, 0x61, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x6f,
+	0x6e, 0x74, 0x65, 0x6e, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x63, 0x6f, 0x6e,
+	0x74, 0x65, 0x6e, 0x74, 0x12, 0x4a, 0x0a, 0x03, 0x61, 0x72, 0x63, 0x18, 0x02, 0x20, 0x03, 0x28,
+	0x0b, 0x32, 0x38, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69,
+	0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x73, 0x68, 0x6f, 0x77, 0x2e,
+	0x6d, 0x69, 0x78, 0x74, 0x75, 0x72, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x42, 0x63, 0x65, 0x44, 0x61,
+	0x74, 0x61, 0x2e, 0x41, 0x72, 0x63, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x52, 0x03, 0x61, 0x72, 0x63,
+	0x1a, 0x66, 0x0a, 0x08, 0x41, 0x72, 0x63, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x12, 0x10, 0x0a, 0x03,
+	0x6b, 0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x44,
+	0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2e, 0x2e,
+	0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69,
+	0x6c, 0x69, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x73, 0x68, 0x6f, 0x77, 0x2e, 0x6d, 0x69, 0x78, 0x74,
+	0x75, 0x72, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x42, 0x63, 0x65, 0x41, 0x72, 0x63, 0x52, 0x05, 0x76,
+	0x61, 0x6c, 0x75, 0x65, 0x3a, 0x02, 0x38, 0x01, 0x22, 0x3c, 0x0a, 0x14, 0x43, 0x68, 0x61, 0x6e,
 	0x6e, 0x65, 0x6c, 0x52, 0x65, 0x64, 0x69, 0x72, 0x65, 0x63, 0x74, 0x52, 0x65, 0x70, 0x6c, 0x79,
 	0x12, 0x12, 0x0a, 0x04, 0x63, 0x6f, 0x64, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x04,
 	0x63, 0x6f, 0x64, 0x65, 0x12, 0x10, 0x0a, 0x03, 0x75, 0x72, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28,
@@ -2260,103 +2710,127 @@ var file_bilibili_app_show_mixture_v1_messages_proto_rawDesc = []byte{
 	0x6d, 0x69, 0x74, 0x22, 0x2f, 0x0a, 0x11, 0x52, 0x65, 0x67, 0x69, 0x6f, 0x6e, 0x53, 0x68, 0x6f,
 	0x72, 0x74, 0x63, 0x75, 0x74, 0x52, 0x65, 0x71, 0x12, 0x1a, 0x0a, 0x08, 0x75, 0x6e, 0x69, 0x71,
 	0x75, 0x65, 0x49, 0x64, 0x18, 0x01, 0x20, 0x03, 0x28, 0x03, 0x52, 0x08, 0x75, 0x6e, 0x69, 0x71,
-	0x75, 0x65, 0x49, 0x64, 0x22, 0x2c, 0x0a, 0x0a, 0x54, 0x68, 0x72, 0x65, 0x65, 0x50, 0x6f, 0x69,
-	0x6e, 0x74, 0x12, 0x1e, 0x0a, 0x0a, 0x77, 0x61, 0x74, 0x63, 0x68, 0x4c, 0x61, 0x74, 0x65, 0x72,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x0a, 0x77, 0x61, 0x74, 0x63, 0x68, 0x4c, 0x61, 0x74,
-	0x65, 0x72, 0x22, 0x1c, 0x0a, 0x06, 0x55, 0x70, 0x49, 0x74, 0x65, 0x6d, 0x12, 0x12, 0x0a, 0x04,
-	0x69, 0x63, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x69, 0x63, 0x6f, 0x6e,
-	0x22, 0xbb, 0x01, 0x0a, 0x10, 0x57, 0x69, 0x64, 0x67, 0x65, 0x74, 0x47, 0x75, 0x69, 0x64, 0x65,
-	0x52, 0x65, 0x70, 0x6c, 0x79, 0x12, 0x12, 0x0a, 0x04, 0x63, 0x6f, 0x64, 0x65, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x05, 0x52, 0x04, 0x63, 0x6f, 0x64, 0x65, 0x12, 0x4f, 0x0a, 0x09, 0x67, 0x75, 0x69,
-	0x64, 0x65, 0x49, 0x74, 0x65, 0x6d, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x31, 0x2e, 0x63,
-	0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c,
-	0x69, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x73, 0x68, 0x6f, 0x77, 0x2e, 0x6d, 0x69, 0x78, 0x74, 0x75,
-	0x72, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x75, 0x69, 0x64, 0x65, 0x49, 0x74, 0x65, 0x6d, 0x52,
-	0x09, 0x67, 0x75, 0x69, 0x64, 0x65, 0x49, 0x74, 0x65, 0x6d, 0x12, 0x42, 0x0a, 0x03, 0x74, 0x69,
-	0x70, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x30, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61,
+	0x75, 0x65, 0x49, 0x64, 0x22, 0x92, 0x02, 0x0a, 0x04, 0x53, 0x74, 0x61, 0x74, 0x12, 0x40, 0x0a,
+	0x02, 0x76, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x30, 0x2e, 0x63, 0x6f, 0x6d, 0x2e,
+	0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61,
+	0x70, 0x70, 0x2e, 0x73, 0x68, 0x6f, 0x77, 0x2e, 0x6d, 0x69, 0x78, 0x74, 0x75, 0x72, 0x65, 0x2e,
+	0x76, 0x31, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x02, 0x76, 0x74, 0x12,
+	0x4a, 0x0a, 0x07, 0x64, 0x61, 0x6e, 0x6d, 0x61, 0x6b, 0x75, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x30, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c,
+	0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x73, 0x68, 0x6f, 0x77, 0x2e, 0x6d,
+	0x69, 0x78, 0x74, 0x75, 0x72, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x49, 0x6e,
+	0x66, 0x6f, 0x52, 0x07, 0x64, 0x61, 0x6e, 0x6d, 0x61, 0x6b, 0x75, 0x12, 0x14, 0x0a, 0x05, 0x72,
+	0x65, 0x70, 0x6c, 0x79, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x05, 0x72, 0x65, 0x70, 0x6c,
+	0x79, 0x12, 0x10, 0x0a, 0x03, 0x66, 0x61, 0x76, 0x18, 0x04, 0x20, 0x01, 0x28, 0x03, 0x52, 0x03,
+	0x66, 0x61, 0x76, 0x12, 0x12, 0x0a, 0x04, 0x63, 0x6f, 0x69, 0x6e, 0x18, 0x05, 0x20, 0x01, 0x28,
+	0x03, 0x52, 0x04, 0x63, 0x6f, 0x69, 0x6e, 0x12, 0x14, 0x0a, 0x05, 0x73, 0x68, 0x61, 0x72, 0x65,
+	0x18, 0x06, 0x20, 0x01, 0x28, 0x03, 0x52, 0x05, 0x73, 0x68, 0x61, 0x72, 0x65, 0x12, 0x12, 0x0a,
+	0x04, 0x6c, 0x69, 0x6b, 0x65, 0x18, 0x07, 0x20, 0x01, 0x28, 0x03, 0x52, 0x04, 0x6c, 0x69, 0x6b,
+	0x65, 0x12, 0x16, 0x0a, 0x06, 0x66, 0x6f, 0x6c, 0x6c, 0x6f, 0x77, 0x18, 0x08, 0x20, 0x01, 0x28,
+	0x03, 0x52, 0x06, 0x66, 0x6f, 0x6c, 0x6c, 0x6f, 0x77, 0x22, 0x64, 0x0a, 0x08, 0x53, 0x74, 0x61,
+	0x74, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x03, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x74,
+	0x65, 0x78, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x74, 0x65, 0x78, 0x74, 0x12,
+	0x1a, 0x0a, 0x08, 0x70, 0x75, 0x72, 0x65, 0x54, 0x65, 0x78, 0x74, 0x18, 0x03, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x08, 0x70, 0x75, 0x72, 0x65, 0x54, 0x65, 0x78, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x69,
+	0x63, 0x6f, 0x6e, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x69, 0x63, 0x6f, 0x6e, 0x22,
+	0x2c, 0x0a, 0x0a, 0x54, 0x68, 0x72, 0x65, 0x65, 0x50, 0x6f, 0x69, 0x6e, 0x74, 0x12, 0x1e, 0x0a,
+	0x0a, 0x77, 0x61, 0x74, 0x63, 0x68, 0x4c, 0x61, 0x74, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x08, 0x52, 0x0a, 0x77, 0x61, 0x74, 0x63, 0x68, 0x4c, 0x61, 0x74, 0x65, 0x72, 0x22, 0x1c, 0x0a,
+	0x06, 0x55, 0x70, 0x49, 0x74, 0x65, 0x6d, 0x12, 0x12, 0x0a, 0x04, 0x69, 0x63, 0x6f, 0x6e, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x69, 0x63, 0x6f, 0x6e, 0x22, 0xbb, 0x01, 0x0a, 0x10,
+	0x57, 0x69, 0x64, 0x67, 0x65, 0x74, 0x47, 0x75, 0x69, 0x64, 0x65, 0x52, 0x65, 0x70, 0x6c, 0x79,
+	0x12, 0x12, 0x0a, 0x04, 0x63, 0x6f, 0x64, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x04,
+	0x63, 0x6f, 0x64, 0x65, 0x12, 0x4f, 0x0a, 0x09, 0x67, 0x75, 0x69, 0x64, 0x65, 0x49, 0x74, 0x65,
+	0x6d, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61,
 	0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x70, 0x70,
 	0x2e, 0x73, 0x68, 0x6f, 0x77, 0x2e, 0x6d, 0x69, 0x78, 0x74, 0x75, 0x72, 0x65, 0x2e, 0x76, 0x31,
-	0x2e, 0x47, 0x75, 0x69, 0x64, 0x65, 0x54, 0x69, 0x70, 0x52, 0x03, 0x74, 0x69, 0x70, 0x22, 0xb0,
-	0x02, 0x0a, 0x0e, 0x57, 0x69, 0x64, 0x67, 0x65, 0x74, 0x47, 0x75, 0x69, 0x64, 0x65, 0x52, 0x65,
-	0x71, 0x12, 0x1c, 0x0a, 0x09, 0x66, 0x72, 0x6f, 0x6d, 0x53, 0x70, 0x6d, 0x69, 0x64, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x66, 0x72, 0x6f, 0x6d, 0x53, 0x70, 0x6d, 0x69, 0x64, 0x12,
-	0x4f, 0x0a, 0x09, 0x67, 0x75, 0x69, 0x64, 0x65, 0x54, 0x79, 0x70, 0x65, 0x18, 0x02, 0x20, 0x01,
-	0x28, 0x0e, 0x32, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62,
+	0x2e, 0x47, 0x75, 0x69, 0x64, 0x65, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x09, 0x67, 0x75, 0x69, 0x64,
+	0x65, 0x49, 0x74, 0x65, 0x6d, 0x12, 0x42, 0x0a, 0x03, 0x74, 0x69, 0x70, 0x18, 0x03, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x30, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62,
 	0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x73, 0x68, 0x6f, 0x77,
 	0x2e, 0x6d, 0x69, 0x78, 0x74, 0x75, 0x72, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x75, 0x69, 0x64,
-	0x65, 0x54, 0x79, 0x70, 0x65, 0x52, 0x09, 0x67, 0x75, 0x69, 0x64, 0x65, 0x54, 0x79, 0x70, 0x65,
-	0x12, 0x14, 0x0a, 0x05, 0x75, 0x70, 0x4d, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52,
-	0x05, 0x75, 0x70, 0x4d, 0x69, 0x64, 0x12, 0x67, 0x0a, 0x11, 0x67, 0x75, 0x69, 0x64, 0x65, 0x53,
-	0x74, 0x79, 0x6c, 0x65, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x04, 0x20, 0x01, 0x28,
-	0x0e, 0x32, 0x39, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69,
-	0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x73, 0x68, 0x6f, 0x77, 0x2e,
-	0x6d, 0x69, 0x78, 0x74, 0x75, 0x72, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x75, 0x69, 0x64, 0x65,
-	0x53, 0x74, 0x79, 0x6c, 0x65, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x11, 0x67, 0x75,
-	0x69, 0x64, 0x65, 0x53, 0x74, 0x79, 0x6c, 0x65, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12,
-	0x1e, 0x0a, 0x0a, 0x73, 0x6b, 0x69, 0x70, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x18, 0x05, 0x20,
-	0x01, 0x28, 0x08, 0x52, 0x0a, 0x73, 0x6b, 0x69, 0x70, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x12,
-	0x10, 0x0a, 0x03, 0x61, 0x69, 0x64, 0x18, 0x06, 0x20, 0x01, 0x28, 0x03, 0x52, 0x03, 0x61, 0x69,
-	0x64, 0x22, 0x85, 0x01, 0x0a, 0x14, 0x57, 0x69, 0x64, 0x67, 0x65, 0x74, 0x47, 0x75, 0x69, 0x64,
-	0x65, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x12, 0x1c, 0x0a, 0x09, 0x66, 0x72,
-	0x6f, 0x6d, 0x53, 0x70, 0x6d, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x66,
-	0x72, 0x6f, 0x6d, 0x53, 0x70, 0x6d, 0x69, 0x64, 0x12, 0x4f, 0x0a, 0x09, 0x67, 0x75, 0x69, 0x64,
-	0x65, 0x54, 0x79, 0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x31, 0x2e, 0x63, 0x6f,
-	0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69,
-	0x2e, 0x61, 0x70, 0x70, 0x2e, 0x73, 0x68, 0x6f, 0x77, 0x2e, 0x6d, 0x69, 0x78, 0x74, 0x75, 0x72,
-	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x75, 0x69, 0x64, 0x65, 0x54, 0x79, 0x70, 0x65, 0x52, 0x09,
-	0x67, 0x75, 0x69, 0x64, 0x65, 0x54, 0x79, 0x70, 0x65, 0x22, 0x86, 0x02, 0x0a, 0x0a, 0x57, 0x69,
-	0x64, 0x67, 0x65, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x6f, 0x76, 0x65,
-	0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x12, 0x12,
-	0x0a, 0x04, 0x76, 0x69, 0x65, 0x77, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x76, 0x69,
-	0x65, 0x77, 0x12, 0x52, 0x0a, 0x0a, 0x72, 0x63, 0x6d, 0x64, 0x52, 0x65, 0x61, 0x73, 0x6f, 0x6e,
-	0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70,
+	0x65, 0x54, 0x69, 0x70, 0x52, 0x03, 0x74, 0x69, 0x70, 0x22, 0xb0, 0x02, 0x0a, 0x0e, 0x57, 0x69,
+	0x64, 0x67, 0x65, 0x74, 0x47, 0x75, 0x69, 0x64, 0x65, 0x52, 0x65, 0x71, 0x12, 0x1c, 0x0a, 0x09,
+	0x66, 0x72, 0x6f, 0x6d, 0x53, 0x70, 0x6d, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x09, 0x66, 0x72, 0x6f, 0x6d, 0x53, 0x70, 0x6d, 0x69, 0x64, 0x12, 0x4f, 0x0a, 0x09, 0x67, 0x75,
+	0x69, 0x64, 0x65, 0x54, 0x79, 0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x31, 0x2e,
+	0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69,
+	0x6c, 0x69, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x73, 0x68, 0x6f, 0x77, 0x2e, 0x6d, 0x69, 0x78, 0x74,
+	0x75, 0x72, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x75, 0x69, 0x64, 0x65, 0x54, 0x79, 0x70, 0x65,
+	0x52, 0x09, 0x67, 0x75, 0x69, 0x64, 0x65, 0x54, 0x79, 0x70, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x75,
+	0x70, 0x4d, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x05, 0x75, 0x70, 0x4d, 0x69,
+	0x64, 0x12, 0x67, 0x0a, 0x11, 0x67, 0x75, 0x69, 0x64, 0x65, 0x53, 0x74, 0x79, 0x6c, 0x65, 0x56,
+	0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x39, 0x2e, 0x63,
+	0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c,
+	0x69, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x73, 0x68, 0x6f, 0x77, 0x2e, 0x6d, 0x69, 0x78, 0x74, 0x75,
+	0x72, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x75, 0x69, 0x64, 0x65, 0x53, 0x74, 0x79, 0x6c, 0x65,
+	0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x11, 0x67, 0x75, 0x69, 0x64, 0x65, 0x53, 0x74,
+	0x79, 0x6c, 0x65, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x1e, 0x0a, 0x0a, 0x73, 0x6b,
+	0x69, 0x70, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x08, 0x52, 0x0a,
+	0x73, 0x6b, 0x69, 0x70, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x12, 0x10, 0x0a, 0x03, 0x61, 0x69,
+	0x64, 0x18, 0x06, 0x20, 0x01, 0x28, 0x03, 0x52, 0x03, 0x61, 0x69, 0x64, 0x22, 0x85, 0x01, 0x0a,
+	0x14, 0x57, 0x69, 0x64, 0x67, 0x65, 0x74, 0x47, 0x75, 0x69, 0x64, 0x65, 0x55, 0x70, 0x64, 0x61,
+	0x74, 0x65, 0x52, 0x65, 0x71, 0x12, 0x1c, 0x0a, 0x09, 0x66, 0x72, 0x6f, 0x6d, 0x53, 0x70, 0x6d,
+	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x66, 0x72, 0x6f, 0x6d, 0x53, 0x70,
+	0x6d, 0x69, 0x64, 0x12, 0x4f, 0x0a, 0x09, 0x67, 0x75, 0x69, 0x64, 0x65, 0x54, 0x79, 0x70, 0x65,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70,
 	0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x70, 0x70, 0x2e,
 	0x73, 0x68, 0x6f, 0x77, 0x2e, 0x6d, 0x69, 0x78, 0x74, 0x75, 0x72, 0x65, 0x2e, 0x76, 0x31, 0x2e,
-	0x52, 0x63, 0x6d, 0x64, 0x52, 0x65, 0x61, 0x73, 0x6f, 0x6e, 0x52, 0x0a, 0x72, 0x63, 0x6d, 0x64,
-	0x52, 0x65, 0x61, 0x73, 0x6f, 0x6e, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18,
-	0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x12, 0x0a, 0x04,
-	0x6e, 0x61, 0x6d, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65,
-	0x12, 0x10, 0x0a, 0x03, 0x75, 0x72, 0x69, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x75,
-	0x72, 0x69, 0x12, 0x12, 0x0a, 0x04, 0x67, 0x6f, 0x74, 0x6f, 0x18, 0x07, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x04, 0x67, 0x6f, 0x74, 0x6f, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x08, 0x20, 0x01,
-	0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x12, 0x1a, 0x0a, 0x08, 0x76, 0x69, 0x65, 0x77, 0x49, 0x63,
-	0x6f, 0x6e, 0x18, 0x09, 0x20, 0x01, 0x28, 0x05, 0x52, 0x08, 0x76, 0x69, 0x65, 0x77, 0x49, 0x63,
-	0x6f, 0x6e, 0x22, 0x55, 0x0a, 0x0b, 0x57, 0x69, 0x64, 0x67, 0x65, 0x74, 0x52, 0x65, 0x70, 0x6c,
-	0x79, 0x12, 0x46, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32,
-	0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69,
-	0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x73, 0x68, 0x6f, 0x77, 0x2e, 0x6d, 0x69,
-	0x78, 0x74, 0x75, 0x72, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x57, 0x69, 0x64, 0x67, 0x65, 0x74, 0x49,
-	0x74, 0x65, 0x6d, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x22, 0x41, 0x0a, 0x09, 0x57, 0x69, 0x64,
-	0x67, 0x65, 0x74, 0x52, 0x65, 0x71, 0x12, 0x1c, 0x0a, 0x09, 0x66, 0x72, 0x6f, 0x6d, 0x53, 0x70,
-	0x6d, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x66, 0x72, 0x6f, 0x6d, 0x53,
-	0x70, 0x6d, 0x69, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x70, 0x61, 0x67, 0x65, 0x4e, 0x6f, 0x18, 0x02,
-	0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x70, 0x61, 0x67, 0x65, 0x4e, 0x6f, 0x2a, 0x46, 0x0a, 0x11,
-	0x47, 0x75, 0x69, 0x64, 0x65, 0x53, 0x74, 0x79, 0x6c, 0x65, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f,
-	0x6e, 0x12, 0x17, 0x0a, 0x13, 0x47, 0x55, 0x49, 0x44, 0x45, 0x5f, 0x53, 0x54, 0x59, 0x4c, 0x45,
-	0x5f, 0x44, 0x45, 0x46, 0x41, 0x55, 0x4c, 0x54, 0x10, 0x00, 0x12, 0x18, 0x0a, 0x14, 0x47, 0x55,
-	0x49, 0x44, 0x45, 0x5f, 0x53, 0x54, 0x59, 0x4c, 0x45, 0x5f, 0x46, 0x55, 0x4e, 0x43, 0x5f, 0x4e,
-	0x45, 0x57, 0x10, 0x01, 0x2a, 0x38, 0x0a, 0x09, 0x47, 0x75, 0x69, 0x64, 0x65, 0x54, 0x79, 0x70,
-	0x65, 0x12, 0x16, 0x0a, 0x12, 0x47, 0x55, 0x49, 0x44, 0x45, 0x5f, 0x54, 0x59, 0x50, 0x45, 0x5f,
-	0x44, 0x45, 0x46, 0x41, 0x55, 0x4c, 0x54, 0x10, 0x00, 0x12, 0x13, 0x0a, 0x0f, 0x47, 0x55, 0x49,
-	0x44, 0x45, 0x5f, 0x54, 0x59, 0x50, 0x45, 0x5f, 0x46, 0x55, 0x4e, 0x43, 0x10, 0x01, 0x2a, 0x47,
-	0x0a, 0x0e, 0x52, 0x65, 0x67, 0x69, 0x6f, 0x6e, 0x43, 0x61, 0x72, 0x64, 0x54, 0x79, 0x70, 0x65,
-	0x12, 0x1c, 0x0a, 0x18, 0x52, 0x45, 0x47, 0x49, 0x4f, 0x4e, 0x5f, 0x43, 0x41, 0x52, 0x44, 0x5f,
-	0x54, 0x59, 0x50, 0x45, 0x5f, 0x44, 0x45, 0x46, 0x41, 0x55, 0x4c, 0x54, 0x10, 0x00, 0x12, 0x17,
-	0x0a, 0x13, 0x52, 0x45, 0x47, 0x49, 0x4f, 0x4e, 0x5f, 0x43, 0x41, 0x52, 0x44, 0x5f, 0x54, 0x59,
-	0x50, 0x45, 0x5f, 0x41, 0x56, 0x10, 0x01, 0x2a, 0x88, 0x01, 0x0a, 0x0f, 0x52, 0x65, 0x67, 0x69,
-	0x6f, 0x6e, 0x4c, 0x69, 0x6d, 0x69, 0x74, 0x43, 0x6f, 0x64, 0x65, 0x12, 0x1d, 0x0a, 0x19, 0x52,
-	0x45, 0x47, 0x49, 0x4f, 0x4e, 0x5f, 0x4c, 0x49, 0x4d, 0x49, 0x54, 0x5f, 0x43, 0x4f, 0x44, 0x45,
-	0x5f, 0x44, 0x45, 0x46, 0x41, 0x55, 0x4c, 0x54, 0x10, 0x00, 0x12, 0x1e, 0x0a, 0x1a, 0x52, 0x45,
-	0x47, 0x49, 0x4f, 0x4e, 0x5f, 0x4c, 0x49, 0x4d, 0x49, 0x54, 0x5f, 0x43, 0x4f, 0x44, 0x45, 0x5f,
-	0x4e, 0x4f, 0x5f, 0x4c, 0x4f, 0x47, 0x49, 0x4e, 0x10, 0x01, 0x12, 0x19, 0x0a, 0x15, 0x52, 0x45,
-	0x47, 0x49, 0x4f, 0x4e, 0x5f, 0x4c, 0x49, 0x4d, 0x49, 0x54, 0x5f, 0x43, 0x4f, 0x44, 0x45, 0x5f,
-	0x4d, 0x41, 0x58, 0x10, 0x02, 0x12, 0x1b, 0x0a, 0x17, 0x52, 0x45, 0x47, 0x49, 0x4f, 0x4e, 0x5f,
-	0x4c, 0x49, 0x4d, 0x49, 0x54, 0x5f, 0x43, 0x4f, 0x44, 0x45, 0x5f, 0x45, 0x52, 0x52, 0x4f, 0x52,
-	0x10, 0x03, 0x42, 0x43, 0x5a, 0x41, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
-	0x2f, 0x73, 0x74, 0x6d, 0x74, 0x63, 0x32, 0x33, 0x33, 0x2f, 0x62, 0x69, 0x6c, 0x69, 0x2d, 0x67,
-	0x72, 0x70, 0x63, 0x2d, 0x61, 0x70, 0x69, 0x2d, 0x67, 0x6f, 0x2f, 0x62, 0x69, 0x6c, 0x69, 0x62,
-	0x69, 0x6c, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x2f, 0x73, 0x68, 0x6f, 0x77, 0x2f, 0x6d, 0x69, 0x78,
-	0x74, 0x75, 0x72, 0x65, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x47, 0x75, 0x69, 0x64, 0x65, 0x54, 0x79, 0x70, 0x65, 0x52, 0x09, 0x67, 0x75, 0x69, 0x64, 0x65,
+	0x54, 0x79, 0x70, 0x65, 0x22, 0x86, 0x02, 0x0a, 0x0a, 0x57, 0x69, 0x64, 0x67, 0x65, 0x74, 0x49,
+	0x74, 0x65, 0x6d, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x05, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x12, 0x12, 0x0a, 0x04, 0x76, 0x69, 0x65,
+	0x77, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x76, 0x69, 0x65, 0x77, 0x12, 0x52, 0x0a,
+	0x0a, 0x72, 0x63, 0x6d, 0x64, 0x52, 0x65, 0x61, 0x73, 0x6f, 0x6e, 0x18, 0x03, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69,
+	0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x70, 0x70, 0x2e, 0x73, 0x68, 0x6f, 0x77, 0x2e,
+	0x6d, 0x69, 0x78, 0x74, 0x75, 0x72, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x63, 0x6d, 0x64, 0x52,
+	0x65, 0x61, 0x73, 0x6f, 0x6e, 0x52, 0x0a, 0x72, 0x63, 0x6d, 0x64, 0x52, 0x65, 0x61, 0x73, 0x6f,
+	0x6e, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18,
+	0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x10, 0x0a, 0x03, 0x75,
+	0x72, 0x69, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x75, 0x72, 0x69, 0x12, 0x12, 0x0a,
+	0x04, 0x67, 0x6f, 0x74, 0x6f, 0x18, 0x07, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x67, 0x6f, 0x74,
+	0x6f, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x08, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69,
+	0x64, 0x12, 0x1a, 0x0a, 0x08, 0x76, 0x69, 0x65, 0x77, 0x49, 0x63, 0x6f, 0x6e, 0x18, 0x09, 0x20,
+	0x01, 0x28, 0x05, 0x52, 0x08, 0x76, 0x69, 0x65, 0x77, 0x49, 0x63, 0x6f, 0x6e, 0x22, 0x55, 0x0a,
+	0x0b, 0x57, 0x69, 0x64, 0x67, 0x65, 0x74, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x12, 0x46, 0x0a, 0x04,
+	0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x32, 0x2e, 0x63, 0x6f, 0x6d,
+	0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e,
+	0x61, 0x70, 0x70, 0x2e, 0x73, 0x68, 0x6f, 0x77, 0x2e, 0x6d, 0x69, 0x78, 0x74, 0x75, 0x72, 0x65,
+	0x2e, 0x76, 0x31, 0x2e, 0x57, 0x69, 0x64, 0x67, 0x65, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x04,
+	0x69, 0x74, 0x65, 0x6d, 0x22, 0x41, 0x0a, 0x09, 0x57, 0x69, 0x64, 0x67, 0x65, 0x74, 0x52, 0x65,
+	0x71, 0x12, 0x1c, 0x0a, 0x09, 0x66, 0x72, 0x6f, 0x6d, 0x53, 0x70, 0x6d, 0x69, 0x64, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x66, 0x72, 0x6f, 0x6d, 0x53, 0x70, 0x6d, 0x69, 0x64, 0x12,
+	0x16, 0x0a, 0x06, 0x70, 0x61, 0x67, 0x65, 0x4e, 0x6f, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x52,
+	0x06, 0x70, 0x61, 0x67, 0x65, 0x4e, 0x6f, 0x2a, 0x46, 0x0a, 0x11, 0x47, 0x75, 0x69, 0x64, 0x65,
+	0x53, 0x74, 0x79, 0x6c, 0x65, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x17, 0x0a, 0x13,
+	0x47, 0x55, 0x49, 0x44, 0x45, 0x5f, 0x53, 0x54, 0x59, 0x4c, 0x45, 0x5f, 0x44, 0x45, 0x46, 0x41,
+	0x55, 0x4c, 0x54, 0x10, 0x00, 0x12, 0x18, 0x0a, 0x14, 0x47, 0x55, 0x49, 0x44, 0x45, 0x5f, 0x53,
+	0x54, 0x59, 0x4c, 0x45, 0x5f, 0x46, 0x55, 0x4e, 0x43, 0x5f, 0x4e, 0x45, 0x57, 0x10, 0x01, 0x2a,
+	0x38, 0x0a, 0x09, 0x47, 0x75, 0x69, 0x64, 0x65, 0x54, 0x79, 0x70, 0x65, 0x12, 0x16, 0x0a, 0x12,
+	0x47, 0x55, 0x49, 0x44, 0x45, 0x5f, 0x54, 0x59, 0x50, 0x45, 0x5f, 0x44, 0x45, 0x46, 0x41, 0x55,
+	0x4c, 0x54, 0x10, 0x00, 0x12, 0x13, 0x0a, 0x0f, 0x47, 0x55, 0x49, 0x44, 0x45, 0x5f, 0x54, 0x59,
+	0x50, 0x45, 0x5f, 0x46, 0x55, 0x4e, 0x43, 0x10, 0x01, 0x2a, 0x47, 0x0a, 0x0e, 0x52, 0x65, 0x67,
+	0x69, 0x6f, 0x6e, 0x43, 0x61, 0x72, 0x64, 0x54, 0x79, 0x70, 0x65, 0x12, 0x1c, 0x0a, 0x18, 0x52,
+	0x45, 0x47, 0x49, 0x4f, 0x4e, 0x5f, 0x43, 0x41, 0x52, 0x44, 0x5f, 0x54, 0x59, 0x50, 0x45, 0x5f,
+	0x44, 0x45, 0x46, 0x41, 0x55, 0x4c, 0x54, 0x10, 0x00, 0x12, 0x17, 0x0a, 0x13, 0x52, 0x45, 0x47,
+	0x49, 0x4f, 0x4e, 0x5f, 0x43, 0x41, 0x52, 0x44, 0x5f, 0x54, 0x59, 0x50, 0x45, 0x5f, 0x41, 0x56,
+	0x10, 0x01, 0x2a, 0x88, 0x01, 0x0a, 0x0f, 0x52, 0x65, 0x67, 0x69, 0x6f, 0x6e, 0x4c, 0x69, 0x6d,
+	0x69, 0x74, 0x43, 0x6f, 0x64, 0x65, 0x12, 0x1d, 0x0a, 0x19, 0x52, 0x45, 0x47, 0x49, 0x4f, 0x4e,
+	0x5f, 0x4c, 0x49, 0x4d, 0x49, 0x54, 0x5f, 0x43, 0x4f, 0x44, 0x45, 0x5f, 0x44, 0x45, 0x46, 0x41,
+	0x55, 0x4c, 0x54, 0x10, 0x00, 0x12, 0x1e, 0x0a, 0x1a, 0x52, 0x45, 0x47, 0x49, 0x4f, 0x4e, 0x5f,
+	0x4c, 0x49, 0x4d, 0x49, 0x54, 0x5f, 0x43, 0x4f, 0x44, 0x45, 0x5f, 0x4e, 0x4f, 0x5f, 0x4c, 0x4f,
+	0x47, 0x49, 0x4e, 0x10, 0x01, 0x12, 0x19, 0x0a, 0x15, 0x52, 0x45, 0x47, 0x49, 0x4f, 0x4e, 0x5f,
+	0x4c, 0x49, 0x4d, 0x49, 0x54, 0x5f, 0x43, 0x4f, 0x44, 0x45, 0x5f, 0x4d, 0x41, 0x58, 0x10, 0x02,
+	0x12, 0x1b, 0x0a, 0x17, 0x52, 0x45, 0x47, 0x49, 0x4f, 0x4e, 0x5f, 0x4c, 0x49, 0x4d, 0x49, 0x54,
+	0x5f, 0x43, 0x4f, 0x44, 0x45, 0x5f, 0x45, 0x52, 0x52, 0x4f, 0x52, 0x10, 0x03, 0x42, 0x43, 0x5a,
+	0x41, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x73, 0x74, 0x6d, 0x74,
+	0x63, 0x32, 0x33, 0x33, 0x2f, 0x62, 0x69, 0x6c, 0x69, 0x2d, 0x67, 0x72, 0x70, 0x63, 0x2d, 0x61,
+	0x70, 0x69, 0x2d, 0x67, 0x6f, 0x2f, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2f, 0x61,
+	0x70, 0x70, 0x2f, 0x73, 0x68, 0x6f, 0x77, 0x2f, 0x6d, 0x69, 0x78, 0x74, 0x75, 0x72, 0x65, 0x2f,
+	0x76, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -2372,70 +2846,83 @@ func file_bilibili_app_show_mixture_v1_messages_proto_rawDescGZIP() []byte {
 }
 
 var file_bilibili_app_show_mixture_v1_messages_proto_enumTypes = make([]protoimpl.EnumInfo, 5)
-var file_bilibili_app_show_mixture_v1_messages_proto_msgTypes = make([]protoimpl.MessageInfo, 29)
+var file_bilibili_app_show_mixture_v1_messages_proto_msgTypes = make([]protoimpl.MessageInfo, 36)
 var file_bilibili_app_show_mixture_v1_messages_proto_goTypes = []interface{}{
 	(GuideStyleVersion)(0),       // 0: com.bapis.bilibili.app.show.mixture.v1.GuideStyleVersion
 	(GuideType)(0),               // 1: com.bapis.bilibili.app.show.mixture.v1.GuideType
 	(RegionCardType)(0),          // 2: com.bapis.bilibili.app.show.mixture.v1.RegionCardType
 	(RegionLimitCode)(0),         // 3: com.bapis.bilibili.app.show.mixture.v1.RegionLimitCode
 	(RegionCard_ItemCase)(0),     // 4: com.bapis.bilibili.app.show.mixture.v1.RegionCard.ItemCase
-	(*ChannelRedirectReply)(nil), // 5: com.bapis.bilibili.app.show.mixture.v1.ChannelRedirectReply
-	(*ChannelRedirectReq)(nil),   // 6: com.bapis.bilibili.app.show.mixture.v1.ChannelRedirectReq
-	(*ClarityReply)(nil),         // 7: com.bapis.bilibili.app.show.mixture.v1.ClarityReply
-	(*ClarityReq)(nil),           // 8: com.bapis.bilibili.app.show.mixture.v1.ClarityReq
-	(*EmptyReply)(nil),           // 9: com.bapis.bilibili.app.show.mixture.v1.EmptyReply
-	(*GuideCard)(nil),            // 10: com.bapis.bilibili.app.show.mixture.v1.GuideCard
-	(*GuideItem)(nil),            // 11: com.bapis.bilibili.app.show.mixture.v1.GuideItem
-	(*GuideTip)(nil),             // 12: com.bapis.bilibili.app.show.mixture.v1.GuideTip
-	(*RcmdReason)(nil),           // 13: com.bapis.bilibili.app.show.mixture.v1.RcmdReason
-	(*RegionAv)(nil),             // 14: com.bapis.bilibili.app.show.mixture.v1.RegionAv
-	(*RegionBanner)(nil),         // 15: com.bapis.bilibili.app.show.mixture.v1.RegionBanner
-	(*RegionCard)(nil),           // 16: com.bapis.bilibili.app.show.mixture.v1.RegionCard
-	(*RegionContent)(nil),        // 17: com.bapis.bilibili.app.show.mixture.v1.RegionContent
-	(*RegionIcon)(nil),           // 18: com.bapis.bilibili.app.show.mixture.v1.RegionIcon
-	(*RegionIndexReply)(nil),     // 19: com.bapis.bilibili.app.show.mixture.v1.RegionIndexReply
-	(*RegionIndexReq)(nil),       // 20: com.bapis.bilibili.app.show.mixture.v1.RegionIndexReq
-	(*RegionLimit)(nil),          // 21: com.bapis.bilibili.app.show.mixture.v1.RegionLimit
-	(*RegionListReply)(nil),      // 22: com.bapis.bilibili.app.show.mixture.v1.RegionListReply
-	(*RegionListReq)(nil),        // 23: com.bapis.bilibili.app.show.mixture.v1.RegionListReq
-	(*RegionShortcutReply)(nil),  // 24: com.bapis.bilibili.app.show.mixture.v1.RegionShortcutReply
-	(*RegionShortcutReq)(nil),    // 25: com.bapis.bilibili.app.show.mixture.v1.RegionShortcutReq
-	(*ThreePoint)(nil),           // 26: com.bapis.bilibili.app.show.mixture.v1.ThreePoint
-	(*UpItem)(nil),               // 27: com.bapis.bilibili.app.show.mixture.v1.UpItem
-	(*WidgetGuideReply)(nil),     // 28: com.bapis.bilibili.app.show.mixture.v1.WidgetGuideReply
-	(*WidgetGuideReq)(nil),       // 29: com.bapis.bilibili.app.show.mixture.v1.WidgetGuideReq
-	(*WidgetGuideUpdateReq)(nil), // 30: com.bapis.bilibili.app.show.mixture.v1.WidgetGuideUpdateReq
-	(*WidgetItem)(nil),           // 31: com.bapis.bilibili.app.show.mixture.v1.WidgetItem
-	(*WidgetReply)(nil),          // 32: com.bapis.bilibili.app.show.mixture.v1.WidgetReply
-	(*WidgetReq)(nil),            // 33: com.bapis.bilibili.app.show.mixture.v1.WidgetReq
-	(*v1.PlayerArgs)(nil),        // 34: com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs
+	(*BceArc)(nil),               // 5: com.bapis.bilibili.app.show.mixture.v1.BceArc
+	(*BceCreativeReply)(nil),     // 6: com.bapis.bilibili.app.show.mixture.v1.BceCreativeReply
+	(*BceCreativeReq)(nil),       // 7: com.bapis.bilibili.app.show.mixture.v1.BceCreativeReq
+	(*BceData)(nil),              // 8: com.bapis.bilibili.app.show.mixture.v1.BceData
+	(*ChannelRedirectReply)(nil), // 9: com.bapis.bilibili.app.show.mixture.v1.ChannelRedirectReply
+	(*ChannelRedirectReq)(nil),   // 10: com.bapis.bilibili.app.show.mixture.v1.ChannelRedirectReq
+	(*ClarityReply)(nil),         // 11: com.bapis.bilibili.app.show.mixture.v1.ClarityReply
+	(*ClarityReq)(nil),           // 12: com.bapis.bilibili.app.show.mixture.v1.ClarityReq
+	(*EmptyReply)(nil),           // 13: com.bapis.bilibili.app.show.mixture.v1.EmptyReply
+	(*GuideCard)(nil),            // 14: com.bapis.bilibili.app.show.mixture.v1.GuideCard
+	(*GuideItem)(nil),            // 15: com.bapis.bilibili.app.show.mixture.v1.GuideItem
+	(*GuideTip)(nil),             // 16: com.bapis.bilibili.app.show.mixture.v1.GuideTip
+	(*RcmdReason)(nil),           // 17: com.bapis.bilibili.app.show.mixture.v1.RcmdReason
+	(*RegionAv)(nil),             // 18: com.bapis.bilibili.app.show.mixture.v1.RegionAv
+	(*RegionBanner)(nil),         // 19: com.bapis.bilibili.app.show.mixture.v1.RegionBanner
+	(*RegionCard)(nil),           // 20: com.bapis.bilibili.app.show.mixture.v1.RegionCard
+	(*RegionContent)(nil),        // 21: com.bapis.bilibili.app.show.mixture.v1.RegionContent
+	(*RegionIcon)(nil),           // 22: com.bapis.bilibili.app.show.mixture.v1.RegionIcon
+	(*RegionIndexReply)(nil),     // 23: com.bapis.bilibili.app.show.mixture.v1.RegionIndexReply
+	(*RegionIndexReq)(nil),       // 24: com.bapis.bilibili.app.show.mixture.v1.RegionIndexReq
+	(*RegionLimit)(nil),          // 25: com.bapis.bilibili.app.show.mixture.v1.RegionLimit
+	(*RegionListReply)(nil),      // 26: com.bapis.bilibili.app.show.mixture.v1.RegionListReply
+	(*RegionListReq)(nil),        // 27: com.bapis.bilibili.app.show.mixture.v1.RegionListReq
+	(*RegionShortcutReply)(nil),  // 28: com.bapis.bilibili.app.show.mixture.v1.RegionShortcutReply
+	(*RegionShortcutReq)(nil),    // 29: com.bapis.bilibili.app.show.mixture.v1.RegionShortcutReq
+	(*Stat)(nil),                 // 30: com.bapis.bilibili.app.show.mixture.v1.Stat
+	(*StatInfo)(nil),             // 31: com.bapis.bilibili.app.show.mixture.v1.StatInfo
+	(*ThreePoint)(nil),           // 32: com.bapis.bilibili.app.show.mixture.v1.ThreePoint
+	(*UpItem)(nil),               // 33: com.bapis.bilibili.app.show.mixture.v1.UpItem
+	(*WidgetGuideReply)(nil),     // 34: com.bapis.bilibili.app.show.mixture.v1.WidgetGuideReply
+	(*WidgetGuideReq)(nil),       // 35: com.bapis.bilibili.app.show.mixture.v1.WidgetGuideReq
+	(*WidgetGuideUpdateReq)(nil), // 36: com.bapis.bilibili.app.show.mixture.v1.WidgetGuideUpdateReq
+	(*WidgetItem)(nil),           // 37: com.bapis.bilibili.app.show.mixture.v1.WidgetItem
+	(*WidgetReply)(nil),          // 38: com.bapis.bilibili.app.show.mixture.v1.WidgetReply
+	(*WidgetReq)(nil),            // 39: com.bapis.bilibili.app.show.mixture.v1.WidgetReq
+	nil,                          // 40: com.bapis.bilibili.app.show.mixture.v1.BceData.ArcEntry
+	(*v1.PlayerArgs)(nil),        // 41: com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs
 }
 var file_bilibili_app_show_mixture_v1_messages_proto_depIdxs = []int32{
-	10, // 0: com.bapis.bilibili.app.show.mixture.v1.GuideItem.card:type_name -> com.bapis.bilibili.app.show.mixture.v1.GuideCard
-	27, // 1: com.bapis.bilibili.app.show.mixture.v1.GuideTip.upItems:type_name -> com.bapis.bilibili.app.show.mixture.v1.UpItem
-	2,  // 2: com.bapis.bilibili.app.show.mixture.v1.RegionCard.type:type_name -> com.bapis.bilibili.app.show.mixture.v1.RegionCardType
-	14, // 3: com.bapis.bilibili.app.show.mixture.v1.RegionCard.av:type_name -> com.bapis.bilibili.app.show.mixture.v1.RegionAv
-	26, // 4: com.bapis.bilibili.app.show.mixture.v1.RegionCard.threePoint:type_name -> com.bapis.bilibili.app.show.mixture.v1.ThreePoint
-	18, // 5: com.bapis.bilibili.app.show.mixture.v1.RegionContent.icons:type_name -> com.bapis.bilibili.app.show.mixture.v1.RegionIcon
-	15, // 6: com.bapis.bilibili.app.show.mixture.v1.RegionIndexReply.banner:type_name -> com.bapis.bilibili.app.show.mixture.v1.RegionBanner
-	16, // 7: com.bapis.bilibili.app.show.mixture.v1.RegionIndexReply.cards:type_name -> com.bapis.bilibili.app.show.mixture.v1.RegionCard
-	34, // 8: com.bapis.bilibili.app.show.mixture.v1.RegionIndexReq.playerArgs:type_name -> com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs
-	3,  // 9: com.bapis.bilibili.app.show.mixture.v1.RegionLimit.code:type_name -> com.bapis.bilibili.app.show.mixture.v1.RegionLimitCode
-	17, // 10: com.bapis.bilibili.app.show.mixture.v1.RegionListReply.shortcut:type_name -> com.bapis.bilibili.app.show.mixture.v1.RegionContent
-	17, // 11: com.bapis.bilibili.app.show.mixture.v1.RegionListReply.contents:type_name -> com.bapis.bilibili.app.show.mixture.v1.RegionContent
-	21, // 12: com.bapis.bilibili.app.show.mixture.v1.RegionShortcutReply.limit:type_name -> com.bapis.bilibili.app.show.mixture.v1.RegionLimit
-	11, // 13: com.bapis.bilibili.app.show.mixture.v1.WidgetGuideReply.guideItem:type_name -> com.bapis.bilibili.app.show.mixture.v1.GuideItem
-	12, // 14: com.bapis.bilibili.app.show.mixture.v1.WidgetGuideReply.tip:type_name -> com.bapis.bilibili.app.show.mixture.v1.GuideTip
-	1,  // 15: com.bapis.bilibili.app.show.mixture.v1.WidgetGuideReq.guideType:type_name -> com.bapis.bilibili.app.show.mixture.v1.GuideType
-	0,  // 16: com.bapis.bilibili.app.show.mixture.v1.WidgetGuideReq.guideStyleVersion:type_name -> com.bapis.bilibili.app.show.mixture.v1.GuideStyleVersion
-	1,  // 17: com.bapis.bilibili.app.show.mixture.v1.WidgetGuideUpdateReq.guideType:type_name -> com.bapis.bilibili.app.show.mixture.v1.GuideType
-	13, // 18: com.bapis.bilibili.app.show.mixture.v1.WidgetItem.rcmdReason:type_name -> com.bapis.bilibili.app.show.mixture.v1.RcmdReason
-	31, // 19: com.bapis.bilibili.app.show.mixture.v1.WidgetReply.item:type_name -> com.bapis.bilibili.app.show.mixture.v1.WidgetItem
-	20, // [20:20] is the sub-list for method output_type
-	20, // [20:20] is the sub-list for method input_type
-	20, // [20:20] is the sub-list for extension type_name
-	20, // [20:20] is the sub-list for extension extendee
-	0,  // [0:20] is the sub-list for field type_name
+	30, // 0: com.bapis.bilibili.app.show.mixture.v1.BceArc.stat:type_name -> com.bapis.bilibili.app.show.mixture.v1.Stat
+	8,  // 1: com.bapis.bilibili.app.show.mixture.v1.BceCreativeReply.data:type_name -> com.bapis.bilibili.app.show.mixture.v1.BceData
+	40, // 2: com.bapis.bilibili.app.show.mixture.v1.BceData.arc:type_name -> com.bapis.bilibili.app.show.mixture.v1.BceData.ArcEntry
+	14, // 3: com.bapis.bilibili.app.show.mixture.v1.GuideItem.card:type_name -> com.bapis.bilibili.app.show.mixture.v1.GuideCard
+	33, // 4: com.bapis.bilibili.app.show.mixture.v1.GuideTip.upItems:type_name -> com.bapis.bilibili.app.show.mixture.v1.UpItem
+	2,  // 5: com.bapis.bilibili.app.show.mixture.v1.RegionCard.type:type_name -> com.bapis.bilibili.app.show.mixture.v1.RegionCardType
+	18, // 6: com.bapis.bilibili.app.show.mixture.v1.RegionCard.av:type_name -> com.bapis.bilibili.app.show.mixture.v1.RegionAv
+	32, // 7: com.bapis.bilibili.app.show.mixture.v1.RegionCard.threePoint:type_name -> com.bapis.bilibili.app.show.mixture.v1.ThreePoint
+	22, // 8: com.bapis.bilibili.app.show.mixture.v1.RegionContent.icons:type_name -> com.bapis.bilibili.app.show.mixture.v1.RegionIcon
+	19, // 9: com.bapis.bilibili.app.show.mixture.v1.RegionIndexReply.banner:type_name -> com.bapis.bilibili.app.show.mixture.v1.RegionBanner
+	20, // 10: com.bapis.bilibili.app.show.mixture.v1.RegionIndexReply.cards:type_name -> com.bapis.bilibili.app.show.mixture.v1.RegionCard
+	41, // 11: com.bapis.bilibili.app.show.mixture.v1.RegionIndexReq.playerArgs:type_name -> com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs
+	3,  // 12: com.bapis.bilibili.app.show.mixture.v1.RegionLimit.code:type_name -> com.bapis.bilibili.app.show.mixture.v1.RegionLimitCode
+	21, // 13: com.bapis.bilibili.app.show.mixture.v1.RegionListReply.shortcut:type_name -> com.bapis.bilibili.app.show.mixture.v1.RegionContent
+	21, // 14: com.bapis.bilibili.app.show.mixture.v1.RegionListReply.contents:type_name -> com.bapis.bilibili.app.show.mixture.v1.RegionContent
+	25, // 15: com.bapis.bilibili.app.show.mixture.v1.RegionShortcutReply.limit:type_name -> com.bapis.bilibili.app.show.mixture.v1.RegionLimit
+	31, // 16: com.bapis.bilibili.app.show.mixture.v1.Stat.vt:type_name -> com.bapis.bilibili.app.show.mixture.v1.StatInfo
+	31, // 17: com.bapis.bilibili.app.show.mixture.v1.Stat.danmaku:type_name -> com.bapis.bilibili.app.show.mixture.v1.StatInfo
+	15, // 18: com.bapis.bilibili.app.show.mixture.v1.WidgetGuideReply.guideItem:type_name -> com.bapis.bilibili.app.show.mixture.v1.GuideItem
+	16, // 19: com.bapis.bilibili.app.show.mixture.v1.WidgetGuideReply.tip:type_name -> com.bapis.bilibili.app.show.mixture.v1.GuideTip
+	1,  // 20: com.bapis.bilibili.app.show.mixture.v1.WidgetGuideReq.guideType:type_name -> com.bapis.bilibili.app.show.mixture.v1.GuideType
+	0,  // 21: com.bapis.bilibili.app.show.mixture.v1.WidgetGuideReq.guideStyleVersion:type_name -> com.bapis.bilibili.app.show.mixture.v1.GuideStyleVersion
+	1,  // 22: com.bapis.bilibili.app.show.mixture.v1.WidgetGuideUpdateReq.guideType:type_name -> com.bapis.bilibili.app.show.mixture.v1.GuideType
+	17, // 23: com.bapis.bilibili.app.show.mixture.v1.WidgetItem.rcmdReason:type_name -> com.bapis.bilibili.app.show.mixture.v1.RcmdReason
+	37, // 24: com.bapis.bilibili.app.show.mixture.v1.WidgetReply.item:type_name -> com.bapis.bilibili.app.show.mixture.v1.WidgetItem
+	5,  // 25: com.bapis.bilibili.app.show.mixture.v1.BceData.ArcEntry.value:type_name -> com.bapis.bilibili.app.show.mixture.v1.BceArc
+	26, // [26:26] is the sub-list for method output_type
+	26, // [26:26] is the sub-list for method input_type
+	26, // [26:26] is the sub-list for extension type_name
+	26, // [26:26] is the sub-list for extension extendee
+	0,  // [0:26] is the sub-list for field type_name
 }
 
 func init() { file_bilibili_app_show_mixture_v1_messages_proto_init() }
@@ -2445,7 +2932,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ChannelRedirectReply); i {
+			switch v := v.(*BceArc); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2457,7 +2944,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ChannelRedirectReq); i {
+			switch v := v.(*BceCreativeReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2469,7 +2956,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ClarityReply); i {
+			switch v := v.(*BceCreativeReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2481,7 +2968,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ClarityReq); i {
+			switch v := v.(*BceData); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2493,7 +2980,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*EmptyReply); i {
+			switch v := v.(*ChannelRedirectReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2505,7 +2992,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GuideCard); i {
+			switch v := v.(*ChannelRedirectReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2517,7 +3004,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GuideItem); i {
+			switch v := v.(*ClarityReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2529,7 +3016,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GuideTip); i {
+			switch v := v.(*ClarityReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2541,7 +3028,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RcmdReason); i {
+			switch v := v.(*EmptyReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2553,7 +3040,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RegionAv); i {
+			switch v := v.(*GuideCard); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2565,7 +3052,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RegionBanner); i {
+			switch v := v.(*GuideItem); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2577,7 +3064,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RegionCard); i {
+			switch v := v.(*GuideTip); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2589,7 +3076,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RegionContent); i {
+			switch v := v.(*RcmdReason); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2601,7 +3088,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RegionIcon); i {
+			switch v := v.(*RegionAv); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2613,7 +3100,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RegionIndexReply); i {
+			switch v := v.(*RegionBanner); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2625,7 +3112,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RegionIndexReq); i {
+			switch v := v.(*RegionCard); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2637,7 +3124,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RegionLimit); i {
+			switch v := v.(*RegionContent); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2649,7 +3136,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RegionListReply); i {
+			switch v := v.(*RegionIcon); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2661,7 +3148,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RegionListReq); i {
+			switch v := v.(*RegionIndexReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2673,7 +3160,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RegionShortcutReply); i {
+			switch v := v.(*RegionIndexReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2685,7 +3172,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RegionShortcutReq); i {
+			switch v := v.(*RegionLimit); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2697,7 +3184,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ThreePoint); i {
+			switch v := v.(*RegionListReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2709,7 +3196,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpItem); i {
+			switch v := v.(*RegionListReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2721,7 +3208,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*WidgetGuideReply); i {
+			switch v := v.(*RegionShortcutReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2733,7 +3220,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*WidgetGuideReq); i {
+			switch v := v.(*RegionShortcutReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2745,7 +3232,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*WidgetGuideUpdateReq); i {
+			switch v := v.(*Stat); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2757,7 +3244,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*WidgetItem); i {
+			switch v := v.(*StatInfo); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2769,7 +3256,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*WidgetReply); i {
+			switch v := v.(*ThreePoint); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2781,6 +3268,78 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpItem); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*WidgetGuideReply); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*WidgetGuideReq); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*WidgetGuideUpdateReq); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*WidgetItem); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*WidgetReply); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*WidgetReq); i {
 			case 0:
 				return &v.state
@@ -2793,7 +3352,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			}
 		}
 	}
-	file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[11].OneofWrappers = []interface{}{
+	file_bilibili_app_show_mixture_v1_messages_proto_msgTypes[15].OneofWrappers = []interface{}{
 		(*RegionCard_Av)(nil),
 	}
 	type x struct{}
@@ -2802,7 +3361,7 @@ func file_bilibili_app_show_mixture_v1_messages_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_bilibili_app_show_mixture_v1_messages_proto_rawDesc,
 			NumEnums:      5,
-			NumMessages:   29,
+			NumMessages:   36,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

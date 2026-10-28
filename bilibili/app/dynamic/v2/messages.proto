@@ -542,6 +542,12 @@ enum ModuleDynamicType {
   mdl_dyn_share_charging_qa = 19;
 }
 
+enum ModuleHeadResource_ResourceType {
+  Default = 0;
+  Topic = 1;
+  Tribee = 2;
+}
+
 enum NavigationType {
   COMMON = 0;
   JOINED_OTHER_TRIBEE = 1;
@@ -908,6 +914,8 @@ message AdditionCommon {
   string type = 10;
   string cardType = 11;
   string badge = 12;
+  repeated HighlightText highlightTexts = 13;
+  string recommendReason = 14;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/AdditionEsport.java
@@ -2822,6 +2830,7 @@ message HighlightText {
   HighlightTextStyle textStyle = 2;
   string jumpUrl = 3;
   string icon = 4;
+  string extraType = 5;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/HomeSubscribeReply.java
@@ -3997,23 +4006,17 @@ message ModuleFold {
 // Source: com/bapis/bilibili/app/dynamic/v2/ModuleHeadResource.java
 message ModuleHeadResource {
   string icon = 1;
-  ModuleHeadResource_LinkText text = 2;
+  bytes text = 2;
   string suffix = 3;
   bytes subtext = 4;
-  ResourceType type = 5;
+  int32 type = 5;
   int64 moduleId = 6;
   int64 subModuleId = 7;
   string moduleType = 8;
   repeated TribeeHeadInfo tribeeHeadInfos = 9;
-  enum ResourceType {
-    Default = 0;
-    Topic = 1;
-    Tribee = 2;
-  }
-
 }
 
-// Source: com/bapis/bilibili/app/dynamic/v2/ModuleHeadResource.java
+// Source: com/bapis/bilibili/app/dynamic/v2/ModuleHeadResource$LinkText.java
 message ModuleHeadResource_LinkText {
   string text = 1;
   string url = 2;
@@ -5846,6 +5849,8 @@ message TribeeAdminSection {
   int32 rowDisplayCount = 2;
   string introText = 3;
   string conventionUri = 4;
+  string recruitUrl = 5;
+  string placeholderText = 6;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeBaseInfo.java
@@ -6004,6 +6009,8 @@ message TribeeHeadInfo {
   bool isPrimary = 5;
   string categoryName = 6;
   string categoryUri = 7;
+  string dynCountText = 8;
+  string latestTimeText = 9;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeIdentityBadge.java

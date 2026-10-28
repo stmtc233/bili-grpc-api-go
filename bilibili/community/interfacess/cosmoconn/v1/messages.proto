@@ -341,6 +341,18 @@ message BatchUpdateTribeeQuizQuestionLabelsRsp {
   int64 updatedCount = 1;
 }
 
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/BatchUpdateTribeeQuizQuestionTimeLimitReq.java
+message BatchUpdateTribeeQuizQuestionTimeLimitReq {
+  int64 tribeeId = 1;
+  repeated int64 questionIds = 2;
+  int32 timeLimit = 3;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/BatchUpdateTribeeQuizQuestionTimeLimitRsp.java
+message BatchUpdateTribeeQuizQuestionTimeLimitRsp {
+  int64 updatedCount = 1;
+}
+
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/Button.java
 message Button {
   bool disable = 1;

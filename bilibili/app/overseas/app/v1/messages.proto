@@ -40,6 +40,15 @@ message EventListResp {
   repeated SplashEvent eventList = 2;
 }
 
+// Source: com/bapis/bilibili/app/overseas/app/v1/MissionTagListReq.java
+message MissionTagListReq {
+}
+
+// Source: com/bapis/bilibili/app/overseas/app/v1/MissionTagListResp.java
+message MissionTagListResp {
+  repeated SubmissionMissionTag list = 1;
+}
+
 // Source: com/bapis/bilibili/app/overseas/app/v1/ReportBannerEventReq.java
 message ReportBannerEventReq {
   string bannerId = 1;
@@ -91,6 +100,33 @@ message SplashResource {
   string resourceHash = 4;
   int32 width = 5;
   int32 height = 6;
+}
+
+// Source: com/bapis/bilibili/app/overseas/app/v1/SubmissionActivity.java
+message SubmissionActivity {
+  string activityId = 1;
+  string name = 2;
+  int64 stime = 3;
+  int64 etime = 4;
+  repeated SubmissionActivityPage pages = 5;
+}
+
+// Source: com/bapis/bilibili/app/overseas/app/v1/SubmissionActivityPage.java
+message SubmissionActivityPage {
+  string lang = 1;
+  string url = 2;
+}
+
+// Source: com/bapis/bilibili/app/overseas/app/v1/SubmissionMissionTag.java
+message SubmissionMissionTag {
+  int64 tagId = 1;
+  string name = 2;
+  repeated string matchNames = 3;
+  string cover = 4;
+  int64 missionId = 5;
+  int64 missionStime = 6;
+  int64 missionEtime = 7;
+  SubmissionActivity activity = 8;
 }
 
 

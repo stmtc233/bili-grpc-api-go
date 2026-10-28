@@ -27,6 +27,32 @@ enum RegionLimitCode {
   REGION_LIMIT_CODE_ERROR = 3;
 }
 
+// Source: com/bapis/bilibili/app/show/mixture/v1/BceArc.java
+message BceArc {
+  int64 aid = 1;
+  Stat stat = 4;
+  string jumpUrl = 5;
+  string title = 6;
+  string cover = 7;
+  int64 duration = 8;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/BceCreativeReply.java
+message BceCreativeReply {
+  BceData data = 1;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/BceCreativeReq.java
+message BceCreativeReq {
+  string adExtra = 1;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/BceData.java
+message BceData {
+  string content = 1;
+  map<int64, BceArc> arc = 2;
+}
+
 // Source: com/bapis/bilibili/app/show/mixture/v1/ChannelRedirectReply.java
 message ChannelRedirectReply {
   int64 code = 1;
@@ -173,6 +199,26 @@ message RegionShortcutReply {
 // Source: com/bapis/bilibili/app/show/mixture/v1/RegionShortcutReq.java
 message RegionShortcutReq {
   repeated int64 uniqueId = 1;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/Stat.java
+message Stat {
+  StatInfo vt = 1;
+  StatInfo danmaku = 2;
+  int64 reply = 3;
+  int64 fav = 4;
+  int64 coin = 5;
+  int64 share = 6;
+  int64 like = 7;
+  int64 follow = 8;
+}
+
+// Source: com/bapis/bilibili/app/show/mixture/v1/StatInfo.java
+message StatInfo {
+  int64 value = 1;
+  string text = 2;
+  string pureText = 3;
+  string icon = 4;
 }
 
 // Source: com/bapis/bilibili/app/show/mixture/v1/ThreePoint.java
