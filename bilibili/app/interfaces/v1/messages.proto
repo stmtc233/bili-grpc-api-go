@@ -20,6 +20,16 @@ enum CommentType {
   comment_type_judge = 2;
 }
 
+enum CursorItem_CardItemCase {
+  CARDITEM_NOT_SET = 0;
+  CARD_UGC = 1;
+  CARD_OGV = 2;
+  CARD_ARTICLE = 3;
+  CARD_LIVE = 4;
+  CARD_CHEESE = 5;
+  CARD_DRAMA = 17;
+}
+
 enum DT {
   Unknown = 0;
   Phone = 1;
@@ -289,16 +299,6 @@ message CursorItem {
   bool hasShare = 14;
   string report = 15;
   TranslateInfo translateInfo = 16;
-  enum CardItemCase {
-    CARDITEM_NOT_SET = 0;
-    CARD_UGC = 1;
-    CARD_OGV = 2;
-    CARD_ARTICLE = 3;
-    CARD_LIVE = 4;
-    CARD_CHEESE = 5;
-    CARD_DRAMA = 17;
-  }
-
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/CursorReply.java
@@ -331,6 +331,7 @@ message CursorV2Reply {
   Cursor cursor = 2;
   bool hasMore = 3;
   string emptyLink = 4;
+  repeated CursorItem recentFrequentItems = 5;
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/CursorV2Req.java
@@ -420,6 +421,18 @@ message FacialRecognitionVerifyReq {
 message HisInfo {
   string business = 1;
   int64 kid = 2;
+}
+
+// Source: com/bapis/bilibili/app/interfaces/v1/HistoryItemsReply.java
+message HistoryItemsReply {
+  repeated CursorItem items = 1;
+}
+
+// Source: com/bapis/bilibili/app/interfaces/v1/HistoryItemsReq.java
+message HistoryItemsReq {
+  string business = 1;
+  com.bapis.bilibili.app.archive.middleware.v1.PlayerArgs playerArgs = 2;
+  repeated int64 oids = 3;
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/HistoryTabReply.java

@@ -159,6 +159,17 @@ enum CoverIcon {
   cover_icon_self_seen = 10;
 }
 
+enum CreationItemAction_CreationAction {
+  CREATION_ACTION_INVALID = 0;
+  CREATION_ACTION_DELETE = 1;
+  CREATION_ACTION_EDIT_DYN = 2;
+  CREATION_ACTION_JUMP_URL = 3;
+  CREATION_ACTION_RETRACT_CV = 4;
+  CREATION_ACTION_EDIT_CV = 5;
+  CREATION_ACTION_VISIBILITY_CHANGE = 6;
+  CREATION_ACTION_EDIT_TRIBEE = 7;
+}
+
 enum DescType {
   desc_type_none = 0;
   desc_type_text = 1;
@@ -326,7 +337,7 @@ enum FoldType {
 }
 
 enum GlobalPermissionType {
-  UNKNOWN = 0;
+  GLOBAL_PERMISSION_TYPE_UNKNOWN = 0;
   WHITELIST = 1;
   NOT_WHITELIST = 2;
   CANDIDATE_LIST = 3;
@@ -394,13 +405,13 @@ enum LinkNodeShowType {
 
 enum LinkNodeType {
   INVALID = 0;
-  VIDEO = 1;
+  LINK_NODE_TYPE_VIDEO = 1;
   RESERVE = 2;
-  VOTE = 3;
-  LIVE = 4;
+  LINK_NODE_TYPE_VOTE = 3;
+  LINK_NODE_TYPE_LIVE = 4;
   LOTTERY = 5;
   MATCH = 6;
-  GOODS = 7;
+  LINK_NODE_TYPE_GOODS = 7;
   OGV_SS = 8;
   OGV_EP = 9;
   MANGA = 10;
@@ -408,7 +419,7 @@ enum LinkNodeType {
   VIDEO_TS = 12;
   AT = 13;
   HASH_TAG = 14;
-  ARTICLE = 15;
+  LINK_NODE_TYPE_ARTICLE = 15;
   URL = 16;
   MAIL = 17;
   LBS = 18;
@@ -422,7 +433,7 @@ enum LinkNodeType {
   MEMBER_GOODS = 26;
   OPENMALL_UP_ITEMS = 27;
   SEARCH = 28;
-  MUSIC = 29;
+  LINK_NODE_TYPE_MUSIC = 29;
   GPT_RCMD_QUESTION = 30;
   MEMBER_TICKET = 31;
   REPOST_PIC_URL = 32;
@@ -438,9 +449,9 @@ enum LinkNodeType {
   IM_PUSH_INFO_MORE = 43;
   CONTENT_UP = 44;
   REFERENCE_COMMENT = 45;
-  MULTIPLE_RESOURCES = 46;
+  LINK_NODE_TYPE_MULTIPLE_RESOURCES = 46;
   REFERENCE = 47;
-  TOY = 48;
+  LINK_NODE_TYPE_TOY = 48;
 }
 
 enum LiveState {
@@ -507,6 +518,78 @@ enum MediaType {
   MediaTypeVCS = 4;
 }
 
+enum Module_ModuleItemCase {
+  MODULEITEM_NOT_SET = 0;
+  MODULE_AUTHOR = 2;
+  MODULE_DISPUTE = 3;
+  MODULE_DESC = 4;
+  MODULE_DYNAMIC = 5;
+  MODULE_LIKEUSER = 6;
+  MODULE_EXTEND = 7;
+  MODULE_ADDITIONAL = 8;
+  MODULE_STAT = 9;
+  MODULE_FOLD = 10;
+  MODULE_COMMENT = 11;
+  MODULE_INTERACTION = 12;
+  MODULE_AUTHOR_FORWARD = 13;
+  MODULE_AD = 14;
+  MODULE_BANNER = 15;
+  MODULE_ITEM_NULL = 16;
+  MODULE_SHARE_INFO = 17;
+  MODULE_RECOMMEND = 18;
+  MODULE_TOP = 19;
+  MODULE_BUTTOM = 20;
+  MODULE_STAT_FORWARD = 21;
+  MODULE_STORY = 22;
+  MODULE_TOPIC = 23;
+  MODULE_TOPIC_DETAILS_EXT = 24;
+  MODULE_TOP_TAG = 25;
+  MODULE_TOPIC_BRIEF = 26;
+  MODULE_TITLE = 27;
+  MODULE_BUTTON = 28;
+  MODULE_NOTICE = 29;
+  MODULE_OPUS_SUMMARY = 30;
+  MODULE_COPYRIGHT = 31;
+  MODULE_PARAGRAPH = 32;
+  MODULE_BLOCKED = 33;
+  MODULE_TEXT_NOTICE = 34;
+  MODULE_OPUS_COLLECTION = 35;
+  MODULE_ONETIME_NOTICE = 36;
+  MODULE_SNEAKING_AD = 37;
+  MODULE_MANGA_HORIZONTAL_PAGE_PIC_CONTENT = 38;
+  MODULE_MANGA_VERTICAL_SLIDE_PIC_CONTENT = 39;
+  MODULE_MANGA_COVER_PIC_CONTENT = 40;
+  MODULE_AUTHOR_FOR_SUBSCRIBE = 41;
+  MODULE_AUTHOR_SLIM = 42;
+  MODULE_MANGA_COLLECTION = 43;
+  MODULE_COOPERATION = 44;
+  MODULE_HEAD_RESOURCE = 45;
+  MODULE_RECOMMEND_CARDS = 46;
+  MODULE_RCMD_REASON = 47;
+  MODULE_PAYWALL = 48;
+}
+
+enum ModuleAdditional_ItemCase {
+  MODULE_ADDITIONAL_ITEM_CASE_ITEM_NOT_SET = 0;
+  PGC = 2;
+  MODULE_ADDITIONAL_ITEM_CASE_GOODS = 3;
+  MODULE_ADDITIONAL_ITEM_CASE_VOTE = 4;
+  MODULE_ADDITIONAL_ITEM_CASE_COMMON = 5;
+  ESPORT = 6;
+  VOTE2 = 8;
+  UGC = 9;
+  UP = 10;
+  MODULE_ADDITIONAL_ITEM_CASE_ARTICLE = 12;
+  MODULE_ADDITIONAL_ITEM_CASE_LIVE = 13;
+  MODULE_ADDITIONAL_ITEM_CASE_MUSIC = 14;
+  OPUS = 15;
+  MODULE_ADDITIONAL_ITEM_CASE_VIDEO = 16;
+  MODULE_ADDITIONAL_ITEM_CASE_COMMENT = 17;
+  CONTENTUP = 18;
+  MODULE_ADDITIONAL_ITEM_CASE_MULTIPLE_RESOURCES = 19;
+  MODULE_ADDITIONAL_ITEM_CASE_TOY = 20;
+}
+
 enum ModuleAuthorBadgeType {
   module_author_badge_type_none = 0;
   module_author_badge_type_threePoint = 1;
@@ -542,16 +625,20 @@ enum ModuleDynamicType {
   mdl_dyn_share_charging_qa = 19;
 }
 
-enum ModuleHeadResource_ResourceType {
-  Default = 0;
-  Topic = 1;
-  Tribee = 2;
+enum ModuleExtendItem_ExtendCase {
+  EXTEND_NOT_SET = 0;
+  EXT_INFO_TOPIC = 2;
+  EXT_INFO_LBS = 3;
+  EXT_INFO_HOT = 4;
+  EXT_INFO_GAME = 5;
+  EXT_INFO_COMMON = 6;
+  EXT_INFO_OGV = 7;
 }
 
 enum NavigationType {
-  COMMON = 0;
+  NAVIGATION_TYPE_COMMON = 0;
   JOINED_OTHER_TRIBEE = 1;
-  SHARE = 2;
+  NAVIGATION_TYPE_SHARE = 2;
   MY_POST = 3;
   INVITE_CODE = 4;
   GAME_STATS = 5;
@@ -695,6 +782,30 @@ enum ThreePointAttentionStatus {
   tp_attention = 1;
 }
 
+enum ThreePointItem_ItemCase {
+  THREE_POINT_ITEM_ITEM_CASE_ITEM_NOT_SET = 0;
+  DEFAULT = 2;
+  AUTO_PLAYER = 3;
+  THREE_POINT_ITEM_ITEM_CASE_SHARE = 4;
+  ATTENTION = 5;
+  WAIT = 6;
+  DISLIKE = 7;
+  FAVORITE = 8;
+  TOP = 9;
+  THREE_POINT_ITEM_ITEM_CASE_COMMENT = 10;
+  HIDE = 11;
+  TOPIC_IRRELEVANT = 12;
+  DYN_EDIT = 13;
+  COIN = 14;
+  VISIBILITY_CHANGE = 15;
+  TOPIC_TOP = 16;
+  TRANSLATE = 17;
+  REPOST_TRIBEE = 18;
+  TRIBEE_FEATURED = 19;
+  TRIBEE_APPROVED_THREAD = 21;
+  TRIBEE_REJECT_THREAD_SELECTED = 22;
+}
+
 enum ThreePointType {
   tp_none = 0;
   background = 1;
@@ -733,6 +844,25 @@ enum ThreePointType {
 enum ThumbType {
   cancel = 0;
   thumb = 1;
+}
+
+enum ToastDialog_ToastDialogType {
+  TOAST_DIALOG_TOAST_DIALOG_TYPE_UNKNOWN = 0;
+  EXIT = 1;
+  PUBLISH_JOIN = 2;
+  PUBLISH_ABNORMAL = 3;
+  ACTIVATE_NO_CANDIDATE = 4;
+  ACTIVATE_CANDIDATE = 5;
+  INVITE_CODE_SUCCESS = 6;
+  INVITE_CODE_EXPIRE = 7;
+  INVITE_CODE_NO_NEED = 8;
+  PUBLISH_BANNED = 9;
+  GAME_STATS_NO_TRIBEE = 10;
+  STEAM_ACCOUNT_RELEASE = 11;
+  ALLOW_OUTSIDER_PUB_TOAST = 12;
+  OUTSIDER_INVITE_CODE_SUCCESS = 13;
+  VISA_JOIN_SUCCESS = 14;
+  VISA_PUBLISH_SUCCESS = 15;
 }
 
 enum TopType {
@@ -1977,22 +2107,11 @@ message CreationClassification {
 message CreationItemAction {
   string icon = 1;
   string actionName = 2;
-  CreationAction actionType = 3;
+  int32 actionType = 3;
   string jumpUrl = 4;
   int64 remainEditTimes = 5;
   ThreePointDefaultToast confirmationToast = 6;
   ThreePointVisibilityChange visibilityChange = 7;
-  enum CreationAction {
-    CREATION_ACTION_INVALID = 0;
-    CREATION_ACTION_DELETE = 1;
-    CREATION_ACTION_EDIT_DYN = 2;
-    CREATION_ACTION_JUMP_URL = 3;
-    CREATION_ACTION_RETRACT_CV = 4;
-    CREATION_ACTION_EDIT_CV = 5;
-    CREATION_ACTION_VISIBILITY_CHANGE = 6;
-    CREATION_ACTION_EDIT_TRIBEE = 7;
-  }
-
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/CreationSortType.java
@@ -3620,57 +3739,6 @@ message Module {
     ModuleRcmdReason moduleRcmdReason = 47;
     ModulePaywall modulePaywall = 48;
   }
-  enum ModuleItemCase {
-    MODULEITEM_NOT_SET = 0;
-    MODULE_AUTHOR = 2;
-    MODULE_DISPUTE = 3;
-    MODULE_DESC = 4;
-    MODULE_DYNAMIC = 5;
-    MODULE_LIKEUSER = 6;
-    MODULE_EXTEND = 7;
-    MODULE_ADDITIONAL = 8;
-    MODULE_STAT = 9;
-    MODULE_FOLD = 10;
-    MODULE_COMMENT = 11;
-    MODULE_INTERACTION = 12;
-    MODULE_AUTHOR_FORWARD = 13;
-    MODULE_AD = 14;
-    MODULE_BANNER = 15;
-    MODULE_ITEM_NULL = 16;
-    MODULE_SHARE_INFO = 17;
-    MODULE_RECOMMEND = 18;
-    MODULE_TOP = 19;
-    MODULE_BUTTOM = 20;
-    MODULE_STAT_FORWARD = 21;
-    MODULE_STORY = 22;
-    MODULE_TOPIC = 23;
-    MODULE_TOPIC_DETAILS_EXT = 24;
-    MODULE_TOP_TAG = 25;
-    MODULE_TOPIC_BRIEF = 26;
-    MODULE_TITLE = 27;
-    MODULE_BUTTON = 28;
-    MODULE_NOTICE = 29;
-    MODULE_OPUS_SUMMARY = 30;
-    MODULE_COPYRIGHT = 31;
-    MODULE_PARAGRAPH = 32;
-    MODULE_BLOCKED = 33;
-    MODULE_TEXT_NOTICE = 34;
-    MODULE_OPUS_COLLECTION = 35;
-    MODULE_ONETIME_NOTICE = 36;
-    MODULE_SNEAKING_AD = 37;
-    MODULE_MANGA_HORIZONTAL_PAGE_PIC_CONTENT = 38;
-    MODULE_MANGA_VERTICAL_SLIDE_PIC_CONTENT = 39;
-    MODULE_MANGA_COVER_PIC_CONTENT = 40;
-    MODULE_AUTHOR_FOR_SUBSCRIBE = 41;
-    MODULE_AUTHOR_SLIM = 42;
-    MODULE_MANGA_COLLECTION = 43;
-    MODULE_COOPERATION = 44;
-    MODULE_HEAD_RESOURCE = 45;
-    MODULE_RECOMMEND_CARDS = 46;
-    MODULE_RCMD_REASON = 47;
-    MODULE_PAYWALL = 48;
-  }
-
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/ModuleAd.java
@@ -3707,27 +3775,6 @@ message ModuleAdditional {
   }
   int64 rid = 7;
   bool needWriteCalender = 11;
-  enum ItemCase {
-    ITEM_NOT_SET = 0;
-    PGC = 2;
-    GOODS = 3;
-    VOTE = 4;
-    COMMON = 5;
-    ESPORT = 6;
-    VOTE2 = 8;
-    UGC = 9;
-    UP = 10;
-    ARTICLE = 12;
-    LIVE = 13;
-    MUSIC = 14;
-    OPUS = 15;
-    VIDEO = 16;
-    COMMENT = 17;
-    CONTENTUP = 18;
-    MULTIPLE_RESOURCES = 19;
-    TOY = 20;
-  }
-
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/ModuleAuthor.java
@@ -3982,16 +4029,6 @@ message ModuleExtendItem {
     ExtInfoCommon extInfoCommon = 6;
     ExtInfoOGV extInfoOgv = 7;
   }
-  enum ExtendCase {
-    EXTEND_NOT_SET = 0;
-    EXT_INFO_TOPIC = 2;
-    EXT_INFO_LBS = 3;
-    EXT_INFO_HOT = 4;
-    EXT_INFO_GAME = 5;
-    EXT_INFO_COMMON = 6;
-    EXT_INFO_OGV = 7;
-  }
-
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/ModuleFold.java
@@ -4006,17 +4043,23 @@ message ModuleFold {
 // Source: com/bapis/bilibili/app/dynamic/v2/ModuleHeadResource.java
 message ModuleHeadResource {
   string icon = 1;
-  bytes text = 2;
+  ModuleHeadResource_LinkText text = 2;
   string suffix = 3;
   bytes subtext = 4;
-  int32 type = 5;
+  ResourceType type = 5;
   int64 moduleId = 6;
   int64 subModuleId = 7;
   string moduleType = 8;
   repeated TribeeHeadInfo tribeeHeadInfos = 9;
+  enum ResourceType {
+    Default = 0;
+    Topic = 1;
+    Tribee = 2;
+  }
+
 }
 
-// Source: com/bapis/bilibili/app/dynamic/v2/ModuleHeadResource$LinkText.java
+// Source: com/bapis/bilibili/app/dynamic/v2/ModuleHeadResource.java
 message ModuleHeadResource_LinkText {
   string text = 1;
   string url = 2;
@@ -5510,30 +5553,6 @@ message ThreePointItem {
     ThreePointDefault tribeeRejectThreadSelected = 22;
   }
   bool isAdminOperation = 20;
-  enum ItemCase {
-    ITEM_NOT_SET = 0;
-    DEFAULT = 2;
-    AUTO_PLAYER = 3;
-    SHARE = 4;
-    ATTENTION = 5;
-    WAIT = 6;
-    DISLIKE = 7;
-    FAVORITE = 8;
-    TOP = 9;
-    COMMENT = 10;
-    HIDE = 11;
-    TOPIC_IRRELEVANT = 12;
-    DYN_EDIT = 13;
-    COIN = 14;
-    VISIBILITY_CHANGE = 15;
-    TOPIC_TOP = 16;
-    TRANSLATE = 17;
-    REPOST_TRIBEE = 18;
-    TRIBEE_FEATURED = 19;
-    TRIBEE_APPROVED_THREAD = 21;
-    TRIBEE_REJECT_THREAD_SELECTED = 22;
-  }
-
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/ThreePointRepostTribee.java
@@ -5690,7 +5709,7 @@ message TitleTagPic {
 
 // Source: com/bapis/bilibili/app/dynamic/v2/ToastDialog.java
 message ToastDialog {
-  ToastDialogType type = 1;
+  int32 type = 1;
   string title = 2;
   string desc = 3;
   string picUrl = 4;
@@ -5701,25 +5720,6 @@ message ToastDialog {
   string inputInviteCode = 9;
   TribeeDesc sourceTribee = 10;
   TribeeDesc targetTribee = 11;
-  enum ToastDialogType {
-    UNKNOWN = 0;
-    EXIT = 1;
-    PUBLISH_JOIN = 2;
-    PUBLISH_ABNORMAL = 3;
-    ACTIVATE_NO_CANDIDATE = 4;
-    ACTIVATE_CANDIDATE = 5;
-    INVITE_CODE_SUCCESS = 6;
-    INVITE_CODE_EXPIRE = 7;
-    INVITE_CODE_NO_NEED = 8;
-    PUBLISH_BANNED = 9;
-    GAME_STATS_NO_TRIBEE = 10;
-    STEAM_ACCOUNT_RELEASE = 11;
-    ALLOW_OUTSIDER_PUB_TOAST = 12;
-    OUTSIDER_INVITE_CODE_SUCCESS = 13;
-    VISA_JOIN_SUCCESS = 14;
-    VISA_PUBLISH_SUCCESS = 15;
-  }
-
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TopAdditionUP.java
@@ -5851,6 +5851,9 @@ message TribeeAdminSection {
   string conventionUri = 4;
   string recruitUrl = 5;
   string placeholderText = 6;
+  string recruitTitle = 7;
+  string recruitIconUrl = 8;
+  bool recruitHasApply = 9;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeBaseInfo.java
@@ -6176,6 +6179,19 @@ message TribeeProfileResp {
   string visaJumpUri = 7;
   ShareConfig share = 8;
   TribeeTheme tribeeTheme = 9;
+  TribeeRuleContent ruleOpus = 10;
+}
+
+// Source: com/bapis/bilibili/app/dynamic/v2/TribeeRuleContent.java
+message TribeeRuleContent {
+  Mode mode = 1;
+  repeated Paragraph paragraphs = 2;
+  enum Mode {
+    MODE_UNSPECIFIED = 0;
+    FOLLOW_DEFAULT = 1;
+    CUSTOM = 2;
+  }
+
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeSearchAllReq.java

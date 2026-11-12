@@ -92,6 +92,14 @@ enum SourceContentType {
   SC_LIVE = 2;
 }
 
+enum TabModule_TabCase {
+  TAB_NOT_SET = 0;
+  INTRODUCTION = 2;
+  REPLY = 3;
+  ACTIVITY_TAB = 4;
+  CATALOG = 5;
+}
+
 enum TabType {
   TAB_NONE = 0;
   TAB_INTRODUCTION = 1;
@@ -890,14 +898,6 @@ message TabModule {
     com.bapis.bilibili.app.viewunite.common.ActivityTab activityTab = 4;
     com.bapis.bilibili.app.viewunite.common.CatalogTab catalog = 5;
   }
-  enum TabCase {
-    TAB_NOT_SET = 0;
-    INTRODUCTION = 2;
-    REPLY = 3;
-    ACTIVITY_TAB = 4;
-    CATALOG = 5;
-  }
-
 }
 
 // Source: com/bapis/bilibili/app/viewunite/v1/TextInfo.java

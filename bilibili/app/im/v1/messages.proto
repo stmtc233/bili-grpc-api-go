@@ -671,6 +671,8 @@ message GetQuickLinkUnreadReq {
 // Source: com/bapis/bilibili/app/im/v1/GetTotalUnreadReply.java
 message GetTotalUnreadReply {
   Unread total = 1;
+  bool msgRemind = 2;
+  bool hitImGray = 3;
 }
 
 // Source: com/bapis/bilibili/app/im/v1/GetTotalUnreadReq.java

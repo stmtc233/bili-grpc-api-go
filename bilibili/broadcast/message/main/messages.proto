@@ -5,6 +5,12 @@ package com.bapis.bilibili.broadcast.message.main;
 
 import "bilibili/app/dynamic/v2/messages.proto";
 
+enum CardItem_CardItemCase {
+  CARDITEM_NOT_SET = 0;
+  ARTICLE = 4;
+  AV = 5;
+}
+
 enum LikeState {
   DEFAULT = 0;
   LIKE = 1;
@@ -53,12 +59,6 @@ message CardItem {
     ArticleCard article = 4;
     VideoCard av = 5;
   }
-  enum CardItemCase {
-    CARDITEM_NOT_SET = 0;
-    ARTICLE = 4;
-    AV = 5;
-  }
-
 }
 
 // Source: com/bapis/bilibili/broadcast/message/main/ChatResult.java

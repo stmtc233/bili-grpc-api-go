@@ -937,6 +937,7 @@ message PauseAdLandingPage {
   repeated string reportableAreas = 6;
   bool enableSlideReport = 7;
   string universalApp = 8;
+  PauseUnderplayerInteractionConfig pauseUnderplayerInteraction = 9;
 }
 
 // Source: com/bapis/bilibili/ad/v1/PauseAdLandingPageModule.java
@@ -1002,6 +1003,12 @@ message PausedDynamicPage {
     BX_PAGE = 1;
   }
 
+}
+
+// Source: com/bapis/bilibili/ad/v1/PauseUnderplayerInteractionConfig.java
+message PauseUnderplayerInteractionConfig {
+  repeated string whitelist = 1;
+  double scrollThresholdPt = 2;
 }
 
 // Source: com/bapis/bilibili/ad/v1/QualityInfo.java

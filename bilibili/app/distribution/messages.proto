@@ -5,6 +5,19 @@ package com.bapis.bilibili.app.distribution;
 
 import "google/protobuf/any.proto";
 
+enum defaultValue_ValueCase {
+  VALUE_NOT_SET = 0;
+  DOUBLE_VALUE = 1;
+  FLOAT_VALUE = 2;
+  INT64_VALUE = 3;
+  UINT64_VALUE = 4;
+  INT32_VALUE = 5;
+  UINT32_VALUE = 6;
+  BOOL_VALUE = 7;
+  STRING_VALUE = 8;
+  BYTES_VALUE = 9;
+}
+
 // Source: com/bapis/bilibili/app/distribution/BoolValue.java
 message BoolValue {
   bool value = 1;
@@ -34,19 +47,6 @@ message defaultValue {
     string stringValue = 8;
     bytes bytesValue = 9;
   }
-  enum ValueCase {
-    VALUE_NOT_SET = 0;
-    DOUBLE_VALUE = 1;
-    FLOAT_VALUE = 2;
-    INT64_VALUE = 3;
-    UINT64_VALUE = 4;
-    INT32_VALUE = 5;
-    UINT32_VALUE = 6;
-    BOOL_VALUE = 7;
-    STRING_VALUE = 8;
-    BYTES_VALUE = 9;
-  }
-
 }
 
 // Source: com/bapis/bilibili/app/distribution/DoubleValue.java

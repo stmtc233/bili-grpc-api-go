@@ -8055,14 +8055,15 @@ type PauseAdLandingPage struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Modules           []*PauseAdLandingPageModule `protobuf:"bytes,1,rep,name=modules,proto3" json:"modules,omitempty"`
-	BackgroundColor   *PauseAdBackgroundColor     `protobuf:"bytes,2,opt,name=backgroundColor,proto3" json:"backgroundColor,omitempty"`
-	BottomComponent   *PauseAdBottomComponent     `protobuf:"bytes,3,opt,name=bottomComponent,proto3" json:"bottomComponent,omitempty"`
-	ClickableAreas    []string                    `protobuf:"bytes,4,rep,name=clickableAreas,proto3" json:"clickableAreas,omitempty"`
-	CustomShowUrls    *CustomShowUrlInfo          `protobuf:"bytes,5,opt,name=customShowUrls,proto3" json:"customShowUrls,omitempty"`
-	ReportableAreas   []string                    `protobuf:"bytes,6,rep,name=reportableAreas,proto3" json:"reportableAreas,omitempty"`
-	EnableSlideReport bool                        `protobuf:"varint,7,opt,name=enableSlideReport,proto3" json:"enableSlideReport,omitempty"`
-	UniversalApp      string                      `protobuf:"bytes,8,opt,name=universalApp,proto3" json:"universalApp,omitempty"`
+	Modules                     []*PauseAdLandingPageModule        `protobuf:"bytes,1,rep,name=modules,proto3" json:"modules,omitempty"`
+	BackgroundColor             *PauseAdBackgroundColor            `protobuf:"bytes,2,opt,name=backgroundColor,proto3" json:"backgroundColor,omitempty"`
+	BottomComponent             *PauseAdBottomComponent            `protobuf:"bytes,3,opt,name=bottomComponent,proto3" json:"bottomComponent,omitempty"`
+	ClickableAreas              []string                           `protobuf:"bytes,4,rep,name=clickableAreas,proto3" json:"clickableAreas,omitempty"`
+	CustomShowUrls              *CustomShowUrlInfo                 `protobuf:"bytes,5,opt,name=customShowUrls,proto3" json:"customShowUrls,omitempty"`
+	ReportableAreas             []string                           `protobuf:"bytes,6,rep,name=reportableAreas,proto3" json:"reportableAreas,omitempty"`
+	EnableSlideReport           bool                               `protobuf:"varint,7,opt,name=enableSlideReport,proto3" json:"enableSlideReport,omitempty"`
+	UniversalApp                string                             `protobuf:"bytes,8,opt,name=universalApp,proto3" json:"universalApp,omitempty"`
+	PauseUnderplayerInteraction *PauseUnderplayerInteractionConfig `protobuf:"bytes,9,opt,name=pauseUnderplayerInteraction,proto3" json:"pauseUnderplayerInteraction,omitempty"`
 }
 
 func (x *PauseAdLandingPage) Reset() {
@@ -8151,6 +8152,13 @@ func (x *PauseAdLandingPage) GetUniversalApp() string {
 		return x.UniversalApp
 	}
 	return ""
+}
+
+func (x *PauseAdLandingPage) GetPauseUnderplayerInteraction() *PauseUnderplayerInteractionConfig {
+	if x != nil {
+		return x.PauseUnderplayerInteraction
+	}
+	return nil
 }
 
 // Source: com/bapis/bilibili/ad/v1/PauseAdLandingPageModule.java
@@ -8693,6 +8701,62 @@ type PausedDynamicPage_BxPage struct {
 
 func (*PausedDynamicPage_BxPage) isPausedDynamicPage_Oneof_0() {}
 
+// Source: com/bapis/bilibili/ad/v1/PauseUnderplayerInteractionConfig.java
+type PauseUnderplayerInteractionConfig struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Whitelist         []string `protobuf:"bytes,1,rep,name=whitelist,proto3" json:"whitelist,omitempty"`
+	ScrollThresholdPt float64  `protobuf:"fixed64,2,opt,name=scrollThresholdPt,proto3" json:"scrollThresholdPt,omitempty"`
+}
+
+func (x *PauseUnderplayerInteractionConfig) Reset() {
+	*x = PauseUnderplayerInteractionConfig{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[85]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PauseUnderplayerInteractionConfig) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PauseUnderplayerInteractionConfig) ProtoMessage() {}
+
+func (x *PauseUnderplayerInteractionConfig) ProtoReflect() protoreflect.Message {
+	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[85]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PauseUnderplayerInteractionConfig.ProtoReflect.Descriptor instead.
+func (*PauseUnderplayerInteractionConfig) Descriptor() ([]byte, []int) {
+	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{85}
+}
+
+func (x *PauseUnderplayerInteractionConfig) GetWhitelist() []string {
+	if x != nil {
+		return x.Whitelist
+	}
+	return nil
+}
+
+func (x *PauseUnderplayerInteractionConfig) GetScrollThresholdPt() float64 {
+	if x != nil {
+		return x.ScrollThresholdPt
+	}
+	return 0
+}
+
 // Source: com/bapis/bilibili/ad/v1/QualityInfo.java
 type QualityInfo struct {
 	state         protoimpl.MessageState
@@ -8716,7 +8780,7 @@ type QualityInfo struct {
 func (x *QualityInfo) Reset() {
 	*x = QualityInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[85]
+		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[86]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8729,7 +8793,7 @@ func (x *QualityInfo) String() string {
 func (*QualityInfo) ProtoMessage() {}
 
 func (x *QualityInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[85]
+	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[86]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8742,7 +8806,7 @@ func (x *QualityInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use QualityInfo.ProtoReflect.Descriptor instead.
 func (*QualityInfo) Descriptor() ([]byte, []int) {
-	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{85}
+	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{86}
 }
 
 func (x *QualityInfo) GetIcon() string {
@@ -8845,7 +8909,7 @@ type QualityParmas struct {
 func (x *QualityParmas) Reset() {
 	*x = QualityParmas{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[86]
+		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[87]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8858,7 +8922,7 @@ func (x *QualityParmas) String() string {
 func (*QualityParmas) ProtoMessage() {}
 
 func (x *QualityParmas) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[86]
+	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[87]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8871,7 +8935,7 @@ func (x *QualityParmas) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use QualityParmas.ProtoReflect.Descriptor instead.
 func (*QualityParmas) Descriptor() ([]byte, []int) {
-	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{86}
+	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{87}
 }
 
 func (x *QualityParmas) GetFirstLine() string {
@@ -8925,7 +8989,7 @@ type Reward struct {
 func (x *Reward) Reset() {
 	*x = Reward{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[87]
+		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[88]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -8938,7 +9002,7 @@ func (x *Reward) String() string {
 func (*Reward) ProtoMessage() {}
 
 func (x *Reward) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[87]
+	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[88]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8951,7 +9015,7 @@ func (x *Reward) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Reward.ProtoReflect.Descriptor instead.
 func (*Reward) Descriptor() ([]byte, []int) {
-	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{87}
+	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{88}
 }
 
 func (x *Reward) GetLevel() int32 {
@@ -9004,7 +9068,7 @@ type ScreenShots struct {
 func (x *ScreenShots) Reset() {
 	*x = ScreenShots{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[88]
+		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[89]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9017,7 +9081,7 @@ func (x *ScreenShots) String() string {
 func (*ScreenShots) ProtoMessage() {}
 
 func (x *ScreenShots) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[88]
+	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[89]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9030,7 +9094,7 @@ func (x *ScreenShots) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ScreenShots.ProtoReflect.Descriptor instead.
 func (*ScreenShots) Descriptor() ([]byte, []int) {
-	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{88}
+	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{89}
 }
 
 func (x *ScreenShots) GetUrl() string {
@@ -9081,7 +9145,7 @@ type SourceContentDto struct {
 func (x *SourceContentDto) Reset() {
 	*x = SourceContentDto{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[89]
+		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[90]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9094,7 +9158,7 @@ func (x *SourceContentDto) String() string {
 func (*SourceContentDto) ProtoMessage() {}
 
 func (x *SourceContentDto) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[89]
+	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[90]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9107,7 +9171,7 @@ func (x *SourceContentDto) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SourceContentDto.ProtoReflect.Descriptor instead.
 func (*SourceContentDto) Descriptor() ([]byte, []int) {
-	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{89}
+	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{90}
 }
 
 func (x *SourceContentDto) GetRequestId() string {
@@ -9188,7 +9252,7 @@ type StoryAnchor struct {
 func (x *StoryAnchor) Reset() {
 	*x = StoryAnchor{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[90]
+		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[91]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9201,7 +9265,7 @@ func (x *StoryAnchor) String() string {
 func (*StoryAnchor) ProtoMessage() {}
 
 func (x *StoryAnchor) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[90]
+	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[91]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9214,7 +9278,7 @@ func (x *StoryAnchor) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StoryAnchor.ProtoReflect.Descriptor instead.
 func (*StoryAnchor) Descriptor() ([]byte, []int) {
-	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{90}
+	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{91}
 }
 
 func (x *StoryAnchor) GetType() int32 {
@@ -9259,7 +9323,7 @@ type StoryCartIcon struct {
 func (x *StoryCartIcon) Reset() {
 	*x = StoryCartIcon{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[91]
+		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[92]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9272,7 +9336,7 @@ func (x *StoryCartIcon) String() string {
 func (*StoryCartIcon) ProtoMessage() {}
 
 func (x *StoryCartIcon) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[91]
+	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[92]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9285,7 +9349,7 @@ func (x *StoryCartIcon) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StoryCartIcon.ProtoReflect.Descriptor instead.
 func (*StoryCartIcon) Descriptor() ([]byte, []int) {
-	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{91}
+	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{92}
 }
 
 func (x *StoryCartIcon) GetIconUrl() string {
@@ -9354,7 +9418,7 @@ type SubCardModule struct {
 func (x *SubCardModule) Reset() {
 	*x = SubCardModule{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[92]
+		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[93]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9367,7 +9431,7 @@ func (x *SubCardModule) String() string {
 func (*SubCardModule) ProtoMessage() {}
 
 func (x *SubCardModule) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[92]
+	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[93]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9380,7 +9444,7 @@ func (x *SubCardModule) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SubCardModule.ProtoReflect.Descriptor instead.
 func (*SubCardModule) Descriptor() ([]byte, []int) {
-	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{92}
+	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{93}
 }
 
 func (x *SubCardModule) GetSubcardType() string {
@@ -9635,7 +9699,7 @@ type SummaryComponent struct {
 func (x *SummaryComponent) Reset() {
 	*x = SummaryComponent{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[93]
+		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[94]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9648,7 +9712,7 @@ func (x *SummaryComponent) String() string {
 func (*SummaryComponent) ProtoMessage() {}
 
 func (x *SummaryComponent) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[93]
+	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[94]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9661,7 +9725,7 @@ func (x *SummaryComponent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SummaryComponent.ProtoReflect.Descriptor instead.
 func (*SummaryComponent) Descriptor() ([]byte, []int) {
-	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{93}
+	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{94}
 }
 
 func (x *SummaryComponent) GetTitle() string {
@@ -9733,7 +9797,7 @@ type Tab2ExtraDto struct {
 func (x *Tab2ExtraDto) Reset() {
 	*x = Tab2ExtraDto{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[94]
+		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[95]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -9746,7 +9810,7 @@ func (x *Tab2ExtraDto) String() string {
 func (*Tab2ExtraDto) ProtoMessage() {}
 
 func (x *Tab2ExtraDto) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[94]
+	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[95]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9759,7 +9823,7 @@ func (x *Tab2ExtraDto) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Tab2ExtraDto.ProtoReflect.Descriptor instead.
 func (*Tab2ExtraDto) Descriptor() ([]byte, []int) {
-	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{94}
+	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{95}
 }
 
 func (x *Tab2ExtraDto) GetCoverUrl() string {
@@ -10047,7 +10111,7 @@ type TabExtraDto struct {
 func (x *TabExtraDto) Reset() {
 	*x = TabExtraDto{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[95]
+		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[96]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10060,7 +10124,7 @@ func (x *TabExtraDto) String() string {
 func (*TabExtraDto) ProtoMessage() {}
 
 func (x *TabExtraDto) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[95]
+	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[96]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10073,7 +10137,7 @@ func (x *TabExtraDto) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TabExtraDto.ProtoReflect.Descriptor instead.
 func (*TabExtraDto) Descriptor() ([]byte, []int) {
-	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{95}
+	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{96}
 }
 
 func (x *TabExtraDto) GetTabUrl() string {
@@ -10195,7 +10259,7 @@ type TabInfoDto struct {
 func (x *TabInfoDto) Reset() {
 	*x = TabInfoDto{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[96]
+		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[97]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10208,7 +10272,7 @@ func (x *TabInfoDto) String() string {
 func (*TabInfoDto) ProtoMessage() {}
 
 func (x *TabInfoDto) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[96]
+	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[97]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10221,7 +10285,7 @@ func (x *TabInfoDto) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TabInfoDto.ProtoReflect.Descriptor instead.
 func (*TabInfoDto) Descriptor() ([]byte, []int) {
-	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{96}
+	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{97}
 }
 
 func (x *TabInfoDto) GetTabName() string {
@@ -10264,7 +10328,7 @@ type TagInfo struct {
 func (x *TagInfo) Reset() {
 	*x = TagInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[97]
+		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[98]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10277,7 +10341,7 @@ func (x *TagInfo) String() string {
 func (*TagInfo) ProtoMessage() {}
 
 func (x *TagInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[97]
+	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[98]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10290,7 +10354,7 @@ func (x *TagInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TagInfo.ProtoReflect.Descriptor instead.
 func (*TagInfo) Descriptor() ([]byte, []int) {
-	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{97}
+	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{98}
 }
 
 func (x *TagInfo) GetText() string {
@@ -10370,7 +10434,7 @@ type Text struct {
 func (x *Text) Reset() {
 	*x = Text{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[98]
+		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[99]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10383,7 +10447,7 @@ func (x *Text) String() string {
 func (*Text) ProtoMessage() {}
 
 func (x *Text) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[98]
+	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[99]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10396,7 +10460,7 @@ func (x *Text) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Text.ProtoReflect.Descriptor instead.
 func (*Text) Descriptor() ([]byte, []int) {
-	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{98}
+	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{99}
 }
 
 func (x *Text) GetText() string {
@@ -10483,7 +10547,7 @@ type WxProgramInfo struct {
 func (x *WxProgramInfo) Reset() {
 	*x = WxProgramInfo{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[99]
+		mi := &file_bilibili_ad_v1_messages_proto_msgTypes[100]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -10496,7 +10560,7 @@ func (x *WxProgramInfo) String() string {
 func (*WxProgramInfo) ProtoMessage() {}
 
 func (x *WxProgramInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[99]
+	mi := &file_bilibili_ad_v1_messages_proto_msgTypes[100]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10509,7 +10573,7 @@ func (x *WxProgramInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WxProgramInfo.ProtoReflect.Descriptor instead.
 func (*WxProgramInfo) Descriptor() ([]byte, []int) {
-	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{99}
+	return file_bilibili_ad_v1_messages_proto_rawDescGZIP(), []int{100}
 }
 
 func (x *WxProgramInfo) GetOrgId() string {
@@ -12063,7 +12127,7 @@ var file_bilibili_ad_v1_messages_proto_rawDesc = []byte{
 	0x28, 0x05, 0x52, 0x08, 0x66, 0x6f, 0x6e, 0x74, 0x53, 0x69, 0x7a, 0x65, 0x12, 0x2c, 0x0a, 0x11,
 	0x68, 0x69, 0x67, 0x68, 0x6c, 0x69, 0x67, 0x68, 0x74, 0x46, 0x6f, 0x6e, 0x74, 0x53, 0x69, 0x7a,
 	0x65, 0x18, 0x0c, 0x20, 0x01, 0x28, 0x05, 0x52, 0x11, 0x68, 0x69, 0x67, 0x68, 0x6c, 0x69, 0x67,
-	0x68, 0x74, 0x46, 0x6f, 0x6e, 0x74, 0x53, 0x69, 0x7a, 0x65, 0x22, 0x93, 0x04, 0x0a, 0x12, 0x50,
+	0x68, 0x74, 0x46, 0x6f, 0x6e, 0x74, 0x53, 0x69, 0x7a, 0x65, 0x22, 0x92, 0x05, 0x0a, 0x12, 0x50,
 	0x61, 0x75, 0x73, 0x65, 0x41, 0x64, 0x4c, 0x61, 0x6e, 0x64, 0x69, 0x6e, 0x67, 0x50, 0x61, 0x67,
 	0x65, 0x12, 0x4c, 0x0a, 0x07, 0x6d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03,
 	0x28, 0x0b, 0x32, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62,
@@ -12097,138 +12161,153 @@ var file_bilibili_ad_v1_messages_proto_rawDesc = []byte{
 	0x65, 0x53, 0x6c, 0x69, 0x64, 0x65, 0x52, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x12, 0x22, 0x0a, 0x0c,
 	0x75, 0x6e, 0x69, 0x76, 0x65, 0x72, 0x73, 0x61, 0x6c, 0x41, 0x70, 0x70, 0x18, 0x08, 0x20, 0x01,
 	0x28, 0x09, 0x52, 0x0c, 0x75, 0x6e, 0x69, 0x76, 0x65, 0x72, 0x73, 0x61, 0x6c, 0x41, 0x70, 0x70,
-	0x22, 0xa3, 0x08, 0x0a, 0x18, 0x50, 0x61, 0x75, 0x73, 0x65, 0x41, 0x64, 0x4c, 0x61, 0x6e, 0x64,
-	0x69, 0x6e, 0x67, 0x50, 0x61, 0x67, 0x65, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x12, 0x12, 0x0a,
-	0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x74, 0x79, 0x70,
-	0x65, 0x12, 0x5a, 0x0a, 0x0f, 0x68, 0x65, 0x61, 0x64, 0x65, 0x72, 0x43, 0x6f, 0x6d, 0x70, 0x6f,
-	0x6e, 0x65, 0x6e, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x30, 0x2e, 0x63, 0x6f, 0x6d,
-	0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e,
-	0x61, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x75, 0x73, 0x65, 0x41, 0x64, 0x48, 0x65, 0x61,
-	0x64, 0x65, 0x72, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x52, 0x0f, 0x68, 0x65,
-	0x61, 0x64, 0x65, 0x72, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x12, 0x4e, 0x0a,
-	0x0b, 0x61, 0x69, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x18, 0x03, 0x20, 0x01,
-	0x28, 0x0b, 0x32, 0x2c, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62,
-	0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61,
-	0x75, 0x73, 0x65, 0x41, 0x64, 0x41, 0x49, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74,
-	0x52, 0x0b, 0x61, 0x69, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x12, 0x5d, 0x0a,
-	0x10, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e,
-	0x74, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61,
-	0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x64, 0x2e,
-	0x76, 0x31, 0x2e, 0x50, 0x61, 0x75, 0x73, 0x65, 0x41, 0x64, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63,
-	0x74, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x52, 0x10, 0x70, 0x72, 0x6f, 0x64,
-	0x75, 0x63, 0x74, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x12, 0x51, 0x0a, 0x0c,
-	0x72, 0x65, 0x6c, 0x61, 0x74, 0x65, 0x56, 0x69, 0x64, 0x65, 0x6f, 0x73, 0x18, 0x05, 0x20, 0x01,
-	0x28, 0x0b, 0x32, 0x2d, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62,
-	0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61,
-	0x75, 0x73, 0x65, 0x41, 0x64, 0x52, 0x65, 0x6c, 0x61, 0x74, 0x65, 0x56, 0x69, 0x64, 0x65, 0x6f,
-	0x73, 0x52, 0x0c, 0x72, 0x65, 0x6c, 0x61, 0x74, 0x65, 0x56, 0x69, 0x64, 0x65, 0x6f, 0x73, 0x12,
-	0x63, 0x0a, 0x12, 0x64, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x49, 0x6e, 0x74, 0x72, 0x6f, 0x64, 0x75,
-	0x63, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x33, 0x2e, 0x63, 0x6f,
-	0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69,
-	0x2e, 0x61, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x75, 0x73, 0x65, 0x41, 0x64, 0x44, 0x65,
-	0x74, 0x61, 0x69, 0x6c, 0x49, 0x6e, 0x74, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x69, 0x6f, 0x6e,
-	0x52, 0x12, 0x64, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x49, 0x6e, 0x74, 0x72, 0x6f, 0x64, 0x75, 0x63,
-	0x74, 0x69, 0x6f, 0x6e, 0x12, 0x39, 0x0a, 0x04, 0x66, 0x6f, 0x72, 0x6d, 0x18, 0x07, 0x20, 0x01,
-	0x28, 0x0b, 0x32, 0x25, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62,
-	0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61,
-	0x75, 0x73, 0x65, 0x41, 0x64, 0x46, 0x6f, 0x72, 0x6d, 0x52, 0x04, 0x66, 0x6f, 0x72, 0x6d, 0x12,
-	0x6f, 0x0a, 0x16, 0x68, 0x65, 0x61, 0x64, 0x65, 0x72, 0x50, 0x69, 0x63, 0x74, 0x75, 0x72, 0x65,
-	0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x18, 0x08, 0x20, 0x01, 0x28, 0x0b, 0x32,
-	0x37, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69,
-	0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x75, 0x73, 0x65,
-	0x41, 0x64, 0x48, 0x65, 0x61, 0x64, 0x65, 0x72, 0x50, 0x69, 0x63, 0x74, 0x75, 0x72, 0x65, 0x43,
-	0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x52, 0x16, 0x68, 0x65, 0x61, 0x64, 0x65, 0x72,
-	0x50, 0x69, 0x63, 0x74, 0x75, 0x72, 0x65, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74,
-	0x12, 0x5d, 0x0a, 0x10, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x43, 0x6f, 0x6d, 0x70, 0x6f,
-	0x6e, 0x65, 0x6e, 0x74, 0x18, 0x09, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x31, 0x2e, 0x63, 0x6f, 0x6d,
-	0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e,
-	0x61, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x75, 0x73, 0x65, 0x41, 0x64, 0x43, 0x6f, 0x6d,
-	0x6d, 0x65, 0x6e, 0x74, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x52, 0x10, 0x63,
-	0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x12,
-	0x69, 0x0a, 0x14, 0x71, 0x75, 0x61, 0x6c, 0x69, 0x74, 0x79, 0x49, 0x6e, 0x66, 0x6f, 0x43, 0x6f,
-	0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x35, 0x2e,
-	0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69,
-	0x6c, 0x69, 0x2e, 0x61, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x75, 0x73, 0x65, 0x41, 0x64,
-	0x51, 0x75, 0x61, 0x6c, 0x69, 0x74, 0x79, 0x49, 0x6e, 0x66, 0x6f, 0x43, 0x6f, 0x6d, 0x70, 0x6f,
-	0x6e, 0x65, 0x6e, 0x74, 0x52, 0x14, 0x71, 0x75, 0x61, 0x6c, 0x69, 0x74, 0x79, 0x49, 0x6e, 0x66,
-	0x6f, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x12, 0x62, 0x0a, 0x14, 0x68, 0x65,
-	0x61, 0x64, 0x65, 0x72, 0x56, 0x69, 0x64, 0x65, 0x6f, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65,
-	0x6e, 0x74, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2e, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62,
-	0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x64,
-	0x2e, 0x76, 0x31, 0x2e, 0x48, 0x65, 0x61, 0x64, 0x65, 0x72, 0x56, 0x69, 0x64, 0x65, 0x6f, 0x43,
-	0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x52, 0x14, 0x68, 0x65, 0x61, 0x64, 0x65, 0x72,
-	0x56, 0x69, 0x64, 0x65, 0x6f, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x12, 0x56,
-	0x0a, 0x10, 0x73, 0x75, 0x6d, 0x6d, 0x61, 0x72, 0x79, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65,
-	0x6e, 0x74, 0x18, 0x0c, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2a, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62,
-	0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x64,
-	0x2e, 0x76, 0x31, 0x2e, 0x53, 0x75, 0x6d, 0x6d, 0x61, 0x72, 0x79, 0x43, 0x6f, 0x6d, 0x70, 0x6f,
-	0x6e, 0x65, 0x6e, 0x74, 0x52, 0x10, 0x73, 0x75, 0x6d, 0x6d, 0x61, 0x72, 0x79, 0x43, 0x6f, 0x6d,
-	0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x22, 0xf5, 0x02, 0x0a, 0x17, 0x50, 0x61, 0x75, 0x73, 0x65,
-	0x41, 0x64, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65,
-	0x6e, 0x74, 0x12, 0x55, 0x0a, 0x0e, 0x63, 0x6f, 0x67, 0x6e, 0x69, 0x74, 0x69, 0x76, 0x65, 0x49,
-	0x6e, 0x66, 0x6f, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2d, 0x2e, 0x63, 0x6f, 0x6d,
-	0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e,
-	0x61, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x75, 0x73, 0x65, 0x41, 0x64, 0x44, 0x65, 0x63,
-	0x69, 0x73, 0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x0e, 0x63, 0x6f, 0x67, 0x6e, 0x69,
-	0x74, 0x69, 0x76, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x12, 0x44, 0x0a, 0x0a, 0x70, 0x72, 0x6f,
-	0x64, 0x75, 0x63, 0x74, 0x49, 0x6d, 0x67, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x24, 0x2e,
-	0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69,
-	0x6c, 0x69, 0x2e, 0x61, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x64, 0x43, 0x6f, 0x76, 0x65, 0x72,
-	0x44, 0x74, 0x6f, 0x52, 0x0a, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x49, 0x6d, 0x67, 0x12,
-	0x34, 0x0a, 0x15, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x4c, 0x69, 0x6e, 0x65, 0x43, 0x6f,
-	0x6c, 0x6f, 0x72, 0x4c, 0x69, 0x67, 0x68, 0x74, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x15,
-	0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x4c, 0x69, 0x6e, 0x65, 0x43, 0x6f, 0x6c, 0x6f, 0x72,
-	0x4c, 0x69, 0x67, 0x68, 0x74, 0x12, 0x32, 0x0a, 0x14, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74,
-	0x4c, 0x69, 0x6e, 0x65, 0x43, 0x6f, 0x6c, 0x6f, 0x72, 0x44, 0x61, 0x72, 0x6b, 0x18, 0x04, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x14, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x4c, 0x69, 0x6e, 0x65,
-	0x43, 0x6f, 0x6c, 0x6f, 0x72, 0x44, 0x61, 0x72, 0x6b, 0x12, 0x53, 0x0a, 0x0d, 0x64, 0x65, 0x63,
-	0x69, 0x73, 0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x05, 0x20, 0x03, 0x28, 0x0b,
-	0x32, 0x2d, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c,
-	0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x75, 0x73,
-	0x65, 0x41, 0x64, 0x44, 0x65, 0x63, 0x69, 0x73, 0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x66, 0x6f, 0x52,
-	0x0d, 0x64, 0x65, 0x63, 0x69, 0x73, 0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0xa4,
-	0x01, 0x0a, 0x12, 0x50, 0x61, 0x75, 0x73, 0x65, 0x41, 0x64, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x74,
-	0x79, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x1c, 0x0a, 0x09, 0x69, 0x63, 0x6f, 0x6e, 0x4c, 0x69, 0x67,
-	0x68, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x69, 0x63, 0x6f, 0x6e, 0x4c, 0x69,
-	0x67, 0x68, 0x74, 0x12, 0x1a, 0x0a, 0x08, 0x69, 0x63, 0x6f, 0x6e, 0x44, 0x61, 0x72, 0x6b, 0x18,
-	0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x69, 0x63, 0x6f, 0x6e, 0x44, 0x61, 0x72, 0x6b, 0x12,
-	0x1a, 0x0a, 0x08, 0x6c, 0x65, 0x66, 0x74, 0x54, 0x65, 0x78, 0x74, 0x18, 0x03, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x08, 0x6c, 0x65, 0x66, 0x74, 0x54, 0x65, 0x78, 0x74, 0x12, 0x1c, 0x0a, 0x09, 0x72,
-	0x69, 0x67, 0x68, 0x74, 0x54, 0x65, 0x78, 0x74, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09,
-	0x72, 0x69, 0x67, 0x68, 0x74, 0x54, 0x65, 0x78, 0x74, 0x12, 0x1a, 0x0a, 0x08, 0x73, 0x75, 0x62,
-	0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x73, 0x75, 0x62,
-	0x74, 0x69, 0x74, 0x6c, 0x65, 0x22, 0x77, 0x0a, 0x1b, 0x50, 0x61, 0x75, 0x73, 0x65, 0x41, 0x64,
-	0x51, 0x75, 0x61, 0x6c, 0x69, 0x74, 0x79, 0x49, 0x6e, 0x66, 0x6f, 0x43, 0x6f, 0x6d, 0x70, 0x6f,
-	0x6e, 0x65, 0x6e, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x42, 0x0a, 0x05, 0x69, 0x6e,
-	0x66, 0x6f, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2c, 0x2e, 0x63, 0x6f, 0x6d, 0x2e,
+	0x12, 0x7d, 0x0a, 0x1b, 0x70, 0x61, 0x75, 0x73, 0x65, 0x55, 0x6e, 0x64, 0x65, 0x72, 0x70, 0x6c,
+	0x61, 0x79, 0x65, 0x72, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x18,
+	0x09, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x3b, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69,
+	0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x64, 0x2e, 0x76, 0x31,
+	0x2e, 0x50, 0x61, 0x75, 0x73, 0x65, 0x55, 0x6e, 0x64, 0x65, 0x72, 0x70, 0x6c, 0x61, 0x79, 0x65,
+	0x72, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x6e, 0x66,
+	0x69, 0x67, 0x52, 0x1b, 0x70, 0x61, 0x75, 0x73, 0x65, 0x55, 0x6e, 0x64, 0x65, 0x72, 0x70, 0x6c,
+	0x61, 0x79, 0x65, 0x72, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x22,
+	0xa3, 0x08, 0x0a, 0x18, 0x50, 0x61, 0x75, 0x73, 0x65, 0x41, 0x64, 0x4c, 0x61, 0x6e, 0x64, 0x69,
+	0x6e, 0x67, 0x50, 0x61, 0x67, 0x65, 0x4d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x12, 0x12, 0x0a, 0x04,
+	0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65,
+	0x12, 0x5a, 0x0a, 0x0f, 0x68, 0x65, 0x61, 0x64, 0x65, 0x72, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e,
+	0x65, 0x6e, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x30, 0x2e, 0x63, 0x6f, 0x6d, 0x2e,
 	0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61,
-	0x64, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x75, 0x73, 0x65, 0x41, 0x64, 0x51, 0x75, 0x61, 0x6c,
-	0x69, 0x74, 0x79, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x05, 0x69, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x3c,
-	0x0a, 0x16, 0x50, 0x61, 0x75, 0x73, 0x65, 0x41, 0x64, 0x52, 0x65, 0x6c, 0x61, 0x74, 0x65, 0x56,
-	0x69, 0x64, 0x65, 0x6f, 0x49, 0x74, 0x65, 0x6d, 0x12, 0x10, 0x0a, 0x03, 0x61, 0x69, 0x64, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x03, 0x61, 0x69, 0x64, 0x12, 0x10, 0x0a, 0x03, 0x75, 0x72,
-	0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x75, 0x72, 0x6c, 0x22, 0x8d, 0x01, 0x0a,
-	0x13, 0x50, 0x61, 0x75, 0x73, 0x65, 0x41, 0x64, 0x52, 0x65, 0x6c, 0x61, 0x74, 0x65, 0x56, 0x69,
-	0x64, 0x65, 0x6f, 0x73, 0x12, 0x20, 0x0a, 0x0b, 0x6d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x54, 0x69,
-	0x74, 0x6c, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x6d, 0x6f, 0x64, 0x75, 0x6c,
-	0x65, 0x54, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x54, 0x0a, 0x0c, 0x72, 0x65, 0x6c, 0x61, 0x74, 0x65,
-	0x56, 0x69, 0x64, 0x65, 0x6f, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x30, 0x2e, 0x63,
+	0x64, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x75, 0x73, 0x65, 0x41, 0x64, 0x48, 0x65, 0x61, 0x64,
+	0x65, 0x72, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x52, 0x0f, 0x68, 0x65, 0x61,
+	0x64, 0x65, 0x72, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x12, 0x4e, 0x0a, 0x0b,
+	0x61, 0x69, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x18, 0x03, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x2c, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69,
+	0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x75,
+	0x73, 0x65, 0x41, 0x64, 0x41, 0x49, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x52,
+	0x0b, 0x61, 0x69, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x12, 0x5d, 0x0a, 0x10,
+	0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74,
+	0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70,
+	0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x64, 0x2e, 0x76,
+	0x31, 0x2e, 0x50, 0x61, 0x75, 0x73, 0x65, 0x41, 0x64, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74,
+	0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x52, 0x10, 0x70, 0x72, 0x6f, 0x64, 0x75,
+	0x63, 0x74, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x12, 0x51, 0x0a, 0x0c, 0x72,
+	0x65, 0x6c, 0x61, 0x74, 0x65, 0x56, 0x69, 0x64, 0x65, 0x6f, 0x73, 0x18, 0x05, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x2d, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69,
+	0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x75,
+	0x73, 0x65, 0x41, 0x64, 0x52, 0x65, 0x6c, 0x61, 0x74, 0x65, 0x56, 0x69, 0x64, 0x65, 0x6f, 0x73,
+	0x52, 0x0c, 0x72, 0x65, 0x6c, 0x61, 0x74, 0x65, 0x56, 0x69, 0x64, 0x65, 0x6f, 0x73, 0x12, 0x63,
+	0x0a, 0x12, 0x64, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x49, 0x6e, 0x74, 0x72, 0x6f, 0x64, 0x75, 0x63,
+	0x74, 0x69, 0x6f, 0x6e, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x33, 0x2e, 0x63, 0x6f, 0x6d,
+	0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e,
+	0x61, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x75, 0x73, 0x65, 0x41, 0x64, 0x44, 0x65, 0x74,
+	0x61, 0x69, 0x6c, 0x49, 0x6e, 0x74, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52,
+	0x12, 0x64, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x49, 0x6e, 0x74, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74,
+	0x69, 0x6f, 0x6e, 0x12, 0x39, 0x0a, 0x04, 0x66, 0x6f, 0x72, 0x6d, 0x18, 0x07, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x25, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69,
+	0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x75,
+	0x73, 0x65, 0x41, 0x64, 0x46, 0x6f, 0x72, 0x6d, 0x52, 0x04, 0x66, 0x6f, 0x72, 0x6d, 0x12, 0x6f,
+	0x0a, 0x16, 0x68, 0x65, 0x61, 0x64, 0x65, 0x72, 0x50, 0x69, 0x63, 0x74, 0x75, 0x72, 0x65, 0x43,
+	0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x18, 0x08, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x37,
+	0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62,
+	0x69, 0x6c, 0x69, 0x2e, 0x61, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x75, 0x73, 0x65, 0x41,
+	0x64, 0x48, 0x65, 0x61, 0x64, 0x65, 0x72, 0x50, 0x69, 0x63, 0x74, 0x75, 0x72, 0x65, 0x43, 0x6f,
+	0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x52, 0x16, 0x68, 0x65, 0x61, 0x64, 0x65, 0x72, 0x50,
+	0x69, 0x63, 0x74, 0x75, 0x72, 0x65, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x12,
+	0x5d, 0x0a, 0x10, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e,
+	0x65, 0x6e, 0x74, 0x18, 0x09, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x31, 0x2e, 0x63, 0x6f, 0x6d, 0x2e,
+	0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61,
+	0x64, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x75, 0x73, 0x65, 0x41, 0x64, 0x43, 0x6f, 0x6d, 0x6d,
+	0x65, 0x6e, 0x74, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x52, 0x10, 0x63, 0x6f,
+	0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x12, 0x69,
+	0x0a, 0x14, 0x71, 0x75, 0x61, 0x6c, 0x69, 0x74, 0x79, 0x49, 0x6e, 0x66, 0x6f, 0x43, 0x6f, 0x6d,
+	0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x35, 0x2e, 0x63,
 	0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c,
-	0x69, 0x2e, 0x61, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x75, 0x73, 0x65, 0x41, 0x64, 0x52,
-	0x65, 0x6c, 0x61, 0x74, 0x65, 0x56, 0x69, 0x64, 0x65, 0x6f, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x0c,
-	0x72, 0x65, 0x6c, 0x61, 0x74, 0x65, 0x56, 0x69, 0x64, 0x65, 0x6f, 0x73, 0x22, 0xa7, 0x01, 0x0a,
-	0x11, 0x50, 0x61, 0x75, 0x73, 0x65, 0x64, 0x44, 0x79, 0x6e, 0x61, 0x6d, 0x69, 0x63, 0x50, 0x61,
-	0x67, 0x65, 0x12, 0x3a, 0x0a, 0x06, 0x62, 0x78, 0x50, 0x61, 0x67, 0x65, 0x18, 0x01, 0x20, 0x01,
-	0x28, 0x0b, 0x32, 0x20, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62,
-	0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x42, 0x78,
-	0x50, 0x61, 0x67, 0x65, 0x48, 0x00, 0x52, 0x06, 0x62, 0x78, 0x50, 0x61, 0x67, 0x65, 0x12, 0x20,
-	0x0a, 0x0b, 0x72, 0x65, 0x6c, 0x61, 0x74, 0x65, 0x64, 0x41, 0x69, 0x64, 0x73, 0x18, 0x02, 0x20,
-	0x03, 0x28, 0x03, 0x52, 0x0b, 0x72, 0x65, 0x6c, 0x61, 0x74, 0x65, 0x64, 0x41, 0x69, 0x64, 0x73,
-	0x22, 0x29, 0x0a, 0x08, 0x50, 0x61, 0x67, 0x65, 0x43, 0x61, 0x73, 0x65, 0x12, 0x10, 0x0a, 0x0c,
-	0x50, 0x41, 0x47, 0x45, 0x5f, 0x4e, 0x4f, 0x54, 0x5f, 0x53, 0x45, 0x54, 0x10, 0x00, 0x12, 0x0b,
-	0x0a, 0x07, 0x42, 0x58, 0x5f, 0x50, 0x41, 0x47, 0x45, 0x10, 0x01, 0x42, 0x09, 0x0a, 0x07, 0x6f,
-	0x6e, 0x65, 0x6f, 0x66, 0x5f, 0x30, 0x22, 0xf1, 0x02, 0x0a, 0x0b, 0x51, 0x75, 0x61, 0x6c, 0x69,
+	0x69, 0x2e, 0x61, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x75, 0x73, 0x65, 0x41, 0x64, 0x51,
+	0x75, 0x61, 0x6c, 0x69, 0x74, 0x79, 0x49, 0x6e, 0x66, 0x6f, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e,
+	0x65, 0x6e, 0x74, 0x52, 0x14, 0x71, 0x75, 0x61, 0x6c, 0x69, 0x74, 0x79, 0x49, 0x6e, 0x66, 0x6f,
+	0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x12, 0x62, 0x0a, 0x14, 0x68, 0x65, 0x61,
+	0x64, 0x65, 0x72, 0x56, 0x69, 0x64, 0x65, 0x6f, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e,
+	0x74, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2e, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61,
+	0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x64, 0x2e,
+	0x76, 0x31, 0x2e, 0x48, 0x65, 0x61, 0x64, 0x65, 0x72, 0x56, 0x69, 0x64, 0x65, 0x6f, 0x43, 0x6f,
+	0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x52, 0x14, 0x68, 0x65, 0x61, 0x64, 0x65, 0x72, 0x56,
+	0x69, 0x64, 0x65, 0x6f, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x12, 0x56, 0x0a,
+	0x10, 0x73, 0x75, 0x6d, 0x6d, 0x61, 0x72, 0x79, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e,
+	0x74, 0x18, 0x0c, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2a, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61,
+	0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x64, 0x2e,
+	0x76, 0x31, 0x2e, 0x53, 0x75, 0x6d, 0x6d, 0x61, 0x72, 0x79, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e,
+	0x65, 0x6e, 0x74, 0x52, 0x10, 0x73, 0x75, 0x6d, 0x6d, 0x61, 0x72, 0x79, 0x43, 0x6f, 0x6d, 0x70,
+	0x6f, 0x6e, 0x65, 0x6e, 0x74, 0x22, 0xf5, 0x02, 0x0a, 0x17, 0x50, 0x61, 0x75, 0x73, 0x65, 0x41,
+	0x64, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e, 0x65, 0x6e,
+	0x74, 0x12, 0x55, 0x0a, 0x0e, 0x63, 0x6f, 0x67, 0x6e, 0x69, 0x74, 0x69, 0x76, 0x65, 0x49, 0x6e,
+	0x66, 0x6f, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2d, 0x2e, 0x63, 0x6f, 0x6d, 0x2e,
+	0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61,
+	0x64, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x75, 0x73, 0x65, 0x41, 0x64, 0x44, 0x65, 0x63, 0x69,
+	0x73, 0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x0e, 0x63, 0x6f, 0x67, 0x6e, 0x69, 0x74,
+	0x69, 0x76, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x12, 0x44, 0x0a, 0x0a, 0x70, 0x72, 0x6f, 0x64,
+	0x75, 0x63, 0x74, 0x49, 0x6d, 0x67, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x24, 0x2e, 0x63,
+	0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c,
+	0x69, 0x2e, 0x61, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x64, 0x43, 0x6f, 0x76, 0x65, 0x72, 0x44,
+	0x74, 0x6f, 0x52, 0x0a, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x49, 0x6d, 0x67, 0x12, 0x34,
+	0x0a, 0x15, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x4c, 0x69, 0x6e, 0x65, 0x43, 0x6f, 0x6c,
+	0x6f, 0x72, 0x4c, 0x69, 0x67, 0x68, 0x74, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x15, 0x70,
+	0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x4c, 0x69, 0x6e, 0x65, 0x43, 0x6f, 0x6c, 0x6f, 0x72, 0x4c,
+	0x69, 0x67, 0x68, 0x74, 0x12, 0x32, 0x0a, 0x14, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x4c,
+	0x69, 0x6e, 0x65, 0x43, 0x6f, 0x6c, 0x6f, 0x72, 0x44, 0x61, 0x72, 0x6b, 0x18, 0x04, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x14, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x4c, 0x69, 0x6e, 0x65, 0x43,
+	0x6f, 0x6c, 0x6f, 0x72, 0x44, 0x61, 0x72, 0x6b, 0x12, 0x53, 0x0a, 0x0d, 0x64, 0x65, 0x63, 0x69,
+	0x73, 0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x18, 0x05, 0x20, 0x03, 0x28, 0x0b, 0x32,
+	0x2d, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69,
+	0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x75, 0x73, 0x65,
+	0x41, 0x64, 0x44, 0x65, 0x63, 0x69, 0x73, 0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x0d,
+	0x64, 0x65, 0x63, 0x69, 0x73, 0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0xa4, 0x01,
+	0x0a, 0x12, 0x50, 0x61, 0x75, 0x73, 0x65, 0x41, 0x64, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x74, 0x79,
+	0x49, 0x6e, 0x66, 0x6f, 0x12, 0x1c, 0x0a, 0x09, 0x69, 0x63, 0x6f, 0x6e, 0x4c, 0x69, 0x67, 0x68,
+	0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x69, 0x63, 0x6f, 0x6e, 0x4c, 0x69, 0x67,
+	0x68, 0x74, 0x12, 0x1a, 0x0a, 0x08, 0x69, 0x63, 0x6f, 0x6e, 0x44, 0x61, 0x72, 0x6b, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x69, 0x63, 0x6f, 0x6e, 0x44, 0x61, 0x72, 0x6b, 0x12, 0x1a,
+	0x0a, 0x08, 0x6c, 0x65, 0x66, 0x74, 0x54, 0x65, 0x78, 0x74, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x08, 0x6c, 0x65, 0x66, 0x74, 0x54, 0x65, 0x78, 0x74, 0x12, 0x1c, 0x0a, 0x09, 0x72, 0x69,
+	0x67, 0x68, 0x74, 0x54, 0x65, 0x78, 0x74, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x72,
+	0x69, 0x67, 0x68, 0x74, 0x54, 0x65, 0x78, 0x74, 0x12, 0x1a, 0x0a, 0x08, 0x73, 0x75, 0x62, 0x74,
+	0x69, 0x74, 0x6c, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x73, 0x75, 0x62, 0x74,
+	0x69, 0x74, 0x6c, 0x65, 0x22, 0x77, 0x0a, 0x1b, 0x50, 0x61, 0x75, 0x73, 0x65, 0x41, 0x64, 0x51,
+	0x75, 0x61, 0x6c, 0x69, 0x74, 0x79, 0x49, 0x6e, 0x66, 0x6f, 0x43, 0x6f, 0x6d, 0x70, 0x6f, 0x6e,
+	0x65, 0x6e, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x42, 0x0a, 0x05, 0x69, 0x6e, 0x66,
+	0x6f, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2c, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62,
+	0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x64,
+	0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x75, 0x73, 0x65, 0x41, 0x64, 0x51, 0x75, 0x61, 0x6c, 0x69,
+	0x74, 0x79, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x05, 0x69, 0x6e, 0x66, 0x6f, 0x73, 0x22, 0x3c, 0x0a,
+	0x16, 0x50, 0x61, 0x75, 0x73, 0x65, 0x41, 0x64, 0x52, 0x65, 0x6c, 0x61, 0x74, 0x65, 0x56, 0x69,
+	0x64, 0x65, 0x6f, 0x49, 0x74, 0x65, 0x6d, 0x12, 0x10, 0x0a, 0x03, 0x61, 0x69, 0x64, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x03, 0x52, 0x03, 0x61, 0x69, 0x64, 0x12, 0x10, 0x0a, 0x03, 0x75, 0x72, 0x6c,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x75, 0x72, 0x6c, 0x22, 0x8d, 0x01, 0x0a, 0x13,
+	0x50, 0x61, 0x75, 0x73, 0x65, 0x41, 0x64, 0x52, 0x65, 0x6c, 0x61, 0x74, 0x65, 0x56, 0x69, 0x64,
+	0x65, 0x6f, 0x73, 0x12, 0x20, 0x0a, 0x0b, 0x6d, 0x6f, 0x64, 0x75, 0x6c, 0x65, 0x54, 0x69, 0x74,
+	0x6c, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x6d, 0x6f, 0x64, 0x75, 0x6c, 0x65,
+	0x54, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x54, 0x0a, 0x0c, 0x72, 0x65, 0x6c, 0x61, 0x74, 0x65, 0x56,
+	0x69, 0x64, 0x65, 0x6f, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x30, 0x2e, 0x63, 0x6f,
+	0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69,
+	0x2e, 0x61, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x75, 0x73, 0x65, 0x41, 0x64, 0x52, 0x65,
+	0x6c, 0x61, 0x74, 0x65, 0x56, 0x69, 0x64, 0x65, 0x6f, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x0c, 0x72,
+	0x65, 0x6c, 0x61, 0x74, 0x65, 0x56, 0x69, 0x64, 0x65, 0x6f, 0x73, 0x22, 0xa7, 0x01, 0x0a, 0x11,
+	0x50, 0x61, 0x75, 0x73, 0x65, 0x64, 0x44, 0x79, 0x6e, 0x61, 0x6d, 0x69, 0x63, 0x50, 0x61, 0x67,
+	0x65, 0x12, 0x3a, 0x0a, 0x06, 0x62, 0x78, 0x50, 0x61, 0x67, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x20, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69,
+	0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x61, 0x64, 0x2e, 0x76, 0x31, 0x2e, 0x42, 0x78, 0x50,
+	0x61, 0x67, 0x65, 0x48, 0x00, 0x52, 0x06, 0x62, 0x78, 0x50, 0x61, 0x67, 0x65, 0x12, 0x20, 0x0a,
+	0x0b, 0x72, 0x65, 0x6c, 0x61, 0x74, 0x65, 0x64, 0x41, 0x69, 0x64, 0x73, 0x18, 0x02, 0x20, 0x03,
+	0x28, 0x03, 0x52, 0x0b, 0x72, 0x65, 0x6c, 0x61, 0x74, 0x65, 0x64, 0x41, 0x69, 0x64, 0x73, 0x22,
+	0x29, 0x0a, 0x08, 0x50, 0x61, 0x67, 0x65, 0x43, 0x61, 0x73, 0x65, 0x12, 0x10, 0x0a, 0x0c, 0x50,
+	0x41, 0x47, 0x45, 0x5f, 0x4e, 0x4f, 0x54, 0x5f, 0x53, 0x45, 0x54, 0x10, 0x00, 0x12, 0x0b, 0x0a,
+	0x07, 0x42, 0x58, 0x5f, 0x50, 0x41, 0x47, 0x45, 0x10, 0x01, 0x42, 0x09, 0x0a, 0x07, 0x6f, 0x6e,
+	0x65, 0x6f, 0x66, 0x5f, 0x30, 0x22, 0x6f, 0x0a, 0x21, 0x50, 0x61, 0x75, 0x73, 0x65, 0x55, 0x6e,
+	0x64, 0x65, 0x72, 0x70, 0x6c, 0x61, 0x79, 0x65, 0x72, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x61, 0x63,
+	0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x12, 0x1c, 0x0a, 0x09, 0x77, 0x68,
+	0x69, 0x74, 0x65, 0x6c, 0x69, 0x73, 0x74, 0x18, 0x01, 0x20, 0x03, 0x28, 0x09, 0x52, 0x09, 0x77,
+	0x68, 0x69, 0x74, 0x65, 0x6c, 0x69, 0x73, 0x74, 0x12, 0x2c, 0x0a, 0x11, 0x73, 0x63, 0x72, 0x6f,
+	0x6c, 0x6c, 0x54, 0x68, 0x72, 0x65, 0x73, 0x68, 0x6f, 0x6c, 0x64, 0x50, 0x74, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x01, 0x52, 0x11, 0x73, 0x63, 0x72, 0x6f, 0x6c, 0x6c, 0x54, 0x68, 0x72, 0x65, 0x73,
+	0x68, 0x6f, 0x6c, 0x64, 0x50, 0x74, 0x22, 0xf1, 0x02, 0x0a, 0x0b, 0x51, 0x75, 0x61, 0x6c, 0x69,
 	0x74, 0x79, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x12, 0x0a, 0x04, 0x69, 0x63, 0x6f, 0x6e, 0x18, 0x01,
 	0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x69, 0x63, 0x6f, 0x6e, 0x12, 0x12, 0x0a, 0x04, 0x74, 0x65,
 	0x78, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x74, 0x65, 0x78, 0x74, 0x12, 0x12,
@@ -12638,114 +12717,115 @@ func file_bilibili_ad_v1_messages_proto_rawDescGZIP() []byte {
 }
 
 var file_bilibili_ad_v1_messages_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
-var file_bilibili_ad_v1_messages_proto_msgTypes = make([]protoimpl.MessageInfo, 100)
+var file_bilibili_ad_v1_messages_proto_msgTypes = make([]protoimpl.MessageInfo, 101)
 var file_bilibili_ad_v1_messages_proto_goTypes = []interface{}{
-	(PauseAdFormType)(0),                    // 0: com.bapis.bilibili.ad.v1.PauseAdFormType
-	(BrandPausePageDto_CardCase)(0),         // 1: com.bapis.bilibili.ad.v1.BrandPausePageDto.CardCase
-	(PausedDynamicPage_PageCase)(0),         // 2: com.bapis.bilibili.ad.v1.PausedDynamicPage.PageCase
-	(*AdAutoPlayVideoDto)(nil),              // 3: com.bapis.bilibili.ad.v1.AdAutoPlayVideoDto
-	(*AdBusinessMarkDto)(nil),               // 4: com.bapis.bilibili.ad.v1.AdBusinessMarkDto
-	(*AdButtonDto)(nil),                     // 5: com.bapis.bilibili.ad.v1.AdButtonDto
-	(*AdCardCalenderInfo)(nil),              // 6: com.bapis.bilibili.ad.v1.AdCardCalenderInfo
-	(*AdCardDto)(nil),                       // 7: com.bapis.bilibili.ad.v1.AdCardDto
-	(*AdContentExtraDto)(nil),               // 8: com.bapis.bilibili.ad.v1.AdContentExtraDto
-	(*AdCoverDto)(nil),                      // 9: com.bapis.bilibili.ad.v1.AdCoverDto
-	(*AdDto)(nil),                           // 10: com.bapis.bilibili.ad.v1.AdDto
-	(*AdFeedbackPanelDto)(nil),              // 11: com.bapis.bilibili.ad.v1.AdFeedbackPanelDto
-	(*AdFeedbackPanelModuleDto)(nil),        // 12: com.bapis.bilibili.ad.v1.AdFeedbackPanelModuleDto
-	(*AdGoodDto)(nil),                       // 13: com.bapis.bilibili.ad.v1.AdGoodDto
-	(*AdOgvEpDto)(nil),                      // 14: com.bapis.bilibili.ad.v1.AdOgvEpDto
-	(*AdsControlDto)(nil),                   // 15: com.bapis.bilibili.ad.v1.AdsControlDto
-	(*AdSecondFeedbackPanelDto)(nil),        // 16: com.bapis.bilibili.ad.v1.AdSecondFeedbackPanelDto
-	(*AdShareInfoDto)(nil),                  // 17: com.bapis.bilibili.ad.v1.AdShareInfoDto
-	(*AdverDto)(nil),                        // 18: com.bapis.bilibili.ad.v1.AdverDto
-	(*AndroidGamePageRes)(nil),              // 19: com.bapis.bilibili.ad.v1.AndroidGamePageRes
-	(*AndroidTag)(nil),                      // 20: com.bapis.bilibili.ad.v1.AndroidTag
-	(*AppDownloadStyle)(nil),                // 21: com.bapis.bilibili.ad.v1.AppDownloadStyle
-	(*AppPackageDto)(nil),                   // 22: com.bapis.bilibili.ad.v1.AppPackageDto
-	(*BrandPauseGuideComponentDto)(nil),     // 23: com.bapis.bilibili.ad.v1.BrandPauseGuideComponentDto
-	(*BrandPauseLoopCardDto)(nil),           // 24: com.bapis.bilibili.ad.v1.BrandPauseLoopCardDto
-	(*BrandPauseLoopImageDto)(nil),          // 25: com.bapis.bilibili.ad.v1.BrandPauseLoopImageDto
-	(*BrandPauseLoopImageItemDto)(nil),      // 26: com.bapis.bilibili.ad.v1.BrandPauseLoopImageItemDto
-	(*BrandPausePageDto)(nil),               // 27: com.bapis.bilibili.ad.v1.BrandPausePageDto
-	(*BrandPausePanInteractDto)(nil),        // 28: com.bapis.bilibili.ad.v1.BrandPausePanInteractDto
-	(*BrandPauseVerticalLoopButtonDto)(nil), // 29: com.bapis.bilibili.ad.v1.BrandPauseVerticalLoopButtonDto
-	(*BrandPauseVerticalLoopDto)(nil),       // 30: com.bapis.bilibili.ad.v1.BrandPauseVerticalLoopDto
-	(*BrandPauseVerticalLoopImageDto)(nil),  // 31: com.bapis.bilibili.ad.v1.BrandPauseVerticalLoopImageDto
-	(*BrandPauseVerticalLoopItemDto)(nil),   // 32: com.bapis.bilibili.ad.v1.BrandPauseVerticalLoopItemDto
-	(*BrandTrending)(nil),                   // 33: com.bapis.bilibili.ad.v1.BrandTrending
-	(*Bulletin)(nil),                        // 34: com.bapis.bilibili.ad.v1.Bulletin
-	(*BxPage)(nil),                          // 35: com.bapis.bilibili.ad.v1.BxPage
-	(*Comment)(nil),                         // 36: com.bapis.bilibili.ad.v1.Comment
-	(*CreativeDto)(nil),                     // 37: com.bapis.bilibili.ad.v1.CreativeDto
-	(*CustomPlayUrl)(nil),                   // 38: com.bapis.bilibili.ad.v1.CustomPlayUrl
-	(*CustomShowUrlInfo)(nil),               // 39: com.bapis.bilibili.ad.v1.CustomShowUrlInfo
-	(*FakeButtonDto)(nil),                   // 40: com.bapis.bilibili.ad.v1.FakeButtonDto
-	(*FeedsRcmdReasonStyle)(nil),            // 41: com.bapis.bilibili.ad.v1.FeedsRcmdReasonStyle
-	(*ForwardReply)(nil),                    // 42: com.bapis.bilibili.ad.v1.ForwardReply
-	(*FullText)(nil),                        // 43: com.bapis.bilibili.ad.v1.FullText
-	(*GameInfo)(nil),                        // 44: com.bapis.bilibili.ad.v1.GameInfo
-	(*GameRank)(nil),                        // 45: com.bapis.bilibili.ad.v1.GameRank
-	(*Gift)(nil),                            // 46: com.bapis.bilibili.ad.v1.Gift
-	(*GiftCardInfo)(nil),                    // 47: com.bapis.bilibili.ad.v1.GiftCardInfo
-	(*HeaderVideoComponent)(nil),            // 48: com.bapis.bilibili.ad.v1.HeaderVideoComponent
-	(*IosGamePageRes)(nil),                  // 49: com.bapis.bilibili.ad.v1.IosGamePageRes
-	(*LeftCoverBadgeNewStyle)(nil),          // 50: com.bapis.bilibili.ad.v1.LeftCoverBadgeNewStyle
-	(*LiveBookInfoDto)(nil),                 // 51: com.bapis.bilibili.ad.v1.LiveBookInfoDto
-	(*MidPageDto)(nil),                      // 52: com.bapis.bilibili.ad.v1.MidPageDto
-	(*Module1)(nil),                         // 53: com.bapis.bilibili.ad.v1.Module1
-	(*Module10)(nil),                        // 54: com.bapis.bilibili.ad.v1.Module10
-	(*Module11)(nil),                        // 55: com.bapis.bilibili.ad.v1.Module11
-	(*Module12)(nil),                        // 56: com.bapis.bilibili.ad.v1.Module12
-	(*Module13)(nil),                        // 57: com.bapis.bilibili.ad.v1.Module13
-	(*Module14)(nil),                        // 58: com.bapis.bilibili.ad.v1.Module14
-	(*Module3)(nil),                         // 59: com.bapis.bilibili.ad.v1.Module3
-	(*Module4)(nil),                         // 60: com.bapis.bilibili.ad.v1.Module4
-	(*Module5)(nil),                         // 61: com.bapis.bilibili.ad.v1.Module5
-	(*Module6)(nil),                         // 62: com.bapis.bilibili.ad.v1.Module6
-	(*Module7)(nil),                         // 63: com.bapis.bilibili.ad.v1.Module7
-	(*Module8)(nil),                         // 64: com.bapis.bilibili.ad.v1.Module8
-	(*Module9)(nil),                         // 65: com.bapis.bilibili.ad.v1.Module9
-	(*NextPageButtonDto)(nil),               // 66: com.bapis.bilibili.ad.v1.NextPageButtonDto
-	(*NotClickableArea)(nil),                // 67: com.bapis.bilibili.ad.v1.NotClickableArea
-	(*PauseAdAIComponent)(nil),              // 68: com.bapis.bilibili.ad.v1.PauseAdAIComponent
-	(*PauseAdBackgroundColor)(nil),          // 69: com.bapis.bilibili.ad.v1.PauseAdBackgroundColor
-	(*PauseAdBottomComponent)(nil),          // 70: com.bapis.bilibili.ad.v1.PauseAdBottomComponent
-	(*PauseAdCommentComponent)(nil),         // 71: com.bapis.bilibili.ad.v1.PauseAdCommentComponent
-	(*PauseAdDecisionInfo)(nil),             // 72: com.bapis.bilibili.ad.v1.PauseAdDecisionInfo
-	(*PauseAdDetailIntroduction)(nil),       // 73: com.bapis.bilibili.ad.v1.PauseAdDetailIntroduction
-	(*PauseAdFeature)(nil),                  // 74: com.bapis.bilibili.ad.v1.PauseAdFeature
-	(*PauseAdForm)(nil),                     // 75: com.bapis.bilibili.ad.v1.PauseAdForm
-	(*PauseAdFormItem)(nil),                 // 76: com.bapis.bilibili.ad.v1.PauseAdFormItem
-	(*PauseAdHeaderComponent)(nil),          // 77: com.bapis.bilibili.ad.v1.PauseAdHeaderComponent
-	(*PauseAdHeaderPictureComponent)(nil),   // 78: com.bapis.bilibili.ad.v1.PauseAdHeaderPictureComponent
-	(*PauseAdHeaderPictureTip)(nil),         // 79: com.bapis.bilibili.ad.v1.PauseAdHeaderPictureTip
-	(*PauseAdLandingPage)(nil),              // 80: com.bapis.bilibili.ad.v1.PauseAdLandingPage
-	(*PauseAdLandingPageModule)(nil),        // 81: com.bapis.bilibili.ad.v1.PauseAdLandingPageModule
-	(*PauseAdProductComponent)(nil),         // 82: com.bapis.bilibili.ad.v1.PauseAdProductComponent
-	(*PauseAdQualityInfo)(nil),              // 83: com.bapis.bilibili.ad.v1.PauseAdQualityInfo
-	(*PauseAdQualityInfoComponent)(nil),     // 84: com.bapis.bilibili.ad.v1.PauseAdQualityInfoComponent
-	(*PauseAdRelateVideoItem)(nil),          // 85: com.bapis.bilibili.ad.v1.PauseAdRelateVideoItem
-	(*PauseAdRelateVideos)(nil),             // 86: com.bapis.bilibili.ad.v1.PauseAdRelateVideos
-	(*PausedDynamicPage)(nil),               // 87: com.bapis.bilibili.ad.v1.PausedDynamicPage
-	(*QualityInfo)(nil),                     // 88: com.bapis.bilibili.ad.v1.QualityInfo
-	(*QualityParmas)(nil),                   // 89: com.bapis.bilibili.ad.v1.QualityParmas
-	(*Reward)(nil),                          // 90: com.bapis.bilibili.ad.v1.Reward
-	(*ScreenShots)(nil),                     // 91: com.bapis.bilibili.ad.v1.ScreenShots
-	(*SourceContentDto)(nil),                // 92: com.bapis.bilibili.ad.v1.SourceContentDto
-	(*StoryAnchor)(nil),                     // 93: com.bapis.bilibili.ad.v1.StoryAnchor
-	(*StoryCartIcon)(nil),                   // 94: com.bapis.bilibili.ad.v1.StoryCartIcon
-	(*SubCardModule)(nil),                   // 95: com.bapis.bilibili.ad.v1.SubCardModule
-	(*SummaryComponent)(nil),                // 96: com.bapis.bilibili.ad.v1.SummaryComponent
-	(*Tab2ExtraDto)(nil),                    // 97: com.bapis.bilibili.ad.v1.Tab2ExtraDto
-	(*TabExtraDto)(nil),                     // 98: com.bapis.bilibili.ad.v1.TabExtraDto
-	(*TabInfoDto)(nil),                      // 99: com.bapis.bilibili.ad.v1.TabInfoDto
-	(*TagInfo)(nil),                         // 100: com.bapis.bilibili.ad.v1.TagInfo
-	(*Text)(nil),                            // 101: com.bapis.bilibili.ad.v1.Text
-	(*WxProgramInfo)(nil),                   // 102: com.bapis.bilibili.ad.v1.WxProgramInfo
-	(*v1.PauseBar)(nil),                     // 103: com.bapis.bilibili.app.viewunite.v1.PauseBar
-	(*wrapperspb.Int32Value)(nil),           // 104: google.protobuf.Int32Value
-	(*anypb.Any)(nil),                       // 105: google.protobuf.Any
+	(PauseAdFormType)(0),                      // 0: com.bapis.bilibili.ad.v1.PauseAdFormType
+	(BrandPausePageDto_CardCase)(0),           // 1: com.bapis.bilibili.ad.v1.BrandPausePageDto.CardCase
+	(PausedDynamicPage_PageCase)(0),           // 2: com.bapis.bilibili.ad.v1.PausedDynamicPage.PageCase
+	(*AdAutoPlayVideoDto)(nil),                // 3: com.bapis.bilibili.ad.v1.AdAutoPlayVideoDto
+	(*AdBusinessMarkDto)(nil),                 // 4: com.bapis.bilibili.ad.v1.AdBusinessMarkDto
+	(*AdButtonDto)(nil),                       // 5: com.bapis.bilibili.ad.v1.AdButtonDto
+	(*AdCardCalenderInfo)(nil),                // 6: com.bapis.bilibili.ad.v1.AdCardCalenderInfo
+	(*AdCardDto)(nil),                         // 7: com.bapis.bilibili.ad.v1.AdCardDto
+	(*AdContentExtraDto)(nil),                 // 8: com.bapis.bilibili.ad.v1.AdContentExtraDto
+	(*AdCoverDto)(nil),                        // 9: com.bapis.bilibili.ad.v1.AdCoverDto
+	(*AdDto)(nil),                             // 10: com.bapis.bilibili.ad.v1.AdDto
+	(*AdFeedbackPanelDto)(nil),                // 11: com.bapis.bilibili.ad.v1.AdFeedbackPanelDto
+	(*AdFeedbackPanelModuleDto)(nil),          // 12: com.bapis.bilibili.ad.v1.AdFeedbackPanelModuleDto
+	(*AdGoodDto)(nil),                         // 13: com.bapis.bilibili.ad.v1.AdGoodDto
+	(*AdOgvEpDto)(nil),                        // 14: com.bapis.bilibili.ad.v1.AdOgvEpDto
+	(*AdsControlDto)(nil),                     // 15: com.bapis.bilibili.ad.v1.AdsControlDto
+	(*AdSecondFeedbackPanelDto)(nil),          // 16: com.bapis.bilibili.ad.v1.AdSecondFeedbackPanelDto
+	(*AdShareInfoDto)(nil),                    // 17: com.bapis.bilibili.ad.v1.AdShareInfoDto
+	(*AdverDto)(nil),                          // 18: com.bapis.bilibili.ad.v1.AdverDto
+	(*AndroidGamePageRes)(nil),                // 19: com.bapis.bilibili.ad.v1.AndroidGamePageRes
+	(*AndroidTag)(nil),                        // 20: com.bapis.bilibili.ad.v1.AndroidTag
+	(*AppDownloadStyle)(nil),                  // 21: com.bapis.bilibili.ad.v1.AppDownloadStyle
+	(*AppPackageDto)(nil),                     // 22: com.bapis.bilibili.ad.v1.AppPackageDto
+	(*BrandPauseGuideComponentDto)(nil),       // 23: com.bapis.bilibili.ad.v1.BrandPauseGuideComponentDto
+	(*BrandPauseLoopCardDto)(nil),             // 24: com.bapis.bilibili.ad.v1.BrandPauseLoopCardDto
+	(*BrandPauseLoopImageDto)(nil),            // 25: com.bapis.bilibili.ad.v1.BrandPauseLoopImageDto
+	(*BrandPauseLoopImageItemDto)(nil),        // 26: com.bapis.bilibili.ad.v1.BrandPauseLoopImageItemDto
+	(*BrandPausePageDto)(nil),                 // 27: com.bapis.bilibili.ad.v1.BrandPausePageDto
+	(*BrandPausePanInteractDto)(nil),          // 28: com.bapis.bilibili.ad.v1.BrandPausePanInteractDto
+	(*BrandPauseVerticalLoopButtonDto)(nil),   // 29: com.bapis.bilibili.ad.v1.BrandPauseVerticalLoopButtonDto
+	(*BrandPauseVerticalLoopDto)(nil),         // 30: com.bapis.bilibili.ad.v1.BrandPauseVerticalLoopDto
+	(*BrandPauseVerticalLoopImageDto)(nil),    // 31: com.bapis.bilibili.ad.v1.BrandPauseVerticalLoopImageDto
+	(*BrandPauseVerticalLoopItemDto)(nil),     // 32: com.bapis.bilibili.ad.v1.BrandPauseVerticalLoopItemDto
+	(*BrandTrending)(nil),                     // 33: com.bapis.bilibili.ad.v1.BrandTrending
+	(*Bulletin)(nil),                          // 34: com.bapis.bilibili.ad.v1.Bulletin
+	(*BxPage)(nil),                            // 35: com.bapis.bilibili.ad.v1.BxPage
+	(*Comment)(nil),                           // 36: com.bapis.bilibili.ad.v1.Comment
+	(*CreativeDto)(nil),                       // 37: com.bapis.bilibili.ad.v1.CreativeDto
+	(*CustomPlayUrl)(nil),                     // 38: com.bapis.bilibili.ad.v1.CustomPlayUrl
+	(*CustomShowUrlInfo)(nil),                 // 39: com.bapis.bilibili.ad.v1.CustomShowUrlInfo
+	(*FakeButtonDto)(nil),                     // 40: com.bapis.bilibili.ad.v1.FakeButtonDto
+	(*FeedsRcmdReasonStyle)(nil),              // 41: com.bapis.bilibili.ad.v1.FeedsRcmdReasonStyle
+	(*ForwardReply)(nil),                      // 42: com.bapis.bilibili.ad.v1.ForwardReply
+	(*FullText)(nil),                          // 43: com.bapis.bilibili.ad.v1.FullText
+	(*GameInfo)(nil),                          // 44: com.bapis.bilibili.ad.v1.GameInfo
+	(*GameRank)(nil),                          // 45: com.bapis.bilibili.ad.v1.GameRank
+	(*Gift)(nil),                              // 46: com.bapis.bilibili.ad.v1.Gift
+	(*GiftCardInfo)(nil),                      // 47: com.bapis.bilibili.ad.v1.GiftCardInfo
+	(*HeaderVideoComponent)(nil),              // 48: com.bapis.bilibili.ad.v1.HeaderVideoComponent
+	(*IosGamePageRes)(nil),                    // 49: com.bapis.bilibili.ad.v1.IosGamePageRes
+	(*LeftCoverBadgeNewStyle)(nil),            // 50: com.bapis.bilibili.ad.v1.LeftCoverBadgeNewStyle
+	(*LiveBookInfoDto)(nil),                   // 51: com.bapis.bilibili.ad.v1.LiveBookInfoDto
+	(*MidPageDto)(nil),                        // 52: com.bapis.bilibili.ad.v1.MidPageDto
+	(*Module1)(nil),                           // 53: com.bapis.bilibili.ad.v1.Module1
+	(*Module10)(nil),                          // 54: com.bapis.bilibili.ad.v1.Module10
+	(*Module11)(nil),                          // 55: com.bapis.bilibili.ad.v1.Module11
+	(*Module12)(nil),                          // 56: com.bapis.bilibili.ad.v1.Module12
+	(*Module13)(nil),                          // 57: com.bapis.bilibili.ad.v1.Module13
+	(*Module14)(nil),                          // 58: com.bapis.bilibili.ad.v1.Module14
+	(*Module3)(nil),                           // 59: com.bapis.bilibili.ad.v1.Module3
+	(*Module4)(nil),                           // 60: com.bapis.bilibili.ad.v1.Module4
+	(*Module5)(nil),                           // 61: com.bapis.bilibili.ad.v1.Module5
+	(*Module6)(nil),                           // 62: com.bapis.bilibili.ad.v1.Module6
+	(*Module7)(nil),                           // 63: com.bapis.bilibili.ad.v1.Module7
+	(*Module8)(nil),                           // 64: com.bapis.bilibili.ad.v1.Module8
+	(*Module9)(nil),                           // 65: com.bapis.bilibili.ad.v1.Module9
+	(*NextPageButtonDto)(nil),                 // 66: com.bapis.bilibili.ad.v1.NextPageButtonDto
+	(*NotClickableArea)(nil),                  // 67: com.bapis.bilibili.ad.v1.NotClickableArea
+	(*PauseAdAIComponent)(nil),                // 68: com.bapis.bilibili.ad.v1.PauseAdAIComponent
+	(*PauseAdBackgroundColor)(nil),            // 69: com.bapis.bilibili.ad.v1.PauseAdBackgroundColor
+	(*PauseAdBottomComponent)(nil),            // 70: com.bapis.bilibili.ad.v1.PauseAdBottomComponent
+	(*PauseAdCommentComponent)(nil),           // 71: com.bapis.bilibili.ad.v1.PauseAdCommentComponent
+	(*PauseAdDecisionInfo)(nil),               // 72: com.bapis.bilibili.ad.v1.PauseAdDecisionInfo
+	(*PauseAdDetailIntroduction)(nil),         // 73: com.bapis.bilibili.ad.v1.PauseAdDetailIntroduction
+	(*PauseAdFeature)(nil),                    // 74: com.bapis.bilibili.ad.v1.PauseAdFeature
+	(*PauseAdForm)(nil),                       // 75: com.bapis.bilibili.ad.v1.PauseAdForm
+	(*PauseAdFormItem)(nil),                   // 76: com.bapis.bilibili.ad.v1.PauseAdFormItem
+	(*PauseAdHeaderComponent)(nil),            // 77: com.bapis.bilibili.ad.v1.PauseAdHeaderComponent
+	(*PauseAdHeaderPictureComponent)(nil),     // 78: com.bapis.bilibili.ad.v1.PauseAdHeaderPictureComponent
+	(*PauseAdHeaderPictureTip)(nil),           // 79: com.bapis.bilibili.ad.v1.PauseAdHeaderPictureTip
+	(*PauseAdLandingPage)(nil),                // 80: com.bapis.bilibili.ad.v1.PauseAdLandingPage
+	(*PauseAdLandingPageModule)(nil),          // 81: com.bapis.bilibili.ad.v1.PauseAdLandingPageModule
+	(*PauseAdProductComponent)(nil),           // 82: com.bapis.bilibili.ad.v1.PauseAdProductComponent
+	(*PauseAdQualityInfo)(nil),                // 83: com.bapis.bilibili.ad.v1.PauseAdQualityInfo
+	(*PauseAdQualityInfoComponent)(nil),       // 84: com.bapis.bilibili.ad.v1.PauseAdQualityInfoComponent
+	(*PauseAdRelateVideoItem)(nil),            // 85: com.bapis.bilibili.ad.v1.PauseAdRelateVideoItem
+	(*PauseAdRelateVideos)(nil),               // 86: com.bapis.bilibili.ad.v1.PauseAdRelateVideos
+	(*PausedDynamicPage)(nil),                 // 87: com.bapis.bilibili.ad.v1.PausedDynamicPage
+	(*PauseUnderplayerInteractionConfig)(nil), // 88: com.bapis.bilibili.ad.v1.PauseUnderplayerInteractionConfig
+	(*QualityInfo)(nil),                       // 89: com.bapis.bilibili.ad.v1.QualityInfo
+	(*QualityParmas)(nil),                     // 90: com.bapis.bilibili.ad.v1.QualityParmas
+	(*Reward)(nil),                            // 91: com.bapis.bilibili.ad.v1.Reward
+	(*ScreenShots)(nil),                       // 92: com.bapis.bilibili.ad.v1.ScreenShots
+	(*SourceContentDto)(nil),                  // 93: com.bapis.bilibili.ad.v1.SourceContentDto
+	(*StoryAnchor)(nil),                       // 94: com.bapis.bilibili.ad.v1.StoryAnchor
+	(*StoryCartIcon)(nil),                     // 95: com.bapis.bilibili.ad.v1.StoryCartIcon
+	(*SubCardModule)(nil),                     // 96: com.bapis.bilibili.ad.v1.SubCardModule
+	(*SummaryComponent)(nil),                  // 97: com.bapis.bilibili.ad.v1.SummaryComponent
+	(*Tab2ExtraDto)(nil),                      // 98: com.bapis.bilibili.ad.v1.Tab2ExtraDto
+	(*TabExtraDto)(nil),                       // 99: com.bapis.bilibili.ad.v1.TabExtraDto
+	(*TabInfoDto)(nil),                        // 100: com.bapis.bilibili.ad.v1.TabInfoDto
+	(*TagInfo)(nil),                           // 101: com.bapis.bilibili.ad.v1.TagInfo
+	(*Text)(nil),                              // 102: com.bapis.bilibili.ad.v1.Text
+	(*WxProgramInfo)(nil),                     // 103: com.bapis.bilibili.ad.v1.WxProgramInfo
+	(*v1.PauseBar)(nil),                       // 104: com.bapis.bilibili.app.viewunite.v1.PauseBar
+	(*wrapperspb.Int32Value)(nil),             // 105: google.protobuf.Int32Value
+	(*anypb.Any)(nil),                         // 106: google.protobuf.Any
 }
 var file_bilibili_ad_v1_messages_proto_depIdxs = []int32{
 	38,  // 0: com.bapis.bilibili.ad.v1.AdAutoPlayVideoDto.customPlayUrls:type_name -> com.bapis.bilibili.ad.v1.CustomPlayUrl
@@ -12755,12 +12835,12 @@ var file_bilibili_ad_v1_messages_proto_depIdxs = []int32{
 	4,   // 4: com.bapis.bilibili.ad.v1.AdCardDto.adTagStyle:type_name -> com.bapis.bilibili.ad.v1.AdBusinessMarkDto
 	3,   // 5: com.bapis.bilibili.ad.v1.AdCardDto.video:type_name -> com.bapis.bilibili.ad.v1.AdAutoPlayVideoDto
 	11,  // 6: com.bapis.bilibili.ad.v1.AdCardDto.feedbackPanel:type_name -> com.bapis.bilibili.ad.v1.AdFeedbackPanelDto
-	88,  // 7: com.bapis.bilibili.ad.v1.AdCardDto.qualityInfos:type_name -> com.bapis.bilibili.ad.v1.QualityInfo
+	89,  // 7: com.bapis.bilibili.ad.v1.AdCardDto.qualityInfos:type_name -> com.bapis.bilibili.ad.v1.QualityInfo
 	18,  // 8: com.bapis.bilibili.ad.v1.AdCardDto.adver:type_name -> com.bapis.bilibili.ad.v1.AdverDto
-	95,  // 9: com.bapis.bilibili.ad.v1.AdCardDto.subcardModule:type_name -> com.bapis.bilibili.ad.v1.SubCardModule
+	96,  // 9: com.bapis.bilibili.ad.v1.AdCardDto.subcardModule:type_name -> com.bapis.bilibili.ad.v1.SubCardModule
 	34,  // 10: com.bapis.bilibili.ad.v1.AdCardDto.bulletin:type_name -> com.bapis.bilibili.ad.v1.Bulletin
 	46,  // 11: com.bapis.bilibili.ad.v1.AdCardDto.gift:type_name -> com.bapis.bilibili.ad.v1.Gift
-	102, // 12: com.bapis.bilibili.ad.v1.AdCardDto.wxProgramInfo:type_name -> com.bapis.bilibili.ad.v1.WxProgramInfo
+	103, // 12: com.bapis.bilibili.ad.v1.AdCardDto.wxProgramInfo:type_name -> com.bapis.bilibili.ad.v1.WxProgramInfo
 	19,  // 13: com.bapis.bilibili.ad.v1.AdCardDto.androidGamePageRes:type_name -> com.bapis.bilibili.ad.v1.AndroidGamePageRes
 	67,  // 14: com.bapis.bilibili.ad.v1.AdCardDto.notClickableArea:type_name -> com.bapis.bilibili.ad.v1.NotClickableArea
 	42,  // 15: com.bapis.bilibili.ad.v1.AdCardDto.forwardReply:type_name -> com.bapis.bilibili.ad.v1.ForwardReply
@@ -12769,9 +12849,9 @@ var file_bilibili_ad_v1_messages_proto_depIdxs = []int32{
 	45,  // 18: com.bapis.bilibili.ad.v1.AdCardDto.gameRank:type_name -> com.bapis.bilibili.ad.v1.GameRank
 	41,  // 19: com.bapis.bilibili.ad.v1.AdCardDto.rcmdReasonStyle:type_name -> com.bapis.bilibili.ad.v1.FeedsRcmdReasonStyle
 	6,   // 20: com.bapis.bilibili.ad.v1.AdCardDto.calenderInfo:type_name -> com.bapis.bilibili.ad.v1.AdCardCalenderInfo
-	93,  // 21: com.bapis.bilibili.ad.v1.AdCardDto.storyAnchor:type_name -> com.bapis.bilibili.ad.v1.StoryAnchor
+	94,  // 21: com.bapis.bilibili.ad.v1.AdCardDto.storyAnchor:type_name -> com.bapis.bilibili.ad.v1.StoryAnchor
 	21,  // 22: com.bapis.bilibili.ad.v1.AdCardDto.appDownloadStyle:type_name -> com.bapis.bilibili.ad.v1.AppDownloadStyle
-	101, // 23: com.bapis.bilibili.ad.v1.AdCardDto.descList:type_name -> com.bapis.bilibili.ad.v1.Text
+	102, // 23: com.bapis.bilibili.ad.v1.AdCardDto.descList:type_name -> com.bapis.bilibili.ad.v1.Text
 	4,   // 24: com.bapis.bilibili.ad.v1.AdCardDto.adTagStyleFullScreen:type_name -> com.bapis.bilibili.ad.v1.AdBusinessMarkDto
 	40,  // 25: com.bapis.bilibili.ad.v1.AdCardDto.fakeButton:type_name -> com.bapis.bilibili.ad.v1.FakeButtonDto
 	52,  // 26: com.bapis.bilibili.ad.v1.AdCardDto.midPage:type_name -> com.bapis.bilibili.ad.v1.MidPageDto
@@ -12785,7 +12865,7 @@ var file_bilibili_ad_v1_messages_proto_depIdxs = []int32{
 	27,  // 34: com.bapis.bilibili.ad.v1.AdContentExtraDto.brandPausePage:type_name -> com.bapis.bilibili.ad.v1.BrandPausePageDto
 	87,  // 35: com.bapis.bilibili.ad.v1.AdContentExtraDto.dynamicPage:type_name -> com.bapis.bilibili.ad.v1.PausedDynamicPage
 	80,  // 36: com.bapis.bilibili.ad.v1.AdContentExtraDto.endPageAdLandingpage:type_name -> com.bapis.bilibili.ad.v1.PauseAdLandingPage
-	103, // 37: com.bapis.bilibili.ad.v1.AdContentExtraDto.endPageBar:type_name -> com.bapis.bilibili.app.viewunite.v1.PauseBar
+	104, // 37: com.bapis.bilibili.ad.v1.AdContentExtraDto.endPageBar:type_name -> com.bapis.bilibili.app.viewunite.v1.PauseBar
 	87,  // 38: com.bapis.bilibili.ad.v1.AdContentExtraDto.endPageDynamicPage:type_name -> com.bapis.bilibili.ad.v1.PausedDynamicPage
 	8,   // 39: com.bapis.bilibili.ad.v1.AdDto.extra:type_name -> com.bapis.bilibili.ad.v1.AdContentExtraDto
 	37,  // 40: com.bapis.bilibili.ad.v1.AdDto.creativeContent:type_name -> com.bapis.bilibili.ad.v1.CreativeDto
@@ -12816,79 +12896,80 @@ var file_bilibili_ad_v1_messages_proto_depIdxs = []int32{
 	32,  // 65: com.bapis.bilibili.ad.v1.BrandPauseVerticalLoopImageDto.images:type_name -> com.bapis.bilibili.ad.v1.BrandPauseVerticalLoopItemDto
 	52,  // 66: com.bapis.bilibili.ad.v1.FakeButtonDto.midPage:type_name -> com.bapis.bilibili.ad.v1.MidPageDto
 	3,   // 67: com.bapis.bilibili.ad.v1.HeaderVideoComponent.video:type_name -> com.bapis.bilibili.ad.v1.AdAutoPlayVideoDto
-	102, // 68: com.bapis.bilibili.ad.v1.HeaderVideoComponent.wxProgramInfo:type_name -> com.bapis.bilibili.ad.v1.WxProgramInfo
-	95,  // 69: com.bapis.bilibili.ad.v1.HeaderVideoComponent.subcard:type_name -> com.bapis.bilibili.ad.v1.SubCardModule
+	103, // 68: com.bapis.bilibili.ad.v1.HeaderVideoComponent.wxProgramInfo:type_name -> com.bapis.bilibili.ad.v1.WxProgramInfo
+	96,  // 69: com.bapis.bilibili.ad.v1.HeaderVideoComponent.subcard:type_name -> com.bapis.bilibili.ad.v1.SubCardModule
 	5,   // 70: com.bapis.bilibili.ad.v1.IosGamePageRes.gameButton:type_name -> com.bapis.bilibili.ad.v1.AdButtonDto
 	6,   // 71: com.bapis.bilibili.ad.v1.LiveBookInfoDto.calenderInfo:type_name -> com.bapis.bilibili.ad.v1.AdCardCalenderInfo
 	5,   // 72: com.bapis.bilibili.ad.v1.MidPageDto.button:type_name -> com.bapis.bilibili.ad.v1.AdButtonDto
 	66,  // 73: com.bapis.bilibili.ad.v1.MidPageDto.nextPageButton:type_name -> com.bapis.bilibili.ad.v1.NextPageButtonDto
 	20,  // 74: com.bapis.bilibili.ad.v1.Module1.tagList:type_name -> com.bapis.bilibili.ad.v1.AndroidTag
 	36,  // 75: com.bapis.bilibili.ad.v1.Module12.commentList:type_name -> com.bapis.bilibili.ad.v1.Comment
-	90,  // 76: com.bapis.bilibili.ad.v1.Module14.rewardList:type_name -> com.bapis.bilibili.ad.v1.Reward
-	89,  // 77: com.bapis.bilibili.ad.v1.Module3.qualityParams:type_name -> com.bapis.bilibili.ad.v1.QualityParmas
-	91,  // 78: com.bapis.bilibili.ad.v1.Module7.screenShots:type_name -> com.bapis.bilibili.ad.v1.ScreenShots
+	91,  // 76: com.bapis.bilibili.ad.v1.Module14.rewardList:type_name -> com.bapis.bilibili.ad.v1.Reward
+	90,  // 77: com.bapis.bilibili.ad.v1.Module3.qualityParams:type_name -> com.bapis.bilibili.ad.v1.QualityParmas
+	92,  // 78: com.bapis.bilibili.ad.v1.Module7.screenShots:type_name -> com.bapis.bilibili.ad.v1.ScreenShots
 	5,   // 79: com.bapis.bilibili.ad.v1.NextPageButtonDto.button:type_name -> com.bapis.bilibili.ad.v1.AdButtonDto
 	74,  // 80: com.bapis.bilibili.ad.v1.PauseAdAIComponent.features:type_name -> com.bapis.bilibili.ad.v1.PauseAdFeature
 	5,   // 81: com.bapis.bilibili.ad.v1.PauseAdBottomComponent.button:type_name -> com.bapis.bilibili.ad.v1.AdButtonDto
-	95,  // 82: com.bapis.bilibili.ad.v1.PauseAdCommentComponent.subcard:type_name -> com.bapis.bilibili.ad.v1.SubCardModule
+	96,  // 82: com.bapis.bilibili.ad.v1.PauseAdCommentComponent.subcard:type_name -> com.bapis.bilibili.ad.v1.SubCardModule
 	9,   // 83: com.bapis.bilibili.ad.v1.PauseAdDetailIntroduction.imgs:type_name -> com.bapis.bilibili.ad.v1.AdCoverDto
 	76,  // 84: com.bapis.bilibili.ad.v1.PauseAdForm.name:type_name -> com.bapis.bilibili.ad.v1.PauseAdFormItem
 	76,  // 85: com.bapis.bilibili.ad.v1.PauseAdForm.phone:type_name -> com.bapis.bilibili.ad.v1.PauseAdFormItem
 	0,   // 86: com.bapis.bilibili.ad.v1.PauseAdFormItem.type:type_name -> com.bapis.bilibili.ad.v1.PauseAdFormType
 	9,   // 87: com.bapis.bilibili.ad.v1.PauseAdHeaderPictureComponent.img:type_name -> com.bapis.bilibili.ad.v1.AdCoverDto
 	79,  // 88: com.bapis.bilibili.ad.v1.PauseAdHeaderPictureComponent.tips:type_name -> com.bapis.bilibili.ad.v1.PauseAdHeaderPictureTip
-	95,  // 89: com.bapis.bilibili.ad.v1.PauseAdHeaderPictureComponent.subcard:type_name -> com.bapis.bilibili.ad.v1.SubCardModule
-	102, // 90: com.bapis.bilibili.ad.v1.PauseAdHeaderPictureComponent.wxProgramInfo:type_name -> com.bapis.bilibili.ad.v1.WxProgramInfo
+	96,  // 89: com.bapis.bilibili.ad.v1.PauseAdHeaderPictureComponent.subcard:type_name -> com.bapis.bilibili.ad.v1.SubCardModule
+	103, // 90: com.bapis.bilibili.ad.v1.PauseAdHeaderPictureComponent.wxProgramInfo:type_name -> com.bapis.bilibili.ad.v1.WxProgramInfo
 	9,   // 91: com.bapis.bilibili.ad.v1.PauseAdHeaderPictureComponent.imgs:type_name -> com.bapis.bilibili.ad.v1.AdCoverDto
 	81,  // 92: com.bapis.bilibili.ad.v1.PauseAdLandingPage.modules:type_name -> com.bapis.bilibili.ad.v1.PauseAdLandingPageModule
 	69,  // 93: com.bapis.bilibili.ad.v1.PauseAdLandingPage.backgroundColor:type_name -> com.bapis.bilibili.ad.v1.PauseAdBackgroundColor
 	70,  // 94: com.bapis.bilibili.ad.v1.PauseAdLandingPage.bottomComponent:type_name -> com.bapis.bilibili.ad.v1.PauseAdBottomComponent
 	39,  // 95: com.bapis.bilibili.ad.v1.PauseAdLandingPage.customShowUrls:type_name -> com.bapis.bilibili.ad.v1.CustomShowUrlInfo
-	77,  // 96: com.bapis.bilibili.ad.v1.PauseAdLandingPageModule.headerComponent:type_name -> com.bapis.bilibili.ad.v1.PauseAdHeaderComponent
-	68,  // 97: com.bapis.bilibili.ad.v1.PauseAdLandingPageModule.aiComponent:type_name -> com.bapis.bilibili.ad.v1.PauseAdAIComponent
-	82,  // 98: com.bapis.bilibili.ad.v1.PauseAdLandingPageModule.productComponent:type_name -> com.bapis.bilibili.ad.v1.PauseAdProductComponent
-	86,  // 99: com.bapis.bilibili.ad.v1.PauseAdLandingPageModule.relateVideos:type_name -> com.bapis.bilibili.ad.v1.PauseAdRelateVideos
-	73,  // 100: com.bapis.bilibili.ad.v1.PauseAdLandingPageModule.detailIntroduction:type_name -> com.bapis.bilibili.ad.v1.PauseAdDetailIntroduction
-	75,  // 101: com.bapis.bilibili.ad.v1.PauseAdLandingPageModule.form:type_name -> com.bapis.bilibili.ad.v1.PauseAdForm
-	78,  // 102: com.bapis.bilibili.ad.v1.PauseAdLandingPageModule.headerPictureComponent:type_name -> com.bapis.bilibili.ad.v1.PauseAdHeaderPictureComponent
-	71,  // 103: com.bapis.bilibili.ad.v1.PauseAdLandingPageModule.commentComponent:type_name -> com.bapis.bilibili.ad.v1.PauseAdCommentComponent
-	84,  // 104: com.bapis.bilibili.ad.v1.PauseAdLandingPageModule.qualityInfoComponent:type_name -> com.bapis.bilibili.ad.v1.PauseAdQualityInfoComponent
-	48,  // 105: com.bapis.bilibili.ad.v1.PauseAdLandingPageModule.headerVideoComponent:type_name -> com.bapis.bilibili.ad.v1.HeaderVideoComponent
-	96,  // 106: com.bapis.bilibili.ad.v1.PauseAdLandingPageModule.summaryComponent:type_name -> com.bapis.bilibili.ad.v1.SummaryComponent
-	72,  // 107: com.bapis.bilibili.ad.v1.PauseAdProductComponent.cognitiveInfos:type_name -> com.bapis.bilibili.ad.v1.PauseAdDecisionInfo
-	9,   // 108: com.bapis.bilibili.ad.v1.PauseAdProductComponent.productImg:type_name -> com.bapis.bilibili.ad.v1.AdCoverDto
-	72,  // 109: com.bapis.bilibili.ad.v1.PauseAdProductComponent.decisionInfos:type_name -> com.bapis.bilibili.ad.v1.PauseAdDecisionInfo
-	83,  // 110: com.bapis.bilibili.ad.v1.PauseAdQualityInfoComponent.infos:type_name -> com.bapis.bilibili.ad.v1.PauseAdQualityInfo
-	85,  // 111: com.bapis.bilibili.ad.v1.PauseAdRelateVideos.relateVideos:type_name -> com.bapis.bilibili.ad.v1.PauseAdRelateVideoItem
-	35,  // 112: com.bapis.bilibili.ad.v1.PausedDynamicPage.bxPage:type_name -> com.bapis.bilibili.ad.v1.BxPage
-	104, // 113: com.bapis.bilibili.ad.v1.SourceContentDto.serverType:type_name -> google.protobuf.Int32Value
-	104, // 114: com.bapis.bilibili.ad.v1.SourceContentDto.cardIndex:type_name -> google.protobuf.Int32Value
-	10,  // 115: com.bapis.bilibili.ad.v1.SourceContentDto.adContent:type_name -> com.bapis.bilibili.ad.v1.AdDto
-	94,  // 116: com.bapis.bilibili.ad.v1.StoryAnchor.storyCartIcon:type_name -> com.bapis.bilibili.ad.v1.StoryCartIcon
-	5,   // 117: com.bapis.bilibili.ad.v1.SubCardModule.button:type_name -> com.bapis.bilibili.ad.v1.AdButtonDto
-	100, // 118: com.bapis.bilibili.ad.v1.SubCardModule.tagInfos:type_name -> com.bapis.bilibili.ad.v1.TagInfo
-	88,  // 119: com.bapis.bilibili.ad.v1.SubCardModule.qualityInfos:type_name -> com.bapis.bilibili.ad.v1.QualityInfo
-	36,  // 120: com.bapis.bilibili.ad.v1.SubCardModule.commentList:type_name -> com.bapis.bilibili.ad.v1.Comment
-	47,  // 121: com.bapis.bilibili.ad.v1.SubCardModule.giftCardInfo:type_name -> com.bapis.bilibili.ad.v1.GiftCardInfo
-	5,   // 122: com.bapis.bilibili.ad.v1.SubCardModule.chooseButtonList:type_name -> com.bapis.bilibili.ad.v1.AdButtonDto
-	43,  // 123: com.bapis.bilibili.ad.v1.SubCardModule.fullText:type_name -> com.bapis.bilibili.ad.v1.FullText
-	42,  // 124: com.bapis.bilibili.ad.v1.SubCardModule.forwardReply:type_name -> com.bapis.bilibili.ad.v1.ForwardReply
-	102, // 125: com.bapis.bilibili.ad.v1.SubCardModule.wxProgramInfo:type_name -> com.bapis.bilibili.ad.v1.WxProgramInfo
-	72,  // 126: com.bapis.bilibili.ad.v1.SubCardModule.decisionInfos:type_name -> com.bapis.bilibili.ad.v1.PauseAdDecisionInfo
-	5,   // 127: com.bapis.bilibili.ad.v1.Tab2ExtraDto.button:type_name -> com.bapis.bilibili.ad.v1.AdButtonDto
-	22,  // 128: com.bapis.bilibili.ad.v1.Tab2ExtraDto.downloadWhitelist:type_name -> com.bapis.bilibili.ad.v1.AppPackageDto
-	19,  // 129: com.bapis.bilibili.ad.v1.Tab2ExtraDto.androidGamePageRes:type_name -> com.bapis.bilibili.ad.v1.AndroidGamePageRes
-	49,  // 130: com.bapis.bilibili.ad.v1.Tab2ExtraDto.iosGamePageRes:type_name -> com.bapis.bilibili.ad.v1.IosGamePageRes
-	4,   // 131: com.bapis.bilibili.ad.v1.Tab2ExtraDto.adTagStyle:type_name -> com.bapis.bilibili.ad.v1.AdBusinessMarkDto
-	11,  // 132: com.bapis.bilibili.ad.v1.Tab2ExtraDto.feedbackPanel:type_name -> com.bapis.bilibili.ad.v1.AdFeedbackPanelDto
-	101, // 133: com.bapis.bilibili.ad.v1.Tab2ExtraDto.descList:type_name -> com.bapis.bilibili.ad.v1.Text
-	22,  // 134: com.bapis.bilibili.ad.v1.TabExtraDto.downloadWhitelist:type_name -> com.bapis.bilibili.ad.v1.AppPackageDto
-	105, // 135: com.bapis.bilibili.ad.v1.TabInfoDto.extra:type_name -> google.protobuf.Any
-	136, // [136:136] is the sub-list for method output_type
-	136, // [136:136] is the sub-list for method input_type
-	136, // [136:136] is the sub-list for extension type_name
-	136, // [136:136] is the sub-list for extension extendee
-	0,   // [0:136] is the sub-list for field type_name
+	88,  // 96: com.bapis.bilibili.ad.v1.PauseAdLandingPage.pauseUnderplayerInteraction:type_name -> com.bapis.bilibili.ad.v1.PauseUnderplayerInteractionConfig
+	77,  // 97: com.bapis.bilibili.ad.v1.PauseAdLandingPageModule.headerComponent:type_name -> com.bapis.bilibili.ad.v1.PauseAdHeaderComponent
+	68,  // 98: com.bapis.bilibili.ad.v1.PauseAdLandingPageModule.aiComponent:type_name -> com.bapis.bilibili.ad.v1.PauseAdAIComponent
+	82,  // 99: com.bapis.bilibili.ad.v1.PauseAdLandingPageModule.productComponent:type_name -> com.bapis.bilibili.ad.v1.PauseAdProductComponent
+	86,  // 100: com.bapis.bilibili.ad.v1.PauseAdLandingPageModule.relateVideos:type_name -> com.bapis.bilibili.ad.v1.PauseAdRelateVideos
+	73,  // 101: com.bapis.bilibili.ad.v1.PauseAdLandingPageModule.detailIntroduction:type_name -> com.bapis.bilibili.ad.v1.PauseAdDetailIntroduction
+	75,  // 102: com.bapis.bilibili.ad.v1.PauseAdLandingPageModule.form:type_name -> com.bapis.bilibili.ad.v1.PauseAdForm
+	78,  // 103: com.bapis.bilibili.ad.v1.PauseAdLandingPageModule.headerPictureComponent:type_name -> com.bapis.bilibili.ad.v1.PauseAdHeaderPictureComponent
+	71,  // 104: com.bapis.bilibili.ad.v1.PauseAdLandingPageModule.commentComponent:type_name -> com.bapis.bilibili.ad.v1.PauseAdCommentComponent
+	84,  // 105: com.bapis.bilibili.ad.v1.PauseAdLandingPageModule.qualityInfoComponent:type_name -> com.bapis.bilibili.ad.v1.PauseAdQualityInfoComponent
+	48,  // 106: com.bapis.bilibili.ad.v1.PauseAdLandingPageModule.headerVideoComponent:type_name -> com.bapis.bilibili.ad.v1.HeaderVideoComponent
+	97,  // 107: com.bapis.bilibili.ad.v1.PauseAdLandingPageModule.summaryComponent:type_name -> com.bapis.bilibili.ad.v1.SummaryComponent
+	72,  // 108: com.bapis.bilibili.ad.v1.PauseAdProductComponent.cognitiveInfos:type_name -> com.bapis.bilibili.ad.v1.PauseAdDecisionInfo
+	9,   // 109: com.bapis.bilibili.ad.v1.PauseAdProductComponent.productImg:type_name -> com.bapis.bilibili.ad.v1.AdCoverDto
+	72,  // 110: com.bapis.bilibili.ad.v1.PauseAdProductComponent.decisionInfos:type_name -> com.bapis.bilibili.ad.v1.PauseAdDecisionInfo
+	83,  // 111: com.bapis.bilibili.ad.v1.PauseAdQualityInfoComponent.infos:type_name -> com.bapis.bilibili.ad.v1.PauseAdQualityInfo
+	85,  // 112: com.bapis.bilibili.ad.v1.PauseAdRelateVideos.relateVideos:type_name -> com.bapis.bilibili.ad.v1.PauseAdRelateVideoItem
+	35,  // 113: com.bapis.bilibili.ad.v1.PausedDynamicPage.bxPage:type_name -> com.bapis.bilibili.ad.v1.BxPage
+	105, // 114: com.bapis.bilibili.ad.v1.SourceContentDto.serverType:type_name -> google.protobuf.Int32Value
+	105, // 115: com.bapis.bilibili.ad.v1.SourceContentDto.cardIndex:type_name -> google.protobuf.Int32Value
+	10,  // 116: com.bapis.bilibili.ad.v1.SourceContentDto.adContent:type_name -> com.bapis.bilibili.ad.v1.AdDto
+	95,  // 117: com.bapis.bilibili.ad.v1.StoryAnchor.storyCartIcon:type_name -> com.bapis.bilibili.ad.v1.StoryCartIcon
+	5,   // 118: com.bapis.bilibili.ad.v1.SubCardModule.button:type_name -> com.bapis.bilibili.ad.v1.AdButtonDto
+	101, // 119: com.bapis.bilibili.ad.v1.SubCardModule.tagInfos:type_name -> com.bapis.bilibili.ad.v1.TagInfo
+	89,  // 120: com.bapis.bilibili.ad.v1.SubCardModule.qualityInfos:type_name -> com.bapis.bilibili.ad.v1.QualityInfo
+	36,  // 121: com.bapis.bilibili.ad.v1.SubCardModule.commentList:type_name -> com.bapis.bilibili.ad.v1.Comment
+	47,  // 122: com.bapis.bilibili.ad.v1.SubCardModule.giftCardInfo:type_name -> com.bapis.bilibili.ad.v1.GiftCardInfo
+	5,   // 123: com.bapis.bilibili.ad.v1.SubCardModule.chooseButtonList:type_name -> com.bapis.bilibili.ad.v1.AdButtonDto
+	43,  // 124: com.bapis.bilibili.ad.v1.SubCardModule.fullText:type_name -> com.bapis.bilibili.ad.v1.FullText
+	42,  // 125: com.bapis.bilibili.ad.v1.SubCardModule.forwardReply:type_name -> com.bapis.bilibili.ad.v1.ForwardReply
+	103, // 126: com.bapis.bilibili.ad.v1.SubCardModule.wxProgramInfo:type_name -> com.bapis.bilibili.ad.v1.WxProgramInfo
+	72,  // 127: com.bapis.bilibili.ad.v1.SubCardModule.decisionInfos:type_name -> com.bapis.bilibili.ad.v1.PauseAdDecisionInfo
+	5,   // 128: com.bapis.bilibili.ad.v1.Tab2ExtraDto.button:type_name -> com.bapis.bilibili.ad.v1.AdButtonDto
+	22,  // 129: com.bapis.bilibili.ad.v1.Tab2ExtraDto.downloadWhitelist:type_name -> com.bapis.bilibili.ad.v1.AppPackageDto
+	19,  // 130: com.bapis.bilibili.ad.v1.Tab2ExtraDto.androidGamePageRes:type_name -> com.bapis.bilibili.ad.v1.AndroidGamePageRes
+	49,  // 131: com.bapis.bilibili.ad.v1.Tab2ExtraDto.iosGamePageRes:type_name -> com.bapis.bilibili.ad.v1.IosGamePageRes
+	4,   // 132: com.bapis.bilibili.ad.v1.Tab2ExtraDto.adTagStyle:type_name -> com.bapis.bilibili.ad.v1.AdBusinessMarkDto
+	11,  // 133: com.bapis.bilibili.ad.v1.Tab2ExtraDto.feedbackPanel:type_name -> com.bapis.bilibili.ad.v1.AdFeedbackPanelDto
+	102, // 134: com.bapis.bilibili.ad.v1.Tab2ExtraDto.descList:type_name -> com.bapis.bilibili.ad.v1.Text
+	22,  // 135: com.bapis.bilibili.ad.v1.TabExtraDto.downloadWhitelist:type_name -> com.bapis.bilibili.ad.v1.AppPackageDto
+	106, // 136: com.bapis.bilibili.ad.v1.TabInfoDto.extra:type_name -> google.protobuf.Any
+	137, // [137:137] is the sub-list for method output_type
+	137, // [137:137] is the sub-list for method input_type
+	137, // [137:137] is the sub-list for extension type_name
+	137, // [137:137] is the sub-list for extension extendee
+	0,   // [0:137] is the sub-list for field type_name
 }
 
 func init() { file_bilibili_ad_v1_messages_proto_init() }
@@ -13918,7 +13999,7 @@ func file_bilibili_ad_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_ad_v1_messages_proto_msgTypes[85].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QualityInfo); i {
+			switch v := v.(*PauseUnderplayerInteractionConfig); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -13930,7 +14011,7 @@ func file_bilibili_ad_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_ad_v1_messages_proto_msgTypes[86].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QualityParmas); i {
+			switch v := v.(*QualityInfo); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -13942,7 +14023,7 @@ func file_bilibili_ad_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_ad_v1_messages_proto_msgTypes[87].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Reward); i {
+			switch v := v.(*QualityParmas); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -13954,7 +14035,7 @@ func file_bilibili_ad_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_ad_v1_messages_proto_msgTypes[88].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ScreenShots); i {
+			switch v := v.(*Reward); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -13966,7 +14047,7 @@ func file_bilibili_ad_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_ad_v1_messages_proto_msgTypes[89].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SourceContentDto); i {
+			switch v := v.(*ScreenShots); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -13978,7 +14059,7 @@ func file_bilibili_ad_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_ad_v1_messages_proto_msgTypes[90].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*StoryAnchor); i {
+			switch v := v.(*SourceContentDto); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -13990,7 +14071,7 @@ func file_bilibili_ad_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_ad_v1_messages_proto_msgTypes[91].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*StoryCartIcon); i {
+			switch v := v.(*StoryAnchor); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -14002,7 +14083,7 @@ func file_bilibili_ad_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_ad_v1_messages_proto_msgTypes[92].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SubCardModule); i {
+			switch v := v.(*StoryCartIcon); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -14014,7 +14095,7 @@ func file_bilibili_ad_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_ad_v1_messages_proto_msgTypes[93].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SummaryComponent); i {
+			switch v := v.(*SubCardModule); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -14026,7 +14107,7 @@ func file_bilibili_ad_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_ad_v1_messages_proto_msgTypes[94].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Tab2ExtraDto); i {
+			switch v := v.(*SummaryComponent); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -14038,7 +14119,7 @@ func file_bilibili_ad_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_ad_v1_messages_proto_msgTypes[95].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TabExtraDto); i {
+			switch v := v.(*Tab2ExtraDto); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -14050,7 +14131,7 @@ func file_bilibili_ad_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_ad_v1_messages_proto_msgTypes[96].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TabInfoDto); i {
+			switch v := v.(*TabExtraDto); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -14062,7 +14143,7 @@ func file_bilibili_ad_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_ad_v1_messages_proto_msgTypes[97].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TagInfo); i {
+			switch v := v.(*TabInfoDto); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -14074,7 +14155,7 @@ func file_bilibili_ad_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_ad_v1_messages_proto_msgTypes[98].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Text); i {
+			switch v := v.(*TagInfo); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -14086,6 +14167,18 @@ func file_bilibili_ad_v1_messages_proto_init() {
 			}
 		}
 		file_bilibili_ad_v1_messages_proto_msgTypes[99].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Text); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_bilibili_ad_v1_messages_proto_msgTypes[100].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*WxProgramInfo); i {
 			case 0:
 				return &v.state
@@ -14111,7 +14204,7 @@ func file_bilibili_ad_v1_messages_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_bilibili_ad_v1_messages_proto_rawDesc,
 			NumEnums:      3,
-			NumMessages:   100,
+			NumMessages:   101,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

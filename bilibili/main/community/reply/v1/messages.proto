@@ -406,6 +406,8 @@ message GoodsCardInfo {
   string goodsShowReport = 18;
   string goodsClickReport = 19;
   repeated string openWhiteList = 20;
+  string subTitle = 21;
+  int32 imageStyle = 22;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/GoodsSearchItem.java

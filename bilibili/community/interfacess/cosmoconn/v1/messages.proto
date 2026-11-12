@@ -53,12 +53,117 @@ enum QuizResultTier {
   QUIZ_RESULT_TIER_4 = 4;
 }
 
+enum StaffRecruitActionType {
+  STAFF_RECRUIT_ACTION_TYPE_UNSPECIFIED = 0;
+  STAFF_RECRUIT_ACTION_TYPE_START_APPLY = 1;
+  STAFF_RECRUIT_ACTION_TYPE_SUBMIT_APPLY = 2;
+  STAFF_RECRUIT_ACTION_TYPE_OPEN_OFFER = 3;
+  STAFF_RECRUIT_ACTION_TYPE_ACCEPT_OFFER = 4;
+  STAFF_RECRUIT_ACTION_TYPE_DECLINE_OFFER = 5;
+  STAFF_RECRUIT_ACTION_TYPE_REFRESH = 6;
+  STAFF_RECRUIT_ACTION_TYPE_OPEN_URL = 7;
+  STAFF_RECRUIT_ACTION_TYPE_CLOSE_CONTAINER = 8;
+  STAFF_RECRUIT_ACTION_TYPE_FOLLOW_ASSISTANT = 9;
+  STAFF_RECRUIT_ACTION_TYPE_UNFOLLOW_ASSISTANT = 10;
+}
+
+enum StaffRecruitApplyStatus {
+  STAFF_RECRUIT_APPLY_STATUS_UNSPECIFIED = 0;
+  STAFF_RECRUIT_APPLY_STATUS_PENDING_REVIEW = 1;
+  STAFF_RECRUIT_APPLY_STATUS_PENDING_ACCEPT = 2;
+  STAFF_RECRUIT_APPLY_STATUS_REJECTED = 3;
+  STAFF_RECRUIT_APPLY_STATUS_ACCEPTED = 4;
+  STAFF_RECRUIT_APPLY_STATUS_INVALID = 5;
+}
+
+enum StaffRecruitAuditAction {
+  STAFF_RECRUIT_AUDIT_ACTION_UNSPECIFIED = 0;
+  STAFF_RECRUIT_AUDIT_ACTION_APPROVE = 1;
+  STAFF_RECRUIT_AUDIT_ACTION_REJECT = 2;
+}
+
+enum StaffRecruitEntryMode {
+  STAFF_RECRUIT_ENTRY_MODE_UNSPECIFIED = 0;
+  STAFF_RECRUIT_ENTRY_MODE_APPLY = 1;
+  STAFF_RECRUIT_ENTRY_MODE_PROGRESS = 2;
+  STAFF_RECRUIT_ENTRY_MODE_WELCOME = 3;
+  STAFF_RECRUIT_ENTRY_MODE_HISTORY = 4;
+  STAFF_RECRUIT_ENTRY_MODE_UNAVAILABLE = 5;
+}
+
+enum StaffRecruitFollowState {
+  STAFF_RECRUIT_FOLLOW_STATE_UNKNOWN = 0;
+  STAFF_RECRUIT_FOLLOW_STATE_NOT_FOLLOWING = 1;
+  STAFF_RECRUIT_FOLLOW_STATE_FOLLOWING = 2;
+}
+
+enum StaffRecruitPageType {
+  STAFF_RECRUIT_PAGE_TYPE_UNSPECIFIED = 0;
+  STAFF_RECRUIT_PAGE_TYPE_INTRO = 1;
+  STAFF_RECRUIT_PAGE_TYPE_PENDING_REVIEW = 2;
+  STAFF_RECRUIT_PAGE_TYPE_REJECTED = 3;
+  STAFF_RECRUIT_PAGE_TYPE_OFFER = 4;
+  STAFF_RECRUIT_PAGE_TYPE_DECLINED = 5;
+  STAFF_RECRUIT_PAGE_TYPE_EXPIRED = 6;
+  STAFF_RECRUIT_PAGE_TYPE_ROLE_PROCESSING = 7;
+  STAFF_RECRUIT_PAGE_TYPE_WELCOME = 8;
+  STAFF_RECRUIT_PAGE_TYPE_FORMER_STAFF = 9;
+  STAFF_RECRUIT_PAGE_TYPE_UNAVAILABLE = 10;
+  STAFF_RECRUIT_PAGE_TYPE_QUESTIONNAIRE = 11;
+}
+
+enum StaffRecruitQuestionEnableStatus {
+  STAFF_RECRUIT_QUESTION_ENABLE_STATUS_UNSPECIFIED = 0;
+  STAFF_RECRUIT_QUESTION_ENABLE_STATUS_ENABLED = 1;
+  STAFF_RECRUIT_QUESTION_ENABLE_STATUS_DISABLED = 2;
+}
+
+enum StaffRecruitQuestionType {
+  STAFF_RECRUIT_QUESTION_TYPE_UNKNOWN = 0;
+  STAFF_RECRUIT_QUESTION_TYPE_SINGLE = 1;
+  STAFF_RECRUIT_QUESTION_TYPE_MULTI = 2;
+  STAFF_RECRUIT_QUESTION_TYPE_TEXT = 3;
+}
+
+enum StaffRecruitRoleAssignStatus {
+  STAFF_RECRUIT_ROLE_ASSIGN_STATUS_UNSPECIFIED = 0;
+  STAFF_RECRUIT_ROLE_ASSIGN_STATUS_PENDING = 1;
+  STAFF_RECRUIT_ROLE_ASSIGN_STATUS_COMPLETE = 2;
+  STAFF_RECRUIT_ROLE_ASSIGN_STATUS_FAILED = 3;
+}
+
+enum StaffRecruitTerminalReason {
+  STAFF_RECRUIT_TERMINAL_REASON_UNSPECIFIED = 0;
+  STAFF_RECRUIT_TERMINAL_REASON_AUDIT_REJECTED = 1;
+  STAFF_RECRUIT_TERMINAL_REASON_USER_DECLINED = 2;
+  STAFF_RECRUIT_TERMINAL_REASON_OFFER_EXPIRED = 3;
+}
+
 enum TribeeMemberStatus {
   DEFAULT = 0;
   JOINED = 1;
   OWNER = 2;
   MAINTAINER = 3;
   BANNED = 100;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AcceptTribeeStaffRecruitOfferReq.java
+message AcceptTribeeStaffRecruitOfferReq {
+  int64 tribeeId = 1;
+  bool conventionAgreed = 2;
+  string applyIdStr = 3;
+  string conventionVersion = 4;
+  string scene = 5;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AcceptTribeeStaffRecruitOfferRsp.java
+message AcceptTribeeStaffRecruitOfferRsp {
+  StaffRecruitApplyStatus applyStatus = 1;
+  StaffRecruitRoleAssignStatus roleAssignStatus = 2;
+  StaffRecruitEntryMode entryMode = 3;
+  string applyIdStr = 4;
+  StaffRecruitPresentation presentation = 5;
+  StaffRecruitAction successAction = 6;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AddTribeeDraftReq.java
@@ -95,6 +200,21 @@ message AddTribeeQuizQuestionReq {
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AddTribeeQuizQuestionRsp.java
 message AddTribeeQuizQuestionRsp {
   int64 questionId = 1;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AddTribeeStaffRecruitQuestionReq.java
+message AddTribeeStaffRecruitQuestionReq {
+  int64 tribeeId = 1;
+  StaffRecruitQuestionInput question = 2;
+  string questionnaireVersion = 3;
+  string questionBankVersion = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AddTribeeStaffRecruitQuestionRsp.java
+message AddTribeeStaffRecruitQuestionRsp {
+  string questionIdStr = 1;
+  string questionnaireVersion = 2;
+  string questionBankVersion = 3;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminAddTribeeAdminReq.java
@@ -295,6 +415,35 @@ message AuditTribeeQuizActivityRsp {
   QuizActivityStatus status = 1;
 }
 
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AuditTribeeStaffRecruitApplyReq.java
+message AuditTribeeStaffRecruitApplyReq {
+  int64 tribeeId = 1;
+  string applyIdStr = 2;
+  StaffRecruitAuditAction action = 3;
+  string rejectReason = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AuditTribeeStaffRecruitApplyRsp.java
+message AuditTribeeStaffRecruitApplyRsp {
+  StaffRecruitApplyStatus applyStatus = 1;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AuditTribeeStaffRecruitQuestionReq.java
+message AuditTribeeStaffRecruitQuestionReq {
+  int64 tribeeId = 1;
+  string questionIdStr = 2;
+  int64 revisionNo = 3;
+  StaffRecruitAuditAction action = 4;
+  string rejectReason = 5;
+  string questionBankVersion = 6;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AuditTribeeStaffRecruitQuestionRsp.java
+message AuditTribeeStaffRecruitQuestionRsp {
+  string questionnaireVersion = 1;
+  string questionBankVersion = 2;
+}
+
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/BatchAddTribeeQuizQuestionReq.java
 message BatchAddTribeeQuizQuestionReq {
   int64 tribeeId = 1;
@@ -304,6 +453,21 @@ message BatchAddTribeeQuizQuestionReq {
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/BatchAddTribeeQuizQuestionRsp.java
 message BatchAddTribeeQuizQuestionRsp {
   repeated int64 questionIds = 1;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/BatchAddTribeeStaffRecruitQuestionReq.java
+message BatchAddTribeeStaffRecruitQuestionReq {
+  int64 tribeeId = 1;
+  repeated StaffRecruitQuestionInput questions = 2;
+  string questionnaireVersion = 3;
+  string questionBankVersion = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/BatchAddTribeeStaffRecruitQuestionRsp.java
+message BatchAddTribeeStaffRecruitQuestionRsp {
+  repeated string questionIdStrs = 1;
+  string questionnaireVersion = 2;
+  string questionBankVersion = 3;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/BatchDeleteTribeeQuizQuestionReq.java
@@ -426,6 +590,11 @@ message CosmoParaMeta {
   string fromSpmid = 2;
   string from = 3;
   string actionId = 4;
+  string trackId = 5;
+  string statistics = 6;
+  string extendFields = 7;
+  string refer = 8;
+  string client = 9;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/CreateTribeeQuizActivityReq.java
@@ -476,6 +645,21 @@ message DeleteTribeeQuizQuestionReq {
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/DeleteTribeeQuizQuestionRsp.java
 message DeleteTribeeQuizQuestionRsp {
   int32 switchStatus = 1;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/DeleteTribeeStaffRecruitQuestionReq.java
+message DeleteTribeeStaffRecruitQuestionReq {
+  int64 tribeeId = 1;
+  string questionIdStr = 2;
+  string questionnaireVersion = 3;
+  string questionBankVersion = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/DeleteTribeeStaffRecruitQuestionRsp.java
+message DeleteTribeeStaffRecruitQuestionRsp {
+  int32 switchStatus = 1;
+  string questionnaireVersion = 2;
+  string questionBankVersion = 3;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/DelTribeeDraftReq.java
@@ -563,6 +747,122 @@ message FinishTribeeQuizRsp {
   double beatRate = 6;
   string resultText = 7;
   int32 remainRetry = 8;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/GetTribeeStaffRecruitApplyStatusReq.java
+message GetTribeeStaffRecruitApplyStatusReq {
+  int64 tribeeId = 1;
+  string applyIdStr = 2;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/GetTribeeStaffRecruitApplyStatusRsp.java
+message GetTribeeStaffRecruitApplyStatusRsp {
+  bool hasApply = 1;
+  StaffRecruitApplyStatus applyStatus = 2;
+  string rejectReason = 3;
+  bool offerAvailable = 4;
+  bool canApply = 5;
+  int64 offerExpireTime = 6;
+  int64 nextApplyTime = 7;
+  string applyIdStr = 8;
+  StaffRecruitTerminalReason terminalReason = 9;
+  StaffRecruitRoleAssignStatus roleAssignStatus = 10;
+  StaffRecruitEntryMode entryMode = 11;
+  int64 serverTime = 12;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/GetTribeeStaffRecruitEntryReq.java
+message GetTribeeStaffRecruitEntryReq {
+  int64 tribeeId = 1;
+  string applyIdStr = 2;
+  string scene = 3;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/GetTribeeStaffRecruitEntryRsp.java
+message GetTribeeStaffRecruitEntryRsp {
+  int32 switchStatus = 1;
+  string title = 2;
+  bool hasApply = 3;
+  StaffRecruitApplyStatus applyStatus = 4;
+  string rejectReason = 5;
+  repeated StaffRecruitQualifyItem qualifyItems = 6;
+  bool canApply = 7;
+  bool offerAvailable = 8;
+  int64 offerExpireTime = 9;
+  int64 nextApplyTime = 10;
+  string applyIdStr = 11;
+  StaffRecruitTerminalReason terminalReason = 12;
+  StaffRecruitRoleAssignStatus roleAssignStatus = 13;
+  StaffRecruitEntryMode entryMode = 14;
+  int64 serverTime = 15;
+  string unavailableTitle = 16;
+  string unavailableDescription = 17;
+  int64 targetCount = 18;
+  StaffRecruitPresentation presentation = 19;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/GetTribeeStaffRecruitOfferReq.java
+message GetTribeeStaffRecruitOfferReq {
+  int64 tribeeId = 1;
+  string applyIdStr = 2;
+  string scene = 3;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/GetTribeeStaffRecruitOfferRsp.java
+message GetTribeeStaffRecruitOfferRsp {
+  string applyIdStr = 1;
+  string title = 2;
+  string dutyDescription = 3;
+  string conventionUrl = 4;
+  string groupUrl = 5;
+  StaffRecruitApplyStatus applyStatus = 6;
+  int64 offerExpireTime = 7;
+  string conventionVersion = 8;
+  StaffRecruitTerminalReason terminalReason = 9;
+  StaffRecruitRoleAssignStatus roleAssignStatus = 10;
+  StaffRecruitEntryMode entryMode = 11;
+  int64 serverTime = 12;
+  string tenureDescription = 13;
+  StaffRecruitPresentation presentation = 14;
+  bool canAccept = 15;
+  bool canDecline = 16;
+  bool isExpired = 17;
+  string deadlineDescription = 18;
+  StaffRecruitUser applicant = 19;
+  string conventionAgreementText = 20;
+  string roleText = 21;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/GetTribeeStaffRecruitWelcomeRequest.java
+message GetTribeeStaffRecruitWelcomeRequest {
+  string tribeeIdStr = 1;
+  string applyIdStr = 2;
+  string scene = 3;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/GetTribeeStaffRecruitWelcomeResponse.java
+message GetTribeeStaffRecruitWelcomeResponse {
+  string applyIdStr = 1;
+  StaffRecruitApplyStatus applyStatus = 2;
+  StaffRecruitRoleAssignStatus roleAssignStatus = 3;
+  StaffRecruitEntryMode entryMode = 4;
+  string welcomeTitle = 5;
+  string welcomeDescription = 6;
+  string assistantCardImageUrl = 7;
+  string assistantCardAlt = 8;
+  string tribeeIdStr = 9;
+  string tribeeName = 10;
+  int64 serverTime = 11;
+  StaffRecruitTerminalReason terminalReason = 12;
+  string assistantName = 13;
+  string assistantActionUrl = 14;
+  int64 assistantConfigVersion = 15;
+  string assistantBiliUidStr = 16;
+  string assistantBiliName = 17;
+  StaffRecruitWelcomeTaskCopy followTask = 18;
+  StaffRecruitWelcomeTaskCopy wecomTask = 19;
+  StaffRecruitWelcomeTaskCopy desktopTask = 20;
+  StaffRecruitPresentation presentation = 21;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/IconRes.java
@@ -696,6 +996,21 @@ message QuizResultCopy {
   QuizActivityPicture picture = 5;
 }
 
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/RejectTribeeStaffRecruitOfferReq.java
+message RejectTribeeStaffRecruitOfferReq {
+  int64 tribeeId = 1;
+  string applyIdStr = 2;
+  string scene = 3;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/RejectTribeeStaffRecruitOfferRsp.java
+message RejectTribeeStaffRecruitOfferRsp {
+  StaffRecruitApplyStatus applyStatus = 1;
+  StaffRecruitTerminalReason terminalReason = 2;
+  string applyIdStr = 3;
+  StaffRecruitPresentation presentation = 4;
+}
+
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/ReorderRecTribeeReq.java
 message ReorderRecTribeeReq {
   int64 tribeeId = 1;
@@ -745,6 +1060,38 @@ message SetTribeeQuizConfigReq {
 message SetTribeeQuizConfigRsp {
 }
 
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/SetTribeeStaffRecruitAssistantFollowReq.java
+message SetTribeeStaffRecruitAssistantFollowReq {
+  string tribeeIdStr = 1;
+  string applyIdStr = 2;
+  string targetMidStr = 3;
+  StaffRecruitActionType actionType = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/SetTribeeStaffRecruitAssistantFollowRsp.java
+message SetTribeeStaffRecruitAssistantFollowRsp {
+  bool operationApplied = 1;
+  StaffRecruitWelcomeTaskCopy followTask = 2;
+  bool refreshRequired = 3;
+  string message_ = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/SetTribeeStaffRecruitConfigReq.java
+message SetTribeeStaffRecruitConfigReq {
+  int64 tribeeId = 1;
+  string title = 2;
+  string roleIdStr = 3;
+  int64 nextRecruitTarget = 4;
+  string configVersion = 5;
+  int64 recruitStartTime = 6;
+  int64 recruitEndTime = 7;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/SetTribeeStaffRecruitConfigRsp.java
+message SetTribeeStaffRecruitConfigRsp {
+  string configVersion = 1;
+}
+
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/ShowText.java
 message ShowText {
   string title = 1;
@@ -760,6 +1107,198 @@ message SimpleActionReq {
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/SimpleActionRsp.java
 message SimpleActionRsp {
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/SortTribeeStaffRecruitQuestionsReq.java
+message SortTribeeStaffRecruitQuestionsReq {
+  int64 tribeeId = 1;
+  repeated string questionIdStrs = 2;
+  string questionnaireVersion = 3;
+  string questionBankVersion = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/SortTribeeStaffRecruitQuestionsRsp.java
+message SortTribeeStaffRecruitQuestionsRsp {
+  int64 updatedCount = 1;
+  string questionnaireVersion = 2;
+  string questionBankVersion = 3;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/StaffRecruitAction.java
+message StaffRecruitAction {
+  string id = 1;
+  string text = 2;
+  bool visible = 3;
+  bool enabled = 4;
+  string disabledReason = 5;
+  string busyText = 6;
+  StaffRecruitActionType actionType = 7;
+  string targetUrl = 8;
+  string fallbackUrl = 9;
+  StaffRecruitConfirmation confirmation = 10;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/StaffRecruitAnswerItem.java
+message StaffRecruitAnswerItem {
+  string questionIdStr = 1;
+  repeated int32 selected = 2;
+  string text = 3;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/StaffRecruitConfirmation.java
+message StaffRecruitConfirmation {
+  string title = 1;
+  string description = 2;
+  string confirmText = 3;
+  string cancelText = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/StaffRecruitContact.java
+message StaffRecruitContact {
+  string title = 1;
+  string description = 2;
+  StaffRecruitUser assistant = 3;
+  StaffRecruitAction action = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/StaffRecruitContentBlock.java
+message StaffRecruitContentBlock {
+  string key = 1;
+  string title = 2;
+  string description = 3;
+  repeated StaffRecruitContentItem items = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/StaffRecruitContentItem.java
+message StaffRecruitContentItem {
+  string title = 1;
+  string description = 2;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/StaffRecruitFormCopy.java
+message StaffRecruitFormCopy {
+  string singleTypeText = 1;
+  string multiTypeText = 2;
+  string textTypeText = 3;
+  string requiredText = 4;
+  string optionalText = 5;
+  string requiredErrorText = 6;
+  string textLimitErrorText = 7;
+  string selectionErrorText = 8;
+  string previousText = 9;
+  string nextText = 10;
+  string submitText = 11;
+  string submittingText = 12;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/StaffRecruitPresentation.java
+message StaffRecruitPresentation {
+  StaffRecruitPageType pageType = 1;
+  string title = 2;
+  string description = 3;
+  repeated StaffRecruitAction actions = 4;
+  repeated StaffRecruitContentBlock blocks = 5;
+  StaffRecruitContact assistantContact = 6;
+  string applyIdStr = 7;
+  uint32 refreshAfterSeconds = 8;
+  string navigationTitle = 9;
+  StaffRecruitConfirmation exitConfirmation = 10;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/StaffRecruitQualifyItem.java
+message StaffRecruitQualifyItem {
+  string dimension = 1;
+  string metric = 2;
+  int64 standardValue = 3;
+  int64 currentValue = 4;
+  bool qualified = 5;
+  string unit = 6;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/StaffRecruitQuestionInput.java
+message StaffRecruitQuestionInput {
+  StaffRecruitQuestionType questionType = 1;
+  string stem = 2;
+  repeated StaffRecruitQuestionOption options = 3;
+  bool isRequired = 4;
+  int32 textMaxLen = 5;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/StaffRecruitQuestionItem.java
+message StaffRecruitQuestionItem {
+  string questionIdStr = 1;
+  StaffRecruitQuestionType questionType = 2;
+  string stem = 3;
+  repeated StaffRecruitQuestionOption options = 4;
+  bool isRequired = 5;
+  int32 textMaxLen = 6;
+  int32 weight = 7;
+  StaffRecruitQuestionValidation validation = 8;
+  string placeholder = 9;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/StaffRecruitQuestionLimit.java
+message StaffRecruitQuestionLimit {
+  int32 questionMaxCount = 1;
+  int32 stemMaxLen = 2;
+  int32 optionMaxCount = 3;
+  int32 optionTextMaxLen = 4;
+  int32 textDefaultMaxLen = 5;
+  int32 textMaxLenLimit = 6;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/StaffRecruitQuestionOption.java
+message StaffRecruitQuestionOption {
+  int32 idx = 1;
+  string text = 2;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/StaffRecruitQuestionValidation.java
+message StaffRecruitQuestionValidation {
+  int32 minSelectCount = 1;
+  int32 maxSelectCount = 2;
+  int32 maxTextLength = 3;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/StaffRecruitUser.java
+message StaffRecruitUser {
+  string midStr = 1;
+  string nickname = 2;
+  string avatarUrl = 3;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/StaffRecruitWelcomeTaskCopy.java
+message StaffRecruitWelcomeTaskCopy {
+  string title = 1;
+  string description = 2;
+  string actionText = 3;
+  string completedActionText = 4;
+  string busyText = 5;
+  StaffRecruitUser target = 6;
+  StaffRecruitFollowState state = 7;
+  StaffRecruitAction action = 8;
+  string stateDescription = 9;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/StartTribeeStaffRecruitApplyReq.java
+message StartTribeeStaffRecruitApplyReq {
+  int64 tribeeId = 1;
+  string requestId = 2;
+  string scene = 3;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/StartTribeeStaffRecruitApplyRsp.java
+message StartTribeeStaffRecruitApplyRsp {
+  string title = 1;
+  repeated StaffRecruitQuestionItem questions = 2;
+  repeated StaffRecruitQualifyItem qualifyItems = 3;
+  string sessionIdStr = 4;
+  string questionnaireVersion = 5;
+  string campaignIdStr = 6;
+  int64 expireTime = 7;
+  StaffRecruitQuestionLimit questionLimit = 8;
+  StaffRecruitPresentation presentation = 9;
+  StaffRecruitFormCopy formCopy = 10;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/SubmitTribeeQuizActivityAnswerReq.java
@@ -788,6 +1327,21 @@ message SubmitTribeeQuizAnswerReq {
 message SubmitTribeeQuizAnswerRsp {
   bool correct = 1;
   repeated int32 answer = 2;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/SubmitTribeeStaffRecruitApplyReq.java
+message SubmitTribeeStaffRecruitApplyReq {
+  int64 tribeeId = 1;
+  repeated StaffRecruitAnswerItem answers = 2;
+  string sessionIdStr = 3;
+  string scene = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/SubmitTribeeStaffRecruitApplyRsp.java
+message SubmitTribeeStaffRecruitApplyRsp {
+  string applyIdStr = 1;
+  StaffRecruitApplyStatus applyStatus = 2;
+  StaffRecruitPresentation presentation = 3;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/SubscribeCard.java
@@ -846,6 +1400,34 @@ message ToggleTribeeReq {
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/ToggleTribeeRsp.java
 message ToggleTribeeRsp {
   TribeeMemberInfo memberInfo = 1;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/ToggleTribeeStaffRecruitQuestionReq.java
+message ToggleTribeeStaffRecruitQuestionReq {
+  int64 tribeeId = 1;
+  string questionIdStr = 2;
+  StaffRecruitQuestionEnableStatus targetStatus = 3;
+  string questionBankVersion = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/ToggleTribeeStaffRecruitQuestionRsp.java
+message ToggleTribeeStaffRecruitQuestionRsp {
+  string questionnaireVersion = 1;
+  string questionBankVersion = 2;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/ToggleTribeeStaffRecruitSwitchReq.java
+message ToggleTribeeStaffRecruitSwitchReq {
+  int64 tribeeId = 1;
+  int32 targetStatus = 2;
+  string configVersion = 3;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/ToggleTribeeStaffRecruitSwitchRsp.java
+message ToggleTribeeStaffRecruitSwitchRsp {
+  int32 switchStatus = 1;
+  string configVersion = 2;
+  string campaignIdStr = 3;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeCreatorIdentityBadgeConfig.java
@@ -1092,6 +1674,26 @@ message UpdateTribeeQuizQuestionReq {
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/UpdateTribeeQuizQuestionRsp.java
 message UpdateTribeeQuizQuestionRsp {
   int32 switchStatus = 1;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/UpdateTribeeStaffRecruitQuestionReq.java
+message UpdateTribeeStaffRecruitQuestionReq {
+  int64 tribeeId = 1;
+  string questionIdStr = 2;
+  StaffRecruitQuestionType questionType = 3;
+  string stem = 4;
+  repeated StaffRecruitQuestionOption options = 5;
+  bool isRequired = 6;
+  int32 textMaxLen = 7;
+  string questionnaireVersion = 8;
+  string questionBankVersion = 9;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/UpdateTribeeStaffRecruitQuestionRsp.java
+message UpdateTribeeStaffRecruitQuestionRsp {
+  int32 switchStatus = 1;
+  string questionnaireVersion = 2;
+  string questionBankVersion = 3;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/UpsertTribeeCreatorIdentityConfigReq.java

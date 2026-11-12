@@ -8,6 +8,11 @@ import "bilibili/broadcast/message/main/messages.proto";
 import "bilibili/dagw/component/avatar/v1/messages.proto";
 import "bilibili/pagination/messages.proto";
 
+enum CardGroupType {
+  CARD_GROUP_TYPE_UNSPECIFIED = 0;
+  CARD_GROUP_TYPE_IP_TREASURE = 1;
+}
+
 enum CategorySort {
   CATEGORY_SORT_DEFAULT = 0;
   CATEGORY_SORT_PUBLISH_TIME = 1;
@@ -311,6 +316,23 @@ message DetailsRelationItem {
   ReasonStyle coverBadgeStyleV2 = 11;
   string viewContent = 12;
   int32 iconType = 13;
+  SearchInlineData ogvInline = 14;
+  OgvClipInfo ogvClipInfo = 15;
+  string inlineType = 16;
+  bool isOgvInline = 17;
+  repeated EpisodeNew episodesNew = 18;
+  string seasonTypeName = 19;
+  int32 isGiantStyle = 20;
+  double rating = 21;
+  int32 vote = 22;
+  string stylesV2 = 23;
+  ReasonStyle styleLabel = 24;
+  repeated ReasonStyle qualityTags = 25;
+  string label = 26;
+  WatchButton watchButton = 27;
+  FollowButton followButton = 28;
+  int32 isAtten = 29;
+  int64 seasonId = 30;
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/Disclaimer.java
@@ -425,6 +447,7 @@ message ExtraLink {
 message ExtraWord {
   string firstWord = 1;
   repeated string secondWord = 2;
+  bool isDefault = 3;
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/Feedback.java
@@ -492,6 +515,7 @@ message FoldingTimeLine {
   int32 hasImgUrl = 11;
   repeated VideoTextItem items = 12;
   string iconNight = 13;
+  int32 revampStyle = 14;
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/FollowButton.java
@@ -649,6 +673,14 @@ message Item {
     SearchGiantCard twitterGiantCard = 71;
     SearchAIChatCard aiChat = 73;
     SearchTribeeCard tribeeCard = 74;
+    SearchIPInfoCard ipInfoCard = 79;
+    SearchTreasureContentCard treasureContentCard = 81;
+    SearchRelatedUPCard relatedUpCard = 83;
+    SearchRelatedGameCard relatedGameCard = 84;
+    SearchRelatedEsportCard relatedEsportCard = 85;
+    SearchRelatedMemberCard relatedMemberCard = 86;
+    SearchRelatedRoleCard relatedRoleCard = 87;
+    SearchRelatedActivityCard relatedActivityCard = 88;
   }
   int64 spreadId = 56;
   string userAct = 63;
@@ -656,6 +688,7 @@ message Item {
   int32 cardGroupId = 75;
   string originGoto = 76;
   map<string, string> reportExtra = 77;
+  CardGroupType cardGroupType = 89;
   enum CardItemCase {
     CARDITEM_NOT_SET = 0;
     SPECIAL = 7;
@@ -723,6 +756,14 @@ message Item {
     TWITTER_GIANT_CARD = 71;
     AI_CHAT = 73;
     TRIBEE_CARD = 74;
+    IP_INFO_CARD = 79;
+    TREASURE_CONTENT_CARD = 81;
+    RELATED_UP_CARD = 83;
+    RELATED_GAME_CARD = 84;
+    RELATED_ESPORT_CARD = 85;
+    RELATED_MEMBER_CARD = 86;
+    RELATED_ROLE_CARD = 87;
+    RELATED_ACTIVITY_CARD = 88;
   }
 
 }
@@ -1336,6 +1377,21 @@ message SearchByTypeResponse {
   SearchFilter searchFilter = 11;
 }
 
+// Source: com/bapis/bilibili/polymer/app/search/v1/SearchCardAction.java
+message SearchCardAction {
+  string text = 1;
+  string uri = 2;
+  string action = 3;
+  string param = 4;
+}
+
+// Source: com/bapis/bilibili/polymer/app/search/v1/SearchCardFilter.java
+message SearchCardFilter {
+  string id = 1;
+  string title = 2;
+  string param = 3;
+}
+
 // Source: com/bapis/bilibili/polymer/app/search/v1/SearchChatGPTCard.java
 message SearchChatGPTCard {
   string sessionId = 1;
@@ -1614,6 +1670,18 @@ message SearchInlineData {
   string translatedTitle = 41;
 }
 
+// Source: com/bapis/bilibili/polymer/app/search/v1/SearchIPInfoCard.java
+message SearchIPInfoCard {
+  int64 ipId = 1;
+  string ipTitle = 2;
+  string ipName = 3;
+  bool needShare = 4;
+  string shareReason = 6;
+  string bgPicLight = 7;
+  string bgPicDark = 8;
+  string shareUrl = 9;
+}
+
 // Source: com/bapis/bilibili/polymer/app/search/v1/SearchLikeButtonItem.java
 message SearchLikeButtonItem {
   int64 aid = 1;
@@ -1815,6 +1883,7 @@ message SearchOgvClusterCard {
   Item singleCard = 2;
   OgvClusterCardRelate relate = 3;
   int32 inlineTitleStyle = 4;
+  int32 cardStyle = 5;
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/SearchOgvInlineCard.java
@@ -2000,12 +2069,107 @@ message SearchRecommendWordCard {
   repeated RecommendWord list = 3;
 }
 
+// Source: com/bapis/bilibili/polymer/app/search/v1/SearchRelatedActivityCard.java
+message SearchRelatedActivityCard {
+  string title = 1;
+  repeated SearchRelatedActivityItem items = 2;
+}
+
+// Source: com/bapis/bilibili/polymer/app/search/v1/SearchRelatedActivityItem.java
+message SearchRelatedActivityItem {
+  int64 id = 1;
+  string name = 2;
+  string title = 3;
+  string icon = 4;
+  string image = 5;
+  string uri = 6;
+  WatchButton button = 7;
+}
+
+// Source: com/bapis/bilibili/polymer/app/search/v1/SearchRelatedEsportCard.java
+message SearchRelatedEsportCard {
+  string title = 1;
+  repeated SearchRelatedEsportItem items = 2;
+  string jumpUrl = 3;
+  WatchButton moreButton = 4;
+}
+
+// Source: com/bapis/bilibili/polymer/app/search/v1/SearchRelatedEsportItem.java
+message SearchRelatedEsportItem {
+  int64 eventId = 1;
+  string cover = 2;
+  string title = 3;
+  string subTitle = 4;
+  string uri = 5;
+}
+
+// Source: com/bapis/bilibili/polymer/app/search/v1/SearchRelatedGameCard.java
+message SearchRelatedGameCard {
+  string title = 1;
+  repeated SearchRelatedGameItem items = 2;
+  string jumpUrl = 3;
+  WatchButton moreButton = 4;
+}
+
+// Source: com/bapis/bilibili/polymer/app/search/v1/SearchRelatedGameItem.java
+message SearchRelatedGameItem {
+  int64 gameId = 1;
+  string gameName = 2;
+  string cover = 3;
+  string desc = 4;
+  string uri = 5;
+  string downloadUri = 6;
+  string downloadText = 7;
+  string rating = 8;
+  repeated string tags = 9;
+}
+
+// Source: com/bapis/bilibili/polymer/app/search/v1/SearchRelatedMemberCard.java
+message SearchRelatedMemberCard {
+  string title = 1;
+  repeated SearchRelatedMemberItem items = 2;
+  string jumpUrl = 3;
+  WatchButton moreButton = 4;
+}
+
+// Source: com/bapis/bilibili/polymer/app/search/v1/SearchRelatedMemberItem.java
+message SearchRelatedMemberItem {
+  string name = 1;
+  string cover = 2;
+  string uri = 3;
+  int64 id = 4;
+}
+
+// Source: com/bapis/bilibili/polymer/app/search/v1/SearchRelatedRoleCard.java
+message SearchRelatedRoleCard {
+  string title = 1;
+  repeated SearchRelatedRoleItem items = 2;
+  string jumpUrl = 3;
+  WatchButton moreButton = 4;
+}
+
+// Source: com/bapis/bilibili/polymer/app/search/v1/SearchRelatedRoleItem.java
+message SearchRelatedRoleItem {
+  string name = 1;
+  string cover = 2;
+  string uri = 3;
+  int64 id = 4;
+}
+
 // Source: com/bapis/bilibili/polymer/app/search/v1/SearchRelatedSearch.java
 message SearchRelatedSearch {
   string title = 1;
   repeated RelatedQuery relatedQueryList = 2;
   CardLayout cardLayout = 3;
   NegativeFeedback negativeFeedback = 4;
+}
+
+// Source: com/bapis/bilibili/polymer/app/search/v1/SearchRelatedUPCard.java
+message SearchRelatedUPCard {
+  string title = 1;
+  repeated UPRecommendItem items = 2;
+  string jumpUrl = 3;
+  WatchButton moreButton = 4;
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/SearchReserveInfo.java
@@ -2162,6 +2326,47 @@ message SearchTopGameCard {
   SearchInlineData inlineLive = 19;
   CardLayout cardLayout = 20;
   ReasonStyle recTag = 21;
+}
+
+// Source: com/bapis/bilibili/polymer/app/search/v1/SearchTreasureContentCard.java
+message SearchTreasureContentCard {
+  string title = 1;
+  repeated SearchCardFilter filters = 2;
+  string defaultFilterId = 3;
+  int32 showLines = 4;
+  bool expandable = 5;
+  repeated SearchTreasureContentItem items = 6;
+  SearchCardAction changeAction = 7;
+  bool showTab = 8;
+  int32 recommendTagLocation = 9;
+  bool showUpInfo = 10;
+  string titleLeftIcon = 11;
+  string titleRightIcon = 12;
+  string titleLeftIconNight = 13;
+  string titleRightIconNight = 14;
+  map<string, SearchTreasureInlineItem> inlineItems = 15;
+}
+
+// Source: com/bapis/bilibili/polymer/app/search/v1/SearchTreasureContentItem.java
+message SearchTreasureContentItem {
+  string title = 1;
+  string cover = 2;
+  string uri = 3;
+  string goto = 4;
+  string param = 5;
+  string recommendReason = 6;
+  string upName = 7;
+  int64 upMid = 8;
+  repeated string tags = 9;
+  bool isLive = 10;
+  string contentTag = 11;
+  repeated string tabs = 12;
+}
+
+// Source: com/bapis/bilibili/polymer/app/search/v1/SearchTreasureInlineItem.java
+message SearchTreasureInlineItem {
+  string contentTag = 1;
+  SearchInlineData inlineData = 2;
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/SearchTribeeCard.java
@@ -2455,6 +2660,7 @@ message TimeLine {
   int32 initPosition = 7;
   int32 type = 8;
   repeated VideoTextItem items = 9;
+  int32 revampStyle = 10;
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/TimeLineEvents.java

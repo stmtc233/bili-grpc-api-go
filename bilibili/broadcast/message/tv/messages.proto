@@ -266,6 +266,8 @@ message TVAssistantCommand {
   int64 roomId = 13;
   string payload = 14;
   int64 ts = 15;
+  int32 teenagerMode = 16;
+  string creativeId = 17;
 }
 
 

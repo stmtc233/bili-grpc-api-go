@@ -96,6 +96,13 @@ enum PlayLimitCode {
   PLCChargingPlusUpgrade = 3;
 }
 
+enum Stream_ContentCase {
+  CONTENT_NOT_SET = 0;
+  DASH_VIDEO = 2;
+  SEGMENT_VIDEO = 3;
+  MULTI_DASH_VIDEO = 4;
+}
+
 enum ToastType {
   TOAST_TYPE_UNKNOWN = 0;
   CHARGING_TOAST = 1;
@@ -565,13 +572,6 @@ message Stream {
     SegmentVideo segmentVideo = 3;
     MultiDashVideo multiDashVideo = 4;
   }
-  enum ContentCase {
-    CONTENT_NOT_SET = 0;
-    DASH_VIDEO = 2;
-    SEGMENT_VIDEO = 3;
-    MULTI_DASH_VIDEO = 4;
-  }
-
 }
 
 // Source: com/bapis/bilibili/app/playurl/v1/StreamInfo.java
