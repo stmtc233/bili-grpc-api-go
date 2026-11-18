@@ -98,13 +98,6 @@ enum SecurityLevel {
   LEVEL_L3 = 3;
 }
 
-enum Stream_ContentCase {
-  CONTENT_NOT_SET = 0;
-  DASH_VIDEO = 2;
-  SEGMENT_VIDEO = 3;
-  MULTI_DASH_VIDEO = 4;
-}
-
 enum TranslationStatus {
   TRANSLATION_STATUS_UNNEEDED = 0;
   TRANSLATION_STATUS_TRANSLATED = 1;
@@ -786,6 +779,13 @@ message Stream {
     SegmentVideo segmentVideo = 3;
     MultiDashVideo multiDashVideo = 4;
   }
+  enum ContentCase {
+    CONTENT_NOT_SET = 0;
+    DASH_VIDEO = 2;
+    SEGMENT_VIDEO = 3;
+    MULTI_DASH_VIDEO = 4;
+  }
+
 }
 
 // Source: com/bapis/bilibili/pgc/gateway/player/v2/StreamInfo.java

@@ -100,6 +100,18 @@ message DmActivityReply_ActivityInfo_MockOption {
   int64 triggerTime = 2;
 }
 
+// Source: com/bapis/bilibili/broadcast/message/tv/DmLiveCmdElem.java
+message DmLiveCmdElem {
+  int64 roomId = 1;
+  string cmd = 2;
+  string data = 3;
+  string idStr = 4;
+  string content = 5;
+  int64 repeats = 6;
+  int64 roomUid = 7;
+  int64 sendTime = 8;
+}
+
 // Source: com/bapis/bilibili/broadcast/message/tv/DmLiveElem.java
 message DmLiveElem {
   int64 roomId = 1;
@@ -116,6 +128,7 @@ message DmLiveElem {
   int32 parentAreaId = 12;
   int32 dmType = 13;
   string idStr = 14;
+  string extra = 18;
 }
 
 // Source: com/bapis/bilibili/broadcast/message/tv/DmLiveReply.java
@@ -123,6 +136,8 @@ message DmLiveReply {
   repeated DmLiveElem elems = 1;
   int32 state = 2;
   int32 source = 3;
+  bool isSendChronos = 4;
+  repeated DmLiveCmdElem cmdElems = 5;
 }
 
 // Source: com/bapis/bilibili/broadcast/message/tv/DmLiveSwitchReload.java

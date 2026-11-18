@@ -2003,6 +2003,7 @@ message ViewTagReq {
   string bvid = 2;
   int64 cid = 3;
   string spmid = 4;
+  map<string, string> extraContent = 5;
 }
 
 // Source: com/bapis/bilibili/app/view/v1/Vip.java

@@ -83,6 +83,7 @@ enum MentionType {
   MENTION_TYPE_COURSE = 6;
   MENTION_TYPE_LOTTERY = 7;
   MENTION_TYPE_TOY = 8;
+  MENTION_TYPE_PREDICT = 9;
 }
 
 enum ModuleType {
@@ -861,6 +862,7 @@ message MentionCard {
     VideoCourse course = 7;
     VideoLottery lottery = 8;
     Toy toy = 9;
+    VideoPredict predict = 10;
   }
   enum DataCase {
     DATA_NOT_SET = 0;
@@ -872,6 +874,7 @@ message MentionCard {
     COURSE = 7;
     LOTTERY = 8;
     TOY = 9;
+    PREDICT = 10;
   }
 
 }
@@ -2392,6 +2395,16 @@ message VideoMentions {
   string videoReq = 3;
   string title = 4;
   map<string, string> ab = 5;
+}
+
+// Source: com/bapis/bilibili/app/viewunite/common/VideoPredict.java
+message VideoPredict {
+  string cover = 1;
+  string title = 2;
+  string tag = 3;
+  string subTitle = 4;
+  string cardLink = 5;
+  string button = 6;
 }
 
 // Source: com/bapis/bilibili/app/viewunite/common/VideoSeason.java

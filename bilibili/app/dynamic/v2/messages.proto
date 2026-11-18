@@ -404,14 +404,14 @@ enum LinkNodeShowType {
 }
 
 enum LinkNodeType {
-  INVALID = 0;
-  LINK_NODE_TYPE_VIDEO = 1;
+  LINK_NODE_TYPE_INVALID = 0;
+  VIDEO = 1;
   RESERVE = 2;
-  LINK_NODE_TYPE_VOTE = 3;
-  LINK_NODE_TYPE_LIVE = 4;
+  VOTE = 3;
+  LIVE = 4;
   LOTTERY = 5;
   MATCH = 6;
-  LINK_NODE_TYPE_GOODS = 7;
+  GOODS = 7;
   OGV_SS = 8;
   OGV_EP = 9;
   MANGA = 10;
@@ -419,7 +419,7 @@ enum LinkNodeType {
   VIDEO_TS = 12;
   AT = 13;
   HASH_TAG = 14;
-  LINK_NODE_TYPE_ARTICLE = 15;
+  ARTICLE = 15;
   URL = 16;
   MAIL = 17;
   LBS = 18;
@@ -433,7 +433,7 @@ enum LinkNodeType {
   MEMBER_GOODS = 26;
   OPENMALL_UP_ITEMS = 27;
   SEARCH = 28;
-  LINK_NODE_TYPE_MUSIC = 29;
+  MUSIC = 29;
   GPT_RCMD_QUESTION = 30;
   MEMBER_TICKET = 31;
   REPOST_PIC_URL = 32;
@@ -449,9 +449,9 @@ enum LinkNodeType {
   IM_PUSH_INFO_MORE = 43;
   CONTENT_UP = 44;
   REFERENCE_COMMENT = 45;
-  LINK_NODE_TYPE_MULTIPLE_RESOURCES = 46;
-  REFERENCE = 47;
-  LINK_NODE_TYPE_TOY = 48;
+  MULTIPLE_RESOURCES = 46;
+  LINK_NODE_TYPE_REFERENCE = 47;
+  TOY = 48;
 }
 
 enum LiveState {
@@ -569,27 +569,6 @@ enum Module_ModuleItemCase {
   MODULE_PAYWALL = 48;
 }
 
-enum ModuleAdditional_ItemCase {
-  MODULE_ADDITIONAL_ITEM_CASE_ITEM_NOT_SET = 0;
-  PGC = 2;
-  MODULE_ADDITIONAL_ITEM_CASE_GOODS = 3;
-  MODULE_ADDITIONAL_ITEM_CASE_VOTE = 4;
-  MODULE_ADDITIONAL_ITEM_CASE_COMMON = 5;
-  ESPORT = 6;
-  VOTE2 = 8;
-  UGC = 9;
-  UP = 10;
-  MODULE_ADDITIONAL_ITEM_CASE_ARTICLE = 12;
-  MODULE_ADDITIONAL_ITEM_CASE_LIVE = 13;
-  MODULE_ADDITIONAL_ITEM_CASE_MUSIC = 14;
-  OPUS = 15;
-  MODULE_ADDITIONAL_ITEM_CASE_VIDEO = 16;
-  MODULE_ADDITIONAL_ITEM_CASE_COMMENT = 17;
-  CONTENTUP = 18;
-  MODULE_ADDITIONAL_ITEM_CASE_MULTIPLE_RESOURCES = 19;
-  MODULE_ADDITIONAL_ITEM_CASE_TOY = 20;
-}
-
 enum ModuleAuthorBadgeType {
   module_author_badge_type_none = 0;
   module_author_badge_type_threePoint = 1;
@@ -636,7 +615,7 @@ enum ModuleExtendItem_ExtendCase {
 }
 
 enum NavigationType {
-  NAVIGATION_TYPE_COMMON = 0;
+  COMMON = 0;
   JOINED_OTHER_TRIBEE = 1;
   NAVIGATION_TYPE_SHARE = 2;
   MY_POST = 3;
@@ -682,6 +661,20 @@ enum OpusType {
   OPUS_TYPE_WORD = 3;
   OPUS_TYPE_REPOST = 4;
   OPUS_TYPE_MANGA_EP = 5;
+}
+
+enum Paragraph_ParagraphType {
+  PARAGRAPH_PARAGRAPH_TYPE_INVALID = 0;
+  TEXT = 1;
+  PICTURES = 2;
+  LINE = 3;
+  PARAGRAPH_PARAGRAPH_TYPE_REFERENCE = 4;
+  SORTED_LIST = 5;
+  UNSORTED_LIST = 6;
+  LINK_CARD = 7;
+  CODE = 8;
+  HEADING = 9;
+  TABLE = 10;
 }
 
 enum PaywallStyle {
@@ -783,7 +776,7 @@ enum ThreePointAttentionStatus {
 }
 
 enum ThreePointItem_ItemCase {
-  THREE_POINT_ITEM_ITEM_CASE_ITEM_NOT_SET = 0;
+  ITEM_NOT_SET = 0;
   DEFAULT = 2;
   AUTO_PLAYER = 3;
   THREE_POINT_ITEM_ITEM_CASE_SHARE = 4;
@@ -792,7 +785,7 @@ enum ThreePointItem_ItemCase {
   DISLIKE = 7;
   FAVORITE = 8;
   TOP = 9;
-  THREE_POINT_ITEM_ITEM_CASE_COMMENT = 10;
+  COMMENT = 10;
   HIDE = 11;
   TOPIC_IRRELEVANT = 12;
   DYN_EDIT = 13;
@@ -1826,6 +1819,7 @@ message CardVideoUpList {
   repeated UpListItem listSecond = 10;
   bool hasMoreList = 11;
   string moreListOffset = 12;
+  int32 liveDegrade = 13;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/CategoryTip.java
@@ -3775,6 +3769,27 @@ message ModuleAdditional {
   }
   int64 rid = 7;
   bool needWriteCalender = 11;
+  enum ItemCase {
+    ITEM_NOT_SET = 0;
+    PGC = 2;
+    GOODS = 3;
+    VOTE = 4;
+    COMMON = 5;
+    ESPORT = 6;
+    VOTE2 = 8;
+    UGC = 9;
+    UP = 10;
+    ARTICLE = 12;
+    LIVE = 13;
+    MUSIC = 14;
+    OPUS = 15;
+    VIDEO = 16;
+    COMMENT = 17;
+    CONTENTUP = 18;
+    MULTIPLE_RESOURCES = 19;
+    TOY = 20;
+  }
+
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/ModuleAuthor.java
@@ -4736,7 +4751,7 @@ message PageOffset {
 
 // Source: com/bapis/bilibili/app/dynamic/v2/Paragraph.java
 message Paragraph {
-  ParagraphType paraType = 1;
+  int32 paraType = 1;
   Paragraph_ParagraphFormat paraFormat = 2;
   oneof oneof_0 {
     TextParagraph text = 3;
@@ -4749,12 +4764,12 @@ message Paragraph {
   string jumpUrl = 8;
   enum ContentCase {
     CONTENT_NOT_SET = 0;
-    CONTENT_CASE_TEXT = 3;
+    TEXT = 3;
     PIC = 4;
-    CONTENT_CASE_LINE = 5;
-    CONTENT_CASE_LINK_CARD = 6;
-    CONTENT_CASE_CODE = 7;
-    CONTENT_CASE_TABLE = 9;
+    LINE = 5;
+    LINK_CARD = 6;
+    CODE = 7;
+    TABLE = 9;
   }
 
   enum HeadingType {
@@ -4769,20 +4784,6 @@ message Paragraph {
     MIDDLE = 1;
     RIGHT = 2;
     UNSPECIFIED = 3;
-  }
-
-  enum ParagraphType {
-    INVALID = 0;
-    PARAGRAPH_TYPE_TEXT = 1;
-    PICTURES = 2;
-    PARAGRAPH_TYPE_LINE = 3;
-    REFERENCE = 4;
-    SORTED_LIST = 5;
-    UNSORTED_LIST = 6;
-    PARAGRAPH_TYPE_LINK_CARD = 7;
-    PARAGRAPH_TYPE_CODE = 8;
-    HEADING = 9;
-    PARAGRAPH_TYPE_TABLE = 10;
   }
 
 }
@@ -6180,6 +6181,7 @@ message TribeeProfileResp {
   ShareConfig share = 8;
   TribeeTheme tribeeTheme = 9;
   TribeeRuleContent ruleOpus = 10;
+  string memberCountText = 11;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeRuleContent.java
@@ -6388,6 +6390,7 @@ message TribeeSortItem {
 message TribeeStats {
   string memberCount = 1;
   string dynCount = 2;
+  string memberCountText = 3;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeSteamGameAchievementReq.java
@@ -6640,6 +6643,7 @@ message TribeeVisaCard {
   TribeeUserProfile profile = 4;
   TribeeTheme visaTheme = 5;
   string otherMemberCount = 6;
+  string otherMemberCountText = 7;
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/TribeeVisaCardsReq.java

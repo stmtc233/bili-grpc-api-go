@@ -1247,6 +1247,7 @@ message SearchArticleCard {
   string badge = 15;
   Feedback feedback = 16;
   CardLayout cardLayout = 17;
+  bool hideLikeIcon = 18;
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/SearchAuthorNewCard.java
@@ -1607,6 +1608,7 @@ message SearchGiantCard {
   string name = 8;
   string pubTime = 9;
   Feedback feedback = 10;
+  bool hideLikeIcon = 11;
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/SearchHotBannerCard.java

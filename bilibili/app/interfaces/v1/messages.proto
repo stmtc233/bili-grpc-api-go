@@ -836,6 +836,26 @@ message SmallItem {
   int64 mid = 10;
 }
 
+// Source: com/bapis/bilibili/app/interfaces/v1/SpaceTranslateFieldResult.java
+message SpaceTranslateFieldResult {
+  string originalText = 1;
+  string translatedText = 2;
+  string status = 3;
+}
+
+// Source: com/bapis/bilibili/app/interfaces/v1/SpaceTranslateReply.java
+message SpaceTranslateReply {
+  SpaceTranslateFieldResult officialTitle = 1;
+  SpaceTranslateFieldResult sign = 2;
+}
+
+// Source: com/bapis/bilibili/app/interfaces/v1/SpaceTranslateReq.java
+message SpaceTranslateReq {
+  int64 vmid = 1;
+  string officialTitle = 2;
+  string sign = 3;
+}
+
 // Source: com/bapis/bilibili/app/interfaces/v1/Staff.java
 message Staff {
   string title = 1;

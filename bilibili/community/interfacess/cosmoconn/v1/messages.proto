@@ -147,6 +147,25 @@ enum TribeeMemberStatus {
   BANNED = 100;
 }
 
+enum TribeeMemberTitleRecordStatus {
+  TRIBEE_MEMBER_TITLE_RECORD_STATUS_UNKNOWN = 0;
+  TRIBEE_MEMBER_TITLE_RECORD_STATUS_PENDING = 1;
+  TRIBEE_MEMBER_TITLE_RECORD_STATUS_APPROVED = 2;
+  TRIBEE_MEMBER_TITLE_RECORD_STATUS_REJECTED = 3;
+}
+
+enum TribeeMemberTitleReviewDecision {
+  TRIBEE_MEMBER_TITLE_REVIEW_DECISION_UNKNOWN = 0;
+  TRIBEE_MEMBER_TITLE_REVIEW_DECISION_APPROVE = 1;
+  TRIBEE_MEMBER_TITLE_REVIEW_DECISION_REJECT = 2;
+}
+
+enum TribeeMemberTitleSubmitBlockReason {
+  TRIBEE_MEMBER_TITLE_SUBMIT_BLOCK_REASON_NONE = 0;
+  TRIBEE_MEMBER_TITLE_SUBMIT_BLOCK_REASON_PENDING = 1;
+  TRIBEE_MEMBER_TITLE_SUBMIT_BLOCK_REASON_COOLDOWN = 2;
+}
+
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AcceptTribeeStaffRecruitOfferReq.java
 message AcceptTribeeStaffRecruitOfferReq {
   int64 tribeeId = 1;
@@ -164,6 +183,7 @@ message AcceptTribeeStaffRecruitOfferRsp {
   string applyIdStr = 4;
   StaffRecruitPresentation presentation = 5;
   StaffRecruitAction successAction = 6;
+  StaffRecruitContentItem successDialog = 7;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AddTribeeDraftReq.java
@@ -274,6 +294,16 @@ message AdminDeleteTribeeCategoryReq {
 message AdminDeleteTribeeCategoryRsp {
 }
 
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminGetTribeeMemberTitleReq.java
+message AdminGetTribeeMemberTitleReq {
+  int64 tribeeId = 1;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminGetTribeeMemberTitleRsp.java
+message AdminGetTribeeMemberTitleRsp {
+  TribeeMemberTitleState state = 1;
+}
+
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminListTribeeAuditsReq.java
 message AdminListTribeeAuditsReq {
   int64 tribeeId = 1;
@@ -282,6 +312,21 @@ message AdminListTribeeAuditsReq {
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminListTribeeAuditsRsp.java
 message AdminListTribeeAuditsRsp {
   repeated AdminTribeeAuditItem items = 1;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminListTribeeMemberTitleRecordsReq.java
+message AdminListTribeeMemberTitleRecordsReq {
+  int64 tribeeId = 1;
+  string cursor = 2;
+  int32 pageSize = 3;
+  TribeeMemberTitleRecordStatus status = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminListTribeeMemberTitleRecordsRsp.java
+message AdminListTribeeMemberTitleRecordsRsp {
+  repeated TribeeMemberTitleRecord records = 1;
+  string nextCursor = 2;
+  bool hasMore = 3;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminReviewTribeeAuditReq.java
@@ -296,6 +341,20 @@ message AdminReviewTribeeAuditReq {
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminReviewTribeeAuditRsp.java
 message AdminReviewTribeeAuditRsp {
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminReviewTribeeMemberTitleReq.java
+message AdminReviewTribeeMemberTitleReq {
+  int64 tribeeId = 1;
+  string recordId = 2;
+  TribeeMemberTitleReviewDecision decision = 3;
+  string reason = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminReviewTribeeMemberTitleRsp.java
+message AdminReviewTribeeMemberTitleRsp {
+  string recordId = 1;
+  TribeeMemberTitleRecordStatus status = 2;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminSetTribeeTopThreadReq.java
@@ -327,6 +386,20 @@ message AdminSortTribeeTopThreadsReq {
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminSortTribeeTopThreadsRsp.java
 message AdminSortTribeeTopThreadsRsp {
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminSubmitTribeeMemberTitleReq.java
+message AdminSubmitTribeeMemberTitleReq {
+  int64 tribeeId = 1;
+  string title = 2;
+  string requestId = 3;
+  string expectedLatestRecordId = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminSubmitTribeeMemberTitleRsp.java
+message AdminSubmitTribeeMemberTitleRsp {
+  string recordId = 1;
+  TribeeMemberTitleRecordStatus status = 2;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminTribeeAuditItem.java
@@ -1610,6 +1683,34 @@ message TribeeMemberInfo {
   TribeeMemberStatus status = 4;
   int64 joinTs = 5;
   string uidStr = 6;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeMemberTitleRecord.java
+message TribeeMemberTitleRecord {
+  string recordId = 1;
+  string beforeTitle = 2;
+  string afterTitle = 3;
+  TribeeMemberTitleRecordStatus status = 4;
+  string submitUid = 5;
+  int64 submitTime = 6;
+  string auditUid = 7;
+  int64 auditTime = 8;
+  string auditReason = 9;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeMemberTitleState.java
+message TribeeMemberTitleState {
+  string effectiveTitle = 1;
+  bool isCustom = 2;
+  string effectiveRecordId = 3;
+  int64 lastApprovedTime = 4;
+  TribeeMemberTitleRecord latestRecord = 5;
+  bool canSubmit = 6;
+  TribeeMemberTitleSubmitBlockReason submitBlockReason = 7;
+  int64 nextEditTime = 8;
+  int64 serverTime = 9;
+  int32 titleMaxLength = 10;
+  string latestRecordId = 11;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeSelection.java

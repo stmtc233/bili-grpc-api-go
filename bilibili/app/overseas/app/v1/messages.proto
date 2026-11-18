@@ -28,23 +28,6 @@ enum SplashResourceType {
   SPLASH_RESOURCE_TYPE_IMAGE = 0;
 }
 
-enum SubmissionArchiveRemovalState {
-  SUBMISSION_ARCHIVE_REMOVAL_STATE_UNSPECIFIED = 0;
-  SUBMISSION_ARCHIVE_REMOVAL_STATE_NOT_REMOVED = 1;
-  SUBMISSION_ARCHIVE_REMOVAL_STATE_REMOVED = 2;
-}
-
-// Source: com/bapis/bilibili/app/overseas/app/v1/ArchiveMissionStateRequest.java
-message ArchiveMissionStateRequest {
-  int64 aid = 1;
-  int64 missionId = 2;
-}
-
-// Source: com/bapis/bilibili/app/overseas/app/v1/ArchiveMissionStateResponse.java
-message ArchiveMissionStateResponse {
-  SubmissionArchiveRemovalState removalState = 1;
-}
-
 // Source: com/bapis/bilibili/app/overseas/app/v1/EventListReq.java
 message EventListReq {
   int32 screenWidth = 1;
@@ -55,6 +38,29 @@ message EventListReq {
 message EventListResp {
   SplashGlobalConfig globalConfig = 1;
   repeated SplashEvent eventList = 2;
+}
+
+// Source: com/bapis/bilibili/app/overseas/app/v1/GetArchiveIntlMissionStatusRequest.java
+message GetArchiveIntlMissionStatusRequest {
+  int64 aid = 1;
+  int64 missionId = 2;
+}
+
+// Source: com/bapis/bilibili/app/overseas/app/v1/GetArchiveIntlMissionStatusResponse.java
+message GetArchiveIntlMissionStatusResponse {
+  Relation relation = 1;
+  string activityName = 2;
+  string tagName = 3;
+  int64 missionStime = 4;
+  int64 missionEtime = 5;
+  enum Relation {
+    RELATION_UNSPECIFIED = 0;
+    RELATION_NOT_JOINED = 1;
+    RELATION_JOINED = 2;
+    RELATION_REMOVED = 3;
+    RELATION_FROZEN = 4;
+  }
+
 }
 
 // Source: com/bapis/bilibili/app/overseas/app/v1/MissionTagListReq.java

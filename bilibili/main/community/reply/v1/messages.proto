@@ -100,6 +100,8 @@ message AddReplyReq {
   string scmActionId = 24;
   bool isFly = 25;
   string flyOrderId = 26;
+  int32 polarisAppId = 27;
+  int32 polarisPlatform = 28;
 }
 
 // Source: com/bapis/bilibili/main/community/reply/v1/AddReplyResp.java

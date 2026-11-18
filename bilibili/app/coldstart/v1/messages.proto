@@ -5,6 +5,11 @@ package com.bapis.bilibili.app.coldstart.v1;
 
 import "google/protobuf/any.proto";
 
+// Source: com/bapis/bilibili/app/coldstart/v1/ColdAbtestParam.java
+message ColdAbtestParam {
+  string usingCmp = 1;
+}
+
 // Source: com/bapis/bilibili/app/coldstart/v1/ColdStartBizReq.java
 message ColdStartBizReq {
   string bizKey = 1;
