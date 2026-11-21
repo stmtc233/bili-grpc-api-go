@@ -1026,6 +1026,110 @@ func (x *DmActivityReply_ActivityInfo_MockOption) GetTriggerTime() int64 {
 	return 0
 }
 
+// Source: com/bapis/bilibili/broadcast/message/tv/DmLiveCmdElem.java
+type DmLiveCmdElem struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	RoomId   int64  `protobuf:"varint,1,opt,name=roomId,proto3" json:"roomId,omitempty"`
+	Cmd      string `protobuf:"bytes,2,opt,name=cmd,proto3" json:"cmd,omitempty"`
+	Data     string `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+	IdStr    string `protobuf:"bytes,4,opt,name=idStr,proto3" json:"idStr,omitempty"`
+	Content  string `protobuf:"bytes,5,opt,name=content,proto3" json:"content,omitempty"`
+	Repeats  int64  `protobuf:"varint,6,opt,name=repeats,proto3" json:"repeats,omitempty"`
+	RoomUid  int64  `protobuf:"varint,7,opt,name=roomUid,proto3" json:"roomUid,omitempty"`
+	SendTime int64  `protobuf:"varint,8,opt,name=sendTime,proto3" json:"sendTime,omitempty"`
+}
+
+func (x *DmLiveCmdElem) Reset() {
+	*x = DmLiveCmdElem{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[10]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DmLiveCmdElem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DmLiveCmdElem) ProtoMessage() {}
+
+func (x *DmLiveCmdElem) ProtoReflect() protoreflect.Message {
+	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[10]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DmLiveCmdElem.ProtoReflect.Descriptor instead.
+func (*DmLiveCmdElem) Descriptor() ([]byte, []int) {
+	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *DmLiveCmdElem) GetRoomId() int64 {
+	if x != nil {
+		return x.RoomId
+	}
+	return 0
+}
+
+func (x *DmLiveCmdElem) GetCmd() string {
+	if x != nil {
+		return x.Cmd
+	}
+	return ""
+}
+
+func (x *DmLiveCmdElem) GetData() string {
+	if x != nil {
+		return x.Data
+	}
+	return ""
+}
+
+func (x *DmLiveCmdElem) GetIdStr() string {
+	if x != nil {
+		return x.IdStr
+	}
+	return ""
+}
+
+func (x *DmLiveCmdElem) GetContent() string {
+	if x != nil {
+		return x.Content
+	}
+	return ""
+}
+
+func (x *DmLiveCmdElem) GetRepeats() int64 {
+	if x != nil {
+		return x.Repeats
+	}
+	return 0
+}
+
+func (x *DmLiveCmdElem) GetRoomUid() int64 {
+	if x != nil {
+		return x.RoomUid
+	}
+	return 0
+}
+
+func (x *DmLiveCmdElem) GetSendTime() int64 {
+	if x != nil {
+		return x.SendTime
+	}
+	return 0
+}
+
 // Source: com/bapis/bilibili/broadcast/message/tv/DmLiveElem.java
 type DmLiveElem struct {
 	state         protoimpl.MessageState
@@ -1049,12 +1153,13 @@ type DmLiveElem struct {
 	Emots        map[string]*Emoji `protobuf:"bytes,15,rep,name=emots,proto3" json:"emots,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 	Emoticons    *Emoticons        `protobuf:"bytes,16,opt,name=emoticons,proto3" json:"emoticons,omitempty"`
 	DmActivity   *DMActivityOTT    `protobuf:"bytes,17,opt,name=dmActivity,proto3" json:"dmActivity,omitempty"`
+	Extra        string            `protobuf:"bytes,18,opt,name=extra,proto3" json:"extra,omitempty"`
 }
 
 func (x *DmLiveElem) Reset() {
 	*x = DmLiveElem{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[10]
+		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1067,7 +1172,7 @@ func (x *DmLiveElem) String() string {
 func (*DmLiveElem) ProtoMessage() {}
 
 func (x *DmLiveElem) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[10]
+	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1080,7 +1185,7 @@ func (x *DmLiveElem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DmLiveElem.ProtoReflect.Descriptor instead.
 func (*DmLiveElem) Descriptor() ([]byte, []int) {
-	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{10}
+	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *DmLiveElem) GetRoomId() int64 {
@@ -1202,21 +1307,30 @@ func (x *DmLiveElem) GetDmActivity() *DMActivityOTT {
 	return nil
 }
 
+func (x *DmLiveElem) GetExtra() string {
+	if x != nil {
+		return x.Extra
+	}
+	return ""
+}
+
 // Source: com/bapis/bilibili/broadcast/message/tv/DmLiveReply.java
 type DmLiveReply struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Elems  []*DmLiveElem `protobuf:"bytes,1,rep,name=elems,proto3" json:"elems,omitempty"`
-	State  int32         `protobuf:"varint,2,opt,name=state,proto3" json:"state,omitempty"`
-	Source int32         `protobuf:"varint,3,opt,name=source,proto3" json:"source,omitempty"`
+	Elems         []*DmLiveElem    `protobuf:"bytes,1,rep,name=elems,proto3" json:"elems,omitempty"`
+	State         int32            `protobuf:"varint,2,opt,name=state,proto3" json:"state,omitempty"`
+	Source        int32            `protobuf:"varint,3,opt,name=source,proto3" json:"source,omitempty"`
+	IsSendChronos bool             `protobuf:"varint,4,opt,name=isSendChronos,proto3" json:"isSendChronos,omitempty"`
+	CmdElems      []*DmLiveCmdElem `protobuf:"bytes,5,rep,name=cmdElems,proto3" json:"cmdElems,omitempty"`
 }
 
 func (x *DmLiveReply) Reset() {
 	*x = DmLiveReply{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[11]
+		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1229,7 +1343,7 @@ func (x *DmLiveReply) String() string {
 func (*DmLiveReply) ProtoMessage() {}
 
 func (x *DmLiveReply) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[11]
+	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1242,7 +1356,7 @@ func (x *DmLiveReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DmLiveReply.ProtoReflect.Descriptor instead.
 func (*DmLiveReply) Descriptor() ([]byte, []int) {
-	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{11}
+	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *DmLiveReply) GetElems() []*DmLiveElem {
@@ -1266,6 +1380,20 @@ func (x *DmLiveReply) GetSource() int32 {
 	return 0
 }
 
+func (x *DmLiveReply) GetIsSendChronos() bool {
+	if x != nil {
+		return x.IsSendChronos
+	}
+	return false
+}
+
+func (x *DmLiveReply) GetCmdElems() []*DmLiveCmdElem {
+	if x != nil {
+		return x.CmdElems
+	}
+	return nil
+}
+
 // Source: com/bapis/bilibili/broadcast/message/tv/DmLiveSwitchReload.java
 type DmLiveSwitchReload struct {
 	state         protoimpl.MessageState
@@ -1278,7 +1406,7 @@ type DmLiveSwitchReload struct {
 func (x *DmLiveSwitchReload) Reset() {
 	*x = DmLiveSwitchReload{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[12]
+		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1291,7 +1419,7 @@ func (x *DmLiveSwitchReload) String() string {
 func (*DmLiveSwitchReload) ProtoMessage() {}
 
 func (x *DmLiveSwitchReload) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[12]
+	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1304,7 +1432,7 @@ func (x *DmLiveSwitchReload) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DmLiveSwitchReload.ProtoReflect.Descriptor instead.
 func (*DmLiveSwitchReload) Descriptor() ([]byte, []int) {
-	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{12}
+	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *DmLiveSwitchReload) GetReload() bool {
@@ -1327,7 +1455,7 @@ type DmSegLiveReply struct {
 func (x *DmSegLiveReply) Reset() {
 	*x = DmSegLiveReply{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[13]
+		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1340,7 +1468,7 @@ func (x *DmSegLiveReply) String() string {
 func (*DmSegLiveReply) ProtoMessage() {}
 
 func (x *DmSegLiveReply) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[13]
+	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1353,7 +1481,7 @@ func (x *DmSegLiveReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DmSegLiveReply.ProtoReflect.Descriptor instead.
 func (*DmSegLiveReply) Descriptor() ([]byte, []int) {
-	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{13}
+	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *DmSegLiveReply) GetElems() []*DanmakuElem {
@@ -1389,7 +1517,7 @@ type Emoji struct {
 func (x *Emoji) Reset() {
 	*x = Emoji{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[14]
+		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1402,7 +1530,7 @@ func (x *Emoji) String() string {
 func (*Emoji) ProtoMessage() {}
 
 func (x *Emoji) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[14]
+	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1415,7 +1543,7 @@ func (x *Emoji) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Emoji.ProtoReflect.Descriptor instead.
 func (*Emoji) Descriptor() ([]byte, []int) {
-	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{14}
+	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *Emoji) GetEmoticonId() int64 {
@@ -1491,7 +1619,7 @@ type Emoticons struct {
 func (x *Emoticons) Reset() {
 	*x = Emoticons{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[15]
+		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1504,7 +1632,7 @@ func (x *Emoticons) String() string {
 func (*Emoticons) ProtoMessage() {}
 
 func (x *Emoticons) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[15]
+	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1517,7 +1645,7 @@ func (x *Emoticons) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Emoticons.ProtoReflect.Descriptor instead.
 func (*Emoticons) Descriptor() ([]byte, []int) {
-	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{15}
+	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *Emoticons) GetId() string {
@@ -1574,7 +1702,7 @@ type EsportsNotify struct {
 func (x *EsportsNotify) Reset() {
 	*x = EsportsNotify{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[16]
+		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1587,7 +1715,7 @@ func (x *EsportsNotify) String() string {
 func (*EsportsNotify) ProtoMessage() {}
 
 func (x *EsportsNotify) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[16]
+	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1600,7 +1728,7 @@ func (x *EsportsNotify) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EsportsNotify.ProtoReflect.Descriptor instead.
 func (*EsportsNotify) Descriptor() ([]byte, []int) {
-	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{16}
+	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *EsportsNotify) GetCid() int64 {
@@ -1623,7 +1751,7 @@ type FeedClientSmartNotify struct {
 func (x *FeedClientSmartNotify) Reset() {
 	*x = FeedClientSmartNotify{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[17]
+		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1636,7 +1764,7 @@ func (x *FeedClientSmartNotify) String() string {
 func (*FeedClientSmartNotify) ProtoMessage() {}
 
 func (x *FeedClientSmartNotify) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[17]
+	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1649,7 +1777,7 @@ func (x *FeedClientSmartNotify) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FeedClientSmartNotify.ProtoReflect.Descriptor instead.
 func (*FeedClientSmartNotify) Descriptor() ([]byte, []int) {
-	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{17}
+	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *FeedClientSmartNotify) GetMid() int64 {
@@ -1678,7 +1806,7 @@ type Icon struct {
 func (x *Icon) Reset() {
 	*x = Icon{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[18]
+		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1691,7 +1819,7 @@ func (x *Icon) String() string {
 func (*Icon) ProtoMessage() {}
 
 func (x *Icon) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[18]
+	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1704,7 +1832,7 @@ func (x *Icon) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Icon.ProtoReflect.Descriptor instead.
 func (*Icon) Descriptor() ([]byte, []int) {
-	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{18}
+	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *Icon) GetPrefix() *Prefix {
@@ -1727,7 +1855,7 @@ type LiveBottomConfNotify struct {
 func (x *LiveBottomConfNotify) Reset() {
 	*x = LiveBottomConfNotify{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[19]
+		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1740,7 +1868,7 @@ func (x *LiveBottomConfNotify) String() string {
 func (*LiveBottomConfNotify) ProtoMessage() {}
 
 func (x *LiveBottomConfNotify) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[19]
+	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1753,7 +1881,7 @@ func (x *LiveBottomConfNotify) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LiveBottomConfNotify.ProtoReflect.Descriptor instead.
 func (*LiveBottomConfNotify) Descriptor() ([]byte, []int) {
-	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{19}
+	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *LiveBottomConfNotify) GetRoomId() int64 {
@@ -1783,7 +1911,7 @@ type LiveCommonNotify struct {
 func (x *LiveCommonNotify) Reset() {
 	*x = LiveCommonNotify{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[20]
+		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1796,7 +1924,7 @@ func (x *LiveCommonNotify) String() string {
 func (*LiveCommonNotify) ProtoMessage() {}
 
 func (x *LiveCommonNotify) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[20]
+	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1809,7 +1937,7 @@ func (x *LiveCommonNotify) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LiveCommonNotify.ProtoReflect.Descriptor instead.
 func (*LiveCommonNotify) Descriptor() ([]byte, []int) {
-	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{20}
+	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *LiveCommonNotify) GetCmd() string {
@@ -1838,7 +1966,7 @@ type LiveSkipNotify struct {
 func (x *LiveSkipNotify) Reset() {
 	*x = LiveSkipNotify{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[21]
+		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1851,7 +1979,7 @@ func (x *LiveSkipNotify) String() string {
 func (*LiveSkipNotify) ProtoMessage() {}
 
 func (x *LiveSkipNotify) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[21]
+	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1864,7 +1992,7 @@ func (x *LiveSkipNotify) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LiveSkipNotify.ProtoReflect.Descriptor instead.
 func (*LiveSkipNotify) Descriptor() ([]byte, []int) {
-	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{21}
+	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *LiveSkipNotify) GetLiveId() int64 {
@@ -1888,7 +2016,7 @@ type LiveStatusNotify struct {
 func (x *LiveStatusNotify) Reset() {
 	*x = LiveStatusNotify{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[22]
+		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[23]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1901,7 +2029,7 @@ func (x *LiveStatusNotify) String() string {
 func (*LiveStatusNotify) ProtoMessage() {}
 
 func (x *LiveStatusNotify) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[22]
+	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[23]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1914,7 +2042,7 @@ func (x *LiveStatusNotify) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LiveStatusNotify.ProtoReflect.Descriptor instead.
 func (*LiveStatusNotify) Descriptor() ([]byte, []int) {
-	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{22}
+	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *LiveStatusNotify) GetStatus() int64 {
@@ -1951,7 +2079,7 @@ type LiveViewerMsgNotify struct {
 func (x *LiveViewerMsgNotify) Reset() {
 	*x = LiveViewerMsgNotify{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[23]
+		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[24]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1964,7 +2092,7 @@ func (x *LiveViewerMsgNotify) String() string {
 func (*LiveViewerMsgNotify) ProtoMessage() {}
 
 func (x *LiveViewerMsgNotify) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[23]
+	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[24]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1977,7 +2105,7 @@ func (x *LiveViewerMsgNotify) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LiveViewerMsgNotify.ProtoReflect.Descriptor instead.
 func (*LiveViewerMsgNotify) Descriptor() ([]byte, []int) {
-	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{23}
+	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *LiveViewerMsgNotify) GetRoomId() int64 {
@@ -2007,7 +2135,7 @@ type MainRedDotReply struct {
 func (x *MainRedDotReply) Reset() {
 	*x = MainRedDotReply{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[24]
+		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[25]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2020,7 +2148,7 @@ func (x *MainRedDotReply) String() string {
 func (*MainRedDotReply) ProtoMessage() {}
 
 func (x *MainRedDotReply) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[24]
+	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[25]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2033,7 +2161,7 @@ func (x *MainRedDotReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MainRedDotReply.ProtoReflect.Descriptor instead.
 func (*MainRedDotReply) Descriptor() ([]byte, []int) {
-	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{24}
+	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *MainRedDotReply) GetMid() int64 {
@@ -2064,7 +2192,7 @@ type ModResource struct {
 func (x *ModResource) Reset() {
 	*x = ModResource{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[25]
+		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[26]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2077,7 +2205,7 @@ func (x *ModResource) String() string {
 func (*ModResource) ProtoMessage() {}
 
 func (x *ModResource) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[25]
+	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[26]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2090,7 +2218,7 @@ func (x *ModResource) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ModResource.ProtoReflect.Descriptor instead.
 func (*ModResource) Descriptor() ([]byte, []int) {
-	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{25}
+	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *ModResource) GetMobiPool() string {
@@ -2135,7 +2263,7 @@ type NotifyPop struct {
 func (x *NotifyPop) Reset() {
 	*x = NotifyPop{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[26]
+		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[27]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2148,7 +2276,7 @@ func (x *NotifyPop) String() string {
 func (*NotifyPop) ProtoMessage() {}
 
 func (x *NotifyPop) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[26]
+	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[27]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2161,7 +2289,7 @@ func (x *NotifyPop) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NotifyPop.ProtoReflect.Descriptor instead.
 func (*NotifyPop) Descriptor() ([]byte, []int) {
-	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{26}
+	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *NotifyPop) GetId() int64 {
@@ -2247,7 +2375,7 @@ type NotifyPopBtn struct {
 func (x *NotifyPopBtn) Reset() {
 	*x = NotifyPopBtn{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[27]
+		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[28]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2260,7 +2388,7 @@ func (x *NotifyPopBtn) String() string {
 func (*NotifyPopBtn) ProtoMessage() {}
 
 func (x *NotifyPopBtn) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[27]
+	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[28]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2273,7 +2401,7 @@ func (x *NotifyPopBtn) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NotifyPopBtn.ProtoReflect.Descriptor instead.
 func (*NotifyPopBtn) Descriptor() ([]byte, []int) {
-	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{27}
+	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *NotifyPopBtn) GetText() string {
@@ -2303,7 +2431,7 @@ type NotifyPopReply struct {
 func (x *NotifyPopReply) Reset() {
 	*x = NotifyPopReply{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[28]
+		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[29]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2316,7 +2444,7 @@ func (x *NotifyPopReply) String() string {
 func (*NotifyPopReply) ProtoMessage() {}
 
 func (x *NotifyPopReply) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[28]
+	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[29]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2329,7 +2457,7 @@ func (x *NotifyPopReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NotifyPopReply.ProtoReflect.Descriptor instead.
 func (*NotifyPopReply) Descriptor() ([]byte, []int) {
-	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{28}
+	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *NotifyPopReply) GetMid() int64 {
@@ -2359,7 +2487,7 @@ type OgvPayOrderReply struct {
 func (x *OgvPayOrderReply) Reset() {
 	*x = OgvPayOrderReply{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[29]
+		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[30]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2372,7 +2500,7 @@ func (x *OgvPayOrderReply) String() string {
 func (*OgvPayOrderReply) ProtoMessage() {}
 
 func (x *OgvPayOrderReply) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[29]
+	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[30]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2385,7 +2513,7 @@ func (x *OgvPayOrderReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OgvPayOrderReply.ProtoReflect.Descriptor instead.
 func (*OgvPayOrderReply) Descriptor() ([]byte, []int) {
-	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{29}
+	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *OgvPayOrderReply) GetMid() int64 {
@@ -2415,7 +2543,7 @@ type Prefix struct {
 func (x *Prefix) Reset() {
 	*x = Prefix{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[30]
+		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[31]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2428,7 +2556,7 @@ func (x *Prefix) String() string {
 func (*Prefix) ProtoMessage() {}
 
 func (x *Prefix) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[30]
+	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[31]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2441,7 +2569,7 @@ func (x *Prefix) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Prefix.ProtoReflect.Descriptor instead.
 func (*Prefix) Descriptor() ([]byte, []int) {
-	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{30}
+	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{31}
 }
 
 func (x *Prefix) GetType() IconType {
@@ -2472,7 +2600,7 @@ type ProjLiveEventNotify struct {
 func (x *ProjLiveEventNotify) Reset() {
 	*x = ProjLiveEventNotify{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[31]
+		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[32]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2485,7 +2613,7 @@ func (x *ProjLiveEventNotify) String() string {
 func (*ProjLiveEventNotify) ProtoMessage() {}
 
 func (x *ProjLiveEventNotify) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[31]
+	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[32]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2498,7 +2626,7 @@ func (x *ProjLiveEventNotify) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProjLiveEventNotify.ProtoReflect.Descriptor instead.
 func (*ProjLiveEventNotify) Descriptor() ([]byte, []int) {
-	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{31}
+	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{32}
 }
 
 func (x *ProjLiveEventNotify) GetRoomId() int64 {
@@ -2545,7 +2673,7 @@ type ProjReply struct {
 func (x *ProjReply) Reset() {
 	*x = ProjReply{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[32]
+		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[33]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2558,7 +2686,7 @@ func (x *ProjReply) String() string {
 func (*ProjReply) ProtoMessage() {}
 
 func (x *ProjReply) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[32]
+	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[33]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2571,7 +2699,7 @@ func (x *ProjReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProjReply.ProtoReflect.Descriptor instead.
 func (*ProjReply) Descriptor() ([]byte, []int) {
-	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{32}
+	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{33}
 }
 
 func (x *ProjReply) GetCmdType() int64 {
@@ -2672,7 +2800,7 @@ type PublicityNotify struct {
 func (x *PublicityNotify) Reset() {
 	*x = PublicityNotify{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[33]
+		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[34]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2685,7 +2813,7 @@ func (x *PublicityNotify) String() string {
 func (*PublicityNotify) ProtoMessage() {}
 
 func (x *PublicityNotify) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[33]
+	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[34]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2698,7 +2826,7 @@ func (x *PublicityNotify) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PublicityNotify.ProtoReflect.Descriptor instead.
 func (*PublicityNotify) Descriptor() ([]byte, []int) {
-	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{33}
+	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{34}
 }
 
 func (x *PublicityNotify) GetPublicityId() int64 {
@@ -2743,12 +2871,14 @@ type TVAssistantCommand struct {
 	RoomId               int64  `protobuf:"varint,13,opt,name=roomId,proto3" json:"roomId,omitempty"`
 	Payload              string `protobuf:"bytes,14,opt,name=payload,proto3" json:"payload,omitempty"`
 	Ts                   int64  `protobuf:"varint,15,opt,name=ts,proto3" json:"ts,omitempty"`
+	TeenagerMode         int32  `protobuf:"varint,16,opt,name=teenagerMode,proto3" json:"teenagerMode,omitempty"`
+	CreativeId           string `protobuf:"bytes,17,opt,name=creativeId,proto3" json:"creativeId,omitempty"`
 }
 
 func (x *TVAssistantCommand) Reset() {
 	*x = TVAssistantCommand{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[34]
+		mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[35]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2761,7 +2891,7 @@ func (x *TVAssistantCommand) String() string {
 func (*TVAssistantCommand) ProtoMessage() {}
 
 func (x *TVAssistantCommand) ProtoReflect() protoreflect.Message {
-	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[34]
+	mi := &file_bilibili_broadcast_message_tv_messages_proto_msgTypes[35]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2774,7 +2904,7 @@ func (x *TVAssistantCommand) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TVAssistantCommand.ProtoReflect.Descriptor instead.
 func (*TVAssistantCommand) Descriptor() ([]byte, []int) {
-	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{34}
+	return file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP(), []int{35}
 }
 
 func (x *TVAssistantCommand) GetTvAssistantSessionId() string {
@@ -2880,6 +3010,20 @@ func (x *TVAssistantCommand) GetTs() int64 {
 		return x.Ts
 	}
 	return 0
+}
+
+func (x *TVAssistantCommand) GetTeenagerMode() int32 {
+	if x != nil {
+		return x.TeenagerMode
+	}
+	return 0
+}
+
+func (x *TVAssistantCommand) GetCreativeId() string {
+	if x != nil {
+		return x.CreativeId
+	}
+	return ""
 }
 
 var File_bilibili_broadcast_message_tv_messages_proto protoreflect.FileDescriptor
@@ -3069,7 +3213,20 @@ var file_bilibili_broadcast_message_tv_messages_proto_rawDesc = []byte{
 	0x18, 0x0a, 0x07, 0x64, 0x6d, 0x45, 0x78, 0x74, 0x72, 0x61, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
 	0x52, 0x07, 0x64, 0x6d, 0x45, 0x78, 0x74, 0x72, 0x61, 0x12, 0x20, 0x0a, 0x0b, 0x74, 0x72, 0x69,
 	0x67, 0x67, 0x65, 0x72, 0x54, 0x69, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0b,
-	0x74, 0x72, 0x69, 0x67, 0x67, 0x65, 0x72, 0x54, 0x69, 0x6d, 0x65, 0x22, 0xcc, 0x05, 0x0a, 0x0a,
+	0x74, 0x72, 0x69, 0x67, 0x67, 0x65, 0x72, 0x54, 0x69, 0x6d, 0x65, 0x22, 0xcd, 0x01, 0x0a, 0x0d,
+	0x44, 0x6d, 0x4c, 0x69, 0x76, 0x65, 0x43, 0x6d, 0x64, 0x45, 0x6c, 0x65, 0x6d, 0x12, 0x16, 0x0a,
+	0x06, 0x72, 0x6f, 0x6f, 0x6d, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x06, 0x72,
+	0x6f, 0x6f, 0x6d, 0x49, 0x64, 0x12, 0x10, 0x0a, 0x03, 0x63, 0x6d, 0x64, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x03, 0x63, 0x6d, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x64, 0x61, 0x74, 0x61, 0x18,
+	0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x64, 0x61, 0x74, 0x61, 0x12, 0x14, 0x0a, 0x05, 0x69,
+	0x64, 0x53, 0x74, 0x72, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x69, 0x64, 0x53, 0x74,
+	0x72, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x18, 0x05, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x07, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x12, 0x18, 0x0a, 0x07, 0x72,
+	0x65, 0x70, 0x65, 0x61, 0x74, 0x73, 0x18, 0x06, 0x20, 0x01, 0x28, 0x03, 0x52, 0x07, 0x72, 0x65,
+	0x70, 0x65, 0x61, 0x74, 0x73, 0x12, 0x18, 0x0a, 0x07, 0x72, 0x6f, 0x6f, 0x6d, 0x55, 0x69, 0x64,
+	0x18, 0x07, 0x20, 0x01, 0x28, 0x03, 0x52, 0x07, 0x72, 0x6f, 0x6f, 0x6d, 0x55, 0x69, 0x64, 0x12,
+	0x1a, 0x0a, 0x08, 0x73, 0x65, 0x6e, 0x64, 0x54, 0x69, 0x6d, 0x65, 0x18, 0x08, 0x20, 0x01, 0x28,
+	0x03, 0x52, 0x08, 0x73, 0x65, 0x6e, 0x64, 0x54, 0x69, 0x6d, 0x65, 0x22, 0xe2, 0x05, 0x0a, 0x0a,
 	0x44, 0x6d, 0x4c, 0x69, 0x76, 0x65, 0x45, 0x6c, 0x65, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x72, 0x6f,
 	0x6f, 0x6d, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x06, 0x72, 0x6f, 0x6f, 0x6d,
 	0x49, 0x64, 0x12, 0x18, 0x0a, 0x07, 0x72, 0x6f, 0x6f, 0x6d, 0x55, 0x69, 0x64, 0x18, 0x02, 0x20,
@@ -3108,22 +3265,31 @@ var file_bilibili_broadcast_message_tv_messages_proto_rawDesc = []byte{
 	0x69, 0x2e, 0x62, 0x72, 0x6f, 0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x2e, 0x6d, 0x65, 0x73, 0x73,
 	0x61, 0x67, 0x65, 0x2e, 0x74, 0x76, 0x2e, 0x44, 0x4d, 0x41, 0x63, 0x74, 0x69, 0x76, 0x69, 0x74,
 	0x79, 0x4f, 0x54, 0x54, 0x52, 0x0a, 0x64, 0x6d, 0x41, 0x63, 0x74, 0x69, 0x76, 0x69, 0x74, 0x79,
-	0x1a, 0x68, 0x0a, 0x0a, 0x45, 0x6d, 0x6f, 0x74, 0x73, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x12, 0x10,
-	0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65, 0x79,
-	0x12, 0x44, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32,
-	0x2e, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69,
+	0x12, 0x14, 0x0a, 0x05, 0x65, 0x78, 0x74, 0x72, 0x61, 0x18, 0x12, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x05, 0x65, 0x78, 0x74, 0x72, 0x61, 0x1a, 0x68, 0x0a, 0x0a, 0x45, 0x6d, 0x6f, 0x74, 0x73, 0x45,
+	0x6e, 0x74, 0x72, 0x79, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x44, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2e, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69,
+	0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x62, 0x72, 0x6f, 0x61, 0x64,
+	0x63, 0x61, 0x73, 0x74, 0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2e, 0x74, 0x76, 0x2e,
+	0x45, 0x6d, 0x6f, 0x6a, 0x69, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x3a, 0x02, 0x38, 0x01,
+	0x22, 0x80, 0x02, 0x0a, 0x0b, 0x44, 0x6d, 0x4c, 0x69, 0x76, 0x65, 0x52, 0x65, 0x70, 0x6c, 0x79,
+	0x12, 0x49, 0x0a, 0x05, 0x65, 0x6c, 0x65, 0x6d, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32,
+	0x33, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69,
 	0x62, 0x69, 0x6c, 0x69, 0x2e, 0x62, 0x72, 0x6f, 0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x2e, 0x6d,
-	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2e, 0x74, 0x76, 0x2e, 0x45, 0x6d, 0x6f, 0x6a, 0x69, 0x52,
-	0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x3a, 0x02, 0x38, 0x01, 0x22, 0x86, 0x01, 0x0a, 0x0b, 0x44,
-	0x6d, 0x4c, 0x69, 0x76, 0x65, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x12, 0x49, 0x0a, 0x05, 0x65, 0x6c,
-	0x65, 0x6d, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x33, 0x2e, 0x63, 0x6f, 0x6d, 0x2e,
-	0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x62,
-	0x72, 0x6f, 0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65,
-	0x2e, 0x74, 0x76, 0x2e, 0x44, 0x6d, 0x4c, 0x69, 0x76, 0x65, 0x45, 0x6c, 0x65, 0x6d, 0x52, 0x05,
-	0x65, 0x6c, 0x65, 0x6d, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x73, 0x74, 0x61, 0x74, 0x65, 0x18, 0x02,
-	0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x73, 0x74, 0x61, 0x74, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x73,
-	0x6f, 0x75, 0x72, 0x63, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x73, 0x6f, 0x75,
-	0x72, 0x63, 0x65, 0x22, 0x2c, 0x0a, 0x12, 0x44, 0x6d, 0x4c, 0x69, 0x76, 0x65, 0x53, 0x77, 0x69,
+	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2e, 0x74, 0x76, 0x2e, 0x44, 0x6d, 0x4c, 0x69, 0x76, 0x65,
+	0x45, 0x6c, 0x65, 0x6d, 0x52, 0x05, 0x65, 0x6c, 0x65, 0x6d, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x73,
+	0x74, 0x61, 0x74, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x73, 0x74, 0x61, 0x74,
+	0x65, 0x12, 0x16, 0x0a, 0x06, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28,
+	0x05, 0x52, 0x06, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x12, 0x24, 0x0a, 0x0d, 0x69, 0x73, 0x53,
+	0x65, 0x6e, 0x64, 0x43, 0x68, 0x72, 0x6f, 0x6e, 0x6f, 0x73, 0x18, 0x04, 0x20, 0x01, 0x28, 0x08,
+	0x52, 0x0d, 0x69, 0x73, 0x53, 0x65, 0x6e, 0x64, 0x43, 0x68, 0x72, 0x6f, 0x6e, 0x6f, 0x73, 0x12,
+	0x52, 0x0a, 0x08, 0x63, 0x6d, 0x64, 0x45, 0x6c, 0x65, 0x6d, 0x73, 0x18, 0x05, 0x20, 0x03, 0x28,
+	0x0b, 0x32, 0x36, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x62, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x62, 0x69,
+	0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2e, 0x62, 0x72, 0x6f, 0x61, 0x64, 0x63, 0x61, 0x73, 0x74,
+	0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2e, 0x74, 0x76, 0x2e, 0x44, 0x6d, 0x4c, 0x69,
+	0x76, 0x65, 0x43, 0x6d, 0x64, 0x45, 0x6c, 0x65, 0x6d, 0x52, 0x08, 0x63, 0x6d, 0x64, 0x45, 0x6c,
+	0x65, 0x6d, 0x73, 0x22, 0x2c, 0x0a, 0x12, 0x44, 0x6d, 0x4c, 0x69, 0x76, 0x65, 0x53, 0x77, 0x69,
 	0x74, 0x63, 0x68, 0x52, 0x65, 0x6c, 0x6f, 0x61, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x72, 0x65, 0x6c,
 	0x6f, 0x61, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x72, 0x65, 0x6c, 0x6f, 0x61,
 	0x64, 0x22, 0x72, 0x0a, 0x0e, 0x44, 0x6d, 0x53, 0x65, 0x67, 0x4c, 0x69, 0x76, 0x65, 0x52, 0x65,
@@ -3274,7 +3440,7 @@ var file_bilibili_broadcast_message_tv_messages_proto_rawDesc = []byte{
 	0x52, 0x0b, 0x70, 0x75, 0x62, 0x6c, 0x69, 0x63, 0x69, 0x74, 0x79, 0x49, 0x64, 0x12, 0x16, 0x0a,
 	0x06, 0x72, 0x6f, 0x6f, 0x6d, 0x49, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x06, 0x72,
 	0x6f, 0x6f, 0x6d, 0x49, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18,
-	0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x22, 0x9c, 0x03,
+	0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x22, 0xe0, 0x03,
 	0x0a, 0x12, 0x54, 0x56, 0x41, 0x73, 0x73, 0x69, 0x73, 0x74, 0x61, 0x6e, 0x74, 0x43, 0x6f, 0x6d,
 	0x6d, 0x61, 0x6e, 0x64, 0x12, 0x32, 0x0a, 0x14, 0x74, 0x76, 0x41, 0x73, 0x73, 0x69, 0x73, 0x74,
 	0x61, 0x6e, 0x74, 0x53, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01,
@@ -3300,20 +3466,24 @@ var file_bilibili_broadcast_message_tv_messages_proto_rawDesc = []byte{
 	0x6f, 0x6d, 0x49, 0x64, 0x18, 0x0d, 0x20, 0x01, 0x28, 0x03, 0x52, 0x06, 0x72, 0x6f, 0x6f, 0x6d,
 	0x49, 0x64, 0x12, 0x18, 0x0a, 0x07, 0x70, 0x61, 0x79, 0x6c, 0x6f, 0x61, 0x64, 0x18, 0x0e, 0x20,
 	0x01, 0x28, 0x09, 0x52, 0x07, 0x70, 0x61, 0x79, 0x6c, 0x6f, 0x61, 0x64, 0x12, 0x0e, 0x0a, 0x02,
-	0x74, 0x73, 0x18, 0x0f, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x74, 0x73, 0x2a, 0x38, 0x0a, 0x08,
-	0x49, 0x63, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x12, 0x15, 0x0a, 0x11, 0x49, 0x43, 0x4f, 0x4e,
-	0x5f, 0x54, 0x59, 0x50, 0x45, 0x5f, 0x55, 0x4e, 0x4b, 0x4e, 0x4f, 0x57, 0x4e, 0x10, 0x00, 0x12,
-	0x15, 0x0a, 0x11, 0x49, 0x43, 0x4f, 0x4e, 0x5f, 0x54, 0x59, 0x50, 0x45, 0x5f, 0x50, 0x52, 0x45,
-	0x4c, 0x4f, 0x41, 0x44, 0x10, 0x01, 0x2a, 0x3b, 0x0a, 0x0a, 0x4c, 0x69, 0x76, 0x65, 0x53, 0x6f,
-	0x75, 0x72, 0x63, 0x65, 0x12, 0x13, 0x0a, 0x0f, 0x4c, 0x69, 0x76, 0x65, 0x53, 0x6f, 0x75, 0x72,
-	0x63, 0x65, 0x4d, 0x4c, 0x69, 0x76, 0x65, 0x10, 0x00, 0x12, 0x18, 0x0a, 0x14, 0x4c, 0x69, 0x76,
-	0x65, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x42, 0x69, 0x7a, 0x54, 0x72, 0x69, 0x67, 0x67, 0x65,
-	0x72, 0x10, 0x01, 0x42, 0x44, 0x5a, 0x42, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
-	0x6d, 0x2f, 0x73, 0x74, 0x6d, 0x74, 0x63, 0x32, 0x33, 0x33, 0x2f, 0x62, 0x69, 0x6c, 0x69, 0x2d,
-	0x67, 0x72, 0x70, 0x63, 0x2d, 0x61, 0x70, 0x69, 0x2d, 0x67, 0x6f, 0x2f, 0x62, 0x69, 0x6c, 0x69,
-	0x62, 0x69, 0x6c, 0x69, 0x2f, 0x62, 0x72, 0x6f, 0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x2f, 0x6d,
-	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x74, 0x76, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
-	0x33,
+	0x74, 0x73, 0x18, 0x0f, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x74, 0x73, 0x12, 0x22, 0x0a, 0x0c,
+	0x74, 0x65, 0x65, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x4d, 0x6f, 0x64, 0x65, 0x18, 0x10, 0x20, 0x01,
+	0x28, 0x05, 0x52, 0x0c, 0x74, 0x65, 0x65, 0x6e, 0x61, 0x67, 0x65, 0x72, 0x4d, 0x6f, 0x64, 0x65,
+	0x12, 0x1e, 0x0a, 0x0a, 0x63, 0x72, 0x65, 0x61, 0x74, 0x69, 0x76, 0x65, 0x49, 0x64, 0x18, 0x11,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x63, 0x72, 0x65, 0x61, 0x74, 0x69, 0x76, 0x65, 0x49, 0x64,
+	0x2a, 0x38, 0x0a, 0x08, 0x49, 0x63, 0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x12, 0x15, 0x0a, 0x11,
+	0x49, 0x43, 0x4f, 0x4e, 0x5f, 0x54, 0x59, 0x50, 0x45, 0x5f, 0x55, 0x4e, 0x4b, 0x4e, 0x4f, 0x57,
+	0x4e, 0x10, 0x00, 0x12, 0x15, 0x0a, 0x11, 0x49, 0x43, 0x4f, 0x4e, 0x5f, 0x54, 0x59, 0x50, 0x45,
+	0x5f, 0x50, 0x52, 0x45, 0x4c, 0x4f, 0x41, 0x44, 0x10, 0x01, 0x2a, 0x3b, 0x0a, 0x0a, 0x4c, 0x69,
+	0x76, 0x65, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x12, 0x13, 0x0a, 0x0f, 0x4c, 0x69, 0x76, 0x65,
+	0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x4d, 0x4c, 0x69, 0x76, 0x65, 0x10, 0x00, 0x12, 0x18, 0x0a,
+	0x14, 0x4c, 0x69, 0x76, 0x65, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x42, 0x69, 0x7a, 0x54, 0x72,
+	0x69, 0x67, 0x67, 0x65, 0x72, 0x10, 0x01, 0x42, 0x44, 0x5a, 0x42, 0x67, 0x69, 0x74, 0x68, 0x75,
+	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x73, 0x74, 0x6d, 0x74, 0x63, 0x32, 0x33, 0x33, 0x2f, 0x62,
+	0x69, 0x6c, 0x69, 0x2d, 0x67, 0x72, 0x70, 0x63, 0x2d, 0x61, 0x70, 0x69, 0x2d, 0x67, 0x6f, 0x2f,
+	0x62, 0x69, 0x6c, 0x69, 0x62, 0x69, 0x6c, 0x69, 0x2f, 0x62, 0x72, 0x6f, 0x61, 0x64, 0x63, 0x61,
+	0x73, 0x74, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2f, 0x74, 0x76, 0x62, 0x06, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -3329,7 +3499,7 @@ func file_bilibili_broadcast_message_tv_messages_proto_rawDescGZIP() []byte {
 }
 
 var file_bilibili_broadcast_message_tv_messages_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_bilibili_broadcast_message_tv_messages_proto_msgTypes = make([]protoimpl.MessageInfo, 36)
+var file_bilibili_broadcast_message_tv_messages_proto_msgTypes = make([]protoimpl.MessageInfo, 37)
 var file_bilibili_broadcast_message_tv_messages_proto_goTypes = []interface{}{
 	(IconType)(0),                                     // 0: com.bapis.bilibili.broadcast.message.tv.IconType
 	(LiveSource)(0),                                   // 1: com.bapis.bilibili.broadcast.message.tv.LiveSource
@@ -3343,57 +3513,59 @@ var file_bilibili_broadcast_message_tv_messages_proto_goTypes = []interface{}{
 	(*DmActivityReply_ActivityInfo_MaterialConf_MaterialMobiConf)(nil),      // 9: com.bapis.bilibili.broadcast.message.tv.DmActivityReply_ActivityInfo_MaterialConf_MaterialMobiConf
 	(*DmActivityReply_ActivityInfo_MaterialConf_SpecialDmMaterialMobi)(nil), // 10: com.bapis.bilibili.broadcast.message.tv.DmActivityReply_ActivityInfo_MaterialConf_SpecialDmMaterialMobi
 	(*DmActivityReply_ActivityInfo_MockOption)(nil),                         // 11: com.bapis.bilibili.broadcast.message.tv.DmActivityReply_ActivityInfo_MockOption
-	(*DmLiveElem)(nil),            // 12: com.bapis.bilibili.broadcast.message.tv.DmLiveElem
-	(*DmLiveReply)(nil),           // 13: com.bapis.bilibili.broadcast.message.tv.DmLiveReply
-	(*DmLiveSwitchReload)(nil),    // 14: com.bapis.bilibili.broadcast.message.tv.DmLiveSwitchReload
-	(*DmSegLiveReply)(nil),        // 15: com.bapis.bilibili.broadcast.message.tv.DmSegLiveReply
-	(*Emoji)(nil),                 // 16: com.bapis.bilibili.broadcast.message.tv.Emoji
-	(*Emoticons)(nil),             // 17: com.bapis.bilibili.broadcast.message.tv.Emoticons
-	(*EsportsNotify)(nil),         // 18: com.bapis.bilibili.broadcast.message.tv.EsportsNotify
-	(*FeedClientSmartNotify)(nil), // 19: com.bapis.bilibili.broadcast.message.tv.FeedClientSmartNotify
-	(*Icon)(nil),                  // 20: com.bapis.bilibili.broadcast.message.tv.Icon
-	(*LiveBottomConfNotify)(nil),  // 21: com.bapis.bilibili.broadcast.message.tv.LiveBottomConfNotify
-	(*LiveCommonNotify)(nil),      // 22: com.bapis.bilibili.broadcast.message.tv.LiveCommonNotify
-	(*LiveSkipNotify)(nil),        // 23: com.bapis.bilibili.broadcast.message.tv.LiveSkipNotify
-	(*LiveStatusNotify)(nil),      // 24: com.bapis.bilibili.broadcast.message.tv.LiveStatusNotify
-	(*LiveViewerMsgNotify)(nil),   // 25: com.bapis.bilibili.broadcast.message.tv.LiveViewerMsgNotify
-	(*MainRedDotReply)(nil),       // 26: com.bapis.bilibili.broadcast.message.tv.MainRedDotReply
-	(*ModResource)(nil),           // 27: com.bapis.bilibili.broadcast.message.tv.ModResource
-	(*NotifyPop)(nil),             // 28: com.bapis.bilibili.broadcast.message.tv.NotifyPop
-	(*NotifyPopBtn)(nil),          // 29: com.bapis.bilibili.broadcast.message.tv.NotifyPopBtn
-	(*NotifyPopReply)(nil),        // 30: com.bapis.bilibili.broadcast.message.tv.NotifyPopReply
-	(*OgvPayOrderReply)(nil),      // 31: com.bapis.bilibili.broadcast.message.tv.OgvPayOrderReply
-	(*Prefix)(nil),                // 32: com.bapis.bilibili.broadcast.message.tv.Prefix
-	(*ProjLiveEventNotify)(nil),   // 33: com.bapis.bilibili.broadcast.message.tv.ProjLiveEventNotify
-	(*ProjReply)(nil),             // 34: com.bapis.bilibili.broadcast.message.tv.ProjReply
-	(*PublicityNotify)(nil),       // 35: com.bapis.bilibili.broadcast.message.tv.PublicityNotify
-	(*TVAssistantCommand)(nil),    // 36: com.bapis.bilibili.broadcast.message.tv.TVAssistantCommand
-	nil,                           // 37: com.bapis.bilibili.broadcast.message.tv.DmLiveElem.EmotsEntry
+	(*DmLiveCmdElem)(nil),         // 12: com.bapis.bilibili.broadcast.message.tv.DmLiveCmdElem
+	(*DmLiveElem)(nil),            // 13: com.bapis.bilibili.broadcast.message.tv.DmLiveElem
+	(*DmLiveReply)(nil),           // 14: com.bapis.bilibili.broadcast.message.tv.DmLiveReply
+	(*DmLiveSwitchReload)(nil),    // 15: com.bapis.bilibili.broadcast.message.tv.DmLiveSwitchReload
+	(*DmSegLiveReply)(nil),        // 16: com.bapis.bilibili.broadcast.message.tv.DmSegLiveReply
+	(*Emoji)(nil),                 // 17: com.bapis.bilibili.broadcast.message.tv.Emoji
+	(*Emoticons)(nil),             // 18: com.bapis.bilibili.broadcast.message.tv.Emoticons
+	(*EsportsNotify)(nil),         // 19: com.bapis.bilibili.broadcast.message.tv.EsportsNotify
+	(*FeedClientSmartNotify)(nil), // 20: com.bapis.bilibili.broadcast.message.tv.FeedClientSmartNotify
+	(*Icon)(nil),                  // 21: com.bapis.bilibili.broadcast.message.tv.Icon
+	(*LiveBottomConfNotify)(nil),  // 22: com.bapis.bilibili.broadcast.message.tv.LiveBottomConfNotify
+	(*LiveCommonNotify)(nil),      // 23: com.bapis.bilibili.broadcast.message.tv.LiveCommonNotify
+	(*LiveSkipNotify)(nil),        // 24: com.bapis.bilibili.broadcast.message.tv.LiveSkipNotify
+	(*LiveStatusNotify)(nil),      // 25: com.bapis.bilibili.broadcast.message.tv.LiveStatusNotify
+	(*LiveViewerMsgNotify)(nil),   // 26: com.bapis.bilibili.broadcast.message.tv.LiveViewerMsgNotify
+	(*MainRedDotReply)(nil),       // 27: com.bapis.bilibili.broadcast.message.tv.MainRedDotReply
+	(*ModResource)(nil),           // 28: com.bapis.bilibili.broadcast.message.tv.ModResource
+	(*NotifyPop)(nil),             // 29: com.bapis.bilibili.broadcast.message.tv.NotifyPop
+	(*NotifyPopBtn)(nil),          // 30: com.bapis.bilibili.broadcast.message.tv.NotifyPopBtn
+	(*NotifyPopReply)(nil),        // 31: com.bapis.bilibili.broadcast.message.tv.NotifyPopReply
+	(*OgvPayOrderReply)(nil),      // 32: com.bapis.bilibili.broadcast.message.tv.OgvPayOrderReply
+	(*Prefix)(nil),                // 33: com.bapis.bilibili.broadcast.message.tv.Prefix
+	(*ProjLiveEventNotify)(nil),   // 34: com.bapis.bilibili.broadcast.message.tv.ProjLiveEventNotify
+	(*ProjReply)(nil),             // 35: com.bapis.bilibili.broadcast.message.tv.ProjReply
+	(*PublicityNotify)(nil),       // 36: com.bapis.bilibili.broadcast.message.tv.PublicityNotify
+	(*TVAssistantCommand)(nil),    // 37: com.bapis.bilibili.broadcast.message.tv.TVAssistantCommand
+	nil,                           // 38: com.bapis.bilibili.broadcast.message.tv.DmLiveElem.EmotsEntry
 }
 var file_bilibili_broadcast_message_tv_messages_proto_depIdxs = []int32{
-	20, // 0: com.bapis.bilibili.broadcast.message.tv.DMActivityOTT.icon:type_name -> com.bapis.bilibili.broadcast.message.tv.Icon
+	21, // 0: com.bapis.bilibili.broadcast.message.tv.DMActivityOTT.icon:type_name -> com.bapis.bilibili.broadcast.message.tv.Icon
 	7,  // 1: com.bapis.bilibili.broadcast.message.tv.DmActivityReply.activityList:type_name -> com.bapis.bilibili.broadcast.message.tv.DmActivityReply_ActivityInfo
 	8,  // 2: com.bapis.bilibili.broadcast.message.tv.DmActivityReply_ActivityInfo.materialConf:type_name -> com.bapis.bilibili.broadcast.message.tv.DmActivityReply_ActivityInfo_MaterialConf
 	11, // 3: com.bapis.bilibili.broadcast.message.tv.DmActivityReply_ActivityInfo.mockOptions:type_name -> com.bapis.bilibili.broadcast.message.tv.DmActivityReply_ActivityInfo_MockOption
 	1,  // 4: com.bapis.bilibili.broadcast.message.tv.DmActivityReply_ActivityInfo.source:type_name -> com.bapis.bilibili.broadcast.message.tv.LiveSource
 	10, // 5: com.bapis.bilibili.broadcast.message.tv.DmActivityReply_ActivityInfo_MaterialConf.materialMode:type_name -> com.bapis.bilibili.broadcast.message.tv.DmActivityReply_ActivityInfo_MaterialConf_SpecialDmMaterialMobi
-	27, // 6: com.bapis.bilibili.broadcast.message.tv.DmActivityReply_ActivityInfo_MaterialConf.modResource:type_name -> com.bapis.bilibili.broadcast.message.tv.ModResource
+	28, // 6: com.bapis.bilibili.broadcast.message.tv.DmActivityReply_ActivityInfo_MaterialConf.modResource:type_name -> com.bapis.bilibili.broadcast.message.tv.ModResource
 	9,  // 7: com.bapis.bilibili.broadcast.message.tv.DmActivityReply_ActivityInfo_MaterialConf_SpecialDmMaterialMobi.mobiMaterial:type_name -> com.bapis.bilibili.broadcast.message.tv.DmActivityReply_ActivityInfo_MaterialConf_MaterialMobiConf
-	37, // 8: com.bapis.bilibili.broadcast.message.tv.DmLiveElem.emots:type_name -> com.bapis.bilibili.broadcast.message.tv.DmLiveElem.EmotsEntry
-	17, // 9: com.bapis.bilibili.broadcast.message.tv.DmLiveElem.emoticons:type_name -> com.bapis.bilibili.broadcast.message.tv.Emoticons
+	38, // 8: com.bapis.bilibili.broadcast.message.tv.DmLiveElem.emots:type_name -> com.bapis.bilibili.broadcast.message.tv.DmLiveElem.EmotsEntry
+	18, // 9: com.bapis.bilibili.broadcast.message.tv.DmLiveElem.emoticons:type_name -> com.bapis.bilibili.broadcast.message.tv.Emoticons
 	5,  // 10: com.bapis.bilibili.broadcast.message.tv.DmLiveElem.dmActivity:type_name -> com.bapis.bilibili.broadcast.message.tv.DMActivityOTT
-	12, // 11: com.bapis.bilibili.broadcast.message.tv.DmLiveReply.elems:type_name -> com.bapis.bilibili.broadcast.message.tv.DmLiveElem
-	4,  // 12: com.bapis.bilibili.broadcast.message.tv.DmSegLiveReply.elems:type_name -> com.bapis.bilibili.broadcast.message.tv.DanmakuElem
-	32, // 13: com.bapis.bilibili.broadcast.message.tv.Icon.prefix:type_name -> com.bapis.bilibili.broadcast.message.tv.Prefix
-	29, // 14: com.bapis.bilibili.broadcast.message.tv.NotifyPop.notifyBtnList:type_name -> com.bapis.bilibili.broadcast.message.tv.NotifyPopBtn
-	28, // 15: com.bapis.bilibili.broadcast.message.tv.NotifyPopReply.notify:type_name -> com.bapis.bilibili.broadcast.message.tv.NotifyPop
-	0,  // 16: com.bapis.bilibili.broadcast.message.tv.Prefix.type:type_name -> com.bapis.bilibili.broadcast.message.tv.IconType
-	16, // 17: com.bapis.bilibili.broadcast.message.tv.DmLiveElem.EmotsEntry.value:type_name -> com.bapis.bilibili.broadcast.message.tv.Emoji
-	18, // [18:18] is the sub-list for method output_type
-	18, // [18:18] is the sub-list for method input_type
-	18, // [18:18] is the sub-list for extension type_name
-	18, // [18:18] is the sub-list for extension extendee
-	0,  // [0:18] is the sub-list for field type_name
+	13, // 11: com.bapis.bilibili.broadcast.message.tv.DmLiveReply.elems:type_name -> com.bapis.bilibili.broadcast.message.tv.DmLiveElem
+	12, // 12: com.bapis.bilibili.broadcast.message.tv.DmLiveReply.cmdElems:type_name -> com.bapis.bilibili.broadcast.message.tv.DmLiveCmdElem
+	4,  // 13: com.bapis.bilibili.broadcast.message.tv.DmSegLiveReply.elems:type_name -> com.bapis.bilibili.broadcast.message.tv.DanmakuElem
+	33, // 14: com.bapis.bilibili.broadcast.message.tv.Icon.prefix:type_name -> com.bapis.bilibili.broadcast.message.tv.Prefix
+	30, // 15: com.bapis.bilibili.broadcast.message.tv.NotifyPop.notifyBtnList:type_name -> com.bapis.bilibili.broadcast.message.tv.NotifyPopBtn
+	29, // 16: com.bapis.bilibili.broadcast.message.tv.NotifyPopReply.notify:type_name -> com.bapis.bilibili.broadcast.message.tv.NotifyPop
+	0,  // 17: com.bapis.bilibili.broadcast.message.tv.Prefix.type:type_name -> com.bapis.bilibili.broadcast.message.tv.IconType
+	17, // 18: com.bapis.bilibili.broadcast.message.tv.DmLiveElem.EmotsEntry.value:type_name -> com.bapis.bilibili.broadcast.message.tv.Emoji
+	19, // [19:19] is the sub-list for method output_type
+	19, // [19:19] is the sub-list for method input_type
+	19, // [19:19] is the sub-list for extension type_name
+	19, // [19:19] is the sub-list for extension extendee
+	0,  // [0:19] is the sub-list for field type_name
 }
 
 func init() { file_bilibili_broadcast_message_tv_messages_proto_init() }
@@ -3523,7 +3695,7 @@ func file_bilibili_broadcast_message_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_broadcast_message_tv_messages_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DmLiveElem); i {
+			switch v := v.(*DmLiveCmdElem); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3535,7 +3707,7 @@ func file_bilibili_broadcast_message_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_broadcast_message_tv_messages_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DmLiveReply); i {
+			switch v := v.(*DmLiveElem); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3547,7 +3719,7 @@ func file_bilibili_broadcast_message_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_broadcast_message_tv_messages_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DmLiveSwitchReload); i {
+			switch v := v.(*DmLiveReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3559,7 +3731,7 @@ func file_bilibili_broadcast_message_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_broadcast_message_tv_messages_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DmSegLiveReply); i {
+			switch v := v.(*DmLiveSwitchReload); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3571,7 +3743,7 @@ func file_bilibili_broadcast_message_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_broadcast_message_tv_messages_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Emoji); i {
+			switch v := v.(*DmSegLiveReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3583,7 +3755,7 @@ func file_bilibili_broadcast_message_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_broadcast_message_tv_messages_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Emoticons); i {
+			switch v := v.(*Emoji); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3595,7 +3767,7 @@ func file_bilibili_broadcast_message_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_broadcast_message_tv_messages_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*EsportsNotify); i {
+			switch v := v.(*Emoticons); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3607,7 +3779,7 @@ func file_bilibili_broadcast_message_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_broadcast_message_tv_messages_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FeedClientSmartNotify); i {
+			switch v := v.(*EsportsNotify); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3619,7 +3791,7 @@ func file_bilibili_broadcast_message_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_broadcast_message_tv_messages_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Icon); i {
+			switch v := v.(*FeedClientSmartNotify); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3631,7 +3803,7 @@ func file_bilibili_broadcast_message_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_broadcast_message_tv_messages_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LiveBottomConfNotify); i {
+			switch v := v.(*Icon); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3643,7 +3815,7 @@ func file_bilibili_broadcast_message_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_broadcast_message_tv_messages_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LiveCommonNotify); i {
+			switch v := v.(*LiveBottomConfNotify); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3655,7 +3827,7 @@ func file_bilibili_broadcast_message_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_broadcast_message_tv_messages_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LiveSkipNotify); i {
+			switch v := v.(*LiveCommonNotify); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3667,7 +3839,7 @@ func file_bilibili_broadcast_message_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_broadcast_message_tv_messages_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LiveStatusNotify); i {
+			switch v := v.(*LiveSkipNotify); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3679,7 +3851,7 @@ func file_bilibili_broadcast_message_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_broadcast_message_tv_messages_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LiveViewerMsgNotify); i {
+			switch v := v.(*LiveStatusNotify); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3691,7 +3863,7 @@ func file_bilibili_broadcast_message_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_broadcast_message_tv_messages_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MainRedDotReply); i {
+			switch v := v.(*LiveViewerMsgNotify); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3703,7 +3875,7 @@ func file_bilibili_broadcast_message_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_broadcast_message_tv_messages_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ModResource); i {
+			switch v := v.(*MainRedDotReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3715,7 +3887,7 @@ func file_bilibili_broadcast_message_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_broadcast_message_tv_messages_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NotifyPop); i {
+			switch v := v.(*ModResource); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3727,7 +3899,7 @@ func file_bilibili_broadcast_message_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_broadcast_message_tv_messages_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NotifyPopBtn); i {
+			switch v := v.(*NotifyPop); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3739,7 +3911,7 @@ func file_bilibili_broadcast_message_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_broadcast_message_tv_messages_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NotifyPopReply); i {
+			switch v := v.(*NotifyPopBtn); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3751,7 +3923,7 @@ func file_bilibili_broadcast_message_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_broadcast_message_tv_messages_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*OgvPayOrderReply); i {
+			switch v := v.(*NotifyPopReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3763,7 +3935,7 @@ func file_bilibili_broadcast_message_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_broadcast_message_tv_messages_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Prefix); i {
+			switch v := v.(*OgvPayOrderReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3775,7 +3947,7 @@ func file_bilibili_broadcast_message_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_broadcast_message_tv_messages_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProjLiveEventNotify); i {
+			switch v := v.(*Prefix); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3787,7 +3959,7 @@ func file_bilibili_broadcast_message_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_broadcast_message_tv_messages_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProjReply); i {
+			switch v := v.(*ProjLiveEventNotify); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3799,7 +3971,7 @@ func file_bilibili_broadcast_message_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_broadcast_message_tv_messages_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PublicityNotify); i {
+			switch v := v.(*ProjReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3811,6 +3983,18 @@ func file_bilibili_broadcast_message_tv_messages_proto_init() {
 			}
 		}
 		file_bilibili_broadcast_message_tv_messages_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PublicityNotify); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_bilibili_broadcast_message_tv_messages_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*TVAssistantCommand); i {
 			case 0:
 				return &v.state
@@ -3829,7 +4013,7 @@ func file_bilibili_broadcast_message_tv_messages_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_bilibili_broadcast_message_tv_messages_proto_rawDesc,
 			NumEnums:      2,
-			NumMessages:   36,
+			NumMessages:   37,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

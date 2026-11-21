@@ -225,6 +225,8 @@ message CardViewPlayListResp {
   string playSceneModuleStr = 10;
   repeated OrderId orderIds = 11;
   repeated VerticalRankCards rankCards = 12;
+  PlaylistPageInfo pageInfo = 13;
+  int64 playlistId = 14;
 }
 
 // Source: com/bapis/bilibili/tv/CardViewV2Reply.java
@@ -287,6 +289,7 @@ message CardViewV2Reply {
   repeated OgvBottomButton bottomButtons = 56;
   ExtendedDesc extendedDesc = 57;
   ContinueWatch continueWatch = 58;
+  KidBlacklistControl kidBlacklistControl = 59;
 }
 
 // Source: com/bapis/bilibili/tv/CardViewV2Req.java
@@ -326,6 +329,10 @@ message CardViewV2Req {
   int32 needRecommend = 33;
   int32 entryScene = 34;
   PlaylistPlayType playlistPlayType = 35;
+  int32 playlistGroupId = 36;
+  int32 playlistPageNum = 37;
+  int32 playlistPageDirection = 38;
+  int64 playlistId = 39;
 }
 
 // Source: com/bapis/bilibili/tv/Catalog.java
@@ -744,6 +751,8 @@ message DmViewReply {
   QoeInfo qoe = 18;
   LiveDmActivity liveDmActivity = 19;
   LiveDmExtra liveDmExtra = 20;
+  int64 removeDuplicateLiveDmTtl = 22;
+  bool showLiveDmAfterAudit = 23;
 }
 
 // Source: com/bapis/bilibili/tv/DmViewReq.java
@@ -929,6 +938,12 @@ message Jumps {
   string jumpTextAfter = 10;
 }
 
+// Source: com/bapis/bilibili/tv/KidBlacklistControl.java
+message KidBlacklistControl {
+  bool blocked = 1;
+  string cover = 2;
+}
+
 // Source: com/bapis/bilibili/tv/Labels.java
 message Labels {
   string text = 1;
@@ -967,6 +982,7 @@ message LiveDmExtra {
   string chronosKv = 2;
   LiveDanmuPlayerConfig danmuPlayerConfig = 3;
   DanmuSettings danmuSettings = 4;
+  string chronosCfg = 5;
 }
 
 // Source: com/bapis/bilibili/tv/LiveExt.java
@@ -1178,6 +1194,17 @@ message PgcIndexGoto {
   int32 category = 1;
   string searchParams = 2;
   int64 customLabelId = 3;
+}
+
+// Source: com/bapis/bilibili/tv/PlaylistPageInfo.java
+message PlaylistPageInfo {
+  int32 pageNum = 1;
+  int32 pageSize = 2;
+  int32 total = 3;
+  int32 startPageNum = 4;
+  int32 endPageNum = 5;
+  bool hasPrevious = 6;
+  bool hasNext = 7;
 }
 
 // Source: com/bapis/bilibili/tv/PlaylistTab.java
