@@ -166,6 +166,13 @@ enum TribeeMemberTitleSubmitBlockReason {
   TRIBEE_MEMBER_TITLE_SUBMIT_BLOCK_REASON_COOLDOWN = 2;
 }
 
+enum TribeeProspectPublicProgress {
+  TRIBEE_PROSPECT_PUBLIC_PROGRESS_UNSPECIFIED = 0;
+  TRIBEE_PROSPECT_PUBLIC_PROGRESS_RECEIVED = 1;
+  TRIBEE_PROSPECT_PUBLIC_PROGRESS_EVALUATING = 2;
+  TRIBEE_PROSPECT_PUBLIC_PROGRESS_OPENED = 3;
+}
+
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/AcceptTribeeStaffRecruitOfferReq.java
 message AcceptTribeeStaffRecruitOfferReq {
   int64 tribeeId = 1;
@@ -992,6 +999,18 @@ message JoinTribeeCandidatePoolRsp {
   com.bapis.bilibili.app.dynamic.v2.GlobalPermissionType permType = 2;
 }
 
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/MyTribeeProspectsReq.java
+message MyTribeeProspectsReq {
+  int32 pn = 1;
+  int32 ps = 2;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/MyTribeeProspectsRsp.java
+message MyTribeeProspectsRsp {
+  repeated TribeeProspectPublicItem items = 1;
+  int64 total = 2;
+}
+
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/Page.java
 message Page {
   int32 pn = 1;
@@ -1374,6 +1393,19 @@ message StartTribeeStaffRecruitApplyRsp {
   StaffRecruitFormCopy formCopy = 10;
 }
 
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/SubmitTribeeProspectReq.java
+message SubmitTribeeProspectReq {
+  string name = 1;
+  string openReason = 2;
+  string linkUrl = 3;
+  repeated TribeeProspectAttachment attachments = 4;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/SubmitTribeeProspectRsp.java
+message SubmitTribeeProspectRsp {
+  int64 prospectId = 1;
+}
+
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/SubmitTribeeQuizActivityAnswerReq.java
 message SubmitTribeeQuizActivityAnswerReq {
   int64 tribeeId = 1;
@@ -1711,6 +1743,34 @@ message TribeeMemberTitleState {
   int64 serverTime = 9;
   int32 titleMaxLength = 10;
   string latestRecordId = 11;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeProspectAttachment.java
+message TribeeProspectAttachment {
+  string fileName = 1;
+  string url = 2;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeProspectLimitsReq.java
+message TribeeProspectLimitsReq {
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeProspectLimitsRsp.java
+message TribeeProspectLimitsRsp {
+  int32 nameMaxLen = 1;
+  int32 openReasonMaxLen = 2;
+  int32 linkMaxLen = 3;
+  int32 attachmentMaxCount = 4;
+  int64 attachmentMaxSize = 5;
+  repeated string attachmentExts = 6;
+}
+
+// Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeProspectPublicItem.java
+message TribeeProspectPublicItem {
+  int64 prospectId = 1;
+  string name = 2;
+  int64 submitTime = 3;
+  TribeeProspectPublicProgress progress = 4;
 }
 
 // Source: com/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeSelection.java

@@ -27,6 +27,85 @@ enum GroupStyle {
   GROUP_STYLE_ALIENATION = 2;
 }
 
+enum Item_CardItemCase {
+  CARDITEM_NOT_SET = 0;
+  SPECIAL = 7;
+  ARTICLE = 8;
+  BANNER = 9;
+  LIVE = 10;
+  GAME = 11;
+  PURCHASE = 12;
+  RECOMMEND_WORD = 13;
+  DYNAMIC = 14;
+  SUGGEST_KEYWORD = 15;
+  SPECIAL_GUIDE = 16;
+  COMIC = 17;
+  CHANNEL_NEW = 18;
+  OGV_CARD = 19;
+  BANGUMI_RELATES = 20;
+  FIND_MORE = 21;
+  ESPORT = 22;
+  AUTHOR_NEW = 23;
+  TIPS = 24;
+  CM = 25;
+  PEDIA_CARD = 26;
+  UGC_INLINE = 27;
+  LIVE_INLINE = 28;
+  TOP_GAME = 29;
+  SPORTS = 30;
+  PEDIA_CARD_INLINE = 31;
+  RECOMMEND_TIPS = 32;
+  COLLECTION_CARD = 33;
+  OGV_CHANNEL = 34;
+  OGV_INLINE = 35;
+  AUTHOR = 36;
+  AV = 37;
+  BANGUMI = 38;
+  ESPORTS_INLINE = 39;
+  HOT_BANNER = 40;
+  SUBJECT = 41;
+  DYNAMIC_NEW = 42;
+  ARTICLE_NEW = 43;
+  PEDIA_CARD_PIC = 44;
+  NPS_CARD = 45;
+  CHAT_GPT = 46;
+  HOT_RECOMMEND = 47;
+  LIVE_MASTER = 48;
+  LIVE_ROOM_TITLE = 49;
+  LIVE_ROOM = 50;
+  CHEESE = 51;
+  RELATED_SEARCH = 52;
+  QA_CARD = 53;
+  DOUBLE_COLUMN = 54;
+  UP_RECOMMEND = 55;
+  COMMENT_CARD = 57;
+  PLAYLIST_CARD = 58;
+  SERIES_CARD = 59;
+  MUSIC_CARD = 60;
+  COMMENT_CLUSTER = 61;
+  TIME_LINE = 62;
+  DOUBLE_OPUS = 64;
+  OGV_CLUSTER_CARD = 65;
+  DIGITAL_CHAT = 66;
+  ALIENATION_CARD = 67;
+  STAR_BANNER = 68;
+  ACTIVITY_CARD = 69;
+  ARTICLE_GIANT_CARD = 70;
+  TWITTER_GIANT_CARD = 71;
+  AI_CHAT = 73;
+  TRIBEE_CARD = 74;
+  IP_INFO_CARD = 79;
+  TREASURE_CONTENT_CARD = 81;
+  RELATED_UP_CARD = 83;
+  RELATED_GAME_CARD = 84;
+  RELATED_ESPORT_CARD = 85;
+  RELATED_MEMBER_CARD = 86;
+  RELATED_ROLE_CARD = 87;
+  RELATED_ACTIVITY_CARD = 88;
+  TOY = 78;
+  TOY_TIPS = 90;
+}
+
 enum OpusType {
   OPUS_TYPE_UNKNOWN = 0;
   OPUS_TYPE_ARTICLE = 1;
@@ -38,6 +117,12 @@ enum ReserveType {
   RESERVE_TYPE_OGV = 1;
   RESERVE_TYPE_LIVE = 2;
   RESERVE_TYPE_SPORTS = 3;
+}
+
+enum SearchToySort {
+  SEARCH_TOY_SORT_DEFAULT = 0;
+  SEARCH_TOY_SORT_CTIME_DESC = 1;
+  SEARCH_TOY_SORT_PLAY_COUNT_DESC = 2;
 }
 
 enum Sort {
@@ -488,6 +573,7 @@ message FilterValue {
     UserSort userSort = 5;
     CategorySort categorySort = 6;
     UserType userType = 7;
+    SearchToySort toySort = 8;
   }
   enum FilterParamCase {
     FILTERPARAM_NOT_SET = 0;
@@ -496,6 +582,7 @@ message FilterValue {
     USER_SORT = 5;
     CATEGORY_SORT = 6;
     USER_TYPE = 7;
+    TOY_SORT = 8;
   }
 
 }
@@ -673,6 +760,7 @@ message Item {
     SearchGiantCard twitterGiantCard = 71;
     SearchAIChatCard aiChat = 73;
     SearchTribeeCard tribeeCard = 74;
+    SearchToyCard toy = 78;
     SearchIPInfoCard ipInfoCard = 79;
     SearchTreasureContentCard treasureContentCard = 81;
     SearchRelatedUPCard relatedUpCard = 83;
@@ -681,6 +769,7 @@ message Item {
     SearchRelatedMemberCard relatedMemberCard = 86;
     SearchRelatedRoleCard relatedRoleCard = 87;
     SearchRelatedActivityCard relatedActivityCard = 88;
+    SearchToyTipsCard toyTips = 90;
   }
   int64 spreadId = 56;
   string userAct = 63;
@@ -689,83 +778,6 @@ message Item {
   string originGoto = 76;
   map<string, string> reportExtra = 77;
   CardGroupType cardGroupType = 89;
-  enum CardItemCase {
-    CARDITEM_NOT_SET = 0;
-    SPECIAL = 7;
-    ARTICLE = 8;
-    BANNER = 9;
-    LIVE = 10;
-    GAME = 11;
-    PURCHASE = 12;
-    RECOMMEND_WORD = 13;
-    DYNAMIC = 14;
-    SUGGEST_KEYWORD = 15;
-    SPECIAL_GUIDE = 16;
-    COMIC = 17;
-    CHANNEL_NEW = 18;
-    OGV_CARD = 19;
-    BANGUMI_RELATES = 20;
-    FIND_MORE = 21;
-    ESPORT = 22;
-    AUTHOR_NEW = 23;
-    TIPS = 24;
-    CM = 25;
-    PEDIA_CARD = 26;
-    UGC_INLINE = 27;
-    LIVE_INLINE = 28;
-    TOP_GAME = 29;
-    SPORTS = 30;
-    PEDIA_CARD_INLINE = 31;
-    RECOMMEND_TIPS = 32;
-    COLLECTION_CARD = 33;
-    OGV_CHANNEL = 34;
-    OGV_INLINE = 35;
-    AUTHOR = 36;
-    AV = 37;
-    BANGUMI = 38;
-    ESPORTS_INLINE = 39;
-    HOT_BANNER = 40;
-    SUBJECT = 41;
-    DYNAMIC_NEW = 42;
-    ARTICLE_NEW = 43;
-    PEDIA_CARD_PIC = 44;
-    NPS_CARD = 45;
-    CHAT_GPT = 46;
-    HOT_RECOMMEND = 47;
-    LIVE_MASTER = 48;
-    LIVE_ROOM_TITLE = 49;
-    LIVE_ROOM = 50;
-    CHEESE = 51;
-    RELATED_SEARCH = 52;
-    QA_CARD = 53;
-    DOUBLE_COLUMN = 54;
-    UP_RECOMMEND = 55;
-    COMMENT_CARD = 57;
-    PLAYLIST_CARD = 58;
-    SERIES_CARD = 59;
-    MUSIC_CARD = 60;
-    COMMENT_CLUSTER = 61;
-    TIME_LINE = 62;
-    DOUBLE_OPUS = 64;
-    OGV_CLUSTER_CARD = 65;
-    DIGITAL_CHAT = 66;
-    ALIENATION_CARD = 67;
-    STAR_BANNER = 68;
-    ACTIVITY_CARD = 69;
-    ARTICLE_GIANT_CARD = 70;
-    TWITTER_GIANT_CARD = 71;
-    AI_CHAT = 73;
-    TRIBEE_CARD = 74;
-    IP_INFO_CARD = 79;
-    TREASURE_CONTENT_CARD = 81;
-    RELATED_UP_CARD = 83;
-    RELATED_GAME_CARD = 84;
-    RELATED_ESPORT_CARD = 85;
-    RELATED_MEMBER_CARD = 86;
-    RELATED_ROLE_CARD = 87;
-    RELATED_ACTIVITY_CARD = 88;
-  }
-
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/LabelStyle.java
@@ -1360,6 +1372,8 @@ message SearchByTypeRequest {
   string fromSeid = 9;
   string fromSource = 10;
   string userAct = 11;
+  SearchToySort toySort = 12;
+  int32 isTabFirstVisit = 13;
   map<string, string> filterMap = 22;
 }
 
@@ -2328,6 +2342,31 @@ message SearchTopGameCard {
   SearchInlineData inlineLive = 19;
   CardLayout cardLayout = 20;
   ReasonStyle recTag = 21;
+}
+
+// Source: com/bapis/bilibili/polymer/app/search/v1/SearchToyButton.java
+message SearchToyButton {
+  string text = 1;
+  int32 style = 2;
+}
+
+// Source: com/bapis/bilibili/polymer/app/search/v1/SearchToyCard.java
+message SearchToyCard {
+  int64 id = 1;
+  string title = 2;
+  string cover = 3;
+  int64 mid = 4;
+  string author = 5;
+  string authorFace = 6;
+  int64 playCount = 7;
+  string icon = 8;
+  string desc = 9;
+  SearchToyButton button = 10;
+}
+
+// Source: com/bapis/bilibili/polymer/app/search/v1/SearchToyTipsCard.java
+message SearchToyTipsCard {
+  string text = 1;
 }
 
 // Source: com/bapis/bilibili/polymer/app/search/v1/SearchTreasureContentCard.java

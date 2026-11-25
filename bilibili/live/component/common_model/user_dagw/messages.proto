@@ -6,6 +6,7 @@ package com.bapis.bilibili.live.component.common_model.user_dagw;
 enum AnonType {
   ANON_TYPE_NONE = 0;
   ANON_TYPE_ROOM_ANON = 1;
+  ANON_TYPE_MYSTERY = 2;
 }
 
 enum HaveMedalType {
@@ -16,6 +17,12 @@ enum HaveMedalType {
 enum MedalType {
   Medal_Wear = 0;
   Medal_Spec = 1;
+}
+
+enum MysteryAnonTypeEnum {
+  MA_ALL = 0;
+  MA_With_Subject = 1;
+  MA_Identity_Only = 2;
 }
 
 enum RiskPolicyEnum {
@@ -65,6 +72,8 @@ message BaseOption {
   RiskCtrl riskCtrl = 2;
   RoomAnonCtrl roomAnonCtrl = 3;
   repeated RiskPolicyEnum riskCtrlHandles = 4;
+  bool needNameColor = 5;
+  MysteryAnonCtrl mysteryAnonCtrl = 6;
 }
 
 // Source: com/bapis/bilibili/live/component/common_model/user_dagw/Guard.java
@@ -122,6 +131,11 @@ message MedalOption {
   bool needGuard = 3;
   bool strongDepend = 4;
   bool needGroup = 5;
+}
+
+// Source: com/bapis/bilibili/live/component/common_model/user_dagw/MysteryAnonCtrl.java
+message MysteryAnonCtrl {
+  MysteryAnonTypeEnum type = 1;
 }
 
 // Source: com/bapis/bilibili/live/component/common_model/user_dagw/OfficialInfo.java

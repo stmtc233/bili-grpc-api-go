@@ -54,6 +54,25 @@ message AtSearchReq {
   int32 scene = 3;
 }
 
+// Source: com/bapis/bilibili/relation/interfaces/BlackPreCheckContent.java
+message BlackPreCheckContent {
+  string reason = 1;
+  string text = 2;
+  bool highlight = 3;
+}
+
+// Source: com/bapis/bilibili/relation/interfaces/BlackPreCheckReply.java
+message BlackPreCheckReply {
+  bool needConfirm = 1;
+  string title = 2;
+  repeated BlackPreCheckContent contents = 3;
+}
+
+// Source: com/bapis/bilibili/relation/interfaces/BlackPreCheckReq.java
+message BlackPreCheckReq {
+  int64 fid = 1;
+}
+
 // Source: com/bapis/bilibili/relation/interfaces/FollowingReq.java
 message FollowingReq {
   int64 fid = 1;

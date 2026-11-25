@@ -20,16 +20,6 @@ enum CommentType {
   comment_type_judge = 2;
 }
 
-enum CursorItem_CardItemCase {
-  CARDITEM_NOT_SET = 0;
-  CARD_UGC = 1;
-  CARD_OGV = 2;
-  CARD_ARTICLE = 3;
-  CARD_LIVE = 4;
-  CARD_CHEESE = 5;
-  CARD_DRAMA = 17;
-}
-
 enum DT {
   Unknown = 0;
   Phone = 1;
@@ -299,6 +289,16 @@ message CursorItem {
   bool hasShare = 14;
   string report = 15;
   TranslateInfo translateInfo = 16;
+  enum CardItemCase {
+    CARDITEM_NOT_SET = 0;
+    CARD_UGC = 1;
+    CARD_OGV = 2;
+    CARD_ARTICLE = 3;
+    CARD_LIVE = 4;
+    CARD_CHEESE = 5;
+    CARD_DRAMA = 17;
+  }
+
 }
 
 // Source: com/bapis/bilibili/app/interfaces/v1/CursorReply.java

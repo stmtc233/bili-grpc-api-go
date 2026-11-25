@@ -398,13 +398,19 @@ enum LinkNodeBubbleType {
   BUBBLE_COMMENT = 1;
 }
 
+enum LinkNodeRich_ContentCase {
+  CONTENT_NOT_SET = 0;
+  TEXT = 1;
+  EMOTE = 2;
+}
+
 enum LinkNodeShowType {
   PLAIN_TEXT = 0;
   RICH_TEXT = 1;
 }
 
 enum LinkNodeType {
-  LINK_NODE_TYPE_INVALID = 0;
+  INVALID = 0;
   VIDEO = 1;
   RESERVE = 2;
   VOTE = 3;
@@ -450,7 +456,7 @@ enum LinkNodeType {
   CONTENT_UP = 44;
   REFERENCE_COMMENT = 45;
   MULTIPLE_RESOURCES = 46;
-  LINK_NODE_TYPE_REFERENCE = 47;
+  REFERENCE = 47;
   TOY = 48;
 }
 
@@ -661,20 +667,6 @@ enum OpusType {
   OPUS_TYPE_WORD = 3;
   OPUS_TYPE_REPOST = 4;
   OPUS_TYPE_MANGA_EP = 5;
-}
-
-enum Paragraph_ParagraphType {
-  PARAGRAPH_PARAGRAPH_TYPE_INVALID = 0;
-  TEXT = 1;
-  PICTURES = 2;
-  LINE = 3;
-  PARAGRAPH_PARAGRAPH_TYPE_REFERENCE = 4;
-  SORTED_LIST = 5;
-  UNSORTED_LIST = 6;
-  LINK_CARD = 7;
-  CODE = 8;
-  HEADING = 9;
-  TABLE = 10;
 }
 
 enum PaywallStyle {
@@ -3213,12 +3205,6 @@ message LinkNodeRich {
     WordNode text = 1;
     EmoteNode emote = 2;
   }
-  enum ContentCase {
-    CONTENT_NOT_SET = 0;
-    TEXT = 1;
-    EMOTE = 2;
-  }
-
 }
 
 // Source: com/bapis/bilibili/app/dynamic/v2/LinkUrl.java
@@ -4751,7 +4737,7 @@ message PageOffset {
 
 // Source: com/bapis/bilibili/app/dynamic/v2/Paragraph.java
 message Paragraph {
-  int32 paraType = 1;
+  ParagraphType paraType = 1;
   Paragraph_ParagraphFormat paraFormat = 2;
   oneof oneof_0 {
     TextParagraph text = 3;
@@ -4764,12 +4750,12 @@ message Paragraph {
   string jumpUrl = 8;
   enum ContentCase {
     CONTENT_NOT_SET = 0;
-    TEXT = 3;
+    CONTENT_CASE_TEXT = 3;
     PIC = 4;
-    LINE = 5;
-    LINK_CARD = 6;
-    CODE = 7;
-    TABLE = 9;
+    CONTENT_CASE_LINE = 5;
+    CONTENT_CASE_LINK_CARD = 6;
+    CONTENT_CASE_CODE = 7;
+    CONTENT_CASE_TABLE = 9;
   }
 
   enum HeadingType {
@@ -4784,6 +4770,20 @@ message Paragraph {
     MIDDLE = 1;
     RIGHT = 2;
     UNSPECIFIED = 3;
+  }
+
+  enum ParagraphType {
+    INVALID = 0;
+    PARAGRAPH_TYPE_TEXT = 1;
+    PICTURES = 2;
+    PARAGRAPH_TYPE_LINE = 3;
+    REFERENCE = 4;
+    SORTED_LIST = 5;
+    UNSORTED_LIST = 6;
+    PARAGRAPH_TYPE_LINK_CARD = 7;
+    PARAGRAPH_TYPE_CODE = 8;
+    HEADING = 9;
+    PARAGRAPH_TYPE_TABLE = 10;
   }
 
 }
